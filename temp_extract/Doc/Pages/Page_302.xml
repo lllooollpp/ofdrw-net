@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="6021" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6022" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>&lt; : : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6023" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>xs restrictionbase=&quot;xs strin &quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6024" CTM="1 0 0 1 31.7 44"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6025" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6026" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>xs enumerationvalue=&quot;Image&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6027" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6028" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>xs enumerationvalue=&quot;Audio&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6029" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6030" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>xs enumerationvalue=&quot;Video&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6031" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6032" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>xs restriction</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6033" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6034" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>xs simpleType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6035" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6036" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>xs attribute</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6037" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6038" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>xs attributename=&quot;Format&quot;t e=&quot;xs strin &quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6039" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>yp g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6040" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

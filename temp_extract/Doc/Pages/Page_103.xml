@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2041" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>。 :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2042" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>绘 制 将 以 其 为 单 元 对 绘 制 区 域 进 行 填 充 以 此 为 例 对 属 性 进 行 详 细 的 说 明</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2043" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>ReflectMethod</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2044" CTM="1 0 0 1 31.7 44"><ofd:TextCode>图 绘 制 底 纹 单 元</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2045" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>27</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2046" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>图 分 别 为 取 值 为 、 、 、 的 绘 制 效 果。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2047" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>28 ReflectMethod NormalColumnRowRowAndColumn</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2048" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>图 翻 转 绘 制 效 果</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2049" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>28</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2050" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>作 为 底 纹 对 象 的 绘 制 单 元,使 用 一 种 和 外 界 没 有 任 何 关 联 的 独 立 的 坐 标 空 间:坐 标 以</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2051" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>CellContent</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2052" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>左 上 角(,)为 原 点, 轴 向 右 增 长, 轴 向 下 增 长,单 位 为 毫 米。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2053" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>00 X Y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2054" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>渐 变</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2055" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>8.3.4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2056" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>概 念 和 说 明</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2057" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>8.3.4.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2058" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>渐 变 提 供 了 一 种 预 定 义 的 渲 染 模 式,描 述 在 指 定 区 域 内 的 颜 色 过 渡 过 程,与 具 体 的 输 出 设 备、处 理</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2059" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>35</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2060" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

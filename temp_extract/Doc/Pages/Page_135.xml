@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2681" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>pyp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2682" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2683" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>=&quot;Reflect&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2684" CTM="1 0 0 1 31.7 44"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2685" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>ofdSement</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2686" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2687" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2688" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>ofdColorValue=&quot;2552550&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2689" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2690" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>ofdSegment</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2691" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2692" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>ofdSement</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2693" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2694" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2695" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>ofdColorValue=&quot;00255&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2696" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2697" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>ofdSement</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2698" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2699" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2700" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>ofdRadialShd</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="421" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>URI UniversalResourceIdentifier</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="422" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>:通 用 唯 一 标 示 符( )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="423" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>UUID UniversallyUniqueIdentifier</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="424" CTM="1 0 0 1 31.7 44"><ofd:TextCode>:可 扩 展 置 标 语 言( )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="425" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>XML ExtensibleMarku Lanuae</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="426" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>p g g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="427" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>概 述</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="428" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="429" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>文 档 特 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="430" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>5.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="431" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="432" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>应 具 有 真 实 地 保 持 文 件 中 版 式 信 息 的 特 性 且 这 种 特 性 不 随 着 软 硬 件 环 境 的 变 化 而 发 生</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="433" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="434" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>改 变。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="435" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>采 用 / — 中 的 技 术 描 述 文 件 数 据,与 本 标 准 相 配 套 的 见 附</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="436" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>OFD GBT18793 2002 XML Schema</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="437" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="438" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="439" CTM="1 0 0 1 31.7 135.20000000000005"><ofd:TextCode>
+=== 第 8 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="440" CTM="1 0 0 1 31.7 141.20000000000005"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

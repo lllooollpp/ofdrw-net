@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="941" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="942" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>是 否 允 许 编 辑</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="943" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="944" CTM="1 0 0 1 31.7 44"><ofd:TextCode>Edit xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="945" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="946" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>true</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="947" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>是 否 允 许 添 加 或 修 改 标 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="948" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="949" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>Annot xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="950" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>默 认 值:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="951" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>true</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="952" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>是 否 允 许 导 出</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="953" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="954" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="955" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>Export xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="956" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="957" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>true</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="958" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>13</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="959" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="960" CTM="1 0 0 1 31.7 141.40000000000003"><ofd:TextCode>
+=== 第 19 页 ===
+</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2801" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>网 格 高 洛 德 渐 变 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2802" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>43</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2803" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>47</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2804" CTM="1 0 0 1 31.7 44"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2805" CTM="1 0 0 1 31.7 48.4"><ofd:TextCode>
+=== 第 53 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2806" CTM="1 0 0 1 31.7 54.4"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2807" CTM="1 0 0 1 31.7 60.6"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2808" CTM="1 0 0 1 31.7 66.8"><ofd:TextCode>图 网 格 高 洛 德 渐 变 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2809" CTM="1 0 0 1 31.7 73"><ofd:TextCode>43</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2810" CTM="1 0 0 1 31.7 79.2"><ofd:TextCode>网 格 高 洛 德 渐 变 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2811" CTM="1 0 0 1 31.7 85.4"><ofd:TextCode>32</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2812" CTM="1 0 0 1 31.7 91.60000000000001"><ofd:TextCode>表 网 格 高 洛 德 渐 变 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2813" CTM="1 0 0 1 31.7 97.80000000000001"><ofd:TextCode>32</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2814" CTM="1 0 0 1 31.7 104.00000000000001"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2815" CTM="1 0 0 1 31.7 110.20000000000002"><ofd:TextCode>: 渐 变 区 域 内 每 行 的 网 格 数 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2816" CTM="1 0 0 1 31.7 116.40000000000002"><ofd:TextCode>VerticesPerRow xsint</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2817" CTM="1 0 0 1 31.7 122.60000000000002"><ofd:TextCode>在 渐 变 控 制 点 所 确 定 范 围 之 外 的 部 分 是 否 填 充</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2818" CTM="1 0 0 1 31.7 128.8"><ofd:TextCode>: 为 不 填 充, 表 示 填 充 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2819" CTM="1 0 0 1 31.7 135"><ofd:TextCode>Extend xsint 0 1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2820" CTM="1 0 0 1 31.7 141.2"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

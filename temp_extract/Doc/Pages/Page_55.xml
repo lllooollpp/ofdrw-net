@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1081" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>———</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1082" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>对 开 连 续 靠 右 模 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1083" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>TwoColumnR</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1084" CTM="1 0 0 1 31.7 44"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1085" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>OneColumn</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1086" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>标 题 栏 显 示 模 式,可 取 值 如 下:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1087" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>——— 文 件 名 称</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1088" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>FileName</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1089" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>: ———</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1090" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>呈 现 元 数 据 中 的 属 性 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1091" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>TabDisplay xsstring DocTitle Title</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1092" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>默 认 值 为 ,当 设 置 为 但 不 存 在 属 性 时,按 照</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1093" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>FileName DocTitle Title</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1094" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>处 理</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1095" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>FileName</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1096" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>是 否 隐 藏 工 具 栏</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1097" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1098" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1099" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>HideToolbar xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1100" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

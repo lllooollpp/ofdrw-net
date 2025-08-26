@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5981" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5982" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs enumerationvalue=&quot;wansun &quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5983" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5984" CTM="1 0 0 1 31.7 44"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5985" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>xs enumerationvalue=&quot;johab&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5986" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5987" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>xs enumerationvalue=&quot;unicode&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5988" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5989" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>xs restriction</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5990" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5991" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>xs simpleType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5992" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5993" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>xs attribute</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5994" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5995" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>xs attributename=&quot;Italic&quot;type=&quot;xs boolean&quot;default=&quot;false&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5996" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5997" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs attributename=&quot;Bold&quot;t e=&quot;xs boolean&quot;default=&quot;false&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5998" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5999" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6000" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>xs attributename=&quot;Serif&quot;type=&quot;xs boolean&quot;default=&quot;false&quot;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

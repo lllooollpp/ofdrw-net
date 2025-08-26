@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4261" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4262" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>指 向 自 定 义 标 引 内 容 节 点 适 用 的 文 件 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4263" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>SchemaLoc STLoc Schema</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4264" CTM="1 0 0 1 31.7 44"><ofd:TextCode>指 向 自 定 义 标 引 文 件</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4265" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4266" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4267" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>FileLoc STLoc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4268" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>该 类 文 件 中 通 过“非 接 触 方 式”引 用 版 式 内 容 流 中 的 图 元 和 相 关 信 息</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4269" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>扩 展 信 息</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4270" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>17</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4271" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>扩 展 信 息 列 表 的 入 口 点 在 文 档 根 节 点 中 定 义。 扩 展 信 息 列 表 文 件 的 根 节 点 名 为 ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4272" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>7.5 Extensions</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4273" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>( ) , 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4274" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>其 下 由 到 多 个 扩 展 信 息 节 点 组 成 扩 展 信 息 列 表 的 根 节 点 结 构 如 图 所 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4275" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>0 Extension 83</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4276" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>图 扩 展 信 息 列 表 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4277" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>83</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4278" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4279" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>扩 展 信 息 列 表 根 节 点 属 性 说 明 见 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4280" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>64</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

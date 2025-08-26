@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5561" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>g g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5562" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5563" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>xs enumerationvalue=&quot;Stamp&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5564" CTM="1 0 0 1 31.7 44"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5565" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>xs enumerationvalue=&quot;Watermark&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5566" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5567" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>xs restriction</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5568" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5569" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>xs simpleType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5570" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5571" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>xs attribute</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5572" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt; : :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5573" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>xs attributename=&quot;Creator&quot;type=&quot;xs string&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5574" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5575" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>use=&quot;re uired&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5576" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>q</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5577" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>&lt; : :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5578" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>xs attributename=&quot;LastModDate&quot;type=&quot;xs date&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5579" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5580" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>use=&quot;required&quot;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

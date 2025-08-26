@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3441" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3442" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>表 (续)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3443" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>44</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3444" CTM="1 0 0 1 31.7 44"><ofd:TextCode>属 性 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3445" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>是 否 是 带 衬 线 字 型,用 于 匹 配 替 代 字 型</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3446" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3447" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>Serif xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3448" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>默 认 值 是</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3449" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>false</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3450" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>是 否 是 粗 体 字 型,用 于 匹 配 替 代 字 型</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3451" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3452" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>Bold xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3453" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>默 认 值 是</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3454" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>false</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3455" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>是 否 是 斜 体 字 型,用 于 匹 配 替 代 字 型</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3456" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3457" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>Italic xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3458" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>默 认 值 是</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3459" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>false</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3460" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>是 否 是 等 宽 字 型,用 于 匹 配 替 代 字 型</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

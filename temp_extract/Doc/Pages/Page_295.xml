@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5881" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5882" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5883" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5884" CTM="1 0 0 1 31.7 44"><ofd:TextCode>xs attributename=&quot;T e&quot;use=&quot;re uired&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5885" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>yp q</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5886" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5887" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>xs simpleType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5888" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>&lt; : : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5889" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>xs restrictionbase=&quot;xs string&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5890" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5891" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>xs enumerationvalue=&quot;GRAY&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5892" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5893" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>xs enumerationvalue=&quot;RGB&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5894" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5895" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>xs enumerationvalue=&quot;CMYK&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5896" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5897" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs restriction</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5898" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5899" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>xs sim leT e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5900" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1161" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>11</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1162" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>表 页 树 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1163" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>11</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1164" CTM="1 0 0 1 31.7 44"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1165" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>页 节 点。 一 个 页 树 中 可 以 包 含 一 个 或 多 个 页 节 点,页 顺 序 是 根 据 页</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1166" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1167" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>Pae</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1168" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1169" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>树 进 行 前 序 遍 历 时 叶 节 点 的 访 问 顺 序</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1170" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>_ 声 明 该 页 的 标 识,不 能 与 已 有 标 识 重 复 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1171" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>ID STID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1172" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>_ 指 向 页 对 象 描 述 文 件 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1173" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>BaseLoc STLoc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1174" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>页 对 象</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1175" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>7.7</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1176" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>, ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1177" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>页 对 象 支 持 模 板 页 描 述 每 一 页 经 常 需 要 重 复 显 示 的 内 容 可 统 一 在 模 板 页 中 描 述 文 档 可 以 包 含 多</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1178" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>个 模 板 页。 通 过 使 用 模 板 页 可 以 使 重 复 显 示 的 内 容 不 必 出 现 在 描 述 每 一 页 的 页 面 描 述 内 容 中,而 只 需</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1179" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>通 过 节 点 进 行 引 用,页 对 象 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1180" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>Temlate 13</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

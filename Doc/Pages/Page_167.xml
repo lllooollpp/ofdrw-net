@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3321" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3322" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>弧 线 方 向 是 否 为 顺 时 针</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3323" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>表 示 由 圆 弧 起 始 点 到 结 束 点 是 顺 时 针 旋 转, 表 示 由 圆 弧 起</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3324" CTM="1 0 0 1 31.7 44"><ofd:TextCode>true false</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3325" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>始 点 到 结 束 点 是 逆 时 针 旋 转</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3326" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3327" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3328" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>SweepDirection xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3329" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>, ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3330" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>对 于 经 过 坐 标 系 上 指 定 两 点 给 定 旋 转 角 度 和 长 短 轴 长 度 的 椭 圆</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3331" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>满 足 条 件 的 可 能 有 个,对 应 圆 弧 有 条,通 过 属 性 可 以</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3332" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>2 4 LareArc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3333" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3334" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>排 除 条,由 此 属 性 从 余 下 的 条 圆 弧 中 确 定 一 条</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3335" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>2 2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3336" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>58</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3337" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3338" CTM="1 0 0 1 31.7 129.00000000000003"><ofd:TextCode>
+=== 第 64 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3339" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3340" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

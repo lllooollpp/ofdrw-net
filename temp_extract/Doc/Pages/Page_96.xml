@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1901" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1902" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>Value STArray</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1903" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>。 ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1904" CTM="1 0 0 1 31.7 44"><ofd:TextCode>属 性 从 颜 色 空 间 的 调 色 板 中 的 取 值 当 二 者 都 不 出 现 时 该 颜 色 各</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1905" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>通 道 的 值 全 部 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1906" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1907" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>调 色 板 中 颜 色 的 编 号,非 负 整 数,将 从 当 前 颜 色 空 间 的 调 色 板 中 取</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1908" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1909" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>Index xsint</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1910" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1911" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>出 相 应 索 引 的 预 定 义 颜 色 用 来 绘 制 索 引 从 开 始</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1912" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1913" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>引 用 资 源 文 件 中 颜 色 空 间 的 标 识</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1914" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1915" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1916" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>ColorSpace STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1917" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>默 认 值 为 文 档 设 定 的 颜 色 空 间</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1918" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>: 颜 色 透 明 度,在 之 间 取 值。 默 认 为 ,表 示 完 全 不 透 明 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1919" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>Alha xsint 0~255 255</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1920" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4221" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4222" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>表 注 释 类 型 取 值</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4223" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>62</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4224" CTM="1 0 0 1 31.7 44"><ofd:TextCode>类 型 说 明</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4225" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>链 接 注 释</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4226" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>Link</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4227" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>, , 、 、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4228" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>路 径 注 释 一 般 为 图 形 对 象 比 如 矩 形 多 边 形 贝 塞 尔 曲 线 等</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4229" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>Path</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4230" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>高 亮 注 释</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4231" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>Highlight</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4232" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>签 章 注 释</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4233" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>Stamp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4234" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>水 印 注 释</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4235" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>Watermark</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4236" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>自 定 义 标 引</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4237" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>16</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4238" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>, 、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4239" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>外 部 系 统 或 用 户 可 以 添 加 自 定 义 的 标 记 和 信 息 从 而 达 到 与 其 他 系 统 数 据 进 行 交 互 的 目 的 并 扩 展</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4240" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>。 。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

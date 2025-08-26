@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4101" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>y g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4102" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>: 停 止</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4103" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>Sto xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4104" CTM="1 0 0 1 31.7 44"><ofd:TextCode>p g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4105" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>77</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4106" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4107" CTM="1 0 0 1 31.7 60.800000000000004"><ofd:TextCode>
+=== 第 83 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4108" CTM="1 0 0 1 31.7 66.80000000000001"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4109" CTM="1 0 0 1 31.7 73.00000000000001"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4110" CTM="1 0 0 1 31.7 79.20000000000002"><ofd:TextCode>表 (续)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4111" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>59</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4112" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>名 称 类 型 说 明</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4113" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>: 暂 停</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4114" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>Pause xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4115" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4116" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>: 继 续</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4117" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>Resume xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4118" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4119" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>注 释</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4120" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>15</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

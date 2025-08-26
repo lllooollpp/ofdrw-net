@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4621" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>73</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4622" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>89</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4623" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4624" CTM="1 0 0 1 31.7 42.199999999999996"><ofd:TextCode>
+=== 第 95 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4625" CTM="1 0 0 1 31.7 48.199999999999996"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4626" CTM="1 0 0 1 31.7 54.4"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4627" CTM="1 0 0 1 31.7 60.6"><ofd:TextCode>表 附 件 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4628" CTM="1 0 0 1 31.7 66.8"><ofd:TextCode>73</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4629" CTM="1 0 0 1 31.7 73"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4630" CTM="1 0 0 1 31.7 79.2"><ofd:TextCode>: 附 件 标 识 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4631" CTM="1 0 0 1 31.7 85.4"><ofd:TextCode>ID xsID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4632" CTM="1 0 0 1 31.7 91.60000000000001"><ofd:TextCode>: 附 件 名 称 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4633" CTM="1 0 0 1 31.7 97.80000000000001"><ofd:TextCode>Name xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4634" CTM="1 0 0 1 31.7 104.00000000000001"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4635" CTM="1 0 0 1 31.7 110.20000000000002"><ofd:TextCode>: 附 件 格 式 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4636" CTM="1 0 0 1 31.7 116.40000000000002"><ofd:TextCode>Format xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4637" CTM="1 0 0 1 31.7 122.60000000000002"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4638" CTM="1 0 0 1 31.7 128.8"><ofd:TextCode>: 创 建 时 间 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4639" CTM="1 0 0 1 31.7 135"><ofd:TextCode>CreationDate xsdateTime</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4640" CTM="1 0 0 1 31.7 141.2"><ofd:TextCode>: 修 改 时 间 可 选</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

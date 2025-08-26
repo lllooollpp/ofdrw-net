@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="6661" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>
+=== 第 116 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6662" CTM="1 0 0 1 31.7 31.4"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6663" CTM="1 0 0 1 31.7 37.6"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6664" CTM="1 0 0 1 31.7 43.800000000000004"><ofd:TextCode>: /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6665" CTM="1 0 0 1 31.7 50.00000000000001"><ofd:TextCode>name=&quot;CheckValue&quot;type=&quot;xs base64Binary&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6666" CTM="1 0 0 1 31.7 56.20000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6667" CTM="1 0 0 1 31.7 62.40000000000001"><ofd:TextCode>xs se uence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6668" CTM="1 0 0 1 31.7 68.60000000000001"><ofd:TextCode>q</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6669" CTM="1 0 0 1 31.7 74.80000000000001"><ofd:TextCode>&lt; :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6670" CTM="1 0 0 1 31.7 81.00000000000001"><ofd:TextCode>xs attributename=&quot;FileRef&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6671" CTM="1 0 0 1 31.7 87.20000000000002"><ofd:TextCode>_ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6672" CTM="1 0 0 1 31.7 93.40000000000002"><ofd:TextCode>type=&quot;ST Loc&quot;use=&quot;required&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6673" CTM="1 0 0 1 31.7 99.60000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6674" CTM="1 0 0 1 31.7 105.80000000000003"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6675" CTM="1 0 0 1 31.7 112.00000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6676" CTM="1 0 0 1 31.7 118.20000000000003"><ofd:TextCode>xs element</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6677" CTM="1 0 0 1 31.7 124.40000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6678" CTM="1 0 0 1 31.7 130.60000000000002"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6679" CTM="1 0 0 1 31.7 136.8"><ofd:TextCode>&lt; :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6680" CTM="1 0 0 1 31.7 143"><ofd:TextCode>xs attributename=&quot;CheckMethod&quot;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

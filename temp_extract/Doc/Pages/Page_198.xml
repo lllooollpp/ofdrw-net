@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3941" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>54</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3942" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3943" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>声 明 目 标 区 域 的 描 述 方 法,可 取 值 列 举 如 下:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3944" CTM="1 0 0 1 31.7 44"><ofd:TextCode>——— ( , )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3945" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>目 标 区 域 由 左 上 角 位 置 以 及 页 面 缩 放 比 例</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3946" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>XYZ LeftTop</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3947" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>( )确 定;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3948" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>Zoom</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3949" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>——— 适 合 整 个 窗 口 区 域;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3950" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>Fit</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3951" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>: 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3952" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>T e xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3953" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>yp g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3954" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>——— , ;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3955" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>适 合 窗 口 宽 度 目 标 区 域 仅 由 确 定</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3956" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>FitH Top</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3957" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>——— 适 合 窗 口 高 度,目 标 区 域 仅 由 确 定;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3958" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>FitV Left</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3959" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>——— 适 合 窗 口 内 的 目 标 区 域,目 标 区 域 为( 、 、 、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3960" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>FitR LeftTo Riht</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

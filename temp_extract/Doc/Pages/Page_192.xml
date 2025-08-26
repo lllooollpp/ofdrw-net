@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3821" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>71</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3822" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3823" CTM="1 0 0 1 31.7 36"><ofd:TextCode>
+=== 第 77 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3824" CTM="1 0 0 1 31.7 42"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3825" CTM="1 0 0 1 31.7 48.2"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3826" CTM="1 0 0 1 31.7 54.400000000000006"><ofd:TextCode>图 矢 量 图 像 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3827" CTM="1 0 0 1 31.7 60.60000000000001"><ofd:TextCode>72</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3828" CTM="1 0 0 1 31.7 66.80000000000001"><ofd:TextCode>矢 量 图 像 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3829" CTM="1 0 0 1 31.7 73.00000000000001"><ofd:TextCode>50</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3830" CTM="1 0 0 1 31.7 79.20000000000002"><ofd:TextCode>表 矢 量 图 像 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3831" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>50</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3832" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3833" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>矢 量 图 像 的 宽 度</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3834" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>: 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3835" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>Width xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3836" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>超 出 部 分 做 裁 剪 处 理</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3837" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>矢 量 图 像 的 高 度</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3838" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3839" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3840" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>Height xsdouble</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

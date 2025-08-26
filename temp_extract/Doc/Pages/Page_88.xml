@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1741" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>为 时 小 角 度 结 合 点 长 度 的 截 断 值,默 认 值 为 。 当</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1742" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>Join Miter 3.528</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1743" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1744" CTM="1 0 0 1 31.7 44"><ofd:TextCode>MiterLimit xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1745" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>不 等 于 时 该 参 数 无 效</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1746" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>Join Miter</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1747" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>填 充 颜 色,用 以 填 充 路 径 形 成 的 区 域 以 及 文 字 轮 廓 内 的 区 域,默 认</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1748" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1749" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1750" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>FillColor CTColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1751" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1752" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>值 为 透 明 色 关 于 颜 色 的 描 述 见</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1753" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>8.3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1754" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>勾 边 颜 色,指 定 路 径 绘 制 的 颜 色 以 及 文 字 轮 廓 的 颜 色,默 认 值 为 黑</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1755" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>_ 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1756" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>StrokeColor CTColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1757" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>色。 颜 色 的 描 述 见</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1758" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>8.3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1759" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>绘 制 参 数 的 作 用 顺 序 应 采 用 就 近 原 则,即 当 多 个 绘 制 参 数 作 用 于 同 一 个 对 象 并 且 这 些 绘 制 参 数 中</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1760" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>, 。 ,</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

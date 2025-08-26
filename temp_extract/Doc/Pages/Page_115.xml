@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2281" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>径 向 渐 变 定 义 了 两 个 离 心 率 和 倾 斜 角 度 均 相 同 的 椭 圆,并 在 椭 圆 边 缘 连 线 区 域 内 进 行 渐 变 绘 制 的</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2282" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>。 , ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2283" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>方 法 具 体 算 法 是 先 由 起 始 点 椭 圆 中 心 点 开 始 绘 制 一 个 起 始 点 颜 色 的 空 心 椭 圆 随 后 沿 着 中 心 点 连 线</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2284" CTM="1 0 0 1 31.7 44"><ofd:TextCode>不 断 绘 制 离 心 率 与 倾 斜 角 度 相 同 的 空 心 椭 圆,颜 色 由 起 始 点 颜 色 逐 渐 变 为 结 束 点 颜 色,椭 圆 大 小 由 起 始</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2285" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>点 椭 圆 逐 渐 变 为 结 束 点 椭 圆。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2286" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>图 所 示 是 一 个 典 型 的 径 向 渐 变 示 例:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2287" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>34</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2288" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>图 径 向 渐 变</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2289" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>34</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2290" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>径 向 渐 变 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2291" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>35</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2292" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>39</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2293" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2294" CTM="1 0 0 1 31.7 104.20000000000003"><ofd:TextCode>
+=== 第 45 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2295" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2296" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2297" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>图 径 向 渐 变 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2298" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>35</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2299" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>径 向 渐 变 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2300" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>30</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

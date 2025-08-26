@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="861" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>部 分 的 描 述 见 绘 制 参 数 多 媒 体 和 矢 量 图 像 等 宜 在 文 档 资 源 文 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="862" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>DocumentRes STLoc 7.9</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="863" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>件 中 描 述</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="864" CTM="1 0 0 1 31.7 44"><ofd:TextCode>模 板 页 序 列,为 一 系 列 模 板 页 的 集 合,模 板 页 内 容 结 构 和 普 通 页 相</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="865" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>_ 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="866" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>TemlatePae CTTemlatePae</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="867" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>p g p g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="868" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>同,描 述 见</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="869" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>7.7</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="870" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>10</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="871" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="872" CTM="1 0 0 1 31.7 91.80000000000003"><ofd:TextCode>
+=== 第 16 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="873" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="874" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="875" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>表 (续)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="876" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>6</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="877" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="878" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>引 用 在 资 源 文 件 中 定 义 的 颜 色 空 间 标 识,有 关 颜 色 空 间 的 描 述 见</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="879" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>_ 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="880" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>DefaultCS STRefID</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

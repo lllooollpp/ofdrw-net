@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3201" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>本 标 准 中 支 持 二 次 贝 塞 尔 曲 线 以 及 三 次 贝 塞 尔 曲 线。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3202" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3203" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>二 次 贝 塞 尔 曲 线 结 构 如 图 所 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3204" CTM="1 0 0 1 31.7 44"><ofd:TextCode>52</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3205" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>图 二 次 贝 塞 尔 曲 线 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3206" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>52</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3207" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3208" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>二 次 贝 塞 尔 曲 线 结 构 属 性 说 明 见 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3209" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>40</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3210" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>表 二 次 贝 塞 尔 曲 线 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3211" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>40</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3212" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3213" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>_ 二 次 贝 塞 尔 曲 线 的 控 制 点 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3214" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>Point1 STPos</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3215" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>_ 二 次 贝 塞 尔 曲 线 的 结 束 点,下 一 路 径 的 起 始 点 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3216" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>Point2 STPos</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3217" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>二 次 贝 塞 尔 曲 线 公 式:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3218" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>2 2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3219" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>() ( ) ( ) [,]</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3220" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>B t 1 t P 2t1 t P t P t 01</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

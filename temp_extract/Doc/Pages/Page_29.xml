@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="561" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>ImaeM.n FontM.ttf</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="562" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>g pg</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="563" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>数 字 签 名 存 储 目 录</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="564" CTM="1 0 0 1 31.7 44"><ofd:TextCode>Signs</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="565" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>签 名 列 表 文 件</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="566" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>Signatures.xml</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="567" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>_ 第 个 签 名/签 章</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="568" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>SinN N</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="569" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="570" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>/</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="571" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>签 名 签 章 描 述 文 件</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="572" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>Signature.xml</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="573" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>电 子 印 章 文 件</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="574" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>Seal.esl</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="575" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>签 名 值 文 件</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="576" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>SinedValue.dat</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="577" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="578" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>基 本 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="579" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>7</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="580" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>命 名 空 间</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

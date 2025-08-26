@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="7181" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7182" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>use=&quot;required&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7183" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7184" CTM="1 0 0 1 31.7 44"><ofd:TextCode>xs extension</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7185" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7186" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>xs complexContent</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7187" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7188" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>xs com lexT e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7189" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7190" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7191" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>xs element</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7192" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7193" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7194" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7195" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>xs com lexT e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7196" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7197" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7198" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>xs element</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7199" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7200" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>xs elementname=&quot;Actions&quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="501" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="502" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>(重 复 样 式 和 偏 移 值)、结 合 点 样 式、端 点 样 式、结 合 点 限 值。 这 些 特 性 可 以 作 为 图 元 的 直 接 修 饰 属 性,也</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="503" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>可 以 作 为 被 多 个 图 元 共 同 引 用 的 绘 制 参 数 资 源。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="504" CTM="1 0 0 1 31.7 44"><ofd:TextCode>图 元 绘 制 时 除 需 要 绘 制 参 数 所 包 含 的 参 数 外,还 需 要 其 他 参 数:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="505" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>) 。 、 、 、 ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="506" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>图 元 对 象 包 含 一 个 可 选 的 坐 标 变 换 矩 阵 坐 标 变 换 综 合 描 述 了 平 移 缩 放 旋 转 切 变 等 特 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="507" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>a</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="508" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>这 些 特 性 将 影 响 图 元 对 象 的 最 终 绘 制 结 果;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="509" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>) 图 元 对 象 包 含 一 个 可 选 的 裁 剪 区。 裁 剪 区 确 定 了 图 元 对 象 的 哪 些 部 分 将 被 绘 制 到 页 面 上。 图</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="510" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>b</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="511" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>元 对 象 在 裁 剪 区 以 外 的 部 分 将 不 被 绘 制。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="512" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>扩 展 名</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="513" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>5.4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="514" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>本 标 准 规 定 打 包 后 的 版 式 文 件 扩 展 名 为 (小 写)。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="515" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>ofd</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="516" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>文 件 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="517" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>6</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="518" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>容 器 方 案</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="519" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>6.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="520" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>容 器 功 能 由 一 个 文 件 来 实 现。 多 文 件 的 数 据 组 织 方 式 采 用 。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

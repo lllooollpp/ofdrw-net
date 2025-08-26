@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2081" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>30</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2082" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>轴 向 渐 变 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2083" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>29</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2084" CTM="1 0 0 1 31.7 44"><ofd:TextCode>36</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2085" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2086" CTM="1 0 0 1 31.7 54.6"><ofd:TextCode>
+=== 第 42 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2087" CTM="1 0 0 1 31.7 60.6"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2088" CTM="1 0 0 1 31.7 66.8"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2089" CTM="1 0 0 1 31.7 73"><ofd:TextCode>表 轴 向 渐 变 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2090" CTM="1 0 0 1 31.7 79.2"><ofd:TextCode>29</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2091" CTM="1 0 0 1 31.7 85.4"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2092" CTM="1 0 0 1 31.7 91.60000000000001"><ofd:TextCode>渐 变 绘 制 的 方 式,可 选 值 为 、 、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2093" CTM="1 0 0 1 31.7 97.80000000000001"><ofd:TextCode>DirectReeatReflect</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2094" CTM="1 0 0 1 31.7 104.00000000000001"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2095" CTM="1 0 0 1 31.7 110.20000000000002"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2096" CTM="1 0 0 1 31.7 116.40000000000002"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2097" CTM="1 0 0 1 31.7 122.60000000000002"><ofd:TextCode>MapType xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2098" CTM="1 0 0 1 31.7 128.8"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2099" CTM="1 0 0 1 31.7 135"><ofd:TextCode>Direct</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2100" CTM="1 0 0 1 31.7 141.2"><ofd:TextCode>轴 线 一 个 渐 变 区 间 的 长 度,当 的 值 不 等 于 时 出 现</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

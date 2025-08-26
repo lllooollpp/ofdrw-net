@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4301" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>属 性 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4302" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>: 用 于 生 成 或 解 释 该 自 定 义 对 象 数 据 的 扩 展 应 用 程 序 名 称 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4303" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>A Name xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4304" CTM="1 0 0 1 31.7 44"><ofd:TextCode>pp g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4305" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>: 形 成 此 扩 展 信 息 的 软 件 厂 商 标 识 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4306" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>Coman xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4307" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>p y g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4308" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>: 形 成 此 扩 展 信 息 的 软 件 版 本 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4309" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>A Version xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4310" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>pp g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4311" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>: 形 成 此 扩 展 信 息 的 日 期 时 间 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4312" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>Date xsdateTime</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4313" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>_ 引 用 扩 展 项 针 对 的 文 档 项 目 的 标 识 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4314" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>RefId STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4315" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>: 扩 展 属 性, 的 数 值 组,用 于 简 单 的 扩 展 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4316" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>Proert xsstrin &quot;NameT eValue&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4317" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>p y g yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4318" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>: 扩 展 属 性 名 称 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4319" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>Name xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4320" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

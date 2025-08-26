@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="7241" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>xs elementname=&quot;Path&quot;type=&quot;CT Path&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7242" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7243" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>xs elementname=&quot;Text&quot;type=&quot;CT Text&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7244" CTM="1 0 0 1 31.7 44"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7245" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>xs choice</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7246" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7247" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>xs attributename=&quot;DrawParam&quot;t e=&quot;ST RefID&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7248" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7249" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7250" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>xs attributename=&quot;CTM&quot;type=&quot;ST Array&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7251" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>116</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7252" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7253" CTM="1 0 0 1 31.7 98.00000000000003"><ofd:TextCode>
+=== 第 122 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7254" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7255" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7256" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7257" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7258" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7259" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>xs element</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7260" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

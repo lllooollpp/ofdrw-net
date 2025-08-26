@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="7521" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt; : : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7522" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs restrictionbase=&quot;xs strin &quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7523" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7524" CTM="1 0 0 1 31.7 44"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7525" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>xs enumerationvalue=&quot;Miter&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7526" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7527" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>xs enumerationvalue=&quot;Round&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7528" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7529" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>xs enumerationvalue=&quot;Bevel&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7530" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7531" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>xs restriction</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7532" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7533" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>xs simpleType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7534" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7535" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>xs attribute</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7536" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7537" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs attributename=&quot;MiterLimit&quot;t e=&quot;xs double&quot;default=&quot;4.234&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7538" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7539" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7540" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>xs attributename=&quot;DashOffset&quot;t e=&quot;xs double&quot;default=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

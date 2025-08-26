@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4001" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>表 附 件 动 作 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4002" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>55</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4003" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4004" CTM="1 0 0 1 31.7 44"><ofd:TextCode>: 附 件 的 标 识 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4005" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>AttachID xsIDREF</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4006" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>: 是 否 在 新 窗 口 中 打 开 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4007" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>NewWindow xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4008" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>75</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4009" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4010" CTM="1 0 0 1 31.7 79.40000000000002"><ofd:TextCode>
+=== 第 81 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4011" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4012" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4013" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>动 作</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4014" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>14.4 URI</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4015" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>动 作 表 明 的 是 指 向 一 个 位 置。 动 作 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4016" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>URI URI URI 77</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4017" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>图 动 作 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4018" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>77 URI</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4019" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4020" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>动 作 属 性 说 明 见 表</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

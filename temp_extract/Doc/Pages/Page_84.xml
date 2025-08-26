@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1661" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>) 图 元 对 象 的 数 据 通 过 图 元 的 变 化 矩 阵,变 换 到 对 象 空 间;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1662" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>a</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1663" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>) 对 象 空 间 数 据 通 过 外 接 矩 形,变 换 到 外 部 的 页 面 空 间;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1664" CTM="1 0 0 1 31.7 44"><ofd:TextCode>b</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1665" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>) 、 、 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1666" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>页 面 空 间 根 据 页 面 区 域 的 大 小 坐 标 单 位 的 实 际 长 度 设 备 信 息 变 换 到 设 备 空 间</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1667" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>c</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1668" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>绘 制 参 数</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1669" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>8.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1670" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>绘 制 参 数 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1671" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>8.2.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1672" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>绘 制 参 数 是 一 组 用 于 控 制 绘 制 渲 染 效 果 的 修 饰 参 数 的 集 合。 绘 制 参 数 可 以 被 不 同 的 图 元 对 象 所</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1673" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>共 享。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1674" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>绘 制 参 数 可 以 继 承 已 有 的 绘 制 参 数,被 继 承 的 绘 制 参 数 称 为 该 参 数 的“基 础 绘 制 参 数”。 绘 制 参 数</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1675" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1676" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>结 构 如 图 所 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1677" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>22</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1678" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>图 绘 制 参 数 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1679" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>22</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1680" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>图 元 对 象 通 过 绘 制 参 数 的 标 识 引 用 绘 制 参 数。 图 元 对 象 在 引 用 绘 制 参 数 的 同 时,还 可 以 定 义 自 己</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

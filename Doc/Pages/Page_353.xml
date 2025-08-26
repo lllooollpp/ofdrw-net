@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="7041" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7042" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7043" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7044" CTM="1 0 0 1 31.7 44"><ofd:TextCode>xs simpleContent</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7045" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7046" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>xs extensionbase=&quot;ST Loc&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7047" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt; : :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7048" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>xs attributename=&quot;ID&quot;type=&quot;xs ID&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7049" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>114</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7050" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7051" CTM="1 0 0 1 31.7 85.60000000000002"><ofd:TextCode>
+=== 第 120 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7052" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7053" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7054" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7055" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>use=&quot;required&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7056" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7057" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>xs extension</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7058" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7059" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>xs sim leContent</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7060" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

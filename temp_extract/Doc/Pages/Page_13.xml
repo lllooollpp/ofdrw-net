@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="241" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>…………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="242" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>附 件 列 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="243" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>20.1 88</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="244" CTM="1 0 0 1 31.7 44"><ofd:TextCode>附 件 ………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="245" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>20.2 89</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="246" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>( ) …………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="247" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>附 录 规 范 性 附 录</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="248" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>A Schema 91</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="249" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>…………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="250" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>A.1 OFD.xsd 91</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="251" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>……………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="252" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>A.2 Document.xsd 93</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="253" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>…………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="254" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>A.3 Annotations.xsd 98</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="255" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>……………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="256" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>A.4 Annotation.xsd 98</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="257" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>…………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="258" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>A.5 Res.xsd 100</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="259" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>……………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="260" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>A.6 Definition.xsd 105</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

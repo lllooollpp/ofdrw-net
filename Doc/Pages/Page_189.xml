@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3761" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>1 0E33 2 124 181</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3762" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>多 对 多</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3763" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>11.4.5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3764" CTM="1 0 0 1 31.7 44"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3765" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>多 个 字 符 对 应 多 个 字 符 的 情 况 描 述 如 图 所 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3766" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>69</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3767" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>图 多 对 多</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3768" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>69</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3769" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>上 图 是 一 个 泰 米 尔 文 字 的 例 子,例 子 中 个 泰 米 尔 字 符( 和 )在 有 些 字 型 中 对 应 个 字</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3770" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>2 0BAA 0BCB 3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3771" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>形( 、 和 )。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3772" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>3476 88</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3773" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3774" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>多 对 多 渲 染 效 果 如 图 所 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3775" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>70</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3776" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>图 多 对 多 渲 染 效 果</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3777" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>70</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3778" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>70</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3779" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3780" CTM="1 0 0 1 31.7 141.40000000000003"><ofd:TextCode>
+=== 第 76 页 ===
+</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

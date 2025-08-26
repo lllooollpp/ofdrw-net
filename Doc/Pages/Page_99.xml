@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1961" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>RGB</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1962" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>例 如: 、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1963" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&quot;#11#22#33&quot;&quot;173451&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1964" CTM="1 0 0 1 31.7 44"><ofd:TextCode>包 含 四 个 通 道,依 次 是 青、黄、品 红、黑</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1965" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>有 效</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1966" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>CMYK</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1967" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>: 、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1968" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>例 如</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1969" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&quot;#11#22#33#44&quot;&quot;17345168&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1970" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>底 纹</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1971" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>8.3.3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1972" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>, 。 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1973" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>底 纹 是 复 杂 颜 色 的 一 种 用 于 图 形 和 文 字 的 填 充 以 及 勾 边 处 理 底 纹 结 构 如 图 所 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1974" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>26</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1975" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>33</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1976" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1977" CTM="1 0 0 1 31.7 122.80000000000004"><ofd:TextCode>
+=== 第 39 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1978" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1979" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1980" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>图 底 纹 结 构</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="121" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>8.3.4.2 36</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="122" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>…………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="123" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>径 向 渐 变</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="124" CTM="1 0 0 1 31.7 44"><ofd:TextCode>8.3.4.3 39</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="125" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="126" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>高 洛 德 渐 变</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="127" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>8.3.4.4 45</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="128" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>…………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="129" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>网 格 高 洛 德 渐 变</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="130" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>8.3.4.5 47</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="131" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>裁 剪 区………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="132" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>8.4 48</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="133" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>图 元 对 象……………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="134" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>8.5 49</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="135" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>图 形………………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="136" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>9 52</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="137" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>……………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="138" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>图 形 对 象</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="139" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>9.1 52</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="140" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>填 充 规 则……………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

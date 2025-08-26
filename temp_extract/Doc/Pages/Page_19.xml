@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="361" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>3.7</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="362" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>图 元</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="363" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>ra hicunit</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="364" CTM="1 0 0 1 31.7 44"><ofd:TextCode>g p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="365" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="366" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>版 式 文 档 中 页 面 上 呈 现 内 容 的 最 基 本 单 元</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="367" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>3.8</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="368" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>资 源</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="369" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>resource</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="370" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>绘 制 图 元 所 用 的 参 数 和 其 他 数 据(如 字 型、图 像 等)。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="371" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>3.9</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="372" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>路 径</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="373" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>path</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="374" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>一 系 列 点、线 和 曲 线 按 照 一 定 规 则 组 成 的 集 合。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="375" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>3.10</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="376" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>裁 剪 区</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="377" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>cli reion</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="378" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>p g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="379" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>由 一 组 路 径、文 字 构 成,用 于 指 定 图 元 对 象 绘 制 的 有 效 区 域。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="380" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>3.11</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

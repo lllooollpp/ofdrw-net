@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4641" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>ModDate xsdateTime</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4642" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>: 附 件 大 小,以 为 单 位 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4643" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>Size xsdouble KB</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4644" CTM="1 0 0 1 31.7 44"><ofd:TextCode>附 件 是 否 可 见</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4645" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4646" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4647" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>Visible xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4648" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>默 认 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4649" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>true</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4650" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>附 件 用 途</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4651" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4652" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4653" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>Usage xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4654" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>默 认 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4655" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>none</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4656" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4657" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>附 件 内 容 在 包 内 的 路 径 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4658" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>FileLoc STLoc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4659" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>90</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4660" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

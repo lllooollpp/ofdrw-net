@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3461" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3462" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3463" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>FixedWidth xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3464" CTM="1 0 0 1 31.7 44"><ofd:TextCode>默 认 值 是</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3465" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>false</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3466" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>_ ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3467" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>指 向 内 嵌 字 型 文 件 嵌 入 字 型 文 件 应 使 用 格 式 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3468" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>FontFile STLoc OpenType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3469" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>文 字 对 象</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3470" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>11.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3471" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>文 字 对 象 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3472" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>59</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3473" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>62</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3474" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3475" CTM="1 0 0 1 31.7 110.40000000000003"><ofd:TextCode>
+=== 第 68 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3476" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3477" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3478" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>图 文 字 对 象 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3479" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>59</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3480" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>63</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

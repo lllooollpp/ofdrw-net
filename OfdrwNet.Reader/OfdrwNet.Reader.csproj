@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\OfdrwNet.Core\OfdrwNet.Core.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Packaging\OfdrwNet.Packaging.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Title>OFDRW.NET Reader - OFD文档读取器</Title>
+    <Description>OFDRW.NET的文档读取模块，提供OFD文档的解析和读取功能</Description>
+    <Authors>OFDRW.NET Team</Authors>
+    <PackageProjectUrl>https://github.com/ofdrw/ofdrw-net</PackageProjectUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageTags>ofd;reader;parser;document-reading</PackageTags>
+    <Version>1.0.0</Version>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+</Project>

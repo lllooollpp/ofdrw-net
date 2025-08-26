@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4381" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>18.2.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4382" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4383" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>的 数 字 签 名 通 过 对 签 名 描 述 文 件 的 保 护 间 接 实 现 对 原 文 的 保 护 签 名 结 构 中 的 签 名 信</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4384" CTM="1 0 0 1 31.7 44"><ofd:TextCode>OFD OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4385" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>83</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4386" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4387" CTM="1 0 0 1 31.7 60.800000000000004"><ofd:TextCode>
+=== 第 89 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4388" CTM="1 0 0 1 31.7 66.80000000000001"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4389" CTM="1 0 0 1 31.7 73.00000000000001"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4390" CTM="1 0 0 1 31.7 79.20000000000002"><ofd:TextCode>息( )是 这 一 过 程 中 的 关 键 节 点,其 中 记 录 了 当 次 数 字 签 名 保 护 的 所 有 文 件 的 二 进 制 摘 要 信</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4391" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>SignedInfo</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4392" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>息,同 时 将 安 全 算 法 提 供 者、签 名 算 法、签 名 时 间 和 所 应 用 的 安 全 印 章 等 信 息 也 包 含 在 此 节 点 内。 签 名</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4393" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>描 述 文 件 同 时 包 含 了 签 名 值 将 要 存 放 的 包 内 位 置,一 旦 对 该 文 件 实 施 签 名 保 护,则 其 对 应 的 包 内 文 件 原</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4394" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>, 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4395" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>文 以 及 本 次 签 名 对 应 的 附 加 信 息 都 将 不 可 改 动 从 而 实 现 一 次 数 字 签 名 对 整 个 原 文 内 容 的 保 护 签 名</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4396" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>描 述 文 件 的 主 要 结 构 描 述 见 图 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4397" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>86</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4398" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>图 签 名 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4399" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>86</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4400" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>, 。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

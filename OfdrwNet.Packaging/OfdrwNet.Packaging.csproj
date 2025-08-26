@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\OfdrwNet.Core\OfdrwNet.Core.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Title>OFDRW.NET Packaging - OFD文件容器管理</Title>
+    <Description>OFDRW.NET的文件容器管理模块，提供虚拟容器和文件管理功能</Description>
+    <Authors>OFDRW.NET Team</Authors>
+    <PackageProjectUrl>https://github.com/ofdrw/ofdrw-net</PackageProjectUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageTags>ofd;packaging;container;file-management</PackageTags>
+    <Version>1.0.0</Version>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+</Project>

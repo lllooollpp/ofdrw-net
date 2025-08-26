@@ -1,0 +1,13 @@
+﻿<OFD Version="1.2" DocType="OFD" xmlns="http://www.ofdspec.org/2016">
+  <DocBody DocRoot="Doc/Document.xml">
+    <DocInfo>
+      <DocID>eea742a391fb4ddca3b0c851f17b1607</DocID>
+      <Title>由OfdrwNet生成的OFD文档</Title>
+      <Creator>OfdrwNet</Creator>
+      <CreatorVersion>1.0</CreatorVersion>
+      <CreationDate>2025-08-26</CreationDate>
+      <ModDate>2025-08-26</ModDate>
+      <DocUsage>Normal</DocUsage>
+    </DocInfo>
+  </DocBody>
+</OFD>

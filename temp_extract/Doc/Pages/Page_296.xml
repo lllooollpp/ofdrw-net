@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5901" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5902" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs attribute</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5903" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5904" CTM="1 0 0 1 31.7 44"><ofd:TextCode>xs attributename=&quot;BitsPerComponent&quot;type=&quot;xs int&quot;default=&quot;8&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5905" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5906" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>xs attributename=&quot;Profile&quot;type=&quot;ST Loc&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5907" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5908" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>xs com lexT e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5909" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5910" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>&lt;! &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5911" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>绘 制 参 数 定 义</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5912" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>-- --</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5913" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5914" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>xs complexTypename=&quot;CT DrawParam&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5915" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5916" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>xs se uence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5917" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>q</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5918" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5919" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>xs elementname=&quot;FillColor&quot;t e=&quot;CT Color&quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5920" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

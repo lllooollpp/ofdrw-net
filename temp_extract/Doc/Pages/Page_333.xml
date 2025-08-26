@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="6641" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6642" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs elementname=&quot;References&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6643" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6644" CTM="1 0 0 1 31.7 44"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6645" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6646" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>xs se uence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6647" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>q</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6648" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>&lt; :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6649" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>xs elementname=&quot;Reference&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6650" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6651" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>maxOccurs=&quot;unbounded&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6652" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6653" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6654" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6655" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>xs se uence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6656" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>q</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6657" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>&lt; :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6658" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>xs element</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6659" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>110</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6660" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

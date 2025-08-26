@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1461" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>包 含 了 一 组 文 档 所 用 多 媒 体 对 象 的 描 述 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1462" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>MultiMedias</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1463" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>多 媒 体 资 源 描 述,在 基 础 类 型 上 扩 展 定 义 属 性,类 型 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1464" CTM="1 0 0 1 31.7 44"><ofd:TextCode>ID ST</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1465" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>_ 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1466" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>MultiMedia CTMultiMedia</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1467" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1468" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>ID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1469" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>包 含 了 一 组 矢 量 图 像(被 复 合 图 元 对 象 所 引 用)的 描 述 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1470" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>ComositeGrahicUnits</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1471" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>p p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1472" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>, ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1473" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>矢 量 图 像 资 源 描 述 在 基 础 类 型 上 扩 展 定 义 属 性 类 型 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1474" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>ID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1475" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>_ 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1476" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>CompositeGraphicUnit CTVectorG</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1477" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1478" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>STID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1479" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1480" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>本 标 准 中 的 资 源 包 含 以 下 类 型</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

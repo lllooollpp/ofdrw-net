@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3921" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3922" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>跳 转 的 目 标 区 域 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3923" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>Dest CTDest</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3924" CTM="1 0 0 1 31.7 44"><ofd:TextCode>跳 转 的 目 标 书 签 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3925" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>Bookmark</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3926" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>: ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3927" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>目 标 书 签 的 名 称 引 用 文 档 书 签 定 义 中 的 名 称 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3928" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>Name xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3929" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>其 中 目 标 区 域 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3930" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>75</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3931" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>图 目 标 区 域 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3932" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>75</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3933" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>目 标 区 域 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3934" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>54</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3935" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>74</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3936" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3937" CTM="1 0 0 1 31.7 122.80000000000004"><ofd:TextCode>
+=== 第 80 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3938" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3939" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3940" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>表 目 标 区 域 属 性</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

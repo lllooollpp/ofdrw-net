@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2981" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>
+=== 第 57 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2982" CTM="1 0 0 1 31.7 31.4"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2983" CTM="1 0 0 1 31.7 37.6"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2984" CTM="1 0 0 1 31.7 43.800000000000004"><ofd:TextCode>图 形</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2985" CTM="1 0 0 1 31.7 50.00000000000001"><ofd:TextCode>9</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2986" CTM="1 0 0 1 31.7 56.20000000000001"><ofd:TextCode>图 形 对 象</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2987" CTM="1 0 0 1 31.7 62.40000000000001"><ofd:TextCode>9.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2988" CTM="1 0 0 1 31.7 68.60000000000001"><ofd:TextCode>。 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2989" CTM="1 0 0 1 31.7 74.80000000000001"><ofd:TextCode>图 形 对 象 具 有 一 般 图 元 对 象 的 一 切 属 性 和 行 为 特 征 图 形 对 象 结 构 如 图 所 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2990" CTM="1 0 0 1 31.7 81.00000000000001"><ofd:TextCode>46</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2991" CTM="1 0 0 1 31.7 87.20000000000002"><ofd:TextCode>图 图 形 对 象 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2992" CTM="1 0 0 1 31.7 93.40000000000002"><ofd:TextCode>46</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2993" CTM="1 0 0 1 31.7 99.60000000000002"><ofd:TextCode>图 形 对 象 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2994" CTM="1 0 0 1 31.7 105.80000000000003"><ofd:TextCode>35</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2995" CTM="1 0 0 1 31.7 112.00000000000003"><ofd:TextCode>表 图 形 对 象 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2996" CTM="1 0 0 1 31.7 118.20000000000003"><ofd:TextCode>35</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2997" CTM="1 0 0 1 31.7 124.40000000000003"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2998" CTM="1 0 0 1 31.7 130.60000000000002"><ofd:TextCode>图 形 是 否 被 勾 边</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2999" CTM="1 0 0 1 31.7 136.8"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3000" CTM="1 0 0 1 31.7 143"><ofd:TextCode>Stroke xsboolean</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

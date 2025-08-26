@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Document xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:CommonData>
+        <ofd:PageArea>
+            <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+        </ofd:PageArea>
+    </ofd:CommonData>
+    <ofd:Pages>
+        <ofd:Page ID="1" BaseLoc="Pages/Page_1.xml"/>
+    </ofd:Pages>
+</ofd:Document>

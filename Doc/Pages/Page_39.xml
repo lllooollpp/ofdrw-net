@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="761" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>Creator xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="762" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="763" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>创 建 文 档 的 应 用 程 序 的 版 本 信 息 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="764" CTM="1 0 0 1 31.7 44"><ofd:TextCode>CreatorVersion xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="765" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>用 户 自 定 义 元 数 据 集 合。 其 子 节 点 为 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="766" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>CustomDatas CustomData</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="767" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>: 用 户 自 定 义 元 数 据,可 以 指 定 一 个 名 称 及 其 对 应 的 值 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="768" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>CustomData xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="769" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>: 用 户 自 定 义 元 数 据 名 称 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="770" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>Name xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="771" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>文 档 根 节 点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="772" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>7.5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="773" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>文 档 根 节 点 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="774" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="775" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>8</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="776" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="777" CTM="1 0 0 1 31.7 122.80000000000004"><ofd:TextCode>
+=== 第 14 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="778" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="779" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="780" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>图 文 档 根 节 点 结 构</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4341" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>等 情 况),见 图 。 当 允 许 下 次 继 续 添 加 签 名 时,该 文 件 不 会 被 包 含 到 本 次 签 名 的 保 护 文 件 列 表(</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4342" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>85 Refer-</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4343" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>)中。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4344" CTM="1 0 0 1 31.7 44"><ofd:TextCode>ences</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4345" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>图 签 名 列 表 根 节 点 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4346" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>85</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4347" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4348" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>签 名 列 表 根 节 点 对 应 元 素 说 明 见 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4349" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>66</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4350" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>表 签 名 列 表 根 节 点 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4351" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>66</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4352" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4353" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>签 名 列 表 根 结 点 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4354" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>Signatures</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4355" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>安 全 标 识 的 最 大 值,作 用 与 文 档 入 口 文 件 中 的</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4356" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>Document.xml MaxID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4357" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>: 相 同,为 了 避 免 在 签 名 时 影 响 文 档 入 口 文 件,采 用 了 与 _ 不 一 样 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4358" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>MaxSignId xsID STID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4359" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>。 “ ” ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4360" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>的 编 码 方 式 推 荐 使 用 的 编 码 方 式 从 开 始</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

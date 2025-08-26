@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="841" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>0 MaxUnitID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="842" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>主 要 用 于 文 档 编 辑,在 向 文 档 中 新 增 加 一 个 对 象 时,需 要 分 配 一 个</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="843" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>_ 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="844" CTM="1 0 0 1 31.7 44"><ofd:TextCode>MaxUnitID STID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="845" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>新 的 标 识,新 标 识 取 值 宜 为 ,同 时 需 要 修 改 此</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="846" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>MaxUnitID+1 Max-</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="847" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>值</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="848" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>UnitID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="849" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>_ 指 定 该 文 档 页 面 区 域 的 默 认 大 小 和 位 置 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="850" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>PaeArea CTPaeArea</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="851" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>g g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="852" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>公 共 资 源 序 列,每 个 节 点 指 向 包 内 的 一 个 资 源 描 述 文 档,资 源</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="853" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="854" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>_ 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="855" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>PublicRes STLoc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="856" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>部 分 的 描 述 见 ,字 型 和 颜 色 空 间 等 宜 在 公 共 资 源 文 件 中 描 述</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="857" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>7.9</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="858" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>文 档 资 源 序 列,每 个 节 点 指 向 包 内 的 一 个 资 源 描 述 文 档,资 源</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="859" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="860" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>_ , 、</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1061" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1062" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>表 (续)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1063" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>9</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1064" CTM="1 0 0 1 31.7 44"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1065" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>页 面 布 局 模 式,可 取 值 如 下:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1066" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>——— 单 页 模 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1067" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>OnePae</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1068" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1069" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>——— 单 列 模 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1070" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>OneColumn</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1071" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>———</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1072" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>对 开 模 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1073" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>TwoPageL</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1074" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1075" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>PageLayout xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1076" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>——— 对 开 连 续 模 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1077" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>TwoColumnL</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1078" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>——— 对 开 靠 右 模 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1079" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>TwoPaeR</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1080" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

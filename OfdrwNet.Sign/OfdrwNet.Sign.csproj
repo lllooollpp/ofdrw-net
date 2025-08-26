@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Title>OFDRW.NET 数字签名模块</Title>
+    <Description>OFD数字签名功能的.NET 8实现，提供符合GB/T 33190-2016标准的电子签名和验证功能</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OfdrwNet.Core\OfdrwNet.Core.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Packaging\OfdrwNet.Packaging.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Reader\OfdrwNet.Reader.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Crypto\OfdrwNet.Crypto.csproj" />
+  </ItemGroup>
+
+</Project>

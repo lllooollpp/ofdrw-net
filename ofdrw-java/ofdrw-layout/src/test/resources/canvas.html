@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas测试</title>
+</head>
+<body>
+
+<canvas id="canvas" width="1050" height="1485" style="border:1px solid #c3c3c3;">
+    您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+
+<script>
+var c=document.getElementById("canvas");
+var ctx=c.getContext("2d");
+
+const img = new Image();
+img.src = "https://www.runoob.com/images/lamp.jpg";
+
+img.onload = () => {
+  const pattern = ctx.createPattern(img, "no-repeat");
+  ctx.fillStyle = pattern;
+  ctx.fillRect(0, 0, 300, 300);
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1981" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>26</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1982" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>底 纹 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1983" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>28</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1984" CTM="1 0 0 1 31.7 44"><ofd:TextCode>表 底 纹 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1985" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>28</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1986" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1987" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>: 底 纹 单 元 的 宽 度 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1988" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>Width xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1989" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>: 底 纹 单 元 的 高 度 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1990" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>Height xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1991" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>, 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1992" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>方 向 底 纹 单 元 间 距 默 认 值 为 底 纹 单 元 的 宽 度 若 设 定 值 小 于 底</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1993" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>X</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1994" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1995" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1996" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>XStep xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1997" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1998" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>纹 单 元 的 宽 度 时 应 按 默 认 值 处 理</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1999" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>方 向 底 纹 单 元 间 距,默 认 值 底 纹 单 元 的 高 度。 若 设 定 值 小 于 底 纹</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2000" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>Y</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

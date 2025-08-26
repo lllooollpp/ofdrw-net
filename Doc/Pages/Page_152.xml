@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3021" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3022" CTM="1 0 0 1 31.7 29.799999999999997"><ofd:TextCode>
+=== 第 58 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3023" CTM="1 0 0 1 31.7 35.8"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3024" CTM="1 0 0 1 31.7 42"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3025" CTM="1 0 0 1 31.7 48.2"><ofd:TextCode>表 (续)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3026" CTM="1 0 0 1 31.7 54.400000000000006"><ofd:TextCode>35</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3027" CTM="1 0 0 1 31.7 60.60000000000001"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3028" CTM="1 0 0 1 31.7 66.80000000000001"><ofd:TextCode>勾 边 颜 色</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3029" CTM="1 0 0 1 31.7 73.00000000000001"><ofd:TextCode>_ 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3030" CTM="1 0 0 1 31.7 79.20000000000002"><ofd:TextCode>StrokeColor CTColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3031" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>默 认 为 黑 色</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3032" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>: ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3033" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>图 形 轮 廓 数 据 由 一 系 列 紧 缩 的 操 作 符 和 操 作 数 构 成 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3034" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>AbbreviatedData xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3035" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>图 形 对 象 的 轮 廓 数 据 是 由 一 系 列 紧 缩 的 操 作 符 和 操 作 数 构 成 的 字 符 串,说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3036" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>36</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3037" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>表 图 形 对 象 紧 缩 描 述 方 式 运 算 符</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3038" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>36</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3039" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>操 作 符 操 作 数 说 明</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3040" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>定 义 子 绘 制 图 形 边 线 的 起 始 点 坐 标(,)</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

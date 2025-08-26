@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1781" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>线 条 连 接 点 截 断 值</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1782" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>8.2.3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1783" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>属 性 是 为 了 限 制 线 条 相 交 时 产 生 的 结 合 点 长 度,如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1784" CTM="1 0 0 1 31.7 44"><ofd:TextCode>MiterLimit 23</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1785" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>图 结 合 点 长 度</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1786" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>23</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1787" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>W</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1788" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>æα ö</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1789" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>, ç ÷ ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1790" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>图 中</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1791" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>23 sin =</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1792" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>L</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1793" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>è2ø</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1794" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>式 中:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1795" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>——— 线 宽;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1796" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>W</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1797" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>——— 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1798" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>结 合 点 长 度</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1799" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>L</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1800" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>线 条 的 虚 线 样 式</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1201" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>属 性 来 控 制 模 板 在 页 面 中 的 呈 现 顺 序</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1202" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1203" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>注 在 模 板 页 的 内 容 描 述 中 该 属 性 无 效</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1204" CTM="1 0 0 1 31.7 44"><ofd:TextCode>_ 引 用 在 文 档 公 用 数 据( )中 定 义 的 模 板 页 标 识 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1205" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>TemlateID STRefID CommonData</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1206" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1207" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1208" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>控 制 模 板 在 页 面 中 的 呈 现 顺 序 其 类 型 描 述 和 呈 现 顺 序 与 中</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1209" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>Layer</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1210" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>的 描 述 和 处 理 一 致</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1211" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>T e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1212" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1213" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>: 如 果 多 个 图 层 的 此 属 性 相 同,则 应 根 据 其 出 现 的 顺 序 来 显 示,先 出 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1214" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>ZOrder xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1215" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1216" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>现 者 先 绘 制</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1217" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1218" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>Background</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1219" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>, 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1220" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>定 义 该 页 页 面 区 域 的 大 小 和 位 置 仅 对 该 页 有 效 该 节 点 不 出 现 时</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

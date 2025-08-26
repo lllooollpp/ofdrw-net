@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3581" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>61</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3582" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>文 字 定 位 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3583" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>46</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3584" CTM="1 0 0 1 31.7 44"><ofd:TextCode>表 文 字 定 位 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3585" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>46</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3586" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>属 性 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3587" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>第 一 个 文 字 的 字 型 原 点 在 对 象 坐 标 系 下 的 坐 标</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3588" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>X</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3589" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>: 当 不 出 现,则 采 用 上 一 个 的 值,文 字 对 象 中 的 第 一 个 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3590" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>X xsdouble X TextCode X</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3591" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>的 属 性 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3592" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>TextCode X</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3593" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>第 一 个 文 字 的 字 型 原 点 在 对 象 坐 标 系 下 的 坐 标</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3594" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>Y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3595" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>: , ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3596" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>当 不 出 现 则 采 用 上 一 个 的 值 文 字 对 象 中 的 第 一 个 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3597" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>Y xsdouble Y TextCode Y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3598" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>的 属 性 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3599" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>TextCode Y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3600" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>型 数 值 队 列,队 列 中 的 每 个 值 代 表 后 一 个 文 字 与 前 一 个 文 字 之</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

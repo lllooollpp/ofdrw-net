@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="8221" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>126</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8222" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8223" CTM="1 0 0 1 31.7 36"><ofd:TextCode>
+=== 第 132 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8224" CTM="1 0 0 1 31.7 42"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8225" CTM="1 0 0 1 31.7 48.2"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8226" CTM="1 0 0 1 31.7 54.400000000000006"><ofd:TextCode>参 考 文 献</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8227" CTM="1 0 0 1 31.7 60.60000000000001"><ofd:TextCode>[] / — :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8228" CTM="1 0 0 1 31.7 66.80000000000001"><ofd:TextCode>信 息 技 术 词 汇 第 部 分 基 本 术 语</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8229" CTM="1 0 0 1 31.7 73.00000000000001"><ofd:TextCode>1 GBT5271.1 2000   1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8230" CTM="1 0 0 1 31.7 79.20000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

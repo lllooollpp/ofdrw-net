@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="741" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>DocUsae xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="742" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>g g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="743" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>———</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="744" CTM="1 0 0 1 31.7 44"><ofd:TextCode>电 子 报 纸</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="745" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>ENewsPaper</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="746" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>——— 电 子 期 刊 杂 志</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="747" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>EMagzine</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="748" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="749" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>Normal</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="750" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>_ ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="751" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>文 档 封 面 此 路 径 指 向 一 个 图 片 文 件 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="752" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>Cover STLoc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="753" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>, “ ”</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="754" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>关 键 词 集 合 每 一 个 关 键 词 用 一 个 子 节 点 来 表 达 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="755" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>Keywords Keyword</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="756" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="757" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>关 键 词 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="758" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>Keyword xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="759" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="760" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>创 建 文 档 的 应 用 程 序 可 选</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

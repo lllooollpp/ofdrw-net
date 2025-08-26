@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3501" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>Fill xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3502" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3503" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>true</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3504" CTM="1 0 0 1 31.7 44"><ofd:TextCode>字 型 在 水 平 方 向 的 放 缩 比</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3505" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>: 默 认 值 为 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3506" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>HScale xsdouble 1.0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3507" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3508" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>例 如 当 值 为 时 表 示 实 际 显 示 的 字 宽 为 原 来 字 宽 的 一 半</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3509" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>HScale 0.5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3510" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>阅 读 方 向,指 定 了 文 字 排 列 的 方 向,描 述 见 文 字 定 位</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3511" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>11.3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3512" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3513" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>ReadDirection xsint</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3514" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3515" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3516" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>字 符 方 向,指 定 了 文 字 放 置 的 方 式,具 体 内 容 见 文 字 定 位</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3517" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>11.3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3518" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3519" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3520" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>CharDirection xsint</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

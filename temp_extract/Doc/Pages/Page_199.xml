@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3961" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>p g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3962" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>)所 确 定 的 矩 形 区 域</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3963" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>Bottom</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3964" CTM="1 0 0 1 31.7 44"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3965" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>引 用 跳 转 目 标 页 面 的 标 识 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3966" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>PageID STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3967" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>目 标 区 域 左 上 角 坐 标</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3968" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>x</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3969" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3970" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3971" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>Left xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3972" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>默 认 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3973" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3974" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3975" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>目 标 区 域 右 下 角 坐 标 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3976" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>Right xsdouble x</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3977" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>目 标 区 域 左 上 角 坐 标</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3978" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3979" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3980" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

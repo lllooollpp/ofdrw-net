@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2021" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2022" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>RelativeTo xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2023" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>:相 对 于 对 象 坐 标 系 的 原 点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2024" CTM="1 0 0 1 31.7 44"><ofd:TextCode>Object</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2025" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2026" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>Obect</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2027" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>j</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2028" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>底 纹 单 元 的 变 换 矩 阵,用 于 某 些 需 要 对 底 纹 单 元 进 行 平 移 旋 转 变 换</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2029" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>_ 的 场 合,默 认 为 单 位 矩 阵;底 纹 呈 现 时 先 做 、 排 列,然 后 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2030" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>CTM STArra XSte YSte</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2031" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>y p p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2032" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>一 起 做 处 理</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2033" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>CTM</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2034" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>_ 底 纹 单 元,用 底 纹 填 充 目 标 区 域 时,所 使 用 的 单 元 对 象 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2035" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>CellContent CTPageBlock</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2036" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>_ 引 用 资 源 文 件 中 缩 略 图 图 像 的 标 识 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2037" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>Thumbnail STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2038" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>翻 转 示 例:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2039" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>底 纹 以 为 一 个 底 纹 单 元,在 底 纹 绘 制 区 域 中 以 此 底 纹 单 元 上 的 内 容 平 铺 填 满。 图 为 一 个 图 像,底 纹</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2040" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>CellContent 27</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

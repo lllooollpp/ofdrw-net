@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2121" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2122" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>_ 轴 线 的 起 始 点 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2123" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>StartPoint STPos</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2124" CTM="1 0 0 1 31.7 44"><ofd:TextCode>_ 轴 线 的 结 束 点 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2125" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>EndPoint STPos</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2126" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>颜 色 段,至 少 出 现 两 个 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2127" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>Sement</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2128" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2129" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>用 于 确 定 和 中 的 各 颜 色 的 位 置 值,取 值 范 围 是</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2130" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>StartPoint EndPoint</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2131" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>[, ],各 段 颜 色 的 值 应 根 据 颜 色 出 现 的 顺 序 递 增</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2132" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>01.0 Position</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2133" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2134" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>第 一 个 的 属 性 默 认 值 为 最 后 一 个 的</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2135" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>Segment Position 0 Segment</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2136" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>, ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2137" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>属 性 默 认 值 为 当 不 存 在 时 在 空 缺 区 间 内 平 均 分 配</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2138" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>Position 1.0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2139" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2140" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>Position xsdouble</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

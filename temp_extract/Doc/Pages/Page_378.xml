@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="7541" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7542" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7543" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>xs attributename=&quot;DashPattern&quot;type=&quot;ST Array&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7544" CTM="1 0 0 1 31.7 44"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7545" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>xs attributename=&quot;Alpha&quot;type=&quot;xs int&quot;default=&quot;255&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7546" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7547" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>xs com lexT e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7548" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7549" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt;! 文 本 对 象 及 其 定 义 &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7550" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>-- --</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7551" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7552" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>xs complexTypename=&quot;CT Text&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7553" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7554" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>xs complexContent</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7555" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7556" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>xs extensionbase=&quot;CT Gra hicUnit&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7557" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7558" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7559" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7560" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>119</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2601" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>径 向 渐 变 的 示 例:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2602" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>MapType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2603" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2604" CTM="1 0 0 1 31.7 44"><ofd:TextCode>ofdPathObjectID=&quot;10010&quot;Boundary=&quot;50250200150&quot;Fill=&quot;true&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2605" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2606" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>ofdFillColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2607" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2608" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>ofdRadialShdStartPoint=&quot;4070&quot;StartRadius=&quot;10&quot;EndPoint=&quot;5090&quot;EndRadius=&quot;70&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2609" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2610" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>ofdSegment</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2611" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2612" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>ofdColorValue=&quot;2552550&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2613" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2614" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>ofdSement</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2615" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2616" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>43</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2617" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2618" CTM="1 0 0 1 31.7 129.00000000000003"><ofd:TextCode>
+=== 第 49 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2619" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2620" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

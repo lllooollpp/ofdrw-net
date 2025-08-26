@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="6281" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6282" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>&lt; : _</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6283" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>xs attributename=&quot;ResourceID&quot;t e=&quot;ST RefID&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6284" CTM="1 0 0 1 31.7 44"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6285" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6286" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>use=&quot;required&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6287" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6288" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>xs attributename=&quot;Volume&quot;type=&quot;xs int&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6289" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6290" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>xs attributename=&quot;Re eat&quot;t e=&quot;xs boolean&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6291" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6292" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6293" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>xs attributename=&quot;Synchronous&quot;type=&quot;xs boolean&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6294" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6295" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6296" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6297" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs element</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6298" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6299" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>xs elementname=&quot;Movie&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6300" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

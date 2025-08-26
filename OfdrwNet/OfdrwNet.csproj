@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Title>OFDRW.NET - OFD文档处理库</Title>
+    <Description>完整的OFD文档处理解决方案，支持文档创建、编辑、渲染、转换和数字签名</Description>
+    <Authors>OFDRW.NET Team</Authors>
+    <PackageProjectUrl>https://github.com/ofdrw/ofdrw-net</PackageProjectUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>ofd;document;pdf;converter;signature;layout</PackageTags>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OfdrwNet.Core\OfdrwNet.Core.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Packaging\OfdrwNet.Packaging.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Reader\OfdrwNet.Reader.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Layout\OfdrwNet.Layout.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Font\OfdrwNet.Font.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Crypto\OfdrwNet.Crypto.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Graphics\OfdrwNet.Graphics.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Converter\OfdrwNet.Converter.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Tools\OfdrwNet.Tools.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Sign\OfdrwNet.Sign.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

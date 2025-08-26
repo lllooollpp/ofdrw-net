@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="881" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>。 如 果 此 项 不 存 在,采 用 作 为 默 认 颜 色 空 间</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="882" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>8.3.1 RGB</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="883" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>页 面 区 域 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="884" CTM="1 0 0 1 31.7 44"><ofd:TextCode>7</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="885" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>图 页 面 区 域 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="886" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>7</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="887" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>页 面 区 域 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="888" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>7</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="889" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>表 页 面 区 域 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="890" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>7</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="891" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="892" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>_ ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="893" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>页 面 物 理 区 域 左 上 角 的 坐 标 为 页 面 空 间 坐 标 系 的 原 点 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="894" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>PhysicalBox STBox</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="895" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>, ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="896" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>显 示 区 域 页 面 内 容 实 际 显 示 或 打 印 输 出 的 区 域 位 于 页 面 物 理 区</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="897" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>域 内,包 含 页 眉、页 脚、版 心 等 内 容</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="898" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>_ [例 外 处 理]如 果 显 示 区 域 不 完 全 位 于 页 面 物 理 区 域 内,页 面 物 理 区 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="899" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>A licationBox STBox</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="900" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>pp</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

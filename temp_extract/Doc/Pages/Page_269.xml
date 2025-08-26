@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5361" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5362" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs complexTypename=&quot;CT Bookmark&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5363" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5364" CTM="1 0 0 1 31.7 44"><ofd:TextCode>xs se uence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5365" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>q</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5366" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5367" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>xs elementname=&quot;Dest&quot;t e=&quot;CT Dest&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5368" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5369" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5370" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5371" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5372" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>xs attributename=&quot;Name&quot;type=&quot;xs string&quot;use=&quot;required&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5373" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5374" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>xs com lexT e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5375" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5376" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5377" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs schema</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5378" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>A.3 Annotations.xsd</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5379" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>&lt;? ?&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5380" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>xmlversion=&quot;1.0&quot;encoding=&quot;UTF-8&quot;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

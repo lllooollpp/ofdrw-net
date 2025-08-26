@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1701" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>Join xsstring Round</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1702" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>Bevel</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1703" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1704" CTM="1 0 0 1 31.7 44"><ofd:TextCode>Miter</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1705" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>线 条 连 接 样 式 的 取 值 和 显 示 效 果 之 间 的 关 系 见 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1706" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>22</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1707" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>线 宽,非 负 浮 点 数,指 定 了 路 径 绘 制 时 线 的 宽 度。 由 于 某 些 设 备 不</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1708" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>能 输 出 一 个 像 素 宽 度 的 线,因 此 强 制 规 定 当 线 宽 大 于 时,无 论 多</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1709" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1710" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>: ; ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1711" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>小 都 最 少 要 绘 制 两 个 像 素 的 宽 度 当 线 宽 为 时 绘 制 一 个 像 素 的 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1712" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>LineWidth xsdouble 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1713" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>宽 度。 由 于 线 宽 的 定 义 与 设 备 相 关,所 以 不 推 荐 使 用 线 宽 。 默</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1714" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>0 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1715" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1716" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>0.353mm</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1717" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>, 。 ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1718" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>线 条 虚 线 样 式 开 始 的 位 置 默 认 值 为 当 不 出 现 时</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1719" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>0 DashPattern</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1720" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

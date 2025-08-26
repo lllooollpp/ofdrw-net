@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3121" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>Area 49</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3122" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>图 区 域 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3123" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>49</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3124" CTM="1 0 0 1 31.7 44"><ofd:TextCode>图 形 中 的 所 有 线 条 绘 制 都 基 于“当 前 点”,当 路 径 开 始 时, 节 点 的 属 性 所 指 定 的 位 置 为 当</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3125" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>Area Start</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3126" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>, 。 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3127" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>前 点 之 后 以 上 一 个 线 条 的 结 束 位 置 为 当 前 点 图 形 对 象 描 述 见 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3128" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>37</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3129" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>表 图 形 对 象 描 述 方 法</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3130" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>37</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3131" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3132" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>_ 定 义 子 图 形 的 起 始 点 坐 标 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3133" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>Start STPos</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3134" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>从 当 前 点 移 动 到 新 的 当 前 点 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3135" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>Move</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3136" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>从 当 前 点 连 接 一 条 到 指 定 点 的 线 段,并 将 当 前 点 移 动 到 指 定 点 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3137" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>Line</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3138" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3139" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>从 当 前 点 连 接 一 条 到 的 二 次 贝 塞 尔 曲 线 并 将 当 前 点 移 动 到</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3140" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>Point2</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="201" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="202" CTM="1 0 0 1 31.7 29.799999999999997"><ofd:TextCode>
+=== 第 4 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="203" CTM="1 0 0 1 31.7 35.8"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="204" CTM="1 0 0 1 31.7 42"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="205" CTM="1 0 0 1 31.7 48.2"><ofd:TextCode>注 释 ……………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="206" CTM="1 0 0 1 31.7 54.400000000000006"><ofd:TextCode>15 78</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="207" CTM="1 0 0 1 31.7 60.60000000000001"><ofd:TextCode>注 释 入 口 文 件 ……………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="208" CTM="1 0 0 1 31.7 66.80000000000001"><ofd:TextCode>15.1 78</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="209" CTM="1 0 0 1 31.7 73.00000000000001"><ofd:TextCode>……………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="210" CTM="1 0 0 1 31.7 79.20000000000002"><ofd:TextCode>分 页 注 释 文 件</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="211" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>15.2 78</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="212" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>自 定 义 标 引 ……………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="213" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>16 80</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="214" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>扩 展 信 息 ………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="215" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>17 81</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="216" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="217" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>数 字 签 名</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="218" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>18 83</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="219" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>签 名 列 表 …………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="220" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>18.1 83</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1521" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>8.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1522" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>坐 标 说 明</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1523" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>8.1.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1524" CTM="1 0 0 1 31.7 44"><ofd:TextCode>页 面 中 的 所 有 图 元 都 在 坐 标 空 间 内 进 行 描 述,一 个 坐 标 空 间 包 括 坐 标 原 点、坐 标 轴 方 向、坐 标 单 位</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1525" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>长 度 三 个 要 素。 坐 标 空 间 根 据 用 途 不 同 分 为 设 备 空 间、页 面 空 间、对 象 空 间 三 类。 不 同 的 坐 标 空 间 之 间</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1526" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>、 、 、 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1527" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>通 过 平 移 缩 放 旋 转 切 变 进 行 变 换</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1528" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>设 备 空 间</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1529" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>8.1.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1530" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>页 面 中 的 内 容 最 终 需 要 输 出 到 某 一 设 备 上,而 每 个 设 备 都 会 拥 有 自 己 的 坐 标 空 间 以 便 在 绘 制 区 域</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1531" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>内 能 够 正 确 绘 制 每 个 图 元,设 备 本 身 的 坐 标 空 间 就 称 之 为 设 备 空 间。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1532" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>、 ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1533" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>设 备 空 间 的 原 点 轴 方 向 与 坐 标 单 位 的 实 际 长 度 都 会 由 于 设 备 不 同 而 有 很 大 的 差 异 页 面 的 内 容 不</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1534" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>应 直 接 在 设 备 空 间 上 描 述。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1535" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>页 面 空 间</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1536" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>8.1.3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1537" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>页 面 空 间 是 一 个 与 设 备 无 关 的 坐 标 空 间 系 统,用 来 描 述 图 元 和 其 他 页 面 要 素。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1538" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>页 面 空 间 规 定 页 面 的 左 上 角 为 原 点, 轴 向 右 增 长, 轴 向 下 增 长,以 毫 米 为 单 位。 整 个 页 面 空 间</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1539" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>X Y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1540" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>( ) 。 、</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

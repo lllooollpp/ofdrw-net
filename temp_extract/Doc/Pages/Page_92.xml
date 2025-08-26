@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1821" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>DashPattern=null</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1822" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>DashPattern=&quot;3030&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1823" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>DashOffset=10DashPattern=&quot;3030&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1824" CTM="1 0 0 1 31.7 44"><ofd:TextCode>DashPattern=&quot;3015&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1825" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>DashOffset=25DashPattern=&quot;1530&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1826" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>DashOffset=50DashPattern=&quot;3015&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1827" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>线 条 的 端 点 样 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1828" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>8.2.5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1829" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>线 条 端 点 样 式 属 性 的 取 值 范 围 及 其 呈 现 效 果 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1830" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>Ca 24</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1831" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1832" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>表 线 条 的 端 点 样 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1833" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>24</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1834" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>属 性 取 值 呈 现 效 果</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1835" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>Butt</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1836" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>Cap Round</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1837" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>Square</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1838" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>颜 色</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1839" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>8.3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1840" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>颜 色 空 间</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5701" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5702" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs complexContent</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5703" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5704" CTM="1 0 0 1 31.7 44"><ofd:TextCode>xs extensionbase=&quot;CT DrawParam&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5705" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt; : _</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5706" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>xs attributename=&quot;ID&quot;type=&quot;ST ID&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5707" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5708" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>use=&quot;required&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5709" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5710" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>xs extension</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5711" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5712" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>xs com lexContent</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5713" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5714" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5715" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5716" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5717" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs element</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5718" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5719" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>xs se uence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5720" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>q</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

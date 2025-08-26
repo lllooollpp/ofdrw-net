@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2001" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2002" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>YSte xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2003" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2004" CTM="1 0 0 1 31.7 44"><ofd:TextCode>单 元 的 高 度 时,应 按 默 认 值 处 理</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2005" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>: 描 述 底 纹 单 元 的 映 像 翻 转 方 式,枚 举 值,默 认 值 为 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2006" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>ReflectMethod xsstrin Normal</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2007" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2008" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>34</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2009" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2010" CTM="1 0 0 1 31.7 79.40000000000002"><ofd:TextCode>
+=== 第 40 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2011" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2012" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2013" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>表 (续)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2014" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>28</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2015" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2016" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>底 纹 单 元 起 始 绘 制 位 置,可 取 值 如 下</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2017" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2018" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>相 对 于 页 面 坐 标 系 的 原 点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2019" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>Page</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2020" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3301" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>RotationAnle xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3302" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3303" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>[ ] ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3304" CTM="1 0 0 1 31.7 44"><ofd:TextCode>异 常 处 理 如 果 角 度 大 于 则 以 取 模</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3305" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>360° 360</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3306" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>是 否 是 大 圆 弧</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3307" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>表 示 此 线 型 对 应 的 为 度 数 大 于 的 弧, 表 示 对 应 度 数 小</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3308" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>true 180° false</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3309" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>于 的 弧</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3310" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>180°</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3311" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>: 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3312" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>LareArc xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3313" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3314" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>、 ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3315" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>对 于 一 个 给 定 长 短 轴 的 椭 圆 以 及 起 始 点 和 结 束 点 有 一 大 一 小 两</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3316" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>, , ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3317" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>条 圆 弧 如 果 所 描 述 线 型 恰 好 为 的 弧 则 此 属 性 的 值 不 被 参 考</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3318" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>180°</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3319" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>可 由 属 性 确 定 圆 弧 的 形 状</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3320" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>SweeDirection</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

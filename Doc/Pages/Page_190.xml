@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3781" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3782" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3783" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>视 频</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3784" CTM="1 0 0 1 31.7 44"><ofd:TextCode>12</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3785" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>, 。 、 、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3786" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>本 标 准 支 持 在 文 档 中 嵌 入 视 频 资 源 并 通 过 动 作 触 发 视 频 播 放 图 元 大 纲 节 点 页 面 和 文</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3787" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>Movie</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3788" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>档 均 可 定 义 动 作,其 详 细 描 述 见 第 章 动 作。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3789" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>14</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3790" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>通 过 页 面 图 元 触 发 视 频 播 放 时,可 选 择 视 频 中 某 一 静 态 帧 制 作 为 图 像 对 象,并 为 该 对 象 定 义 边 框 和</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3791" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>动 作,见 第 章 图 像。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3792" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>Movie 10</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3793" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>, 。 ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3794" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>图 元 对 象 关 联 的 视 频 播 放 时 宜 使 用 图 元 的 外 观 区 域 大 小 作 为 嵌 入 式 播 放 窗 口 其 他 情 况 下 宜 使</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3795" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>用 弹 出 式 窗 口。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3796" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>视 频 播 放 使 用 的 内 容 数 据 应 在 文 档 或 页 面 资 源 中 定 义,见 资 源。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3797" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>7.9</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3798" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>复 合 对 象</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3799" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>13</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3800" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>复 合 对 象 是 一 种 特 殊 的 图 元 对 象,拥 有 图 元 对 象 的 一 切 特 性,但 其 内 容 在 指 向 的 矢 量</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

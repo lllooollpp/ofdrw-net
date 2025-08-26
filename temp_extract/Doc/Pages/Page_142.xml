@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2821" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2822" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>渐 变 控 制 点,至 少 出 现 个 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2823" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>Point 4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2824" CTM="1 0 0 1 31.7 44"><ofd:TextCode>: 控 制 点 水 平 位 置 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2825" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>X xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2826" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2827" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>控 制 点 垂 直 位 置 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2828" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>Y xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2829" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>_ ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2830" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>控 制 点 对 应 的 颜 色 应 使 用 基 本 颜 色 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2831" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>Color CTColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2832" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>_ ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2833" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>渐 变 范 围 外 的 填 充 颜 色 应 使 用 基 本 颜 色 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2834" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>BackColor CTColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2835" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>裁 剪 区</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2836" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>8.4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2837" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>裁 剪 区 由 一 组 路 径 或 文 字 构 成,用 以 指 定 页 面 上 的 一 个 有 效 绘 制 区 域,落 在 裁 剪 区 以 外 的 部 分 不 受</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2838" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>绘 制 指 令 的 影 响。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2839" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>( ) , 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2840" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>一 个 裁 剪 区 可 由 多 个 分 路 径 组 成 最 终 的 裁 剪 范 围 是 各 个 分 路 径 的 并 集 裁 剪 区 中 的 数 据</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

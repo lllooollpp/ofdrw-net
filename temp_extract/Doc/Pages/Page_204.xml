@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4061" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>false</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4062" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>是 否 同 步 播 放</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4063" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>表 示 后 续 动 作 应 等 待 此 音 频 播 放 结 束 后 才 能 开 始, 表 示 立</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4064" CTM="1 0 0 1 31.7 44"><ofd:TextCode>true false</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4065" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4066" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>Snchronous xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4067" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4068" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>刻 返 回 并 开 始 下 一 个 动 作</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4069" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4070" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>false</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4071" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>播 放 视 频 动 作</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4072" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>14.6</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4073" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>动 作 用 于 播 放 视 频。 播 放 视 频 动 作 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4074" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>Movie 79</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4075" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>图 播 放 视 频 动 作 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4076" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>79</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4077" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4078" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>播 放 视 频 动 作 属 性 说 明 见 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4079" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>58</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4080" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>表 播 放 视 频 动 作 属 性</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

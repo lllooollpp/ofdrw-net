@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="6901" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>use=&quot;required&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6902" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6903" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>xs attributename=&quot;T e&quot;t e=&quot;xs strin &quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6904" CTM="1 0 0 1 31.7 44"><ofd:TextCode>yp yp g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6905" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6906" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>xs extension</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6907" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6908" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>xs simpleContent</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6909" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6910" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6911" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6912" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>xs element</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6913" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6914" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>xs elementname=&quot;Data&quot;type=&quot;xs anyType&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6915" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6916" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>xs elementname=&quot;ExtendData&quot;type=&quot;ST Loc&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6917" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6918" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>xs choice</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6919" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6920" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>xs attributename=&quot;A Name&quot;t e=&quot;xs strin &quot;use=&quot;re uired&quot;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

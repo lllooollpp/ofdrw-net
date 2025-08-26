@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2421" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2422" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2423" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>ofdColorValue=&quot;00255&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2424" CTM="1 0 0 1 31.7 44"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2425" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>ofdSement</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2426" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2427" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2428" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>ofdRadialShd</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2429" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2430" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>ofdFillColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2431" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>41</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2432" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2433" CTM="1 0 0 1 31.7 98.00000000000003"><ofd:TextCode>
+=== 第 47 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2434" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2435" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2436" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>&lt; : &gt; &lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2437" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>ofdAbbreviatedDataM00L2000L200150L0150C ofdAbbreviatedData</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2438" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2439" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>ofdPathObject</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2440" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

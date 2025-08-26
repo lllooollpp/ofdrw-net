@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="461" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>页 面 内 容 描 述 包 括 页 面 级 资 源 图 形 图 像 和 文 字 等</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="462" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>c</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="463" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>成 像 模 型</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="464" CTM="1 0 0 1 31.7 44"><ofd:TextCode>5.3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="465" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>采 用 二 维 矢 量 成 像 模 型 描 述 任 何 经 过 排 版 的 图 元 对 象,包 括 文 字、图 形、图 像 等。 成 像 模 型 与</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="466" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="467" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>, 、 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="468" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>设 备 无 关 可 满 足 打 印 显 示 等 输 出 需 求</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="469" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>成 像 模 型 可 根 据 页 面 描 述 生 成 一 个 与 设 备 无 关 的 输 出 结 果,用 于 执 行 程 序 将 其 传 输 到 输 出 设</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="470" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="471" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>备 上。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="472" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>页 面 绘 制 对 象 存 在 以 下 几 种 情 况:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="473" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>) 、 、 ;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="474" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>绘 制 对 象 可 以 是 文 字 图 形 图 像 等 图 元</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="475" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>a</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="476" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>) 图 元 可 以 使 用 任 何 颜 色 绘 制(渐 变 和 底 纹 在 本 标 准 中 均 为 颜 色 的 一 种 形 式);</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="477" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>b</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="478" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>) 所 有 图 元 都 可 以 被 裁 剪。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="479" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>c</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="480" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>页 面 内 容 包 含 一 系 列 的 图 层、页 面 块 和 图 元 对 象。 在 输 出 页 面 时,从 空 白 页 开 始,依 据 相 关 内 容 出</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

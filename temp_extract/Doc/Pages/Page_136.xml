@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2701" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2702" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>ofdFillColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2703" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; : &gt; &lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2704" CTM="1 0 0 1 31.7 44"><ofd:TextCode>ofdAbbreviatedDataM00L2000L200150L0150C ofdAbbreviatedData</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2705" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2706" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>ofdPathObject</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2707" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>上 述 示 例 的 显 示 效 果 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2708" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>37</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2709" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>图 径 向 渐 变 的 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2710" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>37 Ma T e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2711" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2712" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>44</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2713" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2714" CTM="1 0 0 1 31.7 104.20000000000003"><ofd:TextCode>
+=== 第 50 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2715" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2716" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2717" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>高 洛 德 渐 变</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2718" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>8.3.4.4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2719" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>高 洛 德 渐 变 的 基 本 原 理 是 指 定 三 个 带 有 可 选 颜 色 的 顶 点,在 其 构 成 的 三 角 形 区 域 内 采 用 高 洛 德 算</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2720" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>。 。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

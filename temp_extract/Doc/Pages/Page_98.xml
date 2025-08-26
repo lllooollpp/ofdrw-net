@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1941" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>27 BitsPerComponent BPC 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1942" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>BPC</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1943" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>限 由 决 定,即 取 区 间[, ]内 的 整 数,采 用 进 制 或 进 制 的 形 式 表 示,采 用</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1944" CTM="1 0 0 1 31.7 44"><ofd:TextCode>BitsPerComponent 02 -1 10 16</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1945" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>进 制 表 示 时,应 以“ ”加 以 标 识。 当 颜 色 通 道 的 取 值 超 出 了 相 应 的 区 间,则 按 照 默 认 颜 色 来 处 理。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1946" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>16 #</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1947" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>表 和 关 系</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1948" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>27 T e BPC</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1949" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1950" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>说 明</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1951" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>Type BPC</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1952" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>只 包 含 一 个 通 道 来 表 明 灰 度 值</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1953" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>有 效</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1954" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>Gra</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1955" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1956" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>例 如: 、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1957" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>&quot;#FF&quot;&quot;255&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1958" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>, 、 、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1959" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>包 含 三 个 通 道 依 次 是 红 绿 蓝</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1960" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>有 效</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="401" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>一 种 无 损 的 与 设 备 无 关 的 位 图 格 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="402" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>BMP Bitmap</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="403" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>:一 种 颜 色 空 间,采 用 四 个 分 量( 青, 品 红, 黄, 黑)表 示 颜 色</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="404" CTM="1 0 0 1 31.7 44"><ofd:TextCode>CMYK Can Maenta Yellow blacK</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="405" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>y g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="406" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>: ( )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="407" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>一 种 图 像 的 有 损 压 缩 格 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="408" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>JPEG JointPhotorahicExertsGrou</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="409" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>gp p p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="410" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>:开 放 版 式 文 档( )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="411" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>OFD OpenFixedlayoutDocument</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="412" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>:可 移 植 网 络 图 形 格 式( )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="413" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>PNG PortableNetworkGrahicFormat</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="414" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="415" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>: , 、 、 ( , , )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="416" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>一 种 颜 色 空 间 采 用 红 绿 蓝 三 个 分 量 类 表 示 颜 色</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="417" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>RGB RedGreenBlue</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="418" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>:标 签 图 像 文 件 格 式( )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="419" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>TIFF TaggedImageFileFormat</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="420" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>:通 用 资 源 标 识 符( )</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

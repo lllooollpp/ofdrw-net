@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="321" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>下 列 术 语 和 定 义 适 用 于 本 文 件。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="322" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>3.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="323" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>版 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="324" CTM="1 0 0 1 31.7 44"><ofd:TextCode>fixedlaout</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="325" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="326" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>、 、 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="327" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>将 文 字 图 形 图 像 等 多 种 数 字 内 容 对 象 按 照 一 定 规 则 进 行 版 面 固 化 呈 现 的 一 种 格 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="328" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>3.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="329" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>开 放 式 版 式 文 档</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="330" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>o enfixedlaoutdocument</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="331" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>p y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="332" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>独 立 于 软 件、硬 件、操 作 系 统、输 出 设 备 的 版 式 文 档 格 式。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="333" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>3.3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="334" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>数 字 签 名</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="335" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>diitalsinature</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="336" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>g g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="337" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>, ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="338" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>附 加 在 数 据 单 元 上 的 数 据 或 是 对 数 据 单 元 所 作 的 密 码 变 换 这 种 数 据 或 变 换 允 许 数 据 单 元 的 接 收</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="339" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>, ( ) 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="340" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>者 用 以 确 认 数 据 单 元 的 来 源 和 完 整 性 并 保 护 数 据 防 止 被 人 例 如 接 收 者 伪 造 或 抵 赖</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

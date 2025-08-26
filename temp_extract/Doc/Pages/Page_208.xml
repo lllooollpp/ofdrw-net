@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4141" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>_ 指 向 包 内 的 分 页 注 释 文 件 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4142" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>FileLoc STLoc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4143" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>分 页 注 释 文 件</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4144" CTM="1 0 0 1 31.7 44"><ofd:TextCode>15.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4145" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4146" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>注 释 信 息 结 构 如 图 所 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4147" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>81</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4148" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>78</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4149" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4150" CTM="1 0 0 1 31.7 79.40000000000002"><ofd:TextCode>
+=== 第 84 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4151" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4152" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4153" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>图 注 释 信 息 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4154" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>81</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4155" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>注 释 信 息 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4156" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>61</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4157" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>79</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4158" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4159" CTM="1 0 0 1 31.7 133.20000000000005"><ofd:TextCode>
+=== 第 85 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4160" CTM="1 0 0 1 31.7 139.20000000000005"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

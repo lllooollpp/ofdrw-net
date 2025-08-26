@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1141" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1142" CTM="1 0 0 1 31.7 29.799999999999997"><ofd:TextCode>
+=== 第 22 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1143" CTM="1 0 0 1 31.7 35.8"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1144" CTM="1 0 0 1 31.7 42"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1145" CTM="1 0 0 1 31.7 48.2"><ofd:TextCode>表 书 签 属 性 和 节 点 说 明</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1146" CTM="1 0 0 1 31.7 54.400000000000006"><ofd:TextCode>10</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1147" CTM="1 0 0 1 31.7 60.60000000000001"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1148" CTM="1 0 0 1 31.7 66.80000000000001"><ofd:TextCode>: 书 签 名 称 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1149" CTM="1 0 0 1 31.7 73.00000000000001"><ofd:TextCode>Name xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1150" CTM="1 0 0 1 31.7 79.20000000000002"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1151" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>_ 书 签 对 应 的 文 档 位 置,见 表 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1152" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>Dest CTDest 54</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1153" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>页 树</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1154" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>7.6</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1155" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1156" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>页 树 结 构 如 图 所 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1157" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>12</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1158" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>图 页 树 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1159" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>12</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1160" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>页 树 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

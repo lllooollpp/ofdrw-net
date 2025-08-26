@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3641" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>90 90° A</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3642" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>文 字 顺 时 针 旋 转 ,以‘’为 例 子,显 示 效 果 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3643" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>180 180° A</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3644" CTM="1 0 0 1 31.7 44"><ofd:TextCode>文 字 顺 时 针 旋 转 ,以‘’为 例 子,显 示 效 果 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3645" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>270° A</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3646" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>270</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3647" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>值 定 义</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3648" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>ReadDirection</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3649" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>默 认 值,从 左 往 右 阅 读,以 字 符 串“ ”为 例, 为 ,显 示 效 果</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3650" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>ABC CharDirection 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3651" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3652" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3653" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>, “ ” , ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3654" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>从 上 往 下 阅 读 以 字 符 串 为 例 为 显 示 效 果 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3655" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>90 ABC CharDirection 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3656" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>从 右 往 左 阅 读,以 字 符 串“ ”为 例, 为 ,显 示 效 果 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3657" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>180 ABC CharDirection 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3658" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>从 下 往 上 阅 读,以 字 符 串“ ”为 例, 为 ,显 示 效 果 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3659" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>270 ABC CharDirection 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3660" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

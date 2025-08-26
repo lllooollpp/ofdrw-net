@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2761" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>31</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2762" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>46</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2763" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2764" CTM="1 0 0 1 31.7 42.199999999999996"><ofd:TextCode>
+=== 第 52 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2765" CTM="1 0 0 1 31.7 48.199999999999996"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2766" CTM="1 0 0 1 31.7 54.4"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2767" CTM="1 0 0 1 31.7 60.6"><ofd:TextCode>表 高 洛 德 渐 变 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2768" CTM="1 0 0 1 31.7 66.8"><ofd:TextCode>31</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2769" CTM="1 0 0 1 31.7 73"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2770" CTM="1 0 0 1 31.7 79.2"><ofd:TextCode>在 渐 变 控 制 点 所 确 定 范 围 之 外 的 部 分 是 否 填 充</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2771" CTM="1 0 0 1 31.7 85.4"><ofd:TextCode>: 为 不 填 充, 表 示 填 充 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2772" CTM="1 0 0 1 31.7 91.60000000000001"><ofd:TextCode>Extend xsint 0 1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2773" CTM="1 0 0 1 31.7 97.80000000000001"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2774" CTM="1 0 0 1 31.7 104.00000000000001"><ofd:TextCode>0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2775" CTM="1 0 0 1 31.7 110.20000000000002"><ofd:TextCode>渐 变 控 制 点,至 少 出 现 个 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2776" CTM="1 0 0 1 31.7 116.40000000000002"><ofd:TextCode>Point 3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2777" CTM="1 0 0 1 31.7 122.60000000000002"><ofd:TextCode>: 控 制 点 水 平 位 置 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2778" CTM="1 0 0 1 31.7 128.8"><ofd:TextCode>X xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2779" CTM="1 0 0 1 31.7 135"><ofd:TextCode>: 控 制 点 垂 直 位 置 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2780" CTM="1 0 0 1 31.7 141.2"><ofd:TextCode>Y xsdouble</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="8181" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8182" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs attributename=&quot;Extend&quot;t e=&quot;xs int&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8183" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8184" CTM="1 0 0 1 31.7 44"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8185" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>xs com lexT e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8186" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8187" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt;! , 。 &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8188" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>颜 色 定 义 渐 变 和 填 充 被 看 作 颜 色 的 一 种</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8189" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>-- --</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8190" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8191" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>xs complexTypename=&quot;CT Color&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8192" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8193" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>xs choiceminOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8194" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8195" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>xs elementname=&quot;Pattern&quot;type=&quot;CT Pattern&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8196" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8197" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs elementname=&quot;AxialShd&quot;type=&quot;CT AxialShd&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8198" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8199" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>xs elementname=&quot;RadialShd&quot;type=&quot;CT RadialShd&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8200" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="481" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="482" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>现 的 顺 序 绘 制</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="483" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>图 元 对 象 由 其 自 有 数 据 描 述 及 其 修 饰 参 数 构 成,修 饰 参 数 的 表 示 方 式 采 用“属 性 绘 制 参 数”的</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="484" CTM="1 0 0 1 31.7 44"><ofd:TextCode>+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="485" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>模 式。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="486" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>页 面 中 三 种 最 基 本 的 图 元 对 象 如 下:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="487" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>) : 。 ;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="488" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>图 形 对 象 由 一 系 列 的 路 径 对 象 组 成 的 区 域 图 形 对 象 可 以 被 填 充 或 者 勾 边</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="489" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>a</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="490" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>) 文 字 对 象:由 一 系 列 的 字 符 及 其 定 位 信 息 组 成。 每 个 字 符 的 字 形 由 其 指 定 的 字 型 和 其 他 参 数</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="491" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>b</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="492" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>所 确 定。 文 字 对 象 可 以 被 填 充 或 者 勾 边;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="493" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>) 图 像 对 象:由 一 个 矩 形 区 域 的 像 素 值 组 成,每 个 像 素 值 确 定 矩 形 区 域 一 个 指 定 点 的 颜 色 值。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="494" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>c</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="495" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>, 、 、 、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="496" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>绘 制 参 数 是 指 修 饰 图 元 对 象 绘 制 渲 染 效 果 所 需 的 特 性 包 括 填 充 颜 色 勾 边 颜 色 线 宽 虚 线 样 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="497" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="498" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="499" CTM="1 0 0 1 31.7 135.20000000000005"><ofd:TextCode>
+=== 第 9 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="500" CTM="1 0 0 1 31.7 141.20000000000005"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="581" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>7.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="582" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>本 标 准 中 文 档 使 用 的 命 名 空 间 为 :// / ,其 标 识 应 为 ;应 在 包 内</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="583" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>XML htt www.ofdsec.or 2016 ofd</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="584" CTM="1 0 0 1 31.7 44"><ofd:TextCode>p p g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="585" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>: 。 ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="586" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>各 文 档 的 根 节 点 中 声 明 元 素 节 点 应 使 用 命 名 空 间 标 识 元 素 属 性 不 使 用 命 名 空 间</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="587" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>XML defaultsofd</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="588" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>标 识。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="589" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>字 符 编 码</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="590" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>7.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="591" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="592" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>文 件 应 支 持 和 的 相 关 要 求</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="593" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>OFD GB18030 GB13000</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="594" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>基 础 数 据 类 型</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="595" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>7.3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="596" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>本 标 准 中 定 义 了 种 基 本 数 据 类 型,见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="597" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>6 2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="598" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>表 基 本 数 据 类 型</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="599" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="600" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>类 型 说 明 示 例</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

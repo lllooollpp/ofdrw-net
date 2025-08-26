@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>这是第一个测试段落</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2" CTM="1 0 0 1 31.7 32.199999999999996"><ofd:TextCode>这是第二个测试段落，用来验证修复效果</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3" CTM="1 0 0 1 31.7 38.4"><ofd:TextCode>修复前：转换后文件只有1KB</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4" CTM="1 0 0 1 31.7 44"><ofd:TextCode>修复后：应该生成完整的OFD文档结构</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

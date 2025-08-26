@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3681" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3682" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3683" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>图 字 符 绘 制 点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3684" CTM="1 0 0 1 31.7 44"><ofd:TextCode>65</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3685" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>字 形 变 换</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3686" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>11.4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3687" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>变 换 描 述</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3688" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>11.4.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3689" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>, ( )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3690" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>当 存 在 字 形 变 换 时 对 象 中 使 用 字 形 变 换 节 点 描 述 字 符 编 码 和 字 形 索 引</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3691" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>TextCode CGTransform</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3692" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>之 间 的 关 系,该 节 点 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3693" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>66</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3694" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>图 字 形 变 换 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3695" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>66</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3696" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>字 形 变 换 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3697" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>48</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3698" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>表 字 形 变 换 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3699" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>48</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3700" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

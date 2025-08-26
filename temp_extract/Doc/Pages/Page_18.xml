@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="341" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>3.4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="342" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>成 像 模 型</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="343" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>imaging model</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="344" CTM="1 0 0 1 31.7 44"><ofd:TextCode>一 种 与 设 备 无 关 的 页 面 描 述 方 法,采 用 抽 象 的 图 形 元 素 描 述 页 面 中 出 现 的 文 字、图 形、图 像 等。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="345" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>3.5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="346" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>字 符</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="347" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>character</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="348" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>, 、 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="349" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>元 素 集 中 的 一 个 成 员 它 用 作 数 据 的 表 示 组 织 或 控 制</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="350" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>[ / — ,定 义 ]</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="351" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>GBT5271.1 2000 01.02.11</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="352" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>3.6</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="353" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>字 型</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="354" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>font</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="355" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>具 有 同 一 基 本 设 计 的 字 形 图 像 的 集 合。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="356" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="357" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="358" CTM="1 0 0 1 31.7 129.00000000000003"><ofd:TextCode>
+=== 第 7 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="359" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="360" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

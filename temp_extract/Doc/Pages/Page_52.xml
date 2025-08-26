@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1021" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>10</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1022" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>14</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1023" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1024" CTM="1 0 0 1 31.7 42.199999999999996"><ofd:TextCode>
+=== 第 20 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1025" CTM="1 0 0 1 31.7 48.199999999999996"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1026" CTM="1 0 0 1 31.7 54.4"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1027" CTM="1 0 0 1 31.7 60.6"><ofd:TextCode>图 视 图 首 选 项 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1028" CTM="1 0 0 1 31.7 66.8"><ofd:TextCode>10</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1029" CTM="1 0 0 1 31.7 73"><ofd:TextCode>视 图 首 选 项 相 关 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1030" CTM="1 0 0 1 31.7 79.2"><ofd:TextCode>9</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1031" CTM="1 0 0 1 31.7 85.4"><ofd:TextCode>表 视 图 首 选 项 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1032" CTM="1 0 0 1 31.7 91.60000000000001"><ofd:TextCode>9</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1033" CTM="1 0 0 1 31.7 97.80000000000001"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1034" CTM="1 0 0 1 31.7 104.00000000000001"><ofd:TextCode>窗 口 模 式,可 取 值 如 下:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1035" CTM="1 0 0 1 31.7 110.20000000000002"><ofd:TextCode>——— 常 规 模 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1036" CTM="1 0 0 1 31.7 116.40000000000002"><ofd:TextCode>None</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1037" CTM="1 0 0 1 31.7 122.60000000000002"><ofd:TextCode>———</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1038" CTM="1 0 0 1 31.7 128.8"><ofd:TextCode>打 开 后 全 文 显 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1039" CTM="1 0 0 1 31.7 135"><ofd:TextCode>FullScreen</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1040" CTM="1 0 0 1 31.7 141.2"><ofd:TextCode>——— 同 时 呈 现 文 档 大 纲</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

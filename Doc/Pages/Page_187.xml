@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3721" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3722" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>Gl hCount xsint</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3723" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3724" CTM="1 0 0 1 31.7 44"><ofd:TextCode>述,默 认 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3725" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3726" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3727" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>变 换 后 的 字 形 索 引 列 表 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3728" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>Glyphs STArray</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3729" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>字 形 的 索 引 跟 具 体 的 字 型 文 件 紧 密 相 关,同 一 个 字 符 或 字 形 在 不 同 的 字 型 文 件 中 的 索 引 值 并 不 一</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3730" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>, , 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3731" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>样 因 此 当 使 用 到 字 形 变 换 时 宜 将 对 应 的 字 型 文 件 嵌 入 到 版 式 文 档 中</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3732" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>字 符 编 码 到 字 符 之 间 主 要 包 括 一 对 一、多 对 一、一 对 多 以 及 多 对 多 四 种 变 换 关 系。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3733" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>一 对 一</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3734" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>11.4.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3735" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>当 一 个 字 符 对 应 一 个 字 形 时,如 果 文 本 对 象 使 用 非 内 嵌 字 型,则 根 据 该 字 型 的 表 取 得 相 应</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3736" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>CMAP</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3737" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>的 字 形。 如 果 文 字 使 用 的 是 内 嵌 字 型,则 使 用 该 内 嵌 字 型 数 据 中 的 表 来 取 得 字 形 索 引。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3738" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>CMAP</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3739" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>多 对 一</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3740" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>11.4.3</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

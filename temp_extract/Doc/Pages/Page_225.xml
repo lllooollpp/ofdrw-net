@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4481" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4482" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4483" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>CheckValue xsbase64Binary</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4484" CTM="1 0 0 1 31.7 44"><ofd:TextCode>得 结 果</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4485" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>85</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4486" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4487" CTM="1 0 0 1 31.7 60.800000000000004"><ofd:TextCode>
+=== 第 91 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4488" CTM="1 0 0 1 31.7 66.80000000000001"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4489" CTM="1 0 0 1 31.7 73.00000000000001"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4490" CTM="1 0 0 1 31.7 79.20000000000002"><ofd:TextCode>签 名 的 外 观</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4491" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>18.2.3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4492" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>一 个 数 字 签 名 可 以 跟 一 个 或 多 个 外 观 描 述 关 联,也 可 以 不 关 联 任 何 外 观,其 关 联 方 式 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4493" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>88</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4494" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>图 签 名 外 观 节 点 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4495" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>88</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4496" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>该 节 点 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4497" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>69</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4498" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>表 签 名 外 观 节 点 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4499" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>69</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4500" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

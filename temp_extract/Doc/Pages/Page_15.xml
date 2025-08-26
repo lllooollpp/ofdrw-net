@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="281" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>
+=== 第 5 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="282" CTM="1 0 0 1 31.7 31.4"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="283" CTM="1 0 0 1 31.7 37.6"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="284" CTM="1 0 0 1 31.7 43.800000000000004"><ofd:TextCode>前 言</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="285" CTM="1 0 0 1 31.7 50.00000000000001"><ofd:TextCode>本 标 准 按 照 / — 给 出 的 规 则 起 草。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="286" CTM="1 0 0 1 31.7 56.20000000000001"><ofd:TextCode>GBT1.1 2009</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="287" CTM="1 0 0 1 31.7 62.40000000000001"><ofd:TextCode>。 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="288" CTM="1 0 0 1 31.7 68.60000000000001"><ofd:TextCode>请 注 意 本 文 件 的 某 些 内 容 可 能 涉 及 专 利 本 文 件 的 发 布 机 构 不 承 担 识 别 这 些 专 利 的 责 任</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="289" CTM="1 0 0 1 31.7 74.80000000000001"><ofd:TextCode>本 标 准 由 国 家 电 子 文 件 管 理 部 际 联 席 会 议 办 公 室 和 工 业 和 信 息 化 部 提 出。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="290" CTM="1 0 0 1 31.7 81.00000000000001"><ofd:TextCode>本 标 准 由 全 国 信 息 技 术 标 准 化 技 术 委 员 会( / )归 口。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="291" CTM="1 0 0 1 31.7 87.20000000000002"><ofd:TextCode>SACTC28</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="292" CTM="1 0 0 1 31.7 93.40000000000002"><ofd:TextCode>本 标 准 起 草 单 位:中 国 电 子 技 术 标 准 化 研 究 院、福 建 福 昕 软 件 开 发 股 份 有 限 公 司、北 京 数 科 网 维 技</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="293" CTM="1 0 0 1 31.7 99.60000000000002"><ofd:TextCode>、 、 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="294" CTM="1 0 0 1 31.7 105.80000000000003"><ofd:TextCode>术 有 限 责 任 公 司 北 京 方 正 阿 帕 比 技 术 有 限 公 司 北 京 书 生 电 子 技 术 有 限 公 司</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="295" CTM="1 0 0 1 31.7 112.00000000000003"><ofd:TextCode>本 标 准 主 要 起 草 人:高 林、李 海 波、丛 培 勇、王 聪、陈 亚 军、冯 辉、高 麟 鹏、贾 曙 瑞、王 寒 冰、董 建、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="296" CTM="1 0 0 1 31.7 118.20000000000003"><ofd:TextCode>苏 鸿 祥、孟 志 勇、熊 雨 前、王 少 康、翟 浦 江、刘 丹、郝 立 臣、徐 剑 波、高 子 军、郭 巍。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="297" CTM="1 0 0 1 31.7 124.40000000000003"><ofd:TextCode>Ⅴ</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="298" CTM="1 0 0 1 31.7 130.60000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="299" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>
+=== 第 6 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="300" CTM="1 0 0 1 31.7 141.00000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

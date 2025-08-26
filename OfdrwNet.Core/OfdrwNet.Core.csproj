@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Title>OFDRW.NET Core - OFD核心基础类库</Title>
+    <Description>OFDRW.NET的核心基础类库，提供OFD文档格式的基础数据结构和常量定义</Description>
+    <Authors>OFDRW.NET Team</Authors>
+    <PackageProjectUrl>https://github.com/ofdrw/ofdrw-net</PackageProjectUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageTags>ofd;core;document;basic-types</PackageTags>
+    <Version>1.0.0</Version>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+</Project>

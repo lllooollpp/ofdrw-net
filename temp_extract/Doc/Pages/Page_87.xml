@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1721" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1722" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>DashOffset xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1723" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>该 参 数 无 效</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1724" CTM="1 0 0 1 31.7 44"><ofd:TextCode>线 条 虚 线 的 重 复 样 式,数 组 中 共 含 两 个 值,第 一 个 值 代 表 虚 线 线 段</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1725" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>_ 的 长 度,第 二 个 值 代 表 虚 线 间 隔 的 长 度。 默 认 值 为 空。 线 条 虚 线 样 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1726" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>DashPattern STArra</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1727" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1728" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>式 的 控 制 效 果 见 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1729" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>23</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1730" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>线 端 点 样 式,枚 举 值,指 定 了 一 条 线 的 端 点 样 式。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1731" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>可 取 值 为:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1732" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>Butt</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1733" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1734" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1735" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>Cap xsstring Round</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1736" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>Square</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1737" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1738" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>Butt</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1739" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>线 条 端 点 样 式 取 值 与 效 果 之 间 关 系 见 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1740" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>24</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

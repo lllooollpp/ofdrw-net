@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1761" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>具 有 相 同 的 要 素 时 采 用 与 被 作 用 对 象 关 系 最 为 密 切 的 绘 制 参 数 的 要 素 对 其 进 行 渲 染 例 如 当 图 元 已</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1762" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>经 定 义 绘 制 属 性 时,则 按 定 义 属 性 进 行 渲 染;当 图 元 未 定 义 绘 制 属 性 时,应 首 先 按 照 图 元 定 义 的 绘 制 参</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1763" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>数 进 行 渲 染;图 元 未 定 义 绘 制 参 数 时 应 采 用 所 在 图 层 的 默 认 绘 制 参 数 渲 染;当 图 元 和 所 在 图 层 都 没 有 定</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1764" CTM="1 0 0 1 31.7 44"><ofd:TextCode>义 绘 制 参 数 时,按 照 各 绘 制 属 性 的 默 认 值 进 行 渲 染。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1765" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>线 条 连 接 样 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1766" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>8.2.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1767" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>线 条 连 接 样 式 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1768" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>22</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1769" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>28</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1770" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1771" CTM="1 0 0 1 31.7 85.60000000000002"><ofd:TextCode>
+=== 第 34 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1772" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1773" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1774" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>表 线 条 连 接 样 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1775" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>22</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1776" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>属 性 取 值 样 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1777" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>Miter</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1778" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>Join</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1779" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>Round</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1780" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>Bevel</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

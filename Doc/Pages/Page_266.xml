@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5301" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>xs sim leT e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5302" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5303" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5304" CTM="1 0 0 1 31.7 44"><ofd:TextCode>xs element</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5305" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5306" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>xs elementname=&quot;Zoom&quot;type=&quot;xs double&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5307" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5308" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>xs choice</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5309" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5310" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>xs se uence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5311" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>q</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5312" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5313" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5314" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt;! 大 纲 相 关 结 构 类 型 &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5315" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>-- --</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5316" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5317" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs com lexT ename=&quot;CT OutlineElem&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5318" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5319" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5320" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>xs se uence</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="6701" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6702" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs element</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6703" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6704" CTM="1 0 0 1 31.7 44"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6705" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt; :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6706" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>xs elementname=&quot;Stam Annot&quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6707" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6708" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6709" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>maxOccurs=&quot;unbounded&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6710" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6711" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6712" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt; : :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6713" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>xs attributename=&quot;ID&quot;type=&quot;xs ID&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6714" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6715" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>use=&quot;re uired&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6716" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>q</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6717" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>&lt; :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6718" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>xs attributename=&quot;PageRef&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6719" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>_ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6720" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>type=&quot;ST RefID&quot;use=&quot;required&quot;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

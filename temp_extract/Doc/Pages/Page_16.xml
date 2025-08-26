@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="301" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="302" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>电 子 文 件 存 储 与 交 换 格 式 版 式 文 档</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="303" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>范 围</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="304" CTM="1 0 0 1 31.7 44"><ofd:TextCode>1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="305" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>本 标 准 规 定 了 版 式 电 子 文 件 的 存 储 与 交 换 格 式,包 括 文 件 结 构、基 本 结 构、页 面 描 述、图 形、图 像、文</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="306" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>字、视 频、复 合 对 象、动 作、注 释、自 定 义 标 引、扩 展 信 息、数 字 签 名、版 本、附 件 等 方 面。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="307" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>本 标 准 适 用 于 版 式 文 档 存 储、阅 读、交 换 和 利 用。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="308" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>规 范 性 引 用 文 件</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="309" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="310" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>下 列 文 件 对 于 本 文 件 的 应 用 是 必 不 可 少 的。 凡 是 注 日 期 的 引 用 文 件,仅 注 日 期 的 版 本 适 用 于 本 文</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="311" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>件。 凡 是 不 注 日 期 的 引 用 文 件,其 最 新 版 本(包 括 所 有 的 修 改 单)适 用 于 本 文 件。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="312" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>( )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="313" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>信 息 技 术 通 用 多 八 位 编 码 字 符 集</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="314" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>GB13000  UCS</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="315" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>信 息 技 术 中 文 编 码 字 符 集</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="316" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>GB18030</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="317" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>/ — 信 息 技 术 可 扩 展 置 标 语 言( )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="318" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>GBT18793 2002  XML1.0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="319" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>术 语 和 定 义</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="320" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>3</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

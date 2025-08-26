@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5121" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5122" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5123" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; : :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5124" CTM="1 0 0 1 31.7 44"><ofd:TextCode>xs elementname=&quot;Annot&quot;type=&quot;xs boolean&quot;default=&quot;true&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5125" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5126" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5127" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt; : :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5128" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>xs elementname=&quot;Export&quot;type=&quot;xs boolean&quot;default=&quot;true&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5129" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5130" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5131" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>&lt; : :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5132" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>xs elementname=&quot;Si nature&quot;t e=&quot;xs boolean&quot;default=&quot;true&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5133" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>g yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5134" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5135" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5136" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt; : :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5137" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs elementname=&quot;Watermark&quot;type=&quot;xs boolean&quot;default=&quot;true&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5138" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5139" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5140" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>&lt; : :</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

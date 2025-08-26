@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="8141" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8142" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8143" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8144" CTM="1 0 0 1 31.7 44"><ofd:TextCode>xs com lexT ename=&quot;CT LaGouraudShd&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8145" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8146" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8147" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8148" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8149" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>xs elementname=&quot;Point&quot;minOccurs=&quot;4&quot;maxOccurs=&quot;unbounded&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8150" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8151" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>xs com lexT e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8152" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8153" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8154" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>xs se uence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8155" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>q</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8156" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8157" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs elementname=&quot;Color&quot;type=&quot;CT Color&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8158" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8159" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8160" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

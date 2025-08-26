@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="621" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>_ “ ”</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="622" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>STArra 12.05.0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="623" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="624" CTM="1 0 0 1 31.7 44"><ofd:TextCode>外 的 数 据 类 型,不 可 嵌 套</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="625" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>Arra</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="626" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="627" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="628" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="629" CTM="1 0 0 1 31.7 73.20000000000002"><ofd:TextCode>
+=== 第 11 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="630" CTM="1 0 0 1 31.7 79.20000000000002"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="631" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="632" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>表 (续)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="633" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="634" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>类 型 说 明 示 例</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="635" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>_ 标 识,无 符 号 整 数,应 在 文 档 内 唯 一。 表 示 无 效 标 识 “ ”</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="636" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>STID 0 1000</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="637" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>, ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="638" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>标 识 引 用 无 符 号 整 数 此 标 识 应 为 文 档 内 已 定 义 的</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="639" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>_ “ ”</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="640" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>STRefID 1000</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

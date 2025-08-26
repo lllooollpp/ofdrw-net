@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2641" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2642" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>ofdFillColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2643" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2644" CTM="1 0 0 1 31.7 44"><ofd:TextCode>ofdRadialShdStartPoint=&quot;4070&quot;StartRadius=&quot;10&quot;EndPoint=&quot;5090&quot;EndRadius=&quot;70&quot;MaT e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2645" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>pyp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2646" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2647" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>=&quot;Reeat&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2648" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2649" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2650" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>ofdSement</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2651" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2652" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2653" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>ofdColorValue=&quot;2552550&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2654" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2655" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>ofdSement</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2656" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2657" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2658" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>ofdSement</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2659" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2660" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

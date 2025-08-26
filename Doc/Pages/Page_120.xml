@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2381" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2382" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>Position xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2383" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>个 数 等 于 且 不 出 现 属 性 时,按 照“ ”处 理;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2384" CTM="1 0 0 1 31.7 44"><ofd:TextCode>ment 2 Position 01.0 Se-</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2385" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2386" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>个 数 等 于 且 不 出 现 属 性 时,按 照“ ”处 理;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2387" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>ment 3 Position 00.51.0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2388" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>, “</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2389" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>个 数 等 于 且 不 出 现 属 性 时 按 照</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2390" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>Segment 5 Position 00.250.50.75</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2391" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>”处 理</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2392" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>1.0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2393" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>_ ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2394" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>此 段 的 颜 色 应 使 用 基 本 颜 色 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2395" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>Color CTColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2396" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>当 径 向 渐 变 某 个 方 向 设 定 为 延 伸 时( 不 等 于 ),渐 变 应 沿 延 长 线 延 伸 到 超 出 裁 剪 区 在 该 方</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2397" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>Extend 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2398" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>。 ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2399" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>向 的 投 影 区 域 为 止 当 为 时 延 伸 的 区 域 的 渲 染 颜 色 使 用 该 方 向 所 在 的 中 心 点 的 颜</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2400" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>MapType Direct</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

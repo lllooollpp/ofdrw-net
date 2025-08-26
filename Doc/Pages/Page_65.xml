@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1281" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1282" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>Backround</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1283" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1284" CTM="1 0 0 1 31.7 44"><ofd:TextCode>图 层 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1285" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>15</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1286" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>19</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1287" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1288" CTM="1 0 0 1 31.7 67.00000000000001"><ofd:TextCode>
+=== 第 25 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1289" CTM="1 0 0 1 31.7 73.00000000000001"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1290" CTM="1 0 0 1 31.7 79.20000000000002"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1291" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>图 图 层 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1292" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>15</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1293" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>图 层 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1294" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>14</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1295" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>表 图 层 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1296" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>14</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1297" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1298" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>层 类 型 描 述,预 定 义 的 值 见 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1299" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>15</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1300" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

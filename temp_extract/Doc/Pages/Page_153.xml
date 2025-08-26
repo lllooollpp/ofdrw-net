@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3041" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>S x x</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3042" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>y y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3043" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>将 当 前 点 移 动 到 指 定 点(,)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3044" CTM="1 0 0 1 31.7 44"><ofd:TextCode>M x x</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3045" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>y y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3046" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>从 当 前 点 连 接 一 条 到 指 定 点(, )的 线 段,并 将 当 前 点 移 动 到 指 定 点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3047" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>L x x</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3048" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>y y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3049" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>从 当 前 点 连 接 一 条 到 点( , )的 二 次 贝 塞 尔 曲 线,并 将 当 前 点 移 动 到 点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3050" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>x</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3051" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>2 y2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3052" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>Q x1 y1 x2 y2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3053" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>( , ),此 贝 塞 尔 曲 线 使 用 点( , )作 为 其 控 制 点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3054" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>x x</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3055" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>2 y2 1 y1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3056" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>从 当 前 点 连 接 一 条 到 点( , )的 三 次 贝 塞 尔 曲 线,并 将 当 前 点 移 动 到 点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3057" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>x</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3058" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>3 y3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3059" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>B x x x</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3060" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>1 y1 2 y2 3 y3</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

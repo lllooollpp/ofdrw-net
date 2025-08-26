@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3621" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>
+=== 第 71 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3622" CTM="1 0 0 1 31.7 31.4"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3623" CTM="1 0 0 1 31.7 37.6"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3624" CTM="1 0 0 1 31.7 43.800000000000004"><ofd:TextCode>图 文 字 定 位 机 制</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3625" CTM="1 0 0 1 31.7 50.00000000000001"><ofd:TextCode>62</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3626" CTM="1 0 0 1 31.7 56.20000000000001"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3627" CTM="1 0 0 1 31.7 62.40000000000001"><ofd:TextCode>与 规 定 了 文 字 显 示 时 的 排 列 方 向 指 定 了 单 个 文 字 绘</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3628" CTM="1 0 0 1 31.7 68.60000000000001"><ofd:TextCode>CharDirection ReadDirection CharDirection</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3629" CTM="1 0 0 1 31.7 74.80000000000001"><ofd:TextCode>制 方 向,也 就 是 文 字 的 基 线 方 向,用 从 轴 正 方 向 顺 时 针 到 文 字 基 线 的 角 度 表 示。 指 定</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3630" CTM="1 0 0 1 31.7 81.00000000000001"><ofd:TextCode>x ReadDirection</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3631" CTM="1 0 0 1 31.7 87.20000000000002"><ofd:TextCode>了 阅 读 方 向,用 从 轴 正 方 向 顺 时 针 到 文 字 排 列 方 向 的 角 度 表 示。 这 二 者 的 数 值 规 定 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3632" CTM="1 0 0 1 31.7 93.40000000000002"><ofd:TextCode>x 47</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3633" CTM="1 0 0 1 31.7 99.60000000000002"><ofd:TextCode>、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3634" CTM="1 0 0 1 31.7 105.80000000000003"><ofd:TextCode>表 文 字 排 列 方 向 阅 读 方 向 说 明</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3635" CTM="1 0 0 1 31.7 112.00000000000003"><ofd:TextCode>47</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3636" CTM="1 0 0 1 31.7 118.20000000000003"><ofd:TextCode>值 定 义</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3637" CTM="1 0 0 1 31.7 124.40000000000003"><ofd:TextCode>CharDirection</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3638" CTM="1 0 0 1 31.7 130.60000000000002"><ofd:TextCode>默 认 值,以‘’为 例 子,显 示 效 果 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3639" CTM="1 0 0 1 31.7 136.8"><ofd:TextCode>0 A</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3640" CTM="1 0 0 1 31.7 143"><ofd:TextCode>文 字 顺 时 针 旋 转 ,以‘’为 例 子,显 示 效 果 为</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

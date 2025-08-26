@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="41" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="42" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>扩 展 名</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="43" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>5.4 4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="44" CTM="1 0 0 1 31.7 44"><ofd:TextCode>文 件 结 构 …………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="45" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>6 4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="46" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>……………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="47" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>容 器 方 案</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="48" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>6.1 4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="49" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>……………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="50" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>文 件 组 织</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="51" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>6.2 4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="52" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>基 本 结 构 …………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="53" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>7 5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="54" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>命 名 空 间 ……………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="55" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>7.1 5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="56" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>字 符 编 码 ……………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="57" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>7.2 5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="58" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>基 础 数 据 类 型 ………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="59" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>7.3 5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="60" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>主 入 口 ………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

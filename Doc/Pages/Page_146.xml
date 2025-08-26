@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2901" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>_ 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2902" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>Boundar STBox</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2903" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2904" CTM="1 0 0 1 31.7 44"><ofd:TextCode>元 绘 制 超 出 此 矩 形 区 域 时 进 行 裁 剪</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2905" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>图 元 对 象 的 名 字</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2906" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2907" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2908" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>Name xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2909" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>默 认 值 为 空</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2910" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>图 元 是 否 可 见</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2911" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2912" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>Visible xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2913" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2914" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>true</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2915" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>_ 对 象 空 间 内 的 图 元 变 换 矩 阵 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2916" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>CTM STArray</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2917" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>_ 引 用 资 源 文 件 中 的 绘 制 参 数 标 识 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2918" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>DrawParam STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2919" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>绘 制 路 径 时 使 用 的 线 宽</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2920" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>: ,</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

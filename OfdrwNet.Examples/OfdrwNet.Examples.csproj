@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\OfdrwNet.Core\OfdrwNet.Core.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Packaging\OfdrwNet.Packaging.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Reader\OfdrwNet.Reader.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Layout\OfdrwNet.Layout.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Font\OfdrwNet.Font.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Crypto\OfdrwNet.Crypto.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Graphics\OfdrwNet.Graphics.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Converter\OfdrwNet.Converter.csproj" />
+    <ProjectReference Include="..\OfdrwNet\OfdrwNet.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

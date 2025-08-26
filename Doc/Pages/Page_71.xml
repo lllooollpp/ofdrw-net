@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1401" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>_ 当 此 大 纲 节 点 被 激 活 时 将 执 行 的 动 作,关 于 动 作 的 描 述 见 第 章 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1402" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>Action CTAction 14</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1403" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>_ 该 节 点 的 子 大 纲 节 点。 层 层 嵌 套,形 成 树 状 结 构 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1404" CTM="1 0 0 1 31.7 44"><ofd:TextCode>OutlineElem CTOutlineElem</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1405" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>22</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1406" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1407" CTM="1 0 0 1 31.7 60.800000000000004"><ofd:TextCode>
+=== 第 28 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1408" CTM="1 0 0 1 31.7 66.80000000000001"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1409" CTM="1 0 0 1 31.7 73.00000000000001"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1410" CTM="1 0 0 1 31.7 79.20000000000002"><ofd:TextCode>资 源</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1411" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>7.9</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1412" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>资 源 是 绘 制 图 元 时 所 需 数 据(如 绘 制 参 数、颜 色 空 间、字 型、图 像、音 视 频 等)的 集 合。 在 页 面 中 出 现</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1413" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>的 资 源 数 据 内 容 都 保 存 在 容 器 的 特 定 文 件 夹 内,但 其 索 引 信 息 保 存 在 资 源 文 件 中。 一 个 文 档 可 能 包 含</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1414" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>。 ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1415" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>一 个 或 多 个 资 源 文 件 资 源 根 据 其 作 用 范 围 分 为 公 共 资 源 和 页 资 源 公 共 资 源 文 件 在 文 档 根 节 点 中 进</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1416" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>行 指 定,页 资 源 文 件 在 页 对 象 中 进 行 指 定。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1417" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>资 源 文 件 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1418" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>20</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1419" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>图 资 源 文 件 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1420" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>20</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>
