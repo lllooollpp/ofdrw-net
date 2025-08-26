@@ -1,0 +1,65 @@
+# Build output
+bin/
+obj/
+[Ll]ogs/
+[Bb]uild/
+
+# Visual Studio / VS Code / JetBrains
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.ipr
+*.iws
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+
+# Publish / artifacts
+publish/
+artifacts/
+
+# Logs
+*.log
+logs/
+
+# Tests & coverage
+TestResults/
+*.coverage
+*.coveragexml
+coverage/
+coverage.*
+
+# Config & secrets (keep production configs tracked as needed)
+.env
+.env.*
+secrets.json
+*.secrets.json
+appsettings.Local.json
+appsettings.*.local.json
+
+# SQLite databases
+*.db
+*.db-shm
+*.db-wal
+
+# Temp files
+*.tmp
+*.temp
+*.swp
+*.swo
+~$*
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
