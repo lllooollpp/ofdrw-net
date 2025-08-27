@@ -20,7 +20,7 @@ public class OfdElement
     /// <summary>
     /// 底层 XML 元素
     /// </summary>
-    protected XElement Element { get; set; }
+    public XElement Element { get; set; }
     
     /// <summary>
     /// 从现有元素构造
@@ -297,4 +297,70 @@ public class OfdElement
     /// 获取限定名称
     /// </summary>
     public virtual string QualifiedName => $"{Const.OfdPrefix}{Element.Name.LocalName}";
+
+    /// <summary>
+    /// 设置对象标识
+    /// </summary>
+    /// <param name="objId">对象标识</param>
+    /// <returns>this</returns>
+    public OfdElement SetObjId(StId objId)
+    {
+        if (objId is null)
+        {
+            RemoveAttribute("ID");
+        }
+        else
+        {
+            SetAttribute("ID", objId.ToString());
+        }
+        return this;
+    }
+
+    /// <summary>
+    /// 设置对象标识
+    /// </summary>
+    /// <param name="objId">对象标识字符串</param>
+    /// <returns>this</returns>
+    public OfdElement SetObjId(string objId)
+    {
+        if (string.IsNullOrEmpty(objId))
+        {
+            RemoveAttribute("ID");
+        }
+        else
+        {
+            SetAttribute("ID", objId);
+        }
+        return this;
+    }
+
+    /// <summary>
+    /// 获取对象标识
+    /// </summary>
+    /// <returns>对象标识</returns>
+    public StId? GetObjId()
+    {
+        var idValue = GetAttributeValue("ID");
+        return string.IsNullOrEmpty(idValue) ? null : StId.Parse(idValue);
+    }
+
+    /// <summary>
+    /// 设置元素的文本内容
+    /// </summary>
+    /// <param name="text">文本内容</param>
+    /// <returns>this</returns>
+    public OfdElement SetText(string? text)
+    {
+        Element.Value = text ?? "";
+        return this;
+    }
+
+    /// <summary>
+    /// 获取元素的文本内容
+    /// </summary>
+    /// <returns>文本内容</returns>
+    public string? GetText()
+    {
+        return Element.Value;
+    }
 }

@@ -42,7 +42,7 @@ public class CtColor : OfdElement
     /// 构造颜色元素
     /// </summary>
     /// <param name="color">颜色族中的颜色</param>
-    public CtColor(ColorClusterType color) : this()
+    public CtColor(IColorClusterType color) : this()
     {
         SetColor(color);
     }
@@ -199,32 +199,40 @@ public class CtColor : OfdElement
     }
 
     /// <summary>
-    /// 设置颜色
+    /// 设置颜色族类型
     /// </summary>
     /// <param name="color">颜色族中的颜色</param>
     /// <returns>this</returns>
-    public CtColor SetColor(ColorClusterType color)
+    public CtColor SetColor(IColorClusterType color)
     {
-        return SetValue(new StArray(color.Value));
+        Add(new OfdElement(color.Element));
+        return this;
     }
-}
-
-/// <summary>
-/// 颜色族类型
-/// </summary>
-public class ColorClusterType
-{
-    /// <summary>
-    /// 颜色值数组
-    /// </summary>
-    public double[] Value { get; set; }
 
     /// <summary>
-    /// 构造颜色族类型
+    /// 获取颜色族类型
     /// </summary>
-    /// <param name="values">颜色值数组</param>
-    public ColorClusterType(params double[] values)
+    /// <returns>颜色族中的颜色</returns>
+    public IColorClusterType? GetColor()
     {
-        Value = values;
+        var elements = Element.Elements().Where(e => e.Name.Namespace == Const.OfdNamespace);
+        foreach (var element in elements)
+        {
+            try
+            {
+                return ColorClusterType.GetInstance(element);
+            }
+            catch (ArgumentException)
+            {
+                // 不是颜色族类型，继续查找
+                continue;
+            }
+        }
+        return null;
     }
+
+    /// <summary>
+    /// 获取限定名称
+    /// </summary>
+    public override string QualifiedName => "ofd:Color";
 }

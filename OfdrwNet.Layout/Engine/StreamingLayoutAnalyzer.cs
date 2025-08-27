@@ -28,7 +28,7 @@ public class StreamingLayoutAnalyzer
     /// </summary>
     /// <param name="segments">布局段落序列</param>
     /// <returns>虚拟页面列表</returns>
-    public List<VirtualPage> Analyze(List<Segment> segments)
+    public List<VirtualPage> Analyze(List<LayoutSegment> segments)
     {
         var pages = new List<VirtualPage>();
         var currentPage = CreateNewPage();
@@ -101,7 +101,7 @@ public class StreamingLayoutAnalyzer
 /// 布局段落
 /// 表示可以作为一个整体进行布局的元素组合
 /// </summary>
-public class Segment
+public class LayoutSegment
 {
     /// <summary>
     /// 段落中的元素列表
@@ -117,7 +117,7 @@ public class Segment
     /// 构造函数
     /// </summary>
     /// <param name="maxWidth">最大宽度</param>
-    public Segment(double maxWidth)
+    public LayoutSegment(double maxWidth)
     {
         MaxWidth = maxWidth;
     }
@@ -208,6 +208,6 @@ public class Segment
     /// <returns>字符串表示</returns>
     public override string ToString()
     {
-        return $"Segment(Elements={Elements.Count}, Width={GetWidth()}, Height={GetHeight()})";
+        return $"LayoutSegment(Elements={Elements.Count}, Width={GetWidth()}, Height={GetHeight()})";
     }
 }

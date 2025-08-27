@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\OfdrwNet.Core\OfdrwNet.Core.csproj" />
     <ProjectReference Include="..\OfdrwNet.Reader\OfdrwNet.Reader.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Font\OfdrwNet.Font.csproj" />
   </ItemGroup>
 
 </Project>

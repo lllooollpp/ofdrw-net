@@ -1,93 +1,135 @@
 using OfdrwNet.Core;
-using OfdrwNet.Core.BasicType;
-using System.Xml.Linq;
 
 namespace OfdrwNet.Layout.Element;
 
 /// <summary>
-/// 基础布局元素
+/// 盒式模型基础类
+/// 
+/// 每个继承Div的对象都提供泛型参数T，用于简化链式调用。
+/// 
 /// 对应 Java 版本的 org.ofdrw.layout.element.Div
-/// 所有布局元素的基类，提供基本的位置、尺寸、样式等属性
 /// </summary>
-public class Div
+/// <typeparam name="T">链式调用返回值，Div的子类</typeparam>
+public class Div<T> : IElement where T : Div<T>
 {
     /// <summary>
-    /// X坐标
+    /// 背景颜色 (R,G,B) 三色数组
     /// </summary>
-    public double? X { get; set; }
+    public int[]? BackgroundColor { get; set; }
 
     /// <summary>
-    /// Y坐标
+    /// 边框颜色 (R,G,B) 三色数组
     /// </summary>
-    public double? Y { get; set; }
+    public int[]? BorderColor { get; set; }
 
     /// <summary>
-    /// 宽度
+    /// 内容宽度
+    /// 如果不设置，则为自适应。最大宽度不能大于页面版心宽度。
     /// </summary>
     public double? Width { get; set; }
 
     /// <summary>
-    /// 高度
+    /// 内容高度
+    /// 如果不设置则为自适应。
+    /// 注意如果需要保证块完整，那么高度不能大于版心高度。
     /// </summary>
     public double? Height { get; set; }
 
     /// <summary>
-    /// 定位方式
+    /// 内边距
+    /// 数组中个元素意义：上、右、下、左
     /// </summary>
-    public Position Position { get; set; } = Position.Relative;
+    public double[] Padding { get; set; } = { 0d, 0d, 0d, 0d };
 
     /// <summary>
-    /// 浮动方式
+    /// 边框宽度
+    /// 数组中个元素意义：上、右、下、左
     /// </summary>
-    public AFloat Float { get; set; } = AFloat.None;
+    public double[] Border { get; set; } = { 0d, 0d, 0d, 0d };
 
     /// <summary>
-    /// 图层类型
+    /// 外边距
+    /// 数组中个元素意义：上、右、下、左
+    /// </summary>
+    public double[] Margin { get; set; } = { 0d, 0d, 0d, 0d };
+
+    /// <summary>
+    /// 边框虚线样式
+    /// 数组中个元素意义：[偏移量, 虚线长,空白长, 虚线长,空白长, ...]
+    /// </summary>
+    public double[]? BorderDash { get; set; }
+
+    /// <summary>
+    /// 固定布局的盒式模型左上角X坐标
+    /// </summary>
+    public double? X { get; set; }
+
+    /// <summary>
+    /// 固定布局的盒式模型左上角Y坐标
+    /// </summary>
+    public double? Y { get; set; }
+
+    /// <summary>
+    /// 对段的占用情况
+    /// </summary>
+    public Clear Clear { get; set; } = Clear.Both;
+
+    /// <summary>
+    /// 在段中的浮动方向
+    /// </summary>
+    public AFloat Float { get; set; } = AFloat.Left;
+
+    /// <summary>
+    /// 相对于段的左边界距离
+    /// </summary>
+    public double Left { get; set; } = 0d;
+
+    /// <summary>
+    /// 相对于段的右边界距离
+    /// </summary>
+    public double Right { get; set; } = 0d;
+
+    /// <summary>
+    /// 相对坐标的top
+    /// </summary>
+    public double Top { get; set; } = 0d;
+
+    /// <summary>
+    /// 元素整体透明度
+    /// null 表示不透明，取值区间 [0,1]
+    /// </summary>
+    public double? Opacity { get; set; }
+
+    /// <summary>
+    /// 元素定位方式，默认为静态定位
+    /// </summary>
+    public Position Position { get; set; } = Position.Static;
+
+    /// <summary>
+    /// 当渲染空间不足时是否拆分元素
+    /// true为不拆分，false为拆分。默认值为false
+    /// </summary>
+    public bool Integrity { get; set; } = false;
+
+    /// <summary>
+    /// 占位符，不参与渲染
+    /// </summary>
+    public bool Placeholder { get; set; } = false;
+
+    /// <summary>
+    /// 图层，默认为Body
     /// </summary>
     public LayerType Layer { get; set; } = LayerType.Body;
 
     /// <summary>
-    /// 边距 [上, 右, 下, 左]
+    /// 构造函数
     /// </summary>
-    private double[] _margin = { 0, 0, 0, 0 };
+    public Div()
+    {
+    }
 
     /// <summary>
-    /// 内边距 [上, 右, 下, 左]
-    /// </summary>
-    private double[] _padding = { 0, 0, 0, 0 };
-
-    /// <summary>
-    /// 边框宽度
-    /// </summary>
-    public double BorderWidth { get; set; } = 0;
-
-    /// <summary>
-    /// 边框颜色
-    /// </summary>
-    public string? BorderColor { get; set; }
-
-    /// <summary>
-    /// 背景颜色
-    /// </summary>
-    public string? BackgroundColor { get; set; }
-
-    /// <summary>
-    /// 子元素列表
-    /// </summary>
-    public List<Div> Children { get; set; } = new List<Div>();
-
-    /// <summary>
-    /// 元素类型标识
-    /// </summary>
-    public virtual string ElementType => "Div";
-
-    /// <summary>
-    /// 默认构造函数
-    /// </summary>
-    public Div() { }
-
-    /// <summary>
-    /// 指定尺寸的构造函数
+    /// 使用宽高构造
     /// </summary>
     /// <param name="width">宽度</param>
     /// <param name="height">高度</param>
@@ -98,10 +140,10 @@ public class Div
     }
 
     /// <summary>
-    /// 指定位置和尺寸的构造函数
+    /// 创建绝对定位的Div对象
     /// </summary>
-    /// <param name="x">X坐标</param>
-    /// <param name="y">Y坐标</param>
+    /// <param name="x">固定布局的盒式模型左上角X坐标</param>
+    /// <param name="y">固定布局的盒式模型左上角Y坐标</param>
     /// <param name="width">宽度</param>
     /// <param name="height">高度</param>
     public Div(double x, double y, double width, double height)
@@ -110,6 +152,74 @@ public class Div
         Y = y;
         Width = width;
         Height = height;
+        Position = Position.Absolute;
+    }
+
+    /// <summary>
+    /// 是否存在边框
+    /// </summary>
+    /// <returns>true 不存在；false 存在</returns>
+    public bool IsNoBorder()
+    {
+        return GetBorderTop() == 0d &&
+               GetBorderRight() == 0d &&
+               GetBorderBottom() == 0d &&
+               GetBorderLeft() == 0d;
+    }
+
+    /// <summary>
+    /// 是否是块级元素
+    /// </summary>
+    /// <returns>true 是块级元素；false 不是</returns>
+    public virtual bool IsBlockElement()
+    {
+        return true;
+    }
+
+    /// <summary>
+    /// 获取上边框宽度
+    /// </summary>
+    /// <returns>上边框宽度</returns>
+    public double GetBorderTop() => Border[0];
+
+    /// <summary>
+    /// 获取右边框宽度
+    /// </summary>
+    /// <returns>右边框宽度</returns>
+    public double GetBorderRight() => Border[1];
+
+    /// <summary>
+    /// 获取下边框宽度
+    /// </summary>
+    /// <returns>下边框宽度</returns>
+    public double GetBorderBottom() => Border[2];
+
+    /// <summary>
+    /// 获取左边框宽度
+    /// </summary>
+    /// <returns>左边框宽度</returns>
+    public double GetBorderLeft() => Border[3];
+
+    /// <summary>
+    /// 设置宽度
+    /// </summary>
+    /// <param name="width">宽度</param>
+    /// <returns>this</returns>
+    public T SetWidth(double width)
+    {
+        Width = width;
+        return (T)this;
+    }
+
+    /// <summary>
+    /// 设置高度
+    /// </summary>
+    /// <param name="height">高度</param>
+    /// <returns>this</returns>
+    public T SetHeight(double height)
+    {
+        Height = height;
+        return (T)this;
     }
 
     /// <summary>
@@ -118,240 +228,93 @@ public class Div
     /// <param name="x">X坐标</param>
     /// <param name="y">Y坐标</param>
     /// <returns>this</returns>
-    public Div SetXY(double x, double y)
+    public T SetPosition(double x, double y)
     {
         X = x;
         Y = y;
-        return this;
-    }
-
-    /// <summary>
-    /// 设置尺寸
-    /// </summary>
-    /// <param name="width">宽度</param>
-    /// <param name="height">高度</param>
-    /// <returns>this</returns>
-    public Div SetSize(double width, double height)
-    {
-        Width = width;
-        Height = height;
-        return this;
-    }
-
-    /// <summary>
-    /// 设置定位方式
-    /// </summary>
-    /// <param name="position">定位方式</param>
-    /// <returns>this</returns>
-    public Div SetPosition(Position position)
-    {
-        Position = position;
-        return this;
-    }
-
-    /// <summary>
-    /// 设置浮动方式
-    /// </summary>
-    /// <param name="floatType">浮动方式</param>
-    /// <returns>this</returns>
-    public Div SetFloat(AFloat floatType)
-    {
-        Float = floatType;
-        return this;
-    }
-
-    /// <summary>
-    /// 设置图层
-    /// </summary>
-    /// <param name="layer">图层类型</param>
-    /// <returns>this</returns>
-    public Div SetLayer(LayerType layer)
-    {
-        Layer = layer;
-        return this;
-    }
-
-    /// <summary>
-    /// 设置外边距
-    /// </summary>
-    /// <param name="margin">边距数组</param>
-    /// <returns>this</returns>
-    public Div SetMargin(params double[] margin)
-    {
-        _margin = ProcessSpacingArray(margin);
-        return this;
-    }
-
-    /// <summary>
-    /// 获取外边距
-    /// </summary>
-    /// <returns>[上, 右, 下, 左]</returns>
-    public double[] GetMargin() => (double[])_margin.Clone();
-
-    /// <summary>
-    /// 设置内边距
-    /// </summary>
-    /// <param name="padding">内边距数组</param>
-    /// <returns>this</returns>
-    public Div SetPadding(params double[] padding)
-    {
-        _padding = ProcessSpacingArray(padding);
-        return this;
-    }
-
-    /// <summary>
-    /// 获取内边距
-    /// </summary>
-    /// <returns>[上, 右, 下, 左]</returns>
-    public double[] GetPadding() => (double[])_padding.Clone();
-
-    /// <summary>
-    /// 设置边框
-    /// </summary>
-    /// <param name="width">边框宽度</param>
-    /// <param name="color">边框颜色</param>
-    /// <returns>this</returns>
-    public Div SetBorder(double width, string? color = null)
-    {
-        BorderWidth = width;
-        BorderColor = color ?? "#000000";
-        return this;
+        Position = Position.Absolute;
+        return (T)this;
     }
 
     /// <summary>
     /// 设置背景颜色
     /// </summary>
-    /// <param name="color">颜色值</param>
+    /// <param name="r">红色分量</param>
+    /// <param name="g">绿色分量</param>
+    /// <param name="b">蓝色分量</param>
     /// <returns>this</returns>
-    public Div SetBackgroundColor(string color)
+    public T SetBackgroundColor(int r, int g, int b)
     {
-        BackgroundColor = color;
-        return this;
+        BackgroundColor = new[] { r, g, b };
+        return (T)this;
     }
 
     /// <summary>
-    /// 设置背景颜色 (RGB)
+    /// 设置边框颜色
     /// </summary>
-    /// <param name="r">红色分量 (0-255)</param>
-    /// <param name="g">绿色分量 (0-255)</param>
-    /// <param name="b">蓝色分量 (0-255)</param>
+    /// <param name="r">红色分量</param>
+    /// <param name="g">绿色分量</param>
+    /// <param name="b">蓝色分量</param>
     /// <returns>this</returns>
-    public Div SetBackgroundColor(int r, int g, int b)
+    public T SetBorderColor(int r, int g, int b)
     {
-        BackgroundColor = $"#{r:X2}{g:X2}{b:X2}";
-        return this;
+        BorderColor = new[] { r, g, b };
+        return (T)this;
     }
 
     /// <summary>
-    /// 添加子元素
+    /// 设置边框宽度
     /// </summary>
-    /// <param name="child">子元素</param>
+    /// <param name="width">边框宽度</param>
     /// <returns>this</returns>
-    public Div Add(Div child)
+    public T SetBorder(double width)
     {
-        if (child != null)
-        {
-            Children.Add(child);
-        }
-        return this;
+        Border = new[] { width, width, width, width };
+        return (T)this;
     }
 
     /// <summary>
-    /// 计算额外宽度（边距+内边距+边框）
+    /// 设置内边距
     /// </summary>
-    /// <returns>额外宽度</returns>
-    public double WidthPlus()
+    /// <param name="padding">内边距</param>
+    /// <returns>this</returns>
+    public T SetPadding(double padding)
     {
-        return _margin[1] + _margin[3] + _padding[1] + _padding[3] + BorderWidth * 2;
+        Padding = new[] { padding, padding, padding, padding };
+        return (T)this;
     }
 
     /// <summary>
-    /// 计算额外高度（边距+内边距+边框）
+    /// 设置外边距
     /// </summary>
-    /// <returns>额外高度</returns>
-    public double HeightPlus()
+    /// <param name="margin">外边距</param>
+    /// <returns>this</returns>
+    public T SetMargin(double margin)
     {
-        return _margin[0] + _margin[2] + _padding[0] + _padding[2] + BorderWidth * 2;
-    }
-
-    /// <summary>
-    /// 预处理方法，在布局前调用
-    /// </summary>
-    /// <param name="width">可用宽度</param>
-    public virtual void DoPrepare(double width)
-    {
-        // 子类可以重写此方法进行特定的预处理
-    }
-
-    /// <summary>
-    /// 处理间距数组，支持1-4个参数
-    /// </summary>
-    /// <param name="spacing">间距参数</param>
-    /// <returns>标准化的间距数组[上, 右, 下, 左]</returns>
-    private static double[] ProcessSpacingArray(double[] spacing)
-    {
-        return spacing?.Length switch
-        {
-            1 => new[] { spacing[0], spacing[0], spacing[0], spacing[0] },
-            2 => new[] { spacing[0], spacing[1], spacing[0], spacing[1] },
-            3 => new[] { spacing[0], spacing[1], spacing[2], spacing[1] },
-            4 => new[] { spacing[0], spacing[1], spacing[2], spacing[3] },
-            _ => new[] { 0.0, 0.0, 0.0, 0.0 }
-        };
-    }
-
-    /// <summary>
-    /// 转换为字符串
-    /// </summary>
-    public override string ToString()
-    {
-        return $"{ElementType}({X}, {Y}, {Width}, {Height})";
+        Margin = new[] { margin, margin, margin, margin };
+        return (T)this;
     }
 }
 
 /// <summary>
-/// 定位方式枚举
+/// 基础Div类（非泛型）
 /// </summary>
-public enum Position
+public class Div : Div<Div>
 {
-    /// <summary>
-    /// 相对定位
-    /// </summary>
-    Relative,
-
-    /// <summary>
-    /// 绝对定位
-    /// </summary>
-    Absolute,
-
-    /// <summary>
-    /// 固定定位
-    /// </summary>
-    Fixed
+    public Div() { }
+    public Div(double width, double height) : base(width, height) { }
+    public Div(double x, double y, double width, double height) : base(x, y, width, height) { }
 }
 
 /// <summary>
-/// 浮动方式枚举
+/// 布局元素接口
 /// </summary>
-public enum AFloat
+public interface IElement
 {
     /// <summary>
-    /// 不浮动
+    /// 是否是块级元素
     /// </summary>
-    None,
-
-    /// <summary>
-    /// 左浮动
-    /// </summary>
-    Left,
-
-    /// <summary>
-    /// 右浮动
-    /// </summary>
-    Right,
-
-    /// <summary>
-    /// 居中
-    /// </summary>
-    Center
+    /// <returns>true 是块级元素；false 不是</returns>
+    bool IsBlockElement();
 }
+
