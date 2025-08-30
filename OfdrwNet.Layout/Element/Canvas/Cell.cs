@@ -95,9 +95,9 @@ namespace OfdrwNet.Layout.Element.Canvas
         /// <param name="w">图片宽度，单位：毫米</param>
         /// <param name="h">图片高度，单位：毫米</param>
         /// <returns>this</returns>
-        public Cell SetValue(string imgPath, double w, double h)
+        public Cell SetImage(string imgPath, double w, double h)
         {
-            cellDrawer.SetValue(imgPath, w, h);
+            cellDrawer.SetImage(imgPath, w, h);
             return this;
         }
 
@@ -110,9 +110,9 @@ namespace OfdrwNet.Layout.Element.Canvas
         /// <param name="imgPath">图片路径，仅支持png、jpg、jpeg、gif、bmp格式</param>
         /// <returns>this</returns>
         /// <exception cref="IOException">图片加载异常</exception>
-        public Cell SetValue(string imgPath)
+        public Cell SetImage(string imgPath)
         {
-            cellDrawer.SetValue(imgPath);
+            cellDrawer.SetImage(imgPath);
             return this;
         }
 

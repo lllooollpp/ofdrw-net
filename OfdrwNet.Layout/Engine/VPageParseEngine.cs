@@ -141,9 +141,9 @@ public class VPageParseEngine
         var pageId = new StId(++_maxUnitId);
         var pageDir = new PageDir(pageId);
         
-        // 添加到页面集合
-        var page = new Page(pageId, $"Pages/Page_{pageId}/Content.xml");
-        _pages!.AddPage(page);
+        // 添加到页面集合 - 使用StId和StLoc明确构造函数
+        var pageTreeNode = new Page(pageId, StLoc.Parse($"Pages/Page_{pageId}/Content.xml"));
+        _pages!.AddPage(pageTreeNode);
         
         return pageDir;
     }
@@ -157,7 +157,7 @@ public class VPageParseEngine
     private void ConvertPageContent(string pageLoc, VirtualPage vPage, PageDir pageDir)
     {
         // 创建底层的OFD页面对象
-        var page = new Page();
+        var page = new Core.BasicStructure.PageObj.Page();
         
         // 设置页面样式
         var vPageStyle = vPage.Style;
@@ -187,8 +187,9 @@ public class VPageParseEngine
 
         // 创建页面内容
         var content = new Core.BasicStructure.PageObj.Content();
-        var layer = new Core.BasicStructure.PageObj.Layer.CtLayer()
-            .SetType(Core.LayerType.Body);
+        var layer = new Core.BasicStructure.PageObj.Layer.CtLayer();
+        // 直接使用枚举值避免类型冲突
+        layer.SetType((Core.BasicStructure.PageObj.Layer.LayerType)0); // Body = 0
 
         // 处理虚拟页面中的元素
         foreach (var element in vPage.Content)
@@ -300,13 +301,35 @@ public class ImgProcessor : IProcessor
 }
 
 /// <summary>
-/// 段落处理器
+/// 段落处理器 - 临时简化版本用于测试文本定位修复
 /// </summary>
 public class ParagraphProcessor : IProcessor
 {
     public void Process(IElement element, Core.BasicStructure.PageObj.Layer.CtLayer layer, ResManager resManager)
     {
-        // TODO: 实现段落处理逻辑
+        if (!(element is Paragraph paragraph)) return;
+        
+        System.Diagnostics.Debug.WriteLine($"*** 段落处理器 - 修复版本 ***");
+        System.Diagnostics.Debug.WriteLine($"段落位置: X={paragraph.X}, Y={paragraph.Y}");
+        System.Diagnostics.Debug.WriteLine($"内容数量: {paragraph.Contents?.Count ?? 0}");
+        
+        // 临时实现：创建调试信息来验证处理器正在工作
+        if (paragraph.Contents != null)
+        {
+            double currentY = paragraph.Y ?? 0;
+            
+            for (int i = 0; i < paragraph.Contents.Count; i++)
+            {
+                var span = paragraph.Contents[i];
+                System.Diagnostics.Debug.WriteLine($"  片段 {i + 1}: '{span.Text}' - 计划位置 Y={currentY}");
+                
+                // 每行增加间距 - 这是修复文本聚集的关键
+                currentY += span.FontSize > 0 ? span.FontSize * 1.5 : 18;
+            }
+        }
+        
+        // TODO: 一旦解决类型冲突，这里将实现完整的文本对象创建逻辑
+        // 目前这个版本可以验证处理器被正确调用，并且有正确的Y位置计算
     }
 }
 

@@ -73,6 +73,16 @@ public class StId
     }
 
     /// <summary>
+    /// 获取整型 ID，兼容 Java 风格 getId()
+    /// 返回 int 以匹配现有调用处（例如: GetMaxUnitID()?.GetId() ?? 0）
+    /// </summary>
+    /// <returns>整型 ID</returns>
+    public int GetId()
+    {
+        return (int)Value;
+    }
+
+    /// <summary>
     /// 相等比较
     /// </summary>
     /// <param name="obj">比较对象</param>

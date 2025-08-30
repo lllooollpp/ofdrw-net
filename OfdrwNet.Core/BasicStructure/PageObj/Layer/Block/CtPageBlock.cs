@@ -27,4 +27,15 @@ public class CtPageBlock : BlockType
     {
         this.SetObjID(new StRefId(id));
     }
+    
+    /// <summary>
+    /// 兼容方法：添加页面块（适配布局引擎调用）
+    /// </summary>
+    /// <param name="pageBlock">页面块对象</param>
+    /// <returns>this</returns>
+    public CtPageBlock AddPageBlock(OfdElement pageBlock)
+    {
+        Add(pageBlock);
+        return this;
+    }
 }

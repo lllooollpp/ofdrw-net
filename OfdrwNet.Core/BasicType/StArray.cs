@@ -143,4 +143,48 @@ public class StArray
     {
         return Values.Select(x => (int)Math.Round(x)).ToArray();
     }
+
+    /// <summary>
+    /// 返回单位变换矩阵（单位CTM）
+    /// </summary>
+    public static StArray UnitCTM()
+    {
+        return new StArray(1, 0, 0, 1, 0, 0);
+    }
+
+    /// <summary>
+    /// 克隆数组（深拷贝）
+    /// </summary>
+    /// <returns>新的 StArray 实例</returns>
+    public StArray Clone()
+    {
+        return new StArray((double[])Values.Clone());
+    }
+
+    /// <summary>
+    /// 以当前矩阵作为左矩阵，与参数矩阵相乘（即 this * other），返回乘积矩阵
+    /// 矩阵按照 OFD/ST_Array 约定 [a b c d e f] -> [[a, c, e],[b, d, f],[0,0,1]]
+    /// </summary>
+    /// <param name="other">右矩阵（可为 null，null 等价于单位矩阵）</param>
+    /// <returns>乘积矩阵</returns>
+    public StArray MtxMul(StArray? other)
+    {
+        if (other == null)
+            return this.Clone();
+
+        if (Values.Length < 6 || other.Values.Length < 6)
+            throw new ArgumentException("矩阵必须包含至少6个元素", nameof(other));
+
+        var a1 = Values[0]; var b1 = Values[1]; var c1 = Values[2]; var d1 = Values[3]; var e1 = Values[4]; var f1 = Values[5];
+        var a2 = other.Values[0]; var b2 = other.Values[1]; var c2 = other.Values[2]; var d2 = other.Values[3]; var e2 = other.Values[4]; var f2 = other.Values[5];
+
+        var a = a1 * a2 + c1 * b2;
+        var b = b1 * a2 + d1 * b2;
+        var c = a1 * c2 + c1 * d2;
+        var d = b1 * c2 + d1 * d2;
+        var e = a1 * e2 + c1 * f2 + e1;
+        var f = b1 * e2 + d1 * f2 + f1;
+
+        return new StArray(a, b, c, d, e, f);
+    }
 }

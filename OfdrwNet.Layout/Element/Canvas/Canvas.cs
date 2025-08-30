@@ -111,8 +111,8 @@ namespace OfdrwNet.Layout.Element.Canvas
         /// </summary>
         public override Rectangle DoPrepare(double widthLimit)
         {
-            var w = GetWidth() + WidthPlus();
-            var h = GetHeight() + HeightPlus();
+            var w = (GetWidth() ?? 0d) + WidthPlus();
+            var h = (GetHeight() ?? 0d) + HeightPlus();
             return new Rectangle(w, h);
         }
 

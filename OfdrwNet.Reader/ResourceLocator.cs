@@ -118,6 +118,35 @@ public class ResourceLocator : IDisposable
     }
 
     /// <summary>
+    /// 切换到指定的文档容器（DocDir）
+    /// </summary>
+    /// <param name="docDir">文档容器包装器</param>
+    /// <returns>this</returns>
+    public ResourceLocator Cd(DocDir docDir)
+    {
+        if (docDir == null)
+        {
+            return this;
+        }
+
+        try
+        {
+            var container = docDir.ObtainDocDefault();
+            if (container != null)
+            {
+                _currentContainer = container;
+                _currentWorkingDirectory = container.GetAbsLoc().ToString();
+            }
+        }
+        catch
+        {
+            // ignore and keep current
+        }
+
+        return this;
+    }
+
+    /// <summary>
     /// 保存当前工作目录到栈中
     /// </summary>
     /// <returns>this</returns>

@@ -25,7 +25,7 @@ public class Page : OfdElement
     /// <param name="element">XML元素</param>
     public Page(XElement element) : base(element)
     {
-    }
+    }   
 
     /// <summary>
     /// 构造新的页面对象
@@ -168,48 +168,4 @@ public class Page : OfdElement
     /// 获取限定名称
     /// </summary>
     public override string QualifiedName => "ofd:Page";
-}
-
-/// <summary>
-/// 模板页（占位符实现）
-/// 待后续完善
-/// </summary>
-public class Template : OfdElement
-{
-    public Template(XElement element) : base(element) { }
-    public Template() : base("Template") { }
-    public override string QualifiedName => "ofd:Template";
-}
-
-/// <summary>
-/// 页面内容（占位符实现）
-/// 待后续完善
-/// </summary>
-public class Content : OfdElement
-{
-    public Content(XElement element) : base(element) { }
-    public Content() : base("Content") { }
-    public override string QualifiedName => "ofd:Content";
-
-    /// <summary>
-    /// 添加图层
-    /// </summary>
-    /// <param name="layer">图层</param>
-    /// <returns>this</returns>
-    public Content AddLayer(Layer.CtLayer layer)
-    {
-        Add(layer);
-        return this;
-    }
-}
-
-/// <summary>
-/// 动作序列（占位符实现）
-/// 待后续完善
-/// </summary>
-public class Actions : OfdElement
-{
-    public Actions(XElement element) : base(element) { }
-    public Actions() : base("Actions") { }
-    public override string QualifiedName => "ofd:Actions";
 }

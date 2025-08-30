@@ -40,7 +40,7 @@ public class TextObject : CtText, IPageBlockType
     /// <param name="id">对象ID</param>
     public TextObject(long id) : this()
     {
-        this.SetObjId(new StRefId(id));
+        this.SetObjId(new StRefId(id)); 
     }
 
     /// <summary>

@@ -1,4 +1,5 @@
 using OfdrwNet.Core;
+using OfdrwNet.Core.BasicStructure.PageObj.Layer;
 
 namespace OfdrwNet.Layout.Element;
 
@@ -223,6 +224,15 @@ public class Div<T> : IElement where T : Div<T>
     }
 
     /// <summary>
+    /// 设置定位方式（兼容旧 API）
+    /// </summary>
+    public T SetPosition(Position position)
+    {
+        Position = position;
+        return (T)this;
+    }
+
+    /// <summary>
     /// 设置位置
     /// </summary>
     /// <param name="x">X坐标</param>
@@ -294,7 +304,162 @@ public class Div<T> : IElement where T : Div<T>
         Margin = new[] { margin, margin, margin, margin };
         return (T)this;
     }
-}
+
+    /// <summary>
+    /// 获取元素的内容宽度（null时返回null）
+    /// 兼容旧代码中调用 GetWidth()
+    /// </summary>
+    public double? GetWidth()
+    {
+        return Width;
+    }
+
+    /// <summary>
+    /// 获取元素的内容高度（null时返回null）
+    /// 兼容旧代码中调用 GetHeight()
+    /// </summary>
+    public double? GetHeight()
+    {
+        return Height;
+    }
+
+    /// <summary>
+    /// 获取左上角X坐标（兼容方法，null视为0）
+    /// </summary>
+    public double GetX() => X ?? 0d;
+
+    /// <summary>
+    /// 获取左上角Y坐标（兼容方法，null视为0）
+    /// </summary>
+    public double GetY() => Y ?? 0d;
+
+    /// <summary>
+    /// 获取内边距 Top
+    /// </summary>
+    public double GetPaddingTop() => Padding[0];
+
+    /// <summary>
+    /// 获取内边距 Right
+    /// </summary>
+    public double GetPaddingRight() => Padding[1];
+
+    /// <summary>
+    /// 获取内边距 Bottom
+    /// </summary>
+    public double GetPaddingBottom() => Padding[2];
+
+    /// <summary>
+    /// 获取内边距 Left
+    /// </summary>
+    public double GetPaddingLeft() => Padding[3];
+
+    /// <summary>
+    /// 获取外边距 Top
+    /// </summary>
+    public double GetMarginTop() => Margin[0];
+
+    /// <summary>
+    /// 获取外边距 Right
+    /// </summary>
+    public double GetMarginRight() => Margin[1];
+
+    /// <summary>
+    /// 获取外边距 Bottom
+    /// </summary>
+    public double GetMarginBottom() => Margin[2];
+
+    /// <summary>
+    /// 获取外边距 Left
+    /// </summary>
+    public double GetMarginLeft() => Margin[3];
+
+    /// <summary>
+    /// 获取边框虚线样式
+    /// </summary>
+    public double[]? GetBorderDash() => BorderDash;
+
+    /// <summary>
+    /// 获取背景颜色（R,G,B）
+    /// </summary>
+    public int[]? GetBackgroundColor() => BackgroundColor;
+
+    /// <summary>
+    /// 获取边框颜色（R,G,B）
+    /// </summary>
+    public int[]? GetBorderColor() => BorderColor;
+
+    /// <summary>
+    /// 获取透明度（null 表示不指定）
+    /// </summary>
+    public double? GetOpacity() => Opacity;
+
+    /// <summary>
+    /// 获取定位方式
+    /// </summary>
+    public Position GetPosition() => Position;
+
+    /// <summary>
+    /// 获取浮动方向（兼容旧 API）
+    /// </summary>
+    public AFloat GetFloat() => Float;
+
+    /// <summary>
+    /// 获取元素在段中的占用情况（兼容旧 API）
+    /// </summary>
+    public Clear GetClear() => Clear;
+
+    /// <summary>
+    /// 设置元素位置（兼容旧 API setXY）
+    /// </summary>
+    public T SetXY(double x, double y)
+    {
+        X = x;
+        Y = y;
+        return (T)this;
+    }
+
+    /// <summary>
+    /// 是否保证完整不拆分（兼容旧 API isIntegrity）
+    /// </summary>
+    public bool IsIntegrity() => Integrity;
+
+    /// <summary>
+    /// 额外宽度（padding + border）用于计算实际占用宽度
+    /// </summary>
+    public double WidthPlus()
+    {
+        return Padding[1] + Padding[3] + Border[1] + Border[3];
+    }
+
+    /// <summary>
+    /// 额外高度（padding + border）用于计算实际占用高度
+    /// </summary>
+    public double HeightPlus()
+    {
+        return Padding[0] + Padding[2] + Border[0] + Border[2];
+    }
+
+    /// <summary>
+    /// 在进入渲染器之前对元素进行准备，返回实际占用的矩形区域。
+    /// Canvas 等类会覆盖该方法。
+    /// </summary>
+    /// <param name="widthLimit">可用宽度限制</param>
+    public virtual Rectangle DoPrepare(double widthLimit)
+    {
+        // 默认：元素不接受宽度调整，返回自身尺寸（包含padding和border）
+        var w = (GetWidth() ?? 0d) + WidthPlus();
+        var h = (GetHeight() ?? 0d) + HeightPlus();
+        return new Rectangle(w, h, w, h);
+    }
+
+    /// <summary>
+    /// 元素类型标识，供渲染器选择处理器使用
+    /// </summary>
+    public virtual string ElementType()
+    {
+        return "Div";
+    }
+ }
 
 /// <summary>
 /// 基础Div类（非泛型）

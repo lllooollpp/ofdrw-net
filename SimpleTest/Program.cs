@@ -1,143 +1,65 @@
-using System;
-using System.IO;
-using System.Threading.Tasks;
 using OfdrwNet;
-using OfdrwNet.Core.BasicStructure.Ofd;
+using OfdrwNet.Layout;
+using OfdrwNet.Layout.Element;
+using OfdrwNet.Layout.Element.Canvas;
 
 namespace SimpleTest
 {
     class Program
     {
-        static async Task Main(string[] args)
+        static async Task Run(string[] args)
         {
-            Console.WriteLine("开始测试OFD文件生成...");
-            
+            Console.WriteLine("开始创建 OFD 文档...");
+
             try
             {
-                // 测试基础结构类
-                TestBasicStructure();
+                // 设置输出文件路径
+                string outputPath = "simple_test_output.ofd";
                 
-                // 测试OFD文档生成
-                await TestOfdDocGeneration();
-                
-                Console.WriteLine("测试完成。");
+                // 创建 OFD 文档
+                using (var doc = new OfdrwNet.OFDDoc(outputPath))
+                {
+                    // 设置 A4 页面布局
+                    var layout = OfdrwNet.PageLayout.A4();
+                    doc.SetDefaultPageLayout(layout);
+
+                    // 添加标题段落
+                    var title = new Paragraph("OFD 文档测试", 18)
+                        .SetTextAlign(TextAlign.Center);
+                    doc.Add(title);
+
+                    // 添加内容段落
+                    var content = new Paragraph("这是一个由 OfdrwNet 生成的测试文档。", 12)
+                        .SetTextAlign(TextAlign.Start);
+                    doc.Add(content);
+
+                    // 添加更多内容
+                    var moreContent = new Paragraph("OFD (Open Fixed-layout Document) 是中国国家标准的版式文档格式。", 10)
+                        .SetTextAlign(TextAlign.Start);
+                    doc.Add(moreContent);
+
+                    // 关闭并生成文档
+                    await doc.CloseAsync();
+
+                    Console.WriteLine($"✅ OFD 文档已成功创建: {outputPath}");
+                    
+                    // 显示文件信息
+                    if (File.Exists(outputPath))
+                    {
+                        var fileInfo = new FileInfo(outputPath);
+                        Console.WriteLine($"文件大小: {fileInfo.Length} 字节");
+                        Console.WriteLine($"创建时间: {fileInfo.CreationTime}");
+                    }
+                }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"测试过程中发生错误: {ex.Message}");
-                Console.WriteLine($"堆栈跟踪: {ex.StackTrace}");
+                Console.WriteLine($"❌ 创建 OFD 文档时发生错误: {ex.Message}");
+                Console.WriteLine($"详细错误: {ex}");
+                return;
             }
-        }
-        
-        static void TestBasicStructure()
-        {
-            Console.WriteLine("测试基础结构类...");
-            
-            // 创建DocInfo
-            var docInfo = new DocInfo();
-            docInfo.RandomDocId()
-                   .SetTitle("测试文档")
-                   .SetCreator("OfdrwNet")
-                   .SetCreatorVersion("1.0")
-                   .SetCreationDate(DateTime.Now)
-                   .SetModDate(DateTime.Now)
-                   .SetDocUsage(DocUsage.Normal);
-            
-            // 创建DocBody
-            var docBody = new DocBody();
-            docBody.SetDocInfo(docInfo)
-                   .SetDocRoot(new OfdrwNet.Core.BasicType.StLoc("Doc/Document.xml"));
-            
-            // 创建OFD根节点
-            var ofd = new OFD();
-            ofd.AddDocBody(docBody);
-            
-            // 输出XML
-            var xml = ofd.ToXml();
-            Console.WriteLine("生成的OFD.xml内容:");
-            Console.WriteLine(xml);
-            
-            // 检查是否包含正确的命名空间
-            if (xml.Contains("xmlns:ofd=\"http://www.ofdspec.org/2016\"") && 
-                xml.Contains("<ofd:OFD") && 
-                xml.Contains("<ofd:DocBody") && 
-                xml.Contains("<ofd:DocInfo"))
-            {
-                Console.WriteLine("✓ 命名空间和前缀正确");
-            }
-            else
-            {
-                Console.WriteLine("✗ 命名空间或前缀不正确");
-            }
-        }
-        
-        static async Task TestOfdDocGeneration()
-        {
-            Console.WriteLine("测试OFD文档生成...");
-            
-            var outputPath = Path.Combine(Path.GetTempPath(), "test.ofd");
-            Console.WriteLine($"输出路径: {outputPath}");
-            
-            // 使用OFDDoc生成OFD文件
-            using (var doc = new OFDDoc(outputPath))
-            {
-                // 添加一些测试内容
-                var paragraph = new OfdrwNet.Layout.Element.Paragraph("测试OFD文档内容");
-                paragraph.FontSize = 12;
-                doc.Add(paragraph);
-                
-                await doc.CloseAsync();
-            }
-            
-            // 检查生成的文件
-            if (File.Exists(outputPath))
-            {
-                var fileInfo = new FileInfo(outputPath);
-                Console.WriteLine($"✓ OFD文件生成成功，大小: {fileInfo.Length} 字节");
-                
-                // 尝试解压并检查内容
-                var extractDir = Path.Combine(Path.GetTempPath(), "ofd_test_extracted");
-                if (Directory.Exists(extractDir))
-                    Directory.Delete(extractDir, true);
-                
-                System.IO.Compression.ZipFile.ExtractToDirectory(outputPath, extractDir);
-                
-                // 检查OFD.xml内容
-                var ofdXmlPath = Path.Combine(extractDir, "OFD.xml");
-                if (File.Exists(ofdXmlPath))
-                {
-                    var content = File.ReadAllText(ofdXmlPath);
-                    Console.WriteLine("OFD.xml 内容:");
-                    Console.WriteLine(content);
-                    
-                    // 验证内容
-                    if (content.Contains("xmlns:ofd=\"http://www.ofdspec.org/2016\"") && 
-                        content.Contains("<ofd:OFD") && 
-                        content.Contains("<ofd:DocBody"))
-                    {
-                        Console.WriteLine("✓ OFD.xml 格式正确");
-                    }
-                    else
-                    {
-                        Console.WriteLine("✗ OFD.xml 格式不正确");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("✗ 未找到OFD.xml文件");
-                }
-                
-                // 清理
-                Directory.Delete(extractDir, true);
-            }
-            else
-            {
-                Console.WriteLine("✗ OFD文件未生成");
-            }
-            
-            // 清理生成的文件
-            if (File.Exists(outputPath))
-                File.Delete(outputPath);
+
+            Console.WriteLine("测试完成！");
         }
     }
 }

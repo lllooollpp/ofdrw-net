@@ -1,4 +1,5 @@
 using OfdrwNet.Core;
+using OfdrwNet.Core.BasicStructure.PageObj.Layer;
 using OfdrwNet.Layout.Element;
 using OfdrwNet.Reader.Model;
 using System.Xml.Linq;
@@ -205,6 +206,15 @@ public class VirtualPage
             Templates.Add(template);
         }
         return this;
+    }
+
+    /// <summary>
+    /// 获取页面模板列表
+    /// </summary>
+    /// <returns>页面模板列表</returns>
+    public List<TemplatePageEntity> GetTemplates()
+    {
+        return Templates;
     }
 
     /// <summary>

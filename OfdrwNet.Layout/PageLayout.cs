@@ -221,6 +221,29 @@ public class PageLayout
     {
         return $"PageLayout({Width}×{Height}mm, Margin:[{GetMarginTop()},{GetMarginRight()},{GetMarginBottom()},{GetMarginLeft()}])";
     }
+
+    /// <summary>
+    /// 兼容方法：获取页面宽度
+    /// </summary>
+    public double GetWidth() => Width;
+
+    /// <summary>
+    /// 兼容方法：获取页面高度
+    /// </summary>
+    public double GetHeight() => Height;
+
+    /// <summary>
+    /// 兼容方法：获取页面区域（CT_PageArea）
+    /// </summary>
+    public OfdrwNet.Core.BasicStructure.Doc.CtPageArea GetPageArea()
+    {
+        return new OfdrwNet.Core.BasicStructure.Doc.CtPageArea(0, 0, Width, Height);
+    }
+
+    /// <summary>
+    /// 兼容方法：克隆 PageLayout
+    /// </summary>
+    public PageLayout Clone() => new PageLayout(Width, Height);
 }
 
 /// <summary>
@@ -241,8 +264,29 @@ public class Rectangle
         Height = height;
     }
 
+    /// <summary>
+    /// 兼容构造：只指定宽高，X/Y 视为 0
+    /// </summary>
+    public Rectangle(double width, double height)
+    {
+        X = 0d;
+        Y = 0d;
+        Width = width;
+        Height = height;
+    }
+
     public override string ToString()
     {
         return $"Rectangle({X}, {Y}, {Width}, {Height})";
     }
+
+    /// <summary>
+    /// 兼容方法：获取宽度
+    /// </summary>
+    public double GetWidth() => Width;
+
+    /// <summary>
+    /// 兼容方法：获取高度
+    /// </summary>
+    public double GetHeight() => Height;
 }

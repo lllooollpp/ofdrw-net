@@ -103,7 +103,7 @@ namespace OfdrwNet.Layout.Element.Canvas
         /// <param name="imgPath">图片路径</param>
         /// <param name="w">图片宽度</param>
         /// <param name="h">图片高度</param>
-        public void SetValue(string imgPath, double w, double h)
+        public void SetImage(string imgPath, double w, double h)
         {
             imagePath = imgPath;
             imageWidth = w;
@@ -115,10 +115,10 @@ namespace OfdrwNet.Layout.Element.Canvas
         /// 设置图片（自动获取尺寸）
         /// </summary>
         /// <param name="imgPath">图片路径</param>
-        public void SetValue(string imgPath)
+        public void SetImage(string imgPath)
         {
             // 简化实现，使用默认尺寸
-            SetValue(imgPath, 10, 10);
+            SetImage(imgPath, 10, 10);
         }
 
         /// <summary>

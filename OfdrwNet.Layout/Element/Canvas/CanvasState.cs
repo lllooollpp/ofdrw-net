@@ -72,9 +72,10 @@ namespace OfdrwNet.Layout.Element.Canvas
         {
             return new CanvasState
             {
-                Path = Path?.Clone(),
+                // AbbreviatedData 提供强类型的 CloneData()，使用它以避免 object -> AbbreviatedData 的转换问题
+                Path = Path?.CloneData(),
                 Ctm = Ctm?.Clone(),
-                ClipArea = ClipArea?.Clone(),
+                ClipArea = ClipArea?.CloneData(),
                 LineWidth = LineWidth,
                 LineCap = LineCap,
                 LineJoin = LineJoin,

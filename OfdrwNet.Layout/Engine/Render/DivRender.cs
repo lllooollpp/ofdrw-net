@@ -52,7 +52,7 @@ namespace OfdrwNet.Layout.Engine.Render
             int? alpha = null;
             if (e.GetOpacity() != null)
             {
-                alpha = (int)(e.GetOpacity() * 255);
+                alpha = (int)(e.GetOpacity().GetValueOrDefault() * 255);
             }
 
             if (e.GetHeight() == null)
@@ -71,7 +71,7 @@ namespace OfdrwNet.Layout.Engine.Render
                 2. 绘制边框
              */
             // 背景颜色 (有背景颜色并且，内容存在高度)
-            var eleContentHeight = e.GetPaddingTop() + e.GetHeight().Value + e.GetPaddingBottom();
+            var eleContentHeight = e.GetPaddingTop() + (e.GetHeight() ?? 0d) + e.GetPaddingBottom();
 
             if (bgColor != null && eleContentHeight > 0)
             {
@@ -79,7 +79,7 @@ namespace OfdrwNet.Layout.Engine.Render
                 var bg = new PathObject(objId);
                 var x = e.GetX() + e.GetMarginLeft() + borderLeft;
                 var y = e.GetY() + e.GetMarginTop() + borderTop;
-                var w = e.GetPaddingLeft() + e.GetWidth() + e.GetPaddingRight();
+                var w = e.GetPaddingLeft() + (e.GetWidth() ?? 0d) + e.GetPaddingRight();
                 
                 bg.SetBoundary(x, y, w, eleContentHeight)
                   // 设置填充颜色的矩形区域
@@ -114,8 +114,8 @@ namespace OfdrwNet.Layout.Engine.Render
                 var border = new PathObject(objId);
                 var x = e.GetX() + e.GetMarginLeft();
                 var y = e.GetY() + e.GetMarginTop();
-                var w = lineWidth + e.GetPaddingLeft() + e.GetWidth() + e.GetPaddingRight() + lineWidth;
-                var h = lineWidth + e.GetPaddingTop() + e.GetHeight().Value + e.GetPaddingBottom() + lineWidth;
+                var w = lineWidth + e.GetPaddingLeft() + (e.GetWidth() ?? 0d) + e.GetPaddingRight() + lineWidth;
+                var h = lineWidth + e.GetPaddingTop() + (e.GetHeight() ?? 0d) + e.GetPaddingBottom() + lineWidth;
                 
                 border.SetBoundary(x, y, w, h)
                       .SetLineWidth(lineWidth)
@@ -157,7 +157,7 @@ namespace OfdrwNet.Layout.Engine.Render
                     var topBorder = new PathObject(objId);
                     var x = e.GetX() + e.GetMarginLeft();
                     var y = e.GetY() + e.GetMarginTop();
-                    var w = borderLeft + e.GetPaddingLeft() + e.GetWidth() + e.GetPaddingRight() + borderRight;
+                    var w = borderLeft + e.GetPaddingLeft() + (e.GetWidth() ?? 0d) + e.GetPaddingRight() + borderRight;
                     
                     topBorder.SetBoundary(x, y, w, topWidth)
                              .SetLineWidth(topWidth)
@@ -195,9 +195,9 @@ namespace OfdrwNet.Layout.Engine.Render
                             + e.GetMarginTop()
                             + borderTop
                             + e.GetPaddingTop()
-                            + e.GetHeight().Value
+                            + (e.GetHeight() ?? 0d)
                             + e.GetPaddingBottom();
-                    var w = borderLeft + e.GetPaddingLeft() + e.GetWidth() + e.GetPaddingRight() + borderRight;
+                    var w = borderLeft + e.GetPaddingLeft() + (e.GetWidth() ?? 0d) + e.GetPaddingRight() + borderRight;
                     
                     bottomBorder.SetBoundary(x, y, w, bottomWidth)
                                 .SetLineWidth(bottomWidth)

@@ -88,6 +88,44 @@ public class StreamingLayoutAnalyzer
     }
 
     /// <summary>
+    /// 分析布局段落序列，转换为虚拟页面列表 (兼容Segment版本)
+    /// </summary>
+    /// <param name="segments">布局段落序列</param>
+    /// <returns>虚拟页面列表</returns>
+    public List<VirtualPage> Analyze(List<Segment> segments)
+    {
+        // 将 Segment 列表转换为 LayoutSegment 列表
+        var layoutSegments = segments.Select(seg => ConvertToLayoutSegment(seg)).ToList();
+        return Analyze(layoutSegments);
+    }
+
+    /// <summary>
+    /// 将 Segment 转换为 LayoutSegment
+    /// </summary>
+    /// <param name="segment">原始段落</param>
+    /// <returns>布局段落</returns>
+    private LayoutSegment ConvertToLayoutSegment(Segment segment)
+    {
+        var layoutSegment = new LayoutSegment(_pageLayout.ContentWidth);
+
+        // 从 Segment 中提取元素并添加到 LayoutSegment
+        foreach (var item in segment)
+        {
+            var div = item.Key;
+            var rect = item.Value;
+
+            // 设置元素的位置和尺寸
+            div.SetXY(rect.X, rect.Y);
+            div.Width = rect.Width;
+            div.Height = rect.Height;
+
+            layoutSegment.Add(div);
+        }
+
+        return layoutSegment;
+    }
+
+    /// <summary>
     /// 创建新的虚拟页面
     /// </summary>
     /// <returns>新的虚拟页面</returns>

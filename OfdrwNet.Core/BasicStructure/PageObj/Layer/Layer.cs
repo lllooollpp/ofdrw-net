@@ -183,6 +183,17 @@ public class Layer : OfdElement
     }
 
     /// <summary>
+    /// 兼容方法：添加页面块（适配 Java 版的 addPageBlock 调用）
+    /// </summary>
+    /// <param name="pageBlock">页面块或页面对象</param>
+    /// <returns>this</returns>
+    public Layer AddPageBlock(OfdElement pageBlock)
+    {
+        Add(pageBlock);
+        return this;
+    }
+
+    /// <summary>
     /// 获取所有页面对象
     /// </summary>
     /// <returns>页面对象列表</returns>

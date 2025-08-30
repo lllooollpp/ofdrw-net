@@ -1,6 +1,8 @@
 using Microsoft.Extensions.Logging;
 using OfdrwNet.Reader;
+using System.Drawing;
 using System.Text;
+using System.Windows.Forms;
 using System.Xml.Linq;
 
 namespace OfdrwNet.WinFormsDemo;
@@ -11,7 +13,8 @@ namespace OfdrwNet.WinFormsDemo;
 /// </summary>
 public partial class OfdViewerForm : Form
 {
-    private OfdReader? _ofdReader;
+    private OfdReader _currentOfdReader;
+    private OfdPageDrawer _pageDrawer;
     private List<PageInfo>? _pageList;
     private int _currentPageIndex = -1;
     private string? _currentFilePath;
@@ -178,8 +181,9 @@ public partial class OfdViewerForm : Form
             {
                 try
                 {
-                    _ofdReader = new OfdReader(filePath);
-                    _pageList = _ofdReader.GetPageList();
+                    _currentOfdReader = new OfdReader(filePath);
+                    _pageDrawer = new OfdPageDrawer(_currentOfdReader);
+                    _pageList = _currentOfdReader.GetPageList();
                 }
                 catch (Exception ex)
                 {
@@ -321,8 +325,10 @@ public partial class OfdViewerForm : Form
     {
         try
         {
-            _ofdReader?.Dispose();
-            _ofdReader = null;
+            _currentOfdReader?.Dispose();
+            _currentOfdReader = null;
+            _pageDrawer?.Dispose();
+            _pageDrawer = null;
             _pageList = null;
             _currentPageIndex = -1;
             _currentFilePath = null;
@@ -343,7 +349,7 @@ public partial class OfdViewerForm : Form
     /// </summary>
     private void UpdateDocumentInfo()
     {
-        if (_ofdReader == null || string.IsNullOrEmpty(_currentFilePath))
+        if (_currentOfdReader == null || string.IsNullOrEmpty(_currentFilePath))
         {
             txtDocumentInfo.Text = "请打开 OFD 文档...";
             return;
@@ -354,26 +360,58 @@ public partial class OfdViewerForm : Form
             var fileInfo = new FileInfo(_currentFilePath);
             var pageCount = _pageList?.Count ?? 0;
 
-            var info = new StringBuilder();
-            info.AppendLine("=== 文档信息 ===");
-            info.AppendLine($"文件名: {fileInfo.Name}");
-            info.AppendLine($"文件大小: {FormatFileSize(fileInfo.Length)}");
-            info.AppendLine($"修改时间: {fileInfo.LastWriteTime:yyyy-MM-dd HH:mm:ss}");
-            info.AppendLine($"页面总数: {pageCount}");
-            info.AppendLine();
+            var sb = new StringBuilder();
+            sb.AppendLine("=== 文档信息 ===");
+            sb.AppendLine($"文件名: {fileInfo.Name}");
+            sb.AppendLine($"文件大小: {FormatFileSize(fileInfo.Length)}");
+            sb.AppendLine($"修改时间: {fileInfo.LastWriteTime:yyyy-MM-dd HH:mm:ss}");
+            sb.AppendLine($"页面总数: {pageCount}");
+            sb.AppendLine();
+
+            var docInfo = _currentOfdReader.GetDocumentInfo();
+            if (docInfo != null)
+            {
+                sb.AppendLine($"  DocID: {docInfo.DocId}");
+                sb.AppendLine($"  标题: {docInfo.Title}");
+                sb.AppendLine($"  作者: {docInfo.Author}");
+                sb.AppendLine($"  主题: {docInfo.Subject}");
+                sb.AppendLine($"  关键字: {docInfo.Keywords}");
+                sb.AppendLine($"  创建日期: {docInfo.CreationDate}");
+                sb.AppendLine($"  修改日期: {docInfo.ModificationDate}");
+                sb.AppendLine();
+            }
+
+            // 添加文本统计信息
+            try
+            {
+                var extractor = new ContentExtractor(_currentOfdReader);
+                var stats = extractor.GetDocumentStatistics();
+                
+                sb.AppendLine("=== 文本统计 ===");
+                sb.AppendLine($"含文本页面: {stats.PagesWithText} / {stats.TotalPages} 页");
+                sb.AppendLine($"文本对象数: {stats.TotalTextObjects}");
+                sb.AppendLine($"总字符数: {stats.TotalCharacters:N0}");
+                sb.AppendLine();
+            }
+            catch (Exception textStatsEx)
+            {
+                sb.AppendLine("=== 文本统计 ===");
+                sb.AppendLine($"获取文本统计失败: {textStatsEx.Message}");
+                sb.AppendLine();
+            }
             
-            info.AppendLine("=== 技术信息 ===");
-            info.AppendLine($"工作目录: {_ofdReader.GetWorkDir()}");
+            sb.AppendLine("=== 技术信息 ===");
+            sb.AppendLine($"工作目录: {_currentOfdReader.GetWorkDir()}");
             
             // 添加页面大小信息
             if (_pageList != null && _pageList.Count > 0)
             {
                 var firstPage = _pageList[0];
-                info.AppendLine($"页面大小: {firstPage.Size}");
-                info.AppendLine($"页面ID: {firstPage.Id}");
+                sb.AppendLine($"首页大小: {firstPage.Size}");
+                sb.AppendLine($"首页ID: {firstPage.Id}");
             }
 
-            txtDocumentInfo.Text = info.ToString();
+            txtDocumentInfo.Text = sb.ToString();
         }
         catch (Exception ex)
         {
@@ -382,29 +420,70 @@ public partial class OfdViewerForm : Form
         }
     }
 
-    /// <summary>
-    /// 更新页面列表
-    /// </summary>
     private void UpdatePageList()
     {
         listBoxPages.Items.Clear();
 
-        if (_pageList == null || _pageList.Count == 0)
+        if (_pageList == null || _pageList.Count == 0 || _currentOfdReader == null)
         {
             return;
         }
 
         try
         {
+            var extractor = new ContentExtractor(_currentOfdReader);
+            
             for (int i = 0; i < _pageList.Count; i++)
             {
                 var page = _pageList[i];
-                var pageText = $"第 {i + 1} 页 (ID: {page.Id})";
+                
+                // 获取页面文本摘要
+                string textSummary = "";
+                try
+                {
+                    var summary = extractor.GetPageTextSummary(i + 1, 50);
+                    textSummary = summary.Replace("\r\n", " ").Replace("\n", " ");
+                    
+                    if (textSummary.Length > 50)
+                    {
+                        textSummary = textSummary.Substring(0, 47) + "...";
+                    }
+                    
+                    if (!string.IsNullOrWhiteSpace(textSummary) && textSummary != "（此页面无文本内容）")
+                    {
+                        textSummary = " - " + textSummary;
+                    }
+                    else
+                    {
+                        textSummary = " - (无文本)";
+                    }
+                }
+                catch
+                {
+                    textSummary = " - (提取失败)";
+                }
+                
+                var pageText = $"第 {i + 1} 页 (ID: {page.Id}){textSummary}";
                 listBoxPages.Items.Add(pageText);
             }
         }
         catch (Exception ex)
         {
+            // 如果增强显示失败，回退到基本显示
+            try
+            {
+                for (int i = 0; i < _pageList.Count; i++)
+                {
+                    var page = _pageList[i];
+                    var pageText = $"第 {i + 1} 页 (ID: {page.Id})";
+                    listBoxPages.Items.Add(pageText);
+                }
+            }
+            catch
+            {
+                // 如果连基本显示都失败了
+            }
+            
             _logger?.LogError(ex, "更新页面列表时发生错误");
             ShowError($"更新页面列表失败: {ex.Message}");
         }
@@ -465,20 +544,84 @@ public partial class OfdViewerForm : Form
             content.AppendLine($"模板数量: {pageInfo.Templates.Count}");
             content.AppendLine();
 
-            content.AppendLine("=== 页面 XML 结构 ===");
-            if (pageInfo.Obj != null)
+            // 尝试使用OfdPageDrawer渲染页面
+            if (_currentOfdReader != null)
             {
-                content.AppendLine(FormatXml(pageInfo.Obj.ToString()));
+                try
+                {
+                    // 初始化页面绘制器
+                    if (_pageDrawer == null)
+                    {
+                        _pageDrawer = new OfdPageDrawer(_currentOfdReader);
+                    }
+
+                    // 绘制页面到图片
+                    var pageImage = _pageDrawer.DrawPageToBitmap(pageInfo.Index, 800, 600);
+                    
+                    content.AppendLine("=== 页面渲染 ===");
+                    content.AppendLine($"页面已成功渲染为 {pageImage.Width}x{pageImage.Height} 图像");
+                    content.AppendLine("渲染后的页面图像可以在实际的图像查看器中显示");
+                    content.AppendLine($"图像格式: {pageImage.PixelFormat}");
+                    content.AppendLine();
+
+                    // 将图像保存到临时文件以便调试
+                    var tempPath = Path.Combine(Path.GetTempPath(), $"ofd_page_{pageInfo.Index}_{DateTime.Now:yyyyMMdd_HHmmss}.png");
+                    pageImage.Save(tempPath, System.Drawing.Imaging.ImageFormat.Png);
+                    content.AppendLine($"调试信息: 页面图像已保存到 {tempPath}");
+                    content.AppendLine();
+
+                    pageImage.Dispose();
+                }
+                catch (Exception renderEx)
+                {
+                    content.AppendLine("=== 页面渲染 ===");
+                    content.AppendLine($"页面渲染失败: {renderEx.Message}");
+                    content.AppendLine($"错误详情: {renderEx.StackTrace}");
+                    content.AppendLine();
+                }
+
+                // 添加文本内容提取
+                try
+                {
+                    var extractor = new ContentExtractor(_currentOfdReader);
+                    var pageTexts = extractor.GetPageContent(pageInfo.Index);
+                    
+                    content.AppendLine("=== 页面文本内容 ===");
+                    if (pageTexts.Count > 0)
+                    {
+                        content.AppendLine($"文本对象数量: {pageTexts.Count}");
+                        content.AppendLine($"总字符数: {pageTexts.Sum(t => t.Length)}");
+                        content.AppendLine();
+                        
+                        content.AppendLine("文本内容:");
+                        for (int i = 0; i < pageTexts.Count; i++)
+                        {
+                            content.AppendLine($"{i + 1}. {pageTexts[i]}");
+                        }
+                    }
+                    else
+                    {
+                        content.AppendLine("此页面无文本内容");
+                    }
+                    content.AppendLine();
+                }
+                catch (Exception textEx)
+                {
+                    content.AppendLine("=== 页面文本内容 ===");
+                    content.AppendLine($"提取文本时发生错误: {textEx.Message}");
+                    content.AppendLine();
+                }
             }
             else
             {
-                content.AppendLine("页面对象为空");
+                content.AppendLine("=== 页面文本内容 ===");
+                content.AppendLine("OFD阅读器未初始化");
+                content.AppendLine();
             }
 
             // 添加模板信息
             if (pageInfo.Templates.Count > 0)
             {
-                content.AppendLine();
                 content.AppendLine("=== 模板信息 ===");
                 for (int i = 0; i < pageInfo.Templates.Count; i++)
                 {
@@ -489,6 +632,16 @@ public partial class OfdViewerForm : Form
                     content.AppendLine($"  层级: {template.Order}");
                     content.AppendLine();
                 }
+            }
+
+            content.AppendLine("=== 页面 XML 结构 ===");
+            if (pageInfo.Obj != null)
+            {
+                content.AppendLine(FormatXml(pageInfo.Obj.ToString()));
+            }
+            else
+            {
+                content.AppendLine("页面对象为空");
             }
 
             txtPageContent.Text = content.ToString();
@@ -505,7 +658,7 @@ public partial class OfdViewerForm : Form
     /// </summary>
     private void UpdateUI()
     {
-        bool hasDocument = _ofdReader != null && _pageList != null;
+        bool hasDocument = _currentOfdReader != null && _pageList != null;
         bool hasPages = hasDocument && _pageList!.Count > 0;
         bool hasCurrentPage = hasPages && _currentPageIndex >= 0;
 
@@ -603,5 +756,87 @@ public partial class OfdViewerForm : Form
         }
 
         base.OnFormClosing(e);
+    }
+
+    private void openToolStripMenuItem_Click(object sender, EventArgs e)
+    {
+        using (var openFileDialog = new OpenFileDialog())
+        {
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                OpenFile(openFileDialog.FileName);
+            }
+        }
+    }
+
+    private void OpenFile(string filePath)
+    {
+        try
+        {
+            _currentOfdReader?.Dispose();
+            _pageDrawer?.Dispose();
+
+            _currentOfdReader = new OfdReader(filePath);
+            _pageDrawer = new OfdPageDrawer(_currentOfdReader);
+
+            this.Text = $"OFD Viewer - {Path.GetFileName(filePath)}";
+            UpdatePageList();
+            UpdateDocumentInfo();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"打开文件时出错: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+
+
+    private void lvPages_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (lvPages.SelectedItems.Count > 0)
+        {
+            var selectedItem = lvPages.SelectedItems[0];
+            if (selectedItem.Tag is int pageNum)
+            {
+                DisplayPage(pageNum);
+            }
+        }
+    }
+
+    private void DisplayPage(int pageNum)
+    {
+        if (_currentOfdReader == null || _pageDrawer == null) return;
+
+        try
+        {
+            var pageInfo = _currentOfdReader.GetPage(pageNum);
+            if (pageInfo == null)
+            {
+                MessageBox.Show($"无法加载页面 {pageNum}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // 显示页面XML内容
+            txtPageContent.Text = pageInfo.Source.ToString();
+
+            // 绘制页面
+            var physicalBox = pageInfo.GetPhysicalBox();
+            var bitmap = new Bitmap((int)physicalBox.Width, (int)physicalBox.Height);
+            using (var g = Graphics.FromImage(bitmap))
+            {
+                _pageDrawer.Draw(g, pageNum);
+            }
+            pbPagePreview.Image = bitmap;
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"显示页面 {pageNum} 时出错: {ex.Message}", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+    private void OfdViewerForm_FormClosing(object sender, FormClosingEventArgs e)
+    {
+        _currentOfdReader?.Dispose();
+        _pageDrawer?.Dispose();
     }
 }

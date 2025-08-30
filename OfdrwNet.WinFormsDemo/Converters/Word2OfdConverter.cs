@@ -3,6 +3,7 @@ using DocumentFormat.OpenXml.Wordprocessing;
 using OfdrwNet.Core.BasicType;
 using OfdrwNet.Layout;
 using OfdrwNet.Layout.Element;
+using OfdrwNet.Layout.Element.Canvas;
 using Microsoft.Extensions.Logging;
 
 namespace OfdrwNet.WinFormsDemo.Converters;
@@ -153,17 +154,11 @@ public class Word2OfdConverter : IDisposable
         
         if (!string.IsNullOrWhiteSpace(paragraphText))
         {
-            // 创建段落样式
-            var paragraph = new OfdrwNet.Layout.Element.Paragraph(paragraphText)
-            {
-                FontSize = 3.5, // 默认字体大小 (毫米)
-                FontName = "宋体",
-                Color = "#000000",
-                TextAlign = TextAlign.Left,
-                LineHeight = 1.2
-            };
+            // 解析样式参数
+            double fontSize = 3.5;
+            string fontName = "宋体";
+            TextAlign textAlign = TextAlign.Left;
             
-            // 尝试解析Word段落的样式
             var paragraphProperties = wordParagraph.ParagraphProperties;
             if (paragraphProperties != null)
             {
@@ -173,14 +168,14 @@ public class Word2OfdConverter : IDisposable
                 {
                     // Word字体大小单位是半点(half-points)，转换为毫米
                     var fontSizeValue = runProperties.FontSize.Val.Value;
-                    var wordFontSize = double.TryParse(fontSizeValue.ToString(), out var parsedValue) ? parsedValue / 2.0 : 12.0;
-                    paragraph.FontSize = wordFontSize * 0.352778; // 点转毫米
+                    var wordFontSize = double.TryParse(fontSizeValue?.ToString() ?? "24", out var parsedValue) ? parsedValue / 2.0 : 12.0;
+                    fontSize = wordFontSize * 0.352778; // 点转毫米
                 }
                 
                 // 解析字体名称
                 if (runProperties?.RunFonts?.Ascii?.Value != null)
                 {
-                    paragraph.FontName = runProperties.RunFonts.Ascii.Value;
+                    fontName = runProperties.RunFonts.Ascii.Value;
                 }
                 
                 // 解析对齐方式
@@ -188,15 +183,22 @@ public class Word2OfdConverter : IDisposable
                 {
                     var justificationValue = paragraphProperties.Justification.Val.Value;
                     if (justificationValue == DocumentFormat.OpenXml.Wordprocessing.JustificationValues.Center)
-                        paragraph.TextAlign = TextAlign.Center;
+                        textAlign = TextAlign.Center;
                     else if (justificationValue == DocumentFormat.OpenXml.Wordprocessing.JustificationValues.Right)
-                        paragraph.TextAlign = TextAlign.Right;
+                        textAlign = TextAlign.Right;
                     else if (justificationValue == DocumentFormat.OpenXml.Wordprocessing.JustificationValues.Both)
-                        paragraph.TextAlign = TextAlign.Justify;
+                        textAlign = TextAlign.Left; // 没有Justify，使用Left
                     else
-                        paragraph.TextAlign = TextAlign.Left;
+                        textAlign = TextAlign.Left;
                 }
             }
+            
+            // 创建段落样式
+            var paragraph = new OfdrwNet.Layout.Element.Paragraph(paragraphText)
+                .SetFontSize(fontSize)
+                .SetDefaultFont(fontName)
+                .SetTextAlign(textAlign)
+                .SetLineSpace(1.2);
             
             // 添加段落到OFD文档
             ofdDoc.Add(paragraph);
@@ -204,8 +206,8 @@ public class Word2OfdConverter : IDisposable
             _logger.LogDebug("添加段落: {Text} (长度: {Length}, 字体: {Font}, 大小: {Size})", 
                 paragraphText.Substring(0, Math.Min(50, paragraphText.Length)), 
                 paragraphText.Length, 
-                paragraph.FontName, 
-                paragraph.FontSize);
+                fontName, 
+                fontSize);
         }
         
         await Task.CompletedTask;

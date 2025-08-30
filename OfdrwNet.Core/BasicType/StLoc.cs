@@ -126,4 +126,39 @@ public class StLoc
     {
         return Path.GetHashCode();
     }
+
+    /// <summary>
+    /// 创建 StLoc 的实例（兼容现有代码习惯）
+    /// </summary>
+    public static StLoc GetInstance(string path)
+    {
+        return new StLoc(path);
+    }
+    
+    /// <summary>
+    /// 判断是否为根路径（以 / 开头）
+    /// </summary>
+    public bool IsRootPath()
+    {
+        return !string.IsNullOrEmpty(Path) && Path.StartsWith("/");
+    }
+    
+    /// <summary>
+    /// 比较字符串路径与 StLoc 是否相同（兼容原 Java 风格 Equal）
+    /// </summary>
+    public static bool Equal(string? a, StLoc? b)
+    {
+        if (a == null && b == null) return true;
+        if (a == null || b == null) return false;
+        return a == b.Path;
+    }
+    
+    /// <summary>
+    /// 连接另一个 StLoc
+    /// </summary>
+    public StLoc Cat(StLoc? other)
+    {
+        if (other == null) return this;
+        return Cat(other.Path);
+    }
 }

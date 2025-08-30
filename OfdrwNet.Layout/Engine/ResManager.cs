@@ -7,7 +7,6 @@ using System.Xml.Linq;
 using OfdrwNet.Core.BasicStructure.Doc;
 using OfdrwNet.Core.BasicStructure.Ofd;
 using OfdrwNet.Core.BasicStructure.Res;
-using OfdrwNet.Core.BasicStructure.Res.Resources;
 using OfdrwNet.Core.BasicType;
 using OfdrwNet.Core.CompositeObj;
 using OfdrwNet.Core;
@@ -15,11 +14,11 @@ using OfdrwNet.Core.PageDescription.Color;
 using OfdrwNet.Core.PageDescription.DrawParam;
 using OfdrwNet.Core.Text.Font;
 using OfdrwNet.Font;
+using OfdrwNet.Core.PageDescription.Media;
 using OfdrwNet.Reader;
 using OFDReader = OfdrwNet.Reader.OfdReader;
-using OFDDir = System.String;
-using DocDir = System.String;
-using ExistCtFont = System.Object;
+using OFDDir = OfdrwNet.Packaging.Container.OFDDir;
+using DocDir = OfdrwNet.Packaging.Container.DocDir;
 using IOFDElement = OfdrwNet.Core.OfdElement;
 
 namespace OfdrwNet.Layout.Engine
@@ -56,7 +55,9 @@ namespace OfdrwNet.Layout.Engine
         /// 位于文档资源列表
         /// </para>
         /// </summary>
+#pragma warning disable CS0169 // 从不使用字段
         private MultiMedias? medias;
+#pragma warning restore CS0169
 
         /// <summary>
         /// 绘制参数列表
@@ -88,7 +89,9 @@ namespace OfdrwNet.Layout.Engine
         /// 位于文档资源列表
         /// </para>
         /// </summary>
+#pragma warning disable CS0169 // 从不使用字段
         private CompositeGraphicUnits? compositeGraphicUnits;
+#pragma warning restore CS0169
 
         /// <summary>
         /// 文档对象
@@ -201,31 +204,42 @@ namespace OfdrwNet.Layout.Engine
         {
             var ofdDir = reader.GetOFDDir();
             var ofd = ofdDir.GetOfd();
-            // 资源定位器
-            var resourceLocator = reader.GetResourceLocator();
-            // 找到 Document.xml文件并且序列化
-            var docRoot = ofd.GetDocBody().GetDocRoot();
-            var document = resourceLocator.Get(docRoot, () => new Document());
-            var commonData = document.GetCommonData();
+            var docBody = ofd.GetDocBody();
+            if (docBody == null) throw new InvalidOperationException("OFD 文档中未包含 DocBody");
+             // 资源定位器
+             var resourceLocator = reader.GetResourceLocator();
+             // 找到 Document.xml文件并且序列化
+            var docRoot = docBody.GetDocRoot();
+            if (docRoot == null) throw new InvalidOperationException("DocBody 未包含 DocRoot");
+            var document = resourceLocator.Get<Document>(docRoot, el => new Document(el));
+             var commonData = document.GetCommonData();
 
             root = ofdDir;
             docDir = ofdDir.ObtainDocDefault();
             this.document = document;
-            maxUnitIDProvider = () => commonData.GetMaxUnitID()?.GetId() ?? 0;
+            maxUnitIDProvider = () => commonData?.GetMaxUnitID()?.GetId() ?? 0;
 
             try
             {
                 resourceLocator.Save();
                 resourceLocator.Cd(docDir);
-                foreach (var loc in commonData.GetPublicResList())
+                var publicResList = commonData?.GetPublicResList();
+                if (publicResList != null)
                 {
-                    publicRes = resourceLocator.Get(loc, () => new Res());
-                    ReloadRes(publicRes);
+                    foreach (var loc in publicResList)
+                    {
+                        publicRes = resourceLocator.Get<Res>(loc, el => new Res(el));
+                        ReloadRes(publicRes);
+                    }
                 }
-                foreach (var loc in commonData.GetDocumentResList())
+                var documentResList = commonData?.GetDocumentResList();
+                if (documentResList != null)
                 {
-                    documentRes = resourceLocator.Get(loc, () => new Res());
-                    ReloadRes(documentRes);
+                    foreach (var loc in documentResList)
+                    {
+                        documentRes = resourceLocator.Get<Res>(loc, el => new Res(el));
+                        ReloadRes(documentRes);
+                    }
                 }
             }
             catch (Exception)
@@ -252,7 +266,8 @@ namespace OfdrwNet.Layout.Engine
             foreach (var resource in resources)
             {
                 // 获取各个集合下的资源对象
-                var elements = resource.GetElements();
+                // 资源对象为 OfdResource（包装了 XElement），获取其底层元素的子元素列表
+                var elements = resource.Element.Elements();
                 if (elements == null || !elements.Any())
                 {
                     continue;
@@ -261,12 +276,13 @@ namespace OfdrwNet.Layout.Engine
                 foreach (var ctResObj in elements)
                 {
                     // 获取原来资源对象的ID
-                    var id = StId.GetInstance(ctResObj.GetAttribute("ID")?.Value);
-                    if (id == null)
+                    var idAttr = ctResObj.Attribute("ID")?.Value;
+                    if (string.IsNullOrEmpty(idAttr))
                     {
-                        return;
+                        continue;
                     }
-                    
+                    var id = StId.Parse(idAttr);
+
                     // 遍历每一个资源对象，复制对象，删除对象ID，序列化为XML字符串
                     var copy = new XElement(ctResObj);
                     copy.Attribute("ID")?.Remove();
@@ -370,12 +386,13 @@ namespace OfdrwNet.Layout.Engine
             // 获取图片文件后缀名称
             var fileSuffix = PictureFormat(filename);
             // 创建图片对象
-            var multiMedia = new CtMultiMedia()
-                .SetType(MediaType.Image)
-                .SetFormat(fileSuffix)
-                .SetMediaFile(StLoc.GetInstance(filename));
+            var multiMedia = new OfdrwNet.Core.BasicStructure.Res.MultiMedia();
+            multiMedia.SetAttribute("Type", OfdrwNet.Core.PageDescription.Media.MediaType.Image.ToString());
+            multiMedia.SetAttribute("Format", fileSuffix);
+            multiMedia.SetAttribute("MediaFile", StLoc.GetInstance(filename).ToString());
             // 添加到资源列表中
-            return AddRawWithCache(multiMedia);
+            var resourceId = AddRawWithCache(multiMedia);
+            return resourceId ?? throw new InvalidOperationException("无法添加图片资源");
         }
 
         /// <summary>
@@ -488,86 +505,63 @@ namespace OfdrwNet.Layout.Engine
             }
 
             // 移除对象上已经存在的用于基于资源本身的Hash值
-            resObj.RemoveAttr("ID");
-            var key = resObj.AsXML().GetHashCode();
+            resObj.RemoveAttribute("ID");
+            var key = resObj.ToXml().GetHashCode();
 
             if (resObjHash.TryGetValue(key, out var objId))
             {
                 // 文档中已经存在相同资源，则复用该资源。
-                resObj.SetObjID(objId);
+                resObj.SetObjId(objId);
                 return objId;
             }
             else
             {
                 // 文档中不存在该资源则资源ID，并缓存
                 objId = new StId(maxUnitIDProvider());
-                resObj.SetObjID(objId);
+                resObj.SetObjId(objId);
                 // 记录资源ID
                 NewResIds.Add(objId);
                 resObjHash[key] = objId;
             }
 
-            // 判断资源类型加入到合适的资源列表中
-            switch (resObj)
+            // 判断资源类型加入到合适的资源列表中（使用类型检测兼容不同命名空间实现）
+            if (resObj is OfdrwNet.Core.PageDescription.Color.ColorSpace cs)
             {
-                case CtColorSpace colorSpace:
-                    {
-                        var resMenu = PubRes();
-                        if (colorSpaces == null)
-                        {
-                            colorSpaces = new ColorSpaces();
-                            resMenu.AddResource(colorSpaces);
-                        }
-                        colorSpaces.AddColorSpace(colorSpace);
-                        break;
-                    }
-                case CtFont font:
-                    {
-                        var resMenu = PubRes();
-                        if (fonts == null)
-                        {
-                            fonts = new Fonts();
-                            resMenu.AddResource(fonts);
-                        }
-                        fonts.AddFont(font);
-                        break;
-                    }
-                case CtDrawParam drawParam:
-                    {
-                        var resMenu = DocRes();
-                        if (drawParams == null)
-                        {
-                            drawParams = new DrawParams();
-                            resMenu.AddResource(drawParams);
-                        }
-                        drawParams.AddDrawParam(drawParam);
-                        break;
-                    }
-                case CtMultiMedia multiMedia:
-                    {
-                        var resMenu = DocRes();
-                        if (medias == null)
-                        {
-                            medias = new MultiMedias();
-                            resMenu.AddResource(medias);
-                        }
-                        medias.AddMultiMedia(multiMedia);
-                        break;
-                    }
-                case CtVectorG vectorG:
-                    {
-                        var resMenu = DocRes();
-                        if (compositeGraphicUnits == null)
-                        {
-                            compositeGraphicUnits = new CompositeGraphicUnits();
-                            resMenu.AddResource(compositeGraphicUnits);
-                        }
-                        compositeGraphicUnits.AddCompositeGraphicUnit(vectorG);
-                        break;
-                    }
+                var resMenu = PubRes();
+                if (colorSpaces == null)
+                {
+                    colorSpaces = new OfdrwNet.Core.BasicStructure.Res.ColorSpaces();
+                    resMenu.AddResource(colorSpaces);
+                }
+                colorSpaces.AddColorSpace(cs);
             }
+            else if (resObj is OfdrwNet.Core.Text.Font.CtFont ctfont)
+            {
+                var resMenu = PubRes();
+                if (fonts == null)
+                {
+                    fonts = new OfdrwNet.Core.BasicStructure.Res.Fonts();
+                    resMenu.AddResource(fonts);
+                }
+                // 将 CtFont 包装为 FontInfo（FontInfo 类型位于 BasicStructure.Res 中，若存在转换需求请实现）
+                var fontInfo = new OfdrwNet.Core.BasicStructure.Res.FontInfo(ctfont);
+                fonts.AddFont(fontInfo);
+            }
+            else if (resObj is OfdrwNet.Core.PageDescription.DrawParam.CtDrawParam dp)
+            {
+                var resMenu = DocRes();
+                if (drawParams == null)
+                {
+                    drawParams = new OfdrwNet.Core.BasicStructure.Res.DrawParams();
+                    resMenu.AddResource(drawParams);
+                }
+                drawParams.AddDrawParam(dp);
+            }
+            // 注意：移除了对 CtMultiMedia 和 CompositeGraphicUnit 的模式匹配
+            // 因为这些类型无法从 OfdElement 进行匹配，应该在调用侧使用正确的资源类型
+            
             return objId;
-        }
+         }
 
         /// <summary>
         /// 通过字族名获取字体对象，如果无法找到则返还null
@@ -581,7 +575,7 @@ namespace OfdrwNet.Layout.Engine
                 return null;
             }
             name = name.ToLower();
-            CtFont? res = null;
+            OfdrwNet.Core.BasicStructure.Res.FontInfo? res = null;
             
             // 尝试从公共资源中获取 字体清单
             var resMenu = PubRes();
@@ -589,16 +583,16 @@ namespace OfdrwNet.Layout.Engine
             foreach (var fonts in fontsList)
             {
                 var arr = fonts.GetFonts();
-                foreach (var ctFont in arr)
+                foreach (var fontInfo in arr)
                 {
                     // 忽略大小写的比较
-                    var fontName = ctFont.GetFontName()?.ToLower();
-                    var familyName = ctFont.GetFamilyName()?.ToLower();
+                    var fontName = fontInfo.GetFontName()?.ToLower();
+                    var familyName = fontInfo.GetFamilyName()?.ToLower();
 
                     if (name.Equals(fontName) || name.Equals(familyName))
                     {
                         // 找到最后一个匹配的字体
-                        res = ctFont;
+                        res = fontInfo;
                     }
                 }
             }
@@ -611,15 +605,15 @@ namespace OfdrwNet.Layout.Engine
                 foreach (var fonts in fontsList)
                 {
                     var arr = fonts.GetFonts();
-                    foreach (var ctFont in arr)
+                    foreach (var fontInfo in arr)
                     {
                         // 忽略大小写的比较
-                        var fontName = ctFont.GetFontName()?.ToLower();
-                        var familyName = ctFont.GetFamilyName()?.ToLower();
+                        var fontName = fontInfo.GetFontName()?.ToLower();
+                        var familyName = fontInfo.GetFamilyName()?.ToLower();
                         
                         if (name.Equals(fontName) || name.Equals(familyName))
                         {
-                            res = ctFont;
+                            res = fontInfo;
                         }
                     }
                 }
@@ -633,21 +627,22 @@ namespace OfdrwNet.Layout.Engine
 
             // 获取字体文件的绝对路径
             var loc = res.GetFontFile();
-            string? p = null;
-            if (loc != null && root != null)
-            {
-                var abs = Abs(resMenu, loc);
-                try
-                {
-                    p = root.GetFile(abs.GetFileName());
-                }
-                catch (FileNotFoundException)
-                {
-                    // ignore
-                }
-            }
+             string? p = null;
+             if (loc != null)
+             {
+                 var abs = Abs(resMenu, loc);
+                 try
+                 {
+                     // 使用文档容器访问文件
+                     p = docDir.GetFile(abs.GetFileName());
+                 }
+                 catch (FileNotFoundException)
+                 {
+                     // ignore
+                 }
+             }
 
-            return new ExistCtFont(res, p);
+             return new ExistCtFont(res, p);
         }
 
         /// <summary>

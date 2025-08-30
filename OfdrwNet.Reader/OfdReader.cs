@@ -1,4 +1,5 @@
 using OfdrwNet.Core;
+using OfdrwNet.Core.BasicStructure.PageObj.Layer;
 using OfdrwNet.Core.BasicType;
 using OfdrwNet.Packaging.Container;
 using OfdrwNet.Reader.Model;
@@ -205,6 +206,11 @@ public class OfdReader : IDisposable
     public VirtualContainer GetOfdContainer() => _ofdContainer;
 
     /// <summary>
+    /// 获取 OFDDir 包装器（包装 VirtualContainer）
+    /// </summary>
+    public OfdrwNet.Packaging.Container.OFDDir GetOFDDir() => new OfdrwNet.Packaging.Container.OFDDir(_ofdContainer);
+
+    /// <summary>
     /// 获取资源定位器
     /// </summary>
     public ResourceLocator GetResourceLocator() => _resourceLocator;
@@ -372,5 +378,13 @@ public class OfdReader : IDisposable
             
             _closed = true;
         }
+    }
+
+    /// <summary>
+    /// 兼容 Java 版本的 Close() 方法，转发到 Dispose()
+    /// </summary>
+    public void Close()
+    {
+        Dispose();
     }
 }

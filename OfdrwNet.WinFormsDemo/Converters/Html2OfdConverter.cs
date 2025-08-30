@@ -4,6 +4,8 @@ using AngleSharp.Html.Dom;
 using OfdrwNet.Core.BasicType;
 using OfdrwNet.Layout;
 using OfdrwNet.Layout.Element;
+using OfdrwNet.Layout.Element.Canvas;
+using OfdrwNet.Extensions;
 using Microsoft.Extensions.Logging;
 using System.Text;
 
@@ -134,7 +136,7 @@ public class Html2OfdConverter : IDisposable
     /// <summary>
     /// 处理HTML内容
     /// </summary>
-    private async Task ProcessHtmlContent(OFDDoc ofdDoc, HtmlAgilityPack.HtmlDocument htmlDoc, CancellationToken cancellationToken)
+    private Task ProcessHtmlContent(OFDDoc ofdDoc, HtmlAgilityPack.HtmlDocument htmlDoc, CancellationToken cancellationToken)
     {
         // 获取body节点
         var bodyNode = htmlDoc.DocumentNode.SelectSingleNode("//body") ?? htmlDoc.DocumentNode;
@@ -144,12 +146,8 @@ public class Html2OfdConverter : IDisposable
         if (titleNode != null)
         {
             var titleParagraph = new OfdrwNet.Layout.Element.Paragraph(titleNode.InnerText)
-            {
-                FontSize = 6.35, // 18pt 转毫米
-                FontName = "宋体",
-                Color = "#000000",
-                TextAlign = TextAlign.Center
-            };
+                .SetFontSize(6.35) // 18pt 转毫米
+                .SetDefaultFont("宋体");
             ofdDoc.Add(titleParagraph);
         }
 
@@ -169,13 +167,11 @@ public class Html2OfdConverter : IDisposable
                 {
                     var fontSize = GetFontSizeFromNodeName(node.Name);
                     var paragraph = new OfdrwNet.Layout.Element.Paragraph(text)
-                    {
-                        FontSize = fontSize,
-                        FontName = "宋体",
-                        Color = "#000000",
-                        TextAlign = GetTextAlignFromNode(node),
-                        LineHeight = 1.2
-                    };
+                        .SetFontSize(fontSize)
+                        .SetDefaultFont("宋体")
+                        .SetLineSpace(1.2)
+                        .SetTextAlign(GetTextAlignFromNode(node));
+                    
                     ofdDoc.Add(paragraph);
                     
                     _logger.LogDebug("添加HTML段落: {Text} (标签: {Tag}, 字体大小: {FontSize})", 
@@ -189,6 +185,7 @@ public class Html2OfdConverter : IDisposable
                 OnProgressChanged(progress, $"正在处理内容 {processedNodes}/{totalNodes}...");
             }
         }
+        return Task.CompletedTask;
     }
 
     /// <summary>
@@ -227,10 +224,9 @@ public class Html2OfdConverter : IDisposable
         if (style.Contains("text-align: center") || align.Equals("center", StringComparison.OrdinalIgnoreCase))
             return TextAlign.Center;
         if (style.Contains("text-align: right") || align.Equals("right", StringComparison.OrdinalIgnoreCase))
-            return TextAlign.Right;
-        if (style.Contains("text-align: justify") || align.Equals("justify", StringComparison.OrdinalIgnoreCase))
-            return TextAlign.Justify;
-            
+            return TextAlign.Right;        if (style.Contains("text-align: justify") || align.Equals("justify", StringComparison.OrdinalIgnoreCase))
+            return TextAlign.Left;  // 暂时用Left代替Justify
+        
         return TextAlign.Left;
     }
 

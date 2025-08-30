@@ -54,4 +54,9 @@ public static class Const
     /// OFD索引文件
     /// </summary>
     public const string IndexFile = "OFD.xml";
+    
+    /// <summary>
+    /// 对象标识属性名
+    /// </summary>
+    public const string ObjId = "ID"; // 添加ObjId常量
 }

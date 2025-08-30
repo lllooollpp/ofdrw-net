@@ -307,4 +307,40 @@ public class Font
     {
         return $"Font(Name={Name}, Family={FamilyName}, File={GetFontFileName()}, Embeddable={Embeddable})";
     }
+
+    /// <summary>
+    /// 兼容旧 Java API: 获取字体名称
+    /// </summary>
+    /// <returns>字体名称</returns>
+    public string GetName()
+    {
+        return Name;
+    }
+
+    /// <summary>
+    /// 兼容旧 Java API: 获取字体族名称
+    /// </summary>
+    /// <returns>字体族名称</returns>
+    public string GetFamilyName()
+    {
+        return FamilyName;
+    }
+
+    /// <summary>
+    /// 兼容旧 Java API: 获取字体文件路径（完整路径或相对路径）
+    /// </summary>
+    /// <returns>字体文件路径或 null</returns>
+    public string? GetFontFile()
+    {
+        return FontFilePath;
+    }
+
+    /// <summary>
+    /// 兼容旧 Java API: 字体是否可嵌入
+    /// </summary>
+    /// <returns>true 可嵌入，false 不可嵌入</returns>
+    public bool IsEmbeddable()
+    {
+        return Embeddable;
+    }
 }

@@ -5,6 +5,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.IO.Compression;
 using System.Text;
+using OfdrwNet.Extensions;
+using OfdrwNet.Core.BasicStructure.Ofd.DocInfo;
 
 namespace OfdrwNet;
 
@@ -45,7 +47,7 @@ public class OFDDoc : IDisposable
     /// <summary>
     /// 流式布局元素队列
     /// </summary>
-    private readonly List<OfdrwNet.Layout.Element.Div> _streamQueue = new();
+    private readonly List<object> _streamQueue = new();
 
     /// <summary>
     /// 虚拟页面队列
@@ -151,6 +153,21 @@ public class OFDDoc : IDisposable
             throw new ArgumentException("元素已经存在，请勿重复添加");
 
         _streamQueue.Add(item);
+        return this;
+    }
+
+    /// <summary>
+    /// 向文档中添加段落元素
+    /// </summary>
+    /// <param name="paragraph">段落元素</param>
+    /// <returns>当前实例</returns>
+    /// <exception cref="ArgumentException">元素重复时抛出</exception>
+    public OFDDoc Add(OfdrwNet.Layout.Element.Paragraph paragraph)
+    {
+        if (_streamQueue.Contains(paragraph))
+            throw new ArgumentException("元素已经存在，请勿重复添加");
+
+        _streamQueue.Add(paragraph);
         return this;
     }
 
@@ -440,12 +457,12 @@ public class OFDDoc : IDisposable
         if (_streamQueue.Count == 0)
         {
             // 创建空页面
-            await CreatePageFileAsync(pagesDir, 1, new List<OfdrwNet.Layout.Element.Div>());
+            await CreatePageFileAsync(pagesDir, 1, new List<object>());
             return;
         }
         
         var pageNumber = 1;
-        var currentPageItems = new List<OfdrwNet.Layout.Element.Div>();
+        var currentPageItems = new List<object>();
         
         foreach (var item in _streamQueue)
         {
@@ -470,7 +487,7 @@ public class OFDDoc : IDisposable
     /// <summary>
     /// 创建单个页面文件
     /// </summary>
-    private async Task CreatePageFileAsync(string pagesDir, int pageNumber, List<OfdrwNet.Layout.Element.Div> items)
+    private async Task CreatePageFileAsync(string pagesDir, int pageNumber, List<object> items)
     {
         var contentXml = new StringBuilder();
         double currentY = _pageLayout.Margins.Top;
@@ -479,14 +496,14 @@ public class OFDDoc : IDisposable
         {
             if (item is OfdrwNet.Layout.Element.Paragraph paragraph)
             {
-                var textContent = System.Security.SecurityElement.Escape(paragraph.Text ?? "");
-                var fontName = paragraph.FontName ?? "SimSun";
+                var textContent = System.Security.SecurityElement.Escape(paragraph.GetText() ?? "");
+                var fontName = paragraph.GetFontName() ?? "SimSun";
                 if (!_fontMap.TryGetValue(fontName, out var fontId))
                 {
                     fontId = 1; // fallback
                 }
-                double fontSize = paragraph.FontSize > 0 ? paragraph.FontSize : 12.0;
-                double lineHeight = paragraph.LineHeight > 0 ? paragraph.LineHeight : 1.2;
+                double fontSize = paragraph.GetFontSize();
+                double lineHeight = paragraph.GetLineHeight();
                 double estimatedHeight = fontSize * lineHeight;
                 // 估算宽度（粗略）：字符数 * 字号 * 0.6
                 double estimatedWidth = textContent.Length * fontSize * 0.6;
@@ -526,14 +543,13 @@ public class OFDDoc : IDisposable
         Console.WriteLine($"[DEBUG] CreateOfdStructureWithNewClassesAsync 开始，基本目录: {baseDir}");
         
         // 创建DocInfo
-        var docInfo = new OfdrwNet.Core.BasicStructure.Ofd.DocInfo();
-        docInfo.RandomDocId()
+        var docInfo = new OfdrwNet.Core.BasicStructure.Ofd.DocInfo.CtDocInfo();
+        docInfo.RandomDocID()
                .SetTitle("由OfdrwNet生成的OFD文档")
                .SetCreator("OfdrwNet")
                .SetCreatorVersion("1.0")
                .SetCreationDate(DateTime.Now)
-               .SetModDate(DateTime.Now)
-               .SetDocUsage(OfdrwNet.Core.BasicStructure.Ofd.DocUsage.Normal);
+               .SetModDate(DateTime.Now);
         
         // 创建DocBody
         var docBody = new OfdrwNet.Core.BasicStructure.Ofd.DocBody();
@@ -616,11 +632,11 @@ public class OFDDoc : IDisposable
     {
         _fontMap.Clear();
         int id = 1;
-        foreach (var div in _streamQueue)
+        foreach (var item in _streamQueue)
         {
-            if (div is OfdrwNet.Layout.Element.Paragraph p)
+            if (item is OfdrwNet.Layout.Element.Paragraph p)
             {
-                var fn = string.IsNullOrWhiteSpace(p.FontName) ? "SimSun" : p.FontName.Trim();
+                var fn = string.IsNullOrWhiteSpace(p.GetFontName()) ? "SimSun" : p.GetFontName().Trim();
                 if (!_fontMap.ContainsKey(fn))
                 {
                     _fontMap[fn] = id++;

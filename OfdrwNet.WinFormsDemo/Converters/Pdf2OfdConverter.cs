@@ -4,7 +4,7 @@ using OfdrwNet.Core.BasicType;
 using OfdrwNet.Layout;
 using OfdrwNet.Layout.Element;
 using Microsoft.Extensions.Logging;
-using System.Text;
+using OfdrwNet.Layout.Element.Canvas;
 
 namespace OfdrwNet.WinFormsDemo.Converters;
 
@@ -108,19 +108,14 @@ public class Pdf2OfdConverter : IDisposable
             
             // 添加文档头部信息
             var headerParagraph = new OfdrwNet.Layout.Element.Paragraph($"PDF转换文档 - 原文件: {System.IO.Path.GetFileName(inputPath)}")
-            {
-                FontSize = 5.0,
-                FontName = "宋体",
-                Color = "#0066cc",
-                TextAlign = TextAlign.Center,
-                LineHeight = 1.5
-            };
+                .SetFontSize(5.0)
+                .SetDefaultFont("宋体")
+                .SetLineSpace(1.5)
+                .SetTextAlign(TextAlign.Center);
             ofdDoc.Add(headerParagraph);
             
             var spaceParagraph = new OfdrwNet.Layout.Element.Paragraph("\n")
-            {
-                FontSize = 2.0
-            };
+                .SetFontSize(2.0);
             ofdDoc.Add(spaceParagraph);
             
             int totalParagraphsAdded = 2; // 已添加的头部信息
@@ -191,13 +186,10 @@ public class Pdf2OfdConverter : IDisposable
                 if (pageNumber > 1)
                 {
                     var pageBreakParagraph = new OfdrwNet.Layout.Element.Paragraph($"\n=== 第 {pageNumber} 页 ===\n")
-                    {
-                        FontSize = 4.0,
-                        FontName = "宋体",
-                        Color = "#0066cc",
-                        TextAlign = TextAlign.Center,
-                        LineHeight = 1.0
-                    };
+                        .SetFontSize(4.0)
+                        .SetDefaultFont("宋体")
+                        .SetTextAlign(TextAlign.Center)
+                        .SetLineSpace(1.0);
                     ofdDoc.Add(pageBreakParagraph);
                     linesAdded++;
                 }
@@ -213,13 +205,10 @@ public class Pdf2OfdConverter : IDisposable
                     if (!string.IsNullOrWhiteSpace(trimmedLine))
                     {
                         var paragraph = new OfdrwNet.Layout.Element.Paragraph(trimmedLine)
-                        {
-                            FontSize = 3.5, // 默认字体大小
-                            FontName = "宋体",
-                            Color = "#000000",
-                            TextAlign = TextAlign.Left,
-                            LineHeight = 1.2
-                        };
+                            .SetFontSize(3.5)
+                            .SetDefaultFont("宋体")
+                            .SetTextAlign(TextAlign.Left)
+                            .SetLineSpace(1.2);
                         ofdDoc.Add(paragraph);
                         linesAdded++;
                         
@@ -231,11 +220,8 @@ public class Pdf2OfdConverter : IDisposable
                 
                 // 添加一个空行分隔页面内容
                 var spacerParagraph = new OfdrwNet.Layout.Element.Paragraph("\n")
-                {
-                    FontSize = 2.0,
-                    FontName = "宋体",
-                    Color = "#000000"
-                };
+                    .SetFontSize(2.0)
+                    .SetDefaultFont("宋体");
                 ofdDoc.Add(spacerParagraph);
                 linesAdded++;
             }
@@ -243,12 +229,9 @@ public class Pdf2OfdConverter : IDisposable
             {
                 // 如果页面没有文本，添加提示信息
                 var noTextParagraph = new OfdrwNet.Layout.Element.Paragraph($"[第{pageNumber}页：此页面可能包含图像或其他非文本内容]")
-                {
-                    FontSize = 3.0,
-                    FontName = "宋体",
-                    Color = "#888888",
-                    TextAlign = TextAlign.Center
-                };
+                    .SetFontSize(3.0)
+                    .SetDefaultFont("宋体")
+                    .SetTextAlign(TextAlign.Center);
                 ofdDoc.Add(noTextParagraph);
                 linesAdded++;
             }
@@ -261,12 +244,9 @@ public class Pdf2OfdConverter : IDisposable
             
             // 添加错误信息页面
             var errorParagraph = new OfdrwNet.Layout.Element.Paragraph($"[第{pageNumber}页内容解析失败: {ex.Message}]")
-            {
-                FontSize = 3.0,
-                FontName = "宋体",
-                Color = "#ff0000",
-                TextAlign = TextAlign.Left
-            };
+                .SetFontSize(3.0)
+                .SetDefaultFont("宋体")
+                .SetTextAlign(TextAlign.Left);
             ofdDoc.Add(errorParagraph);
             linesAdded++;
         }

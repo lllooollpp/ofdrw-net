@@ -1,25 +1,23 @@
 using System.Xml.Linq;
 
-namespace OfdrwNet.Core.BasicStructure.Outlines;
-
-/// <summary>
-/// 大纲
-/// 对应 Java 版本的 org.ofdrw.core.basicStructure.outlines.Outlines
-/// </summary>
-public class Outlines : OfdElement
+namespace OfdrwNet.Core.BasicStructure.Outlines
 {
     /// <summary>
-    /// 从现有元素构造大纲
+    /// 文档大纲（最小实现，满足编译依赖）
     /// </summary>
-    /// <param name="element">XML元素</param>
-    public Outlines(XElement element) : base(element)
+    public class Outlines : OfdElement
     {
-    }
+        public Outlines(XElement element) : base(element)
+        {
+        }
 
-    /// <summary>
-    /// 构造新的大纲元素
-    /// </summary>
-    public Outlines() : base("Outlines")
-    {
+        public Outlines() : base("Outlines")
+        {
+        }
+
+        public override string GetQualifiedName()
+        {
+            return "ofd:Outlines";
+        }
     }
 }

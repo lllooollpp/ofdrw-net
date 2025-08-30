@@ -98,4 +98,18 @@ public abstract class BlockType : OfdElement, IPageBlockType
         var value = this.GetAttributeValue("Visible");
         return string.IsNullOrEmpty(value) || bool.Parse(value);
     }
+
+    /// <summary>
+    /// 兼容重载：按四个数值设置边界（x,y,w,h）并返回 this
+    /// </summary>
+    /// <param name="x">X 坐标</param>
+    /// <param name="y">Y 坐标</param>
+    /// <param name="w">宽度</param>
+    /// <param name="h">高度</param>
+    /// <returns>this</returns>
+    public virtual BlockType SetBoundary(double x, double y, double w, double h)
+    {
+        SetBoundary(new StArray(x, y, w, h));
+        return this;
+    }
 }

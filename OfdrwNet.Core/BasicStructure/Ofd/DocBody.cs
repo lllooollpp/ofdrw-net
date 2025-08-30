@@ -1,6 +1,7 @@
 using System.Xml.Linq;
 using OfdrwNet.Core;
 using OfdrwNet.Core.BasicType;
+using OfdrwNet.Core.BasicStructure.Ofd.DocInfo; // 添加正确的命名空间引用
 
 namespace OfdrwNet.Core.BasicStructure.Ofd;
 
@@ -35,7 +36,7 @@ public class DocBody : OfdElement
     /// </summary>
     /// <param name="docInfo">文档元数据信息描述</param>
     /// <returns>this</returns>
-    public DocBody SetDocInfo(DocInfo docInfo)
+    public DocBody SetDocInfo(CtDocInfo docInfo) // 修复：使用正确的类型
     {
         Set(docInfo);
         return this;
@@ -45,10 +46,10 @@ public class DocBody : OfdElement
     /// 【必选】获取文档元数据信息描述
     /// </summary>
     /// <returns>文档元数据信息描述 或null</returns>
-    public DocInfo? GetDocInfo()
+    public CtDocInfo? GetDocInfo() // 修复：使用正确的类型
     {
         var element = GetOfdElement("DocInfo");
-        return element == null ? null : new DocInfo(element);
+        return element == null ? null : new CtDocInfo(element);
     }
 
     /// <summary>

@@ -70,6 +70,30 @@ public class CtCommonData : OfdElement
     }
 
     /// <summary>
+    /// Java-compatible alias: SetMaxUnitID(StId)
+    /// </summary>
+    public CtCommonData SetMaxUnitID(StId maxUnitId)
+    {
+        return SetMaxUnitId(maxUnitId);
+    }
+
+    /// <summary>
+    /// Java-compatible alias: SetMaxUnitID(long)
+    /// </summary>
+    public CtCommonData SetMaxUnitID(long maxUnitId)
+    {
+        return SetMaxUnitId(maxUnitId);
+    }
+
+    /// <summary>
+    /// Java-compatible alias: GetMaxUnitID()
+    /// </summary>
+    public StId? GetMaxUnitID()
+    {
+        return GetMaxUnitId();
+    }
+
+    /// <summary>
     /// 【必选】
     /// 设置该文档页面区域的默认大小和位置
     /// </summary>

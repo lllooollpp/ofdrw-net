@@ -20,3 +20,21 @@ public interface IVPageHandler
 /// </summary>
 /// <param name="page">虚拟页面</param>
 public delegate void VPageHandler(VirtualPage page);
+
+/// <summary>
+/// VPageHandler 委托到 IVPageHandler 接口的适配器
+/// </summary>
+public class VPageHandlerAdapter : IVPageHandler
+{
+    private readonly VPageHandler _handler;
+
+    public VPageHandlerAdapter(VPageHandler handler)
+    {
+        _handler = handler ?? throw new ArgumentNullException(nameof(handler));
+    }
+
+    public void Handle(VirtualPage page)
+    {
+        _handler(page);
+    }
+}

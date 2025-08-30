@@ -13,17 +13,17 @@ using OfdrwNet.Layout.Edit;
 using OfdrwNet.Layout.Element;
 using OfdrwNet.Layout.Engine;
 using OfdrwNet.Layout.Engine.Render;
-using OfdrwNet.Layout.Exception;
 using OfdrwNet.Layout.Handler;
-using OfdrwNet.Pkg.Container;
+using OfdrwNet.Packaging.Container;
 using OfdrwNet.Reader;
 using OFDReader = OfdrwNet.Reader.OfdReader;
-using OFDDir = System.String;
-using DocDir = System.String;
+using OFDDir = OfdrwNet.Packaging.Container.OFDDir;
+using DocDir = OfdrwNet.Packaging.Container.DocDir;
 using StreamCollect = System.Collections.Generic.List<System.IO.Stream>;
-using Annotation = System.Object;
-using AnnotationRender = System.Object;
-using RenderFinishHandler = System.EventHandler;
+using AnnotationRender = OfdrwNet.Layout.Edit.AnnotationRender;
+using RenderFinishHandler = System.Action<int, OfdrwNet.Packaging.Container.OFDDir, int>;
+using OfdrwNet.Layout.Exceptions;
+using OfdrwNet.Core.Annotation;
 
 namespace OfdrwNet.Layout
 {
@@ -128,6 +128,11 @@ namespace OfdrwNet.Layout
             ContainerInit();
         }
 
+        /// <summary>
+        /// 设置默认页面布局
+        /// </summary>
+        /// <param name="pageLayout">页面布局对象</param>
+        /// <returns>当前文档对象</returns>
         public OFDDoc SetDefaultPageLayout(PageLayout pageLayout)
         {
             if (pageLayout != null)
@@ -140,7 +145,7 @@ namespace OfdrwNet.Layout
 
         private void ContainerInit()
         {
-            var docInfo = new CtDocInfo()
+            var docInfo = new OfdrwNet.Core.BasicStructure.Ofd.DocInfo.CtDocInfo()
                 .SetDocID(Guid.NewGuid())
                 .SetCreationDate(DateTime.Now.Date)
                 .SetCreator("OFD R&W")
@@ -167,22 +172,36 @@ namespace OfdrwNet.Layout
         private void ContainerInit(OFDReader reader)
         {
             ofdDir = reader.GetOFDDir();
+            if (ofdDir == null) 
+                throw new InvalidOperationException("无法获取OFD目录结构");
+                
             var ofd = ofdDir.GetOfd();
+            if (ofd == null)
+                throw new InvalidOperationException("无法获取OFD对象");
+                
             var docBody = ofd.GetDocBody();
-            var docInfo = docBody.GetDocInfo();
-            docInfo.SetModDate(DateTime.Now.Date);
+            var docInfo = docBody?.GetDocInfo();
+            docInfo?.SetModDate(DateTime.Now.Date);
             
             var rl = reader.GetResourceLocator();
-            var docRoot = docBody.GetDocRoot();
-            ofdDocument = rl.Get(docRoot, () => new Document());
+            var docRoot = docBody?.GetDocRoot();
+            if (docRoot != null)
+            {
+                ofdDocument = rl.Get(docRoot, el => new Document(el));
+            }
             
-            cdata = ofdDocument.GetCommonData();
-            var maxUnitIDSt = cdata.GetMaxUnitID();
+            cdata = ofdDocument?.GetCommonData();
+            var maxUnitIDSt = cdata?.GetMaxUnitID();
             maxUnitID = maxUnitIDSt?.GetId() ?? 0;
             operateDocDir = ofdDir.ObtainDocDefault();
             prm = new ResManager(reader);
         }
 
+        /// <summary>
+        /// 向文档添加流式布局元素
+        /// </summary>
+        /// <param name="item">要添加的Div元素</param>
+        /// <returns>当前文档对象</returns>
         public OFDDoc Add(Div item)
         {
             if (streamQueue.Contains(item))
@@ -191,19 +210,35 @@ namespace OfdrwNet.Layout
             return this;
         }
 
+        /// <summary>
+        /// 添加虚拟页面到文档
+        /// </summary>
+        /// <param name="virtualPage">虚拟页面对象</param>
+        /// <returns>当前文档对象</returns>
         public OFDDoc AddVPage(VirtualPage virtualPage)
         {
             vPageList.Add(virtualPage);
             return this;
         }
 
+        /// <summary>
+        /// 添加流式内容收集器
+        /// </summary>
+        /// <param name="streamCollect">流式内容收集器</param>
+        /// <returns>当前文档对象</returns>
         public OFDDoc AddStreamCollect(StreamCollect streamCollect)
         {
             sPageList.Add(streamCollect);
             return this;
         }
 
-        public OFDDoc AddAnnotation(int pageNum, Annotation annotation)
+        /// <summary>
+        /// 向指定页面添加注释
+        /// </summary>
+        /// <param name="pageNum">页面编号</param>
+        /// <param name="annotation">注释对象</param>
+        /// <returns>当前文档对象</returns>
+        public OFDDoc AddAnnotation(int pageNum, AnnotationBase annotation)
         {
             if (annotation == null) return this;
             if (reader == null)
@@ -215,26 +250,67 @@ namespace OfdrwNet.Layout
             return this;
         }
 
+        /// <summary>
+        /// 获取页面布局配置的副本
+        /// </summary>
+        /// <returns>页面布局配置副本</returns>
         public PageLayout GetPageLayout() => pageLayout.Clone();
 
+        /// <summary>
+        /// 获取OFD目录结构
+        /// </summary>
+        /// <returns>OFD目录结构，可能为null</returns>
         public OFDDir? GetOfdDir() => ofdDir;
+        
+        /// <summary>
+        /// 获取OFD文档对象
+        /// </summary>
+        /// <returns>OFD文档对象，可能为null</returns>
         public Document? GetOfdDocument() => ofdDocument;
+        
+        /// <summary>
+        /// 获取OFD阅读器
+        /// </summary>
+        /// <returns>OFD阅读器，可能为null</returns>
         public OFDReader? GetReader() => reader;
+        
+        /// <summary>
+        /// 获取资源管理器
+        /// </summary>
+        /// <returns>资源管理器，可能为null</returns>
         public ResManager? GetResManager() => prm;
+        
+        /// <summary>
+        /// 获取页面处理器
+        /// </summary>
+        /// <returns>页面处理器，可能为null</returns>
         public VPageHandler? GetOnPage() => onPageHandler;
 
+        /// <summary>
+        /// 设置渲染完成处理器
+        /// </summary>
+        /// <param name="handler">渲染完成处理器</param>
+        /// <returns>当前文档对象</returns>
         public OFDDoc OnRenderFinish(RenderFinishHandler? handler)
         {
             renderingEndHandler = handler;
             return this;
         }
 
+        /// <summary>
+        /// 设置页面处理器
+        /// </summary>
+        /// <param name="handler">页面处理器</param>
+        /// <returns>当前文档对象</returns>
         public OFDDoc OnPage(VPageHandler handler)
         {
-            onPageHandler = handler;
+            this.onPageHandler = handler;
             return this;
         }
 
+        /// <summary>
+        /// 关闭文档并释放相关资源
+        /// </summary>
         public void Close()
         {
             lock (this)
@@ -250,6 +326,7 @@ namespace OfdrwNet.Layout
                     var sgmEngine = new SegmentationEngine(pageLayout);
                     var analyzer = new StreamingLayoutAnalyzer(pageLayout);
                     var sgmQueue = sgmEngine.Process(streamQueue);
+                    // 使用修复的 StreamingLayoutAnalyzer.Analyze(List<Segment>) 重载
                     var virtualPageList = analyzer.Analyze(sgmQueue);
                     vPageList.AddRange(virtualPageList);
                 }
@@ -267,7 +344,10 @@ namespace OfdrwNet.Layout
                 {
                     var docDefault = ofdDir!.ObtainDocDefault();
                     var parseEngine = new VPageParseEngine(pageLayout, docDefault, prm!, () => Interlocked.Increment(ref maxUnitID));
-                    parseEngine.SetBeforePageParseHandler(onPageHandler);
+                    if (onPageHandler != null)
+                    {
+                        parseEngine.SetBeforePageParseHandler(new Handler.VPageHandlerAdapter(onPageHandler));
+                    }
                     parseEngine.Process(vPageList);
                 }
 
@@ -276,8 +356,8 @@ namespace OfdrwNet.Layout
                     throw new InvalidOperationException("OFD文档中没有页面，无法生成OFD文档");
                 }
 
-                renderingEndHandler?.Handle(maxUnitID, ofdDir!, operateDocDir!.GetIndex());
-                cdata!.SetMaxUnitID(maxUnitID);
+                renderingEndHandler?.Invoke(maxUnitID, ofdDir!, operateDocDir!.GetIndex());
+                cdata!.SetMaxUnitID((long)maxUnitID);
                 
                 if (!string.IsNullOrEmpty(outPath))
                 {
@@ -299,6 +379,9 @@ namespace OfdrwNet.Layout
             }
         }
 
+        /// <summary>
+        /// 释放资源
+        /// </summary>
         public void Dispose()
         {
             if (!closed)

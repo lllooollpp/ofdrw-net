@@ -240,7 +240,7 @@ namespace OfdrwNet.Layout.Element.Canvas
                 return this;
             }
 
-            state.ClipArea = state.Path.Clone();
+            state.ClipArea = state.Path.CloneData();
             if (state.Ctm != null && !ONE.Equals(state.Ctm))
             {
                 // 受到CTM的影响形变
@@ -449,7 +449,7 @@ namespace OfdrwNet.Layout.Element.Canvas
             }
 
             var p = new PathObject(new StId(maxUnitIDProvider()));
-            p.SetAbbreviatedData(state.Path.Clone());
+            p.SetAbbreviatedData(state.Path.CloneData());
             p.SetStroke(true);
             ApplyDrawParam(p);
             container.Add(p);
@@ -471,7 +471,7 @@ namespace OfdrwNet.Layout.Element.Canvas
             }
 
             var p = new PathObject(new StId(maxUnitIDProvider()));
-            p.SetAbbreviatedData(state.Path.Clone());
+            p.SetAbbreviatedData(state.Path.CloneData());
             p.SetFill(true);
             p.SetLineWidth(0d);
             ApplyDrawParam(p);
@@ -672,7 +672,8 @@ namespace OfdrwNet.Layout.Element.Canvas
                 var r = Convert.ToInt32(colorStr.Substring(1, 2), 16);
                 var g = Convert.ToInt32(colorStr.Substring(3, 2), 16);
                 var b = Convert.ToInt32(colorStr.Substring(5, 2), 16);
-                return new CtColor(r, g, b);
+                // 使用 CtColor 的静态工厂方法代替不存在的构造器
+                return CtColor.Rgb(r, g, b);
             }
             return null;
         }

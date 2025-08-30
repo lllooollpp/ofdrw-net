@@ -197,7 +197,8 @@ namespace OfdrwNet.Layout.Engine
                 // 判断是否可以拆分段，只要出现了一个可拆分的，那么该段就是可以拆分
                 blockable = true;
             }
-            if (div is PageAreaFiller)
+            // 检查是否为页面区域填充器 - 使用类型名称比较
+            if (div.GetType().Name == "PageAreaFiller")
             {
                 isRemainAreaFiller = true;
             }

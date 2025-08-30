@@ -153,15 +153,17 @@ public class CtFont : OfdElement
         return this;
     }
 
-    /// <summary>
-    /// 【可选 属性】
-    /// 获取是否粗体
-    /// </summary>
-    /// <returns>是否粗体，默认false</returns>
-    public bool IsBold()
+    // 兼容旧名称 SetSerif / SetFixedWidth
+    public CtFont SetSerif(bool serif)
     {
-        var value = GetAttributeValue("Bold");
-        return !string.IsNullOrEmpty(value) && bool.Parse(value);
+        SetAttribute("Serif", serif.ToString().ToLower());
+        return this;
+    }
+
+    public CtFont SetFixedWidth(bool fixedWidth)
+    {
+        SetAttribute("FixedWidth", fixedWidth.ToString().ToLower());
+        return this;
     }
 
     /// <summary>

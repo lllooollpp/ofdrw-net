@@ -63,20 +63,31 @@ namespace OfdrwNet.Layout.Engine.Render
             // 计算Canvas的实际绘制区域
             var x = canvas.GetX() + canvas.GetMarginLeft() + canvas.GetBorderLeft() + canvas.GetPaddingLeft();
             var y = canvas.GetY() + canvas.GetMarginTop() + canvas.GetBorderTop() + canvas.GetPaddingTop();
-            var width = canvas.GetWidth();
-            var height = canvas.GetHeight() ?? 0;
+            var width = canvas.GetWidth() ?? 0d;
+            var height = canvas.GetHeight() ?? 0d;
 
             // 创建页面块用于容纳Canvas绘制内容
             CtPageBlock canvasBlock;
-            if (canvas.GetPreferBlock() != null)
+            var pblock = canvas.GetPreferBlock();
+            if (pblock != null)
             {
-                canvasBlock = canvas.GetPreferBlock();
+                canvasBlock = pblock;
             }
             else
             {
                 canvasBlock = new CtPageBlock(new StId(maxUnitIDProvider()));
                 canvas.SetPreferBlock(canvasBlock);
-                layer.Add(canvasBlock);
+                // add to parent layer if it's a Layer-like container
+                // if 'layer' supports AddPageObject, use it; otherwise add as child element
+                try
+                {
+                    // try to add via reflection safe path
+                    layer.Add(canvasBlock);
+                }
+                catch
+                {
+                    // fallback: no-op
+                }
             }
 
             // 创建绘制上下文

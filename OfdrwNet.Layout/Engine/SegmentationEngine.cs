@@ -34,7 +34,7 @@ namespace OfdrwNet.Layout.Engine
         public List<Segment> Process(List<Div> streamLayoutQueue)
         {
             // 可用于布局的宽度
-            var width = pageLayout.ContentWidth();
+            var width = pageLayout.ContentWidth;
             if (streamLayoutQueue == null || !streamLayoutQueue.Any())
             {
                 return new List<Segment>();
@@ -52,7 +52,8 @@ namespace OfdrwNet.Layout.Engine
                     continue;
                 }
 
-                if (div is BR)
+                // 检查是否为换行元素 - 使用类型名称比较而不是类型检查
+                if (div.GetType().Name == "BR")
                 {
                     if (segment.IsEmpty())
                     {

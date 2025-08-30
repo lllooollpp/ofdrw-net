@@ -158,6 +158,18 @@ public class OfdElement
     }
     
     /// <summary>
+    /// 获取指定名称OFD元素集合并转换为指定类型
+    /// </summary>
+    /// <typeparam name="T">转换后的类型</typeparam>
+    /// <param name="name">OFD元素名称</param>
+    /// <param name="converter">转换函数</param>
+    /// <returns>转换后的元素集合</returns>
+    public List<T> GetOfdElements<T>(string name, Func<XElement, T> converter)
+    {
+        return GetOfdElements(name).Select(converter).ToList();
+    }
+    
+    /// <summary>
     /// 添加属性
     /// </summary>
     /// <param name="name">属性名称</param>
@@ -260,6 +272,23 @@ public class OfdElement
     }
     
     /// <summary>
+    /// 从父元素中移除指定的子 OfdElement 实例
+    /// </summary>
+    /// <param name="child">要移除的子元素</param>
+    /// <returns>是否移除成功</returns>
+    public bool Remove(OfdElement child)
+    {
+        if (child == null)
+            return false;
+        if (child.Element.Parent == this.Element)
+        {
+            child.Element.Remove();
+            return true;
+        }
+        return false;
+    }
+    
+    /// <summary>
     /// 克隆元素
     /// </summary>
     /// <returns>克隆的元素</returns>
@@ -294,9 +323,36 @@ public class OfdElement
     }
     
     /// <summary>
+    /// 获取元素的文本内容
+    /// </summary>
+    /// <returns>文本内容</returns>
+    public string? GetText()
+    {
+        return Element.Value;
+    }
+
+    /// <summary>
     /// 获取限定名称
     /// </summary>
     public virtual string QualifiedName => $"{Const.OfdPrefix}{Element.Name.LocalName}";
+
+    /// <summary>
+    /// 验证元素的有效性
+    /// </summary>
+    /// <returns>验证结果</returns>
+    public virtual ValidationResult Validate()
+    {
+        return new ValidationResult();
+    }
+
+    /// <summary>
+    /// 获取限定名称
+    /// </summary>
+    /// <returns>限定名称</returns>
+    public virtual string GetQualifiedName()
+    {
+        return QualifiedName;
+    }
 
     /// <summary>
     /// 设置对象标识
@@ -305,62 +361,41 @@ public class OfdElement
     /// <returns>this</returns>
     public OfdElement SetObjId(StId objId)
     {
-        if (objId is null)
-        {
-            RemoveAttribute("ID");
-        }
-        else
-        {
-            SetAttribute("ID", objId.ToString());
-        }
+        AddAttribute(Const.ObjId, objId);
         return this;
     }
 
     /// <summary>
-    /// 设置对象标识
+    /// 设置对象标识（引用类型）
     /// </summary>
-    /// <param name="objId">对象标识字符串</param>
+    /// <param name="objRefId">对象引用标识</param>
     /// <returns>this</returns>
-    public OfdElement SetObjId(string objId)
+    public OfdElement SetObjId(OfdrwNet.Core.BasicType.StRefId objRefId)
     {
-        if (string.IsNullOrEmpty(objId))
-        {
-            RemoveAttribute("ID");
-        }
-        else
-        {
-            SetAttribute("ID", objId);
-        }
+        if (objRefId == null)
+            throw new ArgumentNullException(nameof(objRefId));
+        AddAttribute(Const.ObjId, objRefId.ToString());
         return this;
     }
-
+    
     /// <summary>
     /// 获取对象标识
     /// </summary>
     /// <returns>对象标识</returns>
     public StId? GetObjId()
     {
-        var idValue = GetAttributeValue("ID");
+        var idValue = GetAttributeValue(Const.ObjId);
         return string.IsNullOrEmpty(idValue) ? null : StId.Parse(idValue);
     }
-
+    
     /// <summary>
     /// 设置元素的文本内容
     /// </summary>
     /// <param name="text">文本内容</param>
     /// <returns>this</returns>
-    public OfdElement SetText(string? text)
+    public OfdElement SetText(string text)
     {
-        Element.Value = text ?? "";
+        Element.Value = text;
         return this;
-    }
-
-    /// <summary>
-    /// 获取元素的文本内容
-    /// </summary>
-    /// <returns>文本内容</returns>
-    public string? GetText()
-    {
-        return Element.Value;
     }
 }

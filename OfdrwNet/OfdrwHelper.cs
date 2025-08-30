@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using OfdrwNet.Layout.Element;
+using OfdrwNet.Extensions;
 
 namespace OfdrwNet;
 
@@ -143,14 +144,12 @@ public static class OfdrwHelper
         using var doc = CreateDocument(outputPath);
         
         // 创建一个简单的文本段落
-        var paragraph = new Paragraph(message)
-        {
-            FontSize = 4.23, // 12pt 转毫米
-            FontName = "宋体",
-            Color = "#000000",
-            X = 20,
-            Y = 20
-        };
+        var paragraph = new Paragraph();
+        paragraph.SetDefaultFontSize(4.23); // 12pt 转毫米
+        paragraph.Add(message);
+        
+        // 设置位置
+        paragraph.SetPosition(20, 20);
 
         // 添加到文档
         doc.Add(paragraph);
