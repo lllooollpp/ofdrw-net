@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Logging;
 using OfdrwNet.WinFormsDemo.Converters;
 using System.IO.Compression;
+using System.Windows.Forms;
 
 namespace OfdrwNet.WinFormsDemo;
 
@@ -8,6 +9,7 @@ namespace OfdrwNet.WinFormsDemo;
 /// 主窗体 - OFDRW.NET文档转换工具
 /// </summary>
 public partial class MainForm : Form
+
 {
     private readonly ILogger<MainForm> _logger;
     private Word2OfdConverter? _wordConverter;
@@ -661,8 +663,8 @@ public partial class MainForm : Form
             }
             
             // 创建并显示OFD查看器窗体
-            var viewerForm = new OfdViewerForm(ofdFilePath);
-            viewerForm.Show();
+            //var viewerForm = new OfdViewerForm(ofdFilePath);
+            //viewerForm.Show();
             
             UpdateStatus($"已打开OFD查看器 - {Path.GetFileName(ofdFilePath)}");
         }

@@ -1,6 +1,7 @@
 using System;
 using System.Xml.Linq;
 using OfdrwNet.Core;
+using OfdrwNet.Core.Action.ActionType.ActionGoto;
 
 namespace OfdrwNet.Core.BasicStructure.Doc.Bookmark
 {
@@ -35,7 +36,7 @@ namespace OfdrwNet.Core.BasicStructure.Doc.Bookmark
         /// </summary>
         /// <param name="name">书签名称</param>
         /// <param name="dest">书签对应的文档版位置</param>
-        public Bookmark(string name, object dest) : this() // TODO: 等待CT_Dest类迁移后替换为正确类型
+        public Bookmark(string name, CtDest dest) : this()
         {
             SetBookmarkName(name);
             SetDest(dest);
@@ -88,13 +89,18 @@ namespace OfdrwNet.Core.BasicStructure.Doc.Bookmark
         /// </summary>
         /// <param name="dest">书签对应的文档版位置</param>
         /// <returns>当前实例</returns>
-        public Bookmark SetDest(object dest) // TODO: 等待CT_Dest类迁移后替换为正确类型
+        public Bookmark SetDest(CtDest dest)
         {
             if (dest == null)
                 throw new ArgumentNullException(nameof(dest));
             
-            // TODO: 实现Set方法调用
-            throw new NotImplementedException("等待CT_Dest类迁移");
+            // 先移除现有的目标位置元素
+            var existingDest = Element.Element("Dest");
+            existingDest?.Remove();
+            
+            // 添加新的目标位置元素
+            Element.Add(dest.Element);
+            return this;
         }
 
         /// <summary>
@@ -103,19 +109,19 @@ namespace OfdrwNet.Core.BasicStructure.Doc.Bookmark
         /// 见表 54
         /// </summary>
         /// <returns>书签对应的文档版位置</returns>
-        public object? GetDest() // TODO: 等待CT_Dest类迁移后替换为正确类型
+        public CtDest? GetDest()
         {
-            // TODO: 实现获取逻辑
-            throw new NotImplementedException("等待CT_Dest类迁移");
+            var destElement = Element.Element("Dest");
+            return destElement != null ? new CtDest(destElement) : null;
         }
 
         /// <summary>
         /// 书签对应的文档版位置属性（便捷访问）
         /// </summary>
-        public object? Dest // TODO: 等待CT_Dest类迁移后替换为正确类型
+        public CtDest? Dest
         {
             get => GetDest();
-            set => SetDest(value!);
+            set => SetDest(value ?? throw new ArgumentNullException(nameof(value)));
         }
 
         #endregion
@@ -178,7 +184,10 @@ namespace OfdrwNet.Core.BasicStructure.Doc.Bookmark
             if (!string.IsNullOrWhiteSpace(name))
                 newBookmark.SetBookmarkName(name);
             
-            // TODO: 等待CT_Dest类迁移后实现Dest复制
+            // 复制目标位置
+            var dest = GetDest();
+            if (dest != null)
+                newBookmark.SetDest(dest.Clone());
             
             return newBookmark;
         }

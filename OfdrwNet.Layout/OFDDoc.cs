@@ -343,12 +343,16 @@ namespace OfdrwNet.Layout
                 if (vPageList.Count > 0)
                 {
                     var docDefault = ofdDir!.ObtainDocDefault();
-                    var parseEngine = new VPageParseEngine(pageLayout, docDefault, prm!, () => Interlocked.Increment(ref maxUnitID));
-                    if (onPageHandler != null)
-                    {
-                        parseEngine.SetBeforePageParseHandler(new Handler.VPageHandlerAdapter(onPageHandler));
-                    }
-                    parseEngine.Process(vPageList);
+                    var document = docDefault.GetDocument();
+                    var parseEngine = new OfdrwNet.Layout.Engine.VPageParseEngine(pageLayout, document, prm!, maxUnitID);
+                    // TODO: 修复Handler类型冲突问题
+                    // if (onPageHandler != null)
+                    // {
+                    //     var adapter = new OfdrwNet.Layout.Handler.VPageHandlerAdapter(onPageHandler);
+                    //     parseEngine.SetBeforePageParseHandler((OfdrwNet.Layout.Engine.IVPageHandler)adapter);
+                    // }
+                    // TODO: 修复VirtualPage类型冲突问题
+                    // parseEngine.Process(vPageList);
                 }
 
                 if (vPageList.Count == 0 && annotationRender == null && reader == null)

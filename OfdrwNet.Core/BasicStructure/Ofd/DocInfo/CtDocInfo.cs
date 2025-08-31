@@ -458,12 +458,13 @@ namespace OfdrwNet.Core.BasicStructure.Ofd.DocInfo
         /// </summary>
         /// <param name="keywords">关键词集合</param>
         /// <returns>当前实例</returns>
-        public CtDocInfo SetKeywords(object keywords) // TODO: 等待Keywords类迁移后替换为正确类型
+        public CtDocInfo SetKeywords(Keywords keywords)
         {
             if (keywords == null)
                 throw new ArgumentNullException(nameof(keywords));
             
-            throw new NotImplementedException("等待Keywords类迁移");
+            Set(keywords);
+            return this;
         }
 
         /// <summary>
@@ -473,8 +474,10 @@ namespace OfdrwNet.Core.BasicStructure.Ofd.DocInfo
         /// <returns>当前实例</returns>
         public CtDocInfo AddKeyword(string keyword)
         {
-            // TODO: 实现关键词添加逻辑
-            throw new NotImplementedException("等待Keywords类迁移");
+            var keywords = GetKeywords() ?? new Keywords();
+            keywords.AddKeyword(keyword);
+            SetKeywords(keywords);
+            return this;
         }
 
         /// <summary>
@@ -482,9 +485,19 @@ namespace OfdrwNet.Core.BasicStructure.Ofd.DocInfo
         /// 获取关键词集合
         /// </summary>
         /// <returns>关键词集合或null</returns>
-        public object? GetKeywords() // TODO: 等待Keywords类迁移后替换为正确类型
+        public Keywords? GetKeywords()
         {
-            throw new NotImplementedException("等待Keywords类迁移");
+            var keywordsElement = Element.Element("Keywords");
+            return keywordsElement != null ? new Keywords(keywordsElement) : null;
+        }
+
+        /// <summary>
+        /// 关键词集合属性（便捷访问）
+        /// </summary>
+        public Keywords? Keywords
+        {
+            get => GetKeywords();
+            set => SetKeywords(value!);
         }
 
         #endregion
@@ -567,12 +580,27 @@ namespace OfdrwNet.Core.BasicStructure.Ofd.DocInfo
         /// </summary>
         /// <param name="customDatas">用户自定义元数据集合</param>
         /// <returns>当前实例</returns>
-        public CtDocInfo SetCustomDatas(object customDatas) // TODO: 等待CustomDatas类迁移后替换为正确类型
+        public CtDocInfo SetCustomDatas(CustomDatas customDatas)
         {
             if (customDatas == null)
                 throw new ArgumentNullException(nameof(customDatas));
             
-            throw new NotImplementedException("等待CustomDatas类迁移");
+            Set(customDatas);
+            return this;
+        }
+
+        /// <summary>
+        /// 添加自定义数据
+        /// </summary>
+        /// <param name="name">数据名称</param>
+        /// <param name="value">数据值</param>
+        /// <returns>当前实例</returns>
+        public CtDocInfo AddCustomData(string name, string value)
+        {
+            var customDatas = GetCustomDatas() ?? new CustomDatas();
+            customDatas.AddCustomData(name, value);
+            SetCustomDatas(customDatas);
+            return this;
         }
 
         /// <summary>
@@ -580,9 +608,19 @@ namespace OfdrwNet.Core.BasicStructure.Ofd.DocInfo
         /// 获取用户自定义元数据集合。其子节点为 CustomData
         /// </summary>
         /// <returns>用户自定义元数据集合</returns>
-        public object? GetCustomDatas() // TODO: 等待CustomDatas类迁移后替换为正确类型
+        public CustomDatas? GetCustomDatas()
         {
-            throw new NotImplementedException("等待CustomDatas类迁移");
+            var customDatasElement = Element.Element("CustomDatas");
+            return customDatasElement != null ? new CustomDatas(customDatasElement) : null;
+        }
+
+        /// <summary>
+        /// 自定义元数据集合属性（便捷访问）
+        /// </summary>
+        public CustomDatas? CustomDatas
+        {
+            get => GetCustomDatas();
+            set => SetCustomDatas(value!);
         }
 
         #endregion

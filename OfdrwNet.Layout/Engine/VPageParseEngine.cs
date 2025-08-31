@@ -167,7 +167,9 @@ public class VPageParseEngine
             page.SetArea(vPageStyle.GetPageArea());
         }
 
-        // 处理页面模板
+        // 处理页面模板 - 暂时禁用，因为类型转换问题
+        // TODO: 修复TemplatePageEntity到Template的转换
+        /*
         var templates = vPage.GetTemplates();
         if (templates != null && templates.Count > 0)
         {
@@ -176,6 +178,7 @@ public class VPageParseEngine
                 page.AddTemplate(template);
             }
         }
+        */
 
         // 设置页面内容
         pageDir.SetContent(page);

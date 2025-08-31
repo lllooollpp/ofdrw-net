@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using OfdrwNet.Core;
 using OfdrwNet.Core.BasicStructure.Doc;
-using OfdrwNet.Core.BasicStructure.Res;
 using OfdrwNet.Core.BasicType;
 using OfdrwNet.Core.PageDescription.Color;
 using OfdrwNet.Core.PageDescription.DrawParam;
@@ -164,24 +163,76 @@ public class ResourceManage
     /// </summary>
     /// <param name="current">当前需要子节点</param>
     /// <returns>补全后的子节点副本</returns>
-    private CtDrawParam? SuperDrawParam(CtDrawParam? current)
+    public CtDrawParam? SuperDrawParam(CtDrawParam? current)
     {
         if (current == null)
         {
             return null;
         }
 
-        // 这里应该实现具体的继承逻辑
-        // 由于涉及到复杂的XML操作，这里提供基础框架
-        // TODO: 实现完整的继承参数解析逻辑
+        // 复制为副本防止造成污染
+        current = current.Clone();
+        var relative = current.GetRelative();
+        if (relative == null)
+        {
+            return current;
+        }
+
+        // 递归的寻找上一级继承的参数的最终参数
+        var parent = GetDrawParamFinal(relative.ToString());
+        if (parent == null)
+        {
+            return current;
+        }
+
+        // 本次绘制属性将覆盖其引用的绘制参数中的同名属性
+        if (current.GetLineWidth() == null && parent.GetLineWidth() != null)
+        {
+            current.SetLineWidth(parent.GetLineWidth());
+        }
         
+        if (current.GetJoin() == null && parent.GetJoin() != null)
+        {
+            current.SetJoin(parent.GetJoin());
+        }
+        
+        if (current.GetCap() == null && parent.GetCap() != null)
+        {
+            current.SetCap(parent.GetCap());
+        }
+        
+        if (current.GetDashOffset() == null && parent.GetDashOffset() != null)
+        {
+            current.SetDashOffset(parent.GetDashOffset());
+        }
+        
+        if (current.GetDashPattern() == null && parent.GetDashPattern() != null)
+        {
+            current.SetDashPattern(parent.GetDashPattern());
+        }
+        
+        if (current.GetMiterLimit() == null && parent.GetMiterLimit() != null)
+        {
+            current.SetMiterLimit(parent.GetMiterLimit());
+        }
+        
+        if (current.GetFillColor() == null && parent.GetFillColor() != null)
+        {
+            current.SetFillColor(parent.GetFillColor());
+        }
+        
+        if (current.GetStrokeColor() == null && parent.GetStrokeColor() != null)
+        {
+            current.SetStrokeColor(parent.GetStrokeColor());
+        }
+
         return current;
     }
 
     /// <summary>
     /// 加载默认文档
     /// </summary>
-    private void LoadDefaultDoc()
+    public void LoadDefaultDoc()
     {
         LoadDoc(0);
     }
@@ -190,15 +241,56 @@ public class ResourceManage
     /// 加载指定文档
     /// </summary>
     /// <param name="docNum">文档序号</param>
-    private void LoadDoc(int docNum)
+    public void LoadDoc(int docNum)
     {
-        // TODO: 实现文档加载逻辑
-        // 这里需要解析OFD文档结构，加载各种资源
-        
-        // 基础框架实现
+        // 基础实现 - 这里需要解析OFD文档结构，加载各种资源
         // 1. 解析OFD.xml获取文档路径
         // 2. 解析Document.xml获取公共数据和资源
         // 3. 加载各种资源类型到对应的映射表中
+        
+        // 简单实现，实际中需要从OFD文件中解析资源
+        try
+        {
+            // 这里是一个占位符实现
+            // 实际实现需要从_ofdReader中获取文档目录和资源文件
+            
+            // 清空现有资源
+            _colorSpaceMap.Clear();
+            _drawParamMap.Clear();
+            _fontMap.Clear();
+            _multiMediaMap.Clear();
+            _compositeGraphicUnitMap.Clear();
+            _allResMap.Clear();
+            
+            // TODO: 实际解析逻辑
+        }
+        catch (Exception e)
+        {
+            throw new BadOfdException($"加载文档 {docNum} 失败", e);
+        }
+    }
+
+    /// <summary>
+    /// 加载文档资源
+    /// </summary>
+    /// <param name="docReader">文档阅读器</param>
+    public void LoadDocRes(OfdReader docReader)
+    {
+        // 加载文档资源的实现
+        // 这是从文档级别资源文件中加载资源
+    }
+
+    /// <summary>
+    /// 加载资源文件
+    /// </summary>
+    /// <param name="resFilePath">资源文件路径</param>
+    public void LoadResFile(string resFilePath)
+    {
+        // 从指定的资源文件路径加载资源
+        if (string.IsNullOrEmpty(resFilePath))
+            return;
+            
+        // TODO: 实际的资源文件解析逻辑
     }
 
     /// <summary>
@@ -208,7 +300,26 @@ public class ResourceManage
     /// <returns>资源流</returns>
     public Stream? GetResourceStream(string resourcePath)
     {
-        // TODO: 实现从OFD包中获取资源流的逻辑
+        if (string.IsNullOrEmpty(resourcePath))
+            return null;
+            
+        try
+        {
+            // 通过OFD阅读器获取资源流
+            var ofdDir = _ofdReader.GetOFDDir();
+            if (ofdDir != null)
+            {
+                // 从OFD目录中获取资源文件路径
+                var filePath = ofdDir.GetInner().GetFile(resourcePath);
+                // 打开文件流
+                return File.OpenRead(filePath);
+            }
+        }
+        catch (Exception)
+        {
+            // 忽略异常，返回null
+        }
+        
         return null;
     }
 
@@ -223,5 +334,56 @@ public class ResourceManage
         _multiMediaMap.Clear();
         _compositeGraphicUnitMap.Clear();
         _allResMap.Clear();
+    }
+}
+
+/// <summary>
+/// OFD资源表示类
+/// </summary>
+public class OfdResource : OfdElement
+{
+    /// <summary>
+    /// 资源类型
+    /// </summary>
+    public string? Type { get; set; }
+
+    /// <summary>
+    /// 资源文件路径
+    /// </summary>
+    public string? FilePath { get; set; }
+
+    /// <summary>
+    /// 资源内容流
+    /// </summary>
+    public Stream? Content { get; set; }
+
+    /// <summary>
+    /// 构造函数
+    /// </summary>
+    /// <param name="id">资源ID</param>
+    /// <param name="type">资源类型</param>
+    /// <param name="filePath">资源文件路径</param>
+    public OfdResource(string id, string type, string filePath) : base("Resource")
+    {
+        this.SetObjId(StId.Parse(id));
+        Type = type;
+        FilePath = filePath;
+    }
+
+    /// <summary>
+    /// 构造函数
+    /// </summary>
+    public OfdResource() : base("Resource")
+    {
+    }
+
+    /// <summary>
+    /// 从XElement构造
+    /// </summary>
+    /// <param name="element">XML元素</param>
+    public OfdResource(System.Xml.Linq.XElement element) : base(element)
+    {
+        Type = element.Attribute("Type")?.Value;
+        FilePath = element.Attribute("FilePath")?.Value;
     }
 }

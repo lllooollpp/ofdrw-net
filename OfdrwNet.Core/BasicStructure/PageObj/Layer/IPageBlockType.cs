@@ -1,4 +1,6 @@
 using System.Xml.Linq;
+using OfdrwNet.Core.Text;
+using OfdrwNet.Core.BasicStructure.PageObj.Layer.Block;
 
 namespace OfdrwNet.Core.BasicStructure.PageObj.Layer
 {
@@ -17,6 +19,9 @@ namespace OfdrwNet.Core.BasicStructure.PageObj.Layer
         XElement Element { get; }
     }
 
+    /// <summary>
+    /// 页面块类型工厂
+    /// </summary>
     public static class PageBlockTypeFactory
     {
         /// <summary>
@@ -31,20 +36,16 @@ namespace OfdrwNet.Core.BasicStructure.PageObj.Layer
             switch (qName)
             {
                 case "TextObject":
-                    // TODO: 需要等待TextObject类实现
-                    // res = new TextObject(element);
+                    res = new TextObject(element);
                     break;
                 case "PathObject":
-                    // TODO: 需要等待PathObject类实现
-                    // res = new PathObject(element);
+                    res = new PathObject(element);
                     break;
                 case "ImageObject":
-                    // TODO: 需要等待ImageObject类实现
-                    // res = new ImageObject(element);
+                    res = new ImageObject(element);
                     break;
                 case "CompositeObject":
-                    // TODO: 需要等待CompositeObject类实现
-                    // res = new CompositeObject(element);
+                    res = new CompositeObject(element);
                     break;
                 case "PageBlock":
                     res = new Block.CtPageBlock(element);
