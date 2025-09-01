@@ -93,7 +93,7 @@ public class VirtualPage
 
         if (div.Float != AFloat.None && div.Float != AFloat.Left)
         {
-            Console.WriteLine("警告：虚拟页面下不支持除left外的浮动属性，仅支持绝对定位");
+            System.Diagnostics.Debug.WriteLine("警告：虚拟页面下不支持除left外的浮动属性，仅支持绝对定位");
         }
 
         if (div.Position != Position.Absolute)

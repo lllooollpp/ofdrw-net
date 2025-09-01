@@ -137,7 +137,7 @@ public class OFDSigner : IDisposable
 
         try
         {
-            Console.WriteLine("开始执行OFD数字签名...");
+            System.Diagnostics.Debug.WriteLine("开始执行OFD数字签名...");
 
             // 1. 预检查
             await PreCheckAsync();
@@ -161,7 +161,7 @@ public class OFDSigner : IDisposable
             await OutputSignedOfdAsync();
 
             _hasSigned = true;
-            Console.WriteLine("OFD数字签名完成");
+            System.Diagnostics.Debug.WriteLine("OFD数字签名完成");
         }
         catch (Exception ex)
         {
@@ -181,7 +181,7 @@ public class OFDSigner : IDisposable
             throw new SignatureException("OFD文件没有页面，无法进行签名");
         }
 
-        Console.WriteLine($"预检查通过，文档共{pageCount}页");
+        System.Diagnostics.Debug.WriteLine($"预检查通过，文档共{pageCount}页");
         await Task.CompletedTask;
     }
 
@@ -197,12 +197,12 @@ public class OFDSigner : IDisposable
         {
             case SignMode.ContinueSign:
                 // 继续签名模式：保护除签名列表文件外的所有文件
-                Console.WriteLine("使用继续签名模式");
+                System.Diagnostics.Debug.WriteLine("使用继续签名模式");
                 break;
 
             case SignMode.WholeProtect:
                 // 完整保护模式：保护所有文件
-                Console.WriteLine("使用完整保护模式");
+                System.Diagnostics.Debug.WriteLine("使用完整保护模式");
                 break;
         }
 
@@ -225,7 +225,7 @@ public class OFDSigner : IDisposable
             digestFiles.Add(new ToDigestFileInfo(file, virtualPath));
         }
 
-        Console.WriteLine($"构建待摘要文件列表完成，共{digestFiles.Count}个文件");
+        System.Diagnostics.Debug.WriteLine($"构建待摘要文件列表完成，共{digestFiles.Count}个文件");
         await Task.CompletedTask;
         return digestFiles;
     }
@@ -243,7 +243,7 @@ public class OFDSigner : IDisposable
             digests[fileInfo.VirtualPath] = digest;
         }
 
-        Console.WriteLine($"文件摘要计算完成，共{digests.Count}个文件摘要");
+        System.Diagnostics.Debug.WriteLine($"文件摘要计算完成，共{digests.Count}个文件摘要");
         return digests;
     }
 
@@ -265,7 +265,7 @@ public class OFDSigner : IDisposable
         var json = System.Text.Json.JsonSerializer.Serialize(signedInfo);
         var tbsContent = System.Text.Encoding.UTF8.GetBytes(json);
 
-        Console.WriteLine($"构建待签名内容完成，长度: {tbsContent.Length}字节");
+        System.Diagnostics.Debug.WriteLine($"构建待签名内容完成，长度: {tbsContent.Length}字节");
         await Task.CompletedTask;
         return tbsContent;
     }
@@ -278,7 +278,7 @@ public class OFDSigner : IDisposable
         var signID = _signIDProvider.Get();
         _signIDProvider.Increment();
 
-        Console.WriteLine($"构建签名结构: {signID}");
+        System.Diagnostics.Debug.WriteLine($"构建签名结构: {signID}");
 
         // 创建签名信息
         var signatureInfo = new SignatureInfo
@@ -352,7 +352,7 @@ public class OFDSigner : IDisposable
             await File.WriteAllBytesAsync(signedValuePath, signatureInfo.SignatureValue);
         }
 
-        Console.WriteLine($"签名文件生成完成: {signDir}");
+        System.Diagnostics.Debug.WriteLine($"签名文件生成完成: {signDir}");
     }
 
     /// <summary>
@@ -403,7 +403,7 @@ public class OFDSigner : IDisposable
         
         File.Delete(tempZip);
         
-        Console.WriteLine("签名后的OFD文件输出完成");
+        System.Diagnostics.Debug.WriteLine("签名后的OFD文件输出完成");
     }
 
     /// <summary>

@@ -81,7 +81,7 @@ public class ImageExporter : OFDExporterBase
         
         _outputPaths.Add(outputPath);
         
-        Console.WriteLine($"页面 {pageNum + 1} 已导出到: {outputPath}");
+        System.Diagnostics.Debug.WriteLine($"页面 {pageNum + 1} 已导出到: {outputPath}");
     }
 
     /// <summary>

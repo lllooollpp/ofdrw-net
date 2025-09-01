@@ -63,7 +63,7 @@ public class ImageConverter : OFDConverterBase
 
         try
         {
-            Console.WriteLine($"开始转换图像文件: {inputPath}");
+            System.Diagnostics.Debug.WriteLine($"开始转换图像文件: {inputPath}");
 
             // 检查是否为多页图像（如TIFF）
             var imageInfo = await GetImageInfo(inputPath, cancellationToken);
@@ -78,7 +78,7 @@ public class ImageConverter : OFDConverterBase
             }
 
             await FinalizeConversion();
-            Console.WriteLine($"图像转换完成，共 {imageInfo.PageCount} 页");
+            System.Diagnostics.Debug.WriteLine($"图像转换完成，共 {imageInfo.PageCount} 页");
         }
         catch (Exception ex)
         {
@@ -190,7 +190,7 @@ public class ImageConverter : OFDConverterBase
         
         // 这里需要扩展OFDPageGraphics以支持图像绘制
         // 目前作为占位符实现
-        Console.WriteLine($"绘制图像: {destRect.Width:F1}x{destRect.Height:F1} at ({destRect.Left:F1}, {destRect.Top:F1})");
+        System.Diagnostics.Debug.WriteLine($"绘制图像: {destRect.Width:F1}x{destRect.Height:F1} at ({destRect.Left:F1}, {destRect.Top:F1})");
         
         await Task.CompletedTask;
     }

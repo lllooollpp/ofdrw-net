@@ -10,7 +10,7 @@ namespace OfdrwNet.Converter.OfdConverter;
 public abstract class OFDConverterBase : IOFDConverter
 {
     protected readonly string _outputPath;
-    protected PageLayout _pageLayout;
+    protected OfdrwNet.Layout.PageLayout _pageLayout;
     protected OFDGraphicsDocument? _ofdDocument;
     protected bool _disposed = false;
 
@@ -21,7 +21,7 @@ public abstract class OFDConverterBase : IOFDConverter
     protected OFDConverterBase(string outputPath)
     {
         _outputPath = outputPath ?? throw new ArgumentNullException(nameof(outputPath));
-        _pageLayout = PageLayout.A4(); // 默认A4页面
+        _pageLayout = OfdrwNet.Layout.PageLayout.A4(); // 默认A4页面
 
         // 确保输出目录存在
         var outputDir = Path.GetDirectoryName(_outputPath);
@@ -34,7 +34,7 @@ public abstract class OFDConverterBase : IOFDConverter
     /// <summary>
     /// 设置页面布局
     /// </summary>
-    public virtual void SetPageLayout(PageLayout pageLayout)
+    public virtual void SetPageLayout(OfdrwNet.Layout.PageLayout pageLayout)
     {
         _pageLayout = pageLayout ?? throw new ArgumentNullException(nameof(pageLayout));
     }
@@ -78,7 +78,7 @@ public abstract class OFDConverterBase : IOFDConverter
         if (_ofdDocument != null)
         {
             await _ofdDocument.SaveAsync();
-            Console.WriteLine($"OFD文档已保存到: {_outputPath}");
+            System.Diagnostics.Debug.WriteLine($"OFD文档已保存到: {_outputPath}");
         }
     }
 

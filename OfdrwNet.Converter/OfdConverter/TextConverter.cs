@@ -87,7 +87,7 @@ public class TextConverter : OFDConverterBase
 
         try
         {
-            Console.WriteLine($"开始转换文本文件: {inputPath}");
+            System.Diagnostics.Debug.WriteLine($"开始转换文本文件: {inputPath}");
 
             // 读取文本内容
             var content = await File.ReadAllTextAsync(inputPath, _encoding, cancellationToken);
@@ -153,7 +153,7 @@ public class TextConverter : OFDConverterBase
             // 完成转换
             await FinalizeConversion();
             
-            Console.WriteLine($"文本转换完成，共 {GetPageCount(totalLines, linesPerPage)} 页");
+            System.Diagnostics.Debug.WriteLine($"文本转换完成，共 {GetPageCount(totalLines, linesPerPage)} 页");
         }
         catch (Exception ex)
         {

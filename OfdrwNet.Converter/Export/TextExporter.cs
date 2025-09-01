@@ -58,7 +58,7 @@ public class TextExporter : OFDExporterBase
         var outputPath = _outputPaths[0];
         await File.WriteAllTextAsync(outputPath, _textBuilder.ToString(), _encoding, cancellationToken);
         
-        Console.WriteLine($"文本已导出到: {outputPath}");
+        System.Diagnostics.Debug.WriteLine($"文本已导出到: {outputPath}");
     }
 
     /// <summary>
@@ -78,7 +78,7 @@ public class TextExporter : OFDExporterBase
             _outputPaths.Add(outputPath);
         }
         
-        Console.WriteLine($"页面 {pageNum + 1} 文本已导出到: {outputPath}");
+        System.Diagnostics.Debug.WriteLine($"页面 {pageNum + 1} 文本已导出到: {outputPath}");
     }
 
     /// <summary>

@@ -1,5 +1,8 @@
 using System.Security.Cryptography;
 using OfdrwNet.Reader;
+using Microsoft.Extensions.Logging; // 新增
+using System.IO; // 新增
+using System.Linq; // 新增
 
 namespace OfdrwNet.Sign;
 
@@ -14,15 +17,16 @@ public static class SignatureExample
     /// <summary>
     /// 数字签名示例
     /// </summary>
+    /// <param name="logger">日志接口</param>
     /// <param name="inputOfdPath">输入OFD文件路径</param>
     /// <param name="outputOfdPath">签名后输出文件路径</param>
-    public static async Task SignDocumentExample(string inputOfdPath, string outputOfdPath)
+    public static async Task SignDocumentExample(ILogger logger, string inputOfdPath, string outputOfdPath)
     {
-        Console.WriteLine("=== OFD数字签名示例 ===");
+        logger.LogInformation("=== OFD数字签名示例 ===");
 
         if (!File.Exists(inputOfdPath))
         {
-            Console.WriteLine($"输入文件不存在: {inputOfdPath}");
+            logger.LogWarning("输入文件不存在: {File}", inputOfdPath);
             return;
         }
 
@@ -30,15 +34,15 @@ public static class SignatureExample
         {
             // 1. 创建RSA密钥对（示例用，生产环境应使用符合标准的证书）
             using var rsa = RSA.Create(2048);
-            Console.WriteLine("生成RSA密钥对完成");
+            logger.LogDebug("生成RSA密钥对完成");
 
             // 2. 创建签名容器
             using var signatureContainer = new DefaultSignatureContainer(rsa);
-            Console.WriteLine("创建签名容器完成");
+            logger.LogDebug("创建签名容器完成");
 
             // 3. 打开OFD文档
             using var reader = new OfdReader(inputOfdPath);
-            Console.WriteLine($"打开OFD文档: {Path.GetFileName(inputOfdPath)}");
+            logger.LogInformation("打开OFD文档: {File}", Path.GetFileName(inputOfdPath));
 
             // 4. 创建输出流
             using var outputStream = File.Create(outputOfdPath);
@@ -50,34 +54,31 @@ public static class SignatureExample
                 .AddParameter("Reason", "文档数字签名")
                 .AddParameter("Location", "OfdrwNet");
 
-            Console.WriteLine("配置签名器完成");
+            logger.LogDebug("配置签名器完成");
 
             // 6. 执行签名
             await signer.SignAsync();
             
-            Console.WriteLine($"数字签名完成！输出文件: {outputOfdPath}");
+            logger.LogInformation("数字签名完成 输出文件: {Out}", outputOfdPath);
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"数字签名失败: {ex.Message}");
-            if (ex.InnerException != null)
-            {
-                Console.WriteLine($"内部异常: {ex.InnerException.Message}");
-            }
+            logger.LogError(ex, "数字签名失败");
         }
     }
 
     /// <summary>
     /// 签名验证示例
     /// </summary>
+    /// <param name="logger">日志接口</param>
     /// <param name="signedOfdPath">已签名的OFD文件路径</param>
-    public static async Task VerifySignatureExample(string signedOfdPath)
+    public static async Task VerifySignatureExample(ILogger logger, string signedOfdPath)
     {
-        Console.WriteLine("=== OFD签名验证示例 ===");
+        logger.LogInformation("=== OFD签名验证示例 ===");
 
         if (!File.Exists(signedOfdPath))
         {
-            Console.WriteLine($"文件不存在: {signedOfdPath}");
+            logger.LogWarning("文件不存在: {File}", signedOfdPath);
             return;
         }
 
@@ -85,7 +86,7 @@ public static class SignatureExample
         {
             // 1. 打开已签名的OFD文档
             using var reader = new OfdReader(signedOfdPath);
-            Console.WriteLine($"打开已签名文档: {Path.GetFileName(signedOfdPath)}");
+            logger.LogInformation("打开已签名文档: {File}", Path.GetFileName(signedOfdPath));
 
             // 2. 创建验证用的签名容器（需要与签名时使用的公钥匹配）
             using var rsa = RSA.Create(2048);
@@ -95,46 +96,43 @@ public static class SignatureExample
             using var verifier = new OFDSignatureVerifier(reader)
                 .SetSignatureContainer(signatureContainer);
 
-            Console.WriteLine("配置验证器完成");
+            logger.LogDebug("配置验证器完成");
 
             // 4. 验证所有签名
             var results = await verifier.VerifyAllSignaturesAsync();
 
-            // 5. 输出验证结果
-            Console.WriteLine($"验证完成，共发现{results.Count}个签名:");
-            foreach (var result in results)
+            logger.LogInformation("验证完成 签名数={Count}", results.Count);
+            foreach (var r in results)
             {
-                Console.WriteLine($"  {result}");
-                if (!string.IsNullOrEmpty(result.ErrorMessage))
-                {
-                    Console.WriteLine($"    错误: {result.ErrorMessage}");
-                }
+                if (string.IsNullOrEmpty(r.ErrorMessage)) logger.LogInformation("签名: {Result}", r);
+                else logger.LogWarning("签名: {Result} 错误={Err}", r, r.ErrorMessage);
             }
 
             // 6. 统计验证结果
             var validCount = results.Count(r => r.IsValid);
             var invalidCount = results.Count - validCount;
             
-            Console.WriteLine($"验证结果汇总: {validCount}个有效签名，{invalidCount}个无效签名");
+            logger.LogInformation("验证结果汇总 有效={Valid} 无效={Invalid}", validCount, invalidCount);
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"签名验证失败: {ex.Message}");
+            logger.LogError(ex, "签名验证失败");
         }
     }
 
     /// <summary>
     /// 完整保护模式签名示例
     /// </summary>
+    /// <param name="logger">日志接口</param>
     /// <param name="inputOfdPath">输入OFD文件路径</param>
     /// <param name="outputOfdPath">签名后输出文件路径</param>
-    public static async Task WholeProtectSignExample(string inputOfdPath, string outputOfdPath)
+    public static async Task WholeProtectSignExample(ILogger logger, string inputOfdPath, string outputOfdPath)
     {
-        Console.WriteLine("=== OFD完整保护签名示例 ===");
+        logger.LogInformation("=== OFD完整保护签名示例 ===");
 
         if (!File.Exists(inputOfdPath))
         {
-            Console.WriteLine($"输入文件不存在: {inputOfdPath}");
+            logger.LogWarning("输入文件不存在: {File}", inputOfdPath);
             return;
         }
 
@@ -152,27 +150,27 @@ public static class SignatureExample
                 .AddParameter("Location", "OfdrwNet")
                 .AddParameter("ContactInfo", "admin@ofdrw.net");
 
-            Console.WriteLine("使用完整保护模式进行签名...");
+            logger.LogInformation("使用完整保护模式进行签名...");
             await signer.SignAsync();
             
-            Console.WriteLine($"完整保护签名完成！输出文件: {outputOfdPath}");
-            Console.WriteLine("注意：完整保护模式签名后，文档不能再添加新的签名");
+            logger.LogInformation("完整保护签名完成 输出={Out}", outputOfdPath);
+            logger.LogWarning("完整保护模式签名后文档不可追加新签名");
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"完整保护签名失败: {ex.Message}");
+            logger.LogError(ex, "完整保护签名失败");
         }
     }
 
     /// <summary>
     /// 运行所有签名示例
     /// </summary>
+    /// <param name="logger">日志接口</param>
     /// <param name="workingDir">工作目录</param>
     /// <param name="sampleOfdFile">示例OFD文件</param>
-    public static async Task RunAllExamples(string workingDir, string? sampleOfdFile = null)
+    public static async Task RunAllExamples(ILogger logger, string workingDir, string? sampleOfdFile = null)
     {
-        Console.WriteLine("开始OFD数字签名示例演示...");
-        Console.WriteLine();
+        logger.LogInformation("开始OFD数字签名示例演示...");
 
         if (!Directory.Exists(workingDir))
         {
@@ -182,16 +180,9 @@ public static class SignatureExample
         // 如果没有提供示例文件，跳过演示
         if (string.IsNullOrEmpty(sampleOfdFile) || !File.Exists(sampleOfdFile))
         {
-            Console.WriteLine("没有有效的OFD示例文件，跳过数字签名演示");
-            Console.WriteLine();
-            Console.WriteLine("数字签名功能说明：");
-            Console.WriteLine("✓ 支持继续签名模式和完整保护模式");
-            Console.WriteLine("✓ 提供数字签名容器接口，可扩展支持不同算法");
-            Console.WriteLine("✓ 支持签名验证功能");
-            Console.WriteLine("✓ 基于.NET 8现代密码学API");
-            Console.WriteLine();
-            Console.WriteLine("注意：生产环境中需要集成符合国密标准的密码学库");
-            Console.WriteLine("当前实现仅为演示框架，实际签名需要使用认证的密码设备");
+            logger.LogWarning("没有有效的OFD示例文件，跳过数字签名演示");
+            logger.LogInformation("功能说明: 继续签名 / 完整保护 / 验证 / 可扩展容器 / .NET8 Crypto");
+            logger.LogWarning("生产需使用符合国密或合规密码库");
             return;
         }
 
@@ -199,26 +190,26 @@ public static class SignatureExample
         {
             // 1. 继续签名模式示例
             var continueSignedFile = Path.Combine(workingDir, "continue_signed.ofd");
-            await SignDocumentExample(sampleOfdFile, continueSignedFile);
-            Console.WriteLine();
+            await SignDocumentExample(logger, sampleOfdFile, continueSignedFile);
+            logger.LogInformation("");
 
             // 2. 签名验证示例
             if (File.Exists(continueSignedFile))
             {
-                await VerifySignatureExample(continueSignedFile);
-                Console.WriteLine();
+                await VerifySignatureExample(logger, continueSignedFile);
+                logger.LogInformation("");
             }
 
             // 3. 完整保护签名示例
             var wholeProtectFile = Path.Combine(workingDir, "whole_protect_signed.ofd");
-            await WholeProtectSignExample(sampleOfdFile, wholeProtectFile);
-            Console.WriteLine();
+            await WholeProtectSignExample(logger, sampleOfdFile, wholeProtectFile);
+            logger.LogInformation("");
 
-            Console.WriteLine("数字签名示例演示完成！");
+            logger.LogInformation("数字签名示例演示完成");
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"示例演示过程中出现错误: {ex.Message}");
+            logger.LogError(ex, "示例演示过程中出现错误");
         }
     }
 }

@@ -109,13 +109,13 @@ public class OFDSignatureVerifier : IDisposable
 
         try
         {
-            Console.WriteLine("开始验证OFD文档的所有数字签名...");
+            System.Diagnostics.Debug.WriteLine("开始验证OFD文档的所有数字签名...");
 
             // 查找签名列表文件
             var signaturesPath = await FindSignaturesFileAsync();
             if (string.IsNullOrEmpty(signaturesPath))
             {
-                Console.WriteLine("文档中没有找到数字签名");
+                System.Diagnostics.Debug.WriteLine("文档中没有找到数字签名");
                 return results;
             }
 
@@ -129,7 +129,7 @@ public class OFDSignatureVerifier : IDisposable
                 results.Add(result);
             }
 
-            Console.WriteLine($"签名验证完成，共验证{results.Count}个签名");
+            System.Diagnostics.Debug.WriteLine($"签名验证完成，共验证{results.Count}个签名");
         }
         catch (Exception ex)
         {
@@ -154,7 +154,7 @@ public class OFDSignatureVerifier : IDisposable
     {
         try
         {
-            Console.WriteLine($"验证签名: {signID}");
+            System.Diagnostics.Debug.WriteLine($"验证签名: {signID}");
 
             if (_signatureContainer == null)
             {
@@ -263,7 +263,7 @@ public class OFDSignatureVerifier : IDisposable
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"解析签名列表文件失败: {ex.Message}");
+            System.Diagnostics.Debug.WriteLine($"解析签名列表文件失败: {ex.Message}");
         }
 
         return signatureList;

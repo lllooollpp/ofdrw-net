@@ -1,5 +1,9 @@
 namespace OfdrwNet.Tools;
 
+using Microsoft.Extensions.Logging; // 新增
+using System.IO; // 新增
+using System.Linq; // 新增
+
 /// <summary>
 /// OFD工具示例类
 /// 展示OFDMerger和OFDPageDeleter的使用方法
@@ -11,13 +15,13 @@ public static class ToolsExample
     /// </summary>
     /// <param name="outputPath">输出文件路径</param>
     /// <param name="inputFiles">输入文件列表</param>
-    public static async Task MergeDocumentsExample(string outputPath, params string[] inputFiles)
+    public static async Task MergeDocumentsExample(ILogger logger, string outputPath, params string[] inputFiles)
     {
-        Console.WriteLine("=== OFD文档合并示例 ===");
+        logger.LogInformation("=== OFD文档合并示例 ===");
 
         if (inputFiles == null || inputFiles.Length == 0)
         {
-            Console.WriteLine("没有提供输入文件");
+            logger.LogWarning("没有提供输入文件");
             return;
         }
 
@@ -31,23 +35,23 @@ public static class ToolsExample
                 if (File.Exists(inputFile))
                 {
                     merger.Add(inputFile);
-                    Console.WriteLine($"添加文档: {Path.GetFileName(inputFile)}");
+                    logger.LogDebug("添加文档: {File}", Path.GetFileName(inputFile));
                 }
                 else
                 {
-                    Console.WriteLine($"文件不存在，跳过: {inputFile}");
+                    logger.LogWarning("文件不存在，跳过: {File}", inputFile);
                 }
             }
 
             // 执行合并
             await merger.MergeAsync();
 
-            Console.WriteLine($"合并完成！输出文件: {outputPath}");
-            Console.WriteLine($"合并了 {merger.GetDocumentCount()} 个文档，共 {merger.GetPageCount()} 页");
+            logger.LogInformation("合并完成 输出文件: {Out}", outputPath);
+            logger.LogInformation("合并统计 文档={DocCount} 页={PageCount}", merger.GetDocumentCount(), merger.GetPageCount());
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"合并失败: {ex.Message}");
+            logger.LogError(ex, "合并失败");
         }
     }
 
@@ -57,13 +61,13 @@ public static class ToolsExample
     /// <param name="inputPath">输入文件路径</param>
     /// <param name="outputPath">输出文件路径</param>
     /// <param name="pageNumbers">要保留的页码（从1开始）</param>
-    public static async Task CropPagesExample(string inputPath, string outputPath, params int[] pageNumbers)
+    public static async Task CropPagesExample(ILogger logger, string inputPath, string outputPath, params int[] pageNumbers)
     {
-        Console.WriteLine("=== OFD页面裁剪示例 ===");
+        logger.LogInformation("=== OFD页面裁剪示例 ===");
 
         if (!File.Exists(inputPath))
         {
-            Console.WriteLine($"输入文件不存在: {inputPath}");
+            logger.LogWarning("输入文件不存在: {File}", inputPath);
             return;
         }
 
@@ -76,13 +80,11 @@ public static class ToolsExample
             
             await merger.MergeAsync();
             
-            Console.WriteLine($"页面裁剪完成！");
-            Console.WriteLine($"从 {Path.GetFileName(inputPath)} 提取了 {pageNumbers.Length} 页");
-            Console.WriteLine($"输出文件: {outputPath}");
+            logger.LogInformation("页面裁剪完成 输入={Input} 保留页数={Count} 输出={Out}", Path.GetFileName(inputPath), pageNumbers.Length, outputPath);
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"页面裁剪失败: {ex.Message}");
+            logger.LogError(ex, "页面裁剪失败");
         }
     }
 
@@ -90,13 +92,13 @@ public static class ToolsExample
     /// 多文档页面重组示例
     /// </summary>
     /// <param name="outputPath">输出文件路径</param>
-    public static async Task ReorganizePagesExample(string outputPath, string doc1Path, string doc2Path)
+    public static async Task ReorganizePagesExample(ILogger logger, string outputPath, string doc1Path, string doc2Path)
     {
-        Console.WriteLine("=== OFD页面重组示例 ===");
+        logger.LogInformation("=== OFD页面重组示例 ===");
 
         if (!File.Exists(doc1Path) || !File.Exists(doc2Path))
         {
-            Console.WriteLine("输入文件不完整");
+            logger.LogWarning("输入文件不完整");
             return;
         }
 
@@ -111,12 +113,11 @@ public static class ToolsExample
             
             await merger.MergeAsync();
             
-            Console.WriteLine("页面重组完成！");
-            Console.WriteLine($"重组后文档: {outputPath}");
+            logger.LogInformation("页面重组完成 输出={Out}", outputPath);
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"页面重组失败: {ex.Message}");
+            logger.LogError(ex, "页面重组失败");
         }
     }
 
@@ -126,13 +127,13 @@ public static class ToolsExample
     /// <param name="outputPath">输出文件路径</param>
     /// <param name="doc1Path">第一个文档路径</param>
     /// <param name="doc2Path">第二个文档路径</param>
-    public static async Task MixPagesExample(string outputPath, string doc1Path, string doc2Path)
+    public static async Task MixPagesExample(ILogger logger, string outputPath, string doc1Path, string doc2Path)
     {
-        Console.WriteLine("=== OFD页面混合示例 ===");
+        logger.LogInformation("=== OFD页面混合示例 ===");
 
         if (!File.Exists(doc1Path) || !File.Exists(doc2Path))
         {
-            Console.WriteLine("输入文件不完整");
+            logger.LogWarning("输入文件不完整");
             return;
         }
 
@@ -145,12 +146,11 @@ public static class ToolsExample
             
             await merger.MergeAsync();
             
-            Console.WriteLine("页面混合完成！（当前为简化实现）");
-            Console.WriteLine($"输出文件: {outputPath}");
+            logger.LogInformation("页面混合完成 输出={Out}", outputPath);
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"页面混合失败: {ex.Message}");
+            logger.LogError(ex, "页面混合失败");
         }
     }
 
@@ -160,13 +160,13 @@ public static class ToolsExample
     /// <param name="inputPath">输入文件路径</param>
     /// <param name="outputPath">输出文件路径</param>
     /// <param name="pageNumbersToDelete">要删除的页码（从1开始）</param>
-    public static async Task DeletePagesExample(string inputPath, string outputPath, params int[] pageNumbersToDelete)
+    public static async Task DeletePagesExample(ILogger logger, string inputPath, string outputPath, params int[] pageNumbersToDelete)
     {
-        Console.WriteLine("=== OFD页面删除示例 ===");
+        logger.LogInformation("=== OFD页面删除示例 ===");
 
         if (!File.Exists(inputPath))
         {
-            Console.WriteLine($"输入文件不存在: {inputPath}");
+            logger.LogWarning("输入文件不存在: {File}", inputPath);
             return;
         }
 
@@ -174,22 +174,21 @@ public static class ToolsExample
         {
             using var deleter = new OFDPageDeleter(inputPath, outputPath);
             
-            Console.WriteLine($"原文档页面数量: {deleter.GetPageCount()}");
+            var before = deleter.GetPageCount();
             
             // 删除指定页面
             deleter.DeleteByPageNumbers(pageNumbersToDelete);
             
-            Console.WriteLine($"删除页面数量: {deleter.GetPageCount()}");
+            var after = deleter.GetPageCount();
             
             // 保存修改后的文档
             await deleter.SaveAsync();
             
-            Console.WriteLine("页面删除完成！");
-            Console.WriteLine($"输出文件: {outputPath}");
+            logger.LogInformation("页面删除完成 输入={Input} 原页={Before} 现页={After} 输出={Out}", Path.GetFileName(inputPath), before, after, outputPath);
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"页面删除失败: {ex.Message}");
+            logger.LogError(ex, "页面删除失败");
         }
     }
 
@@ -198,10 +197,9 @@ public static class ToolsExample
     /// </summary>
     /// <param name="workingDir">工作目录</param>
     /// <param name="sampleOfdFiles">示例OFD文件列表</param>
-    public static async Task RunAllExamples(string workingDir, params string[] sampleOfdFiles)
+    public static async Task RunAllExamples(ILogger logger, string workingDir, params string[] sampleOfdFiles)
     {
-        Console.WriteLine("开始OFD工具示例演示...");
-        Console.WriteLine();
+        logger.LogInformation("开始OFD工具示例演示...");
 
         if (!Directory.Exists(workingDir))
         {
@@ -213,7 +211,7 @@ public static class ToolsExample
         
         if (validFiles.Length == 0)
         {
-            Console.WriteLine("没有有效的OFD示例文件，跳过演示");
+            logger.LogWarning("没有有效的OFD示例文件，跳过演示");
             return;
         }
 
@@ -222,55 +220,32 @@ public static class ToolsExample
             // 1. 文档合并示例
             if (validFiles.Length >= 2)
             {
-                await MergeDocumentsExample(
-                    Path.Combine(workingDir, "merged_document.ofd"),
-                    validFiles[0], validFiles[1]
-                );
-                Console.WriteLine();
+                await MergeDocumentsExample(logger, Path.Combine(workingDir, "merged_document.ofd"), validFiles[0], validFiles[1]);
             }
 
             // 2. 页面裁剪示例
-            await CropPagesExample(
-                validFiles[0],
-                Path.Combine(workingDir, "cropped_document.ofd"),
-                1, 2 // 保留前两页
-            );
-            Console.WriteLine();
+            await CropPagesExample(logger, validFiles[0], Path.Combine(workingDir, "cropped_document.ofd"), 1, 2); // 保留前两页
 
             // 3. 页面重组示例
             if (validFiles.Length >= 2)
             {
-                await ReorganizePagesExample(
-                    Path.Combine(workingDir, "reorganized_document.ofd"),
-                    validFiles[0], validFiles[1]
-                );
-                Console.WriteLine();
+                await ReorganizePagesExample(logger, Path.Combine(workingDir, "reorganized_document.ofd"), validFiles[0], validFiles[1]);
             }
 
             // 4. 页面混合示例
             if (validFiles.Length >= 2)
             {
-                await MixPagesExample(
-                    Path.Combine(workingDir, "mixed_document.ofd"),
-                    validFiles[0], validFiles[1]
-                );
-                Console.WriteLine();
+                await MixPagesExample(logger, Path.Combine(workingDir, "mixed_document.ofd"), validFiles[0], validFiles[1]);
             }
 
             // 5. 页面删除示例
-            await DeletePagesExample(
-                validFiles[0],
-                Path.Combine(workingDir, "pages_deleted.ofd"),
-                2 // 删除第2页
-            );
-            Console.WriteLine();
-
+            await DeletePagesExample(logger, validFiles[0], Path.Combine(workingDir, "pages_deleted.ofd"), 2); // 删除第2页
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"示例演示过程中出现错误: {ex.Message}");
+            logger.LogError(ex, "示例演示过程中出现错误");
         }
 
-        Console.WriteLine("OFD工具示例演示完成！");
+        logger.LogInformation("OFD工具示例演示完成");
     }
 }

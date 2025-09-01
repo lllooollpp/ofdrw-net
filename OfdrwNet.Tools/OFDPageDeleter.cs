@@ -155,7 +155,7 @@ public class OFDPageDeleter : IDisposable
             }
             else
             {
-                Console.WriteLine($"警告: 页面索引 {index} 超出范围 (0-{pageElements.Count - 1})");
+                System.Diagnostics.Debug.WriteLine($"警告: 页面索引 {index} 超出范围 (0-{pageElements.Count - 1})");
             }
         }
 
@@ -165,7 +165,7 @@ public class OFDPageDeleter : IDisposable
             pageElement.Remove();
         }
 
-        Console.WriteLine($"已删除 {toBeDeleted.Count} 个页面");
+        System.Diagnostics.Debug.WriteLine($"已删除 {toBeDeleted.Count} 个页面");
         return this;
     }
 
@@ -227,7 +227,7 @@ public class OFDPageDeleter : IDisposable
 
             System.IO.Compression.ZipFile.CreateFromDirectory(workDir, _outputPath);
 
-            Console.WriteLine($"页面删除完成，输出文件: {_outputPath}");
+            System.Diagnostics.Debug.WriteLine($"页面删除完成，输出文件: {_outputPath}");
 
             await Task.CompletedTask;
         }
@@ -276,7 +276,7 @@ public class OFDPageDeleter : IDisposable
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"更新文档修改时间失败: {ex.Message}");
+                    System.Diagnostics.Debug.WriteLine($"更新文档修改时间失败: {ex.Message}");
                 }
             }
         }

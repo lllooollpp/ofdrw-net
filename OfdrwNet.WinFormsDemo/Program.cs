@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Logging;
+using System.Diagnostics;
 using System.IO;
 using Serilog;
 using Serilog.Events;
@@ -52,6 +53,14 @@ internal static class Program
                 .WriteTo.Console()
                 .WriteTo.File(Path.Combine(logDir, "ofdrw_.log"), rollingInterval: RollingInterval.Day, retainedFileCountLimit: 31, shared: true)
                 .CreateLogger();
+
+            // 注册 Trace -> Serilog 转发监听器（避免库中 Debug/Trace.WriteLine 丢失）
+            var serilogListener = new SerilogTraceListener();
+            if (!Trace.Listeners.OfType<SerilogTraceListener>().Any())
+            {
+                Trace.Listeners.Add(serilogListener);
+                Trace.AutoFlush = true;
+            }
 
             using var loggerFactory = LoggerFactory.Create(builder =>
             {

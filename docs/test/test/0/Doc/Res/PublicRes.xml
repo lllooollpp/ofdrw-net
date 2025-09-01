@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Res xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Fonts>
+        <ofd:Font ID="1" FontName="PdfFont{fontProgram=ITBEUU+¿¬Ìå_GB2312}" FamilyName="PdfFont{fontProgram=ITBEUU+¿¬Ìå_GB2312}" Charset="unicode"/>
+        <ofd:Font ID="2" FontName="PdfFont{fontProgram=EMEMFB+ËÎÌå}" FamilyName="PdfFont{fontProgram=EMEMFB+ËÎÌå}" Charset="unicode"/>
+        <ofd:Font ID="3" FontName="PdfFont{fontProgram=QSYOXD+Î¢ÈíÑÅºÚ}" FamilyName="PdfFont{fontProgram=QSYOXD+Î¢ÈíÑÅºÚ}" Charset="unicode"/>
+    </ofd:Fonts>
+    <ofd:MultiMedias>
+        <ofd:MultiMedia ID="4" Type="Image" Format="PNG" MediaFile="Res/Im4.png"/>
+        <ofd:MultiMedia ID="5" Type="Image" Format="PNG" MediaFile="Res/Im5.png"/>
+        <ofd:MultiMedia ID="6" Type="Image" Format="PNG" MediaFile="Res/Im6.png"/>
+        <ofd:MultiMedia ID="7" Type="Image" Format="PNG" MediaFile="Res/Im7.png"/>
+        <ofd:MultiMedia ID="8" Type="Image" Format="PNG" MediaFile="Res/Im8.png"/>
+        <ofd:MultiMedia ID="9" Type="Image" Format="PNG" MediaFile="Res/Im9.png"/>
+        <ofd:MultiMedia ID="10" Type="Image" Format="PNG" MediaFile="Res/Im10.png"/>
+        <ofd:MultiMedia ID="11" Type="Image" Format="PNG" MediaFile="Res/Im11.png"/>
+        <ofd:MultiMedia ID="12" Type="Image" Format="PNG" MediaFile="Res/Im12.png"/>
+        <ofd:MultiMedia ID="13" Type="Image" Format="PNG" MediaFile="Res/Im13.png"/>
+        <ofd:MultiMedia ID="14" Type="Image" Format="PNG" MediaFile="Res/Im14.png"/>
+        <ofd:MultiMedia ID="15" Type="Image" Format="PNG" MediaFile="Res/Im15.png"/>
+        <ofd:MultiMedia ID="16" Type="Image" Format="PNG" MediaFile="Res/Im16.png"/>
+        <ofd:MultiMedia ID="17" Type="Image" Format="PNG" MediaFile="Res/Im17.png"/>
+        <ofd:MultiMedia ID="18" Type="Image" Format="PNG" MediaFile="Res/Im18.png"/>
+        <ofd:MultiMedia ID="19" Type="Image" Format="PNG" MediaFile="Res/Im19.png"/>
+        <ofd:MultiMedia ID="20" Type="Image" Format="PNG" MediaFile="Res/Im20.png"/>
+        <ofd:MultiMedia ID="21" Type="Image" Format="PNG" MediaFile="Res/Im21.png"/>
+        <ofd:MultiMedia ID="22" Type="Image" Format="PNG" MediaFile="Res/Im22.png"/>
+        <ofd:MultiMedia ID="23" Type="Image" Format="PNG" MediaFile="Res/Im23.png"/>
+        <ofd:MultiMedia ID="24" Type="Image" Format="PNG" MediaFile="Res/Im24.png"/>
+        <ofd:MultiMedia ID="25" Type="Image" Format="PNG" MediaFile="Res/Im25.png"/>
+        <ofd:MultiMedia ID="26" Type="Image" Format="PNG" MediaFile="Res/Im26.png"/>
+        <ofd:MultiMedia ID="27" Type="Image" Format="PNG" MediaFile="Res/Im27.png"/>
+    </ofd:MultiMedias>
+</ofd:Res>

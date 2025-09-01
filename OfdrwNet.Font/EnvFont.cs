@@ -130,7 +130,9 @@ public static class EnvFont
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"加载字体文件失败：{fontFile}，错误：{ex.Message}");
+#if WINDOWS
+                System.Diagnostics.Debug.WriteLine($"加载字体文件失败：{fontFile}，错误：{ex.Message}");
+#endif
             }
         }
     }
@@ -280,7 +282,9 @@ public static class EnvFont
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"加载系统字体时发生错误：{ex.Message}");
+#if WINDOWS
+            System.Diagnostics.Debug.WriteLine($"加载系统字体时发生错误：{ex.Message}");
+#endif
         }
     }
 

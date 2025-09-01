@@ -526,6 +526,8 @@ public partial class MainForm : Form
                     ExtractAndEmbedFonts = true,
                     PerGlyphPositioning = true, // 可视化测试时开启逐字定位（当前仅水平文本）
                     CancellationToken = _cancellationTokenSource.Token,
+                    Logger = _logger, // 使用已有 Microsoft.Extensions.Logging logger
+                    RealImageEmbedding = true,
                     Progress = new Progress<(int done, int total)>(p =>
                     {
                         int percent = p.total > 0 ? (int)Math.Round(p.done * 100.0 / p.total) : 0;
@@ -536,6 +538,7 @@ public partial class MainForm : Form
                         });
                     })
                 };
+                _logger.LogDebug("[PDF2OFD][Diag] LoggerInjected={Injected} RealImageEmbedding={Embed}", pdfOptions.Logger != null, pdfOptions.RealImageEmbedding);
                 await ConvertHelper.ToOfdAsync(inputFile, outputFile, pdfOptions);
                 var inputInfo = new FileInfo(inputFile);
                 var outputInfo = new FileInfo(outputFile);

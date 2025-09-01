@@ -5,12 +5,14 @@ using System.Threading.Tasks;
 using OfdrwNet.Reader;
 using OfdrwNet.Converter.Export;
 using System.Collections.Generic; // 新增：页面过滤
-//using OfdrwNet; // 移除直接引用以避免循环
 using iText.Kernel.Pdf.Canvas.Parser;
 using iText.Kernel.Pdf.Canvas.Parser.Listener;
 using iText.Kernel.Pdf.Canvas.Parser.Data;
 using iText.Kernel.Geom;
 using Path = System.IO.Path; // 解决与 iText.Kernel.Geom.Path 冲突
+using Microsoft.Extensions.Logging; // 新增
+using OfdrwNet.Abstractions;
+using OfdrwNet; // 直接引用
 
 namespace OfdrwNet.Converter;
 
@@ -313,24 +315,43 @@ public static class ConvertHelper
         public bool PerGlyphPositioning { get; set; } = false; // 预留第2阶段
         public IProgress<(int done, int total)>? Progress { get; set; }
         public CancellationToken CancellationToken { get; set; }
+        // 新增：是否去掉 6位大写+"+" 的子集前缀
+        public bool NormalizeSubsetFontName { get; set; } = true;
+        // 新增：是否输出 DeltaX（可用于调试关闭）
+        public bool EnableDeltaX { get; set; } = true;
+        // 新增：外部日志注入
+        public ILogger? Logger { get; set; }
+        public bool RealImageEmbedding { get; set; } = true; // 是否输出真实图片资源
     }
 
     public static void ToOfd(string pdfPath, string ofdOutputPath, PdfToOfdOptions? options = null) => ToOfdAsync(pdfPath, ofdOutputPath, options).GetAwaiter().GetResult();
 
-    public static async Task ToOfdAsync(string pdfPath, string ofdOutputPath, PdfToOfdOptions? options = null)
+    public static async Task ToOfdAsync(string pdfPath, string ofdOutputDir, PdfToOfdOptions? options = null, CancellationToken cancellationToken = default)
     {
-        if (string.IsNullOrWhiteSpace(pdfPath) || !File.Exists(pdfPath)) throw new FileNotFoundException("PDF不存在", pdfPath);
-        if (string.IsNullOrWhiteSpace(ofdOutputPath)) throw new ArgumentException("输出路径不能为空", nameof(ofdOutputPath));
         options ??= new PdfToOfdOptions();
 
         using var reader = new iText.Kernel.Pdf.PdfReader(pdfPath);
         using var pdfDoc = new iText.Kernel.Pdf.PdfDocument(reader);
+
+        ILogger? logger = options.Logger;
+        if (logger == null)
+        {
+            try
+            {
+                var lf = LoggerFactory.Create(b => { }); // 无扩展，保持最小依赖
+                logger = lf.CreateLogger("PDF2OFD");
+                logger.LogInformation("[PDF2OFD][Image] 未提供外部Logger，已启用内部临时Logger");
+            }
+            catch { }
+        }
+        logger?.LogInformation("[PDF2OFD] 开始转换 PDF -> OFD 输入={Pdf} 输出={Ofd}", pdfPath, ofdOutputDir);
 
         // 1. 字体抽取
         var fontFileTempMap = new Dictionary<string,string?>();
         var visited = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         int totalPages = pdfDoc.GetNumberOfPages();
         int processed = 0;
+        var subsetPrefixRegex = new System.Text.RegularExpressions.Regex("^[A-Z]{6}\\+", System.Text.RegularExpressions.RegexOptions.Compiled);
         for (int i = 1; i <= totalPages; i++)
         {
             options.CancellationToken.ThrowIfCancellationRequested();
@@ -343,7 +364,8 @@ public static class ConvertHelper
                     var fontObj = resources.GetResource(iText.Kernel.Pdf.PdfName.Font).Get(fontName);
                     var fontDict = fontObj as iText.Kernel.Pdf.PdfDictionary;
                     if (fontDict == null) continue;
-                    var baseName = fontDict.GetAsName(iText.Kernel.Pdf.PdfName.BaseFont)?.GetValue() ?? fontName.GetValue();
+                    var baseNameRaw = fontDict.GetAsName(iText.Kernel.Pdf.PdfName.BaseFont)?.GetValue() ?? fontName.GetValue();
+                    var baseName = options.NormalizeSubsetFontName ? subsetPrefixRegex.Replace(baseNameRaw, string.Empty) : baseNameRaw;
                     if (!visited.Add(baseName)) continue;
                     if (!options.ExtractAndEmbedFonts) continue;
                     try
@@ -353,7 +375,6 @@ public static class ConvertHelper
                         if (ff != null)
                         {
                             var bytes = ff.GetBytes();
-                            // 简单类型判断
                             string ext = ".font";
                             var subType = fontDict.GetAsName(iText.Kernel.Pdf.PdfName.Subtype)?.GetValue();
                             if (subType != null)
@@ -379,108 +400,228 @@ public static class ConvertHelper
             options.Progress?.Report((processed, totalPages));
         }
 
-        // 2. 创建 OFD 文档 (通过反射，避免直接项目引用造成循环)
-        var ofdType = Type.GetType("OfdrwNet.OFDDoc, OfdrwNet", throwOnError: false);
-        if (ofdType == null) throw new InvalidOperationException("无法加载 OfdrwNet.OFDDoc 类型，请确认 OfdrwNet 程序集引用");
-        using var ofd = (IDisposable)Activator.CreateInstance(ofdType, ofdOutputPath)!;
-        // AddExternalEmbeddedFont 调用
-        var addFontMethod = ofdType.GetMethod("AddExternalEmbeddedFont");
-        var addGlyphRunMethod = ofdType.GetMethod("AddRawTextGlyphRun");
-        foreach (var kv in fontFileTempMap)
+        // 2. 创建 OFD 文档：使用兼容 shim 名称 OFDDoc（继承自新的写入器），避免与 Layout.OFDDoc 冲突
+        IOfdDocWriter ofd = new OfdWriter(ofdOutputDir);
+        try
         {
-            if (kv.Value != null && addFontMethod != null)
+            foreach (var kv in fontFileTempMap)
             {
-                try { addFontMethod.Invoke(ofd, new object?[] { kv.Key, kv.Value }); } catch { }
+                if (kv.Value != null)
+                {
+                    try { ofd.AddExternalEmbeddedFont(kv.Key, kv.Value); } catch { }
+                }
             }
+            if (options.PerGlyphPositioning)
+            {
+                ExtractGlyphRuns(pdfDoc, ofd, options, logger);
+            }
+            if (options.RealImageEmbedding)
+            {
+                logger?.LogInformation("[PDF2OFD][Image] 开始提取图片 (RealImageEmbedding=true)");
+                ExtractImages(pdfDoc, ofd, options, logger);
+            }
+            await ofd.CloseAsync().ConfigureAwait(false);
         }
-        // 3. 逐字定位解析（可选）
-        if (options.PerGlyphPositioning && addGlyphRunMethod != null)
+        finally
         {
-            ExtractGlyphRuns(pdfDoc, ofd, ofdType, addGlyphRunMethod, options);
-        }
-        var closeAsync = ofdType.GetMethod("CloseAsync");
-        if (closeAsync != null)
-        {
-            var task = (Task)closeAsync.Invoke(ofd, null)!;
-            await task.ConfigureAwait(false);
-        }
-        else
-        {
-            // 退化：尝试 Close()
-            ofdType.GetMethod("Close")?.Invoke(ofd, null);
+            (ofd as IDisposable)?.Dispose();
         }
 
         foreach (var val in fontFileTempMap.Values)
         {
             try { if (val != null && File.Exists(val)) File.Delete(val); } catch { }
         }
+        logger?.LogInformation("[PDF2OFD] 写出完成");
     }
 
-    private static void ExtractGlyphRuns(iText.Kernel.Pdf.PdfDocument pdfDoc, IDisposable ofdInstance, Type ofdType, System.Reflection.MethodInfo addGlyphRunMethod, PdfToOfdOptions options)
+    private static void ExtractImages(iText.Kernel.Pdf.PdfDocument pdfDoc, IOfdDocWriter ofd, PdfToOfdOptions options, ILogger? logger)
     {
-        double mmPerUnit = 25.4 / 72.0; // PDF 用户单位 -> mm
+        double mmPerUnit = 25.4 / 72.0;
         int total = pdfDoc.GetNumberOfPages();
+        int globalCount = 0;
+        logger?.LogDebug("[PDF2OFD][Image] Pages={Total}", total);
         for (int pageIndex = 1; pageIndex <= total; pageIndex++)
         {
             options.CancellationToken.ThrowIfCancellationRequested();
             var page = pdfDoc.GetPage(pageIndex);
-            var pageSize = page.GetPageSize();
-            double pageHeightMm = pageSize.GetHeight() * mmPerUnit;
-            var listener = new GlyphCollectListener((fontName, fontSizeUser, chars, xsUser, ysUser) =>
+            var mediaBox = page.GetMediaBox();
+            var pageHeightUser = mediaBox.GetHeight();
+            double pageHeightMm = pageHeightUser * mmPerUnit;
+            int pageImageCount = 0;
+            var listener = new ImageCollectListener(pageHeightUser, logger, (bytes, format, xUser, yUserBottom, wUser, hUser, angleDeg) =>
             {
-                if (string.IsNullOrEmpty(chars)) return;
-                double fontSizeMm = fontSizeUser * mmPerUnit;
-                if (xsUser.Count == 0) return;
-                double baseXmm = xsUser[0] * mmPerUnit;
-                double baseYmmBaseline = ysUser[0] * mmPerUnit;
-                double topYmm = pageHeightMm - (baseYmmBaseline + fontSizeMm * 0.2);
-                var deltaX = new double[Math.Max(0, xsUser.Count - 1)];
-                for (int i = 1; i < xsUser.Count; i++)
-                {
-                    deltaX[i - 1] = (xsUser[i] - xsUser[i - 1]) * mmPerUnit;
-                }
+                pageImageCount++; globalCount++;
                 try
                 {
-                    // 签名: AddRawTextGlyphRun(string fontName, double fontSizeMm, double x, double yTop, string text, double[]? deltaX, double[]? deltaY, int pageIndex)
-                    addGlyphRunMethod.Invoke(ofdInstance, new object?[] { fontName, fontSizeMm, baseXmm, topYmm, chars, deltaX, null, pageIndex });
+                    double x = xUser * mmPerUnit;
+                    double w = wUser * mmPerUnit;
+                    double h = hUser * mmPerUnit;
+                    double yTop = pageHeightMm - (yUserBottom + hUser) * mmPerUnit;
+                    ofd.AddRawImage(format, x, yTop, w, h, bytes, pageIndex);
                 }
-                catch { }
+                catch (Exception ex)
+                { logger?.LogWarning(ex, "[PDF2OFD][Image] AddRawImage failed Page={Page}", pageIndex); }
             });
             var processor = new PdfCanvasProcessor(listener);
-            processor.ProcessPageContent(page);
+            try { processor.ProcessPageContent(page); }
+            catch (Exception ex) { logger?.LogWarning(ex, "[PDF2OFD][Image] ProcessPage failed Page={Page}", pageIndex); }
+            logger?.LogInformation("[PDF2OFD][Image] Page={Page} Images={Count}", pageIndex, pageImageCount);
+        }
+        if (globalCount == 0) logger?.LogWarning("[PDF2OFD][Image] No RENDER_IMAGE events – maybe vector-only / form-xobject not containing raster or listener issue");
+        else logger?.LogInformation("[PDF2OFD][Image] TotalImages={Count}", globalCount);
+    }
+
+    private static void ExtractGlyphRuns(iText.Kernel.Pdf.PdfDocument pdfDoc, IOfdDocWriter ofd, PdfToOfdOptions options, ILogger? logger)
+    {
+        double mmPerUnit = 25.4 / 72.0;
+        int total = pdfDoc.GetNumberOfPages();
+        int globalCount = 0;
+        logger?.LogDebug("[PDF2FD][Glyph] Pages={Total}", total);
+        for (int pageIndex = 1; pageIndex <= total; pageIndex++)
+        {
+            options.CancellationToken.ThrowIfCancellationRequested();
+            var page = pdfDoc.GetPage(pageIndex);
+            var mediaBox = page.GetMediaBox();
+            var pageHeightUser = mediaBox.GetHeight();
+            double pageHeightMm = pageHeightUser * mmPerUnit;
+            int pageTextCount = 0;
+
+            var listener = new GlyphCollectListener((tri) =>
+            {
+                try
+                {
+                    if (tri == null) return;
+                    string? txt = tri.GetText();
+                    if (string.IsNullOrWhiteSpace(txt)) return;
+
+                    // baseline start point
+                    var baseline = tri.GetBaseline();
+                    var startPt = baseline.GetStartPoint();
+                    double xUser = startPt.Get(iText.Kernel.Geom.Vector.I1);
+                    double yUser = startPt.Get(iText.Kernel.Geom.Vector.I2);
+
+                    double originX = xUser * mmPerUnit;
+                    double originY = pageHeightMm - yUser * mmPerUnit; // 转为以页面顶部为原点的 mm
+
+                    // 字号（以 pt 为单位），转换为 mm
+                    double fontSizePt = tri.GetFontSize();
+                    double fontSizeMm = fontSizePt * mmPerUnit;
+
+                    // 计算每字间距（deltaX/deltaY）——使用 character render infos 的基线起点差值
+                    var charInfos = tri.GetCharacterRenderInfos();
+                    double[]? deltaX = null;
+                    double[]? deltaY = null;
+                    try
+                    {
+                        if (charInfos != null && charInfos.Count > 1)
+                        {
+                            var dx = new List<double>();
+                            var dy = new List<double>();
+                            var prev = charInfos[0].GetBaseline().GetStartPoint();
+                            double prevX = prev.Get(iText.Kernel.Geom.Vector.I1);
+                            double prevY = prev.Get(iText.Kernel.Geom.Vector.I2);
+                            for (int k = 1; k < charInfos.Count; k++)
+                            {
+                                var p = charInfos[k].GetBaseline().GetStartPoint();
+                                double cx = p.Get(iText.Kernel.Geom.Vector.I1);
+                                double cy = p.Get(iText.Kernel.Geom.Vector.I2);
+                                dx.Add((cx - prevX) * mmPerUnit);
+                                dy.Add((cy - prevY) * mmPerUnit);
+                                prevX = cx; prevY = cy;
+                            }
+                            if (dx.Count > 0) deltaX = dx.ToArray();
+                            if (dy.Count > 0) deltaY = dy.ToArray();
+                        }
+                    }
+                    catch (Exception) { /* best-effort, ignore */ }
+
+                    // 尝试提取字体名
+                    string fontName = "SimSun";
+                    try
+                    {
+                        var f = tri.GetFont();
+                        if (f != null) fontName = f.ToString() ?? fontName;
+                    }
+                    catch { }
+
+                    ofd.AddRawTextGlyphRun(fontName, fontSizeMm, originX, originY, txt, deltaX, deltaY, pageIndex);
+                    pageTextCount++; globalCount++;
+                }
+                catch (Exception ex)
+                {
+                    logger?.LogWarning(ex, "[PDF2OFD][Glyph] Text event handling failed Page={Page}", pageIndex);
+                }
+            });
+
+            var processor = new PdfCanvasProcessor(listener);
+            try { processor.ProcessPageContent(page); }
+            catch (Exception ex) { logger?.LogWarning(ex, "[PDF2OFD][Glyph] ProcessPage failed Page={Page}", pageIndex); }
+
+            logger?.LogInformation("[PDF2FD][Glyph] Page={Page} TextRuns={Count}", pageIndex, pageTextCount);
+        }
+        if (globalCount == 0) logger?.LogWarning("[PDF2FD][Glyph] No RENDER_TEXT events – PDF may contain outlined text or extraction listener issue");
+        else logger?.LogInformation("[PDF2FD][Glyph] TotalTextRuns={Count}", globalCount);
+    }
+
+    private class ImageCollectListener : IEventListener
+    {
+        private readonly Action<byte[], string, double, double, double, double, double> _onImage;
+        private readonly double _pageHeightUser;
+        private readonly ILogger? _logger;
+        public ImageCollectListener(double pageHeightUser, ILogger? logger, Action<byte[], string, double, double, double, double, double> onImage)
+        { _onImage = onImage; _pageHeightUser = pageHeightUser; _logger = logger; }
+        public void EventOccurred(IEventData data, EventType type)
+        {
+            if (type != EventType.RENDER_IMAGE) return;
+            try
+            {
+                if (data is not ImageRenderInfo iri) return;
+                var pdfImage = iri.GetImage();
+                if (pdfImage == null) { _logger?.LogDebug("[PDF2OFD][ImageDiag] ImageRenderInfo.GetImage() returned null"); return; }
+                byte[] bytes; try { bytes = pdfImage.GetImageBytes(true); } catch { bytes = pdfImage.GetImageBytes(false); }
+                if (bytes == null || bytes.Length == 0) { _logger?.LogDebug("[PDF2OFD][ImageDiag] Empty image bytes"); return; }
+                string fmt = GuessFormat(bytes);
+                var ctm = iri.GetImageCtm();
+                double a = ctm.Get(iText.Kernel.Geom.Matrix.I11);
+                double b = ctm.Get(iText.Kernel.Geom.Matrix.I12);
+                double c = ctm.Get(iText.Kernel.Geom.Matrix.I21);
+                double d = ctm.Get(iText.Kernel.Geom.Matrix.I22);
+                double e = ctm.Get(iText.Kernel.Geom.Matrix.I31);
+                double f = ctm.Get(iText.Kernel.Geom.Matrix.I32);
+                double widthUser = Math.Sqrt(a * a + b * b);
+                double heightUser = Math.Sqrt(c * c + d * d);
+                double angleDeg = Math.Atan2(b, a) * 180.0 / Math.PI;
+                _onImage(bytes, fmt, e, f, widthUser, heightUser, angleDeg);
+            }
+            catch (Exception ex)
+            { _logger?.LogWarning(ex, "[PDF2OFD][ImageDiag] EventOccurred exception"); }
+        }
+        public ICollection<EventType> GetSupportedEvents() => new[] { EventType.RENDER_IMAGE };
+        private static string GuessFormat(byte[] bytes)
+        {
+            if (bytes.Length >= 8 && bytes[0]==0x89 && bytes[1]==0x50 && bytes[2]==0x4E && bytes[3]==0x47) return "PNG";
+            if (bytes.Length >= 2 && bytes[0]==0xFF && bytes[1]==0xD8) return "JPG";
+            if (bytes.Length >= 6 && bytes[0]=='G' && bytes[1]=='I' && bytes[2]=='F') return "GIF";
+            if (bytes.Length >= 4 && ((bytes[0]=='I' && bytes[1]=='I' && bytes[2]==0x2A && bytes[3]==0x00) || (bytes[0]=='M' && bytes[1]=='M' && bytes[2]==0x00 && bytes[3]==0x2A))) return "TIFF";
+            if (bytes.Length >= 2 && bytes[0]=='B' && bytes[1]=='M') return "BMP";
+            if (bytes.Length >= 12 && bytes[0]=='R' && bytes[1]=='I' && bytes[2]=='F' && bytes[3]=='F' && bytes[8]=='W' && bytes[9]=='E' && bytes[10]=='B' && bytes[11]=='P') return "WEBP";
+            if (bytes.Length >= 8 && bytes[0]==0x97 && bytes[1]==0x4A && bytes[2]==0x42 && bytes[3]==0x32) return "JBIG2";
+            if (bytes.Length >= 8 && bytes[4]==0x6A && bytes[5]==0x50 && bytes[6]==0x20 && bytes[7]==0x20) return "JPEG2000";
+            return "PNG";
         }
     }
 
     private class GlyphCollectListener : IEventListener
     {
-        private readonly Action<string,double,string,List<float>,List<float>> _onRun;
-        public GlyphCollectListener(Action<string,double,string,List<float>,List<float>> onRun) { _onRun = onRun; }
+        private readonly Action<iText.Kernel.Pdf.Canvas.Parser.Data.TextRenderInfo> _onRun;
+        public GlyphCollectListener(Action<iText.Kernel.Pdf.Canvas.Parser.Data.TextRenderInfo> onRun) { _onRun = onRun; }
         public void EventOccurred(IEventData data, EventType type)
         {
             if (type != EventType.RENDER_TEXT) return;
-            if (data is not TextRenderInfo tri) return;
             try
             {
-                var font = tri.GetFont();
-                string fontName = font?.GetFontProgram()?.GetFontNames()?.GetFontName() ?? font?.GetFontProgram()?.ToString() ?? "Unknown";
-                float fs = tri.GetFontSize();
-                var charInfos = tri.GetCharacterRenderInfos();
-                if (charInfos == null || charInfos.Count == 0) return;
-                // 排除旋转（暂不支持）：判断文本矩阵是否纯水平
-                var m = tri.GetTextMatrix();
-                if (Math.Abs(m.Get(1)) > 0.0001 || Math.Abs(m.Get(2)) > 0.0001) return; // 有旋转/斜切
-                var xs = new List<float>();
-                var ys = new List<float>();
-                var sb = new System.Text.StringBuilder();
-                foreach (var ci in charInfos)
-                {
-                    var baseline = ci.GetBaseline();
-                    var sp = baseline.GetStartPoint();
-                    xs.Add(sp.Get(0));
-                    ys.Add(sp.Get(1));
-                    sb.Append(ci.GetText());
-                }
-                _onRun(fontName, fs, sb.ToString(), xs, ys);
+                if (data is not iText.Kernel.Pdf.Canvas.Parser.Data.TextRenderInfo tri) return;
+                _onRun?.Invoke(tri);
             }
             catch { }
         }
