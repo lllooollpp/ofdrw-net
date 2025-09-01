@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3341" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3342" Font="1" Size="3.5" Boundary="31.7 29.4 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3343" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3344" Font="1" Size="3.5" Boundary="31.7 40.65 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Extend xsint</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3345" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3346" Font="1" Size="3.5" Boundary="31.7 51.9 39.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">2:在起始点至结束点延长线方向绘制渐变</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3347" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3348" Font="1" Size="3.5" Boundary="31.7 63.15 29.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">3:向两侧延长线方向绘制渐变</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3349" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3350" Font="1" Size="3.5" Boundary="31.7 74.4 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">默认值为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3351" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3352" Font="1" Size="3.5" Boundary="31.7 85.65 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3353" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3354" Font="1" Size="3.5" Boundary="31.7 96.9 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">_ 轴线的起始点 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3355" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3356" Font="1" Size="3.5" Boundary="31.7 108.15 33.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">StartPoint STPos</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3357" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3358" Font="1" Size="3.5" Boundary="31.7 119.4 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">_ 轴线的结束点 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3359" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3360" Font="1" Size="3.5" Boundary="31.7 130.65 29.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">EndPoint STPos</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1521" Font="1" Size="3.5" Boundary="31.7 25.4 46.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Sinature xs:boolean 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1522" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1523" Font="1" Size="3.5" Boundary="31.7 36.65 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1524" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1525" Font="1" Size="3.5" Boundary="31.7 47.9 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">默认值:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1526" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1527" Font="1" Size="3.5" Boundary="31.7 59.15 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">true</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1528" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1529" Font="1" Size="3.5" Boundary="31.7 70.4 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">是否允许添加水印</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1530" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1531" Font="1" Size="3.5" Boundary="31.7 81.65 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1532" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1533" Font="1" Size="3.5" Boundary="31.7 92.9 46.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Watermark xsboolean 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1534" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1535" Font="1" Size="3.5" Boundary="31.7 104.15 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">默认为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1536" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1537" Font="1" Size="3.5" Boundary="31.7 115.4 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">true</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1538" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1539" Font="1" Size="3.5" Boundary="31.7 126.65 12.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">是否允许截屏</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1540" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

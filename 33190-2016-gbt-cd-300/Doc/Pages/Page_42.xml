@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="821" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>Attachments STLoc 20</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="822" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>_ 指 向 注 释 列 表 文 件,有 关 注 释 描 述 见 第 章 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="823" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>Annotations STLoc 15</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="824" CTM="1 0 0 1 31.7 44"><ofd:TextCode>_ 指 向 自 定 义 标 引 列 表 文 件,有 关 自 定 义 标 引 描 述 见 第 章 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="825" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>CustomTas STLoc 16</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="826" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="827" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>_ 指 向 扩 展 列 表 文 件,有 关 扩 展 描 述 见 第 章 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="828" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>Extensions STLoc 17</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="829" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="830" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>文 档 公 共 数 据 结 构 如 图 所 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="831" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>6</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="832" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>图 文 档 公 共 数 据 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="833" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>6</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="834" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>文 档 公 共 数 据 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="835" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>6</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="836" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>表 文 档 公 共 数 据 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="837" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>6</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="838" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="839" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>, 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="840" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>当 前 文 档 中 所 有 对 象 使 用 标 识 的 最 大 值 初 始 值 为</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

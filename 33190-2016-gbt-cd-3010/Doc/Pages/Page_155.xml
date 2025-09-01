@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3081" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3082" Font="1" Size="3.5" Boundary="31.7 29.4 75.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">限由 决定,即取区间[, ]内的整数,采用 进制或 进制的形式表示,采用</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3083" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3084" Font="1" Size="3.5" Boundary="31.7 40.65 56.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">BitsPerComponent 02-1 10 16</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3085" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3086" Font="1" Size="3.5" Boundary="31.7 51.9 90.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">进制表示时,应以“”加以标识。当颜色通道的取值超出了相应的区间,则按照默认颜色来处理。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3087" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3088" Font="1" Size="3.5" Boundary="31.7 63.15 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">16 #</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3089" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3090" Font="1" Size="3.5" Boundary="31.7 74.4 12.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">表 和 关系</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3091" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3092" Font="1" Size="3.5" Boundary="31.7 85.65 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">27 TypeBPC</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3093" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3094" Font="1" Size="3.5" Boundary="31.7 96.9 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">说明</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3095" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3096" Font="1" Size="3.5" Boundary="31.7 108.15 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Type BPC</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3097" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3098" Font="1" Size="3.5" Boundary="31.7 119.4 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">只包含一个通道来表明灰度值</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3099" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3100" Font="1" Size="3.5" Boundary="31.7 130.65 12.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Gra 有效</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2861" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2862" Font="1" Size="3.5" Boundary="31.7 29.4 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2863" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2864" Font="1" Size="3.5" Boundary="31.7 40.65 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">后开始绘制虚线</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2865" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2866" Font="1" Size="3.5" Boundary="31.7 51.9 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">29</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2867" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2868" Font="1" Size="4" Boundary="31.7 63.15 38.4 8" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="4">
+=== 第 35 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2869" Font="1" Size="3.5" Boundary="31.7 73.15 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2870" Font="1" Size="1" Boundary="31.7 80.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2871" Font="1" Size="3.5" Boundary="31.7 84.4 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">GBT331902016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2872" Font="1" Size="1" Boundary="31.7 91.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2873" Font="1" Size="3.5" Boundary="31.7 95.65 18.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">表 线条的虚线样式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2874" Font="1" Size="1" Boundary="31.7 102.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2875" Font="1" Size="3.5" Boundary="31.7 106.9 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">23</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2876" Font="1" Size="1" Boundary="31.7 114.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2877" Font="1" Size="3.5" Boundary="31.7 118.15 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">设置 呈现效果</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2878" Font="1" Size="1" Boundary="31.7 125.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2879" Font="1" Size="3.5" Boundary="31.7 129.4 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Dash</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2880" Font="1" Size="1" Boundary="31.7 136.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

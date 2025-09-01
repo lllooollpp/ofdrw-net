@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3401" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>时 针</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3402" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>边 框 颜 色,有 关 边 框 颜 色 描 述 见 基 本 颜 色</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3403" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>8.3.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3404" CTM="1 0 0 1 31.7 44"><ofd:TextCode>_ 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3405" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>BorderColor CTColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3406" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>默 认 为 黑 色</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3407" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>60</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3408" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3409" CTM="1 0 0 1 31.7 73.20000000000002"><ofd:TextCode>
+=== 第 66 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3410" CTM="1 0 0 1 31.7 79.20000000000002"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3411" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3412" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>文 字</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3413" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>11</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3414" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>字 型</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3415" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>11.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3416" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3417" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>字 型 结 构 描 述 如 图 所 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3418" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>58</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3419" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>图 字 型 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3420" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>58</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

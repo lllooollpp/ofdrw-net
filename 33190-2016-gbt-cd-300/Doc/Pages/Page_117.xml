@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2321" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2322" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>表 (续)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2323" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>30</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2324" CTM="1 0 0 1 31.7 44"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2325" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>两 个 椭 圆 的 离 心 率,即 椭 圆 焦 距 与 长 轴 的 比 值,取 值 范 围 是[, )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2326" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>01.0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2327" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2328" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>Eccentricit xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2329" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2330" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>默 认 值 为 ,在 这 种 情 况 下 椭 圆 退 化 为 圆</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2331" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2332" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>, ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2333" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>两 个 椭 圆 的 倾 斜 角 度 椭 圆 长 轴 与 轴 正 向 的 夹 角 单 位 为 度</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2334" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>x</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2335" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2336" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2337" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>Angle xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2338" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2339" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2340" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>_ 起 始 椭 圆 的 的 中 心 点 必 选</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

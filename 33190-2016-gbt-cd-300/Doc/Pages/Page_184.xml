@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3661" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>等 于 时 的 文 字 定 位 如 图 所 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3662" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>ReadDirection 90° 63</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3663" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>66</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3664" CTM="1 0 0 1 31.7 44"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3665" CTM="1 0 0 1 31.7 48.4"><ofd:TextCode>
+=== 第 72 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3666" CTM="1 0 0 1 31.7 54.4"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3667" CTM="1 0 0 1 31.7 60.6"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3668" CTM="1 0 0 1 31.7 66.8"><ofd:TextCode>图 阅 读 方 向 机 制</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3669" CTM="1 0 0 1 31.7 73"><ofd:TextCode>63 a</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3670" CTM="1 0 0 1 31.7 79.2"><ofd:TextCode>等 宽 文 字 进 行 竖 排 时,起 绘 点 在 方 向 上 无 变 化 的,可 省 略 属 性。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3671" CTM="1 0 0 1 31.7 85.4"><ofd:TextCode>X DeltaX</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3672" CTM="1 0 0 1 31.7 91.60000000000001"><ofd:TextCode>等 于 时 的 文 字 定 位 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3673" CTM="1 0 0 1 31.7 97.80000000000001"><ofd:TextCode>ReadDirection 180° 64</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3674" CTM="1 0 0 1 31.7 104.00000000000001"><ofd:TextCode>图 阅 读 方 向 机 制</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3675" CTM="1 0 0 1 31.7 110.20000000000002"><ofd:TextCode>64 b</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3676" CTM="1 0 0 1 31.7 116.40000000000002"><ofd:TextCode>不 同 字 符 方 向 下 的 绘 制 点 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3677" CTM="1 0 0 1 31.7 122.60000000000002"><ofd:TextCode>65</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3678" CTM="1 0 0 1 31.7 128.8"><ofd:TextCode>67</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3679" CTM="1 0 0 1 31.7 135"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3680" CTM="1 0 0 1 31.7 139.4"><ofd:TextCode>
+=== 第 73 页 ===
+</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

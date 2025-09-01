@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3001" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3002" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>true</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3003" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>图 形 是 否 被 填 充</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3004" CTM="1 0 0 1 31.7 44"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3005" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>Fill xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3006" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3007" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>false</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3008" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>图 形 的 填 充 规 则,当 属 性 存 在 时 出 现</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3009" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>Fill</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3010" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>: 可 选 值 为 和 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3011" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>Rule xsstrin NonZero Even-Odd</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3012" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3013" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3014" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>NonZero</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3015" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>填 充 颜 色</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3016" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3017" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3018" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>FillColor CTColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3019" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>默 认 为 透 明 色</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3020" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>52</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

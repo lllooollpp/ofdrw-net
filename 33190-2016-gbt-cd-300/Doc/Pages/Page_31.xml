@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="601" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>,“” ,“”</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="602" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>包 结 构 内 文 件 的 路 径 表 示 当 前 路 径 表 示 父</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="603" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>. ..</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="604" CTM="1 0 0 1 31.7 44"><ofd:TextCode>路 径。 “/ / / ”</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="605" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>PaesP1Content.xml</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="606" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="607" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>约 定: “/ / ”</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="608" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>.ResBook1.</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="609" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>jpg</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="610" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="611" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>STLoc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="612" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>“/” ; “/ / / ”</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="613" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>代 表 根 节 点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="614" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>1. ..PagesP1Res.xml</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="615" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>未 显 式 指 定 时 代 表 当 前 路 径; “ / / ”</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="616" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>2. PagesP1Res.xml</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="617" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>路 径 区 分 大 小 写</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="618" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>3.</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="619" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>数 组,以 空 格 来 分 割 元 素。 元 素 可 以 是 除 _ 、 _</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="620" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>STLocST</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

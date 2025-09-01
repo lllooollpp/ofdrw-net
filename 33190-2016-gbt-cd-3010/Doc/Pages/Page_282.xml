@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5621" Font="1" Size="4" Boundary="31.7 25.4 38.4 8" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="4">
+=== 第 70 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5622" Font="1" Size="3.5" Boundary="31.7 35.4 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5623" Font="1" Size="1" Boundary="31.7 42.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5624" Font="1" Size="3.5" Boundary="31.7 46.65 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">GBT331902016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5625" Font="1" Size="1" Boundary="31.7 53.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5626" Font="1" Size="3.5" Boundary="31.7 57.9 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">图 字型为宋体时显示效果</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5627" Font="1" Size="1" Boundary="31.7 65.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5628" Font="1" Size="3.5" Boundary="31.7 69.15 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">60</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5629" Font="1" Size="1" Boundary="31.7 76.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5630" Font="1" Size="3.5" Boundary="31.7 80.4 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">文字定位</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5631" Font="1" Size="1" Boundary="31.7 87.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5632" Font="1" Size="3.5" Boundary="31.7 91.65 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">11.3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5633" Font="1" Size="1" Boundary="31.7 98.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5634" Font="1" Size="3.5" Boundary="31.7 102.9 67.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">文字对象使用严格的文字定位信息进行定位,文字定位结构如图 所示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5635" Font="1" Size="1" Boundary="31.7 110.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5636" Font="1" Size="3.5" Boundary="31.7 114.15 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">61</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5637" Font="1" Size="1" Boundary="31.7 121.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5638" Font="1" Size="3.5" Boundary="31.7 125.4 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">图 文字定位结构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5639" Font="1" Size="1" Boundary="31.7 132.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5640" Font="1" Size="3.5" Boundary="31.7 136.65 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">61</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

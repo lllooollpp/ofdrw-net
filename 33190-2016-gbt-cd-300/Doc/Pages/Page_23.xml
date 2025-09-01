@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="441" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="442" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>录 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="443" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>A</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="444" CTM="1 0 0 1 31.7 44"><ofd:TextCode>结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="445" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>5.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="446" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>“ ” 。 ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="447" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>采 用 容 器 文 档 的 方 式 描 述 和 存 储 数 据 容 器 是 一 个 虚 拟 存 储 系 统 将 各 类 数 据 描 述 文</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="448" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>OFD +</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="449" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>件 聚 合 起 来,并 提 供 相 应 的 访 问 接 口 和 数 据 压 缩 方 法。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="450" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="451" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>OFD 1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="452" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>图 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="453" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>1 OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="454" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>文 档 格 式 的 结 构 分 为 三 层:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="455" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="456" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>) 虚 拟 存 储 系 统:包 括 包 组 织 结 构 及 包 内 目 录 组 织 结 构;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="457" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>a</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="458" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>) 文 档 模 型:包 括 文 档、页 面、大 纲、文 件 级 资 源 等 组 织 结 构;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="459" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>b</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="460" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>) : 、 、 。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="6061" Font="1" Size="3.5" Boundary="31.7 25.4 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">动作描述</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6062" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6063" Font="1" Size="3.5" Boundary="31.7 36.65 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">14.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6064" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6065" Font="1" Size="3.5" Boundary="31.7 47.9 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">动作类型结构如图 所示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6066" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6067" Font="1" Size="3.5" Boundary="31.7 59.15 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">73</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6068" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6069" Font="1" Size="3.5" Boundary="31.7 70.4 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">72</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6070" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6071" Font="1" Size="4" Boundary="31.7 81.65 38.4 8" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="4">
+=== 第 78 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6072" Font="1" Size="3.5" Boundary="31.7 91.65 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6073" Font="1" Size="1" Boundary="31.7 98.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6074" Font="1" Size="3.5" Boundary="31.7 102.9 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">GBT331902016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6075" Font="1" Size="1" Boundary="31.7 110.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6076" Font="1" Size="3.5" Boundary="31.7 114.15 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">图73 动作类型结构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6077" Font="1" Size="1" Boundary="31.7 121.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6078" Font="1" Size="3.5" Boundary="31.7 125.4 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">动作类型属性说明见表。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6079" Font="1" Size="1" Boundary="31.7 132.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6080" Font="1" Size="3.5" Boundary="31.7 136.65 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">51</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3801" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>ResourceID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3802" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>, ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3803" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>图 像 资 源 中 进 行 描 述 一 个 资 源 可 以 被 多 个 复 合 对 象 所 引 用 通 过 这 种 方 式 可 实 现 对 文 档 内 矢 量 图 文 内</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3804" CTM="1 0 0 1 31.7 44"><ofd:TextCode>容 的 复 用。 复 合 对 象 的 描 述 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3805" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>71</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3806" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>图 复 合 对 象 基 本 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3807" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>71</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3808" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>复 合 对 象 基 本 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3809" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>49</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3810" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>表 复 合 对 象 基 本 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3811" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>49</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3812" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3813" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3814" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>引 用 资 源 文 件 中 定 义 的 矢 量 图 像 的 标 识 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3815" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>ResourceID STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3816" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>( ), _ ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3817" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>复 合 对 象 引 用 的 资 源 是 中 的 矢 量 图 像 其 类 型 为 其 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3818" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>Res CompositeGraphUnit CTVectorG</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3819" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3820" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>72</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

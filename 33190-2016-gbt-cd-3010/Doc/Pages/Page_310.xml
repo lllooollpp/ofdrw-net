@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="6181" Font="1" Size="3.5" Boundary="31.7 25.4 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">75</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6182" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6183" Font="1" Size="3.5" Boundary="31.7 36.65 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">目标区域属性说明见表54。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6184" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6185" Font="1" Size="3.5" Boundary="31.7 47.9 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">74</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6186" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6187" Font="1" Size="4" Boundary="31.7 59.15 38.4 8" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="4">
+=== 第 80 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6188" Font="1" Size="3.5" Boundary="31.7 69.15 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6189" Font="1" Size="1" Boundary="31.7 76.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6190" Font="1" Size="3.5" Boundary="31.7 80.4 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">GBT331902016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6191" Font="1" Size="1" Boundary="31.7 87.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6192" Font="1" Size="3.5" Boundary="31.7 91.65 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">表 目标区域属性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6193" Font="1" Size="1" Boundary="31.7 98.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6194" Font="1" Size="3.5" Boundary="31.7 102.9 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">54</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6195" Font="1" Size="1" Boundary="31.7 110.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6196" Font="1" Size="3.5" Boundary="31.7 114.15 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">名称 类型 说明 备注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6197" Font="1" Size="1" Boundary="31.7 121.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6198" Font="1" Size="3.5" Boundary="31.7 125.4 42 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">声明目标区域的描述方法,可取值列举如下:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6199" Font="1" Size="1" Boundary="31.7 132.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6200" Font="1" Size="3.5" Boundary="31.7 136.65 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">——— ( ,)</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

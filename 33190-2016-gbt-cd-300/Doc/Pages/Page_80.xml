@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1581" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>现,但 应 按 照 变 换 的 顺 序 进 行 迭 加。 例 如,先 将 轴 放 大 为 原 来 的 两 倍,然 后 旋 转 /,那 么 最 终 的 变</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1582" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>X π6</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1583" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>/ /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1584" CTM="1 0 0 1 31.7 44"><ofd:TextCode>é2 0 0ù é cosπ6 sinπ6 0ù</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1585" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>ê ú ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1586" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>换 矩 阵 是 ê ú· ê / / ú,与 先 旋 转 / 再 将 轴 放 大 为 原 来 的 两 倍 获 得 变 换 矩</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1587" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>0 1 0 -sinπ6 cosπ6 0 π6 x</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1588" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>ê ú ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1589" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>ê ú ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1590" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>ë0 0 1û ë   0  0  1û</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1591" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>25</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1592" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1593" CTM="1 0 0 1 31.7 98.00000000000003"><ofd:TextCode>
+=== 第 31 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1594" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1595" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1596" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>/ /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1597" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>é cosπ6 sinπ6 0ù é2 0 0ù</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1598" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>ê ú ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1599" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>阵 ê / / ú· ê ú 是 不 一 样 的。 矩 阵 乘 法 的 结 果 将 会 作 为 最 终 的 变 换 矩 阵 进 行</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1600" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>-sinπ6 cosπ6 0 0 1 0</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="6541" Font="1" Size="3.5" Boundary="31.7 25.4 48.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Subte xs:strin 注释子类型 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6542" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6543" Font="1" Size="3.5" Boundary="31.7 36.65 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">yp g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6544" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6545" Font="1" Size="3.5" Boundary="31.7 47.9 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">表示该注释对象是否显示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6546" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6547" Font="1" Size="3.5" Boundary="31.7 59.15 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6548" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6549" Font="1" Size="3.5" Boundary="31.7 70.4 35.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Visible xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6550" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6551" Font="1" Size="3.5" Boundary="31.7 81.65 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">默认值为true</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6552" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6553" Font="1" Size="3.5" Boundary="31.7 92.9 42 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">对象的Remark信息是否随页面一起打印</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6554" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6555" Font="1" Size="3.5" Boundary="31.7 104.15 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6556" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6557" Font="1" Size="3.5" Boundary="31.7 115.4 31.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Print xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6558" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6559" Font="1" Size="3.5" Boundary="31.7 126.65 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">默认值为true</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6560" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

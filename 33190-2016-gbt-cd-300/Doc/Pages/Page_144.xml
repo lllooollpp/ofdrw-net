@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2861" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>引 用 资 源 文 件 中 的 绘 制 参 数 的 标 识,线 宽、结 合 点 和 端 点 样 式 等 绘</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2862" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2863" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2864" CTM="1 0 0 1 31.7 44"><ofd:TextCode>DrawParam STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2865" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2866" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>制 特 性 对 裁 剪 效 果 会 产 生 影 响 有 关 绘 制 参 数 的 描 述 见</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2867" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>8.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2868" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>_ 针 对 对 象 坐 标 系,对 下 包 含 的 和 进 行 进 一 步 的 变 换 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2869" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>CTM STArra Area Path Text</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2870" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2871" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>_ 用 于 裁 剪 的 图 形,见 图 形 对 象 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2872" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>Path CTPath 9.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2873" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>_ 用 于 裁 剪 的 文 本,见 文 字 对 象 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2874" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>Text CTText 11.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2875" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>图 元 对 象</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2876" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>8.5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2877" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>图 元 对 象 是 版 式 文 档 中 页 面 上 呈 现 内 容 的 最 基 本 单 元,所 有 页 面 显 示 内 容,包 括 文 字、图 形、图 像</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2878" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>, , 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2879" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>等 都 属 于 图 元 对 象 或 是 图 元 对 象 的 组 合</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2880" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>图 元 对 象 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

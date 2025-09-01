@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3861" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3862" CTM="1 0 0 1 31.7 29.799999999999997"><ofd:TextCode>
+=== 第 78 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3863" CTM="1 0 0 1 31.7 35.8"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3864" CTM="1 0 0 1 31.7 42"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3865" CTM="1 0 0 1 31.7 48.2"><ofd:TextCode>图 动 作 类 型 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3866" CTM="1 0 0 1 31.7 54.400000000000006"><ofd:TextCode>73</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3867" CTM="1 0 0 1 31.7 60.60000000000001"><ofd:TextCode>动 作 类 型 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3868" CTM="1 0 0 1 31.7 66.80000000000001"><ofd:TextCode>51</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3869" CTM="1 0 0 1 31.7 73.00000000000001"><ofd:TextCode>表 动 作 类 型 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3870" CTM="1 0 0 1 31.7 79.20000000000002"><ofd:TextCode>51</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3871" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3872" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>: , ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3873" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>事 件 类 型 触 发 动 作 的 条 件 事 件 的 具 体 类 型 见 表 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3874" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>Event xsstring 52</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3875" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3876" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>指 定 多 个 复 杂 区 域 为 该 链 接 对 象 的 启 动 区 域 不 出 现 时 以 所 在 图 元 或</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3877" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>_ 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3878" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>Region CTRegion</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3879" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>页 面 的 外 接 矩 形 作 为 启 动 区 域,见</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3880" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>9.3</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3881" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>本 文 档 内 的 跳 转 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3882" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>Goto</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3883" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>打 开 或 访 问 一 个 链 接 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3884" CTM="1 0 0 1 31.7 44"><ofd:TextCode>URI URI</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3885" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>打 开 本 文 档 附 件 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3886" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>GotoA</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3887" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>播 放 一 段 音 频 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3888" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>Sound</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3889" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>播 放 一 段 视 频 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3890" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>Movie</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3891" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>动 作 由 事 件 触 发,事 件 类 型 限 定 于 、 、 三 种,分 别 对 应 于 文 档 打 开 动 作、页 面 打 开 动 作</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3892" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>DOPOCLICK</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3893" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>和 区 域 内 单 击 动 作,事 件 类 型 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3894" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>52</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3895" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>表 事 件 类 型</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3896" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>52</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3897" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>事 件 说 明</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3898" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>Event</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3899" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>文 档 打 开</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3900" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>DO</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

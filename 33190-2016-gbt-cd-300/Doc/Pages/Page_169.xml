@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3361" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>可 替 换 图 像,引 用 资 源 文 件 中 定 义 的 多 媒 体 的 标 识,用 于 某 些 情 况</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3362" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>_ 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3363" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>Substitution STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3364" CTM="1 0 0 1 31.7 44"><ofd:TextCode>如 高 分 辨 率 输 出 时 进 行 图 像 替 换</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3365" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>图 像 蒙 版,引 用 资 源 文 件 中 定 义 的 多 媒 体 的 标 识,用 作 蒙 版 的 图 像</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3366" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>_ 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3367" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>ImaeMask STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3368" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3369" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>应 是 与 指 向 的 图 像 相 同 大 小 的 二 值 图</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3370" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>ResouceID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3371" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>图 像 边 框 设 置 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3372" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>Border</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3373" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>边 框 线 宽,如 果 为 则 表 示 边 框 不 进 行 绘 制</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3374" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3375" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3376" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>LineWidth xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3377" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3378" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>0.353mm</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3379" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>边 框 水 平 角 半 径</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3380" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>HorizonalCor-</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

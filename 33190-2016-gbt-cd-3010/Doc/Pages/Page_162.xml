@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3221" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3222" Font="1" Size="3.5" Boundary="31.7 29.4 77.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Thumbnail ST_RefID 引用资源文件中缩略图图像的标识 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3223" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3224" Font="1" Size="3.5" Boundary="31.7 40.65 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">翻转示例:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3225" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3226" Font="1" Size="3.5" Boundary="31.7 51.9 117.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">底纹以CellContent为一个底纹单元,在底纹绘制区域中以此底纹单元上的内容平铺填满。图27为一个图像,底纹</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3227" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3228" Font="1" Size="3.5" Boundary="31.7 63.15 71.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">绘制将以其为单元对绘制区域进行填充。以此为例对 属性进行详细的说明:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3229" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3230" Font="1" Size="3.5" Boundary="31.7 74.4 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ReflectMethod</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3231" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3232" Font="1" Size="3.5" Boundary="31.7 85.65 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">图27 绘制底纹单元</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3233" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3234" Font="1" Size="3.5" Boundary="31.7 96.9 46.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">图 分别为 取值为 、 、 、 的绘制效果。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3235" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3236" Font="1" Size="3.5" Boundary="31.7 108.15 92.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">28 ReflectMethod NormalColumnRowRowAndColumn</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3237" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3238" Font="1" Size="3.5" Boundary="31.7 119.4 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">图 翻转绘制效果</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3239" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3240" Font="1" Size="3.5" Boundary="31.7 130.65 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">28</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

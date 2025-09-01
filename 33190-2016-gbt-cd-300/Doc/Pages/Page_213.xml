@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4241" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>应 用 一 个 文 档 可 以 带 有 多 个 自 定 义 标 引</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4242" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>80</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4243" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4244" CTM="1 0 0 1 31.7 42.199999999999996"><ofd:TextCode>
+=== 第 86 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4245" CTM="1 0 0 1 31.7 48.199999999999996"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4246" CTM="1 0 0 1 31.7 54.4"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4247" CTM="1 0 0 1 31.7 60.6"><ofd:TextCode>自 定 义 标 引 列 表 的 入 口 点 在 文 档 根 节 点 中 定 义,其 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4248" CTM="1 0 0 1 31.7 66.8"><ofd:TextCode>7.5 82</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4249" CTM="1 0 0 1 31.7 73"><ofd:TextCode>图 自 定 义 标 引 列 表 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4250" CTM="1 0 0 1 31.7 79.2"><ofd:TextCode>82</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4251" CTM="1 0 0 1 31.7 85.4"><ofd:TextCode>自 定 义 标 引 列 表 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4252" CTM="1 0 0 1 31.7 91.60000000000001"><ofd:TextCode>63</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4253" CTM="1 0 0 1 31.7 97.80000000000001"><ofd:TextCode>表 自 定 义 标 引 列 表 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4254" CTM="1 0 0 1 31.7 104.00000000000001"><ofd:TextCode>63</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4255" CTM="1 0 0 1 31.7 110.20000000000002"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4256" CTM="1 0 0 1 31.7 116.40000000000002"><ofd:TextCode>自 定 义 标 引 入 口 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4257" CTM="1 0 0 1 31.7 122.60000000000002"><ofd:TextCode>CustomTag</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4258" CTM="1 0 0 1 31.7 128.8"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4259" CTM="1 0 0 1 31.7 135"><ofd:TextCode>自 定 义 标 引 内 容 节 点 适 用 的 类 型 标 识 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4260" CTM="1 0 0 1 31.7 141.2"><ofd:TextCode>TypeID xsstring</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

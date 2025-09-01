@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5941" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>xs attributename=&quot;MiterLimit&quot;type=&quot;xs double&quot;default=&quot;4.234&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5942" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5943" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>xs com lexT e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5944" CTM="1 0 0 1 31.7 44"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5945" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt;! 字 型 资 源 定 义 &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5946" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>-- --</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5947" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5948" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>xs complexTypename=&quot;CT Font&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5949" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5950" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5951" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5952" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>xs elementname=&quot;FontFile&quot;t e=&quot;ST Loc&quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5953" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5954" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5955" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5956" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>103</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5957" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5958" CTM="1 0 0 1 31.7 129.00000000000003"><ofd:TextCode>
+=== 第 109 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5959" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5960" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

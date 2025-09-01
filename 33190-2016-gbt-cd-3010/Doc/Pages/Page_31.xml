@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="601" Font="1" Size="3.5" Boundary="31.7 25.4 44.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">一系列点、线和曲线按照一定规则组成的集合。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="602" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="603" Font="1" Size="3.5" Boundary="31.7 36.65 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">3.10</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="604" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="605" Font="1" Size="3.5" Boundary="31.7 47.9 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">裁剪区 clireion</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="606" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="607" Font="1" Size="3.5" Boundary="31.7 59.15 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">pg</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="608" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="609" Font="1" Size="3.5" Boundary="31.7 70.4 56.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">由一组路径、文字构成,用于指定图元对象绘制的有效区域。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="610" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="611" Font="1" Size="3.5" Boundary="31.7 81.65 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">3.11</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="612" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="613" Font="1" Size="3.5" Boundary="31.7 92.9 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">颜色空间</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="614" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="615" Font="1" Size="3.5" Boundary="31.7 104.15 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">colorspace</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="616" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="617" Font="1" Size="3.5" Boundary="31.7 115.4 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">颜色集合的数学表示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="618" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="619" Font="1" Size="3.5" Boundary="31.7 126.65 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">3.12</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="620" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

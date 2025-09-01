@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3661" Font="1" Size="3.5" Boundary="31.7 25.4 52.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">中心点连线上一个渐变区间所绘制的长度,当 的值不为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3662" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3663" Font="1" Size="3.5" Boundary="31.7 36.65 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">MapType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3664" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3665" Font="1" Size="3.5" Boundary="31.7 47.9 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: 时出现 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3666" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3667" Font="1" Size="3.5" Boundary="31.7 59.15 48.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">MapUnit xsdouble Direct</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3668" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3669" Font="1" Size="3.5" Boundary="31.7 70.4 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">默认值为中心点连线长度</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3670" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3671" Font="1" Size="3.5" Boundary="31.7 81.65 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">40</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3672" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3673" Font="1" Size="4" Boundary="31.7 92.9 38.4 8" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="4">
+=== 第 46 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3674" Font="1" Size="3.5" Boundary="31.7 102.9 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3675" Font="1" Size="1" Boundary="31.7 110.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3676" Font="1" Size="3.5" Boundary="31.7 114.15 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">GBT331902016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3677" Font="1" Size="1" Boundary="31.7 121.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3678" Font="1" Size="3.5" Boundary="31.7 125.4 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">表 (续)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3679" Font="1" Size="1" Boundary="31.7 132.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3680" Font="1" Size="3.5" Boundary="31.7 136.65 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">30</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

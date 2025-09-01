@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3241" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3242" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3243" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>三 次 贝 塞 尔 曲 线 公 式:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3244" CTM="1 0 0 1 31.7 44"><ofd:TextCode>3 2 2 3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3245" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>() ( ) ( ) ( ) [,]</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3246" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>B t 1 t P 3t1 t P 3t 1 t P t P t 01</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3247" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>= - 0 + - 1 + - 2 + 3 ∈</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3248" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>具 体 绘 制 方 法 如 图 和 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3249" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>54 55</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3250" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>图 三 次 贝 塞 尔 曲 线 示 例</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3251" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>54 1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3252" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>图 三 次 贝 塞 尔 曲 线 示 例</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3253" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>55 2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3254" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>、 、 、 , , 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3255" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>分 别 为 上 个 路 径 的 结 束 点 以 及 属 性 对 应 的 坐 标</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3256" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>P P P P Point1Point2Point3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3257" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>0 1 2 3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3258" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>当 不 存 在 时,第 一 控 制 点 取 当 前 点 的 值,当 不 存 在 时,第 二 控 制 点 取 的 值。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3259" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>Point1 Point2 Point3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3260" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>圆 弧</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

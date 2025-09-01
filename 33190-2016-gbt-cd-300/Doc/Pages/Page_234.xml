@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4661" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>
+=== 第 96 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4662" CTM="1 0 0 1 31.7 31.4"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4663" CTM="1 0 0 1 31.7 37.6"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4664" CTM="1 0 0 1 31.7 43.800000000000004"><ofd:TextCode>附 录</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4665" CTM="1 0 0 1 31.7 50.00000000000001"><ofd:TextCode>A</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4666" CTM="1 0 0 1 31.7 56.20000000000001"><ofd:TextCode>(规 范 性 附 录)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4667" CTM="1 0 0 1 31.7 62.40000000000001"><ofd:TextCode>Schema</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4668" CTM="1 0 0 1 31.7 68.60000000000001"><ofd:TextCode>A.1 OFD.xsd</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4669" CTM="1 0 0 1 31.7 74.80000000000001"><ofd:TextCode>&lt;? ?&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4670" CTM="1 0 0 1 31.7 81.00000000000001"><ofd:TextCode>xmlversion=&quot;1.0&quot;encodin =&quot;UTF-8&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4671" CTM="1 0 0 1 31.7 87.20000000000002"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4672" CTM="1 0 0 1 31.7 93.40000000000002"><ofd:TextCode>&lt; : :// /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4673" CTM="1 0 0 1 31.7 99.60000000000002"><ofd:TextCode>xs schemaxmlns=&quot;http www.ofdspec.org 2016&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4674" CTM="1 0 0 1 31.7 105.80000000000003"><ofd:TextCode>: :// / /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4675" CTM="1 0 0 1 31.7 112.00000000000003"><ofd:TextCode>xmlns xs=&quot;http www.w3.org 2001 XMLSchema&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4676" CTM="1 0 0 1 31.7 118.20000000000003"><ofd:TextCode>:// /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4677" CTM="1 0 0 1 31.7 124.40000000000003"><ofd:TextCode>targetNamespace=&quot;http www.ofdspec.org 2016&quot;elementFormDefault=&quot;qualified&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4678" CTM="1 0 0 1 31.7 130.60000000000002"><ofd:TextCode>&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4679" CTM="1 0 0 1 31.7 136.8"><ofd:TextCode>attributeFormDefault=&quot;un ualified&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4680" CTM="1 0 0 1 31.7 143"><ofd:TextCode>q</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

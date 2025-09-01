@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="9541" Font="1" Size="3.5" Boundary="31.7 25.4 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xssimpleType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9542" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9543" Font="1" Size="3.5" Boundary="31.7 36.65 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9544" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9545" Font="1" Size="3.5" Boundary="31.7 47.9 79.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xsrestrictionbase=&quot;xsstring&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9546" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9547" Font="1" Size="3.5" Boundary="31.7 59.15 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9548" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9549" Font="1" Size="3.5" Boundary="31.7 70.4 75.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xsenumerationvalue=&quot;Image&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9550" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9551" Font="1" Size="3.5" Boundary="31.7 81.65 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9552" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9553" Font="1" Size="3.5" Boundary="31.7 92.9 75.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xsenumerationvalue=&quot;Audio&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9554" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9555" Font="1" Size="3.5" Boundary="31.7 104.15 96.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;xs:enumerationvalue=&quot;Video&quot;/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9556" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9557" Font="1" Size="3.5" Boundary="31.7 115.4 48.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;/xs:restriction&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9558" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9559" Font="1" Size="3.5" Boundary="31.7 126.65 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;/: &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9560" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

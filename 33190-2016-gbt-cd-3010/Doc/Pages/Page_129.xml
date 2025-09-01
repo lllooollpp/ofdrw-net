@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2561" Font="1" Size="3.5" Boundary="31.7 25.4 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2562" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2563" Font="1" Size="3.5" Boundary="31.7 36.65 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ë û</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2564" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2565" Font="1" Size="3.5" Boundary="31.7 47.9 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">0 0 1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2566" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2567" Font="1" Size="3.5" Boundary="31.7 59.15 60.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">旋转。将点(,)顺着从 轴正半部分向轴正半部分的方向旋转角</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2568" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2569" Font="1" Size="3.5" Boundary="31.7 70.4 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xy X Y α</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2570" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2571" Font="1" Size="3.5" Boundary="31.7 81.65 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">cosα sinα 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2572" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2573" Font="1" Size="3.5" Boundary="31.7 92.9 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">é ù</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2574" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2575" Font="1" Size="3.5" Boundary="31.7 104.15 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2576" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2577" Font="1" Size="3.5" Boundary="31.7 115.4 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">-sinα cosα 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2578" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2579" Font="1" Size="3.5" Boundary="31.7 126.65 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2580" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

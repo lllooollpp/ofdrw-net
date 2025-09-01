@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="7581" Font="1" Size="3.5" Boundary="31.7 25.4 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xscomplexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7582" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7583" Font="1" Size="3.5" Boundary="31.7 36.65 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7584" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7585" Font="1" Size="3.5" Boundary="31.7 47.9 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xssequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7586" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7587" Font="1" Size="3.5" Boundary="31.7 59.15 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7588" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7589" Font="1" Size="3.5" Boundary="31.7 70.4 140.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xselementname=&quot;CustomData&quot;maxOccurs=&quot;unbounded&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7590" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7591" Font="1" Size="3.5" Boundary="31.7 81.65 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7592" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7593" Font="1" Size="3.5" Boundary="31.7 92.9 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xscomplexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7594" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7595" Font="1" Size="3.5" Boundary="31.7 104.15 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">92</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7596" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7597" Font="1" Size="4" Boundary="31.7 115.4 38.4 8" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="4">
+=== 第 98 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7598" Font="1" Size="3.5" Boundary="31.7 125.4 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7599" Font="1" Size="1" Boundary="31.7 132.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7600" Font="1" Size="3.5" Boundary="31.7 136.65 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">GBT331902016</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

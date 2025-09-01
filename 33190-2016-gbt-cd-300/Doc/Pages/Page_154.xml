@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3061" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>( , ), ( , ) ( , )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3062" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>此 贝 塞 尔 曲 线 使 用 点 和 点 作 为 其 控 制 点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3063" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>x3 y3 x1 y1 x2 y2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3064" CTM="1 0 0 1 31.7 44"><ofd:TextCode>从 当 前 点 连 接 一 条 到 点(,)的 圆 弧,并 将 当 前 点 移 动 到 点(,)。 表 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3065" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>x x r</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3066" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>y y x</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3067" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>椭 圆 的 长 轴 长 度, 表 示 椭 圆 的 短 轴 长 度。 表 示 椭 圆 在 当 前 坐 标 系 下</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3068" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>r anle</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3069" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>y g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3070" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>, , ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3071" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>r r anle lare 旋 转 的 角 度 正 值 为 顺 时 针 负 值 为 逆 时 针 为 时 表 示 对 应 度 数 大 于</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3072" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>x y g g large 1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3073" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>A</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3074" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>, 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3075" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>的 弧 为 时 表 示 对 应 度 数 小 于 的 弧 为 时 表 示 由 圆 弧 起</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3076" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>sweepxy 180° 0 180° sweep 1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3077" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>始 点 到 结 束 点 是 顺 时 针 旋 转,为 时 表 示 由 圆 弧 起 始 点 到 结 束 点 是 逆 时 针</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3078" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3079" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>旋 转</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3080" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>自 动 闭 合,表 示 将 当 前 点 和 的 起 始 点 用 线 段 直 接 连 接</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5761" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5762" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5763" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5764" CTM="1 0 0 1 31.7 44"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5765" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>xs element</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5766" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5767" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>xs elementname=&quot;MultiMedias&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5768" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5769" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5770" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5771" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5772" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5773" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>xs elementname=&quot;MultiMedia&quot;maxOccurs=&quot;unbounded&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5774" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5775" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5776" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5777" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs complexContent</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5778" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5779" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>xs extensionbase=&quot;CT MultiMedia&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5780" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>&lt; : _</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

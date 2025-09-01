@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="521" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>ZIP ZIP6.2.0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="522" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>文 件 组 织</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="523" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>6.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="524" CTM="1 0 0 1 31.7 44"><ofd:TextCode>文 件 层 次 组 织 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="525" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>OFD 2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="526" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>图 文 件 层 次 组 织 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="527" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>2 OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="528" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>文 件 层 次 组 织 结 构 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="529" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>OFD 1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="530" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>表 文 件 层 次 组 织 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="531" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>1 OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="532" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>名 称 说 明</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="533" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>文 件 主 入 口 文 件,一 个 包 内 存 在 且 只 存 在 一 个 文 件,此 文 件 名 不 应 修 改</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="534" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>OFD.xml OFD.xml</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="535" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>_ 第 个 文 档 的 文 件 夹</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="536" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>DocN N</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="537" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>文 档 的 根 节 点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="538" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>Document.xml</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="539" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>_ 第 页 文 件 夹</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="540" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>PaeN N</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

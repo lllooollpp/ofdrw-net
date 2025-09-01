@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4201" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4202" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>ReadOnly xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4203" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4204" CTM="1 0 0 1 31.7 44"><ofd:TextCode>true</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4205" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4206" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>注 释 说 明 内 容 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4207" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>Remark xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4208" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>一 组 注 释 参 数 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4209" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>Parameters</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4210" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>: ( )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4211" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>注 释 参 数 键 值 对 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4212" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>Parameter xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4213" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4214" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>注 释 参 数 名 称 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4215" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>Name xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4216" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>_ ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4217" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>注 释 的 静 态 呈 现 效 果 使 用 页 面 块 定 义 来 描 述 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4218" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>Appearance CTPageBlock</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4219" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>注 释 类 型 由 指 定,可 取 值 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4220" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>T e 62</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

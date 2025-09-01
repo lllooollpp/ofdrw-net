@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="6341" Font="1" Size="4" Boundary="31.7 25.4 38.4 8" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="4">
+=== 第 82 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6342" Font="1" Size="3.5" Boundary="31.7 35.4 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6343" Font="1" Size="1" Boundary="31.7 42.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6344" Font="1" Size="3.5" Boundary="31.7 46.65 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">GBT331902016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6345" Font="1" Size="1" Boundary="31.7 53.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6346" Font="1" Size="3.5" Boundary="31.7 57.9 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">表 播放音频动作属性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6347" Font="1" Size="1" Boundary="31.7 65.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6348" Font="1" Size="3.5" Boundary="31.7 69.15 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">57</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6349" Font="1" Size="1" Boundary="31.7 76.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6350" Font="1" Size="3.5" Boundary="31.7 80.4 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">名称 类型 说明 备注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6351" Font="1" Size="1" Boundary="31.7 87.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6352" Font="1" Size="3.5" Boundary="31.7 91.65 39.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">_ 引用资源文件中的音频资源标识 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6353" Font="1" Size="1" Boundary="31.7 98.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6354" Font="1" Size="3.5" Boundary="31.7 102.9 37.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ResourceID STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6355" Font="1" Size="1" Boundary="31.7 110.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6356" Font="1" Size="3.5" Boundary="31.7 114.15 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">播放的音量,取值范围[ ]</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6357" Font="1" Size="1" Boundary="31.7 121.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6358" Font="1" Size="3.5" Boundary="31.7 125.4 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">0100</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6359" Font="1" Size="1" Boundary="31.7 132.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6360" Font="1" Size="3.5" Boundary="31.7 136.65 33.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Volume xs:int 可选</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

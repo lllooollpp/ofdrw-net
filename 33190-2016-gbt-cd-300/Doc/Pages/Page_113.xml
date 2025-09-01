@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2241" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>ofdSement</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2242" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2243" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2244" CTM="1 0 0 1 31.7 44"><ofd:TextCode>ofdSement</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2245" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2246" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2247" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>ofdColorValue=&quot;00255&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2248" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2249" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>ofdSegment</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2250" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2251" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>ofdAxialShd</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2252" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2253" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>ofdFillColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2254" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt; : &gt; &lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2255" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>ofdAbbreviatedDataM00L1400L14040L040C ofdAbbreviatedData</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2256" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2257" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>ofdPathObject</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2258" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>上 述 示 例 的 显 示 效 果 如 图 、图 、图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2259" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>31 32 33</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2260" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>值 为 :</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

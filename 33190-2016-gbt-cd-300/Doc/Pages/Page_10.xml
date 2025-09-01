@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="181" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>13 71</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="182" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>……………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="183" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>动 作</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="184" CTM="1 0 0 1 31.7 44"><ofd:TextCode>14 72</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="185" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>动 作 描 述 …………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="186" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>14.1 72</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="187" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>跳 转 动 作 …………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="188" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>14.2 74</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="189" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>附 件 动 作 …………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="190" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>14.3 75</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="191" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>…………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="192" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>动 作</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="193" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>14.4 URI 76</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="194" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>……………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="195" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>播 放 音 频 动 作</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="196" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>14.5 76</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="197" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>……………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="198" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>播 放 视 频 动 作</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="199" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>14.6 77</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="200" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>Ⅱ</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

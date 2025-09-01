@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="921" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="922" Font="1" Size="3.5" Boundary="31.7 29.4 31.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">SignedValue.dat</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="923" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="924" Font="1" Size="3.5" Boundary="31.7 40.65 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">基本结构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="925" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="926" Font="1" Size="3.5" Boundary="31.7 51.9 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">7</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="927" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="928" Font="1" Size="3.5" Boundary="31.7 63.15 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">命名空间</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="929" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="930" Font="1" Size="3.5" Boundary="31.7 74.4 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">7.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="931" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="932" Font="1" Size="3.5" Boundary="31.7 85.65 71.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">本标准中 文档使用的命名空间为 :// / ,其标识应为 ;应在包内</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="933" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="934" Font="1" Size="3.5" Boundary="31.7 96.9 65.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">XML httpwww.ofdspec.org2016 ofd</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="935" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="936" Font="1" Size="3.5" Boundary="31.7 108.15 81.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">各 文档的根节点中声明 :。元素节点应使用命名空间标识,元素属性不使用命名空间</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="937" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="938" Font="1" Size="3.5" Boundary="31.7 119.4 31.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">XML defaultsofd</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="939" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="940" Font="1" Size="3.5" Boundary="31.7 130.65 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">标识。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

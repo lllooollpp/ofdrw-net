@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="6821" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6822" Font="1" Size="3.5" Boundary="31.7 29.4 18.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Signature</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6823" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6824" Font="1" Size="3.5" Boundary="31.7 40.65 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">节点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6825" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6826" Font="1" Size="3.5" Boundary="31.7 51.9 42 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ID xs:ID 签名或签章的标识 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6827" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6828" Font="1" Size="3.5" Boundary="31.7 63.15 71.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">签名节点的类型,目前规定了两个可选值,Seal表示是安全签章,Sin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6829" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6830" Font="1" Size="3.5" Boundary="31.7 74.4 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6831" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6832" Font="1" Size="3.5" Boundary="31.7 85.65 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6833" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6834" Font="1" Size="3.5" Boundary="31.7 96.9 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Type xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6835" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6836" Font="1" Size="3.5" Boundary="31.7 108.15 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">表示是纯数字签名</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6837" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6838" Font="1" Size="3.5" Boundary="31.7 119.4 60.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">BaseLoc ST_Loc 指向包内的签名描述文件 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6839" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6840" Font="1" Size="3.5" Boundary="31.7 130.65 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">签名文件</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

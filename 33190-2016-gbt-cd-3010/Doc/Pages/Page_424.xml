@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="8461" Font="1" Size="3.5" Boundary="31.7 25.4 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;/: &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8462" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8463" Font="1" Size="3.5" Boundary="31.7 36.65 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xsschema</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8464" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8465" Font="1" Size="3.5" Boundary="31.7 47.9 39.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">A.3 Annotations.xsd</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8466" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8467" Font="1" Size="3.5" Boundary="31.7 59.15 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;? ?&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8468" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8469" Font="1" Size="3.5" Boundary="31.7 70.4 109.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xmlversion=&quot;1.0&quot;encoding=&quot;UTF-8&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8470" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8471" Font="1" Size="3.5" Boundary="31.7 81.65 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: :// /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8472" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8473" Font="1" Size="3.5" Boundary="31.7 92.9 102.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xsschemaxmlns=&quot;httpwww.ofdspec.org2016&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8474" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8475" Font="1" Size="3.5" Boundary="31.7 104.15 18.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: :// / /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8476" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8477" Font="1" Size="3.5" Boundary="31.7 115.4 98.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xmlnsxs=&quot;httpwww.w3.org2001XMLSchema&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8478" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8479" Font="1" Size="3.5" Boundary="31.7 126.65 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">:// /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8480" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

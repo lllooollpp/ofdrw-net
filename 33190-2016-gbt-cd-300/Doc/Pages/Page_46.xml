@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="901" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>域 外 的 部 分 则 被 忽 略。 如 果 显 示 区 域 完 全 位 于 页 面 物 理 区 域 外,则</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="902" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>该 页 为 空 白 页</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="903" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>版 心 区 域,即 文 件 的 正 文 区 域,位 于 显 示 区 域 内。 左 上 角 的 坐 标 决</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="904" CTM="1 0 0 1 31.7 44"><ofd:TextCode>定 了 其 在 显 示 区 域 内 的 位 置</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="905" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>_ [例 外 处 理]如 果 版 心 区 域 不 完 全 位 于 显 示 区 域 内,显 示 区 域 外 的 部 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="906" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>ContentBox STBox</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="907" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>分 则 被 忽 略。 如 果 版 心 区 域 完 全 位 于 显 示 区 域 外,则 版 心 内 容 不 被</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="908" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>绘 制</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="909" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>出 血 区 域,即 超 出 设 备 性 能 限 制 的 额 外 出 血 区 域,位 于 页 面 物 理 区</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="910" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>域 外。 不 出 现 时,默 认 值 为 页 面 物 理 区 域</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="911" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>_ [ ] ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="912" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>例 外 处 理 如 果 出 血 区 域 不 完 全 位 于 页 面 物 理 区 域 外 页 面 物 理 区 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="913" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>BleedBox STBox</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="914" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>域 内 的 部 分 则 被 忽 略。 如 果 出 血 区 域 完 全 位 于 页 面 物 理 区 域 内,出</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="915" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>血 区 域 无 效</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="916" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>页 面 区 域 层 次 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="917" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>8</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="918" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>11</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="919" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="920" CTM="1 0 0 1 31.7 141.40000000000003"><ofd:TextCode>
+=== 第 17 页 ===
+</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

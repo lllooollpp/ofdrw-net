@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="581" Font="1" Size="3.5" Boundary="31.7 25.4 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">gp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="582" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="583" Font="1" Size="3.5" Boundary="31.7 36.65 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="584" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="585" Font="1" Size="3.5" Boundary="31.7 47.9 37.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">版式文档中页面上呈现内容的最基本单元</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="586" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="587" Font="1" Size="3.5" Boundary="31.7 59.15 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">3.8</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="588" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="589" Font="1" Size="3.5" Boundary="31.7 70.4 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">资源</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="590" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="591" Font="1" Size="3.5" Boundary="31.7 81.65 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">resource</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="592" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="593" Font="1" Size="3.5" Boundary="31.7 92.9 50.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">绘制图元所用的参数和其他数据(如字型、图像等)。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="594" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="595" Font="1" Size="3.5" Boundary="31.7 104.15 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">3.9</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="596" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="597" Font="1" Size="3.5" Boundary="31.7 115.4 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">路径</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="598" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="599" Font="1" Size="3.5" Boundary="31.7 126.65 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">path</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="600" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

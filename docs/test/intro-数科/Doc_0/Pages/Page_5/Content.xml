@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org">
+	<ofd:Area>
+		<ofd:PhysicalBox>0 0 320.0001 240</ofd:PhysicalBox>
+		<ofd:ApplicationBox>0 0 320 240</ofd:ApplicationBox>
+		<ofd:ContentBox>0 0 320 240</ofd:ContentBox>
+	</ofd:Area>
+	<ofd:Content>
+		<ofd:Layer ID="191">
+			<ofd:PathObject Boundary="0 0 320 240" CTM="0.353 0 0 0.353 0 0" Fill="true" ID="192" Stroke="false">
+				<ofd:FillColor Value="0 0 0"/>
+				<ofd:AbbreviatedData>M 0 680.32 L 907.09 680.32 L 907.09 0 L 0 0 C</ofd:AbbreviatedData>
+			</ofd:PathObject>
+			<ofd:TextObject Boundary="71.57 54.3 40.32 9.22" CTM="9.8778 0 0 9.8778 0 0" Font="95" ID="193" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="4" GlyphCount="4">
+					<ofd:Glyphs>14863 1225 8506 9430</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="0.99 0.99 0.99" X="0" Y="0.83">核心优势</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:PathObject Boundary="55 21 29.46 13.11" ID="221">
+				<ofd:StrokeColor Value="239 255 48"/>
+				<ofd:AbbreviatedData>M 10.64 0 L 10.78 3.01 L 10.42 3.01 B 10.35 2.48 10.26 2.1 10.14 1.88 B 9.94 1.51 9.68 1.24 9.36 1.07 B 9.03 0.89 8.6 0.81 8.07 0.81 L 6.26 0.81 L 6.26 10.62 B 6.26 11.41 6.35 11.9 6.52 12.1 B 6.76 12.36 7.13 12.5 7.63 12.5 L 8.07 12.5 L 8.07 12.85 L 2.62 12.85 L 2.62 12.5 L 3.08 12.5 B 3.62 12.5 4.01 12.33 4.23 12 B 4.37 11.8 4.44 11.34 4.44 10.62 L 4.44 0.81 L 2.9 0.81 B 2.3 0.81 1.87 0.85 1.62 0.94 B 1.29 1.06 1.01 1.29 0.78 1.63 B 0.54 1.97 0.4 2.43 0.36 3.01 L 0 3.01 L 0.15 0 L 10.64 0 C M 12.45 7.44 B 12.45 8.73 12.76 9.74 13.39 10.47 B 14.02 11.2 14.77 11.57 15.62 11.57 B 16.19 11.57 16.68 11.41 17.1 11.1 B 17.52 10.79 17.87 10.25 18.16 9.49 L 18.45 9.68 B 18.32 10.55 17.93 11.34 17.29 12.05 B 16.66 12.76 15.86 13.11 14.9 13.11 B 13.86 13.11 12.96 12.71 12.22 11.89 B 11.48 11.08 11.11 9.99 11.11 8.62 B 11.11 7.14 11.49 5.98 12.25 5.15 B 13.01 4.32 13.97 3.9 15.12 3.9 B 16.09 3.9 16.89 4.22 17.51 4.86 B 18.14 5.51 18.45 6.36 18.45 7.44 L 12.45 7.44 C M 12.45 6.89 L 16.47 6.89 B 16.44 6.33 16.37 5.94 16.27 5.71 B 16.11 5.36 15.88 5.08 15.57 4.88 B 15.25 4.68 14.93 4.58 14.59 4.58 B 14.06 4.58 13.59 4.78 13.18 5.19 B 12.76 5.59 12.52 6.16 12.45 6.89 C M 24.14 3.91 L 24.14 6.87 L 23.83 6.87 B 23.59 5.94 23.28 5.31 22.9 4.97 B 22.53 4.64 22.05 4.47 21.47 4.47 B 21.03 4.47 20.67 4.59 20.4 4.82 B 20.13 5.06 19.99 5.31 19.99 5.6 B 19.99 5.95 20.09 6.26 20.29 6.51 B 20.49 6.77 20.89 7.04 21.49 7.33 L 22.87 8.01 B 24.15 8.63 24.79 9.46 24.79 10.48 B 24.79 11.27 24.49 11.9 23.9 12.39 B 23.3 12.87 22.63 13.11 21.89 13.11 B 21.36 13.11 20.76 13.02 20.08 12.83 B 19.87 12.76 19.7 12.73 19.56 12.73 B 19.42 12.73 19.3 12.82 19.22 12.98 L 18.91 12.98 L 18.91 9.88 L 19.22 9.88 B 19.4 10.77 19.74 11.43 20.24 11.88 B 20.74 12.33 21.29 12.55 21.91 12.55 B 22.35 12.55 22.7 12.43 22.98 12.17 B 23.25 11.91 23.39 11.61 23.39 11.25 B 23.39 10.81 23.24 10.44 22.93 10.15 B 22.63 9.85 22.01 9.47 21.1 9.02 B 20.18 8.56 19.58 8.15 19.3 7.79 B 19.01 7.43 18.87 6.97 18.87 6.42 B 18.87 5.71 19.12 5.11 19.61 4.63 B 20.1 4.15 20.73 3.91 21.51 3.91 B 21.85 3.91 22.26 3.99 22.75 4.13 B 23.07 4.23 23.28 4.27 23.39 4.27 B 23.49 4.27 23.57 4.25 23.63 4.21 B 23.68 4.16 23.75 4.06 23.83 3.91 L 24.14 3.91 C M 27.17 1.32 L 27.17 4.17 L 29.19 4.17 L 29.19 4.83 L 27.17 4.83 L 27.17 10.46 B 27.17 11.02 27.25 11.4 27.41 11.6 B 27.57 11.79 27.78 11.89 28.03 11.89 B 28.24 11.89 28.44 11.83 28.63 11.7 B 28.83 11.57 28.98 11.38 29.09 11.12 L 29.46 11.12 B 29.24 11.74 28.93 12.21 28.52 12.52 B 28.12 12.83 27.7 12.99 27.27 12.99 B 26.98 12.99 26.7 12.91 26.42 12.75 B 26.14 12.59 25.93 12.36 25.8 12.06 B 25.67 11.76 25.6 11.29 25.6 10.67 L 25.6 4.83 L 24.23 4.83 L 24.23 4.52 B 24.58 4.38 24.93 4.14 25.3 3.81 B 25.66 3.48 25.98 3.09 26.27 2.63 B 26.41 2.39 26.61 1.95 26.87 1.32 L 27.17 1.32 C</ofd:AbbreviatedData>
+			</ofd:PathObject>
+			<ofd:TextObject Boundary="71.57 68.35 128.35 9.28" CTM="9.8778 0 0 9.8778 0 0" Font="95" ID="194" Size="1">
+				<ofd:FillColor>
+					<ofd:AxialShd ID="2119" Extend="3" StartPoint="-16.91 57.57" EndPoint="161.65 -14.21">
+						<ofd:Segment Position="0">
+							<ofd:Color Value="100 192 171"/>
+						</ofd:Segment>
+						<ofd:Segment Position="0">
+							<ofd:Color Value="100 192 171"/>
+						</ofd:Segment>
+						<ofd:Segment Position="0.98">
+							<ofd:Color Value="0 140 207"/>
+						</ofd:Segment>
+						<ofd:Segment Position="1">
+							<ofd:Color Value="0 140 207"/>
+						</ofd:Segment>
+					</ofd:AxialShd>
+				</ofd:FillColor>
+				<ofd:CGTransform CodePosition="0" CodeCount="13" GlyphCount="13">
+					<ofd:Glyphs>9096 1294 18877 1383 9096 14815 23830 19769 14609 23358 23361 13413 14598</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="0.99 0.99 0.99 0.99 0.99 0.99 0.99 0.99 0.99 0.99 0.99 0.99" X="0" Y="0.84">全自研、全栈计算机视觉技术</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="71.57 82.47 79.05 9.32" CTM="9.8778 0 0 9.8778 0 0" Font="95" ID="195" Size="1">
+				<ofd:FillColor>
+					<ofd:AxialShd ID="2120" Extend="3" StartPoint="-16.91 43.45" EndPoint="161.65 -28.33">
+						<ofd:Segment Position="0">
+							<ofd:Color Value="100 192 171"/>
+						</ofd:Segment>
+						<ofd:Segment Position="0">
+							<ofd:Color Value="100 192 171"/>
+						</ofd:Segment>
+						<ofd:Segment Position="0.98">
+							<ofd:Color Value="0 140 207"/>
+						</ofd:Segment>
+						<ofd:Segment Position="1">
+							<ofd:Color Value="0 140 207"/>
+						</ofd:Segment>
+					</ofd:AxialShd>
+				</ofd:FillColor>
+				<ofd:CGTransform CodePosition="0" CodeCount="8" GlyphCount="8">
+					<ofd:Glyphs>9096 20122 9263 24792 18965 8472 8395 9932</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="0.99 0.99 0.99 0.99 0.99 0.99 0.99" X="0" Y="0.84">全系列软硬件产品</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="71.57 96.58 69.78 9.3" CTM="9.8778 0 0 9.8778 0 0" Font="95" ID="196" Size="1">
+				<ofd:FillColor>
+					<ofd:AxialShd ID="2121" Extend="3" StartPoint="-16.91 29.34" EndPoint="161.65 -42.44">
+						<ofd:Segment Position="0">
+							<ofd:Color Value="100 192 171"/>
+						</ofd:Segment>
+						<ofd:Segment Position="0">
+							<ofd:Color Value="100 192 171"/>
+						</ofd:Segment>
+						<ofd:Segment Position="0.98">
+							<ofd:Color Value="0 140 207"/>
+						</ofd:Segment>
+						<ofd:Segment Position="1">
+							<ofd:Color Value="0 140 207"/>
+						</ofd:Segment>
+					</ofd:AxialShd>
+				</ofd:FillColor>
+				<ofd:CGTransform CodePosition="0" CodeCount="7" GlyphCount="7">
+					<ofd:Glyphs>9096 10563 14409 23386 9167 1234 14879</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="0.99 0.99 0.99 0.99 0.99 0.99" X="0" Y="0.84">全场景解决方案</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="71.57 110.7 69.11 9.3" CTM="9.8778 0 0 9.8778 0 0" Font="95" ID="197" Size="1">
+				<ofd:FillColor>
+					<ofd:AxialShd ID="2122" Extend="3" StartPoint="-16.91 15.22" EndPoint="161.65 -56.56">
+						<ofd:Segment Position="0">
+							<ofd:Color Value="100 192 171"/>
+						</ofd:Segment>
+						<ofd:Segment Position="0">
+							<ofd:Color Value="100 192 171"/>
+						</ofd:Segment>
+						<ofd:Segment Position="0.98">
+							<ofd:Color Value="0 140 207"/>
+						</ofd:Segment>
+						<ofd:Segment Position="1">
+							<ofd:Color Value="0 140 207"/>
+						</ofd:Segment>
+					</ofd:AxialShd>
+				</ofd:FillColor>
+				<ofd:CGTransform CodePosition="0" CodeCount="7" GlyphCount="7">
+					<ofd:Glyphs>9096 1234 8559 14565 9400 21132 1185</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="0.99 0.99 0.99 0.99 0.99 0.99" X="0" Y="0.84">全方位服务能力</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="72.43 139.96 55.32 3" CTM="3.175 0 0 3.175 0 0" Font="128" ID="198" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="17" GlyphCount="17">
+					<ofd:Glyphs>1382 4399 3023 1785 1346 5048 5226 7482 1982 3547 1746 2272 5048 5226 7482 1285 3792</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02" X="0" Y="0.84">以澎思北京研究院和新加坡研究院为核</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="72.43 145.62 55.3 2.98" CTM="3.175 0 0 3.175 0 0" Font="128" ID="199" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="17" GlyphCount="17">
+					<ofd:Glyphs>2974 4913 5048 1870 2219 7450 3292 3661 1602 5844 5048 821 1602 3774 4913 6535 5330</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1 1.02 1.02 1.02 1.02 1.02" X="0" Y="0.84">心的研发团队拥有全自研、全栈的计算</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:PathObject Boundary="117 106 144.33 34.61" ID="2123">
+				<ofd:StrokeColor Value="77 167 231"/>
+				<ofd:AbbreviatedData>M 0 33.86 L 0 32.95 L 1.23 32.95 Q 3.34 32.95 4.22 31.61 Q 4.75 30.81 4.75 28 L 4.75 6.61 Q 4.75 3.52 4.08 2.73 Q 3.12 1.66 1.23 1.66 L 0 1.66 L 0 0.75 L 13.47 0.75 Q 20.89 0.75 24.77 2.44 Q 28.64 4.12 30.99 8.05 Q 33.34 11.98 33.34 17.14 Q 33.34 24.05 29.14 28.69 Q 24.44 33.86 14.8 33.86 L 0 33.86 C M 9.44 31.47 Q 12.55 32.16 14.64 32.16 Q 20.31 32.16 24.05 28.17 Q 27.78 24.19 27.78 17.38 Q 27.78 10.52 24.05 6.56 Q 20.31 2.61 14.45 2.61 Q 12.25 2.61 9.44 3.31 L 9.44 31.47 C M 45.59 2.56 L 45.59 15.64 L 52.86 15.64 Q 55.7 15.64 56.66 14.8 Q 57.92 13.67 58.06 10.84 L 58.97 10.84 L 58.97 22.36 L 58.06 22.36 Q 57.72 19.94 57.38 19.27 Q 56.94 18.41 55.94 17.91 Q 54.94 17.42 52.86 17.42 L 45.59 17.42 L 45.59 28.34 Q 45.59 30.53 45.79 31.01 Q 45.98 31.48 46.47 31.77 Q 46.95 32.05 48.33 32.05 L 53.94 32.05 Q 56.75 32.05 58.02 31.66 Q 59.28 31.27 60.45 30.12 Q 61.97 28.61 63.56 25.56 L 64.53 25.56 L 61.67 33.86 L 36.17 33.86 L 36.17 32.95 L 37.34 32.95 Q 38.52 32.95 39.56 32.39 Q 40.34 32 40.62 31.22 Q 40.91 30.44 40.91 28.03 L 40.91 6.52 Q 40.91 3.36 40.27 2.64 Q 39.39 1.66 37.34 1.66 L 36.17 1.66 L 36.17 0.75 L 61.67 0.75 L 62.05 8 L 61.09 8 Q 60.58 5.39 59.95 4.41 Q 59.33 3.44 58.11 2.92 Q 57.14 2.56 54.67 2.56 L 45.59 2.56 C M 86.59 33.86 L 73.81 6 L 73.81 28.12 Q 73.81 31.17 74.47 31.94 Q 75.38 32.95 77.33 32.95 L 78.5 32.95 L 78.5 33.86 L 66.97 33.86 L 66.97 32.95 L 68.14 32.95 Q 70.25 32.95 71.12 31.69 Q 71.66 30.91 71.66 28.12 L 71.66 6.48 Q 71.66 4.3 71.17 3.31 Q 70.83 2.61 69.91 2.13 Q 69 1.66 66.97 1.66 L 66.97 0.75 L 76.34 0.75 L 88.36 26.66 L 100.17 0.75 L 109.55 0.75 L 109.55 1.66 L 108.41 1.66 Q 106.28 1.66 105.41 2.92 Q 104.86 3.7 104.86 6.48 L 104.86 28.12 Q 104.86 31.17 105.55 31.94 Q 106.45 32.95 108.41 32.95 L 109.55 32.95 L 109.55 33.86 L 95.48 33.86 L 95.48 32.95 L 96.66 32.95 Q 98.78 32.95 99.64 31.69 Q 100.17 30.91 100.17 28.12 L 100.17 6 L 87.41 33.86 L 86.59 33.86 C M 128.42 0 Q 134.88 0 139.6 4.89 Q 144.33 9.78 144.33 17.11 Q 144.33 24.66 139.56 29.63 Q 134.8 34.61 128.03 34.61 Q 121.2 34.61 116.55 29.76 Q 111.91 24.91 111.91 17.19 Q 111.91 9.3 117.27 4.31 Q 121.94 0 128.42 0 C M 127.97 1.78 Q 123.52 1.78 120.83 5.08 Q 117.48 9.17 117.48 17.09 Q 117.48 25.19 120.95 29.56 Q 123.62 32.88 127.98 32.88 Q 132.66 32.88 135.7 29.24 Q 138.73 25.61 138.73 17.77 Q 138.73 9.28 135.39 5.09 Q 132.7 1.78 127.97 1.78 C</ofd:AbbreviatedData>
+			</ofd:PathObject>
+			<ofd:TextObject Boundary="72.43 151.26 53.13 3.17" CTM="3.175 0 0 3.175 0 0" Font="128" ID="200" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="17" GlyphCount="17">
+					<ofd:Glyphs>3682 6500 6503 821 2399 3524 3357 1982 1327 6535 5330 5301 3792 2974 3238 3678 1157</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1.02 1.02 1 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1" X="0" Y="0.84">机视觉、大数据和云计算等核心技术，</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="72.43 156.9 54.95 3" CTM="3.175 0 0 3.175 0 0" Font="128" ID="201" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="17" GlyphCount="17">
+					<ofd:Glyphs>3238 3678 7566 3934 6812 4938 3380 1256 2590 1602 821 3628 3149 2313 2801 821 5844</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1 1.02 1.02 1.02 1.02 1 1.02" X="0" Y="0.84">技术面横跨监控与安全、智慧城市、自</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="72.43 162.56 37.23 2.99" CTM="3.175 0 0 3.175 0 0" Font="128" ID="202" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="11" GlyphCount="11">
+					<ofd:Glyphs>1750 7721 7713 821 3628 5766 3682 2191 1352 1382 1866</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1.07 1.07 1 1.07 1.07 1.07 1.07 1.07 1.07 1.07" X="0" Y="0.84">动驾驶、智能机器人以及</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="110.19 163.01 3.24 2.36" CTM="3.302 0 0 3.302 0 0" Font="131" ID="203" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="2" GlyphCount="2">
+					<ofd:Glyphs>40 48</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="0.65" X="0" Y="0.71">AI</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="114.06 162.57 13.62 2.96" CTM="3.175 0 0 3.175 0 0" Font="128" ID="204" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="4" GlyphCount="4">
+					<ofd:Glyphs>2785 1839 5844 1750</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1.07 1.07 1.07" X="0" Y="0.83">工厂自动</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="72.43 168.2 55.38 3" CTM="3.175 0 0 3.175 0 0" Font="128" ID="205" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="17" GlyphCount="17">
+					<ofd:Glyphs>1784 6516 1644 3548 3804 5301 2394 1275 2859 4768 7614 2322 822 2241 1499 6564 3238</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1 1.02 1.02 1.02 1.02" X="0" Y="0.84">化解决方案等多个应用领域。在保证技</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="72.43 173.84 55.32 3" CTM="3.175 0 0 3.175 0 0" Font="128" ID="206" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="17" GlyphCount="17">
+					<ofd:Glyphs>3678 7614 1590 3028 4913 1721 3401 1253 1617 7606 2785 1265 5446 5048 1870 1982 1339</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02" X="0" Y="0.84">术领先性的前提下兼顾工业级研发和交</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="72.43 179.48 22.52 3.17" CTM="3.175 0 0 3.175 0 0" Font="128" ID="207" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="7" GlyphCount="7">
+					<ofd:Glyphs>1374 5766 1742 1157 5848 1742 1325</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1 1 1 1 1 1" X="0" Y="0.84">付能力，致力于</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="95.43 179.94 3.24 2.36" CTM="3.302 0 0 3.302 0 0" Font="131" ID="208" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="2" GlyphCount="2">
+					<ofd:Glyphs>40 48</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="0.65" X="0" Y="0.71">AI</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="99.23 179.48 23.91 3" CTM="3.175 0 0 3.175 0 0" Font="128" ID="209" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="8" GlyphCount="8">
+					<ofd:Glyphs>3238 3678 4913 6119 2248 2859 4768 822</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1 1 1 1 1 1 1" X="0" Y="0.84">技术的落地应用。</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="132.93 139.96 55.22 3.01" CTM="3.175 0 0 3.175 0 0" Font="128" ID="210" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="17" GlyphCount="17">
+					<ofd:Glyphs>4399 3023 5184 3238 3182 4519 4913 2785 1265 5446 2219 7450 1613 2387 1279 2628 4913</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02" X="0" Y="0.84">澎思科技成熟的工业级团队具备丰富的</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="132.93 145.64 55.28 3.15" CTM="3.175 0 0 3.175 0 0" Font="128" ID="211" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="17" GlyphCount="17">
+					<ofd:Glyphs>6408 1265 5196 5428 1982 6119 2248 3664 1747 5482 7733 1157 3381 1674 1319 1602 5422</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1 1.02 1.02 1.02 1.02 1.02" X="0" Y="0.83">行业积累和落地服务经验，推出了全系</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="132.93 151.25 55.3 3.18" CTM="3.175 0 0 3.175 0 0" Font="128" ID="212" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="17" GlyphCount="17">
+					<ofd:Glyphs>1692 6891 1391 1982 5085 1391 1342 2013 1157 3381 1674 1319 6495 4941 1604 1608 2590</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1.02 1.02 1.02 1.02 1.02 1.02 1.02 1 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02" X="0" Y="0.84">列软件和硬件产品，推出了覆盖公共安</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="132.93 156.9 55.08 2.99" CTM="3.175 0 0 3.175 0 0" Font="128" ID="213" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="19" GlyphCount="19">
+					<ofd:Glyphs>1602 821 5138 1796 821 1744 1604 3893 2588 821 2573 3786 821 1797 7482 821 2079 6779 821</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1 0.76 1 1 0.76 1 1 1 1 0.76 1 1 0.76 1 1 0.76 1 1" X="0" Y="0.84">全、社区、办公楼宇、学校、医院、商超、</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="132.93 162.56 52.48 3" CTM="3.175 0 0 3.175 0 0" Font="128" ID="214" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="17" GlyphCount="17">
+					<ofd:Glyphs>1339 6999 821 2785 1839 5301 1602 2251 3623 4913 6408 1265 6516 1644 3548 3804 822</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1" X="0" Y="0.84">交通、工厂等全场景的行业解决方案。</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="132.93 173.85 55.32 2.98" CTM="3.175 0 0 3.175 0 0" Font="128" ID="215" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="17" GlyphCount="17">
+					<ofd:Glyphs>1285 2606 3201 3310 5509 3401 1472 1602 3548 1430 3664 1747 3598 1604 1898 3182 5256</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02" X="0" Y="0.84">为客户持续提供全方位服务是公司成立</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="132.93 179.49 55.35 3" CTM="3.175 0 0 3.175 0 0" Font="128" ID="216" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="17" GlyphCount="17">
+					<ofd:Glyphs>1295 1697 2666 5087 5256 4913 1870 2688 4696 2999 822 4399 3023 5184 3238 2241 3401</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1 1.02 1.02 1.02 1.02 1.02 1.02" X="0" Y="0.84">之初就确立的发展理念。澎思科技在提</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="193.43 139.98 55.29 3.17" CTM="3.175 0 0 3.175 0 0" Font="128" ID="217" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="17" GlyphCount="17">
+					<ofd:Glyphs>1472 1246 5258 2903 3526 1435 6516 1644 3548 3804 4913 1910 3576 1157 2468 5475 2265</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1 1.02 1.02 1.02" X="0" Y="0.84">供一站式整体解决方案的同时，始终坚</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="193.43 145.61 55.3 3.18" CTM="3.175 0 0 3.175 0 0" Font="128" ID="218" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="17" GlyphCount="17">
+					<ofd:Glyphs>3310 1382 2606 3201 7537 4066 1285 1278 2974 1157 6543 1342 2013 1982 3664 1747 4965</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1 1.02 1.02 1.02 1.02 1.02 1.02 1.02" X="0" Y="0.84">持以客户需求为中心，让产品和服务真</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="193.43 151.27 55.34 3.17" CTM="3.175 0 0 3.175 0 0" Font="128" ID="219" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="17" GlyphCount="17">
+					<ofd:Glyphs>3979 6516 1644 2606 3201 4913 2603 7468 7407 7628 1157 1499 6564 6119 2248 3508 3726</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1.02 1 1.02 1.02 1.02 1.02 1.02 1.02" X="0" Y="0.84">正解决客户的实际问题，保证落地效果</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject Boundary="193.43 156.9 52.48 3.18" CTM="3.175 0 0 3.175 0 0" Font="128" ID="220" Size="1">
+				<ofd:FillColor Value="255 255 255"/>
+				<ofd:CGTransform CodePosition="0" CodeCount="17" GlyphCount="17">
+					<ofd:Glyphs>2842 3310 5509 1696 3547 1870 2688 1157 7487 1422 2606 3201 1608 1910 3182 7401 822</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode DeltaX="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1" X="0" Y="0.84">并持续创新发展，陪伴客户共同成长。</ofd:TextCode>
+			</ofd:TextObject>
+		</ofd:Layer>
+	</ofd:Content>
+</ofd:Page>

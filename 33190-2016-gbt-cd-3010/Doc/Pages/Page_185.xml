@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3681" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3682" Font="1" Size="3.5" Boundary="31.7 29.4 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">名称 类型 说明 备注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3683" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3684" Font="1" Size="3.5" Boundary="31.7 40.65 60.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">两个椭圆的离心率,即椭圆焦距与长轴的比值,取值范围是[,)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3685" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3686" Font="1" Size="3.5" Boundary="31.7 51.9 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">01.0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3687" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3688" Font="1" Size="3.5" Boundary="31.7 63.15 50.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Eccentricit xs:double 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3689" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3690" Font="1" Size="3.5" Boundary="31.7 74.4 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3691" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3692" Font="1" Size="3.5" Boundary="31.7 85.65 35.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">默认值为,在这种情况下椭圆退化为圆</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3693" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3694" Font="1" Size="3.5" Boundary="31.7 96.9 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3695" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3696" Font="1" Size="3.5" Boundary="31.7 108.15 54.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">两个椭圆的倾斜角度,椭圆长轴与轴正向的夹角,单位为度</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3697" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3698" Font="1" Size="3.5" Boundary="31.7 119.4 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">x:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3699" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3700" Font="1" Size="3.5" Boundary="31.7 130.65 35.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Angle xsdouble 可选</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

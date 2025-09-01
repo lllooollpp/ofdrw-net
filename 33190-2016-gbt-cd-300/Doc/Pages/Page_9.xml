@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="161" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>文 字 对 象 …………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="162" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>11.2 62</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="163" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>文 字 定 位 …………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="164" CTM="1 0 0 1 31.7 44"><ofd:TextCode>11.3 65</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="165" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>字 形 变 换 …………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="166" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>11.4 68</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="167" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>变 换 描 述 ……………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="168" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>11.4.1 68</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="169" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>一 对 一 ………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="170" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>11.4.2 69</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="171" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>多 对 一 ………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="172" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>11.4.3 69</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="173" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>一 对 多 ………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="174" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>11.4.4 69</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="175" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="176" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>多 对 多</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="177" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>11.4.5 70</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="178" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>视 频 ……………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="179" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>12 71</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="180" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>复 合 对 象 ………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

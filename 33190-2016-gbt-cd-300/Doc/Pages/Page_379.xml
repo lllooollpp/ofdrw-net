@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="7561" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7562" CTM="1 0 0 1 31.7 29.799999999999997"><ofd:TextCode>
+=== 第 125 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7563" CTM="1 0 0 1 31.7 35.8"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7564" CTM="1 0 0 1 31.7 42"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7565" CTM="1 0 0 1 31.7 48.2"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7566" CTM="1 0 0 1 31.7 54.400000000000006"><ofd:TextCode>xs elementname=&quot;FillColor&quot;type=&quot;CT Color&quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7567" CTM="1 0 0 1 31.7 60.60000000000001"><ofd:TextCode>&lt; : _</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7568" CTM="1 0 0 1 31.7 66.80000000000001"><ofd:TextCode>xs elementname=&quot;StrokeColor&quot;t e=&quot;CT Color&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7569" CTM="1 0 0 1 31.7 73.00000000000001"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7570" CTM="1 0 0 1 31.7 79.20000000000002"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7571" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7572" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7573" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>xs sequencemaxOccurs=&quot;unbounded&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7574" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>&lt; : _</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7575" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>xs elementname=&quot;CGTransform&quot;type=&quot;CT CGTransform&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7576" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7577" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>minOccurs=&quot;0&quot;maxOccurs=&quot;unbounded&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7578" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7579" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>xs elementname=&quot;TextCode&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7580" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

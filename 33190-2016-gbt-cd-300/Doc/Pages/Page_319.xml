@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="6361" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>
+=== 第 113 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6362" CTM="1 0 0 1 31.7 31.4"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6363" CTM="1 0 0 1 31.7 37.6"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6364" CTM="1 0 0 1 31.7 43.800000000000004"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6365" CTM="1 0 0 1 31.7 50.00000000000001"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6366" CTM="1 0 0 1 31.7 56.20000000000001"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6367" CTM="1 0 0 1 31.7 62.40000000000001"><ofd:TextCode>xs com lexT ename=&quot;CT Re ion&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6368" CTM="1 0 0 1 31.7 68.60000000000001"><ofd:TextCode>p yp g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6369" CTM="1 0 0 1 31.7 74.80000000000001"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6370" CTM="1 0 0 1 31.7 81.00000000000001"><ofd:TextCode>xs se uence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6371" CTM="1 0 0 1 31.7 87.20000000000002"><ofd:TextCode>q</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6372" CTM="1 0 0 1 31.7 93.40000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6373" CTM="1 0 0 1 31.7 99.60000000000002"><ofd:TextCode>xs elementname=&quot;Area&quot;maxOccurs=&quot;unbounded&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6374" CTM="1 0 0 1 31.7 105.80000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6375" CTM="1 0 0 1 31.7 112.00000000000003"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6376" CTM="1 0 0 1 31.7 118.20000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6377" CTM="1 0 0 1 31.7 124.40000000000003"><ofd:TextCode>xs choicemaxOccurs=&quot;unbounded&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6378" CTM="1 0 0 1 31.7 130.60000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6379" CTM="1 0 0 1 31.7 136.8"><ofd:TextCode>xs elementname=&quot;Move&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6380" CTM="1 0 0 1 31.7 143"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

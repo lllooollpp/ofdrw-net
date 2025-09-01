@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1001" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>Coies xsint</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1002" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1003" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>受 限,当 的 值 为 时,不 允 许 打 印,当 的 值 大 于 时,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1004" CTM="1 0 0 1 31.7 44"><ofd:TextCode>Coies 0 Coies 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1005" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>p p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1006" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>则 代 表 实 际 可 打 印 的 份 数 值</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1007" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>有 效 期,即 此 文 档 允 许 访 问 的 期 限,其 具 体 期 限 取 决 于 开 始 日 期 和</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1008" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>结 束 日 期,其 中 开 始 日 期 不 能 晚 于 结 束 日 期,并 且 开 始 日 期 和 结 束</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1009" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>。 , ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1010" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>日 期 至 少 出 现 一 个 当 不 设 置 开 始 日 期 时 代 表 不 限 定 开 始 日 期 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1011" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>ValidPeriod</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1012" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>当 不 设 置 结 束 日 期 时 代 表 不 限 定 结 束 日 期;当 此 不 设 置 此 节 点 时,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1013" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>表 示 开 始 日 期 和 结 束 日 期 均 不 受 限</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1014" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>: 有 效 期 开 始 日 期 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1015" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>StartDate xsdateTime</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1016" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>: 有 效 期 结 束 日 期 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1017" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>EndDate xsdateTime</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1018" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>本 标 准 支 持 设 置 文 档 视 图 首 选 项( )节 点,以 达 到 限 定 文 档 初 始 化 视 图 便 于 阅 读 的 目</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1019" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>VPreferences</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1020" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>标。 文 档 视 图 首 选 项 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

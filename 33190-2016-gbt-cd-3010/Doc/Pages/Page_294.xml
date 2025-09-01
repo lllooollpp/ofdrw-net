@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5861" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5862" Font="1" Size="3.5" Boundary="31.7 29.4 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">, , 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5863" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5864" Font="1" Size="3.5" Boundary="31.7 40.65 60.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">样因此当使用到字形变换时宜将对应的字型文件嵌入到版式文档中</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5865" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5866" Font="1" Size="3.5" Boundary="31.7 51.9 75.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">字符编码到字符之间主要包括一对一、多对一、一对多以及多对多四种变换关系。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5867" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5868" Font="1" Size="3.5" Boundary="31.7 63.15 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">一对一</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5869" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5870" Font="1" Size="3.5" Boundary="31.7 74.4 12.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">11.4.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5871" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5872" Font="1" Size="3.5" Boundary="31.7 85.65 84 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">当一个字符对应一个字形时,如果文本对象使用非内嵌字型,则根据该字型的 表取得相应</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5873" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5874" Font="1" Size="3.5" Boundary="31.7 96.9 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">CMAP</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5875" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5876" Font="1" Size="3.5" Boundary="31.7 108.15 88.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">的字形。如果文字使用的是内嵌字型,则使用该内嵌字型数据中的CMAP表来取得字形索引。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5877" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5878" Font="1" Size="3.5" Boundary="31.7 119.4 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">11.4.3 多对一</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5879" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5880" Font="1" Size="3.5" Boundary="31.7 130.65 44.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">多个字符对应一个字符的情况描述如图 所示。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

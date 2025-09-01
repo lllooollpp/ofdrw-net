@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="8201" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>xs elementname=&quot;GouraudShd&quot;t e=&quot;CT GouraudShd&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8202" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8203" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8204" CTM="1 0 0 1 31.7 44"><ofd:TextCode>xs elementname=&quot;LaGourandShd&quot;type=&quot;CT LaGouraudShd&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8205" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8206" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>xs choice</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8207" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8208" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>xs attributename=&quot;Value&quot;t e=&quot;ST Arra &quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8209" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>yp y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8210" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8211" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>xs attributename=&quot;Index&quot;type=&quot;xs int&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8212" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8213" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>xs attributename=&quot;ColorSpace&quot;type=&quot;ST RefID&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8214" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8215" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>xs attributename=&quot;Alpha&quot;type=&quot;xs int&quot;default=&quot;255&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8216" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8217" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs com lexT e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8218" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8219" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8220" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>xs schema</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

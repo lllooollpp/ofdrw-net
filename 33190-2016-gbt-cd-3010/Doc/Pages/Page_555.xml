@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="11081" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11082" Font="1" Size="3.5" Boundary="31.7 29.4 92.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">attributeFormDefault=&quot;unqualified&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11083" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11084" Font="1" Size="3.5" Boundary="31.7 40.65 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11085" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11086" Font="1" Size="3.5" Boundary="31.7 51.9 107.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xsincludeschemaLocation=&quot;Definitions.xsd&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11087" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11088" Font="1" Size="3.5" Boundary="31.7 63.15 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">113</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11089" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11090" Font="1" Size="4" Boundary="31.7 74.4 40.8 8" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="4">
+=== 第 119 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11091" Font="1" Size="3.5" Boundary="31.7 84.4 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11092" Font="1" Size="1" Boundary="31.7 91.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11093" Font="1" Size="3.5" Boundary="31.7 95.65 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">GBT331902016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11094" Font="1" Size="1" Boundary="31.7 102.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11095" Font="1" Size="3.5" Boundary="31.7 106.9 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11096" Font="1" Size="1" Boundary="31.7 114.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11097" Font="1" Size="3.5" Boundary="31.7 118.15 77.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xselementname=&quot;Attachments&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11098" Font="1" Size="1" Boundary="31.7 125.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11099" Font="1" Size="3.5" Boundary="31.7 129.4 39.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;xs:comlexTe&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11100" Font="1" Size="1" Boundary="31.7 136.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

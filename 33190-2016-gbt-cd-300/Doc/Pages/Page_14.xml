@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="261" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>…………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="262" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>A.7 Signatures.xsd 109</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="263" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>……………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="264" CTM="1 0 0 1 31.7 44"><ofd:TextCode>A.8 Sinature.xsd 110</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="265" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="266" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="267" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>A.9 CustomTas.xsd 112</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="268" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="269" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>…………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="270" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>A.10 Extensions.xsd 112</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="271" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="272" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>A.11 Attachments.xsd 113</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="273" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>……………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="274" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>A.12 Version.xsd 114</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="275" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="276" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>A.13 Page.xsd 115</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="277" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>参 考 文 献……………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="278" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>127</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="279" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>Ⅲ</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="280" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

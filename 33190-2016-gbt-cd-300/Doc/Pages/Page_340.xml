@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="6781" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>A.9 CustomTas.xsd</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6782" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6783" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt;? ?&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6784" CTM="1 0 0 1 31.7 44"><ofd:TextCode>xmlversion=&quot;1.0&quot;encodin =&quot;UTF-8&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6785" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6786" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&lt; : :// /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6787" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>xs schemaxmlns=&quot;http www.ofdspec.org 2016&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6788" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>: :// / /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6789" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>xmlns xs=&quot;http www.w3.org 2001 XMLSchema&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6790" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>:// /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6791" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>tar etNames ace=&quot;htt www.ofds ec.or 2016&quot;elementFormDefault=&quot; ualified&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6792" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>g p p p g q</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6793" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6794" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>attributeFormDefault=&quot;unqualified&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6795" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6796" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>xs includeschemaLocation=&quot;Definitions.xsd&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6797" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>&lt;! 标 引 索 引 文 件,标 引 文 件 中 通 过 引 用 与 被 标 引 对 象 发 生“非 接 触 式(分 离 式)”关 联。 标 引</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6798" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>-- ID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6799" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>内 容 可 任 意 扩 展,但 建 议 给 出 扩 展 内 容 的 规 范 约 束 文 件( )或 命 名 空 间。 &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6800" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>schema --</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

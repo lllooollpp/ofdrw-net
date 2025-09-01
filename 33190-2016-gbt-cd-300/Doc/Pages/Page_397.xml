@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="7921" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>xs enumerationvalue=&quot;Object&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7922" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7923" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>xs restriction</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7924" CTM="1 0 0 1 31.7 44"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7925" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>xs simpleType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7926" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7927" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>xs attribute</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7928" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7929" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>xs attributename=&quot;CTM&quot;t e=&quot;ST Arra &quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7930" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>yp y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7931" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7932" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>xs com lexT e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7933" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7934" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt;! &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7935" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>渐 变 定 义</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7936" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>-- --</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7937" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7938" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>xs complexTypename=&quot;CT AxialShd&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7939" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7940" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>xs se uence</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4761" Font="1" Size="3.5" Boundary="31.7 25.4 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">默认值为NonZero</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4762" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4763" Font="1" Size="3.5" Boundary="31.7 36.65 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">填充颜色</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4764" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4765" Font="1" Size="3.5" Boundary="31.7 47.9 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4766" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4767" Font="1" Size="3.5" Boundary="31.7 59.15 42 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">FillColor CTColor 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4768" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4769" Font="1" Size="3.5" Boundary="31.7 70.4 12.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">默认为透明色</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4770" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4771" Font="1" Size="3.5" Boundary="31.7 81.65 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">52</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4772" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4773" Font="1" Size="4" Boundary="31.7 92.9 38.4 8" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="4">
+=== 第 58 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4774" Font="1" Size="3.5" Boundary="31.7 102.9 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4775" Font="1" Size="1" Boundary="31.7 110.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4776" Font="1" Size="3.5" Boundary="31.7 114.15 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">GBT331902016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4777" Font="1" Size="1" Boundary="31.7 121.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4778" Font="1" Size="3.5" Boundary="31.7 125.4 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">表 (续)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4779" Font="1" Size="1" Boundary="31.7 132.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4780" Font="1" Size="3.5" Boundary="31.7 136.65 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">35</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

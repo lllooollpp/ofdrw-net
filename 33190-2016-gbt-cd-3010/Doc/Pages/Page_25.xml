@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="481" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="482" Font="1" Size="3.5" Boundary="31.7 29.4 94.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">本标准规定了版式电子文件的存储与交换格式,包括文件结构、基本结构、页面描述、图形、图像、文</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="483" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="484" Font="1" Size="3.5" Boundary="31.7 40.65 86.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">字、视频、复合对象、动作、注释、自定义标引、扩展信息、数字签名、版本、附件等方面。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="485" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="486" Font="1" Size="3.5" Boundary="31.7 51.9 46.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">本标准适用于版式文档存储、阅读、交换和利用。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="487" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="488" Font="1" Size="3.5" Boundary="31.7 63.15 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">规范性引用文件</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="489" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="490" Font="1" Size="3.5" Boundary="31.7 74.4 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="491" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="492" Font="1" Size="3.5" Boundary="31.7 85.65 88.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">下列文件对于本文件的应用是必不可少的。凡是注日期的引用文件,仅注日期的版本适用于本文</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="493" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="494" Font="1" Size="3.5" Boundary="31.7 96.9 75.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">件。凡是不注日期的引用文件,其最新版本(包括所有的修改单)适用于本文件。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="495" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="496" Font="1" Size="3.5" Boundary="31.7 108.15 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">( )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="497" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="498" Font="1" Size="3.5" Boundary="31.7 119.4 54.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">GB13000 信息技术 通用多八位编码字符集UCS</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="499" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="500" Font="1" Size="3.5" Boundary="31.7 130.65 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">信息技术中文编码字符集</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

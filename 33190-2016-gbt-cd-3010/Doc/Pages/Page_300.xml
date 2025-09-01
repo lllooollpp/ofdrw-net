@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5981" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5982" Font="1" Size="3.5" Boundary="31.7 29.4 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">49</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5983" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5984" Font="1" Size="3.5" Boundary="31.7 40.65 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">表 复合对象基本属性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5985" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5986" Font="1" Size="3.5" Boundary="31.7 51.9 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">49</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5987" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5988" Font="1" Size="3.5" Boundary="31.7 63.15 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">名称 类型 说明 备注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5989" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5990" Font="1" Size="3.5" Boundary="31.7 74.4 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5991" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5992" Font="1" Size="3.5" Boundary="31.7 85.65 81.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ResourceID STRefID 引用资源文件中定义的矢量图像的标识 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5993" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5994" Font="1" Size="3.5" Boundary="31.7 96.9 67.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">复合对象引用的资源是 中的矢量图像( ),其类型为 _ ,其结构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5995" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5996" Font="1" Size="3.5" Boundary="31.7 108.15 67.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Res CompositeGraphUnit CTVectorG</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5997" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5998" Font="1" Size="3.5" Boundary="31.7 119.4 12.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">如图 所示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5999" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6000" Font="1" Size="3.5" Boundary="31.7 130.65 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">72</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

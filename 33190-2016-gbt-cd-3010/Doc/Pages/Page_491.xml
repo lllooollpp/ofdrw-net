@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="9801" Font="1" Size="3.5" Boundary="31.7 25.4 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xscomplexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9802" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9803" Font="1" Size="3.5" Boundary="31.7 36.65 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9804" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9805" Font="1" Size="3.5" Boundary="31.7 47.9 84 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xscomplexTypename=&quot;CTPageArea&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9806" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9807" Font="1" Size="3.5" Boundary="31.7 59.15 37.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;xs:seuence&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9808" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9809" Font="1" Size="3.5" Boundary="31.7 70.4 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">q</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9810" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9811" Font="1" Size="3.5" Boundary="31.7 81.65 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9812" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9813" Font="1" Size="3.5" Boundary="31.7 92.9 123.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xselementname=&quot;PhysicalBox&quot;type=&quot;STBox&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9814" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9815" Font="1" Size="3.5" Boundary="31.7 104.15 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9816" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9817" Font="1" Size="3.5" Boundary="31.7 115.4 178.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xselementname=&quot;ApplicationBox&quot;type=&quot;STBox&quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9818" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9819" Font="1" Size="3.5" Boundary="31.7 126.65 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9820" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

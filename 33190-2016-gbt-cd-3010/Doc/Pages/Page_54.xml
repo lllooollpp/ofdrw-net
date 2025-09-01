@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1061" Font="1" Size="3.5" Boundary="31.7 25.4 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">名称 类型 说明 备注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1062" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1063" Font="1" Size="3.5" Boundary="31.7 36.65 39.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: 文件格式的版本号,取值为“” 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1064" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1065" Font="1" Size="3.5" Boundary="31.7 47.9 42 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Version xsstring 1.0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1066" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1067" Font="1" Size="3.5" Boundary="31.7 59.15 67.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">文件格式子集类型,取值为“OFD”,表明此文件符合本标准。取值为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1068" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1069" Font="1" Size="3.5" Boundary="31.7 70.4 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1070" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1071" Font="1" Size="3.5" Boundary="31.7 81.65 39.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">DocType xsstring 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1072" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1073" Font="1" Size="3.5" Boundary="31.7 92.9 33.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">“ ”,表明此文件符合 存档规范</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1074" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1075" Font="1" Size="3.5" Boundary="31.7 104.15 18.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">OFD-A OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1076" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1077" Font="1" Size="3.5" Boundary="31.7 115.4 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">6</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1078" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1079" Font="1" Size="4" Boundary="31.7 126.65 38.4 8" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="4">
+=== 第 12 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1080" Font="1" Size="3.5" Boundary="31.7 136.65 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">/ —</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

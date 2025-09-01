@@ -56,6 +56,19 @@ public class OFDDoc : IDisposable
 
     private Dictionary<string, int> _fontMap = new();
     private string? _publicResRelativePath; // 例如 Res/PublicRes.xml
+    private readonly Dictionary<string, string> _externalFontFiles = new(); // 新增: 字体名->临时字体文件绝对路径
+    // 为逐字定位新增的原始字形运行缓存
+    private class RawGlyphRun
+    {
+        public string FontName { get; set; } = "SimSun";
+        public double FontSizeMm { get; set; }
+        public double X { get; set; }
+        public double Y { get; set; }
+        public string Text { get; set; } = string.Empty;
+        public double[]? DeltaX { get; set; }
+        public double[]? DeltaY { get; set; }
+        public int Page { get; set; } = 1; // 新增：所在页（1-based）
+    }
 
     #endregion
 
@@ -168,6 +181,7 @@ public class OFDDoc : IDisposable
             throw new ArgumentException("元素已经存在，请勿重复添加");
 
         _streamQueue.Add(paragraph);
+        System.Diagnostics.Debug.WriteLine($"[OFDDoc] Add Paragraph len={paragraph.Contents?.Sum(s=>s.Text?.Length??0)} width={paragraph.Width} fs={paragraph.DefaultFontSize}");
         return this;
     }
 
@@ -179,6 +193,50 @@ public class OFDDoc : IDisposable
     public OFDDoc AddVirtualPage(VirtualPage virtualPage)
     {
         _virtualPageList.Add(virtualPage);
+        return this;
+    }
+
+    /// <summary>
+    /// 添加外部嵌入字体
+    /// </summary>
+    /// <param name="fontName">字体名称</param>
+    /// <param name="fontFilePath">字体文件路径</param>
+    /// <returns>当前实例</returns>
+    /// <exception cref="ArgumentNullException">字体名称或文件路径为空时抛出</exception>
+    /// <exception cref="FileNotFoundException">字体文件不存在时抛出</exception>
+    public OFDDoc AddExternalEmbeddedFont(string fontName, string fontFilePath)
+    {
+        if (string.IsNullOrWhiteSpace(fontName)) throw new ArgumentNullException(nameof(fontName));
+        if (string.IsNullOrWhiteSpace(fontFilePath) || !File.Exists(fontFilePath)) throw new FileNotFoundException("字体文件不存在", fontFilePath);
+        _externalFontFiles[fontName] = fontFilePath;
+        return this;
+    }
+
+    /// <summary>
+    /// 向文档中添加原始字形运行（逐字定位文本）
+    /// </summary>
+    /// <param name="fontName">字体名称</param>
+    /// <param name="fontSizeMm">字体大小（毫米）</param>
+    /// <param name="originX">起始X坐标</param>
+    /// <param name="originY">起始Y坐标</param>
+    /// <param name="text">文本内容</param>
+    /// <param name="deltaX">X方向的位移数组</param>
+    /// <param name="deltaY">Y方向的位移数组</param>
+    /// <param name="page">页码</param>
+    /// <returns>当前实例</returns>
+    public OFDDoc AddRawTextGlyphRun(string fontName, double fontSizeMm, double originX, double originY, string text, double[]? deltaX = null, double[]? deltaY = null, int page = 1)
+    {
+        _streamQueue.Add(new RawGlyphRun
+        {
+            FontName = string.IsNullOrWhiteSpace(fontName) ? "SimSun" : fontName,
+            FontSizeMm = fontSizeMm,
+            X = originX,
+            Y = originY,
+            Text = text ?? string.Empty,
+            DeltaX = deltaX,
+            DeltaY = deltaY,
+            Page = page < 1 ? 1 : page
+        });
         return this;
     }
 
@@ -242,7 +300,7 @@ public class OFDDoc : IDisposable
     /// </summary>
     private async Task ProcessStreamLayoutAsync()
     {
-        // 实现流式布局处理逻辑
+        System.Diagnostics.Debug.WriteLine($"[OFDDoc] ProcessStreamLayout queue={_streamQueue.Count}");
         await Task.CompletedTask; // 占位符
     }
 
@@ -453,22 +511,30 @@ public class OFDDoc : IDisposable
         {
             BuildFontMap();
         }
-        
+
         if (_streamQueue.Count == 0)
         {
-            // 创建空页面
             await CreatePageFileAsync(pagesDir, 1, new List<object>());
             return;
         }
-        
+
+        // 若包含 RawGlyphRun，则按 Page 分组，不再采用每20段落分页策略
+        if (_streamQueue.Any(o => o is RawGlyphRun))
+        {
+            var group = _streamQueue.Where(o => o is RawGlyphRun).Cast<RawGlyphRun>().GroupBy(r => r.Page).OrderBy(g => g.Key);
+            foreach (var g in group)
+            {
+                var pageItems = g.Cast<object>().ToList();
+                await CreatePageFileAsync(pagesDir, g.Key, pageItems);
+            }
+            return;
+        }
+
         var pageNumber = 1;
         var currentPageItems = new List<object>();
-        
         foreach (var item in _streamQueue)
         {
             currentPageItems.Add(item);
-            
-            // 每20个段落创建一页
             if (currentPageItems.Count >= 20)
             {
                 await CreatePageFileAsync(pagesDir, pageNumber, currentPageItems);
@@ -476,8 +542,6 @@ public class OFDDoc : IDisposable
                 currentPageItems.Clear();
             }
         }
-        
-        // 处理剩余的内容
         if (currentPageItems.Count > 0)
         {
             await CreatePageFileAsync(pagesDir, pageNumber, currentPageItems);
@@ -496,26 +560,41 @@ public class OFDDoc : IDisposable
         {
             if (item is OfdrwNet.Layout.Element.Paragraph paragraph)
             {
+                // 原段落处理保留
                 var textContent = System.Security.SecurityElement.Escape(paragraph.GetText() ?? "");
                 var fontName = paragraph.GetFontName() ?? "SimSun";
-                if (!_fontMap.TryGetValue(fontName, out var fontId))
-                {
-                    fontId = 1; // fallback
-                }
+                if (!_fontMap.TryGetValue(fontName, out var fontId)) fontId = 1;
                 double fontSize = paragraph.GetFontSize();
                 double lineHeight = paragraph.GetLineHeight();
                 double estimatedHeight = fontSize * lineHeight;
-                // 估算宽度（粗略）：字符数 * 字号 * 0.6
                 double estimatedWidth = textContent.Length * fontSize * 0.6;
-                // Boundary: x y w h 采用 mm 单位
                 double x = _pageLayout.Margins.Left;
-                double y = currentY; // 简单递增
+                double y = currentY;
                 string boundary = $"{x:0.###} {y:0.###} {estimatedWidth:0.###} {estimatedHeight:0.###}";
-                // TextObject：加入 Font, Size, Boundary
                 contentXml.AppendLine(
-                    $"        <ofd:TextObject ID=\"{GetNextID()}\" Font=\"{fontId}\" Size=\"{fontSize:0.##}\" Boundary=\"{boundary}\" CTM=\"1 0 0 1 0 0\">" +
-                    $"<ofd:TextCode X=\"0\" Y=\"{fontSize:0.##}\">{textContent}</ofd:TextCode></ofd:TextObject>");
+                    $"        <ofd:TextObject ID=\"{GetNextID()}\" Font=\"{fontId}\" Size=\"{fontSize:0.##}\" Boundary=\"{boundary}\" CTM=\"1 0 0 1 0 0\"><ofd:TextCode X=\"0\" Y=\"{fontSize:0.##}\">{textContent}</ofd:TextCode></ofd:TextObject>");
                 currentY += estimatedHeight + 2;
+            }
+            else if (item is RawGlyphRun run)
+            {
+                var fontName = run.FontName;
+                if (!_fontMap.TryGetValue(fontName, out var fontId)) fontId = 1;
+                var fontSize = run.FontSizeMm;
+                var textContent = System.Security.SecurityElement.Escape(run.Text ?? "");
+                double width = run.DeltaX != null && run.DeltaX.Length > 0 ? run.DeltaX.Sum() + fontSize : textContent.Length * fontSize * 0.6;
+                double height = fontSize * 1.2;
+                string boundary = $"{run.X:0.###} {run.Y:0.###} {width:0.###} {height:0.###}";
+                string textCode;
+                if (run.DeltaX != null && run.DeltaX.Length > 0)
+                {
+                    var dxStr = string.Join(" ", run.DeltaX.Select(v => v.ToString("0.###")));
+                    textCode = $"<ofd:TextCode X=\"0\" Y=\"{fontSize:0.##}\" DeltaX=\"{dxStr}\">{textContent}</ofd:TextCode>";
+                }
+                else
+                {
+                    textCode = $"<ofd:TextCode X=\"0\" Y=\"{fontSize:0.##}\">{textContent}</ofd:TextCode>";
+                }
+                contentXml.AppendLine($"        <ofd:TextObject ID=\"{GetNextID()}\" Font=\"{fontId}\" Size=\"{fontSize:0.##}\" Boundary=\"{boundary}\" CTM=\"1 0 0 1 0 0\">{textCode}</ofd:TextObject>");
             }
         }
         
@@ -637,11 +716,13 @@ public class OFDDoc : IDisposable
             if (item is OfdrwNet.Layout.Element.Paragraph p)
             {
                 var fn = string.IsNullOrWhiteSpace(p.GetFontName()) ? "SimSun" : p.GetFontName().Trim();
-                if (!_fontMap.ContainsKey(fn))
-                {
-                    _fontMap[fn] = id++;
-                }
+                if (!_fontMap.ContainsKey(fn)) _fontMap[fn] = id++;
             }
+        }
+        // 外部字体也要分配ID（若尚未分配）
+        foreach (var kv in _externalFontFiles.Keys)
+        {
+            if (!_fontMap.ContainsKey(kv)) _fontMap[kv] = id++;
         }
         if (_fontMap.Count == 0)
         {
@@ -660,8 +741,30 @@ public class OFDDoc : IDisposable
         sb.AppendLine("<ofd:Res xmlns:ofd=\"http://www.ofdspec.org/2016\">\n    <ofd:Fonts>");
         foreach (var kv in _fontMap)
         {
-            var fontNameEsc = System.Security.SecurityElement.Escape(kv.Key);
-            sb.AppendLine($"        <ofd:Font ID=\"{kv.Value}\" FontName=\"{fontNameEsc}\" FamilyName=\"{fontNameEsc}\" Charset=\"unicode\"/>");
+            var fontName = kv.Key;
+            var id = kv.Value;
+            var fontNameEsc = System.Security.SecurityElement.Escape(fontName);
+            string? fontFilePath = null;
+            if (_externalFontFiles.TryGetValue(fontName, out var srcPath))
+            {
+                try
+                {
+                    var ext = Path.GetExtension(srcPath);
+                    var copyName = $"F{id}{ext}";
+                    var dest = Path.Combine(resDir, copyName);
+                    if (!File.Exists(dest)) File.Copy(srcPath, dest, true);
+                    fontFilePath = $"Res/{copyName}"; // 相对 Document.xml
+                }
+                catch { /* 忽略字体复制错误，仍生成无 FontFile 的条目 */ }
+            }
+            if (fontFilePath != null)
+            {
+                sb.AppendLine($"        <ofd:Font ID=\"{id}\" FontName=\"{fontNameEsc}\" FamilyName=\"{fontNameEsc}\" Charset=\"unicode\" FontFile=\"{fontFilePath}\"/>");
+            }
+            else
+            {
+                sb.AppendLine($"        <ofd:Font ID=\"{id}\" FontName=\"{fontNameEsc}\" FamilyName=\"{fontNameEsc}\" Charset=\"unicode\"/>");
+            }
         }
         sb.AppendLine("    </ofd:Fonts>\n</ofd:Res>");
         await File.WriteAllTextAsync(Path.Combine(resDir, "PublicRes.xml"), sb.ToString(), Encoding.UTF8);

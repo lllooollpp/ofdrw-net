@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4081" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>58</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4082" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4083" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4084" CTM="1 0 0 1 31.7 44"><ofd:TextCode>引 用 资 源 文 件 中 定 义 的 视 频 资 源 标 识 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4085" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>ResourceID STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4086" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4087" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>放 映 参 数 见 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4088" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>59</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4089" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4090" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>Operator xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4091" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4092" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>Pla</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4093" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4094" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>放 映 参 数 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4095" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>59</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4096" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>表 放 映 参 数 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4097" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>59</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4098" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>名 称 类 型 说 明</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4099" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>: 播 放</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4100" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>Pla xsstrin</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

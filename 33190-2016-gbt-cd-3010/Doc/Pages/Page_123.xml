@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2441" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2442" Font="1" Size="3.5" Boundary="31.7 29.4 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">6 abcde</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2443" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2444" Font="1" Size="3.5" Boundary="31.7 40.65 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">éa b 0ù</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2445" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2446" Font="1" Size="3.5" Boundary="31.7 51.9 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2447" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2448" Font="1" Size="3.5" Boundary="31.7 63.15 88.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">”。变换矩阵是一个 的矩阵,其格式是ê ú。假设变换前的坐标是(,),变换后的坐标是</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2449" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2450" Font="1" Size="3.5" Boundary="31.7 74.4 29.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">f 3×3 c d 0 xy</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2451" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2452" Font="1" Size="3.5" Boundary="31.7 85.65 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2453" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2454" Font="1" Size="3.5" Boundary="31.7 96.9 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2455" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2456" Font="1" Size="3.5" Boundary="31.7 108.15 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ëe f 1û</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2457" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2458" Font="1" Size="3.5" Boundary="31.7 119.4 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">(,),那么满足公式:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2459" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2460" Font="1" Size="3.5" Boundary="31.7 130.65 29.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">x&apos;y&apos;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

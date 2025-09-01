@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5261" Font="1" Size="3.5" Boundary="31.7 25.4 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5262" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5263" Font="1" Size="3.5" Boundary="31.7 36.65 46.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">排除2条,由此属性从余下的2条圆弧中确定一条</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5264" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5265" Font="1" Size="3.5" Boundary="31.7 47.9 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">58</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5266" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5267" Font="1" Size="4" Boundary="31.7 59.15 38.4 8" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="4">
+=== 第 64 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5268" Font="1" Size="3.5" Boundary="31.7 69.15 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5269" Font="1" Size="1" Boundary="31.7 76.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5270" Font="1" Size="3.5" Boundary="31.7 80.4 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">GBT331902016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5271" Font="1" Size="1" Boundary="31.7 87.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5272" Font="1" Size="3.5" Boundary="31.7 91.65 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">10 图像</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5273" Font="1" Size="1" Boundary="31.7 98.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5274" Font="1" Size="3.5" Boundary="31.7 102.9 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5275" Font="1" Size="1" Boundary="31.7 110.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5276" Font="1" Size="3.5" Boundary="31.7 114.15 31.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">图像对象的基本结构如图57所示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5277" Font="1" Size="1" Boundary="31.7 121.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5278" Font="1" Size="3.5" Boundary="31.7 125.4 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">图 图像对象结构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5279" Font="1" Size="1" Boundary="31.7 132.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5280" Font="1" Size="3.5" Boundary="31.7 136.65 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">57</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

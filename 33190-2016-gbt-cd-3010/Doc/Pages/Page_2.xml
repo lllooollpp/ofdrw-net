@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="21" Font="1" Size="3.5" Boundary="31.7 25.4 44.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">2016-10-13 2017-05-01</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="22" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="23" Font="1" Size="3.5" Boundary="31.7 36.65 39.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">中华人民共和国国家质量监督检验检疫总局</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="24" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="25" Font="1" Size="3.5" Boundary="31.7 47.9 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">发布</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="26" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="27" Font="1" Size="3.5" Boundary="31.7 59.15 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">中国国家标准化管理委员会</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="28" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="29" Font="1" Size="4" Boundary="31.7 70.4 36 8" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="4">
+=== 第 2 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="30" Font="1" Size="3.5" Boundary="31.7 80.4 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="31" Font="1" Size="1" Boundary="31.7 87.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="32" Font="1" Size="3.5" Boundary="31.7 91.65 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">GBT331902016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="33" Font="1" Size="1" Boundary="31.7 98.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="34" Font="1" Size="3.5" Boundary="31.7 102.9 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">目 次</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="35" Font="1" Size="1" Boundary="31.7 110.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="36" Font="1" Size="3.5" Boundary="31.7 114.15 84 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">…………………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="37" Font="1" Size="1" Boundary="31.7 121.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="38" Font="1" Size="3.5" Boundary="31.7 125.4 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">前言 Ⅴ</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="39" Font="1" Size="1" Boundary="31.7 132.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="40" Font="1" Size="3.5" Boundary="31.7 136.65 92.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">1 范围………………………………………………………………………………………………………1</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

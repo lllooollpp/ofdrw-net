@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5241" Font="1" Size="3.5" Boundary="31.7 25.4 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5242" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5243" Font="1" Size="3.5" Boundary="31.7 36.65 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">弧线方向是否为顺时针</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5244" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5245" Font="1" Size="3.5" Boundary="31.7 47.9 54.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">表示由圆弧起始点到结束点是顺时针旋转, 表示由圆弧起</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5246" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5247" Font="1" Size="3.5" Boundary="31.7 59.15 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">true false</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5248" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5249" Font="1" Size="3.5" Boundary="31.7 70.4 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">始点到结束点是逆时针旋转</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5250" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5251" Font="1" Size="3.5" Boundary="31.7 81.65 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5252" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5253" Font="1" Size="3.5" Boundary="31.7 92.9 48.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">SweepDirectionxsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5254" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5255" Font="1" Size="3.5" Boundary="31.7 104.15 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">, ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5256" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5257" Font="1" Size="3.5" Boundary="31.7 115.4 56.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">对于经过坐标系上指定两点给定旋转角度和长短轴长度的椭圆</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5258" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5259" Font="1" Size="3.5" Boundary="31.7 126.65 67.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">满足条件的可能有2个,对应圆弧有4条,通过LareArc属性可以</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5260" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

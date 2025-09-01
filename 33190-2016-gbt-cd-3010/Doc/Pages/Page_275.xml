@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5481" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5482" Font="1" Size="3.5" Boundary="31.7 29.4 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">63</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5483" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5484" Font="1" Size="4" Boundary="31.7 40.65 38.4 8" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="4">
+=== 第 69 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5485" Font="1" Size="3.5" Boundary="31.7 50.65 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5486" Font="1" Size="1" Boundary="31.7 57.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5487" Font="1" Size="3.5" Boundary="31.7 61.9 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">GBT331902016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5488" Font="1" Size="1" Boundary="31.7 69.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5489" Font="1" Size="3.5" Boundary="31.7 73.15 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">文字对象属性说明见表。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5490" Font="1" Size="1" Boundary="31.7 80.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5491" Font="1" Size="3.5" Boundary="31.7 84.4 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">45</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5492" Font="1" Size="1" Boundary="31.7 91.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5493" Font="1" Size="3.5" Boundary="31.7 95.65 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">表45 文字对象属性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5494" Font="1" Size="1" Boundary="31.7 102.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5495" Font="1" Size="3.5" Boundary="31.7 106.9 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">属性 类型 说明 备注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5496" Font="1" Size="1" Boundary="31.7 114.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5497" Font="1" Size="3.5" Boundary="31.7 118.15 42 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">_ 引用资源文件中定义的字型的标识 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5498" Font="1" Size="1" Boundary="31.7 125.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5499" Font="1" Size="3.5" Boundary="31.7 129.4 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Font STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5500" Font="1" Size="1" Boundary="31.7 136.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

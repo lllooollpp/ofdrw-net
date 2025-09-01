@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1321" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1322" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>背 景 层</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1323" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>Backround</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1324" CTM="1 0 0 1 31.7 44"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1325" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>前 景 层、正 文 层、背 景 层 形 成 了 多 层 内 容,这 些 层 按 照 出 现 的 先 后 顺 序 依 次 进 行 渲 染,每 一 层 的 默 认</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1326" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>颜 色 采 用 全 透 明。 层 的 渲 染 顺 序 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1327" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>16</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1328" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>20</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1329" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1330" CTM="1 0 0 1 31.7 79.40000000000002"><ofd:TextCode>
+=== 第 26 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1331" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1332" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1333" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>图 图 层 渲 染 顺 序</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1334" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>16</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1335" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>页 面 块 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1336" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>17</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1337" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>图 页 面 块 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1338" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>17</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1339" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1340" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>页 面 块 属 性 和 节 点 说 明 见 表</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

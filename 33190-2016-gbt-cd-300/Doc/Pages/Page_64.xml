@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1261" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>13</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1262" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>表 模 板 页 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1263" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>13</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1264" CTM="1 0 0 1 31.7 44"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1265" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>_ 模 板 页 的 标 识,不 能 与 已 有 标 识 重 复 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1266" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>ID STID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1267" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>_ 指 向 模 板 页 内 容 描 述 文 件 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1268" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>BaseLoc STLoc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1269" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>: 模 板 页 名 称 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1270" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>Name xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1271" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1272" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>模 板 页 的 默 认 图 层 类 型,其 类 型 描 述 和 呈 现 顺 序 与 中</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1273" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>Laer T e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1274" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>y yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1275" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>的 描 述 和 处 理 一 致,见 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1276" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>15</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1277" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>: ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1278" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>如 果 页 面 引 用 的 多 个 模 板 的 此 属 性 相 同 则 应 根 据 引 用 的 顺 序 来 显 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1279" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>ZOrder xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1280" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>示,先 引 用 者 先 绘 制</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

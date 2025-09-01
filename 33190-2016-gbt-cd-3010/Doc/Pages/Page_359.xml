@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="7161" Font="1" Size="3.5" Boundary="31.7 25.4 54.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">DocRoot ST_Loc 该版本的入口文件 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7162" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7163" Font="1" Size="3.5" Boundary="31.7 36.65 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">附件</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7164" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7165" Font="1" Size="3.5" Boundary="31.7 47.9 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">20</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7166" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7167" Font="1" Size="3.5" Boundary="31.7 59.15 18.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">20.1 附件列表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7168" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7169" Font="1" Size="3.5" Boundary="31.7 70.4 84 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">附件列表文件的入口点在 文档根节点中定义。一个 文档可以定义多个附件,附件列表结</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7170" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7171" Font="1" Size="3.5" Boundary="31.7 81.65 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">7.5 OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7172" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7173" Font="1" Size="3.5" Boundary="31.7 92.9 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">构如图 所示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7174" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7175" Font="1" Size="3.5" Boundary="31.7 104.15 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">91</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7176" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7177" Font="1" Size="3.5" Boundary="31.7 115.4 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">88</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7178" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7179" Font="1" Size="4" Boundary="31.7 126.65 38.4 8" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="4">
+=== 第 94 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7180" Font="1" Size="3.5" Boundary="31.7 136.65 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">/ —</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

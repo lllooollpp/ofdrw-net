@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3561" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt; : &gt; &lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3562" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>ofdTextCodeX=&quot;0&quot;Y=&quot;25&quot;DeltaX=&quot;141414&quot;Font ofdTextCode</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3563" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; : &gt;字 型&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3564" CTM="1 0 0 1 31.7 44"><ofd:TextCode>ofdTextCodeX=&quot;60&quot;Y=&quot;25&quot;DeltaX=&quot;25&quot; ofdTextCode</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3565" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3566" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>ofdTextObject</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3567" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>当 为“宋 体”时,上 述 示 例 的 显 示 效 果 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3568" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>Font 60</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3569" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>64</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3570" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3571" CTM="1 0 0 1 31.7 85.60000000000002"><ofd:TextCode>
+=== 第 70 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3572" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3573" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3574" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>图 字 型 为 宋 体 时 显 示 效 果</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3575" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>60</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3576" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>文 字 定 位</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3577" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>11.3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3578" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>文 字 对 象 使 用 严 格 的 文 字 定 位 信 息 进 行 定 位,文 字 定 位 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3579" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>61</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3580" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>图 文 字 定 位 结 构</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

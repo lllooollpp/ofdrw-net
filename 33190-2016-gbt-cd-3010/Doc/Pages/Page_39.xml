@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="761" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="762" Font="1" Size="3.5" Boundary="31.7 29.4 73.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">)图元可以使用任何颜色绘制(渐变和底纹在本标准中均为颜色的一种形式);</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="763" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="764" Font="1" Size="3.5" Boundary="31.7 40.65 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">b</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="765" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="766" Font="1" Size="3.5" Boundary="31.7 51.9 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">)所有图元都可以被裁剪。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="767" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="768" Font="1" Size="3.5" Boundary="31.7 63.15 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">c</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="769" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="770" Font="1" Size="3.5" Boundary="31.7 74.4 90.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">页面内容包含一系列的图层、页面块和图元对象。在输出页面时,从空白页开始,依据相关内容出</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="771" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="772" Font="1" Size="3.5" Boundary="31.7 85.65 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">现的顺序绘制。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="773" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="774" Font="1" Size="3.5" Boundary="31.7 96.9 86.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">图元对象由其自有数据描述及其修饰参数构成,修饰参数的表示方式采用“属性绘制参数”的</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="775" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="776" Font="1" Size="3.5" Boundary="31.7 108.15 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="777" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="778" Font="1" Size="3.5" Boundary="31.7 119.4 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">模式。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="779" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="780" Font="1" Size="3.5" Boundary="31.7 130.65 33.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">页面中三种最基本的图元对象如下:</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

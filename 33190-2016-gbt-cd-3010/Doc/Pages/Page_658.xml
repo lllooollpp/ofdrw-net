@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="13141" Font="1" Size="3.5" Boundary="31.7 25.4 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13142" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13143" Font="1" Size="3.5" Boundary="31.7 36.65 65.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xschoiceminOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13144" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13145" Font="1" Size="3.5" Boundary="31.7 47.9 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13146" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13147" Font="1" Size="3.5" Boundary="31.7 59.15 123.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xselementname=&quot;Pattern&quot;type=&quot;CTPattern&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13148" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13149" Font="1" Size="3.5" Boundary="31.7 70.4 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13150" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13151" Font="1" Size="3.5" Boundary="31.7 81.65 128.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xselementname=&quot;AxialShd&quot;type=&quot;CTAxialShd&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13152" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13153" Font="1" Size="3.5" Boundary="31.7 92.9 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13154" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13155" Font="1" Size="3.5" Boundary="31.7 104.15 132.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xselementname=&quot;RadialShd&quot;type=&quot;CTRadialShd&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13156" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13157" Font="1" Size="3.5" Boundary="31.7 115.4 155.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;xs:elementname=&quot;GouraudShd&quot;te=&quot;CT_GouraudShd&quot;/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13158" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13159" Font="1" Size="3.5" Boundary="31.7 126.65 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13160" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

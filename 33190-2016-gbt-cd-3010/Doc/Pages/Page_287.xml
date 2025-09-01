@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5721" Font="1" Size="3.5" Boundary="31.7 25.4 35.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">CharDirection值 定义</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5722" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5723" Font="1" Size="3.5" Boundary="31.7 36.65 39.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">0 默认值,以‘A’为例子,显示效果为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5724" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5725" Font="1" Size="3.5" Boundary="31.7 47.9 44.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">文字顺时针旋转 ,以‘’为例子,显示效果为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5726" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5727" Font="1" Size="3.5" Boundary="31.7 59.15 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">90 90° A</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5728" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5729" Font="1" Size="3.5" Boundary="31.7 70.4 60.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">180 文字顺时针旋转180°,以‘A’为例子,显示效果为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5730" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5731" Font="1" Size="3.5" Boundary="31.7 81.65 44.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">文字顺时针旋转 ,以‘’为例子,显示效果为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5732" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5733" Font="1" Size="3.5" Boundary="31.7 92.9 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">270 270° A</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5734" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5735" Font="1" Size="3.5" Boundary="31.7 104.15 35.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ReadDirection值 定义</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5736" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5737" Font="1" Size="3.5" Boundary="31.7 115.4 90.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">默认值,从左往右阅读,以字符串“ABC”为例,CharDirection为0,显示效果</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5738" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5739" Font="1" Size="3.5" Boundary="31.7 126.65 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">0为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5740" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

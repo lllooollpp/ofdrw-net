@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4021" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>URI 56</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4022" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>表 动 作 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4023" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>56 URI</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4024" CTM="1 0 0 1 31.7 44"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4025" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>: 目 标 的 位 置 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4026" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>URI xsstrin URI</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4027" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4028" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>: ,用 于 相 对 地 址 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4029" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>Base xsstrin BaseURI</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4030" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4031" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>播 放 音 频 动 作</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4032" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>14.5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4033" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>。 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4034" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>动 作 表 明 播 放 一 段 音 频 动 作 结 构 如 图 所 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4035" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>Sound Sound 78</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4036" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>图 播 放 音 频 动 作 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4037" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>78</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4038" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>播 放 音 频 动 作 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4039" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>57</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4040" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>76</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

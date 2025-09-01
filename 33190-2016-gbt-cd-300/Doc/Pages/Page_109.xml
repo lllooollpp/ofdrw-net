@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2161" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>轴 向 渐 变 的 示 例:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2162" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>Ma T e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2163" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2164" CTM="1 0 0 1 31.7 44"><ofd:TextCode>以 下 给 出 的 值 分 别 为 、 、 时 的 示 例。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2165" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>MaT e DirectReeatReflect</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2166" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>pyp p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2167" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2168" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>ofdPathObjectID=&quot;10005&quot;Boundary=&quot;101014040&quot;Fill=&quot;true&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2169" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2170" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>ofdFillColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2171" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2172" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>ofdAxialShdID=&quot;10007&quot;StartPoint=&quot;00&quot;EndPoint=&quot;1400&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2173" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2174" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>ofdSement</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2175" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2176" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2177" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>ofdColorValue=&quot;2552550&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2178" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2179" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>ofdSegment</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2180" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2841" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2842" Font="1" Size="3.5" Boundary="31.7 29.4 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">——— 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2843" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2844" Font="1" Size="3.5" Boundary="31.7 40.65 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">L 结合点长度</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2845" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2846" Font="1" Size="3.5" Boundary="31.7 51.9 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">线条的虚线样式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2847" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2848" Font="1" Size="3.5" Boundary="31.7 63.15 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">8.2.4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2849" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2850" Font="1" Size="3.5" Boundary="31.7 74.4 54.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">线条的虚线样式通过 和 两个属性进行控制。组合见表。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2851" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2852" Font="1" Size="3.5" Boundary="31.7 85.65 50.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">DashPatternDashOffset 23</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2853" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2854" Font="1" Size="3.5" Boundary="31.7 96.9 75.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">指定虚线的线段和间隔长度,有两个或多个值,其中第一个值指定了虚线线段的长</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2855" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2856" Font="1" Size="3.5" Boundary="31.7 108.15 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">DashPattern</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2857" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2858" Font="1" Size="3.5" Boundary="31.7 119.4 46.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">度,第二个值指定了线段间隔的长度,以此类推。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2859" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2860" Font="1" Size="3.5" Boundary="31.7 130.65 109.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">DashOffset指定虚线绘制偏移位置,即在当前位置按绘制相反方向偏移DashOffset值指定的距离</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

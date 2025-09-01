@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5581" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt; : :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5582" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs attributename=&quot;Visible&quot;t e=&quot;xs boolean&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5583" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5584" CTM="1 0 0 1 31.7 44"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5585" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>default=&quot;true&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5586" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5587" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>xs attributename=&quot;Subtype&quot;type=&quot;xs string&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5588" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>&lt; : :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5589" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>xs attributename=&quot;Print&quot;type=&quot;xs boolean&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5590" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5591" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>default=&quot;true&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5592" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt; : :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5593" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>xs attributename=&quot;NoZoom&quot;type=&quot;xs boolean&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5594" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5595" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>default=&quot;false&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5596" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt; : :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5597" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs attributename=&quot;NoRotate&quot;t e=&quot;xs boolean&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5598" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5599" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5600" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>default=&quot;false&quot;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

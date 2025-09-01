@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3741" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>多 个 字 符 对 应 一 个 字 符 的 情 况 描 述 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3742" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>67</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3743" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>图 多 对 一</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3744" CTM="1 0 0 1 31.7 44"><ofd:TextCode>67</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3745" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>上 图 是 一 个 常 用 的 英 文 连 写 示 例,在 例 子 中, 和 字 符 在 显 示 的 时 候 被 一 个 的 连 字 符 所 代 替,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3746" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>f l fl 2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3747" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>个 字 符( 和 )对 应 为 个 字 形( )。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3748" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>0066 006C 1 192</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3749" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>一 对 多</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3750" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>11.4.4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3751" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>一 个 字 符 对 应 多 个 字 形 的 情 况 描 述 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3752" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>68</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3753" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>69</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3754" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3755" CTM="1 0 0 1 31.7 110.40000000000003"><ofd:TextCode>
+=== 第 75 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3756" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3757" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3758" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>图 一 对 多</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3759" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>68</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3760" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>上 图 是 一 个 泰 文 文 字 的 例 子,例 子 中 个 字 符( )对 应 个 字 形( 和 )。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

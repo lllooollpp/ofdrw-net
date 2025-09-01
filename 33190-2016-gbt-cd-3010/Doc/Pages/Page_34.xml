@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="661" Font="1" Size="3.5" Boundary="31.7 25.4 88.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">PNG:可移植网络图形格式(PortableNetworkGrahicFormat)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="662" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="663" Font="1" Size="3.5" Boundary="31.7 36.65 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="664" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="665" Font="1" Size="3.5" Boundary="31.7 47.9 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: , 、、 (, , )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="666" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="667" Font="1" Size="3.5" Boundary="31.7 59.15 73.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">RGB一种颜色空间采用红绿蓝三个分量类表示颜色RedGreenBlue</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="668" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="669" Font="1" Size="3.5" Boundary="31.7 70.4 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">:标签图像文件格式( )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="670" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="671" Font="1" Size="3.5" Boundary="31.7 81.65 54.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">TIFF TaggedImageFileFormat</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="672" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="673" Font="1" Size="3.5" Boundary="31.7 92.9 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">:通用资源标识符( )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="674" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="675" Font="1" Size="3.5" Boundary="31.7 104.15 65.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">URI UniversalResourceIdentifier</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="676" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="677" Font="1" Size="3.5" Boundary="31.7 115.4 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">:通用唯一标示符( )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="678" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="679" Font="1" Size="3.5" Boundary="31.7 126.65 67.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">UUID UniversallyUniqueIdentifier</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="680" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

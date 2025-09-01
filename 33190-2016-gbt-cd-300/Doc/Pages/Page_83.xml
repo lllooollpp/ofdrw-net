@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1641" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>Y X X Y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1642" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>β</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1643" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>; , 、 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1644" CTM="1 0 0 1 31.7 44"><ofd:TextCode>半 部 分 歪 斜 角 和 的 取 值 在 到 之 间 不 包 含</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1645" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>α α 0 360 90270</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1646" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>β</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1647" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>1 tanα 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1648" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>é ù</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1649" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1650" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>tan 1 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1651" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>β</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1652" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1653" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1654" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>ë 0 0 1û</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1655" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>26</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1656" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1657" CTM="1 0 0 1 31.7 122.80000000000004"><ofd:TextCode>
+=== 第 32 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1658" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1659" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1660" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>图 元 对 象 数 据 经 过 以 下 步 骤 完 成 向 设 备 坐 标 系 统 的 变 换:</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

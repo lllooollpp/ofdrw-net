@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1581" Font="1" Size="3.5" Boundary="31.7 25.4 60.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">有效期,即此文档允许访问的期限,其具体期限取决于开始日期和</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1582" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1583" Font="1" Size="3.5" Boundary="31.7 36.65 60.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">结束日期,其中开始日期不能晚于结束日期,并且开始日期和结束</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1584" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1585" Font="1" Size="3.5" Boundary="31.7 47.9 67.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">日期至少出现一个。当不设置开始日期时,代表不限定开始日期, 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1586" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1587" Font="1" Size="3.5" Boundary="31.7 59.15 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ValidPeriod</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1588" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1589" Font="1" Size="3.5" Boundary="31.7 70.4 60.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">当不设置结束日期时代表不限定结束日期;当此不设置此节点时,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1590" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1591" Font="1" Size="3.5" Boundary="31.7 81.65 31.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">表示开始日期和结束日期均不受限</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1592" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1593" Font="1" Size="3.5" Boundary="31.7 92.9 67.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">StartDate xs:dateTime 有效期开始日期 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1594" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1595" Font="1" Size="3.5" Boundary="31.7 104.15 63 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">EndDate xs:dateTime 有效期结束日期 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1596" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1597" Font="1" Size="3.5" Boundary="31.7 115.4 79.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">本标准支持设置文档视图首选项( )节点,以达到限定文档初始化视图便于阅读的目</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1598" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1599" Font="1" Size="3.5" Boundary="31.7 126.65 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">VPreferences</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1600" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2881" Font="1" Size="3.5" Boundary="31.7 25.4 33.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">DashPattern=null</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2882" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2883" Font="1" Size="3.5" Boundary="31.7 36.65 58.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">DashPattern=&quot;3030&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2884" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2885" Font="1" Size="3.5" Boundary="31.7 47.9 86.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">DashOffset=10DashPattern=&quot;3030&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2886" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2887" Font="1" Size="3.5" Boundary="31.7 59.15 58.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">DashPattern=&quot;3015&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2888" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2889" Font="1" Size="3.5" Boundary="31.7 70.4 86.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">DashOffset=25DashPattern=&quot;1530&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2890" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2891" Font="1" Size="3.5" Boundary="31.7 81.65 86.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">DashOffset=50DashPattern=&quot;3015&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2892" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2893" Font="1" Size="3.5" Boundary="31.7 92.9 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">线条的端点样式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2894" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2895" Font="1" Size="3.5" Boundary="31.7 104.15 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">8.2.5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2896" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2897" Font="1" Size="3.5" Boundary="31.7 115.4 54.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">线条端点样式属性Ca的取值范围及其呈现效果见表24。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2898" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2899" Font="1" Size="3.5" Boundary="31.7 126.65 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2900" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

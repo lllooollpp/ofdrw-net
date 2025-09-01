@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1" Font="1" Size="5" Boundary="31.7 25.4 60 7.5" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="5">PDF转换文档 - 原文件: 1.pdf</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2" Font="1" Size="2" Boundary="31.7 34.9 1.2 4" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="2">
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3" Font="1" Size="2.65" Boundary="31.7 40.9 11.113 6.3" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="2.65"> 60分钟  </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4" Font="1" Size="3.66" Boundary="31.7 49.2 13.192 12.086" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.66">数学趣味游戏</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5" Font="1" Size="2.65" Boundary="31.7 63.286 82.55 6.3" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="2.65">学科：数学 难度：中等 状态：未开始 总分：100 考试时间：60分钟 描述：玩数字接龙游戏练习口算能力</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6" Font="1" Size="2.65" Boundary="31.7 71.586 80.963 6.3" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="2.65">数字接龙游戏中，第一个数字是5，接下来每个数字比前一个数字大3，请问第5个数字是多少？答：______</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7" Font="1" Size="2.65" Boundary="31.7 79.887 96.838 6.3" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="2.65">在数字接龙游戏中，如果第一个数字是10，每个数字比前一个数字小2，请问第4个数字是多少？A. 4B. 6C. 8D. 10</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8" Font="1" Size="2.65" Boundary="31.7 88.187 82.55 6.3" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="2.65">数字接龙游戏中，第一个数字是2，接下来每个数字是前一个数字的2倍，请问第6个数字是多少？答：______</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="9" Font="1" Size="2.65" Boundary="31.7 96.488 98.425 6.3" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="2.65">在数字接龙游戏中，如果第一个数字是3，每个数字比前一个数字大5，请问第3个数字是多少？A. 8B. 13C. 18D. 23</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10" Font="1" Size="2.65" Boundary="31.7 104.788 84.138 6.3" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="2.65">数字接龙游戏中，第一个数字是1，接下来每个数字是前一个数字的平方，请问第4个数字是多少？答：______ </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="11" Font="1" Size="2.65" Boundary="31.7 113.088 7.938 6.3" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="2.65">6. 17</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="12" Font="1" Size="2.65" Boundary="31.7 121.389 6.35 6.3" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="2.65">7. A</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="13" Font="1" Size="2.65" Boundary="31.7 129.689 7.938 6.3" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="2.65">8. 64</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="14" Font="1" Size="2.65" Boundary="31.7 137.989 6.35 6.3" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="2.65">9. B</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="15" Font="1" Size="2.65" Boundary="31.7 146.29 7.938 6.3" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="2.65">10. 1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="16" Font="1" Size="2" Boundary="31.7 154.59 1.2 4" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="2">
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="17" Font="1" Size="3.2" Boundary="31.7 160.59 604.8 10.24" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.2">=== 转换质量统计 ===
+总页数: 1
+含文本页: 1
+无内容流页: 0
+存在文本指令但提取为空页: 0
+总字符数: 401
+平均字符/页(全部): 401.0
+平均字符/页(含文本): 401.0
+简单伪布局回退页: 0 (0.0%)
+手动UniGB回退页: 0 (0.0%)
+字体无ToUnicode但成功解码页: 0
+累计图片XObject: 0
+累计Form XObject: 0
+
+=== 参数配置 ===
+行Y合并阈值: 3
+空格间隙因子: 0.6
+启用标签清理: True
+Pt-&gt;mm系数: 0.352778
+默认字号pt: 12
+字号有效范围pt: 5~72
+</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

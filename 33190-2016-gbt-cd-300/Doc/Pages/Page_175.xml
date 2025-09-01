@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3481" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3482" CTM="1 0 0 1 31.7 29.799999999999997"><ofd:TextCode>
+=== 第 69 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3483" CTM="1 0 0 1 31.7 35.8"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3484" CTM="1 0 0 1 31.7 42"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3485" CTM="1 0 0 1 31.7 48.2"><ofd:TextCode>文 字 对 象 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3486" CTM="1 0 0 1 31.7 54.400000000000006"><ofd:TextCode>45</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3487" CTM="1 0 0 1 31.7 60.60000000000001"><ofd:TextCode>表 文 字 对 象 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3488" CTM="1 0 0 1 31.7 66.80000000000001"><ofd:TextCode>45</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3489" CTM="1 0 0 1 31.7 73.00000000000001"><ofd:TextCode>属 性 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3490" CTM="1 0 0 1 31.7 79.20000000000002"><ofd:TextCode>_ 引 用 资 源 文 件 中 定 义 的 字 型 的 标 识 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3491" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>Font STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3492" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>: 字 号,单 位 为 毫 米 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3493" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>Size xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3494" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>是 否 勾 边</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3495" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3496" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>Stroke xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3497" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3498" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>false</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3499" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>是 否 填 充</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3500" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

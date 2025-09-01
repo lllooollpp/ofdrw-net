@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5541" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5542" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs attributename=&quot;ID&quot;type=&quot;ST ID&quot;use=&quot;required&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5543" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5544" CTM="1 0 0 1 31.7 44"><ofd:TextCode>xs attributename=&quot;Type&quot;use=&quot;required&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5545" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5546" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>xs sim leT e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5547" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5548" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>&lt; : : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5549" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>xs restrictionbase=&quot;xs string&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5550" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>99</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5551" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5552" CTM="1 0 0 1 31.7 91.80000000000003"><ofd:TextCode>
+=== 第 105 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5553" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5554" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5555" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5556" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>xs enumerationvalue=&quot;Link&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5557" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5558" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>xs enumerationvalue=&quot;Path&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5559" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5560" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>xs enumerationvalue=&quot;Hi hli ht&quot;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

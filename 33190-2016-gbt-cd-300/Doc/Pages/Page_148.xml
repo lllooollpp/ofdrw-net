@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2941" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>见 绘 制 参 数</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2942" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>8.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2943" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>: 如 果 图 元 对 象 有 属 性,则 用 此 值 覆 盖 中 对 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2944" CTM="1 0 0 1 31.7 44"><ofd:TextCode>DashOffset xsdouble DrawParam DrawParam</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2945" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>应 的 值</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2946" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>见 绘 制 参 数</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2947" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>8.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2948" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>_ 如 果 图 元 对 象 有 属 性,则 用 此 值 覆 盖 中 对 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2949" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>DashPattern STArra DrawParam DrawParam</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2950" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2951" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>应 的 值</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2952" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>图 元 对 象 的 透 明 度,取 值 区 间 为[, ]</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2953" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>0255</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2954" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>: 表 示 全 透 明, 表 示 完 全 不 透 明 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2955" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>Alha xsint 0 255</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2956" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2957" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>默 认 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2958" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2959" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>图 元 对 象 的 动 作 序 列</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2960" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5621" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>xmlversion=&quot;1.0&quot;encoding=&quot;UTF-8&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5622" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>&lt; : :// /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5623" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>xs schemaxmlns=&quot;htt www.ofds ec.or 2016&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5624" CTM="1 0 0 1 31.7 44"><ofd:TextCode>p p g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5625" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>: :// / /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5626" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>xmlns xs=&quot;htt www.w3.or 2001 XMLSchema&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5627" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>p g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5628" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>:// /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5629" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>targetNamespace=&quot;http www.ofdspec.org 2016&quot;elementFormDefault=&quot;qualified&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5630" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5631" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>attributeFormDefault=&quot;unqualified&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5632" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5633" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>xs includeschemaLocation=&quot;Pa e.xsd&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5634" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5635" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5636" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>xs includeschemaLocation=&quot;Definitions.xsd&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5637" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>&lt;! 。 、 、 、 ( )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5638" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>资 源 文 件 定 义 文 档 中 使 用 的 资 源 性 文 件 比 如 图 形 图 像 多 媒 体 绘 制 参 数 样 式 等 应 在 资</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5639" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>--</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5640" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>源 文 件 中 统 一 管 理。 &gt;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

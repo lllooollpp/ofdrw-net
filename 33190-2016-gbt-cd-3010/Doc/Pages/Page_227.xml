@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4521" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4522" Font="1" Size="3.5" Boundary="31.7 29.4 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Area</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4523" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4524" Font="1" Size="3.5" Boundary="31.7 40.65 31.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">分,最终裁剪区是这些区域的并集</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4525" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4526" Font="1" Size="3.5" Boundary="31.7 51.9 60.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">引用资源文件中的绘制参数的标识,线宽、结合点和端点样式等绘</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4527" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4528" Font="1" Size="3.5" Boundary="31.7 63.15 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">_ 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4529" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4530" Font="1" Size="3.5" Boundary="31.7 74.4 35.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">DrawParam STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4531" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4532" Font="1" Size="3.5" Boundary="31.7 85.65 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4533" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4534" Font="1" Size="3.5" Boundary="31.7 96.9 54.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">制特性对裁剪效果会产生影响有关绘制参数的描述见8.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4535" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4536" Font="1" Size="3.5" Boundary="31.7 108.15 63 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">_ 针对对象坐标系,对 下包含的 和 进行进一步的变换 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4537" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4538" Font="1" Size="3.5" Boundary="31.7 119.4 52.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">CTM STArray Area PathText</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4539" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4540" Font="1" Size="3.5" Boundary="31.7 130.65 39.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">_ 用于裁剪的图形,见 图形对象 必选</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

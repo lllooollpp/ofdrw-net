@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2721" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>法 绘 制 渐 变 图 形 如 图</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2722" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>38</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2723" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>图 高 洛 德 渐 变 示 例</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2724" CTM="1 0 0 1 31.7 44"><ofd:TextCode>38</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2725" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>高 洛 德 渐 变 算 法 在 平 面 图 形 中 使 用 线 性 内 插 算 法 为 各 个 点 计 算 颜 色 数 值,如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2726" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>39</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2727" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>图 高 洛 德 渐 变 算 法 图 例</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2728" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>39</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2729" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>在 图 三 角 形 中,三 个 顶 点 的 颜 色 值 分 别 为 、 、 。 三 角 形 内 一 点 的 颜 色 值 为 ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2730" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>39 ABC V V V P V</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2731" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>A B C P</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2732" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>三 角 形 、 、 、 的 面 积 分 别 为 、 、 、 ,则:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2733" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>ABC PBC PAB PAC S S S S</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2734" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>ABC PBC PAB PAC</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2735" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>( )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2736" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>V ×S +V ×S +V ×S</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2737" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>A PBC B PAC C PAB</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2738" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>V =</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2739" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>P</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2740" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>S</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

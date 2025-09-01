@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4161" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4162" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>表 注 释 信 息 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4163" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>61</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4164" CTM="1 0 0 1 31.7 44"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4165" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>_ 注 释 的 标 识 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4166" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>ID STID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4167" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>: 注 释 类 型,具 体 取 值 请 见 表 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4168" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>Type xsstring 62</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4169" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>: 注 释 创 建 者 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4170" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>Creator xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4171" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>: 最 近 一 次 修 改 的 时 间 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4172" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>LastModDate xsdate</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4173" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>: 注 释 子 类 型 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4174" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>Subt e xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4175" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>yp g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4176" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>表 示 该 注 释 对 象 是 否 显 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4177" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4178" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>Visible xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4179" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4180" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>true</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

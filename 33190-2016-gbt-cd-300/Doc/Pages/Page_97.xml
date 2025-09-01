@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1921" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>_ 底 纹 填 充,复 杂 颜 色 的 一 种。 描 述 见 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1922" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>Pattern CTPattern 8.3.3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1923" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>_ 轴 向 渐 变,复 杂 颜 色 的 一 种。 描 述 见 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1924" CTM="1 0 0 1 31.7 44"><ofd:TextCode>AxialShd CTAxialShd 8.3.4.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1925" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>_ 径 向 渐 变,复 杂 颜 色 的 一 种。 描 述 见 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1926" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>RadialShd CTRadialShd 8.3.4.3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1927" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>_ 高 洛 德 渐 变,复 杂 颜 色 的 一 种。 描 述 见 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1928" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>GouraudShd CTGouraudShd 8.3.4.4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1929" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>_ 格 构 高 洛 德 渐 变,复 杂 颜 色 的 一 种。 描 述 见 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1930" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>LaGouraudShd CTLaGouraudShd 8.3.4.5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1931" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>32</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1932" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1933" CTM="1 0 0 1 31.7 98.00000000000003"><ofd:TextCode>
+=== 第 38 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1934" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1935" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1936" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>基 本 颜 色 支 持 两 种 指 定 方 式:一 种 是 通 过 设 定 颜 色 各 通 道 值 指 定 颜 色 空 间 中 的 某 个 颜 色,另 一 种 是</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1937" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>通 过 索 引 值 取 得 颜 色 空 间 中 的 一 个 预 定 义 颜 色。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1938" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>由 于 不 同 颜 色 空 间 下,颜 色 通 道 的 含 义、数 目 各 不 相 同,因 此 对 颜 色 空 间 的 类 型、颜 色 值 的 描 述 格 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1939" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>, 。 ( ) , ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1940" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>等 做 出 了 详 细 的 说 明 见 表 简 称 有 效 时 颜 色 通 道 值 的 取 值 下 限 是 上</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

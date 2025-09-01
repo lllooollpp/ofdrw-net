@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4441" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>Reference</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4442" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>本 签 名 关 联 的 外 观(用 中 的 注 释 来 表 示),该 节 点 可 出 现</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4443" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4444" CTM="1 0 0 1 31.7 44"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4445" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>StamAnnot</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4446" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4447" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>多 次</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4448" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>电 子 印 章 信 息 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4449" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>Seal</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4450" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>_ ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4451" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>指 向 包 内 的 安 全 电 子 印 章 文 件 遵 循 密 码 领 域 的 相 关 规 范 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4452" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>BaseLoc STLoc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4453" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>指 向 安 全 签 名 提 供 者 所 返 回 的 针 对 签 名 描 述 文 件 计 算 所 得 的 签</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4454" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4455" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4456" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>SignedValue STLoc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4457" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>名 值 文 件</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4458" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>签 名 的 范 围</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4459" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>18.2.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4460" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>的 下 级 节 点 记 录 了 包 内 文 件 的 摘 要 信 息,其 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

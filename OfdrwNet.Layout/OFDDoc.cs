@@ -345,14 +345,20 @@ namespace OfdrwNet.Layout
                     var docDefault = ofdDir!.ObtainDocDefault();
                     var document = docDefault.GetDocument();
                     var parseEngine = new OfdrwNet.Layout.Engine.VPageParseEngine(pageLayout, document, prm!, maxUnitID);
-                    // TODO: 修复Handler类型冲突问题
+                    
+                    // 暂时注释掉页面处理器设置，因为类型不兼容
+                    // TODO: 修复VPageHandler类型兼容问题
                     // if (onPageHandler != null)
                     // {
-                    //     var adapter = new OfdrwNet.Layout.Handler.VPageHandlerAdapter(onPageHandler);
-                    //     parseEngine.SetBeforePageParseHandler((OfdrwNet.Layout.Engine.IVPageHandler)adapter);
+                    //     var adapter = new VPageHandlerAdapter(onPageHandler);
+                    //     parseEngine.SetBeforePageParseHandler(adapter);
                     // }
-                    // TODO: 修复VirtualPage类型冲突问题
-                    // parseEngine.Process(vPageList);
+                    
+                    // 🔥 关键修复：实际调用虚拟页面处理
+                    parseEngine.Process(vPageList);
+                    
+                    // 更新最大单元ID
+                    maxUnitID = parseEngine.GetMaxUnitId();
                 }
 
                 if (vPageList.Count == 0 && annotationRender == null && reader == null)

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2521" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2522" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>ofdRadialShd</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2523" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2524" CTM="1 0 0 1 31.7 44"><ofd:TextCode>ofdFillColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2525" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt; : &gt; &lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2526" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>ofdAbbreviatedDataM00L2000L200150L0150C ofdAbbreviatedData</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2527" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2528" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>ofdPathObect</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2529" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>j</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2530" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2531" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>ofdPathObjectID=&quot;10014&quot;Boundary=&quot;350250200150&quot;Fill=&quot;true&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2532" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2533" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>ofdFillColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2534" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt; :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2535" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>ofdRadialShdStartPoint=&quot;4070&quot;StartRadius=&quot;50.0&quot;EndPoint=&quot;14070&quot;EndRadius=&quot;10.0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2536" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2537" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>Extend=&quot;1&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2538" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>42</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2539" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2540" CTM="1 0 0 1 31.7 141.40000000000003"><ofd:TextCode>
+=== 第 48 页 ===
+</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

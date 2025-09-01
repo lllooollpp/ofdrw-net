@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1341" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>16</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1342" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>表 页 面 块 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1343" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>16</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1344" CTM="1 0 0 1 31.7 44"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1345" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>_ 页 面 块,可 以 嵌 套 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1346" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>PaeBlock CTPaeBlock</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1347" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>g g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1348" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>_ 文 字 对 象,见 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1349" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>TextObect CTText 11.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1350" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>j</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1351" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>_ 图 形 对 象,见 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1352" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>PathObect CTPath 9.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1353" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>j</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1354" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>图 像 对 象,见 第 章</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1355" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>10</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1356" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>_ 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1357" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>ImaeObect CTImae</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1358" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>g j g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1359" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1360" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>带 有 播 放 视 频 动 作 时 见 第 章</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

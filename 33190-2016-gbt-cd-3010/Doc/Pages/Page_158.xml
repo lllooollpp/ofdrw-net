@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3141" Font="1" Size="3.5" Boundary="31.7 25.4 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">26</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3142" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3143" Font="1" Size="3.5" Boundary="31.7 36.65 18.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">底纹属性说明见表。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3144" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3145" Font="1" Size="3.5" Boundary="31.7 47.9 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">28</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3146" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3147" Font="1" Size="3.5" Boundary="31.7 59.15 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">表28 底纹属性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3148" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3149" Font="1" Size="3.5" Boundary="31.7 70.4 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">名称 类型 说明 备注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3150" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3151" Font="1" Size="3.5" Boundary="31.7 81.65 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: 底纹单元的宽度 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3152" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3153" Font="1" Size="3.5" Boundary="31.7 92.9 29.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Width xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3154" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3155" Font="1" Size="3.5" Boundary="31.7 104.15 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: 底纹单元的高度 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3156" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3157" Font="1" Size="3.5" Boundary="31.7 115.4 31.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Height xsdouble</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3158" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3159" Font="1" Size="3.5" Boundary="31.7 126.65 58.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">方向底纹单元间距,默认值为底纹单元的宽度。若设定值小于底</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3160" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

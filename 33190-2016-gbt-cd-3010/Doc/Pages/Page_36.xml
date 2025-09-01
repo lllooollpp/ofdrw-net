@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="701" Font="1" Size="3.5" Boundary="31.7 25.4 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="702" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="703" Font="1" Size="4" Boundary="31.7 36.65 36 8" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="4">
+=== 第 8 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="704" Font="1" Size="3.5" Boundary="31.7 46.65 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="705" Font="1" Size="1" Boundary="31.7 53.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="706" Font="1" Size="3.5" Boundary="31.7 57.9 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">GBT331902016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="707" Font="1" Size="1" Boundary="31.7 65.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="708" Font="1" Size="3.5" Boundary="31.7 69.15 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">录。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="709" Font="1" Size="1" Boundary="31.7 76.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="710" Font="1" Size="3.5" Boundary="31.7 80.4 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">A</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="711" Font="1" Size="1" Boundary="31.7 87.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="712" Font="1" Size="3.5" Boundary="31.7 91.65 12.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">5.2 结构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="713" Font="1" Size="1" Boundary="31.7 98.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="714" Font="1" Size="3.5" Boundary="31.7 102.9 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">“ ” 。 ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="715" Font="1" Size="1" Boundary="31.7 110.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="716" Font="1" Size="3.5" Boundary="31.7 114.15 81.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">OFD采用容器+文档的方式描述和存储数据容器是一个虚拟存储系统将各类数据描述文</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="717" Font="1" Size="1" Boundary="31.7 121.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="718" Font="1" Size="3.5" Boundary="31.7 125.4 50.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">件聚合起来,并提供相应的访问接口和数据压缩方法。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="719" Font="1" Size="1" Boundary="31.7 132.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="720" Font="1" Size="3.5" Boundary="31.7 136.65 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">结构如图所示。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

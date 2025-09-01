@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4101" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4102" Font="1" Size="3.5" Boundary="31.7 29.4 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ofdPathObject</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4103" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4104" Font="1" Size="3.5" Boundary="31.7 40.65 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4105" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4106" Font="1" Size="3.5" Boundary="31.7 51.9 31.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">上述示例的显示效果如图36所示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4107" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4108" Font="1" Size="3.5" Boundary="31.7 63.15 35.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">图36 径向渐变的Extend属性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4109" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4110" Font="1" Size="3.5" Boundary="31.7 74.4 18.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">径向渐变的 示例:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4111" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4112" Font="1" Size="3.5" Boundary="31.7 85.65 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">MapType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4113" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4114" Font="1" Size="3.5" Boundary="31.7 96.9 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4115" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4116" Font="1" Size="3.5" Boundary="31.7 108.15 180.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ofdPathObjectID=&quot;10010&quot;Boundary=&quot;50250200150&quot;Fill=&quot;true&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4117" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4118" Font="1" Size="3.5" Boundary="31.7 119.4 44.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;ofd:FillColor&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4119" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4120" Font="1" Size="3.5" Boundary="31.7 130.65 258.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;ofd:RadialShdStartPoint=&quot;4070&quot;StartRadius=&quot;10&quot;EndPoint=&quot;5090&quot;EndRadius=&quot;70&quot;&gt;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

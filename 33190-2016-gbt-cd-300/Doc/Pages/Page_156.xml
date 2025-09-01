@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3101" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>53</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3102" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3103" CTM="1 0 0 1 31.7 36"><ofd:TextCode>
+=== 第 59 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3104" CTM="1 0 0 1 31.7 42"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3105" CTM="1 0 0 1 31.7 48.2"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3106" CTM="1 0 0 1 31.7 54.400000000000006"><ofd:TextCode>条 射 线,同 时 引 入 一 个 初 始 值 为 的 计 数,射 线 每 经 过 任 意 线 型 时 计 数 加 ,如 果 每 条 射 线 总 计 数 均 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3107" CTM="1 0 0 1 31.7 60.60000000000001"><ofd:TextCode>0 1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3108" CTM="1 0 0 1 31.7 66.80000000000001"><ofd:TextCode>奇 数,则 判 断 该 点 在 路 径 内 部,反 之,则 该 点 在 路 径 外 部,如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3109" CTM="1 0 0 1 31.7 73.00000000000001"><ofd:TextCode>48</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3110" CTM="1 0 0 1 31.7 79.20000000000002"><ofd:TextCode>图 奇 偶 规 则 示 意 图</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3111" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>48</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3112" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>, 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3113" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>在 路 径 内 部 的 点 作 为 填 充 时 的 有 效 区 域 或 作 为 裁 剪 区 时 的 有 效 范 围</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3114" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>非 紧 缩 描 述</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3115" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>9.3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3116" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>图 形 的 表 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3117" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>9.3.1 XML</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3118" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>图 形 也 可 采 用 复 杂 类 型 的 方 式 进 行 描 述,这 种 方 式 主 要 用 于 区 域( )。 区 域 由 一 系 列</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3119" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>XML Region</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3120" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>的 分 路 径( )组 成,每 个 分 路 径 都 是 闭 合 的,其 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

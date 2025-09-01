@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1101" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>默 认 值</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1102" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>false</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1103" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>是 否 隐 藏 菜 单 栏</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1104" CTM="1 0 0 1 31.7 44"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1105" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>HideMenubar xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1106" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>默 认 值:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1107" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>false</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1108" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>是 否 隐 藏 主 窗 口 之 外 的 其 他 窗 体 组 件</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1109" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1110" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1111" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>HideWindowUI xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1112" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1113" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>默 认 值</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1114" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>false</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1115" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>, :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1116" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>自 动 缩 放 模 式 可 取 值 如 下</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1117" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>——— 默 认 缩 放</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1118" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>Default</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1119" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>——— 适 合 高 度</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1120" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>FitHeiht</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

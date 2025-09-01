@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="7241" Font="1" Size="3.5" Boundary="31.7 25.4 18.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: 创建时间 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7242" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7243" Font="1" Size="3.5" Boundary="31.7 36.65 48.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">CreationDate xsdateTime</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7244" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7245" Font="1" Size="3.5" Boundary="31.7 47.9 18.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: 修改时间 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7246" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7247" Font="1" Size="3.5" Boundary="31.7 59.15 37.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ModDate xsdateTime</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7248" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7249" Font="1" Size="3.5" Boundary="31.7 70.4 31.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: 附件大小,以 为单位 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7250" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7251" Font="1" Size="3.5" Boundary="31.7 81.65 33.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Size xsdouble KB</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7252" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7253" Font="1" Size="3.5" Boundary="31.7 92.9 12.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">附件是否可见</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7254" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7255" Font="1" Size="3.5" Boundary="31.7 104.15 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7256" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7257" Font="1" Size="3.5" Boundary="31.7 115.4 35.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Visible xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7258" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7259" Font="1" Size="3.5" Boundary="31.7 126.65 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">默认为true</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7260" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

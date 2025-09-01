@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4121" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>注 释 入 口 文 件</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4122" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>15.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4123" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>注 释 是 版 式 文 档 形 成 后 附 加 的 图 文 信 息,用 户 可 通 过 鼠 标 或 键 盘 与 其 进 行 交 互。 本 标 准 中,页 面 内</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4124" CTM="1 0 0 1 31.7 44"><ofd:TextCode>容 与 注 释 内 容 是 分 文 件 描 述 的。 文 档 的 注 释 在 注 释 列 表 文 件 中 按 照 页 面 进 行 组 织 索 引,注 释 的 内 容 在</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4125" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>分 页 注 释 文 件 中 描 述,注 释 列 表 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4126" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>80</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4127" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>图 注 释 列 表 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4128" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>80</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4129" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>( ) 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4130" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>注 释 列 表 属 性 说 明 见 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4131" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>Page 60</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4132" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>表 注 释 列 表 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4133" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>60</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4134" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4135" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>注 释 所 在 页 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4136" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>Pae</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4137" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4138" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>_ 引 用 注 释 所 在 页 面 的 标 识 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4139" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>PaeID STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4140" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

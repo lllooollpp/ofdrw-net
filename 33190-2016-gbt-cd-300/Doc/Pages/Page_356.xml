@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="7101" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>tar etNames ace=&quot;htt www.ofds ec.or 2016&quot;elementFormDefault=&quot; ualified&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7102" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>g p p p g q</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7103" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7104" CTM="1 0 0 1 31.7 44"><ofd:TextCode>attributeFormDefault=&quot;unqualified&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7105" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7106" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>xs includeschemaLocation=&quot;Definitions.xsd&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7107" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt;! 页 面 描 述 定 义,分 为 页 面 图 层(块)图 元 三 个 层 次。 &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7108" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>-- - - --</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7109" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7110" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>xs elementname=&quot;Pa e&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7111" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7112" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7113" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7114" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7115" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7116" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7117" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs elementname=&quot;Tem late&quot;minOccurs=&quot;0&quot;maxOccurs=&quot;unbounded&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7118" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7119" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7120" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

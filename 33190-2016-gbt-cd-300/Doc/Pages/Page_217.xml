@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4321" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>: 扩 展 属 性 值 类 型 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4322" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>T e xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4323" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>yp g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4324" CTM="1 0 0 1 31.7 44"><ofd:TextCode>: 扩 展 复 杂 属 性,使 用 : ,用 于 较 复 杂 的 扩 展 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4325" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>Data xsanT e xsanT e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4326" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>yyp yyp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4327" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>_ 扩 展 数 据 文 件 所 在 位 置,用 于 扩 展 大 量 信 息 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4328" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>ExtendData STLoc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4329" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>82</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4330" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4331" CTM="1 0 0 1 31.7 85.60000000000002"><ofd:TextCode>
+=== 第 88 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4332" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4333" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4334" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>数 字 签 名</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4335" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>18</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4336" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>签 名 列 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4337" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>18.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4338" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>。 (</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4339" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>签 名 列 表 文 件 的 入 口 点 在 主 入 口 中 定 义 签 名 列 表 文 件 中 可 以 包 含 多 个 签 名 例 如 联 合 发 文</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4340" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>7.4</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

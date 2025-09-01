@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="381" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>颜 色 空 间</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="382" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>colors ace</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="383" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="384" CTM="1 0 0 1 31.7 44"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="385" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>颜 色 集 合 的 数 学 表 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="386" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>3.12</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="387" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>可 扩 展 置 标 语 言</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="388" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>extensiblemarku lan uae</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="389" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>p g g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="390" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>简 称 ,定 义 语 义 置 标 的 规 则,这 些 标 记 将 文 件 分 成 许 多 部 件 并 对 部 件 加 以 标 识。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="391" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>XML</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="392" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>3.13</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="393" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>出 血 区 域</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="394" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>bleedbox</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="395" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>在 生 产 环 境 中 输 出 时 页 面 内 容 应 当 被 裁 剪 的 区 域。 它 包 括 任 何 需 要 适 合 切 割、折 叠 和 裁 切 设 备 物</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="396" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>理 限 制 的 额 外 区 域。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="397" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>缩 略 语</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="398" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="399" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>下 列 缩 略 语 适 用 于 本 文 件。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="400" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>: ( )</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

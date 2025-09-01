@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4681" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4682" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs includeschemaLocation=&quot;Definitions.xsd&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4683" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt;! 主 入 口 定 义。 &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4684" CTM="1 0 0 1 31.7 44"><ofd:TextCode>-- --</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4685" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4686" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>xs elementname=&quot;OFD&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4687" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4688" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4689" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4690" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4691" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4692" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>xs elementname=&quot;DocBod &quot;maxOccurs=&quot;unbounded&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4693" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4694" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4695" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4696" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4697" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4698" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4699" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>xs elementname=&quot;DocInfo&quot;t e=&quot;CT DocInfo&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4700" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

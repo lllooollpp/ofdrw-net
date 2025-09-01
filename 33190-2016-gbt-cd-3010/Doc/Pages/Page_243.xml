@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4841" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4842" Font="1" Size="3.5" Boundary="31.7 29.4 63 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">椭圆的长轴长度,表示椭圆的短轴长度。 表示椭圆在当前坐标系下</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4843" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4844" Font="1" Size="3.5" Boundary="31.7 40.65 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ry angle</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4845" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4846" Font="1" Size="3.5" Boundary="31.7 51.9 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">, , ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4847" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4848" Font="1" Size="3.5" Boundary="31.7 63.15 98.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">rxryanglelarge旋转的角度正值为顺时针负值为逆时针large为1时表示对应度数大于</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4849" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4850" Font="1" Size="3.5" Boundary="31.7 74.4 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">A</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4851" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4852" Font="1" Size="3.5" Boundary="31.7 85.65 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">, 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4853" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4854" Font="1" Size="3.5" Boundary="31.7 96.9 94.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">sweepxy 180°的弧为0时表示对应度数小于180°的弧sweep为1时表示由圆弧起</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4855" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4856" Font="1" Size="3.5" Boundary="31.7 108.15 67.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">始点到结束点是顺时针旋转,为0时表示由圆弧起始点到结束点是逆时针</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4857" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4858" Font="1" Size="3.5" Boundary="31.7 119.4 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">旋转</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4859" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4860" Font="1" Size="3.5" Boundary="31.7 130.65 50.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">自动闭合,表示将当前点和 的起始点用线段直接连接</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

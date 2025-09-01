@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5581" Font="1" Size="3.5" Boundary="31.7 25.4 12.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">默认为透明色</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5582" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5583" Font="1" Size="3.5" Boundary="31.7 36.65 123.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">CGTransform CT_CGTransform指定字符编码到字符索引之间的变换关系,描述见11.4字符变换 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5584" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5585" Font="1" Size="3.5" Boundary="31.7 47.9 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5586" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5587" Font="1" Size="3.5" Boundary="31.7 59.15 29.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">文字内容也就是一段字符编码串</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5588" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5589" Font="1" Size="3.5" Boundary="31.7 70.4 67.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">如果字符编码不在XML编码方式的字符范围之内,应采用“\”加四位</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5590" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5591" Font="1" Size="3.5" Boundary="31.7 81.65 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5592" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5593" Font="1" Size="3.5" Boundary="31.7 92.9 35.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">TextCode xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5594" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5595" Font="1" Size="3.5" Boundary="31.7 104.15 54.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">十六进制数的格式转义;文字内容中出现的空格也需要转义</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5596" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5597" Font="1" Size="3.5" Boundary="31.7 115.4 46.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">若 作为占位符使用时,一律采用“”( )占位</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5598" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5599" Font="1" Size="3.5" Boundary="31.7 126.65 31.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">TextCode ¤u00A4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5600" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

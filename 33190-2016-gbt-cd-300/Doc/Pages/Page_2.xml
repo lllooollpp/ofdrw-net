@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="21" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>目 次</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="22" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>…………………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="23" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>前 言</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="24" CTM="1 0 0 1 31.7 44"><ofd:TextCode>Ⅴ</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="25" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>范 围 ………………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="26" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>1 1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="27" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>规 范 性 引 用 文 件 …………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="28" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>2 1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="29" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>术 语 和 定 义 ………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="30" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>3 1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="31" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>缩 略 语 ……………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="32" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>4 2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="33" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>概 述 ………………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="34" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>5 2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="35" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>文 档 特 性 ……………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="36" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>5.1 2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="37" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>结 构 …………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="38" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>5.2 3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="39" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>成 像 模 型 ……………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="40" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>5.3 3</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

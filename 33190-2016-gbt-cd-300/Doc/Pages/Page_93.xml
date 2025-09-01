@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1841" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>8.3.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1842" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>本 标 准 支 持 、 、 颜 色 空 间。 除 通 过 设 置 各 通 道 值 使 用 颜 色 空 间 内 的 任 意 颜 色 之</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1843" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>GRAYRGBCMYK</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1844" CTM="1 0 0 1 31.7 44"><ofd:TextCode>, , 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1845" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>外 还 可 在 颜 色 空 间 内 定 义 调 色 板 或 指 定 相 应 的 颜 色 配 置 文 件 通 过 设 置 索 引 值 进 行 引 用 颜 色 空 间 结</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1846" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1847" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>24</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1848" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>30</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1849" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1850" CTM="1 0 0 1 31.7 79.40000000000002"><ofd:TextCode>
+=== 第 36 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1851" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1852" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1853" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>图 颜 色 空 间 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1854" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>24</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1855" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>颜 色 空 间 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1856" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>25</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1857" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>表 颜 色 空 间 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1858" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>25</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1859" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>属 性 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1860" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>: 颜 色 空 间 的 类 型,可 取 值 如 下: 、 、 必 选</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

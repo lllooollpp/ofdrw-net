@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="6081" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>:// /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6082" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>targetNamespace=&quot;http www.ofdspec.org 2016&quot;elementFormDefault=&quot;qualified&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6083" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6084" CTM="1 0 0 1 31.7 44"><ofd:TextCode>attributeFormDefault=&quot;unqualified&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6085" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt;! 公 用 的 简 单 类 型 定 义。 &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6086" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>-- --</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6087" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6088" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>xs simpleTypename=&quot;ST ID&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6089" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6090" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>xs restrictionbase=&quot;xs unsignedInt&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6091" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6092" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>xs simpleType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6093" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6094" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>xs sim leT ename=&quot;ST RefID&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6095" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6096" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6097" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs restrictionbase=&quot;xs unsignedInt&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6098" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6099" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>xs simpleType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6100" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

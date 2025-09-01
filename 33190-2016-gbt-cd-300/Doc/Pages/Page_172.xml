@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3421" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>字 型 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3422" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>44</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3423" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>表 字 型 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3424" CTM="1 0 0 1 31.7 44"><ofd:TextCode>44</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3425" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>属 性 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3426" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3427" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>字 型 名 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3428" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>FontName xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3429" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>: 字 型 族 名,用 于 匹 配 替 代 字 型 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3430" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>FamilyName xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3431" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3432" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>字 型 适 用 的 字 符 分 类 用 于 匹 配 替 代 字 型</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3433" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>: 可 取 值 为 、 、 、 等 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3434" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>Charset xsstring symbolprcbig5unicode</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3435" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3436" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>unicode</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3437" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>61</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3438" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3439" CTM="1 0 0 1 31.7 135.20000000000005"><ofd:TextCode>
+=== 第 67 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3440" CTM="1 0 0 1 31.7 141.20000000000005"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

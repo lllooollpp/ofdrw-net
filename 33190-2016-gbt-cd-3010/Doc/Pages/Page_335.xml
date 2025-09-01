@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="6681" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6682" Font="1" Size="3.5" Boundary="31.7 29.4 77.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">扩展信息列表的入口点在 文档根节点中定义。扩展信息列表文件的根节点名为 ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6683" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6684" Font="1" Size="3.5" Boundary="31.7 40.65 29.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">7.5 Extensions</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6685" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6686" Font="1" Size="3.5" Boundary="31.7 51.9 75.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">其下由到多个扩展信息节点( )组成,扩展信息列表的根节点结构如图 所示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6687" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6688" Font="1" Size="3.5" Boundary="31.7 63.15 29.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">0 Extension 83</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6689" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6690" Font="1" Size="3.5" Boundary="31.7 74.4 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">图83 扩展信息列表结构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6691" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6692" Font="1" Size="3.5" Boundary="31.7 85.65 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6693" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6694" Font="1" Size="3.5" Boundary="31.7 96.9 35.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">扩展信息列表根节点属性说明见表64</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6695" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6696" Font="1" Size="3.5" Boundary="31.7 108.15 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">表 扩展信息列表属性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6697" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6698" Font="1" Size="3.5" Boundary="31.7 119.4 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">64</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6699" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6700" Font="1" Size="3.5" Boundary="31.7 130.65 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">属性 类型 说明 备注</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

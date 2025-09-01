@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="7761" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7762" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs attributename=&quot;ImageMask&quot;type=&quot;ST RefID&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7763" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>121</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7764" CTM="1 0 0 1 31.7 44"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7765" CTM="1 0 0 1 31.7 48.4"><ofd:TextCode>
+=== 第 127 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7766" CTM="1 0 0 1 31.7 54.4"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7767" CTM="1 0 0 1 31.7 60.6"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7768" CTM="1 0 0 1 31.7 66.8"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7769" CTM="1 0 0 1 31.7 73"><ofd:TextCode>xs extension</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7770" CTM="1 0 0 1 31.7 79.2"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7771" CTM="1 0 0 1 31.7 85.4"><ofd:TextCode>xs com lexContent</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7772" CTM="1 0 0 1 31.7 91.60000000000001"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7773" CTM="1 0 0 1 31.7 97.80000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7774" CTM="1 0 0 1 31.7 104.00000000000001"><ofd:TextCode>xs com lexT e</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7775" CTM="1 0 0 1 31.7 110.20000000000002"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7776" CTM="1 0 0 1 31.7 116.40000000000002"><ofd:TextCode>&lt;! &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7777" CTM="1 0 0 1 31.7 122.60000000000002"><ofd:TextCode>矢 量 图 像 对 象 定 义</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7778" CTM="1 0 0 1 31.7 128.8"><ofd:TextCode>-- --</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7779" CTM="1 0 0 1 31.7 135"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7780" CTM="1 0 0 1 31.7 141.2"><ofd:TextCode>xs complexTypename=&quot;CT Composite&quot;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

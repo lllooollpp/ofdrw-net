@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4461" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>References 87</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4462" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>图 摘 要 节 点 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4463" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>87</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4464" CTM="1 0 0 1 31.7 44"><ofd:TextCode>节 点 对 应 元 素 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4465" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>References 68</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4466" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>表 摘 要 节 点 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4467" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>68</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4468" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4469" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>, 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4470" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>摘 要 方 法 视 应 用 场 景 的 不 同 使 用 不 同 的 摘 要 方 法</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4471" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4472" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>CheckMethod xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4473" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>用 于 各 行 业 应 用 时,应 使 用 符 合 该 行 业 安 全 标 准 的 算 法</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4474" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>针 对 一 个 文 件 的 摘 要 节 点 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4475" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>Reference</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4476" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>_ ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4477" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>指 向 包 内 的 文 件 使 用 绝 对 路 径 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4478" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>FileRef STLoc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4479" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>对 包 内 文 件 进 行 摘 要 计 算,对 所 得 的 二 进 制 摘 要 值 进 行 编 码 所</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4480" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>base64</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

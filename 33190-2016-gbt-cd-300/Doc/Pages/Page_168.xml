@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3341" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>图 像</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3342" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>10</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3343" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3344" CTM="1 0 0 1 31.7 44"><ofd:TextCode>图 像 对 象 的 基 本 结 构 如 图 所 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3345" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>57</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3346" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>图 图 像 对 象 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3347" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>57</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3348" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3349" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>图 像 对 象 属 性 说 明 见 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3350" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>43</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3351" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>59</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3352" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3353" CTM="1 0 0 1 31.7 98.00000000000003"><ofd:TextCode>
+=== 第 65 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3354" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3355" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3356" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>表 图 像 对 象 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3357" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>43</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3358" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3359" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>_ 引 用 资 源 文 件 中 定 义 的 多 媒 体 的 标 识 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3360" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>ResouceID STRefID</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

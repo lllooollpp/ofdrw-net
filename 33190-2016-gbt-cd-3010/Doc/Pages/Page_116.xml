@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2301" Font="1" Size="3.5" Boundary="31.7 25.4 44.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">CompositeGraphicUnits</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2302" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2303" Font="1" Size="3.5" Boundary="31.7 36.65 54.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">矢量图像资源描述,在基础类型上扩展定义 属性,类型为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2304" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2305" Font="1" Size="3.5" Boundary="31.7 47.9 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2306" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2307" Font="1" Size="3.5" Boundary="31.7 59.15 69.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">CompositeGraphicUnitCT_VectorG 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2308" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2309" Font="1" Size="3.5" Boundary="31.7 70.4 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2310" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2311" Font="1" Size="3.5" Boundary="31.7 81.65 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">STID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2312" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2313" Font="1" Size="3.5" Boundary="31.7 92.9 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2314" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2315" Font="1" Size="3.5" Boundary="31.7 104.15 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">本标准中的资源包含以下类型</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2316" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2317" Font="1" Size="3.5" Boundary="31.7 115.4 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">)字型;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2318" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2319" Font="1" Size="3.5" Boundary="31.7 126.65 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">a</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2320" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="721" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="722" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>: 文 档 作 者 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="723" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>Author xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="724" CTM="1 0 0 1 31.7 44"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="725" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>: 文 档 主 题 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="726" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>Subect xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="727" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>j g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="728" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>: 文 档 摘 要 与 注 释 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="729" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>Abstract xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="730" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="731" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>: 文 档 创 建 日 期 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="732" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>CreationDate xsdate</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="733" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>: 文 档 最 近 修 改 日 期 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="734" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>ModDate xsdate</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="735" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>文 档 分 类,可 取 值 如 下:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="736" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>——— 普 通 文 档</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="737" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>Normal</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="738" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>——— 电 子 书</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="739" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>EBook</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="740" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

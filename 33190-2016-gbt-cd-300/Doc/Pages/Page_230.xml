@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4581" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>FileList</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4582" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>_ 文 件 列 表 文 件 描 述 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4583" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>File STLoc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4584" CTM="1 0 0 1 31.7 44"><ofd:TextCode>: 文 件 列 表 文 件 标 识 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4585" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>ID xsID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4586" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>_ 该 版 本 的 入 口 文 件 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4587" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>DocRoot STLoc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4588" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>附 件</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4589" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>20</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4590" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>附 件 列 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4591" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>20.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4592" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>附 件 列 表 文 件 的 入 口 点 在 文 档 根 节 点 中 定 义。 一 个 文 档 可 以 定 义 多 个 附 件,附 件 列 表 结</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4593" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>7.5 OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4594" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4595" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>91</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4596" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>88</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4597" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4598" CTM="1 0 0 1 31.7 129.00000000000003"><ofd:TextCode>
+=== 第 94 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4599" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4600" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

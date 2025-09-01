@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="541" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="542" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>第 页 的 内 容 描 述</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="543" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>Content.xml N</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="544" CTM="1 0 0 1 31.7 44"><ofd:TextCode>4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="545" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="546" CTM="1 0 0 1 31.7 54.6"><ofd:TextCode>
+=== 第 10 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="547" CTM="1 0 0 1 31.7 60.6"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="548" CTM="1 0 0 1 31.7 66.8"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="549" CTM="1 0 0 1 31.7 73"><ofd:TextCode>表 (续)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="550" CTM="1 0 0 1 31.7 79.2"><ofd:TextCode>1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="551" CTM="1 0 0 1 31.7 85.4"><ofd:TextCode>名 称 说 明</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="552" CTM="1 0 0 1 31.7 91.60000000000001"><ofd:TextCode>第 页 的 资 源 描 述</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="553" CTM="1 0 0 1 31.7 97.80000000000001"><ofd:TextCode>PageRes.xml N</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="554" CTM="1 0 0 1 31.7 104.00000000000001"><ofd:TextCode>资 源 文 件 夹</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="555" CTM="1 0 0 1 31.7 110.20000000000002"><ofd:TextCode>Res</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="556" CTM="1 0 0 1 31.7 116.40000000000002"><ofd:TextCode>文 档 公 共 资 源 索 引</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="557" CTM="1 0 0 1 31.7 122.60000000000002"><ofd:TextCode>PublicRes.xml</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="558" CTM="1 0 0 1 31.7 128.8"><ofd:TextCode>文 档 自 身 资 源 索 引</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="559" CTM="1 0 0 1 31.7 135"><ofd:TextCode>DocumentRes.xml</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="560" CTM="1 0 0 1 31.7 141.2"><ofd:TextCode>_ / _ 资 源 文 件</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

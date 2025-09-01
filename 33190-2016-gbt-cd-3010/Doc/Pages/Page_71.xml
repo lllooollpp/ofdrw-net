@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1401" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1402" Font="1" Size="3.5" Boundary="31.7 29.4 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">表 页面区域属性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1403" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1404" Font="1" Size="3.5" Boundary="31.7 40.65 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">7</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1405" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1406" Font="1" Size="3.5" Boundary="31.7 51.9 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">名称 类型 说明 备注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1407" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1408" Font="1" Size="3.5" Boundary="31.7 63.15 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">_ ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1409" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1410" Font="1" Size="3.5" Boundary="31.7 74.4 92.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">PhysicalBox STBox 页面物理区域左上角的坐标为页面空间坐标系的原点 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1411" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1412" Font="1" Size="3.5" Boundary="31.7 85.65 60.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">显示区域,页面内容实际显示或打印输出的区域,位于页面物理区</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1413" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1414" Font="1" Size="3.5" Boundary="31.7 96.9 33.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">域内,包含页眉、页脚、版心等内容</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1415" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1416" Font="1" Size="3.5" Boundary="31.7 108.15 73.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">_ [例外处理]如果显示区域不完全位于页面物理区域内,页面物理区 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1417" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1418" Font="1" Size="3.5" Boundary="31.7 119.4 39.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ApplicationBoxSTBox</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1419" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1420" Font="1" Size="3.5" Boundary="31.7 130.65 60.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">域外的部分则被忽略。如果显示区域完全位于页面物理区域外,则</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

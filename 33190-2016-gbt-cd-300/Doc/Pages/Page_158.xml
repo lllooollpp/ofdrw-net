@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3141" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3142" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>QuadraticBezier</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3143" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>,此 贝 塞 尔 曲 线 使 用 作 为 其 控 制 点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3144" CTM="1 0 0 1 31.7 44"><ofd:TextCode>Point2 Point1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3145" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>54</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3146" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3147" CTM="1 0 0 1 31.7 60.800000000000004"><ofd:TextCode>
+=== 第 60 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3148" CTM="1 0 0 1 31.7 66.80000000000001"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3149" CTM="1 0 0 1 31.7 73.00000000000001"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3150" CTM="1 0 0 1 31.7 79.20000000000002"><ofd:TextCode>表 (续)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3151" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>37</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3152" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3153" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>从 当 前 点 连 接 一 条 到 的 三 次 贝 塞 尔 曲 线,并 将 当 前 点 移 动 到</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3154" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>Point3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3155" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3156" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>CubicBezier</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3157" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>,使 用 和 作 为 控 制 点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3158" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>Point3 Point1 Point2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3159" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>从 当 前 点 连 接 一 条 到 点 的 圆 弧,并 将 当 前 点 移 动 到</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3160" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>EndPoint End-</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

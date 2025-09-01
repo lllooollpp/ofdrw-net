@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3781" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3782" Font="1" Size="3.5" Boundary="31.7 29.4 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">_ ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3783" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3784" Font="1" Size="3.5" Boundary="31.7 40.65 60.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Color CTColor 此段的颜色应使用基本颜色 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3785" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3786" Font="1" Size="3.5" Boundary="31.7 51.9 84 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">当径向渐变某个方向设定为延伸时( 不等于),渐变应沿延长线延伸到超出裁剪区在该方</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3787" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3788" Font="1" Size="3.5" Boundary="31.7 63.15 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Extend 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3789" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3790" Font="1" Size="3.5" Boundary="31.7 74.4 79.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">向的投影区域为止。当 为 时,延伸的区域的渲染颜色使用该方向所在的中心点的颜</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3791" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3792" Font="1" Size="3.5" Boundary="31.7 85.65 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">MapTypeDirect</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3793" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3794" Font="1" Size="3.5" Boundary="31.7 96.9 63 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">色;否则,按照在起始点和终止点连线区域内的渲染规则进行渲染。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3795" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3796" Font="1" Size="3.5" Boundary="31.7 108.15 18.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">径向渐变的 示例:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3797" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3798" Font="1" Size="3.5" Boundary="31.7 119.4 12.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Extend</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3799" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3800" Font="1" Size="3.5" Boundary="31.7 130.65 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: &gt;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

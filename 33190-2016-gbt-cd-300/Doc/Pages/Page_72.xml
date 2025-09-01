@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1421" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>资 源 文 件 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1422" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>18</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1423" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>表 资 源 文 件 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1424" CTM="1 0 0 1 31.7 44"><ofd:TextCode>18</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1425" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1426" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>定 义 此 资 源 文 件 的 通 用 数 据 存 储 路 径, 属 性 的 意 义 在</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1427" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>BaseLoc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1428" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1429" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>于 明 确 资 源 文 件 存 储 的 位 置 比 如 中 可 以 指 定</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1430" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>R1.xml BaseLoc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1431" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1432" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1433" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>BaseLoc STLoc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1434" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>“/ ”,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1435" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>为 表 明 该 资 源 文 件 中 所 有 数 据 文 件 的 默 认 存 储 位 置 在</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1436" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>.Res</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1437" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>当 前 路 径 的 目 录 下</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1438" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>Res</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1439" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>包 含 了 一 组 颜 色 空 间 的 描 述 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1440" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>ColorSaces</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

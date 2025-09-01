@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="7801" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>xs complexContent</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7802" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7803" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>xs extensionbase=&quot;CT GraphicUnit&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7804" CTM="1 0 0 1 31.7 44"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7805" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7806" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&lt; : _</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7807" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>xs elementname=&quot;StrokeColor&quot;t e=&quot;CT Color&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7808" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7809" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7810" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7811" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7812" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>xs elementname=&quot;FillColor&quot;type=&quot;CT Color&quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7813" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7814" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>xs elementname=&quot;AbbreviatedData&quot;t e=&quot;xs strin &quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7815" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>yp g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7816" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7817" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs se uence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7818" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>q</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7819" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7820" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>xs attributename=&quot;Stroke&quot;type=&quot;xs boolean&quot;default=&quot;true&quot;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

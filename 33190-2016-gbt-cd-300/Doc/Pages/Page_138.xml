@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2741" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>ABC</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2742" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>高 洛 德 渐 变 允 许 在 填 充 区 域 内 定 义 多 个 三 角 区 域,其 中 区 域 的 变 化 由 各 控 制 点 的 方 向 标 志(</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2743" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>Ede-</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2744" CTM="1 0 0 1 31.7 44"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2745" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>) , 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2746" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>所 指 定 控 制 效 果 如 图 所 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2747" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>Fla EdeFla 40</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2748" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>g g g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2749" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>45</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2750" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2751" CTM="1 0 0 1 31.7 85.60000000000002"><ofd:TextCode>
+=== 第 51 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2752" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2753" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2754" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>图 方 向 标 志 的 控 制 作 用</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2755" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>40</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2756" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>高 洛 德 渐 变 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2757" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>41</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2758" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>图 高 洛 德 渐 变 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2759" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>41</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2760" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>高 洛 德 渐 变 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

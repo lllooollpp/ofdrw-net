@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4821" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4822" Font="1" Size="3.5" Boundary="31.7 29.4 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Q x1y1x2y2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4823" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4824" Font="1" Size="3.5" Boundary="31.7 40.65 46.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">(,),此贝塞尔曲线使用点(,)作为其控制点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4825" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4826" Font="1" Size="3.5" Boundary="31.7 51.9 18.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">x2y2 x1y1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4827" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4828" Font="1" Size="3.5" Boundary="31.7 63.15 67.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">从当前点连接一条到点(x,)的三次贝塞尔曲线,并将当前点移动到点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4829" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4830" Font="1" Size="3.5" Boundary="31.7 74.4 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">3y3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4831" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4832" Font="1" Size="3.5" Boundary="31.7 85.65 29.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">B x1y1x2y2x3y3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4833" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4834" Font="1" Size="3.5" Boundary="31.7 96.9 56.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">(,),此贝塞尔曲线使用点(,)和点(,)作为其控制点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4835" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4836" Font="1" Size="3.5" Boundary="31.7 108.15 29.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">x3y3 x1y1 x2y2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4837" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4838" Font="1" Size="3.5" Boundary="31.7 119.4 73.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">从当前点连接一条到点(x,)的圆弧,并将当前点移动到点(x,)。r表示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4839" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4840" Font="1" Size="3.5" Boundary="31.7 130.65 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">y y x</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

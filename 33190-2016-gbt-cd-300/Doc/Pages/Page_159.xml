@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3161" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3162" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>Arc</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3163" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3164" CTM="1 0 0 1 31.7 44"><ofd:TextCode>Point</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3165" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>自 动 闭 合 到 当 前 分 路 径 的 起 始 点,并 以 该 点 为 当 前 点 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3166" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>Close</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3167" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>移 动</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3168" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>9.3.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3169" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>移 动 节 点 用 于 表 示 移 动 到 新 的 绘 制 点 指 令,结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3170" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>50</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3171" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>图 移 动 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3172" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>50</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3173" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>移 动 到 新 绘 制 点 命 令 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3174" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>38</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3175" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>表 移 动 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3176" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>38</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3177" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>属 性 名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3178" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3179" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>移 动 后 新 的 当 前 绘 制 点 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3180" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>Point1 STPos</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

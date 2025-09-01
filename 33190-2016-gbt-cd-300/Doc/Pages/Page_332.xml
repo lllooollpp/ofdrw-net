@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="6621" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>yp g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6622" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>&lt; :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6623" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>xs attributename=&quot;Com an &quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6624" CTM="1 0 0 1 31.7 44"><ofd:TextCode>p y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6625" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>: /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6626" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>type=&quot;xs string&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6627" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6628" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6629" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6630" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>xs element</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6631" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>&lt; : :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6632" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>xs elementname=&quot;SignatureMethod&quot;type=&quot;xs string&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6633" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6634" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6635" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>&lt; :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6636" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>xs elementname=&quot;Si natureDateTime&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6637" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6638" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>: /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6639" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>t e=&quot;xs strin &quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6640" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>yp g</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

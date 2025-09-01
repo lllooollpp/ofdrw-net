@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="801" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>Actions</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="802" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>执 行</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="803" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>_ 文 档 关 联 的 动 作,事 件 类 型 应 为 (文 档 打 开,见 表 事 件 类 型) 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="804" CTM="1 0 0 1 31.7 44"><ofd:TextCode>Action CTAction DO 52</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="805" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>_ 文 档 的 视 图 首 选 项 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="806" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>VPreferences CTVPreferences</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="807" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>文 档 的 书 签 集,包 含 一 组 书 签 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="808" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>Bookmarks</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="809" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="810" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>文 档 的 书 签 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="811" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>Bookmark CTBookmark</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="812" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>9</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="813" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="814" CTM="1 0 0 1 31.7 104.20000000000003"><ofd:TextCode>
+=== 第 15 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="815" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="816" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="817" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>表 (续)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="818" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="819" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="820" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>_ 指 向 附 件 列 表 文 件。 有 关 附 件 描 述 见 第 章 可 选</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

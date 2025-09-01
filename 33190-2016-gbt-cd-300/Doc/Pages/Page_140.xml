@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2781" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>: 三 角 单 元 切 换 的 方 向 标 志 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2782" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>EdgeFlag xsint</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2783" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>_ ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2784" CTM="1 0 0 1 31.7 44"><ofd:TextCode>控 制 点 对 应 的 颜 色 应 使 用 基 本 颜 色 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2785" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>Color CTColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2786" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>_ ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2787" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>渐 变 范 围 外 的 填 充 颜 色 应 使 用 基 本 颜 色 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2788" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>BackColor CTColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2789" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>网 格 高 洛 德 渐 变</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2790" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>8.3.4.5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2791" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>网 格 高 洛 德 渐 变 是 高 洛 德 渐 变 的 一 种 特 殊 形 式,其 允 许 定 义 个 以 上 的 控 制 点,按 照 每 行 固 定 的 网</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2792" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2793" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>格 数( )形 成 若 干 行 列,相 邻 的 个 控 制 点 定 义 一 个 网 格 单 元,在 一 个 网 格 单 元 内</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2794" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>VerticesPerRow 4 Ede-</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2795" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2796" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>, 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2797" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>固 定 为 网 格 单 元 及 多 个 单 元 组 成 网 格 区 域 的 规 则 如 图 所 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2798" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>Flag 1 42</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2799" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>图 网 格 高 洛 德 渐 变 的 网 格 形 成 规 则</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2800" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>42</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

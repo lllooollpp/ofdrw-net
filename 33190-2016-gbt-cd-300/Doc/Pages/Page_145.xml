@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2881" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>45</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2882" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>49</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2883" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2884" CTM="1 0 0 1 31.7 42.199999999999996"><ofd:TextCode>
+=== 第 55 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2885" CTM="1 0 0 1 31.7 48.199999999999996"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2886" CTM="1 0 0 1 31.7 54.4"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2887" CTM="1 0 0 1 31.7 60.6"><ofd:TextCode>图 图 元 对 象 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2888" CTM="1 0 0 1 31.7 66.8"><ofd:TextCode>45</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2889" CTM="1 0 0 1 31.7 73"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2890" CTM="1 0 0 1 31.7 79.2"><ofd:TextCode>图 元 对 象 属 性 说 明 见 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2891" CTM="1 0 0 1 31.7 85.4"><ofd:TextCode>34</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2892" CTM="1 0 0 1 31.7 91.60000000000001"><ofd:TextCode>50</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2893" CTM="1 0 0 1 31.7 97.80000000000001"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2894" CTM="1 0 0 1 31.7 102.20000000000002"><ofd:TextCode>
+=== 第 56 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2895" CTM="1 0 0 1 31.7 108.20000000000002"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2896" CTM="1 0 0 1 31.7 114.40000000000002"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2897" CTM="1 0 0 1 31.7 120.60000000000002"><ofd:TextCode>表 图 元 对 象 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2898" CTM="1 0 0 1 31.7 126.80000000000003"><ofd:TextCode>34</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2899" CTM="1 0 0 1 31.7 133.00000000000003"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2900" CTM="1 0 0 1 31.7 139.20000000000002"><ofd:TextCode>外 接 矩 形,采 用 当 前 空 间 坐 标 系(页 面 坐 标 或 其 他 容 器 坐 标),当 图</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

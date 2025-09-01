@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4861" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4862" Font="1" Size="3.5" Boundary="31.7 29.4 35.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">C SubPath SubPath</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4863" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4864" Font="1" Size="3.5" Boundary="31.7 40.65 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">9.2 填充规则</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4865" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4866" Font="1" Size="3.5" Boundary="31.7 51.9 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4867" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4868" Font="1" Size="3.5" Boundary="31.7 63.15 48.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">图形对象采用两种规则填充非零绕数规则和奇偶规则</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4869" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4870" Font="1" Size="3.5" Boundary="31.7 74.4 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">, :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4871" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4872" Font="1" Size="3.5" Boundary="31.7 85.65 90.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">当值为NonZero即非零绕数规则时填充遵循如下原则从所需判断的点处向任意方向无穷远处</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4873" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4874" Font="1" Size="3.5" Boundary="31.7 96.9 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">, , ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4875" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4876" Font="1" Size="3.5" Boundary="31.7 108.15 88.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">引一条射线同时引入一个初始值为0的计数射线每经过一条由左至右方向的线型时计数加1射线</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4877" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4878" Font="1" Size="3.5" Boundary="31.7 119.4 92.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">每经过一条由右至左方向的线型时则计数减,如果每条射线总计数均为,则判断该点在路径外部,反</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4879" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4880" Font="1" Size="3.5" Boundary="31.7 130.65 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">1 0</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="10461" Font="1" Size="3.5" Boundary="31.7 25.4 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xsschema</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10462" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10463" Font="1" Size="3.5" Boundary="31.7 36.65 35.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">A.8 Signature.xsd</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10464" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10465" Font="1" Size="3.5" Boundary="31.7 47.9 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;? ?&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10466" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10467" Font="1" Size="3.5" Boundary="31.7 59.15 109.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xmlversion=&quot;1.0&quot;encoding=&quot;UTF-8&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10468" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10469" Font="1" Size="3.5" Boundary="31.7 70.4 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;: :// /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10470" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10471" Font="1" Size="3.5" Boundary="31.7 81.65 102.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xsschemaxmlns=&quot;httpwww.ofdspec.org2016&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10472" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10473" Font="1" Size="3.5" Boundary="31.7 92.9 107.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xmlns:xs=&quot;htt://www.w3.or/2001/XMLSchema&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10474" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10475" Font="1" Size="3.5" Boundary="31.7 104.15 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">p g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10476" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10477" Font="1" Size="3.5" Boundary="31.7 115.4 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">:// /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10478" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10479" Font="1" Size="3.5" Boundary="31.7 126.65 191.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">targetNamespace=&quot;httpwww.ofdspec.org2016&quot;elementFormDefault=&quot;qualified&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="10480" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

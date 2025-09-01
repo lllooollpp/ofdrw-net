@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3541" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>_ 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3542" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>StrokeColor CTColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3543" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>默 认 为 透 明 色</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3544" CTM="1 0 0 1 31.7 44"><ofd:TextCode>_ 指 定 字 符 编 码 到 字 符 索 引 之 间 的 变 换 关 系,描 述 见 字 符 变 换 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3545" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>CGTransform CTCGTransform 11.4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3546" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3547" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>文 字 内 容 也 就 是 一 段 字 符 编 码 串</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3548" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>如 果 字 符 编 码 不 在 编 码 方 式 的 字 符 范 围 之 内,应 采 用“”加 四 位</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3549" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>XML \</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3550" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>: 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3551" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>TextCode xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3552" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3553" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>十 六 进 制 数 的 格 式 转 义;文 字 内 容 中 出 现 的 空 格 也 需 要 转 义</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3554" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>, “ ”( )</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3555" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>若 作 为 占 位 符 使 用 时 一 律 采 用 占 位</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3556" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>TextCode ¤ u00A4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3557" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3558" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>文 字 对 象 示 例</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3559" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3560" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>ofdTextObjectID=&quot;6&quot;Font=&quot;2&quot;Size=&quot;25.4&quot;Boundary=&quot;502011226&quot;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

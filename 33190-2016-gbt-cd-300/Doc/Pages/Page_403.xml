@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="8041" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8042" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs se uence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8043" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>q</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8044" CTM="1 0 0 1 31.7 44"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8045" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>xs attributename=&quot;MapType&quot;default=&quot;Direct&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8046" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8047" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>xs simpleType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8048" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>&lt; : : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8049" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>xs restrictionbase=&quot;xs strin &quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8050" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8051" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8052" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>xs enumerationvalue=&quot;Direct&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8053" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8054" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>xs enumerationvalue=&quot;Repeat&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8055" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8056" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>xs enumerationvalue=&quot;Reflect&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8057" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8058" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>xs restriction</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8059" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="8060" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>xs simpleType</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

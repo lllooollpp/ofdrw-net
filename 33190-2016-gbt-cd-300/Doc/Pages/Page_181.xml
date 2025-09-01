@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3601" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>double</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3602" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3603" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>间 在 方 向 的 偏 移 值 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3604" CTM="1 0 0 1 31.7 44"><ofd:TextCode>DeltaX STArray X</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3605" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>不 出 现 时,表 示 文 字 的 绘 制 点 在 方 向 不 做 偏 移</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3606" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>DeltaX X</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3607" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3608" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>型 数 值 队 列 队 列 中 的 每 个 值 代 表 后 一 个 文 字 与 前 一 个 文 字 之</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3609" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>double</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3610" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>_ 间 在 方 向 的 偏 移 值 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3611" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>DeltaY STArray Y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3612" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>不 出 现 时,表 示 文 字 的 绘 制 点 在 方 向 不 做 偏 移</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3613" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>DeltaY Y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3614" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>、、 和 相 结 合 确 定 了 中 对 应 的 每 个 字 形 绘 制 点 的 精 确 位 置,上 述 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3615" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>X YDeltaX DeltaY TextCode</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3616" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3617" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>的 定 位 机 制 如 图 所 示</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3618" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>62</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3619" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>65</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3620" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

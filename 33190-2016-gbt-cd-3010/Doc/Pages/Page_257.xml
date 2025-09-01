@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5121" Font="1" Size="4" Boundary="31.7 25.4 38.4 8" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="4">
+=== 第 62 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5122" Font="1" Size="3.5" Boundary="31.7 35.4 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5123" Font="1" Size="1" Boundary="31.7 42.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5124" Font="1" Size="3.5" Boundary="31.7 46.65 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">GBT331902016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5125" Font="1" Size="1" Boundary="31.7 53.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5126" Font="1" Size="3.5" Boundary="31.7 57.9 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">三次贝塞尔曲线公式:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5127" Font="1" Size="1" Boundary="31.7 65.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5128" Font="1" Size="3.5" Boundary="31.7 69.15 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">3 2 2 3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5129" Font="1" Size="1" Boundary="31.7 76.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5130" Font="1" Size="3.5" Boundary="31.7 80.4 71.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">B(t)(1t)P 3t(1t)P 3t(1t)PtP t[0,1]</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5131" Font="1" Size="1" Boundary="31.7 87.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5132" Font="1" Size="3.5" Boundary="31.7 91.65 42 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">= - 0+ - 1+ - 2+ 3 ∈</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5133" Font="1" Size="1" Boundary="31.7 98.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5134" Font="1" Size="3.5" Boundary="31.7 102.9 35.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">具体绘制方法如图54和图55所示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5135" Font="1" Size="1" Boundary="31.7 110.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5136" Font="1" Size="3.5" Boundary="31.7 114.15 29.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">图54 三次贝塞尔曲线示例1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5137" Font="1" Size="1" Boundary="31.7 121.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5138" Font="1" Size="3.5" Boundary="31.7 125.4 29.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">图55 三次贝塞尔曲线示例2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5139" Font="1" Size="1" Boundary="31.7 132.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5140" Font="1" Size="3.5" Boundary="31.7 136.65 18.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">、、、 , , 。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

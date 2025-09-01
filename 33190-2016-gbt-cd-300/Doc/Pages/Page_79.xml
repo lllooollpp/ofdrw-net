@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1561" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1562" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>”。 变 换 矩 阵 是 一 个 的 矩 阵,其 格 式 是 ê ú。 假 设 变 换 前 的 坐 标 是(,),变 换 后 的 坐 标 是</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1563" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>f 3×3 c d 0 x</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1564" CTM="1 0 0 1 31.7 44"><ofd:TextCode>y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1565" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1566" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1567" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>ëe f 1û</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1568" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>( , ),那 么 满 足 公 式:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1569" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>x&apos;y&apos;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1570" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>éa b 0ù</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1571" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1572" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>[ ] [ ]· ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1573" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>x&apos; &apos; 1 x  1 c d 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1574" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>y = y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1575" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1576" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1577" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>ëe  1û</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1578" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>f</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1579" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>变 换 矩 阵 可 以 实 现 表 中 的 几 种 变 换 效 果,这 些 效 果 可 以 相 互 迭 加,迭 加 的 方 式 通 过 矩 阵 乘 法 实</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1580" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>20</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

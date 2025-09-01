@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1801" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>8.2.4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1802" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>。 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1803" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>线 条 的 虚 线 样 式 通 过 和 两 个 属 性 进 行 控 制 组 合 见 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1804" CTM="1 0 0 1 31.7 44"><ofd:TextCode>DashPattern DashOffset 23</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1805" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>指 定 虚 线 的 线 段 和 间 隔 长 度,有 两 个 或 多 个 值,其 中 第 一 个 值 指 定 了 虚 线 线 段 的 长</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1806" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>DashPattern</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1807" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>度,第 二 个 值 指 定 了 线 段 间 隔 的 长 度,以 此 类 推。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1808" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>指 定 虚 线 绘 制 偏 移 位 置,即 在 当 前 位 置 按 绘 制 相 反 方 向 偏 移 值 指 定 的 距 离</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1809" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>DashOffset DashOffset</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1810" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1811" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>后 开 始 绘 制 虚 线</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1812" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>29</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1813" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1814" CTM="1 0 0 1 31.7 104.20000000000003"><ofd:TextCode>
+=== 第 35 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1815" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1816" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1817" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>表 线 条 的 虚 线 样 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1818" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>23</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1819" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>设 置 呈 现 效 果</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1820" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>Dash</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

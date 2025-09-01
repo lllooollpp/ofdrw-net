@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2841" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>Area</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2842" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>均 相 对 于 所 修 饰 图 元 对 象 的 外 接 矩 形。 裁 剪 区 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2843" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>44</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2844" CTM="1 0 0 1 31.7 44"><ofd:TextCode>48</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2845" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2846" CTM="1 0 0 1 31.7 54.6"><ofd:TextCode>
+=== 第 54 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2847" CTM="1 0 0 1 31.7 60.6"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2848" CTM="1 0 0 1 31.7 66.8"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2849" CTM="1 0 0 1 31.7 73"><ofd:TextCode>图 裁 剪 区 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2850" CTM="1 0 0 1 31.7 79.2"><ofd:TextCode>44</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2851" CTM="1 0 0 1 31.7 85.4"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2852" CTM="1 0 0 1 31.7 91.60000000000001"><ofd:TextCode>裁 剪 区 属 性 说 明 见 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2853" CTM="1 0 0 1 31.7 97.80000000000001"><ofd:TextCode>33</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2854" CTM="1 0 0 1 31.7 104.00000000000001"><ofd:TextCode>表 裁 剪 区 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2855" CTM="1 0 0 1 31.7 110.20000000000002"><ofd:TextCode>33</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2856" CTM="1 0 0 1 31.7 116.40000000000002"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2857" CTM="1 0 0 1 31.7 122.60000000000002"><ofd:TextCode>裁 剪 区 域,用 一 个 图 形 对 象 或 文 字 对 象 来 描 述 裁 剪 区 的 一 个 组 成 部</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2858" CTM="1 0 0 1 31.7 128.8"><ofd:TextCode>必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2859" CTM="1 0 0 1 31.7 135"><ofd:TextCode>Area</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2860" CTM="1 0 0 1 31.7 141.2"><ofd:TextCode>分,最 终 裁 剪 区 是 这 些 区 域 的 并 集</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

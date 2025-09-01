@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2281" Font="1" Size="3.5" Boundary="31.7 25.4 65.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">_ 字型资源描述,在基础类型上扩展定义 属性,类型为 _ 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2282" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2283" Font="1" Size="3.5" Boundary="31.7 36.65 39.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Font CTFont ID STID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2284" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2285" Font="1" Size="3.5" Boundary="31.7 47.9 42 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">包含了一组文档所用多媒体对象的描述 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2286" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2287" Font="1" Size="3.5" Boundary="31.7 59.15 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">MultiMedias</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2288" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2289" Font="1" Size="3.5" Boundary="31.7 70.4 52.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">多媒体资源描述,在基础类型上扩展定义 属性,类型为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2290" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2291" Font="1" Size="3.5" Boundary="31.7 81.65 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ID ST</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2292" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2293" Font="1" Size="3.5" Boundary="31.7 92.9 56.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">MultiMedia CT_MultiMedia 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2294" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2295" Font="1" Size="3.5" Boundary="31.7 104.15 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2296" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2297" Font="1" Size="3.5" Boundary="31.7 115.4 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2298" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2299" Font="1" Size="3.5" Boundary="31.7 126.65 56.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">包含了一组矢量图像(被复合图元对象所引用)的描述 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2300" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

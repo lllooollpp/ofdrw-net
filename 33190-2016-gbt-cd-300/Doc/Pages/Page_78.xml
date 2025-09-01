@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1541" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>的 大 小 由 节 点 见 文 档 根 节 点 中 的 确 定 页 面 空 间 根 据 原 点 平 移 轴 方 向</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1542" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>PaeArea 7.5 PhsicalBox</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1543" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>g y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1544" CTM="1 0 0 1 31.7 44"><ofd:TextCode>变 换、坐 标 数 值 变 换 等 来 完 成 到 设 备 空 间 的 变 换。 其 中 坐 标 数 值 变 换 就 是 将 图 元 的 长 度 数 据 通 过 设 备</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1545" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1546" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>的 分 辨 率 和 其 他 信 息 换 算 成 设 备 空 间 中 的 像 素 长 度</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1547" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>对 象 空 间</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1548" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>8.1.4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1549" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>图 元 对 象 使 用 其 外 接 矩 形 属 性 确 定 在 页 面 或 其 他 容 器 中 的 绘 制 位 置。 图 元 对 象 的 内 部 数 据,包 括</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1550" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>路 径 数 据 和 裁 剪 区 数 据,都 以 外 接 矩 形 的 左 上 角 为 坐 标 原 点, 轴 向 右 增 长, 轴 向 下 增 长,并 采 用 毫</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1551" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>X Y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1552" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>米 为 单 位,这 样 的 局 部 坐 标 空 间 就 称 为 对 象 空 间。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1553" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>绘 制 图 元 时,应 首 先 通 过 外 接 矩 形 参 数 平 移 到 对 象 空 间 内,在 对 象 空 间 内 根 据 变 换 矩 阵 和 裁 剪 设 置</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1554" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>进 行 相 应 绘 制。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1555" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>变 换 矩 阵</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1556" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>8.1.5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1557" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>, , “</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1558" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>变 换 矩 阵 提 供 了 两 个 坐 标 空 间 之 间 的 变 换 规 则 用 一 个 长 度 为 的 一 维 数 组 描 述 形 如</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1559" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>6 abcde</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1560" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>éa b 0ù</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

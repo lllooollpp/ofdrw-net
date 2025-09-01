@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="6201" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6202" Font="1" Size="3.5" Boundary="31.7 29.4 60.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">XYZ 目标区域由左上角位置LeftTop以及页面缩放比例</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6203" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6204" Font="1" Size="3.5" Boundary="31.7 40.65 18.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">(Zoom)确定;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6205" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6206" Font="1" Size="3.5" Boundary="31.7 51.9 31.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Fit———适合整个窗口区域;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6207" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6208" Font="1" Size="3.5" Boundary="31.7 63.15 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6209" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6210" Font="1" Size="3.5" Boundary="31.7 74.4 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Type xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6211" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6212" Font="1" Size="3.5" Boundary="31.7 85.65 42 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">———适合窗口宽度,目标区域仅由 确定;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6213" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6214" Font="1" Size="3.5" Boundary="31.7 96.9 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">FitH Top</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6215" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6216" Font="1" Size="3.5" Boundary="31.7 108.15 42 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">———适合窗口高度,目标区域仅由 确定;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6217" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6218" Font="1" Size="3.5" Boundary="31.7 119.4 18.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">FitV Left</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6219" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6220" Font="1" Size="3.5" Boundary="31.7 130.65 52.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">———适合窗口内的目标区域,目标区域为( 、、 、</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

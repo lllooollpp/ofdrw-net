@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4841" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4842" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs elementname=&quot;CustomDatas&quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4843" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4844" CTM="1 0 0 1 31.7 44"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4845" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4846" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4847" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4848" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>xs elementname=&quot;CustomData&quot;maxOccurs=&quot;unbounded&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4849" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4850" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4851" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>92</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4852" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4853" CTM="1 0 0 1 31.7 98.00000000000003"><ofd:TextCode>
+=== 第 98 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4854" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4855" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4856" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4857" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>xs simpleContent</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4858" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>&lt; : : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4859" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>xs extensionbase=&quot;xs strin &quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4860" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

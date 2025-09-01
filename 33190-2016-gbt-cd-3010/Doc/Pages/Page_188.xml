@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3741" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3742" Font="1" Size="3.5" Boundary="31.7 29.4 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">2:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3743" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3744" Font="1" Size="3.5" Boundary="31.7 40.65 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">3向两侧延长线方向绘制渐变</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3745" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3746" Font="1" Size="3.5" Boundary="31.7 51.9 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">默认值为0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3747" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3748" Font="1" Size="3.5" Boundary="31.7 63.15 42 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Sement 颜色段,至少出现两个 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3749" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3750" Font="1" Size="3.5" Boundary="31.7 74.4 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3751" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3752" Font="1" Size="3.5" Boundary="31.7 85.65 79.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">用于确定StartPoint和EndPoint中的各颜色的位置值,取值范围是</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3753" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3754" Font="1" Size="3.5" Boundary="31.7 96.9 52.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">[,],各颜色的 应根据颜色出现的顺序递增。第一个</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3755" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3756" Font="1" Size="3.5" Boundary="31.7 108.15 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">01.0 Position</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3757" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3758" Font="1" Size="3.5" Boundary="31.7 119.4 31.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">的 属性默认值为,最后一个 的</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3759" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3760" Font="1" Size="3.5" Boundary="31.7 130.65 69.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">SegmentPosition 0 SegmentPosition</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

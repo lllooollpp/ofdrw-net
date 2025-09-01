@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5941" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5942" Font="1" Size="3.5" Boundary="31.7 29.4 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">12 视频</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5943" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5944" Font="1" Size="3.5" Boundary="31.7 40.65 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">, 。 、 、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5945" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5946" Font="1" Size="3.5" Boundary="31.7 51.9 86.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">本标准支持在文档中嵌入视频资源并通过Movie动作触发视频播放图元大纲节点页面和文</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5947" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5948" Font="1" Size="3.5" Boundary="31.7 63.15 42 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">档均可定义动作,其详细描述见第 章动作。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5949" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5950" Font="1" Size="3.5" Boundary="31.7 74.4 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">14</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5951" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5952" Font="1" Size="3.5" Boundary="31.7 85.65 90.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">通过页面图元触发视频播放时,可选择视频中某一静态帧制作为图像对象,并为该对象定义边框和</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5953" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5954" Font="1" Size="3.5" Boundary="31.7 96.9 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">动作,见第 章图像。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5955" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5956" Font="1" Size="3.5" Boundary="31.7 108.15 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Movie 10</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5957" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5958" Font="1" Size="3.5" Boundary="31.7 119.4 90.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">图元对象关联的视频播放时,宜使用图元的外观区域大小作为嵌入式播放窗口。其他情况下,宜使</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5959" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5960" Font="1" Size="3.5" Boundary="31.7 130.65 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">用弹出式窗口。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

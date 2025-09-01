@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3281" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>EndPoint STPos</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3282" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>不 能 与 当 前 的 绘 制 起 始 点 为 同 一 位 置</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3283" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>形 如[ ]的 数 组, 个 正 浮 点 数 值 依 次 对 应 椭 圆 的 长、短 轴 长</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3284" CTM="1 0 0 1 31.7 44"><ofd:TextCode>200100 2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3285" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3286" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>度 较 大 的 一 个 为 长 轴</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3287" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>[异 常 处 理]如 果 数 组 长 度 超 过 ,则 只 取 前 两 个 数 值</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3288" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3289" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>_ [异 常 处 理]如 果 数 组 长 度 为 ,则 认 为 这 是 一 个 圆,该 数 值 为 圆 半 径 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3290" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>ElliseSize STArra 1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3291" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>p y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3292" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>[异 常 处 理]如 果 数 组 前 两 个 数 值 中 有 一 个 为 ,或 者 数 组 为 空,则 圆</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3293" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3294" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>弧 退 化 为 一 条 从 当 前 点 到 的 线 段</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3295" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>EndPoint</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3296" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>[异 常 处 理]如 果 数 组 数 值 为 负 值,则 取 其 绝 对 值</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3297" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>表 示 按 绘 制 的 椭 圆 在 当 前 坐 标 系 下 旋 转 的 角 度,正 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3298" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>ElliseSize</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3299" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3300" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>: 顺 时 针,负 值 为 逆 时 针 必 选</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="921" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="922" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="923" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>图 页 边 界 层 次 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="924" CTM="1 0 0 1 31.7 44"><ofd:TextCode>8</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="925" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>( ) , 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="926" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>本 标 准 支 持 设 置 文 档 权 限 声 明 节 点 以 达 到 文 档 防 扩 散 等 应 用 目 的 文 档 权 限 声 明</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="927" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>Permissions</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="928" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="929" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>9</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="930" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>12</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="931" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="932" CTM="1 0 0 1 31.7 91.80000000000003"><ofd:TextCode>
+=== 第 18 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="933" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="934" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="935" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>图 文 档 权 限 声 明 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="936" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>9</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="937" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>文 档 权 限 声 明 相 关 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="938" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>8</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="939" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>表 文 档 权 限 声 明 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="940" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>8</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

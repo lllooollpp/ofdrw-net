@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3701" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>: ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3702" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>中 字 符 编 码 的 起 始 位 置 从 开 始 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3703" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>CodePosition xsint TextCode 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3704" CTM="1 0 0 1 31.7 44"><ofd:TextCode>变 换 关 系 中 字 符 的 数 量,该 数 值 应 大 于 或 等 于 ,否 则 属 于 错 误 描 述,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3705" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3706" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3707" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3708" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>CodeCount xsint</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3709" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>默 认 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3710" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3711" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>68</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3712" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3713" CTM="1 0 0 1 31.7 98.00000000000003"><ofd:TextCode>
+=== 第 74 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3714" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3715" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3716" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>表 (续)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3717" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>48</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3718" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3719" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>变 换 关 系 中 字 形 索 引 的 个 数,该 数 值 应 大 于 或 等 于 ,否 则 属 于 错 误 描</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3720" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>1</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2961" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>Actions</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2962" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>当 存 在 多 个 对 象 时,所 有 动 作 依 次 执 行</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2963" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>Action</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2964" CTM="1 0 0 1 31.7 44"><ofd:TextCode>图 元 动 作</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2965" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>_ 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2966" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>Action CTAction</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2967" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>图 元 动 作 事 件 类 型 应 为 (见 表 事 件 类 型)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2968" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>CLICK 52</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2969" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2970" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>图 元 对 象 的 裁 剪 区 域 序 列 采 用 对 象 空 间 坐 标 系</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2971" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2972" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>Clips</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2973" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>当 存 在 多 个 对 象 时,最 终 裁 剪 区 为 所 有 区 域 的 交 集</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2974" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>Cli Cli</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2975" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>p p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2976" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2977" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>裁 剪 区 域 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2978" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>Clip CTClip</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2979" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>51</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2980" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

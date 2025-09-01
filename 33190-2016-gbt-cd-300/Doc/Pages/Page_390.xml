@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="7781" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7782" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs com lexContent</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7783" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7784" CTM="1 0 0 1 31.7 44"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7785" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>xs extensionbase=&quot;CT GraphicUnit&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7786" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7787" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>xs attributename=&quot;ResourceID&quot;type=&quot;ST RefID&quot;use=&quot;required&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7788" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7789" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>xs extension</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7790" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7791" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>xs com lexContent</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7792" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7793" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7794" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7795" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>&lt;! 图 形 对 象 及 其 定 义 &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7796" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>-- --</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7797" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7798" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>xs com lexT ename=&quot;CT Path&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7799" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7800" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

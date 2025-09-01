@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1881" Font="1" Size="3.5" Boundary="31.7 25.4 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">p p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1882" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1883" Font="1" Size="3.5" Boundary="31.7 36.65 33.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">属性来控制模板在页面中的呈现顺序</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1884" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1885" Font="1" Size="3.5" Boundary="31.7 47.9 35.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">注:在模板页的内容描述中该属性无效</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1886" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1887" Font="1" Size="3.5" Boundary="31.7 59.15 54.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">_ 引用在文档公用数据( )中定义的模板页标识 必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1888" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1889" Font="1" Size="3.5" Boundary="31.7 70.4 60.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">TemplateID STRefID CommonData</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1890" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1891" Font="1" Size="3.5" Boundary="31.7 81.65 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1892" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1893" Font="1" Size="3.5" Boundary="31.7 92.9 63 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">控制模板在页面中的呈现顺序其类型描述和呈现顺序与Layer中</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1894" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1895" Font="1" Size="3.5" Boundary="31.7 104.15 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Te的描述和处理一致</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1896" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1897" Font="1" Size="3.5" Boundary="31.7 115.4 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1898" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1899" Font="1" Size="3.5" Boundary="31.7 126.65 100.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">ZOrder xs:strin 如果多个图层的此属性相同,则应根据其出现的顺序来显示,先出 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1900" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

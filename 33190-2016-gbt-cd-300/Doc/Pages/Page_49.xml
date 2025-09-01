@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="961" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="962" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="963" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>表 (续)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="964" CTM="1 0 0 1 31.7 44"><ofd:TextCode>8</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="965" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="966" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>是 否 允 许 进 行 数 字 签 名</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="967" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="968" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>Sinature xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="969" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="970" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>默 认 值:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="971" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>true</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="972" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>是 否 允 许 添 加 水 印</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="973" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="974" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="975" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>Watermark xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="976" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>默 认 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="977" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>true</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="978" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>是 否 允 许 截 屏</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="979" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="980" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>PrintScreen xsboolean</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

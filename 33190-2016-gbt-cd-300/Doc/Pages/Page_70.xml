@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1381" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>表 大 纲 节 点 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1382" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>17</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1383" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1384" CTM="1 0 0 1 31.7 44"><ofd:TextCode>: 大 纲 节 点 标 题 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1385" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>Title xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1386" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>该 节 点 下 所 有 叶 节 点 的 数 目 参 考 值,应 根 据 该 节 点 下 实 际 出 现 的 子</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1387" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1388" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>节 点 数 为 准 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1389" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>Count xsint</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1390" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1391" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1392" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>在 有 子 节 点 存 在 时 有 效,如 果 为 ,表 示 该 大 纲 在 初 始 状 态 下 展</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1393" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>true</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1394" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>: ; ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1395" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>开 子 节 点 如 果 为 则 表 示 不 展 开 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1396" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>Expanded xsboolean false</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1397" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1398" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>true</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1399" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>当 此 大 纲 节 点 被 激 活 时 将 执 行 的 动 作 序 列 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1400" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>Actions</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

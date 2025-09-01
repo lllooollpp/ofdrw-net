@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="681" Font="1" Size="3.5" Boundary="31.7 25.4 71.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">XML:可扩展置标语言(ExtensibleMarkuLanuae)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="682" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="683" Font="1" Size="3.5" Boundary="31.7 36.65 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">p gg</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="684" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="685" Font="1" Size="3.5" Boundary="31.7 47.9 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">概述</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="686" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="687" Font="1" Size="3.5" Boundary="31.7 59.15 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="688" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="689" Font="1" Size="3.5" Boundary="31.7 70.4 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">5.1 文档特性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="690" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="691" Font="1" Size="3.5" Boundary="31.7 81.65 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="692" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="693" Font="1" Size="3.5" Boundary="31.7 92.9 84 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">OFD应具有真实地保持文件中版式信息的特性且这种特性不随着软硬件环境的变化而发生</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="694" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="695" Font="1" Size="3.5" Boundary="31.7 104.15 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">改变。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="696" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="697" Font="1" Size="3.5" Boundary="31.7 115.4 63 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">采用 / — 中的 技术描述文件数据,与本标准相配套的 见附</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="698" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="699" Font="1" Size="3.5" Boundary="31.7 126.65 56.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">OFD GBT187932002 XML Schema</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="700" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3061" Font="1" Size="3.5" Boundary="31.7 25.4 73.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">LaGouraudShd CTLaGouraudShd 8.3.4.5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3062" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3063" Font="1" Size="3.5" Boundary="31.7 36.65 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">32</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3064" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3065" Font="1" Size="4" Boundary="31.7 47.9 38.4 8" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="4">
+=== 第 38 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3066" Font="1" Size="3.5" Boundary="31.7 57.9 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3067" Font="1" Size="1" Boundary="31.7 65.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3068" Font="1" Size="3.5" Boundary="31.7 69.15 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">GBT331902016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3069" Font="1" Size="1" Boundary="31.7 76.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3070" Font="1" Size="3.5" Boundary="31.7 80.4 90.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">基本颜色支持两种指定方式:一种是通过设定颜色各通道值指定颜色空间中的某个颜色,另一种是</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3071" Font="1" Size="1" Boundary="31.7 87.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3072" Font="1" Size="3.5" Boundary="31.7 91.65 44.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">通过索引值取得颜色空间中的一个预定义颜色。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3073" Font="1" Size="1" Boundary="31.7 98.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3074" Font="1" Size="3.5" Boundary="31.7 102.9 92.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">由于不同颜色空间下,颜色通道的含义、数目各不相同,因此对颜色空间的类型、颜色值的描述格式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3075" Font="1" Size="1" Boundary="31.7 110.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3076" Font="1" Size="3.5" Boundary="31.7 114.15 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">, 。 ( ) , ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3077" Font="1" Size="1" Boundary="31.7 121.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3078" Font="1" Size="3.5" Boundary="31.7 125.4 105 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">等做出了详细的说明见表27BitsPerComponent简称BPC有效时颜色通道值的取值下限是0上</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3079" Font="1" Size="1" Boundary="31.7 132.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3080" Font="1" Size="3.5" Boundary="31.7 136.65 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">BPC</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

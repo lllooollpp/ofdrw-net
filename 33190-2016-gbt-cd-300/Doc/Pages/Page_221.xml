@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4401" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>文 件 摘 要 文 件 根 节 点 为 其 子 节 点 对 应 元 素 说 明 见 表</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4402" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>Signature SignedInfo 67</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4403" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>表 签 名 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4404" CTM="1 0 0 1 31.7 44"><ofd:TextCode>67</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4405" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4406" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>签 名 描 述 文 件 的 根 节 点 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4407" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>Sinature</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4408" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4409" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>签 名 要 保 护 的 原 文 及 本 次 签 名 相 关 的 信 息 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4410" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>SinedInfo</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4411" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4412" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>创 建 签 名 时 所 用 的 签 章 组 件 提 供 者 信 息 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4413" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>Provider</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4414" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>: 创 建 签 名 时 所 用 的 签 章 组 件 的 提 供 者 名 称 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4415" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>ProviderName xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4416" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4417" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>: 创 建 签 名 时 所 用 的 签 章 组 件 的 制 造 商 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4418" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>Coman xsstrin</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4419" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>p y g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4420" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>: 创 建 签 名 时 所 用 的 签 章 组 件 的 版 本 可 选</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

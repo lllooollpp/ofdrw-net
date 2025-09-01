@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1681" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>的 绘 制 属 性,图 元 自 有 的 绘 制 属 性 将 覆 盖 其 引 用 的 绘 制 参 数 中 的 同 名 属 性。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1682" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>绘 制 参 数 可 通 过 引 用 基 础 绘 制 参 数 的 方 式 形 成 嵌 套,对 单 个 绘 制 参 数 而 言,它 继 承 了 其 基 础 绘 制 参</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1683" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>, 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1684" CTM="1 0 0 1 31.7 44"><ofd:TextCode>数 中 的 所 有 属 性 并 且 可 以 重 定 义 其 基 础 绘 制 参 数 中 的 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1685" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>绘 制 参 数 属 性 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1686" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>21</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1687" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>27</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1688" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1689" CTM="1 0 0 1 31.7 73.20000000000002"><ofd:TextCode>
+=== 第 33 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1690" CTM="1 0 0 1 31.7 79.20000000000002"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1691" CTM="1 0 0 1 31.7 85.40000000000002"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1692" CTM="1 0 0 1 31.7 91.60000000000002"><ofd:TextCode>表 绘 制 参 数 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1693" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>21</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1694" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>属 性 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1695" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>_ 基 础 绘 制 参 数,引 用 资 源 文 件 中 的 绘 制 参 数 的 标 识 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1696" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>Relative STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1697" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>线 条 连 接 样 式,指 定 了 两 个 线 的 端 点 结 合 时 采 用 的 样 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1698" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>可 取 值 为:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1699" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>Miter</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1700" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

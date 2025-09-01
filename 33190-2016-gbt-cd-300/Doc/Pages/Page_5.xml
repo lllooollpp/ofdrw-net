@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="81" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>8.1.2 25</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="82" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>页 面 空 间………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="83" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>8.1.3 25</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="84" CTM="1 0 0 1 31.7 44"><ofd:TextCode>对 象 空 间………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="85" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>8.1.4 25</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="86" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>变 换 矩 阵………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="87" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>8.1.5 25</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="88" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>……………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="89" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>绘 制 参 数</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="90" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>8.2 27</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="91" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>绘 制 参 数 结 构…………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="92" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>8.2.1 27</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="93" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>线 条 连 接 样 式…………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="94" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>8.2.2 28</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="95" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>线 条 连 接 点 截 断 值……………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="96" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>8.2.3 29</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="97" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>线 条 的 虚 线 样 式………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="98" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>8.2.4 29</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="99" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="100" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>线 条 的 端 点 样 式</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

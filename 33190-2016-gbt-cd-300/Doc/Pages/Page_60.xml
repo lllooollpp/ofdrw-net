@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1181" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1182" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>17</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1183" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1184" CTM="1 0 0 1 31.7 42.199999999999996"><ofd:TextCode>
+=== 第 23 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1185" CTM="1 0 0 1 31.7 48.199999999999996"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1186" CTM="1 0 0 1 31.7 54.4"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1187" CTM="1 0 0 1 31.7 60.6"><ofd:TextCode>图 页 对 象 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1188" CTM="1 0 0 1 31.7 66.8"><ofd:TextCode>13</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1189" CTM="1 0 0 1 31.7 73"><ofd:TextCode>页 对 象 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1190" CTM="1 0 0 1 31.7 79.2"><ofd:TextCode>12</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1191" CTM="1 0 0 1 31.7 85.4"><ofd:TextCode>表 页 对 象 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1192" CTM="1 0 0 1 31.7 91.60000000000001"><ofd:TextCode>12</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1193" CTM="1 0 0 1 31.7 97.80000000000001"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1194" CTM="1 0 0 1 31.7 104.00000000000001"><ofd:TextCode>该 页 所 使 用 的 模 板 页。 模 板 页 的 内 容 结 构 和 普 通 页 相 同,定 义 在</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1195" CTM="1 0 0 1 31.7 110.20000000000002"><ofd:TextCode>。 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1196" CTM="1 0 0 1 31.7 116.40000000000002"><ofd:TextCode>指 定 的 文 件 中 一 个 页 可 以 使 用 多 个 模 板 页</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1197" CTM="1 0 0 1 31.7 122.60000000000002"><ofd:TextCode>CommonData XML</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1198" CTM="1 0 0 1 31.7 128.8"><ofd:TextCode>该 节 点 使 用 时 通 过 来 引 用 具 体 的 模 板,并 通 过 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1199" CTM="1 0 0 1 31.7 135"><ofd:TextCode>Temlate TemlateID ZOrder</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1200" CTM="1 0 0 1 31.7 141.2"><ofd:TextCode>p p</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

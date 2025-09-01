@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4501" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>_ 引 用 外 观 注 释 所 在 的 页 面 的 标 识 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4502" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>PageRef STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4503" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>: 签 章 注 释 的 标 识 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4504" CTM="1 0 0 1 31.7 44"><ofd:TextCode>ID xsID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4505" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>_ 签 章 注 释 的 外 观 外 边 框 位 置,可 用 于 签 章 注 释 在 页 面 内 的 定 位 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4506" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>Boundar STBox</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4507" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4508" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>_ 签 章 注 释 的 外 观 裁 剪 设 置 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4509" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>Cli STBox</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4510" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4511" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>签 名 值</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4512" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>18.2.4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4513" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>, 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4514" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>签 名 值 指 向 包 内 的 一 个 二 进 制 文 件 该 文 件 存 放 数 字 签 名 或 签 章 结 果 该 值 需 满 足 的 密 码 安 全 要</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4515" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>求 在 其 他 规 范 中 限 定。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4516" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>版 本</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4517" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>19</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4518" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>版 本 入 口</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4519" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>19.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4520" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>一 个 文 档 可 以 有 多 个 版 本,如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

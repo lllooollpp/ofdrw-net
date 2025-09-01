@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="641" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>标 识</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="642" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>点 坐 标,以 空 格 分 割,前 者 为 值,后 者 为 值,可 以 是</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="643" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>x</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="644" CTM="1 0 0 1 31.7 44"><ofd:TextCode>y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="645" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>_ “ ”</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="646" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>STPos 00</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="647" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>整 数 或 者 浮 点 数</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="648" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>矩 形 区 域,以 空 格 分 割,前 两 个 值 代 表 了 该 矩 形 的 左 上</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="649" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>_ , , “ ”</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="650" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>角 的 坐 标 后 两 个 值 依 次 表 示 该 矩 形 的 宽 和 高 可 以 是</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="651" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>STBox 10105050</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="652" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>整 数 或 者 浮 点 数,后 两 个 值 应 大 于</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="653" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="654" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>主 入 口</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="655" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>7.4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="656" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>文 件 的 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="657" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>OFD.xml 3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="658" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>图 主 入 口 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="659" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>3 OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="660" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>主 入 口 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

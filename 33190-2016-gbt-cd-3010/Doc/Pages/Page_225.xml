@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4481" Font="1" Size="3.5" Boundary="31.7 25.4 48.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">_ 渐变范围外的填充颜色,应使用基本颜色 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4482" Font="1" Size="1" Boundary="31.7 32.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4483" Font="1" Size="3.5" Boundary="31.7 36.65 35.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">BackColor CTColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4484" Font="1" Size="1" Boundary="31.7 43.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4485" Font="1" Size="3.5" Boundary="31.7 47.9 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">8.4 裁剪区</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4486" Font="1" Size="1" Boundary="31.7 55.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4487" Font="1" Size="3.5" Boundary="31.7 59.15 90.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">裁剪区由一组路径或文字构成,用以指定页面上的一个有效绘制区域,落在裁剪区以外的部分不受</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4488" Font="1" Size="1" Boundary="31.7 66.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4489" Font="1" Size="3.5" Boundary="31.7 70.4 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">绘制指令的影响。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4490" Font="1" Size="1" Boundary="31.7 77.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4491" Font="1" Size="3.5" Boundary="31.7 81.65 88.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">一个裁剪区可由多个分路径( )组成,最终的裁剪范围是各个分路径的并集。裁剪区中的数据</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4492" Font="1" Size="1" Boundary="31.7 88.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4493" Font="1" Size="3.5" Boundary="31.7 92.9 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Area</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4494" Font="1" Size="1" Boundary="31.7 100.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4495" Font="1" Size="3.5" Boundary="31.7 104.15 58.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">均相对于所修饰图元对象的外接矩形。裁剪区结构如图 所示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4496" Font="1" Size="1" Boundary="31.7 111.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4497" Font="1" Size="3.5" Boundary="31.7 115.4 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">44</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4498" Font="1" Size="1" Boundary="31.7 122.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4499" Font="1" Size="3.5" Boundary="31.7 126.65 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">48</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4500" Font="1" Size="1" Boundary="31.7 133.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

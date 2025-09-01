@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3601" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3602" Font="1" Size="3.5" Boundary="31.7 29.4 21 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">33 Reflect</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3603" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3604" Font="1" Size="3.5" Boundary="31.7 40.65 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">径向渐变</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3605" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3606" Font="1" Size="3.5" Boundary="31.7 51.9 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">8.3.4.3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3607" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3608" Font="1" Size="3.5" Boundary="31.7 63.15 88.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">径向渐变定义了两个离心率和倾斜角度均相同的椭圆,并在椭圆边缘连线区域内进行渐变绘制的</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3609" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3610" Font="1" Size="3.5" Boundary="31.7 74.4 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">。 , ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3611" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3612" Font="1" Size="3.5" Boundary="31.7 85.65 88.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">方法具体算法是先由起始点椭圆中心点开始绘制一个起始点颜色的空心椭圆随后沿着中心点连线</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3613" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3614" Font="1" Size="3.5" Boundary="31.7 96.9 94.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">不断绘制离心率与倾斜角度相同的空心椭圆,颜色由起始点颜色逐渐变为结束点颜色,椭圆大小由起始</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3615" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3616" Font="1" Size="3.5" Boundary="31.7 108.15 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">点椭圆逐渐变为结束点椭圆。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3617" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3618" Font="1" Size="3.5" Boundary="31.7 119.4 35.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">图 所示是一个典型的径向渐变示例:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3619" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3620" Font="1" Size="3.5" Boundary="31.7 130.65 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">34</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

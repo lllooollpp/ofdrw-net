@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1601" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>ê ú ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1602" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>ê ú ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1603" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>ë   0  0  1û ë0 0 1û</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1604" CTM="1 0 0 1 31.7 44"><ofd:TextCode>。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1605" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>保 存</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1606" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>表 矩 阵 变 换 说 明</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1607" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>20</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1608" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>矩 阵 作 用</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1609" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>平 移。 沿 轴 平 移 个 单 位,沿 轴 平 移 个 单 位</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1610" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>X e Y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1611" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>f</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1612" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>1 0 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1613" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>é ù</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1614" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1615" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>0 1 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1616" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1617" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>ê ú</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1618" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>ëe  1û</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1619" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>f</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1620" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>缩 放。 将 轴 上 的 一 个 单 位 缩 放 为 倍,将 轴 上 的 一 个 单 位 缩 放 为 倍</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

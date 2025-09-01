@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="681" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>表 (续)</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="682" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="683" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="684" CTM="1 0 0 1 31.7 44"><ofd:TextCode>文 件 对 象 入 口,可 以 存 在 多 个,以 便 在 一 个 文 档 中 包 含 多 个 版 式 文 档 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="685" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>DocBody</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="686" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>_ 文 档 元 数 据 信 息 描 述,文 档 元 数 据 信 息 具 体 结 构 见 图 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="687" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>DocInfo CTDocInfo 4</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="688" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>_ 指 向 文 档 根 节 点 文 档,有 关 文 档 根 节 点 描 述 见 文 档 根 节 点 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="689" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>DocRoot STLoc 7.5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="690" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="691" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>包 含 多 个 版 本 描 述 节 点 用 于 定 义 文 件 因 注 释 和 其 他 改 动 产 生 的 版 本</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="692" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="693" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>Versions</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="694" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>信 息,见 第 章</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="695" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>19</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="696" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>_ ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="697" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>指 向 该 文 档 中 签 名 和 签 章 结 构 见 第 章 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="698" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>Signatures STLoc 18</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="699" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>文 档 元 数 据 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="700" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>4</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

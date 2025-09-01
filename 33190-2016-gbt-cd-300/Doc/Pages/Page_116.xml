@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2301" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>表 径 向 渐 变 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2302" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>30</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2303" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2304" CTM="1 0 0 1 31.7 44"><ofd:TextCode>渐 变 绘 制 的 方 式,可 选 值 为 、 、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2305" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>DirectReeatReflect</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2306" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>p</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2307" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2308" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>MapType xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2309" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2310" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>Direct</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2311" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2312" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>中 心 点 连 线 上 一 个 渐 变 区 间 所 绘 制 的 长 度 当 的 值 不 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2313" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>MapType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2314" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>: 时 出 现 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2315" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>MapUnit xsdouble Direct</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2316" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>默 认 值 为 中 心 点 连 线 长 度</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2317" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>40</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2318" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2319" CTM="1 0 0 1 31.7 135.20000000000005"><ofd:TextCode>
+=== 第 46 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2320" CTM="1 0 0 1 31.7 141.20000000000005"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

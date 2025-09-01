@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4801" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>xs elementname=&quot;Author&quot;type=&quot;xs string&quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4802" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4803" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>xs elementname=&quot;Subject&quot;type=&quot;xs string&quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4804" CTM="1 0 0 1 31.7 44"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4805" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>xs elementname=&quot;Abstract&quot;t e=&quot;xs strin &quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4806" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>yp g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4807" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4808" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>xs elementname=&quot;CreationDate&quot;type=&quot;xs date&quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4809" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4810" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>xs elementname=&quot;ModDate&quot;type=&quot;xs date&quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4811" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4812" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>xs elementname=&quot;DocUsa e&quot;t e=&quot;xs strin &quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4813" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>g yp g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4814" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4815" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>xs elementname=&quot;Cover&quot;t e=&quot;ST Loc&quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4816" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4817" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4818" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>xs elementname=&quot;Keywords&quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4819" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4820" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="7721" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7722" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>&lt; : _</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7723" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>xs elementname=&quot;BorderColor&quot;type=&quot;CT Color&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7724" CTM="1 0 0 1 31.7 44"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7725" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7726" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7727" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>xs se uence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7728" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>q</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7729" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt; : :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7730" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>xs attributename=&quot;LineWidth&quot;type=&quot;xs double&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7731" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7732" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>default=&quot;0.353&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7733" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>&lt; :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7734" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>xs attributename=&quot;HorizonalCornerRadius&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7735" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>: /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7736" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>type=&quot;xs double&quot;default=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7737" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>&lt; :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7738" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>xs attributename=&quot;VerticalCornerRadius&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7739" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>: /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7740" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>t e=&quot;xs double&quot;default=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

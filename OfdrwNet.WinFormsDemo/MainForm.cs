@@ -2,6 +2,8 @@ using Microsoft.Extensions.Logging;
 using OfdrwNet.WinFormsDemo.Converters;
 using System.IO.Compression;
 using System.Windows.Forms;
+using OfdrwNet.Converter; // 新增：使用 ConvertHelper
+using iText.Kernel.Pdf; // 新增：获取 PDF 页数
 
 namespace OfdrwNet.WinFormsDemo;
 
@@ -14,48 +16,70 @@ public partial class MainForm : Form
     private readonly ILogger<MainForm> _logger;
     private Word2OfdConverter? _wordConverter;
     private Html2OfdConverter? _htmlConverter;
-    private Pdf2OfdConverter? _pdfConverter;
+    // 已弃用：PDF 转换器占位（新 PDF->OFD 正在重构，暂不提供 UI 调用）
+    // private Pdf2OfdConverter? _pdfConverter;
     private CancellationTokenSource? _cancellationTokenSource;
     private bool _isConverting = false;
 
     /// <summary>
     /// 构造函数
     /// </summary>
-    public MainForm()
+    public MainForm(ILoggerFactory? loggerFactory = null)
     {
         InitializeComponent();
         
-        // 创建简单的日志记录器
-        using var loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
-        _logger = loggerFactory.CreateLogger<MainForm>();
+        // 使用传入的日志工厂或创建默认的
+        if (loggerFactory != null)
+        {
+            _logger = loggerFactory.CreateLogger<MainForm>();
+        }
+        else
+        {
+            using var defaultLoggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
+            _logger = defaultLoggerFactory.CreateLogger<MainForm>();
+        }
         
-        InitializeConverters();
+        InitializeConverters(loggerFactory);
         InitializeUI();
     }
 
     /// <summary>
     /// 初始化转换器
     /// </summary>
-    private void InitializeConverters()
+    private void InitializeConverters(ILoggerFactory? loggerFactory = null)
     {
         try
         {
-            using var loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
+            ILoggerFactory factory;
+            if (loggerFactory != null)
+            {
+                factory = loggerFactory;
+            }
+            else
+            {
+                factory = LoggerFactory.Create(builder => builder.AddConsole());
+            }
             
-            _wordConverter = new Word2OfdConverter(loggerFactory.CreateLogger<Word2OfdConverter>());
+            _logger.LogInformation("开始初始化转换器...");
+            
+            _wordConverter = new Word2OfdConverter(factory.CreateLogger<Word2OfdConverter>());
             _wordConverter.ProgressChanged += OnConverterProgressChanged;
             _wordConverter.ConversionCompleted += OnConverterCompleted;
+            _logger.LogDebug("Word转换器初始化完成");
 
-            _htmlConverter = new Html2OfdConverter(loggerFactory.CreateLogger<Html2OfdConverter>());
+            _htmlConverter = new Html2OfdConverter(factory.CreateLogger<Html2OfdConverter>());
             _htmlConverter.ProgressChanged += OnConverterProgressChanged;
             _htmlConverter.ConversionCompleted += OnConverterCompleted;
+            _logger.LogDebug("HTML转换器初始化完成");
 
-            _pdfConverter = new Pdf2OfdConverter(loggerFactory.CreateLogger<Pdf2OfdConverter>());
-            _pdfConverter.ProgressChanged += OnConverterProgressChanged;
-            _pdfConverter.ConversionCompleted += OnConverterCompleted;
+            // PDF->OFD 新实现：直接使用 ConvertHelper，不需要单独实例化转换器。
+            _logger.LogInformation("PDF->OFD 新实现已启用（基础字体抽取+可选逐字定位骨架）");
+            
+            _logger.LogInformation("转换器初始化完成");
         }
         catch (Exception ex)
         {
+            _logger.LogError(ex, "初始化转换器时发生错误");
             MessageBox.Show($"初始化转换器时发生错误: {ex.Message}", "错误", 
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
@@ -66,17 +90,23 @@ public partial class MainForm : Form
     /// </summary>
     private void InitializeUI()
     {
+        _logger.LogInformation("开始初始化UI组件...");
+        
         // 设置文件对话框过滤器
         openFileDialog.Filter = FileTypeDetector.GetFileDialogFilter();
         openFileDialog.Multiselect = false;
+        _logger.LogDebug("文件对话框过滤器设置完成: {Filter}", openFileDialog.Filter);
         
         // 设置保存对话框
         saveFileDialog.Filter = "OFD文件 (*.ofd)|*.ofd|所有文件 (*.*)|*.*";
         saveFileDialog.DefaultExt = "ofd";
+        _logger.LogDebug("保存文件对话框设置完成");
         
         // 更新状态
         UpdateStatus("准备就绪");
         UpdateFileInfo("请选择要转换的文件...");
+        
+        _logger.LogInformation("UI组件初始化完成");
     }
 
     /// <summary>
@@ -250,8 +280,7 @@ public partial class MainForm : Form
             string? ofdFilePath = null;
             
             // 优先使用输出文件路径（如果存在）
-            if (!string.IsNullOrEmpty(txtOutputFile.Text) && File.Exists(txtOutputFile.Text))
-            {
+            if (!string.IsNullOrEmpty(txtOutputFile.Text) && File.Exists(txtOutputFile.Text))            {
                 ofdFilePath = txtOutputFile.Text;
             }
             // 其次检查输入文件是否为OFD格式
@@ -296,20 +325,26 @@ public partial class MainForm : Form
     /// </summary>
     private void AutoDetectConversionType(string filePath)
     {
+        _logger.LogDebug("自动检测文件转换类型: {FilePath}", filePath);
+        
         var conversionType = FileTypeDetector.GetConversionType(filePath);
         
         switch (conversionType)
         {
             case ConversionType.WordToOfd:
                 rbWordToOfd.Checked = true;
+                _logger.LogInformation("检测到Word文件，选择Word到OFD转换");
                 break;
             case ConversionType.HtmlToOfd:
                 rbHtmlToOfd.Checked = true;
+                _logger.LogInformation("检测到HTML文件，选择HTML到OFD转换");
                 break;
             case ConversionType.PdfToOfd:
                 rbPdfToOfd.Checked = true;
+                _logger.LogInformation("检测到PDF文件，选择PDF到OFD转换");
                 break;
             default:
+                _logger.LogWarning("不支持的文件格式: {FilePath}", filePath);
                 MessageBox.Show("不支持的文件格式", "警告", 
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 break;
@@ -333,10 +368,14 @@ public partial class MainForm : Form
     /// </summary>
     private void DisplayFileInfo(string filePath)
     {
+        _logger.LogDebug("显示文件信息: {FilePath}", filePath);
+        
         try
         {
             var fileInfo = new FileInfo(filePath);
             var extension = Path.GetExtension(filePath).ToLowerInvariant();
+            
+            _logger.LogDebug("文件信息 - 大小: {Size} bytes, 扩展名: {Extension}", fileInfo.Length, extension);
             
             var info = $"文件名: {fileInfo.Name}\n" +
                       $"文件大小: {FormatFileSize(fileInfo.Length)}\n" +
@@ -347,17 +386,30 @@ public partial class MainForm : Form
             switch (extension)
             {
                 case ".pdf":
-                    var pdfInfo = Pdf2OfdConverter.GetDocumentInfo(filePath);
-                    info += $"页面数量: {pdfInfo.PageCount}\n";
-                    if (!string.IsNullOrEmpty(pdfInfo.Title))
-                        info += $"文档标题: {pdfInfo.Title}\n";
+                    _logger.LogDebug("获取PDF文件详细信息");
+                    try
+                    {
+                        using var reader = new iText.Kernel.Pdf.PdfReader(filePath);
+                        using var pdfDoc = new iText.Kernel.Pdf.PdfDocument(reader);
+                        var meta = pdfDoc.GetDocumentInfo();
+                        info += $"页面数量: {pdfDoc.GetNumberOfPages()}\n";
+                        var title = meta.GetTitle();
+                        if (!string.IsNullOrEmpty(title)) info += $"文档标题: {title}\n";
+                        _logger.LogInformation("PDF文件信息 - 页数: {PageCount}, 标题: {Title}", pdfDoc.GetNumberOfPages(), title ?? "无");
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.LogWarning(ex, "读取PDF信息失败");
+                    }
                     break;
             }
 
             UpdateFileInfo(info);
+            _logger.LogInformation("文件信息显示完成: {FileName}", fileInfo.Name);
         }
         catch (Exception ex)
         {
+            _logger.LogError(ex, "读取文件信息失败: {FilePath}", filePath);
             UpdateFileInfo($"无法读取文件信息: {ex.Message}");
         }
     }
@@ -367,8 +419,11 @@ public partial class MainForm : Form
     /// </summary>
     private bool ValidateInput()
     {
+        _logger.LogDebug("开始验证用户输入");
+        
         if (string.IsNullOrWhiteSpace(txtInputFile.Text))
         {
+            _logger.LogWarning("用户未选择输入文件");
             MessageBox.Show("请选择输入文件", "提示", 
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             return false;
@@ -376,6 +431,7 @@ public partial class MainForm : Form
 
         if (!File.Exists(txtInputFile.Text))
         {
+            _logger.LogError("输入文件不存在: {FilePath}", txtInputFile.Text);
             MessageBox.Show("输入文件不存在", "错误", 
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
@@ -383,6 +439,7 @@ public partial class MainForm : Form
 
         if (string.IsNullOrWhiteSpace(txtOutputFile.Text))
         {
+            _logger.LogWarning("用户未指定输出文件路径");
             MessageBox.Show("请指定输出文件路径", "提示", 
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             return false;
@@ -395,15 +452,19 @@ public partial class MainForm : Form
             try
             {
                 Directory.CreateDirectory(outputDir);
+                _logger.LogInformation("创建输出目录: {Directory}", outputDir);
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, "无法创建输出目录: {Directory}", outputDir);
                 MessageBox.Show($"无法创建输出目录: {ex.Message}", "错误", 
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
 
+        _logger.LogInformation("输入验证通过 - 输入文件: {InputFile}, 输出文件: {OutputFile}", 
+            txtInputFile.Text, txtOutputFile.Text);
         return true;
     }
 
@@ -412,6 +473,8 @@ public partial class MainForm : Form
     /// </summary>
     private async Task StartConversion()
     {
+        _logger.LogInformation("开始文档转换流程");
+        
         _isConverting = true;
         _cancellationTokenSource = new CancellationTokenSource();
         
@@ -420,6 +483,22 @@ public partial class MainForm : Form
         
         var inputFile = txtInputFile.Text;
         var outputFile = txtOutputFile.Text;
+        
+        _logger.LogInformation("转换参数 - 输入文件: {InputFile}, 输出文件: {OutputFile}", inputFile, outputFile);
+        
+        // 如果目标文件已存在则尝试删除（不中断流程）
+        if (!string.IsNullOrWhiteSpace(outputFile) && File.Exists(outputFile))
+        {
+            try
+            {
+                File.Delete(outputFile);
+                _logger.LogInformation("发现已存在的输出文件，已删除: {OutputFile}", outputFile);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, "删除已存在输出文件失败，后续将尝试覆盖: {OutputFile}", outputFile);
+            }
+        }
         
         UpdateStatus("开始转换...");
         
@@ -431,18 +510,55 @@ public partial class MainForm : Form
             // 根据选择的转换类型执行转换
             if (rbWordToOfd.Checked && _wordConverter != null)
             {
+                _logger.LogInformation("执行Word到OFD转换");
                 result = await _wordConverter.ConvertAsync(inputFile, outputFile, _cancellationTokenSource.Token);
             }
             else if (rbHtmlToOfd.Checked && _htmlConverter != null)
             {
+                _logger.LogInformation("执行HTML到OFD转换");
                 result = await _htmlConverter.ConvertAsync(inputFile, outputFile, _cancellationTokenSource.Token);
             }
-            else if (rbPdfToOfd.Checked && _pdfConverter != null)
+            else if (rbPdfToOfd.Checked)
             {
-                result = await _pdfConverter.ConvertAsync(inputFile, outputFile, _cancellationTokenSource.Token);
+                _logger.LogInformation("执行PDF到OFD转换");
+                var pdfOptions = new ConvertHelper.PdfToOfdOptions
+                {
+                    ExtractAndEmbedFonts = true,
+                    PerGlyphPositioning = true, // 可视化测试时开启逐字定位（当前仅水平文本）
+                    CancellationToken = _cancellationTokenSource.Token,
+                    Progress = new Progress<(int done, int total)>(p =>
+                    {
+                        int percent = p.total > 0 ? (int)Math.Round(p.done * 100.0 / p.total) : 0;
+                        OnConverterProgressChanged(this, new ConversionProgressEventArgs
+                        {
+                            Percentage = percent,
+                            Message = $"PDF 解析进度 {p.done}/{p.total}"
+                        });
+                    })
+                };
+                await ConvertHelper.ToOfdAsync(inputFile, outputFile, pdfOptions);
+                var inputInfo = new FileInfo(inputFile);
+                var outputInfo = new FileInfo(outputFile);
+                int? pageCount = null;
+                try
+                {
+                    using var pr = new PdfReader(inputFile);
+                    using var pdfDoc = new PdfDocument(pr);
+                    pageCount = pdfDoc.GetNumberOfPages();
+                }
+                catch { }
+                result = new ConversionResult
+                {
+                    Success = true,
+                    OutputPath = outputFile,
+                    InputFileSize = inputInfo.Exists ? inputInfo.Length : 0,
+                    OutputFileSize = outputInfo.Exists ? outputInfo.Length : 0,
+                    PageCount = pageCount
+                };
             }
             
             var duration = DateTime.Now - startTime;
+            _logger.LogInformation("转换流程完成，总耗时: {Duration:F2}秒", duration.TotalSeconds);
             
             if (result != null)
             {
@@ -452,6 +568,16 @@ public partial class MainForm : Form
                 
                 ShowConversionResult(result);
             }
+        }
+        catch (OperationCanceledException)
+        {
+            _logger.LogWarning("转换操作被用户取消");
+            UpdateStatus("转换已取消");
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "转换过程中发生未处理的异常");
+            throw;
         }
         finally
         {
@@ -775,7 +901,7 @@ public partial class MainForm : Form
             // 释放转换器资源
             _wordConverter?.Dispose();
             _htmlConverter?.Dispose();
-            _pdfConverter?.Dispose();
+            // _pdfConverter?.Dispose(); // 已弃用
             
             _cancellationTokenSource?.Dispose();
             

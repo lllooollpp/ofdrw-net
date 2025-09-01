@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="61" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>7.4 6</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="62" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>…………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="63" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>文 档 根 节 点</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="64" CTM="1 0 0 1 31.7 44"><ofd:TextCode>7.5 8</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="65" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>页 树…………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="66" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>7.6 17</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="67" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>页 对 象………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="68" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>7.7 17</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="69" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>大 纲…………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="70" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>7.8 22</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="71" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>资 源…………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="72" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>7.9 23</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="73" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>页 面 描 述…………………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="74" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>8 25</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="75" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>坐 标 系 统……………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="76" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>8.1 25</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="77" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="78" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>坐 标 说 明</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="79" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>8.1.1 25</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="80" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>设 备 空 间………………………………………………………………………………………</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

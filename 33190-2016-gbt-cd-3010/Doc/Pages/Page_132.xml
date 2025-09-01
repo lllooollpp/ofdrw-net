@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="2621" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2622" Font="1" Size="3.5" Boundary="31.7 29.4 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">) 、 、 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2623" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2624" Font="1" Size="3.5" Boundary="31.7 40.65 73.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">c 页面空间根据页面区域的大小坐标单位的实际长度设备信息变换到设备空间</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2625" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2626" Font="1" Size="3.5" Boundary="31.7 51.9 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">绘制参数</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2627" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2628" Font="1" Size="3.5" Boundary="31.7 63.15 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">8.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2629" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2630" Font="1" Size="3.5" Boundary="31.7 74.4 12.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">绘制参数结构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2631" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2632" Font="1" Size="3.5" Boundary="31.7 85.65 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">8.2.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2633" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2634" Font="1" Size="3.5" Boundary="31.7 96.9 86.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">绘制参数是一组用于控制绘制渲染效果的修饰参数的集合。绘制参数可以被不同的图元对象所</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2635" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2636" Font="1" Size="3.5" Boundary="31.7 108.15 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">共享。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2637" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2638" Font="1" Size="3.5" Boundary="31.7 119.4 90.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">绘制参数可以继承已有的绘制参数,被继承的绘制参数称为该参数的“基础绘制参数”。绘制参数</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2639" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="2640" Font="1" Size="3.5" Boundary="31.7 130.65 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">。</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

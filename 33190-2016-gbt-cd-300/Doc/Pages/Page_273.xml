@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5441" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>: :// / /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5442" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xmlns xs=&quot;http www.w3.org 2001 XMLSchema&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5443" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>:// /</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5444" CTM="1 0 0 1 31.7 44"><ofd:TextCode>targetNamespace=&quot;http www.ofdspec.org 2016&quot;elementFormDefault=&quot;qualified&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5445" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5446" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>attributeFormDefault=&quot;un ualified&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5447" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>q</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5448" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5449" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>xs includeschemaLocation=&quot;Page.xsd&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5450" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>98</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5451" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5452" CTM="1 0 0 1 31.7 91.80000000000003"><ofd:TextCode>
+=== 第 104 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5453" CTM="1 0 0 1 31.7 97.80000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5454" CTM="1 0 0 1 31.7 104.00000000000003"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5455" CTM="1 0 0 1 31.7 110.20000000000003"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5456" CTM="1 0 0 1 31.7 116.40000000000003"><ofd:TextCode>xs includeschemaLocation=&quot;Definitions.xsd&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5457" CTM="1 0 0 1 31.7 122.60000000000004"><ofd:TextCode>&lt;! 注 释 文 件 单 独 存 放,与 被 注 释 对 象 相 分 离。 &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5458" CTM="1 0 0 1 31.7 128.80000000000004"><ofd:TextCode>-- --</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5459" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5460" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>xs elementname=&quot;Pa eAnnot&quot;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

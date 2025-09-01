@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="661" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>OFD 3</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="662" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>表 主 入 口 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="663" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>3 OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="664" CTM="1 0 0 1 31.7 44"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="665" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>: , “ ”</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="666" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>文 件 格 式 的 版 本 号 取 值 为 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="667" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>Version xsstring 1.0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="668" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>文 件 格 式 子 集 类 型,取 值 为“ ”,表 明 此 文 件 符 合 本 标 准。 取 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="669" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="670" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="671" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="672" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>DocType xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="673" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>“ ”,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="674" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>表 明 此 文 件 符 合 存 档 规 范</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="675" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>OFD-A OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="676" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>6</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="677" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="678" CTM="1 0 0 1 31.7 129.00000000000003"><ofd:TextCode>
+=== 第 12 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="679" CTM="1 0 0 1 31.7 135.00000000000003"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="680" CTM="1 0 0 1 31.7 141.20000000000002"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

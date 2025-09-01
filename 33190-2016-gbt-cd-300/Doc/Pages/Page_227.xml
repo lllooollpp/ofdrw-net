@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4521" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>OFD 89</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4522" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>86</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4523" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4524" CTM="1 0 0 1 31.7 42.199999999999996"><ofd:TextCode>
+=== 第 92 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4525" CTM="1 0 0 1 31.7 48.199999999999996"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4526" CTM="1 0 0 1 31.7 54.4"><ofd:TextCode>GB T 33190 2016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4527" CTM="1 0 0 1 31.7 60.6"><ofd:TextCode>图 版 本 列 表 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4528" CTM="1 0 0 1 31.7 66.8"><ofd:TextCode>89</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4529" CTM="1 0 0 1 31.7 73"><ofd:TextCode>版 本 列 表 对 应 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4530" CTM="1 0 0 1 31.7 79.2"><ofd:TextCode>70</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4531" CTM="1 0 0 1 31.7 85.4"><ofd:TextCode>表 版 本 列 表 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4532" CTM="1 0 0 1 31.7 91.60000000000001"><ofd:TextCode>70</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4533" CTM="1 0 0 1 31.7 97.80000000000001"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4534" CTM="1 0 0 1 31.7 104.00000000000001"><ofd:TextCode>版 本 序 列 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4535" CTM="1 0 0 1 31.7 110.20000000000002"><ofd:TextCode>Versions</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4536" CTM="1 0 0 1 31.7 116.40000000000002"><ofd:TextCode>版 本 描 述 入 口 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4537" CTM="1 0 0 1 31.7 122.60000000000002"><ofd:TextCode>Version</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4538" CTM="1 0 0 1 31.7 128.8"><ofd:TextCode>: 版 本 标 识 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4539" CTM="1 0 0 1 31.7 135"><ofd:TextCode>ID xsID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4540" CTM="1 0 0 1 31.7 141.2"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

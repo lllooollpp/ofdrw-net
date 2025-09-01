@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3081" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>C SubPath SubPath</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3082" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>填 充 规 则</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3083" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>9.2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3084" CTM="1 0 0 1 31.7 44"><ofd:TextCode>: 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3085" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>图 形 对 象 采 用 两 种 规 则 填 充 非 零 绕 数 规 则 和 奇 偶 规 则</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3086" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>, :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3087" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>当 值 为 即 非 零 绕 数 规 则 时 填 充 遵 循 如 下 原 则 从 所 需 判 断 的 点 处 向 任 意 方 向 无 穷 远 处</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3088" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>NonZero</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3089" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>, , ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3090" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>引 一 条 射 线 同 时 引 入 一 个 初 始 值 为 的 计 数 射 线 每 经 过 一 条 由 左 至 右 方 向 的 线 型 时 计 数 加 射 线</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3091" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>0 1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3092" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>每 经 过 一 条 由 右 至 左 方 向 的 线 型 时 则 计 数 减 ,如 果 每 条 射 线 总 计 数 均 为 ,则 判 断 该 点 在 路 径 外 部,反</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3093" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>1 0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3094" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>之,则 该 点 在 路 径 内 部,如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3095" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>47</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3096" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>图 非 零 绕 数 规 则 示 意 图</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3097" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>47</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3098" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>, :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3099" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>当 值 为 即 奇 偶 规 则 时 填 充 遵 循 如 下 原 则 从 所 需 判 断 的 点 处 向 任 意 方 向 无 穷 远 处 引 一</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3100" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>Even-Odd</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

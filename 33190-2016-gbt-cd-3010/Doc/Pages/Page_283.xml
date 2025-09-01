@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5641" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5642" Font="1" Size="3.5" Boundary="31.7 29.4 27.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">文字定位属性说明见表46。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5643" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5644" Font="1" Size="3.5" Boundary="31.7 40.65 16.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">表 文字定位属性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5645" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5646" Font="1" Size="3.5" Boundary="31.7 51.9 4.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">46</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5647" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5648" Font="1" Size="3.5" Boundary="31.7 63.15 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">属性 类型 说明 备注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5649" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5650" Font="1" Size="3.5" Boundary="31.7 74.4 44.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">第一个文字的字型原点在对象坐标系下的X坐标</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5651" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5652" Font="1" Size="3.5" Boundary="31.7 85.65 100.8 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">X xs:double 当X不出现,则采用上一个TextCode的X值,文字对象中的第一个 可选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5653" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5654" Font="1" Size="3.5" Boundary="31.7 96.9 12.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">的 属性必选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5655" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5656" Font="1" Size="3.5" Boundary="31.7 108.15 18.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">TextCodeX</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5657" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5658" Font="1" Size="3.5" Boundary="31.7 119.4 44.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">第一个文字的字型原点在对象坐标系下的Y坐标</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5659" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5660" Font="1" Size="3.5" Boundary="31.7 130.65 60.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: 当不出现,则采用上一个 的值,文字对象中的第一个 可选</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

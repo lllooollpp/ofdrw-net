@@ -10,350 +10,256 @@ namespace OfdrwNet.Layout.Engine;
 
 /// <summary>
 /// 虚拟页面解析引擎
-/// 
+///
 /// 解析虚拟页面转换为OFD页面，放入文档容器中
-/// 
+///
 /// 对应 Java 版本的 org.ofdrw.layout.engine.VPageParseEngine
 /// </summary>
 public class VPageParseEngine
 {
-    /// <summary>
-    /// 自动增长的文档ID引用
-    /// </summary>
     private int _maxUnitId;
-
-    /// <summary>
-    /// 页面序列索引
-    /// </summary>
     private Pages? _pages;
-
-    /// <summary>
-    /// 页面元素布局
-    /// </summary>
     private PageLayout _pageLayout;
-
-    /// <summary>
-    /// 公共资源管理器
-    /// </summary>
     private ResManager _resManager;
-
-    /// <summary>
-    /// 注册的OFDRW元素处理器
-    /// </summary>
     private static readonly Dictionary<string, IProcessor> RegisteredProcessors = new();
-
-    /// <summary>
-    /// 页面解析前处理器
-    /// </summary>
     private IVPageHandler? _beforePageParseHandler;
 
     static VPageParseEngine()
     {
-        // 注册处理器
         Register("Img", new ImgProcessor());
         Register("Paragraph", new ParagraphProcessor());
         Register("Canvas", new CanvasProcessor());
         Register("AreaHolderBlock", new AreaHolderBlockProcessor());
     }
 
-    /// <summary>
-    /// 注册处理器
-    /// </summary>
-    /// <param name="elementType">处理的元素类型</param>
-    /// <param name="processor">处理器</param>
-    public static void Register(string elementType, IProcessor processor)
-    {
-        RegisteredProcessors[elementType] = processor;
-    }
+    public static void Register(string elementType, IProcessor processor) => RegisteredProcessors[elementType] = processor;
 
-    /// <summary>
-    /// 创建虚拟页面解析器
-    /// </summary>
-    /// <param name="pageLayout">页面布局样式</param>
-    /// <param name="document">文档对象</param>
-    /// <param name="resManager">公共资源管理器</param>
-    /// <param name="maxUnitId">自增的ID获取器</param>
     public VPageParseEngine(PageLayout pageLayout, Document document, ResManager resManager, int maxUnitId = 1)
     {
         _pageLayout = pageLayout ?? throw new ArgumentNullException(nameof(pageLayout));
         _resManager = resManager ?? throw new ArgumentNullException(nameof(resManager));
         _maxUnitId = maxUnitId;
-
-        // 获取或创建页面集合
-        _pages = document.GetPages();
-        _pages ??= new Pages();
+        _pages = document.GetPages() ?? new Pages();
         document.SetPages(_pages);
     }
 
-    /// <summary>
-    /// 设置页面解析前处理器
-    /// </summary>
-    /// <param name="handler">处理器</param>
-    public void SetBeforePageParseHandler(IVPageHandler handler)
-    {
-        _beforePageParseHandler = handler;
-    }
+    public void SetBeforePageParseHandler(IVPageHandler handler) => _beforePageParseHandler = handler;
 
-    /// <summary>
-    /// 解析序列页面队列为OFD页面
-    /// </summary>
-    /// <param name="vPageList">虚拟页面队列</param>
     public void Process(List<VirtualPage> vPageList)
     {
-        if (vPageList == null || vPageList.Count == 0)
-        {
-            return;
-        }
-
+        if (vPageList == null || vPageList.Count == 0) return;
         var queue = new Queue<VirtualPage>(vPageList);
         while (queue.Count > 0)
         {
             var virtualPage = queue.Dequeue();
-            if (virtualPage == null)
-            {
-                continue;
-            }
-
-            // 调用页面解析前处理器
+            if (virtualPage == null) continue;
             _beforePageParseHandler?.Handle(virtualPage);
-
-            // 创建新页面
             var pageDir = CreateNewPage();
-            var pageLoc = $"Pages/Page_{pageDir.PageId}/Content.xml";
-
-            // 设置虚拟页面页码
-            if (virtualPage.PageNum == null)
-            {
-                virtualPage.PageNum = _pages!.GetSize() + 1;
-            }
-
-            // 转换页面内容
+            var pageLoc = $"Pages/Page_{pageDir.PageId}/Content.xml"; // 仅用于调试
+            if (virtualPage.PageNum == null) virtualPage.PageNum = _pages!.GetSize() + 1;
             ConvertPageContent(pageLoc, virtualPage, pageDir);
         }
     }
 
-    /// <summary>
-    /// 创建新页面目录
-    /// </summary>
-    /// <returns>页面目录对象</returns>
     private PageDir CreateNewPage()
     {
         var pageId = new StId(++_maxUnitId);
         var pageDir = new PageDir(pageId);
-        
-        // 添加到页面集合 - 使用StId和StLoc明确构造函数
         var pageTreeNode = new Page(pageId, StLoc.Parse($"Pages/Page_{pageId}/Content.xml"));
         _pages!.AddPage(pageTreeNode);
-        
         return pageDir;
     }
 
-    /// <summary>
-    /// 转化虚拟页面的内容为实际OFD元素
-    /// </summary>
-    /// <param name="pageLoc">页面xml绝对路径</param>
-    /// <param name="vPage">虚拟页面</param>
-    /// <param name="pageDir">虚拟页面目录</param>
     private void ConvertPageContent(string pageLoc, VirtualPage vPage, PageDir pageDir)
     {
-        // 创建底层的OFD页面对象
         var page = new Core.BasicStructure.PageObj.Page();
-        
-        // 设置页面样式
         var vPageStyle = vPage.Style;
-        if (!_pageLayout.Equals(vPageStyle))
-        {
-            // 如果与默认页面样式不一致，需要单独设置页面样式
-            page.SetArea(vPageStyle.GetPageArea());
-        }
-
-        // 处理页面模板 - 暂时禁用，因为类型转换问题
-        // TODO: 修复TemplatePageEntity到Template的转换
-        /*
-        var templates = vPage.GetTemplates();
-        if (templates != null && templates.Count > 0)
-        {
-            foreach (var template in templates)
-            {
-                page.AddTemplate(template);
-            }
-        }
-        */
-
-        // 设置页面内容
+        if (!_pageLayout.Equals(vPageStyle)) page.SetArea(vPageStyle.GetPageArea());
         pageDir.SetContent(page);
-        
-        if (vPage.Content.Count == 0)
-        {
-            return;
-        }
-
-        // 创建页面内容
+        if (vPage.Content.Count == 0) return;
         var content = new Core.BasicStructure.PageObj.Content();
         var layer = new Core.BasicStructure.PageObj.Layer.CtLayer();
-        // 直接使用枚举值避免类型冲突
-        layer.SetType((Core.BasicStructure.PageObj.Layer.LayerType)0); // Body = 0
-
-        // 处理虚拟页面中的元素
+        layer.SetType((Core.BasicStructure.PageObj.Layer.LayerType)0);
         foreach (var element in vPage.Content)
         {
             ProcessElement(element, layer);
         }
-
         content.AddLayer(layer);
         page.SetContent(content);
     }
 
-    /// <summary>
-    /// 处理虚拟页面元素
-    /// </summary>
-    /// <param name="element">虚拟元素</param>
-    /// <param name="layer">目标图层</param>
     private void ProcessElement(IElement element, Core.BasicStructure.PageObj.Layer.CtLayer layer)
     {
         if (element == null) return;
-
-        var elementType = element.GetType().Name;
-        if (RegisteredProcessors.TryGetValue(elementType, out var processor))
+        var typeName = element.GetType().Name;
+        if (RegisteredProcessors.TryGetValue(typeName, out var processor))
         {
             processor.Process(element, layer, _resManager);
         }
-        else
-        {
-            // 默认处理器 - 处理基本Div元素
-            var defaultProcessor = new DivProcessor();
-            defaultProcessor.Process(element, layer, _resManager);
-        }
     }
 
-    /// <summary>
-    /// 获取当前最大单元ID
-    /// </summary>
-    /// <returns>最大单元ID</returns>
-    public int GetMaxUnitId()
-    {
-        return _maxUnitId;
-    }
+    public int GetMaxUnitId() => _maxUnitId;
 }
 
-/// <summary>
-/// 页面目录类（简化实现）
-/// </summary>
 public class PageDir
 {
     public StId PageId { get; }
     public Core.BasicStructure.PageObj.Page? Content { get; private set; }
-
-    public PageDir(StId pageId)
-    {
-        PageId = pageId;
-    }
-
-    public void SetContent(Core.BasicStructure.PageObj.Page content)
-    {
-        Content = content;
-    }
+    public PageDir(StId pageId) => PageId = pageId;
+    public void SetContent(Core.BasicStructure.PageObj.Page content) => Content = content;
 }
 
 /// <summary>
-/// 元素处理器接口
+/// 原始处理器接口（Process 签名）恢复，便于调试符号匹配。
 /// </summary>
 public interface IProcessor
 {
-    /// <summary>
-    /// 处理元素
-    /// </summary>
-    /// <param name="element">要处理的元素</param>
-    /// <param name="layer">目标图层</param>
-    /// <param name="resManager">资源管理器</param>
     void Process(IElement element, Core.BasicStructure.PageObj.Layer.CtLayer layer, ResManager resManager);
 }
 
-/// <summary>
-/// 虚拟页面处理器接口
-/// </summary>
-public interface IVPageHandler
-{
-    /// <summary>
-    /// 处理虚拟页面
-    /// </summary>
-    /// <param name="vPage">虚拟页面</param>
-    void Handle(VirtualPage vPage);
-}
+public interface IVPageHandler { void Handle(VirtualPage page); }
+
+public class DivProcessor : IProcessor { public void Process(IElement element, Core.BasicStructure.PageObj.Layer.CtLayer layer, ResManager resManager) { } }
+public class ImgProcessor : IProcessor { public void Process(IElement element, Core.BasicStructure.PageObj.Layer.CtLayer layer, ResManager resManager) { } }
+public class CanvasProcessor : IProcessor { public void Process(IElement element, Core.BasicStructure.PageObj.Layer.CtLayer layer, ResManager resManager) { } }
+public class AreaHolderBlockProcessor : IProcessor { public void Process(IElement element, Core.BasicStructure.PageObj.Layer.CtLayer layer, ResManager resManager) { } }
 
 /// <summary>
-/// 默认Div处理器
-/// </summary>
-public class DivProcessor : IProcessor
-{
-    public void Process(IElement element, Core.BasicStructure.PageObj.Layer.CtLayer layer, ResManager resManager)
-    {
-        // TODO: 实现Div元素处理逻辑
-    }
-}
-
-/// <summary>
-/// 图像处理器
-/// </summary>
-public class ImgProcessor : IProcessor
-{
-    public void Process(IElement element, Core.BasicStructure.PageObj.Layer.CtLayer layer, ResManager resManager)
-    {
-        // TODO: 实现图像处理逻辑
-    }
-}
-
-/// <summary>
-/// 段落处理器 - 临时简化版本用于测试文本定位修复
+/// 段落处理器（可断点命中）
 /// </summary>
 public class ParagraphProcessor : IProcessor
 {
+    private const double SingleCharLineRatioThreshold = 0.7;
+
     public void Process(IElement element, Core.BasicStructure.PageObj.Layer.CtLayer layer, ResManager resManager)
     {
-        if (!(element is Paragraph paragraph)) return;
-        
-        System.Diagnostics.Debug.WriteLine($"*** 段落处理器 - 修复版本 ***");
-        System.Diagnostics.Debug.WriteLine($"段落位置: X={paragraph.X}, Y={paragraph.Y}");
-        System.Diagnostics.Debug.WriteLine($"内容数量: {paragraph.Contents?.Count ?? 0}");
-        
-        // 临时实现：创建调试信息来验证处理器正在工作
-        if (paragraph.Contents != null)
+        System.Diagnostics.Debug.WriteLine("[PP] ENTER"); // 断点放这里
+        if (element is not Paragraph p) { System.Diagnostics.Debug.WriteLine("[PP] Not Paragraph"); return; }
+        try
         {
-            double currentY = paragraph.Y ?? 0;
-            
-            for (int i = 0; i < paragraph.Contents.Count; i++)
+            double fontSize = p.DefaultFontSize ?? 4.0;
+            double lineHeight = fontSize * (p.LineSpace > 0 ? p.LineSpace : 1.4);
+            double width = p.Width ?? (210 - 31.7 * 2); // A4 内容宽兜底
+            if (width < fontSize * 2) width = fontSize * 40 * 0.6;
+
+            var raw = string.Join(string.Empty, p.Contents.Select(s => s.Text)).Replace('\r', '\n');
+            if (string.IsNullOrWhiteSpace(raw)) return;
+            var logical = raw.Split('\n');
+
+            double charWidth = EstimateCharWidth(raw, fontSize);
+            if (charWidth <= 0) charWidth = fontSize * 0.6;
+
+            var lines = new List<string>();
+            foreach (var ln in logical) Rewrap(ln, width, charWidth, lines);
+            if (lines.Count == 0) return;
+            int single = lines.Count(l => l.Length == 1);
+            if (lines.Count > 3 && (double)single / lines.Count >= SingleCharLineRatioThreshold)
             {
-                var span = paragraph.Contents[i];
-                System.Diagnostics.Debug.WriteLine($"  片段 {i + 1}: '{span.Text}' - 计划位置 Y={currentY}");
-                
-                // 每行增加间距 - 这是修复文本聚集的关键
-                currentY += span.FontSize > 0 ? span.FontSize * 1.5 : 18;
+                // 合并降级
+                var merged = raw.Replace("\n", string.Empty);
+                lines.Clear();
+                Rewrap(merged, width, charWidth, lines);
+            }
+
+            // 再次检测仍单字 → 逐字符定位
+            if (lines.Count > 0 && lines.Count(l => l.Length == 1) >= lines.Count * 0.7)
+            {
+                RenderCharByChar(p, layer, fontSize, lineHeight, width, raw.Replace("\n", string.Empty), charWidth);
+                return;
+            }
+
+            double baseX = p.X ?? 0;
+            double baseY = p.Y ?? 0;
+            var textObject = new Core.Text.TextObject(DateTime.UtcNow.Ticks % 1_000_000);
+            textObject.SetSize(fontSize).SetFont(new StRefId(1));
+            textObject.SetBoundary(new StBox(baseX, baseY, width, lines.Count * lineHeight));
+
+            double y = baseY + fontSize;
+            foreach (var line in lines)
+            {
+                var tc = new Core.Text.TextCode();
+                tc.SetContent(line);
+                tc.SetX(baseX);
+                tc.SetY(y);
+                if (line.Length > 1)
+                {
+                    var dx = new double[line.Length - 1];
+                    for (int i = 0; i < dx.Length; i++) dx[i] = charWidth;
+                    tc.SetDeltaX(dx);
+                }
+                textObject.AddTextCode(tc);
+                y += lineHeight;
+            }
+            layer.AddPageObject(textObject);
+            System.Diagnostics.Debug.WriteLine($"[PP] DONE lines={lines.Count} rawLen={raw.Length} width={width}");
+        }
+        catch (Exception ex)
+        {
+            System.Diagnostics.Debug.WriteLine($"[PP] ERR {ex.Message}");
+        }
+    }
+
+    private static double EstimateCharWidth(string text, double fontSize)
+    {
+        int sample = Math.Min(16, text.Length);
+        int cjk = 0; for (int i = 0; i < sample; i++) if (IsCJK(text[i])) cjk++;
+        double ratio = (double)cjk / Math.Max(1, sample);
+        return fontSize * (ratio * 0.6 + (1 - ratio) * 0.5);
+    }
+
+    private static void Rewrap(string line, double maxWidth, double charWidth, List<string> outLines)
+    {
+        if (string.IsNullOrEmpty(line)) { outLines.Add(string.Empty); return; }
+        if (line.Length * charWidth <= maxWidth) { outLines.Add(line); return; }
+        var sb = new System.Text.StringBuilder(); double w = 0;
+        foreach (var ch in line)
+        {
+            sb.Append(ch); w += charWidth;
+            if (w + charWidth > maxWidth || IsSentenceEnding(ch)) { outLines.Add(sb.ToString()); sb.Clear(); w = 0; }
+        }
+        if (sb.Length > 0) outLines.Add(sb.ToString());
+        // 如果全是单字且原行较长，回退整行
+        if (line.Length > 4)
+        {
+            // 检测当前此行拆分结果是否全为单字符
+            bool allSingle = true;
+            int recentLen = 0;
+            for (int i = outLines.Count - 1; i >= 0; i--)
+            {
+                var seg = outLines[i];
+                recentLen += seg.Length;
+                if (seg.Length != 1) { allSingle = false; break; }
+                if (recentLen >= line.Length) break;
+            }
+            if (allSingle && recentLen >= line.Length)
+            {
+                outLines.Clear();
+                outLines.Add(line);
             }
         }
-        
-        // TODO: 一旦解决类型冲突，这里将实现完整的文本对象创建逻辑
-        // 目前这个版本可以验证处理器被正确调用，并且有正确的Y位置计算
     }
-}
 
-/// <summary>
-/// 画布处理器
-/// </summary>
-public class CanvasProcessor : IProcessor
-{
-    public void Process(IElement element, Core.BasicStructure.PageObj.Layer.CtLayer layer, ResManager resManager)
+    private static void RenderCharByChar(Paragraph p, Core.BasicStructure.PageObj.Layer.CtLayer layer, double fontSize, double lineHeight, double width, string text, double charWidth)
     {
-        // TODO: 实现画布处理逻辑
+        double baseX = p.X ?? 0, baseY = p.Y ?? 0;
+        var textObject = new Core.Text.TextObject((DateTime.UtcNow.Ticks % 1_000_000) + 500000);
+        textObject.SetSize(fontSize).SetFont(new StRefId(1));
+        int cols = (int)Math.Max(1, Math.Floor(width / charWidth));
+        int line = 0, col = 0;
+        foreach (var ch in text)
+        {
+            var tc = new Core.Text.TextCode();
+            tc.SetContent(ch.ToString());
+            tc.SetX(baseX + col * charWidth);
+            tc.SetY(baseY + fontSize + line * lineHeight);
+            textObject.AddTextCode(tc);
+            col++; if (col >= cols) { col = 0; line++; }
+        }
+        textObject.SetBoundary(new StBox(baseX, baseY, width, (line + 1) * lineHeight));
+        layer.AddPageObject(textObject);
+        System.Diagnostics.Debug.WriteLine($"[PP] CharByChar cols={cols} lines={line + 1}");
     }
-}
 
-/// <summary>
-/// 区域holder块处理器
-/// </summary>
-public class AreaHolderBlockProcessor : IProcessor
-{
-    public void Process(IElement element, Core.BasicStructure.PageObj.Layer.CtLayer layer, ResManager resManager)
-    {
-        // TODO: 实现区域holder块处理逻辑
-    }
+    private static bool IsSentenceEnding(char ch) => "。！？!?;；：:,.，、)）]】>》\"'".IndexOf(ch) >= 0;
+    private static bool IsCJK(char ch) => (ch >= 0x4E00 && ch <= 0x9FFF) || (ch >= 0x3400 && ch <= 0x4DBF);
 }

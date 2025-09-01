@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="5961" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5962" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs attributename=&quot;FontName&quot;type=&quot;xs string&quot;use=&quot;required&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5963" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; : : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5964" CTM="1 0 0 1 31.7 44"><ofd:TextCode>xs attributename=&quot;Famil Name&quot;t e=&quot;xs strin &quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5965" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>y yp g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5966" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5967" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>xs attributename=&quot;Charset&quot;default=&quot;unicode&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5968" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5969" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>xs simpleType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5970" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>&lt; : : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5971" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>xs restrictionbase=&quot;xs string&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5972" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5973" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>xs enumerationvalue=&quot;s mbol&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5974" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>y</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5975" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5976" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>xs enumerationvalue=&quot;prc&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5977" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5978" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>xs enumerationvalue=&quot;big5&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5979" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>&lt; : /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="5980" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>xs enumerationvalue=&quot;shift-jis&quot;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="4921" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4922" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>xs elementname=&quot;PageArea&quot;type=&quot;CT PageArea&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4923" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>&lt; : _</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4924" CTM="1 0 0 1 31.7 44"><ofd:TextCode>xs elementname=&quot;PublicRes&quot;type=&quot;ST Loc&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4925" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4926" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>minOccurs=&quot;0&quot;maxOccurs=&quot;unbounded&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4927" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt; : _</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4928" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>xs elementname=&quot;DocumentRes&quot;t e=&quot;ST Loc&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4929" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4930" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4931" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>minOccurs=&quot;0&quot;maxOccurs=&quot;unbounded&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4932" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>&lt; :</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4933" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>xs elementname=&quot;TemplatePage&quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4934" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4935" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>maxOccurs=&quot;unbounded&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4936" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4937" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4938" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>&lt; : _</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4939" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>xs attributename=&quot;ID&quot;type=&quot;ST ID&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="4940" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>/&gt;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

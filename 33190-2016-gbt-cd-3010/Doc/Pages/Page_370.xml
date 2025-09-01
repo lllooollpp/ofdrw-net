@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="7381" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7382" Font="1" Size="3.5" Boundary="31.7 29.4 109.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">type=&quot;xs:int&quot;use=&quot;required&quot;/&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7383" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7384" Font="1" Size="3.5" Boundary="31.7 40.65 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7385" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7386" Font="1" Size="3.5" Boundary="31.7 51.9 73.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xsattributename=&quot;Current&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7387" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7388" Font="1" Size="3.5" Boundary="31.7 63.15 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">: /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7389" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7390" Font="1" Size="3.5" Boundary="31.7 74.4 107.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">type=&quot;xsboolean&quot;default=&quot;false&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7391" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7392" Font="1" Size="3.5" Boundary="31.7 85.65 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7393" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7394" Font="1" Size="3.5" Boundary="31.7 96.9 73.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">xsattributename=&quot;BaseLoc&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7395" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7396" Font="1" Size="3.5" Boundary="31.7 108.15 14.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">_ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7397" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7398" Font="1" Size="3.5" Boundary="31.7 119.4 96.6 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">type=&quot;STLoc&quot;use=&quot;required&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7399" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="7400" Font="1" Size="3.5" Boundary="31.7 130.65 23.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">&lt;/: &gt;</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

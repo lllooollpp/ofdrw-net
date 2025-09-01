@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="441" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="442" Font="1" Size="3.5" Boundary="31.7 29.4 2.1 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">Ⅲ</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="443" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="444" Font="1" Size="4" Boundary="31.7 40.65 36 8" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="4">
+=== 第 5 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="445" Font="1" Size="3.5" Boundary="31.7 50.65 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">/ —</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="446" Font="1" Size="1" Boundary="31.7 57.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="447" Font="1" Size="3.5" Boundary="31.7 61.9 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">GBT331902016</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="448" Font="1" Size="1" Boundary="31.7 69.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="449" Font="1" Size="3.5" Boundary="31.7 73.15 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">前 言</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="450" Font="1" Size="1" Boundary="31.7 80.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="451" Font="1" Size="3.5" Boundary="31.7 84.4 52.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">本标准按照GB/T1.1—2009给出的规则起草。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="452" Font="1" Size="1" Boundary="31.7 91.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="453" Font="1" Size="3.5" Boundary="31.7 95.65 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">。 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="454" Font="1" Size="1" Boundary="31.7 102.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="455" Font="1" Size="3.5" Boundary="31.7 106.9 77.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">请注意本文件的某些内容可能涉及专利本文件的发布机构不承担识别这些专利的责任</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="456" Font="1" Size="1" Boundary="31.7 114.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="457" Font="1" Size="3.5" Boundary="31.7 118.15 67.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">本标准由国家电子文件管理部际联席会议办公室和工业和信息化部提出。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="458" Font="1" Size="1" Boundary="31.7 125.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="459" Font="1" Size="3.5" Boundary="31.7 129.4 52.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">本标准由全国信息技术标准化技术委员会(/ )归口。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="460" Font="1" Size="1" Boundary="31.7 136.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

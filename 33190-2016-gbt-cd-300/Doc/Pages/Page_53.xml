@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="1041" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>UseOutlines</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1042" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>——— 同 时 呈 现 缩 略 图</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1043" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>UseThumbs</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1044" CTM="1 0 0 1 31.7 44"><ofd:TextCode>: 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1045" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>PageMode xsstring</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1046" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>———</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1047" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>同 时 呈 现 语 义 结 构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1048" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>UseCustomTags</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1049" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>——— 同 时 呈 现 图 层</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1050" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>UseLayers</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1051" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>——— 同 时 呈 现 附 件</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1052" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>UseAttatchs</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1053" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>——— 同 时 呈 现 书 签</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1054" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>UseBookmarks</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1055" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1056" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>None</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1057" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>15</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1058" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1059" CTM="1 0 0 1 31.7 135.20000000000005"><ofd:TextCode>
+=== 第 21 页 ===
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="1060" CTM="1 0 0 1 31.7 141.20000000000005"><ofd:TextCode>/ —</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

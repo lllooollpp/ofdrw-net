@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="721" Font="1" Size="1" Boundary="31.7 25.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="722" Font="1" Size="3.5" Boundary="31.7 29.4 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">OFD 1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="723" Font="1" Size="1" Boundary="31.7 36.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="724" Font="1" Size="3.5" Boundary="31.7 40.65 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">图 结构</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="725" Font="1" Size="1" Boundary="31.7 47.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="726" Font="1" Size="3.5" Boundary="31.7 51.9 10.5 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">1 OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="727" Font="1" Size="1" Boundary="31.7 59.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="728" Font="1" Size="3.5" Boundary="31.7 63.15 25.2 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">文档格式的结构分为三层:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="729" Font="1" Size="1" Boundary="31.7 70.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="730" Font="1" Size="3.5" Boundary="31.7 74.4 6.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">OFD</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="731" Font="1" Size="1" Boundary="31.7 81.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="732" Font="1" Size="3.5" Boundary="31.7 85.65 56.7 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">a) 虚拟存储系统:包括包组织结构及包内目录组织结构;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="733" Font="1" Size="1" Boundary="31.7 92.9 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="734" Font="1" Size="3.5" Boundary="31.7 96.9 63 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">b) 文档模型:包括文档、页面、大纲、文件级资源等组织结构;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="735" Font="1" Size="1" Boundary="31.7 104.15 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="736" Font="1" Size="3.5" Boundary="31.7 108.15 18.9 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">) : 、 、 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="737" Font="1" Size="1" Boundary="31.7 115.4 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="738" Font="1" Size="3.5" Boundary="31.7 119.4 48.3 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">c 页面内容描述包括页面级资源图形图像和文字等</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="739" Font="1" Size="1" Boundary="31.7 126.65 0.6 2" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="1"> </ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="740" Font="1" Size="3.5" Boundary="31.7 130.65 8.4 5.25" CTM="1 0 0 1 0 0"><ofd:TextCode X="0" Y="3.5">成像模型</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

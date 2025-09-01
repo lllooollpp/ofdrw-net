@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3841" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>超 出 部 分 做 裁 剪 处 理</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3842" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>_ ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3843" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>缩 略 图 指 向 包 内 的 图 像 文 件 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3844" CTM="1 0 0 1 31.7 44"><ofd:TextCode>Thumbnail STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3845" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3846" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>替 换 图 像 用 于 高 分 辨 率 输 出 时 将 缩 略 图 替 换 为 此 高 分 辨 率 的 图 像</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3847" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3848" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3849" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>Substitution STRefID</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3850" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>指 向 包 内 的 图 像 文 件</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3851" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>_</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3852" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>内 容 的 矢 量 描 述 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3853" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>Content CTPageBlock</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3854" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>动 作</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3855" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>14</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3856" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>动 作 描 述</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3857" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>14.1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3858" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>动 作 类 型 结 构 如 图 所 示。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3859" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>73</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3860" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>72</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

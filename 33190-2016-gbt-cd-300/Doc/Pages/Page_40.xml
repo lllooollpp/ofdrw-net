@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="781" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="782" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>文 档 根 节 点 属 性 说 明 见 表 。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="783" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="784" CTM="1 0 0 1 31.7 44"><ofd:TextCode>表 文 档 根 节 点 属 性</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="785" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>5</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="786" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>名 称 类 型 说 明 备 注</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="787" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>, 、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="788" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>文 档 公 共 数 据 定 义 了 页 面 区 域 公 共 资 源 等 数 据 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="789" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>CommonData</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="790" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="791" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>页 树 有 关 页 树 的 描 述 见 必 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="792" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>Pages 7.6</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="793" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="794" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>大 纲 有 关 大 纲 的 描 述 见 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="795" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>Outlines 7.8</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="796" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>_ 文 档 的 权 限 声 明 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="797" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>Permissions CTPermission</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="798" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>文 档 关 联 的 动 作 序 列,当 存 在 多 个 对 象 时,所 有 动 作 依 次</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="799" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>Action</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="800" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

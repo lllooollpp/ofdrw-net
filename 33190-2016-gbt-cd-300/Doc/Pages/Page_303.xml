@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="6041" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>xs complexType</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6042" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>&lt;! 矢 量 图 像 定 义 &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6043" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>-- --</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6044" CTM="1 0 0 1 31.7 44"><ofd:TextCode>&lt; : _ &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6045" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>xs com lexT ename=&quot;CT VectorG&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6046" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>p yp</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6047" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>&lt; : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6048" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6049" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6050" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>xs elementname=&quot;Thumbnail&quot;type=&quot;ST RefID&quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6051" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6052" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>xs elementname=&quot;Substitution&quot;type=&quot;ST RefID&quot;minOccurs=&quot;0&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6053" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>&lt; : _ /&gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6054" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>xs elementname=&quot;Content&quot;t e=&quot;CT Pa eBlock&quot;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6055" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>yp g</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6056" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>&lt;/ : &gt;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6057" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>xs sequence</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6058" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>104</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6059" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>
+</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="6060" CTM="1 0 0 1 31.7 141.40000000000003"><ofd:TextCode>
+=== 第 110 页 ===
+</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

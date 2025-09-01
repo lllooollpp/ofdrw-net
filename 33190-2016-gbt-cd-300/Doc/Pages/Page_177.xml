@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 210 297</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="Layer1">
+        <ofd:TextObject ID="3521" CTM="1 0 0 1 31.7 25.4"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3522" CTM="1 0 0 1 31.7 31.599999999999998"><ofd:TextCode>0</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3523" CTM="1 0 0 1 31.7 37.8"><ofd:TextCode>文 字 对 象 的 粗 细 值;可 选 取 值 为 , , , , , , ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3524" CTM="1 0 0 1 31.7 44"><ofd:TextCode>100200300400500600700</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3525" CTM="1 0 0 1 31.7 50.2"><ofd:TextCode>: ,</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3526" CTM="1 0 0 1 31.7 56.400000000000006"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3527" CTM="1 0 0 1 31.7 62.60000000000001"><ofd:TextCode>Weight xsint 800900</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3528" CTM="1 0 0 1 31.7 68.80000000000001"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3529" CTM="1 0 0 1 31.7 75.00000000000001"><ofd:TextCode>400</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3530" CTM="1 0 0 1 31.7 81.20000000000002"><ofd:TextCode>是 否 是 斜 体 样 式</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3531" CTM="1 0 0 1 31.7 87.40000000000002"><ofd:TextCode>:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3532" CTM="1 0 0 1 31.7 93.60000000000002"><ofd:TextCode>可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3533" CTM="1 0 0 1 31.7 99.80000000000003"><ofd:TextCode>Italic xsboolean</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3534" CTM="1 0 0 1 31.7 106.00000000000003"><ofd:TextCode>默 认 值 为</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3535" CTM="1 0 0 1 31.7 112.20000000000003"><ofd:TextCode>false</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3536" CTM="1 0 0 1 31.7 118.40000000000003"><ofd:TextCode>填 充 颜 色</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3537" CTM="1 0 0 1 31.7 124.60000000000004"><ofd:TextCode>_ 可 选</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3538" CTM="1 0 0 1 31.7 130.80000000000004"><ofd:TextCode>FillColor CTColor</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3539" CTM="1 0 0 1 31.7 137.00000000000003"><ofd:TextCode>默 认 为 黑 色</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="3540" CTM="1 0 0 1 31.7 143.20000000000002"><ofd:TextCode>勾 边 颜 色</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>
