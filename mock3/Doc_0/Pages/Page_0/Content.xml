@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+	<ofd:Area>
+		<ofd:PhysicalBox>0 0 209.8565 296.9734</ofd:PhysicalBox>
+	</ofd:Area>
+	<ofd:Content>
+		<ofd:Layer ID="2" Type="Body">
+			<ofd:ImageObject ID="3" Boundary="81.3467 24.1245 34.1978 4.444" CTM="34.197792 0 0 -4.44402 0 4.444" ResourceID="4"/>
+			<ofd:ImageObject ID="5" Boundary="81.3467 28.5685 34.1978 4.444" CTM="34.197792 0 0 -4.44402 0 4.444" ResourceID="6"/>
+			<ofd:ImageObject ID="7" Boundary="70.0462 15.2788 5.7561 16.7603" CTM="5.756064 0 0 -16.760303 0 16.760315" ResourceID="8"/>
+			<ofd:ImageObject ID="9" Boundary="77.8338 15.5751 5.7561 15.9985" CTM="5.756064 0 0 -15.998472 0 15.998474" ResourceID="10"/>
+			<ofd:ImageObject ID="11" Boundary="85.7061 15.2788 5.7561 17.0143" CTM="5.756064 0 0 -17.014248 0 17.014252" ResourceID="12"/>
+			<ofd:ImageObject ID="13" Boundary="93.5784 15.3211 5.7561 16.8873" CTM="5.756064 0 0 -16.887276 0 16.887268" ResourceID="14"/>
+			<ofd:ImageObject ID="15" Boundary="101.8315 15.2788 4.7403 17.0143" CTM="4.740288 0 0 -17.014248 0 17.014252" ResourceID="16"/>
+			<ofd:ImageObject ID="17" Boundary="109.1536 15.2788 5.7561 16.8873" CTM="5.756064 0 0 -16.887276 0 16.887268" ResourceID="18"/>
+			<ofd:ImageObject ID="19" Boundary="117.1952 15.4481 5.4175 16.1254" CTM="5.417472 0 0 -16.125444 0 16.125427" ResourceID="20"/>
+			<ofd:ImageObject ID="21" Boundary="125.1521 15.3635 5.4175 16.7603" CTM="5.417472 0 0 -16.760303 0 16.760284" ResourceID="22"/>
+			<ofd:TextObject ID="23" Boundary="164.4665 34.5957 20.9115 2.9584" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="10" CodeCount="10" CodePosition="0">
+					<ofd:Glyphs>19 19 19 20 23 27 24 25 26 26</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-1.308" Y="-832.2884" DeltaX="6.1236 6.2437 6.1236 6.2437 6.1236 6.2437 6.2437 6.1236 6.2437">0001485677</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="25" Boundary="137.9169 34.2444 22.719 3.8811" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="6" CodeCount="6" CodePosition="0">
+					<ofd:Glyphs>4446 4189 968 2373 1756 289</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.192" Y="-831.2923" DeltaX="12.3673 12.3673 12.3673 12.3673 12.3673">住院病历号：</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="26" Boundary="115.8321 34.5957 3.5629 2.9584" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="2" CodeCount="2" CodePosition="0">
+					<ofd:Glyphs>21 28</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.936" Y="-832.2884" DeltaX="6.1236">29</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="27" Boundary="101.5521 34.164 9.6916 3.9615" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="3" CodeCount="3" CodePosition="0">
+					<ofd:Glyphs>1173 1756 289</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.048" Y="-831.0643" DeltaX="12.3673 12.3673">床号：</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="28" Boundary="61.2172 34.2444 9.3955 3.6695" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="3" CodeCount="3" CodePosition="0">
+					<ofd:Glyphs>968 3029 289</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.888" Y="-831.2923" DeltaX="12.3673 12.3673">病区：</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="29" Boundary="27.5655 34.1767 20.9229 4.0335" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="5" CodeCount="5" CodePosition="0">
+					<ofd:Glyphs>1561 2227 1437 968 3029</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.516" Y="-831.1003" DeltaX="12.3673 12.3673 12.3673 12.3673">妇科二病区</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="30" Boundary="13.5816 34.1767 9.5436 4.0335" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="3" CodeCount="3" CodePosition="0">
+					<ofd:Glyphs>2227 953 289</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.468" Y="-831.1003" DeltaX="12.3673 12.3673">科别：</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:PathObject ID="31" Boundary="5.5868 39.869 194.2672 0.5079" CTM="0.042324 0 0 -0.042324 -5.586768 257.10434" DashPattern="" LineWidth="6" Stroke="true">
+				<ofd:StrokeColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:AbbreviatedData>M 138.00 6068.67 L 4716.00 6068.67 </ofd:AbbreviatedData>
+			</ofd:PathObject>
+			<ofd:TextObject ID="32" Boundary="151.7441 41.0332 20.9229 4.0335" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="5" CodeCount="5" CodePosition="0">
+					<ofd:Glyphs>1561 2227 1437 968 3029</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.516" Y="-831.1003" DeltaX="12.3673 12.3673 12.3673 12.3673">妇科二病区</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="33" Boundary="137.7602 41.0332 9.5436 4.0335" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="3" CodeCount="3" CodePosition="0">
+					<ofd:Glyphs>2227 3273 289</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.468" Y="-831.1003" DeltaX="12.3673 12.3673">科室：</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="34" Boundary="115.7431 41.7315 7.3668 4.097" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="3" CodeCount="3" CodePosition="0">
+					<ofd:Glyphs>22 20 3391</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-1.404" Y="-830.9203" DeltaX="6.1236 6.2437">31岁</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="35" Boundary="101.4124 41.7654 9.5774 4.0293" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="3" CodeCount="3" CodePosition="0">
+					<ofd:Glyphs>2733 2445 289</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.372" Y="-831.0163" DeltaX="12.3673 12.3673">年龄：</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="36" Boundary="71.9084 41.8289 4.0142 3.4706" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="1" CodeCount="1" CodePosition="0">
+					<ofd:Glyphs>2767</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.24" Y="-831.1963">女</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="37" Boundary="58.0557 41.9135 9.5097 3.6822" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="3" CodeCount="3" CodePosition="0">
+					<ofd:Glyphs>3839 953 289</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.564" Y="-831.4363" DeltaX="12.3673 12.3673">性别：</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="38" Boundary="27.5273 40.9316 7.6968 4.1012" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="2" CodeCount="2" CodePosition="0">
+					<ofd:Glyphs>1682 4981</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-1.128" Y="-830.8123" DeltaX="12.3673">官茜</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="39" Boundary="13.2473 41.1686 9.6239 3.4832" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="3" CodeCount="3" CodePosition="0">
+					<ofd:Glyphs>3840 2656 289</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.24" Y="-831.4844" DeltaX="12.3673 12.3673">姓名：</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:PathObject ID="40" Boundary="5.5868 47.4874 194.2672 0.5079" CTM="0.042324 0 0 -0.042324 -5.586768 249.486008" DashPattern="" LineWidth="6" Stroke="true">
+				<ofd:StrokeColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:AbbreviatedData>M 138.00 5888.67 L 4716.00 5888.67 </ofd:AbbreviatedData>
+			</ofd:PathObject>
+			<ofd:TextObject ID="41" Boundary="103.8967 49.0705 21.0427 2.9585" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="10" CodeCount="10" CodePosition="0">
+					<ofd:Glyphs>21 19 21 19 16 20 21 16 21 28</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.936" Y="-832.2883" DeltaX="6.1236 6.2437 6.1236 6.2437 6.1236 6.2437 6.2437 6.1236 6.2437">2020-12-29</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="42" Boundary="82.1674 48.6388 17.7336 3.915" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="5" CodeCount="5" CodePosition="0">
+					<ofd:Glyphs>1147 4189 3088 2905 289</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-1.968" Y="-831.0643" DeltaX="12.3673 12.3673 12.3673 12.3673">出院日期：</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="43" Boundary="37.8711 49.0705 21.1273 2.9585" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="10" CodeCount="10" CodePosition="0">
+					<ofd:Glyphs>21 19 21 19 16 20 21 16 21 22</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.936" Y="-832.2883" DeltaX="6.1236 6.2437 6.1236 6.2437 6.1236 6.2437 6.2437 6.1236 6.2437">2020-12-23</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="44" Boundary="13.4673 48.7192 21.7461 3.7499" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="6" CodeCount="6" CodePosition="0">
+					<ofd:Glyphs>3110 4189 3240 1975 289 3</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.144" Y="-831.2923" DeltaX="12.3673 12.3673 12.3673 12.3673 12.3673">入院时间： </ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="45" Boundary="183.3258 48.6866 4.1598 4.1621" Font="46" Size="13.2" CTM="0.352501 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="1" CodeCount="1" CodePosition="0">
+					<ofd:Glyphs>3929</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.7788" Y="-830.4799">天</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="47" Boundary="170.4639 49.3245 1.3705 2.9585" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="1" CodeCount="1" CodePosition="0">
+					<ofd:Glyphs>25</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-1.032" Y="-832.2883">6</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="48" Boundary="148.0746 49.007 18.3596 3.6822" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="5" CodeCount="5" CodePosition="0">
+					<ofd:Glyphs>4446 4189 3487 3316 289</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.192" Y="-831.3883" DeltaX="12.3673 12.3673 12.3673 12.3673">住院天数：</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:PathObject ID="49" Boundary="5.5868 54.5978 194.2672 0.5079" CTM="0.042324 0 0 -0.042324 -5.586768 242.375595" DashPattern="" LineWidth="6" Stroke="true">
+				<ofd:StrokeColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:AbbreviatedData>M 138.00 5720.67 L 4716.00 5720.67 </ofd:AbbreviatedData>
+			</ofd:PathObject>
+			<ofd:ImageObject ID="50" Boundary="7.0681 55.275 2.0316 12.0623" CTM="2.031552 0 0 -12.06234 0 12.062347" ResourceID="51"/>
+			<ofd:ImageObject ID="52" Boundary="9.7345 55.0634 21.3313 6.6026" CTM="21.331297 0 0 -6.602544 0 6.602554" ResourceID="53"/>
+			<ofd:TextObject ID="54" Boundary="8.3419 61.0313 24.6813 4.0462" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="6" CodeCount="6" CodePosition="0">
+					<ofd:Glyphs>4496 1637 2876 1825 1908 2463</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.612" Y="-830.9203" DeltaX="12.0071 12.0071 12.0071 12.0071 12.0071">子宫平滑肌瘤</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="55" Boundary="8.3081 65.7673 25.0789 4.2028" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="6" CodeCount="6" CodePosition="0">
+					<ofd:Glyphs>4051 1064 4496 1637 1147 3891</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.516" Y="-830.6683" DeltaX="12.0071 12.0071 12.0071 12.0071 12.0071">异常子宫出血</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="56" Boundary="8.4561 70.6981 30.9664 3.9488" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="8" CodeCount="8" CodePosition="0">
+					<ofd:Glyphs>1637 2968 2116 1983 1040 3 3308 1802</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.936" Y="-830.9683" DeltaX="12.0071 12.0071 12.0071 12.0071 12.0071 6.0035 12.0071">宫腔镜检查 术后</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="57" Boundary="7.2456 84.3222 180.4549 4.1858" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="51" CodeCount="51" CodePosition="0">
+					<ofd:Glyphs>20 17 1841 4320 275 1682 4981 275 22 20 3391 275 2767 275 3619 1886 100 21 17 4438 3380 289 1637 2968 2116 3308 1802 28 3487 100 22 17 1947 3594 289 21 19 21 19 16 20 21 16 20 23 3835 1637 2968 2116 4336 1671</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-1.224" Y="-830.7163" DeltaX="6.4838 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 12.2472 12.2472 6.4838 6.4838 12.2472 12.2472 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472">1.患者，官茜，31岁，女，未婚。2.主诉：宫腔镜术后9天。3.既往：2020-12-14行宫腔镜诊刮</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="58" Boundary="188.6167 84.4576 12.1534 3.9023" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="3" CodeCount="3" CodePosition="0">
+					<ofd:Glyphs>3308 275 1518</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.66" Y="-831.1003" DeltaX="12.2472 12.2472">术，否</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="59" Boundary="6.8649 89.3545 194.0785 4.2324" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="45" CodeCount="45" CodePosition="0">
+					<ofd:Glyphs>3082 2066 1762 99 791 4489 99 2588 1373 968 3246 275 3661 1594 3891 3906 99 3823 4227 968 275 3450 2741 968 1289 968 3246 3661 3571 3172 3246 275 3661 3291 3891 3246 275 1851 2389 3373 99 2567 1716 1718 2649</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.144" Y="-830.5843" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2473 12.2473 12.2473">认结核、艾滋、梅毒病史，无高血压、心脏病，糖尿病等病史无外伤史，无输血史，黄连素、芒果过敏</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="60" Boundary="7.2752 94.463 176.1122 4.1689" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="51" CodeCount="51" CodePosition="0">
+					<ofd:Glyphs>100 23 17 3480 1983 289 55 22 25 17 24 167 275 51 26 27 1201 18 1491 275 53 21 19 1201 18 1491 275 37 51 20 19 19 18 25 24 80 80 43 74 275 3210 4381 3010 1155 275 1040 3480 1766 4532 275 3328</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-1.308" Y="-830.6683" DeltaX="12.2472 6.4838 6.4838 12.2472 12.2472 12.2472 12.9676 6.4838 6.4838 6.4838 6.4838 12.2472 12.2472 12.9677 6.4838 6.4838 12.2472 6.4838 12.2472 12.2472 12.9677 6.4838 6.4838 12.2472 6.4838 12.2472 12.2472 6.4838 12.9677 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.9677 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472">。4.体检：T36.5℃，P78次/分，R20次/分，BP100/65mmHg，神志清楚，查体合作，双</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="61" Boundary="183.6099 94.6027 16.9146 3.9615" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="4" CodeCount="4" CodePosition="0">
+					<ofd:Glyphs>1483 1803 3691 4059</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.144" Y="-831.0643" DeltaX="12.2472 12.2472 12.2472">肺呼吸音</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="62" Boundary="7.1272 99.5419 191.7932 4.1858" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="46" CodeCount="46" CodePosition="0">
+					<ofd:Glyphs>3010 3689 275 3619 3636 1923 1572 3233 2533 4059 275 3823 2513 26 28 1201 18 1491 275 2512 2922 275 3823 4059 4350 1064 275 1618 853 2663 3504 4336 3029 3619 3636 1923 2652 3745 4214 4059 275 1556 2876 3112 275 3661</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.888" Y="-830.6683" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838 12.2472 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2473">清晰，未闻及干湿罗音，心率79次/分，律齐，心音正常，各瓣膜听诊区未闻及明显杂音，腹平软，无</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="63" Boundary="6.8818 104.6208 194.3155 4.1858" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="46" CodeCount="46" CodePosition="0">
+					<ofd:Glyphs>3906 3525 1923 1457 3499 3525 275 3328 3215 3029 3661 5213 3525 275 1067 2654 4059 4350 1064 275 3328 3727 4362 994 4406 100 24 17 4453 2227 1983 1040 289 3571 4060 4024 1886 3832 275 4060 1281 1070 275 3186 3864 1262</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.192" Y="-830.6683" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2473 12.2473 12.2473">压痛及反跳痛，双肾区无叩痛，肠鸣音正常，双下肢不肿。5.专科检查：外阴已婚型，阴道畅，少许淡</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="64" Boundary="7.1272 109.6996 177.7351 4.2028" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="43" CodeCount="43" CodePosition="0">
+					<ofd:Glyphs>1795 3140 1491 2623 3678 290 1637 2112 1691 1825 290 4496 1637 1064 1238 290 3328 1031 1560 2001 3619 1998 2652 3745 4051 1064 100 25 17 1539 4441 1983 1040 289 3649 4189 1147 4189 3788 2066 4002 1498 17</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.888" Y="-830.6683" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472">红色分泌物；宫颈光滑；子宫常大；双侧附件未见明显异常。6.辅助检查：我院出院小结一份.</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:ImageObject ID="65" Boundary="7.0681 78.6378 2.0316 12.0623" CTM="2.031552 0 0 -12.06234 0 12.062332" ResourceID="51"/>
+			<ofd:ImageObject ID="66" Boundary="9.7345 78.4686 21.3313 6.6025" CTM="21.331297 0 0 -6.602544 0 6.602539" ResourceID="67"/>
+			<ofd:ImageObject ID="68" Boundary="6.8142 116.4755 2.0316 12.0623" CTM="2.031552 0 0 -12.06234 0 12.062347" ResourceID="51"/>
+			<ofd:ImageObject ID="69" Boundary="9.8192 116.2639 39.6153 3.3013" CTM="39.615265 0 0 -3.301272 0 3.30127" ResourceID="70"/>
+			<ofd:ImageObject ID="71" Boundary="9.8192 119.5652 39.6153 3.3013" CTM="39.615265 0 0 -3.301272 0 3.30127" ResourceID="72"/>
+			<ofd:TextObject ID="73" Boundary="6.611 121.3811 154.6975 4.1859" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="51" CodeCount="51" CodePosition="0">
+					<ofd:Glyphs>3110 4189 1040 834 1243 1064 1695 1491 3685 62 21 19 21 19 16 20 21 16 21 22 20 26 29 21 20 29 20 25 64 29 3010 2065 1383 29 44 44 44 1383 30 3891 1064 1695 1491 3685 62 21 19 21 19 16 20</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.144" Y="-830.6683" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.9677 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.2472 12.2472 12.2472 6.4838 6.4838 6.4838 6.4838 12.2472 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838">入院查白带常规分析[2020-12-2317:21:16]:清洁度:III度;血常规分析[2020-1</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="74" Boundary="162.3038 121.7027 38.0512 3.551" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="15" CodeCount="15" CodePosition="0">
+					<ofd:Glyphs>21 16 21 22 20 25 29 23 20 29 21 28 64 29 3891</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.936" Y="-831.5803" DeltaX="6.4838 6.4838 6.4838 12.9677 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838">2-2316:41:29]:血</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="75" Boundary="6.8732 126.5996 133.3583 4.0293" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="51" CodeCount="51" CodePosition="0">
+					<ofd:Glyphs>1795 1265 834 29 20 19 25 17 19 74 18 47 190 30 62 21 19 21 19 16 20 21 16 21 22 20 25 29 24 21 29 21 20 64 29 39 16 1437 2154 3480 29 24 23 21 81 74 18 80 79 189 30</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.888" Y="-831.0643" DeltaX="12.2472 12.2472 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.9677 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.2472 12.2472 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.2472">红蛋白:106.0g/L↓;[2020-12-2316:52:21]:D-二聚体:542ng/ml↑;</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="76" Boundary="141.6922 126.4599 56.4381 4.1012" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="17" CodeCount="17" CodePosition="0">
+					<ofd:Glyphs>3891 3832 14 994 1695 4245 2214 3480 3153 1040 62 21 19 21 19 16 20</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.096" Y="-830.6683" DeltaX="12.2472 12.2472 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838">血型+不规则抗体筛查[2020-1</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="77" Boundary="6.8902 131.5219 166.9236 4.2028" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="51" CodeCount="51" CodePosition="0">
+					<ofd:Glyphs>21 16 21 23 20 24 29 19 25 29 20 21 64 29 36 37 50 3891 3832 11 4350 1457 1351 3832 12 29 50 3832 30 53 75 39 3891 3832 29 3965 3839 30 3717 2185 2817 3969 99 1577 3215 1631 2719 3619 1998 2652 3745</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.936" Y="-830.6202" DeltaX="6.4838 6.4838 6.4838 12.9677 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.2472 12.2472 6.4838 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838 6.4838 12.2472 6.4838 6.4838 6.4838 6.4838 12.2472 12.2472 6.4838 12.2472 12.2472 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472">2-2415:06:12]:ABO血型(正反定型):O型;RhD血型:阳性;细菌培养、肝肾功能未见明显</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="78" Boundary="174.3452 131.5388 20.6155 4.2028" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="7" CodeCount="7" CodePosition="0">
+					<ofd:Glyphs>4051 1064 275 48 53 44 289</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.516" Y="-830.6683" DeltaX="12.2472 12.2472 12.2472 6.4838 6.4838 6.4838">异常，MRI：</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="79" Boundary="6.8563 136.6516 165.5159 4.135" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="48" CodeCount="48" CodePosition="0">
+					<ofd:Glyphs>2825 2968 2876 3137 14 4249 2972 127 21 19 21 19 16 20 21 16 21 23 20 23 29 24 21 29 22 28 128 29 4496 1637 1802 931 1908 2463 290 1637 2112 3788 2709 4406 290 2825 2968 3186 3864 1906 4001 100</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.84" Y="-830.7643" DeltaX="12.2472 12.2472 12.2472 12.2472 6.4838 12.2472 12.2472 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.9677 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.2472 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472">盆腔平扫+增强【2020-12-2414:52:39】:子宫后壁肌瘤；宫颈小囊肿；盆腔少许积液。</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:ImageObject ID="80" Boundary="6.8142 145.4251 2.0316 12.0623" CTM="2.031552 0 0 -12.06234 0 12.062347" ResourceID="51"/>
+			<ofd:ImageObject ID="81" Boundary="9.5229 145.2135 30.4733 4.444" CTM="30.47328 0 0 -4.44402 0 4.444016" ResourceID="82"/>
+			<ofd:TextObject ID="83" Boundary="6.8649 150.301 191.2767 4.1308" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="51" CodeCount="51" CodePosition="0">
+					<ofd:Glyphs>3110 4189 1802 3579 3167 3757 1681 1983 1040 275 3661 3277 3308 2092 1948 4353 275 4127 21 19 21 19 17 20 21 17 21 24 3835 3046 2544 3727 2108 1556 4496 1637 1908 2463 2989 1154 3308 11 14 4496 1637 1102 3833 3308 12 14 4496</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.144" Y="-830.5843" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838">入院后完善相关检查，无手术禁忌症，于2020.12.25行全麻下经腹子宫肌瘤切除术(+子宫成形术)+子</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="84" Boundary="7.1441 155.4095 193.9729 4.1351" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="46" CodeCount="46" CodePosition="0">
+					<ofd:Glyphs>1637 3750 1908 2463 3473 1154 3308 14 4119 1031 2520 1079 2709 4406 2989 1154 3308 14 2520 1079 1102 3833 3308 275 3308 1802 4141 4027 2214 1579 3065 99 1212 1637 3402 99 4376 3891 99 1817 3623 99 4376 3539 1923 992</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.936" Y="-830.6683" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2473 12.2473 12.2473">宫腺肌瘤剔除术+右侧卵巢囊肿切除术+卵巢成形术，术后予以抗感染、促宫缩、止血、护胃、止吐及补</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="85" Boundary="7.1103 160.4884 160.9432 4.1859" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="51" CodeCount="51" CodePosition="0">
+					<ofd:Glyphs>4001 4397 2415 275 3308 1802 1551 1040 3891 1064 1695 1491 3685 62 21 19 21 19 16 20 21 16 21 25 19 28 29 21 23 29 22 24 64 29 3891 1795 1265 834 29 28 22 17 19 74 18 47 190 30 4399 3839 2380</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.84" Y="-830.6683" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.9677 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.2472 6.4838 12.2472 12.2472">液治疗，术后复查血常规分析[2020-12-2609:24:35]:血红蛋白:93.0g/L↓;中性粒</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="86" Boundary="168.7369 160.5561 28.8224 3.9023" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="9" CodeCount="9" CodePosition="0">
+					<ofd:Glyphs>3717 870 836 1491 913 29 27 19 17</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-1.176" Y="-830.8603" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838 6.4838">细胞百分比:80.</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="87" Boundary="7.1272 165.707 140.3781 4.0631" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="51" CodeCount="51" CodePosition="0">
+					<ofd:Glyphs>23 8 189 30 62 21 19 21 19 16 20 21 16 21 25 19 28 29 20 24 29 21 25 64 29 39 16 1437 2154 3480 29 28 23 24 81 74 18 80 79 189 30 38 42 60 37 1577 3215 3450 1320 2067 4393</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.888" Y="-831.0643" DeltaX="6.4838 6.4838 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.9676 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.2472 12.2472 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472">4%↑;[2020-12-2609:15:26]:D-二聚体:945ng/ml↑;CGYB肝肾糖电解质</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="88" Boundary="149.0643 165.889 47.7331 3.551" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="21" CodeCount="21" CodePosition="0">
+					<ofd:Glyphs>62 21 19 21 19 16 20 21 16 21 25 19 28 29 22 19 29 24 23 64 29</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-3" Y="-831.5803" DeltaX="6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.9677 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838">[2020-12-2609:30:54]:</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="89" Boundary="7.0637 170.6462 166.1506 4.1689" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="51" CodeCount="51" CodePosition="0">
+					<ofd:Glyphs>3487 1355 796 3382 796 1902 4455 4013 2589 29 20 21 56 18 47 190 30 2741 3373 11 56 53 40 36 12 29 21 17 24 20 80 80 82 79 18 47 190 30 3747 1841 4320 4002 846 3014 2275 2230 275 3661 1556 3525 99</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.708" Y="-830.6683" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.2472 6.4838 12.2472 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.2472 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472">天冬氨酸氨基转移酶:12U/L↓;尿素(UREA):2.51mmol/L↓;现患者一般情况可，无腹痛、</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="90" Boundary="176.8375 170.6631 24.7746 4.152" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="6" CodeCount="6" CodePosition="0">
+					<ofd:Glyphs>4060 1281 1147 3891 1289 994</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-1.824" Y="-830.7163" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472">阴道出血等不</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="91" Boundary="6.9453 175.725 161.1082 4.1859" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="51" CodeCount="51" CodePosition="0">
+					<ofd:Glyphs>3265 275 2082 3088 1551 1040 3891 1064 1695 1491 3685 62 21 19 21 19 16 20 21 16 21 28 19 27 29 23 21 29 19 19 64 29 3891 1795 1265 834 29 28 24 17 19 74 18 47 190 30 2752 3891 1923 1577 3215</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.372" Y="-830.6683" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.9677 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 12.2472 6.4838 12.2472 12.2472 12.2472 12.2472">适，今日复查血常规分析[2020-12-2908:42:00]:血红蛋白:95.0g/L↓;凝血及肝肾</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="92" Boundary="168.5889 175.725 29.5696 4.2028" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="7" CodeCount="7" CodePosition="0">
+					<ofd:Glyphs>1631 2719 3661 2652 3745 4051 1064</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.756" Y="-830.6683" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472 12.2472">功能无明显异常</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="93" Boundary="7.2752 180.8209 100.0873 4.1012" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="24" CodeCount="24" CodePosition="0">
+					<ofd:Glyphs>100 3747 1841 4320 1923 1957 3307 3985 3024 1147 4189 275 881 1601 3176 1929 4004 3229 275 4141 4027 855 2360 100</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-1.308" Y="-830.7163" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472">。现患者及家属要求出院，报告上级医师，予以办理。</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:ImageObject ID="94" Boundary="7.0681 186.0561 2.0316 12.0623" CTM="2.031552 0 0 -12.06234 0 12.062347" ResourceID="51"/>
+			<ofd:ImageObject ID="95" Boundary="10.1578 185.8868 20.6541 6.6026" CTM="20.654112 0 0 -6.602544 0 6.602554" ResourceID="96"/>
+			<ofd:TextObject ID="97" Boundary="9.1038 191.8124 24.6813 4.0462" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="6" CodeCount="6" CodePosition="0">
+					<ofd:Glyphs>4496 1637 2876 1825 1908 2463</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.612" Y="-830.9203" DeltaX="12.0071 12.0071 12.0071 12.0071 12.0071">子宫平滑肌瘤</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="98" Boundary="9.1038 196.5992 20.4489 4.0038" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="5" CodeCount="5" CodePosition="0">
+					<ofd:Glyphs>4496 1637 3750 1908 2463</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.612" Y="-830.8123" DeltaX="12.0071 12.0071 12.0071 12.0071">子宫腺肌瘤</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="99" Boundary="9.0699 201.3734 25.0789 4.2028" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="6" CodeCount="6" CodePosition="0">
+					<ofd:Glyphs>4051 1064 4496 1637 1147 3891</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.516" Y="-830.6683" DeltaX="12.0071 12.0071 12.0071 12.0071 12.0071">异常子宫出血</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="100" Boundary="9.218 206.3041 30.9664 3.9488" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="8" CodeCount="8" CodePosition="0">
+					<ofd:Glyphs>1637 2968 2116 1983 1040 3 3308 1802</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.936" Y="-830.9683" DeltaX="12.0071 12.0071 12.0071 12.0071 12.0071 6.0035 12.0071">宫腔镜检查 术后</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="101" Boundary="9.0699 211.0233 16.6141 4.152" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="4" CodeCount="4" CodePosition="0">
+					<ofd:Glyphs>3006 1383 2869 3891</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.516" Y="-830.6683" DeltaX="12.0071 12.0071 12.0071">轻度贫血</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:ImageObject ID="102" Boundary="7.0681 221.1004 2.0316 12.0623" CTM="2.031552 0 0 -12.06234 0 12.062332" ResourceID="51"/>
+			<ofd:ImageObject ID="103" Boundary="10.1578 220.9311 20.6541 6.6025" CTM="20.654112 0 0 -6.602544 0 6.602539" ResourceID="104"/>
+			<ofd:TextObject ID="105" Boundary="6.9917 226.7678 193.4863 4.2028" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="45" CodeCount="45" CodePosition="0">
+					<ofd:Glyphs>1841 4320 4002 846 3014 2275 2230 275 3619 3380 1439 3075 99 3727 1556 3525 99 4060 1281 1147 3891 1289 994 3265 275 1238 3788 940 4350 1064 100 1556 998 3172 2247 4159 1766 1754 275 1520 2424 1572 4242 100 1040</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-1.224" Y="-830.6683" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2473 12.2473 12.2473">患者一般情况可，未诉发热、下腹痛、阴道出血等不适，大小便正常。腹部伤口愈合好，敷料干燥。查</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="106" Boundary="6.611 231.8297 57.3271 4.2197" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="14" CodeCount="14" CodePosition="0">
+					<ofd:Glyphs>3480 289 3219 2657 3480 4344 2876 3639 275 1556 998 2876 3112 100</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.144" Y="-830.6202" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472">体：生命体征平稳，腹部平软。</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="107" Boundary="6.7759 245.0687 89.0443 4.1351" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="21" CodeCount="21" CodePosition="0">
+					<ofd:Glyphs>4002 99 3219 1891 4375 1277 271 4066 3242 99 1891 1358 4144 3848 3695 99 1631 2719 1388 2399 272</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.612" Y="-830.7163" DeltaX="12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.2472 12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.3673">一、生活指导（饮食、活动与休息、功能锻炼）</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:ImageObject ID="108" Boundary="7.0681 240.6541 2.0316 12.0623" CTM="2.031552 0 0 -12.06234 0 12.062347" ResourceID="51"/>
+			<ofd:ImageObject ID="109" Boundary="10.1578 240.5271 20.6541 6.4756" CTM="20.654112 0 0 -6.475572 0 6.475571" ResourceID="110"/>
+			<ofd:TextObject ID="111" Boundary="6.9917 251.3834 63.8029 4.2028" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="17" CodeCount="17" CodePosition="0">
+					<ofd:Glyphs>20 17 4447 4041 3848 3695 275 1958 2972 4079 3969 275 3046 3848 20 4197 100</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-1.224" Y="-830.6203" DeltaX="6.4838 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 12.2472">1.注意休息，加强营养，全休1月。</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="112" Boundary="6.8902 256.4623 70.253 4.2028" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="18" CodeCount="18" CodePosition="0">
+					<ofd:Glyphs>21 17 1407 3242 3821 3735 3286 1010 3331 1716 275 1958 2972 4066 3242 4079 3969 100</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.936" Y="-830.6204" DeltaX="6.4838 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472">2.多食新鲜蔬菜水果，加强饮食营养。</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="113" Boundary="6.6913 265.2361 25.02 3.9488" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="6" CodeCount="6" CodePosition="0">
+					<ofd:Glyphs>1437 99 3984 3678 4075 4104</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.372" Y="-831.0164" DeltaX="12.3673 12.3673 12.3673 12.3673 12.3673">二、药物应用</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="114" Boundary="102.1077 277.4507 8.0917 3.133" Font="115" Size="9" CTM="0.352498 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="3" CodeCount="3" CodePosition="0">
+					<ofd:Glyphs>2438 23 3004</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.063" Y="-833.3683" DeltaX="9.0052 5.283">第1页</ofd:TextCode>
+			</ofd:TextObject>
+		</ofd:Layer>
+	</ofd:Content>
+</ofd:Page>
+

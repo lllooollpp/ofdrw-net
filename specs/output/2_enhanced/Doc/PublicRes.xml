@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ofd:Res xmlns:ofd="http://www.ofdspec.org/2016" BaseLoc="Res">
+  <ofd:Fonts>
+    <ofd:Font ID="1" FamilyName="BAAAAA+KaiTi" FontName="BAAAAA+KaiTi" />
+    <ofd:Font ID="2" FamilyName="DAAAAA+KaiTi" FontName="DAAAAA+KaiTi" />
+    <ofd:Font ID="3" FamilyName="KaiTi" FontName="KaiTi" Serif="true">
+      <ofd:FontFile>pdf_font_915d38c0fb8346098683017b39248ea0.ttf</ofd:FontFile>
+    </ofd:Font>
+    <ofd:Font ID="4" FamilyName="TimesNewRomanPSMT" FontName="TimesNewRomanPSMT" Serif="true">
+      <ofd:FontFile>pdf_font_d40ba38248fc46609004eb9578f9274e.ttf</ofd:FontFile>
+    </ofd:Font>
+  </ofd:Fonts>
+</ofd:Res>

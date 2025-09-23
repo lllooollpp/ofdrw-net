@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 209.903 297.039</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="1"> 
+        <ofd:ImageObject ID="161" ResourceID="5" Boundary="131.516 32.561 18.274 7.938" CTM="18.27388862 0 0 7.9375 0 0"/>
+        <ofd:ImageObject ID="162" ResourceID="6" Boundary="131.445 43.568 18.274 7.938" CTM="18.27388862 0 0 7.9375 0 0"/>
+        <ofd:ImageObject ID="163" ResourceID="5" Boundary="159.949 81.703 18.274 7.938" CTM="18.27388862 0 0 7.9375 0 0"/>
+        <ofd:ImageObject ID="164" ResourceID="6" Boundary="131.516 137.125 18.274 7.938" CTM="18.27388862 0 0 7.9375 0 0"/>
+        <ofd:ImageObject ID="165" ResourceID="7" Boundary="131.445 148.131 18.274 7.938" CTM="18.27388862 0 0 7.9375 0 0"/>
+        <ofd:PathObject ID="166" Boundary="0 0 595.4 842" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 0 0 L 595.4 0 L 595.4 842 L 0 842 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="167" Boundary="372.8 727.1 51.8 22.6" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 372.8 727.1 L 424.6 727.1 L 424.6 749.7 L 372.8 749.7 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="168" Boundary="0 0 595.4 842" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 0 0 L 595.4 0 L 595.4 842 L 0 842 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="169" Boundary="372.6 695.9 51.8 22.6" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 372.6 695.9 L 424.4 695.9 L 424.4 718.5 L 372.6 718.5 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="170" Boundary="0 0 595.4 842" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 0 0 L 595.4 0 L 595.4 842 L 0 842 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="171" Boundary="453.4 587.8 51.8 22.6" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 453.4 587.8 L 505.2 587.8 L 505.2 610.4 L 453.4 610.4 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="172" Boundary="0 0 595.4 842" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 0 0 L 595.4 0 L 595.4 842 L 0 842 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="173" Boundary="372.8 430.7 51.8 22.6" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 372.8 430.7 L 424.6 430.7 L 424.6 453.3 L 372.8 453.3 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="174" Boundary="0 0 595.4 842" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 0 0 L 595.4 0 L 595.4 842 L 0 842 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="175" Boundary="372.6 399.5 51.8 22.6" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 372.6 399.5 L 424.4 399.5 L 424.4 422.1 L 372.6 422.1 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="176" Boundary="0 0 595.4 842" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 0 0 L 595.4 0 L 595.4 842 L 0 842 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="177" Boundary="90 751.9 415.3 0.8" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 90 751.9 L 505.3 751.9 L 505.3 752.7 L 90 752.7 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:TextObject ID="178" Font="1" Size="4.23" Boundary="88.124 15.978 20.32 5.08"><ofd:TextCode X="0" Y="3.598333">武汉大学中南医院</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="179" Font="1" Size="4.23" Boundary="96.591 21.481 10.16 5.08"><ofd:TextCode X="0" Y="3.598333">病程记录</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="180" Font="1" Size="4.23" Boundary="31.785 26.985 53.34 5.08"><ofd:TextCode X="0" Y="3.598333">姓名: 官茜 住院号:0001485677</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="181" Font="1" Size="4.23" Boundary="106.01 35.522 10.16 5.08"><ofd:TextCode X="0" Y="3.598333">住院医师</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="182" Font="1" Size="4.23" Boundary="105.939 46.529 10.16 5.08"><ofd:TextCode X="0" Y="3.598333">主治医师</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="183" Font="1" Size="4.23" Boundary="88.618 54.784 38.1 5.08"><ofd:TextCode X="0" Y="3.598333">2020-12-2810:59</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="184" Font="1" Size="4.23" Boundary="31.926 60.287 93.98 5.08"><ofd:TextCode X="0" Y="3.598333">今为患者术后第3天，一般情况可，未诉特殊不适，无发热，无腹胀，无阴道出血，</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="185" Font="1" Size="4.23" Boundary="31.785 65.79 91.44 5.08"><ofd:TextCode X="0" Y="3.598333">查体生命体征平稳，全腹柔软，腹部切口外敷料干燥，无渗血渗液，腹腔引流管已</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="186" Font="1" Size="4.23" Boundary="31.785 71.294 93.98 5.08"><ofd:TextCode X="0" Y="3.598333">拔除，尿管已拔除，小便自解，尿量可，继续预防感染治疗，密切关注患者基本生命</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="187" Font="1" Size="4.23" Boundary="31.785 76.797 25.4 5.08"><ofd:TextCode X="0" Y="3.598333">体征及伤口愈合情况。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="188" Font="1" Size="4.23" Boundary="134.444 85.052 10.16 5.08"><ofd:TextCode X="0" Y="3.598333">住院医师</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="189" Font="1" Size="4.23" Boundary="88.618 93.307 38.1 5.08"><ofd:TextCode X="0" Y="3.598333">2020-12-2908:57</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="190" Font="2" Size="4.23" Boundary="31.926 98.81 25.4 5.08"><ofd:TextCode X="0" Y="3.598333">张蔚主任医师查房记录</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="191" Font="1" Size="4.23" Boundary="31.785 104.314 91.44 5.08"><ofd:TextCode X="0" Y="3.598333">对患者的病情分析:患者术后第4天，阴道少量出血，未诉发热、下腹痛等不适，</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="192" Font="1" Size="4.23" Boundary="31.785 109.817 106.68 5.08"><ofd:TextCode X="0" Y="3.598333">大小便正常。查体：生命体征平稳，腹部切口愈合好。复查血常规分析[2020-12-29</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="193" Font="1" Size="4.23" Boundary="31.785 115.32 152.4 5.08"><ofd:TextCode X="0" Y="3.598333">08:42:00]:血红蛋白:95.0g/L↓;[2020-12-2910:15:42]:D-二聚体:1271ng/ml</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="194" Font="1" Size="4.23" Boundary="31.785 120.824 93.98 5.08"><ofd:TextCode X="0" Y="3.598333">↑;肝肾功能未见明显异常;张蔚主任医师查房后示：患者一般情况可，告知相关出</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="195" Font="1" Size="4.23" Boundary="31.785 126.327 33.02 5.08"><ofd:TextCode X="0" Y="3.598333">院注意事项，拟于今日出院。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="196" Font="1" Size="4.23" Boundary="31.785 131.83 78.74 5.08"><ofd:TextCode X="0" Y="3.598333">诊疗意见:患者一般情况可，告知相关出院注意事项，拟于今日出院。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="197" Font="1" Size="4.23" Boundary="106.01 140.085 10.16 5.08"><ofd:TextCode X="0" Y="3.598333">主治医师</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="198" Font="1" Size="4.23" Boundary="105.939 151.092 10.16 5.08"><ofd:TextCode X="0" Y="3.598333">主任医师</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="199" Font="1" Size="4.23" Boundary="88.653 159.347 38.1 5.08"><ofd:TextCode X="0" Y="3.598333">2020-12-2911:37</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="200" Font="1" Size="4.23" Boundary="31.785 164.85 12.7 5.08"><ofd:TextCode X="0" Y="3.598333">出院前记录</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="201" Font="1" Size="4.23" Boundary="31.856 170.354 63.5 5.08"><ofd:TextCode X="0" Y="3.598333">简要病史和患者现生命体征、阳性辅助检查、诊疗过程:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="202" Font="1" Size="4.23" Boundary="31.926 175.857 114.3 5.08"><ofd:TextCode X="0" Y="3.598333">1.患者，官茜，31岁，女，未婚。2.主诉：宫腔镜术后9天。3.既往：2020-12-14</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="203" Font="1" Size="4.23" Boundary="31.785 181.36 93.98 5.08"><ofd:TextCode X="0" Y="3.598333">行宫腔镜诊刮术，否认结核、艾滋、梅毒病史，无高血压、心脏病，糖尿病等病史无</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="204" Font="1" Size="4.23" Boundary="31.785 186.864 104.14 5.08"><ofd:TextCode X="0" Y="3.598333">外伤史，无输血史，黄连素、芒果过敏。4.体检：T36.5℃，P78次/分，R20次</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="205" Font="1" Size="4.23" Boundary="31.785 192.367 106.68 5.08"><ofd:TextCode X="0" Y="3.598333">/分，BP100/65mmHg，神志清楚，查体合作，双肺呼吸音清晰，未闻及干湿罗音，</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="206" Font="1" Size="4.23" Boundary="31.785 197.87 96.52 5.08"><ofd:TextCode X="0" Y="3.598333">心率79次/分，律齐，心音正常，各瓣膜听诊区未闻及明显杂音，腹平软，无压痛及</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="207" Font="1" Size="4.23" Boundary="31.785 203.374 96.52 5.08"><ofd:TextCode X="0" Y="3.598333">反跳痛，双肾区无叩痛，肠鸣音正常，双下肢不肿。5.专科检查：外阴已婚型，阴道</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="208" Font="1" Size="4.23" Boundary="31.785 208.877 99.06 5.08"><ofd:TextCode X="0" Y="3.598333">畅，少许淡红色分泌物；宫颈光滑；子宫常大；双侧附件未见明显异常。6.辅助检查：</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="209" Font="1" Size="4.23" Boundary="31.785 214.38 121.92 5.08"><ofd:TextCode X="0" Y="3.598333">我院出院小结一份.入院查白带常规分析[2020-12-2317:21:16]:清洁度:III度;</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="210" Font="1" Size="4.23" Boundary="31.785 219.884 149.86 5.08"><ofd:TextCode X="0" Y="3.598333">血常规分析[2020-12-2316:41:29]:血红蛋白:106.0g/L↓;[2020-12-2316:52:2</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="211" Font="1" Size="4.23" Boundary="31.785 225.387 137.16 5.08"><ofd:TextCode X="0" Y="3.598333">1]:D-二聚体:542ng/ml↑;血型+不规则抗体筛查[2020-12-2415:06:12]:ABO血</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="212" Font="1" Size="4.23" Boundary="31.785 230.89 106.68 5.08"><ofd:TextCode X="0" Y="3.598333">型(正反定型):O型;RhD血型:阳性;细菌培养、肝肾功能未见明显异常，MRI：盆腔</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="213" Font="1" Size="4.23" Boundary="31.785 236.394 116.84 5.08"><ofd:TextCode X="0" Y="3.598333">平扫+增强【2020-12-2414:52:39】:子宫后壁肌瘤；宫颈小囊肿；盆腔少许积液。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="214" Font="1" Size="4.23" Boundary="31.785 241.897 104.14 5.08"><ofd:TextCode X="0" Y="3.598333">完善相关检查，无手术禁忌症，于2020.12.25行全麻下经腹子宫肌瘤切除术(+子</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="215" Font="1" Size="4.23" Boundary="31.785 247.4 93.98 5.08"><ofd:TextCode X="0" Y="3.598333">宫成形术)+子宫腺肌瘤剔除术+右侧卵巢囊肿切除术+卵巢成形术，术后予以抗感</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="216" Font="1" Size="4.23" Boundary="31.785 252.904 101.6 5.08"><ofd:TextCode X="0" Y="3.598333">染、促宫缩、止血、护胃、止吐及补液治疗，术后复查血常规分析[2020-12-26</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="217" Font="1" Size="4.23" Boundary="31.785 258.407 142.24 5.08"><ofd:TextCode X="0" Y="3.598333">09:24:35]:血红蛋白:93.0g/L↓;中性粒细胞百分比:80.4%↑;[2020-12-2609:15</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="218" Font="1" Size="4.23" Boundary="31.785 263.91 139.7 5.08"><ofd:TextCode X="0" Y="3.598333">:26]:D-二聚体:945ng/ml↑;CGYB肝肾糖电解质[2020-12-2609:30:54]:天冬氨</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

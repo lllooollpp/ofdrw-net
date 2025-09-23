@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ofd:Res xmlns:ofd="http://www.ofdspec.org/2016" BaseLoc="Res">
+	<ofd:MultiMedias>
+		<ofd:MultiMedia ID="4" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_4.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="6" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_6.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="8" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_8.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="10" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_10.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="12" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_12.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="14" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_14.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="16" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_16.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="18" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_18.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="20" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_20.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="22" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_22.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="51" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_51.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="53" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_53.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="67" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_67.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="70" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_70.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="72" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_72.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="82" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_82.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="96" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_96.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="104" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_104.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="110" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_110.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="130" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_130.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="133" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_133.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="142" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_142.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="154" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_154.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+		<ofd:MultiMedia ID="157" Format="PNG" Type="Image">
+			<ofd:MediaFile>Image_157.PNG</ofd:MediaFile>
+		</ofd:MultiMedia>
+	</ofd:MultiMedias>
+</ofd:Res>
+

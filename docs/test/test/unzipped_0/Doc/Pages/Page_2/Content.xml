@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 209.903 297.039</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="1"> 
+        <ofd:ImageObject ID="87" ResourceID="23" Boundary="158.242 74.93 31.496 31.496"/>
+        <ofd:ImageObject ID="88" ResourceID="14" Boundary="6.816 72.813 2.032 12.065"/>
+        <ofd:ImageObject ID="89" ResourceID="24" Boundary="9.525 72.644 20.997 6.604"/>
+        <ofd:ImageObject ID="90" ResourceID="14" Boundary="7.07 140.631 2.032 12.065"/>
+        <ofd:ImageObject ID="91" ResourceID="25" Boundary="9.737 140.42 30.48 4.445"/>
+        <ofd:ImageObject ID="92" ResourceID="26" Boundary="147.574 153.924 17.526 10.922"/>
+        <ofd:ImageObject ID="93" ResourceID="26" Boundary="147.574 164.846 17.526 10.922"/>
+        <ofd:TextObject ID="94" Font="1" Size="4.23" Boundary="6.562 14.483 38.1 4.233"><ofd:TextCode X="0" Y="3.725333">生血宁片：一次两片，一天三次。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="95" Font="1" Size="4.23" Boundary="6.562 19.563 30.48 4.233"><ofd:TextCode X="0" Y="3.725333">三、定期复查的时间和项目</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="96" Font="1" Size="4.23" Boundary="6.562 25.913 66.04 4.233"><ofd:TextCode X="0" Y="3.725333">1.如有发热、腹痛、阴道出血超过2周或量多等不适随诊</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="97" Font="1" Size="4.23" Boundary="6.562 30.993 33.02 4.233"><ofd:TextCode X="0" Y="3.725333">2.1月后张蔚主任门诊复查</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="98" Font="1" Size="4.23" Boundary="9.356 41.407 45.72 4.233"><ofd:TextCode X="0" Y="3.725333">四、定期复查天数：30 天后定期复查</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="99" Font="1" Size="4.23" Boundary="6.562 52.583 55.88 4.233"><ofd:TextCode X="0" Y="3.725333">五、院外治疗（本院专家门诊的时间和联系电话）</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="100" Font="1" Size="4.23" Boundary="6.562 58.933 91.44 4.233"><ofd:TextCode X="0" Y="3.725333">张蔚门诊复诊（张蔚主任门诊时间：周一上午、周二上午，周日上午专家门诊）。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="101" Font="1" Size="4.23" Boundary="6.562 64.013 43.18 4.233"><ofd:TextCode X="0" Y="3.725333">联系电话：027-67813142</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="102" Font="1" Size="4.23" Boundary="6.096 106.431 17.78 4.233"><ofd:TextCode X="0" Y="3.725333">1、网上预约：</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="103" Font="1" Size="4.23" Boundary="6.096 111.257 53.34 4.233"><ofd:TextCode X="0" Y="3.725333">请扫描右方二维码关注公众号进行网上预约挂号</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="104" Font="1" Size="4.23" Boundary="6.096 120.909 17.78 4.233"><ofd:TextCode X="0" Y="3.725333">2、现场预约：</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="105" Font="1" Size="4.23" Boundary="6.096 125.735 86.36 4.233"><ofd:TextCode X="0" Y="3.725333">武汉大学中南医院门诊二楼便民服务中心（周一至周日8:00-17:00</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="106" Font="1" Size="4.23" Boundary="6.096 130.561 2.54 4.233"><ofd:TextCode X="0" Y="3.725333">）</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="107" Font="1" Size="4.23" Boundary="6.096 135.387 40.64 4.233"><ofd:TextCode X="0" Y="3.725333">地址：武汉市武昌区东湖路169号</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="108" Font="1" Size="4.23" Boundary="8.086 147.579 109.22 4.233"><ofd:TextCode X="0" Y="3.725333">X光号：/ CT号：/ MRI号：MR20201223122病4理号：20-30626</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="109" Font="2" Size="3.17" Boundary="132.08 157.789 9.525 3.175"><ofd:TextCode X="0" Y="2.794">记录医师:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="110" Font="2" Size="3.17" Boundary="132.08 169.219 9.525 3.175"><ofd:TextCode X="0" Y="2.794">审阅医师:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="111" Font="2" Size="3.17" Boundary="102.108 276.915 5.715 3.175"><ofd:TextCode X="0" Y="2.794">第2页</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

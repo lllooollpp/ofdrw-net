@@ -19,9 +19,9 @@ public static class OfdrwHelper
     /// </summary>
     /// <param name="outputPath">输出文件路径</param>
     /// <returns>OFD文档对象</returns>
-    public static OFDDoc CreateDocument(string outputPath)
+    public static OfdWriter CreateDocument(string outputPath)
     {
-        return new OFDDoc(outputPath);
+        return new OfdWriter(outputPath);
     }
 
     /// <summary>
@@ -29,9 +29,9 @@ public static class OfdrwHelper
     /// </summary>
     /// <param name="outputStream">输出流</param>
     /// <returns>OFD文档对象</returns>
-    public static OFDDoc CreateDocument(Stream outputStream)
+    public static OfdWriter CreateDocument(Stream outputStream)
     {
-        return new OFDDoc(outputStream);
+        return new OfdWriter(outputStream);
     }
 
     #endregion

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 209.903 297.039</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="1"> 
+        <ofd:ImageObject ID="8" ResourceID="5" Boundary="131.516 236.185 18.274 7.938" CTM="18.27388862 0 0 7.9375 0 0"/>
+        <ofd:PathObject ID="9" Boundary="0 0 595.4 842" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 0 0 L 595.4 0 L 595.4 842 L 0 842 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="10" Boundary="372.8 149.9 51.8 22.6" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 372.8 149.9 L 424.6 149.9 L 424.6 172.5 L 372.8 172.5 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="11" Boundary="0 0 595.4 842" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 0 0 L 595.4 0 L 595.4 842 L 0 842 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="12" Boundary="90 751.9 415.3 0.8" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 90 751.9 L 505.3 751.9 L 505.3 752.7 L 90 752.7 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:TextObject ID="13" Font="1" Size="4.23" Boundary="88.124 15.978 20.32 5.08"><ofd:TextCode X="0" Y="3.598333">武汉大学中南医院</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="14" Font="1" Size="4.23" Boundary="96.591 21.481 10.16 5.08"><ofd:TextCode X="0" Y="3.598333">病程记录</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="15" Font="1" Size="4.23" Boundary="31.785 26.985 53.34 5.08"><ofd:TextCode X="0" Y="3.598333">姓名: 官茜 住院号:0001485677</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="16" Font="1" Size="4.23" Boundary="92.357 32.77 15.24 5.08"><ofd:TextCode X="0" Y="3.598333">首次病程记录</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="17" Font="1" Size="4.23" Boundary="31.856 38.274 38.1 5.08"><ofd:TextCode X="0" Y="3.598333">2020-12-2314:19</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="18" Font="1" Size="4.23" Boundary="31.926 43.777 48.26 5.08"><ofd:TextCode X="0" Y="3.598333">患者姓名:官茜 性别:女 年龄:31岁</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="19" Font="1" Size="4.23" Boundary="31.856 49.28 99.06 5.08"><ofd:TextCode X="0" Y="3.598333">一、病例特点:1.患者，官茜，31岁，女，未婚。2.主诉：宫腔镜术后9天。患者</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="20" Font="1" Size="4.23" Boundary="31.785 54.784 101.6 5.08"><ofd:TextCode X="0" Y="3.598333">2020-12-13因无明显诱因阴道不规则出血9天于我院就诊，妇科彩超提示：子宫</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="21" Font="1" Size="4.23" Boundary="31.785 60.287 104.14 5.08"><ofd:TextCode X="0" Y="3.598333">肌瘤，2020-12-14行宫腔镜诊刮治疗，术后病检提示：子宫内膜息肉.患者平素月</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="22" Font="1" Size="4.23" Boundary="31.785 65.79 111.76 5.08"><ofd:TextCode X="0" Y="3.598333">经规则，6/28天，量中，色暗红，无痛经史，末次月经2020-11-25。现患者一般情况</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="23" Font="1" Size="4.23" Boundary="31.785 71.294 91.44 5.08"><ofd:TextCode X="0" Y="3.598333">可，无阴道出血、腹痛、腹胀等不适，为求进一步诊治，门诊以“子宫平滑肌瘤、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="24" Font="1" Size="4.23" Boundary="31.785 76.797 104.14 5.08"><ofd:TextCode X="0" Y="3.598333">宫腔镜术后”收住院。3.既往：2020-12-14行宫腔镜诊刮术，否认结核、艾滋、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="25" Font="1" Size="4.23" Boundary="31.785 82.3 93.98 5.08"><ofd:TextCode X="0" Y="3.598333">梅毒病史，无高血压、心脏病，糖尿病等病史无外伤史，无输血史，黄连素、芒果过</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="26" Font="1" Size="4.23" Boundary="31.785 87.804 119.38 5.08"><ofd:TextCode X="0" Y="3.598333">敏。4.体检：T36.5℃，P78次/分，R20次/分，BP100/65mmHg，神志清楚，查</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="27" Font="1" Size="4.23" Boundary="31.785 93.307 93.98 5.08"><ofd:TextCode X="0" Y="3.598333">体合作，双肺呼吸音清晰，未闻及干湿罗音，心率79次/分，律齐，心音正常，各</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="28" Font="1" Size="4.23" Boundary="31.785 98.81 91.44 5.08"><ofd:TextCode X="0" Y="3.598333">瓣膜听诊区未闻及明显杂音，腹平软，无压痛及反跳痛，双肾区无叩痛，肠鸣音正</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="29" Font="1" Size="4.23" Boundary="31.785 104.314 99.06 5.08"><ofd:TextCode X="0" Y="3.598333">常，双下肢不肿。5.专科检查：外阴已婚型，阴道畅，少许淡红色分泌物；宫颈光滑；</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="30" Font="1" Size="4.23" Boundary="31.785 109.817 78.74 5.08"><ofd:TextCode X="0" Y="3.598333">子宫常大；双侧附件未见明显异常。6.辅助检查：我院出院小结一份</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="31" Font="1" Size="4.23" Boundary="31.926 115.32 27.94 5.08"><ofd:TextCode X="0" Y="3.598333">二、诊断:子宫平滑肌瘤</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="32" Font="1" Size="4.23" Boundary="31.785 120.824 15.24 5.08"><ofd:TextCode X="0" Y="3.598333">异常子宫出血</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="33" Font="1" Size="4.23" Boundary="31.785 126.327 17.78 5.08"><ofd:TextCode X="0" Y="3.598333">宫腔镜检查术后</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="34" Font="1" Size="4.23" Boundary="31.926 131.83 101.6 5.08"><ofd:TextCode X="0" Y="3.598333">诊断依据:1.患者，官茜，31岁，女，未婚。2.主诉：宫腔镜术后9天。3.既往：</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="35" Font="1" Size="4.23" Boundary="31.785 137.334 101.6 5.08"><ofd:TextCode X="0" Y="3.598333">2020-12-14行宫腔镜诊刮术，否认结核、艾滋、梅毒病史，无高血压、心脏病，</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="36" Font="1" Size="4.23" Boundary="31.785 142.837 101.6 5.08"><ofd:TextCode X="0" Y="3.598333">糖尿病等病史无外伤史，无输血史，黄连素、芒果过敏。4.体检：T36.5℃，P78</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="37" Font="1" Size="4.23" Boundary="31.785 148.34 111.76 5.08"><ofd:TextCode X="0" Y="3.598333">次/分，R20次/分，BP100/65mmHg，神志清楚，查体合作，双肺呼吸音清晰，未闻</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="38" Font="1" Size="4.23" Boundary="31.785 153.844 93.98 5.08"><ofd:TextCode X="0" Y="3.598333">及干湿罗音，心率79次/分，律齐，心音正常，各瓣膜听诊区未闻及明显杂音，腹</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="39" Font="1" Size="4.23" Boundary="31.785 159.347 93.98 5.08"><ofd:TextCode X="0" Y="3.598333">平软，无压痛及反跳痛，双肾区无叩痛，肠鸣音正常，双下肢不肿。5.专科检查：</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="40" Font="1" Size="4.23" Boundary="31.785 164.85 93.98 5.08"><ofd:TextCode X="0" Y="3.598333">外阴已婚型，阴道畅，少许淡红色分泌物；宫颈光滑；子宫常大；双侧附件未见明显</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="41" Font="1" Size="4.23" Boundary="31.785 170.354 45.72 5.08"><ofd:TextCode X="0" Y="3.598333">异常。6.辅助检查：我院出院小结一份</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="42" Font="1" Size="4.23" Boundary="31.785 175.857 15.24 5.08"><ofd:TextCode X="0" Y="3.598333">三、拟诊讨论</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="43" Font="1" Size="4.23" Boundary="31.926 181.36 88.9 5.08"><ofd:TextCode X="0" Y="3.598333">鉴别诊断 :子宫肌瘤主要与妊娠子宫，卵巢肿瘤，子宫腺肌症等相鉴别，血尿</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="44" Font="1" Size="4.23" Boundary="31.785 186.864 27.94 5.08"><ofd:TextCode X="0" Y="3.598333">HCG，B超有助于诊断</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="45" Font="1" Size="4.23" Boundary="31.926 192.367 93.98 5.08"><ofd:TextCode X="0" Y="3.598333">鉴别诊断依据 :妊娠子宫：妊娠有停经史，早孕反应，子宫随停经月份增大变软；</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="46" Font="1" Size="4.23" Boundary="31.785 197.87 91.44 5.08"><ofd:TextCode X="0" Y="3.598333">卵巢肿瘤：多无月经改变，呈囊性位于子宫一侧；子宫腺肌症痛经症状与异位症相</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="47" Font="1" Size="4.23" Boundary="31.785 203.374 91.44 5.08"><ofd:TextCode X="0" Y="3.598333">似，但通常更严重，疼痛位于下腹正中，妇科检查子宫多为均匀性增大，呈球形，</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="48" Font="1" Size="4.23" Boundary="31.785 208.877 78.74 5.08"><ofd:TextCode X="0" Y="3.598333">质硬，经期检查子宫触痛明显。通过临床症状及妇科检查及B超可鉴别</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="49" Font="2" Size="4.23" Boundary="31.785 214.38 15.24 5.08"><ofd:TextCode X="0" Y="3.598333">四、诊疗计划</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="50" Font="1" Size="4.23" Boundary="31.926 219.884 73.66 5.08"><ofd:TextCode X="0" Y="3.598333">检查计划:完善相关检查：血常规、尿常规、肝肾功能、凝血象等</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="51" Font="1" Size="4.23" Boundary="31.926 225.387 88.9 5.08"><ofd:TextCode X="0" Y="3.598333">治疗措施:1.完善相关检查；2.向上级医师汇报病情指导治疗3.择期手术</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="52" Font="1" Size="4.23" Boundary="31.785 230.89 2.54 5.08"><ofd:TextCode X="0" Y="3.598333">住</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="53" Font="2" Size="4.23" Boundary="106.01 239.145 20.32 5.08"><ofd:TextCode X="0" Y="3.598333">住院医师 姚时婕</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="54" Font="1" Size="4.23" Boundary="88.618 247.4 38.1 5.08"><ofd:TextCode X="0" Y="3.598333">2020-12-2408:51</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="55" Font="2" Size="4.23" Boundary="31.926 252.904 25.4 5.08"><ofd:TextCode X="0" Y="3.598333">张蔚主任医师查房记录</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="56" Font="1" Size="4.23" Boundary="31.785 258.407 99.06 5.08"><ofd:TextCode X="0" Y="3.598333">对患者的病情分析:1.患者，官茜，31岁，女，未婚。2.主诉：宫腔镜术后9天。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="57" Font="1" Size="4.23" Boundary="31.785 263.91 101.6 5.08"><ofd:TextCode X="0" Y="3.598333">患者2020-12-13因无明显诱因阴道不规则出血9天于我院就诊，妇科彩超提示：</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 209.903 297.039</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="1"> 
+        <ofd:ImageObject ID="58" ResourceID="6" Boundary="131.516 131.621 18.274 7.938" CTM="18.27388862 0 0 7.9375 0 0"/>
+        <ofd:ImageObject ID="59" ResourceID="7" Boundary="131.445 142.628 18.274 7.938" CTM="18.27388862 0 0 7.9375 0 0"/>
+        <ofd:PathObject ID="60" Boundary="0 0 595.4 842" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 0 0 L 595.4 0 L 595.4 842 L 0 842 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="61" Boundary="372.8 446.3 51.8 22.6" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 372.8 446.3 L 424.6 446.3 L 424.6 468.9 L 372.8 468.9 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="62" Boundary="0 0 595.4 842" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 0 0 L 595.4 0 L 595.4 842 L 0 842 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="63" Boundary="372.6 415.1 51.8 22.6" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 372.6 415.1 L 424.4 415.1 L 424.4 437.7 L 372.6 437.7 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="64" Boundary="0 0 595.4 842" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 0 0 L 595.4 0 L 595.4 842 L 0 842 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="65" Boundary="90 751.9 415.3 0.8" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 90 751.9 L 505.3 751.9 L 505.3 752.7 L 90 752.7 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:TextObject ID="66" Font="1" Size="4.23" Boundary="88.124 15.978 20.32 5.08"><ofd:TextCode X="0" Y="3.598333">武汉大学中南医院</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="67" Font="1" Size="4.23" Boundary="96.591 21.481 10.16 5.08"><ofd:TextCode X="0" Y="3.598333">病程记录</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="68" Font="1" Size="4.23" Boundary="31.785 26.985 53.34 5.08"><ofd:TextCode X="0" Y="3.598333">姓名: 官茜 住院号:0001485677</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="69" Font="1" Size="4.23" Boundary="31.785 32.77 104.14 5.08"><ofd:TextCode X="0" Y="3.598333">子宫肌瘤，2020-12-14行宫腔镜诊刮治疗，术后病检提示：子宫内膜息肉.患者平</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="70" Font="1" Size="4.23" Boundary="31.785 38.274 111.76 5.08"><ofd:TextCode X="0" Y="3.598333">素月经规则，6/28天，量中，色暗红，无痛经史，末次月经2020-11-25。现患者一般</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="71" Font="1" Size="4.23" Boundary="31.785 43.777 96.52 5.08"><ofd:TextCode X="0" Y="3.598333">情况可，无阴道出血、腹痛、腹胀等不适，为求进一步诊治，门诊以“子宫平滑肌瘤、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="72" Font="1" Size="4.23" Boundary="31.785 49.28 104.14 5.08"><ofd:TextCode X="0" Y="3.598333">宫腔镜术后”收住院。3.既往：2020-12-14行宫腔镜诊刮术，否认结核、艾滋、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="73" Font="1" Size="4.23" Boundary="31.785 54.784 93.98 5.08"><ofd:TextCode X="0" Y="3.598333">梅毒病史，无高血压、心脏病，糖尿病等病史无外伤史，无输血史，黄连素、芒果过</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="74" Font="1" Size="4.23" Boundary="31.785 60.287 119.38 5.08"><ofd:TextCode X="0" Y="3.598333">敏。4.体检：T36.5℃，P78次/分，R20次/分，BP100/65mmHg，神志清楚，查</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="75" Font="1" Size="4.23" Boundary="31.785 65.79 93.98 5.08"><ofd:TextCode X="0" Y="3.598333">体合作，双肺呼吸音清晰，未闻及干湿罗音，心率79次/分，律齐，心音正常，各</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="76" Font="1" Size="4.23" Boundary="31.785 71.294 91.44 5.08"><ofd:TextCode X="0" Y="3.598333">瓣膜听诊区未闻及明显杂音，腹平软，无压痛及反跳痛，双肾区无叩痛，肠鸣音正</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="77" Font="1" Size="4.23" Boundary="31.785 76.797 99.06 5.08"><ofd:TextCode X="0" Y="3.598333">常，双下肢不肿。5.专科检查：外阴已婚型，阴道畅，少许淡红色分泌物；宫颈光滑；</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="78" Font="1" Size="4.23" Boundary="31.785 82.3 93.98 5.08"><ofd:TextCode X="0" Y="3.598333">子宫常大；双侧附件未见明显异常。6.辅助检查：我院出院小结一份。入院查白带</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="79" Font="2" Size="4.23" Boundary="31.785 87.804 137.16 5.08"><ofd:TextCode X="0" Y="3.598333">常规分析[2020-12-2317:21:16]:红细胞:阳性(++);上皮细胞:阳性(++++);MRI：</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="80" Font="1" Size="4.23" Boundary="31.785 93.307 116.84 5.08"><ofd:TextCode X="0" Y="3.598333">盆腔平扫+增强【2020-12-2414:52:39】:子宫后壁肌瘤；宫颈小囊肿；盆腔少许积</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="81" Font="1" Size="4.23" Boundary="31.785 98.81 93.98 5.08"><ofd:TextCode X="0" Y="3.598333">液。查血常规、肝肾功能、凝血功能、甲功等均无明显异常。张蔚主任查房示：患者</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="82" Font="1" Size="4.23" Boundary="31.785 104.314 81.28 5.08"><ofd:TextCode X="0" Y="3.598333">目前诊断：子宫平滑肌瘤，异常子宫出血，宫腔镜检查拟明日手术治疗。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="83" Font="1" Size="4.23" Boundary="31.785 115.32 88.9 5.08"><ofd:TextCode X="0" Y="3.598333">诊疗意见:根据入院检查无明显手术禁忌，与患者及家属交代病情，患者及家属</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="84" Font="1" Size="4.23" Boundary="31.785 120.824 86.36 5.08"><ofd:TextCode X="0" Y="3.598333">理解并同意手术治疗。拟明日行经腹子宫肌瘤剔除术。病变性质待术后病检回</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="85" Font="2" Size="4.23" Boundary="31.785 126.327 5.08 5.08"><ofd:TextCode X="0" Y="3.598333">报。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="86" Font="1" Size="4.23" Boundary="106.01 134.582 10.16 5.08"><ofd:TextCode X="0" Y="3.598333">主治医师</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="87" Font="1" Size="4.23" Boundary="105.939 145.589 10.16 5.08"><ofd:TextCode X="0" Y="3.598333">主任医师</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="88" Font="1" Size="4.23" Boundary="88.089 153.844 20.32 5.08"><ofd:TextCode X="0" Y="3.598333">术后首次病程记录</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="89" Font="1" Size="4.23" Boundary="31.926 159.347 38.1 5.08"><ofd:TextCode X="0" Y="3.598333">2020-12-2514:24</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="90" Font="1" Size="4.23" Boundary="31.785 164.85 50.8 5.08"><ofd:TextCode X="0" Y="3.598333">手术时间:2020-12-2514:24</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="91" Font="1" Size="4.23" Boundary="31.785 170.354 17.78 5.08"><ofd:TextCode X="0" Y="3.598333">目标部位:盆腔</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="92" Font="1" Size="4.23" Boundary="31.785 175.857 40.64 5.08"><ofd:TextCode X="0" Y="3.598333">诊断依据:根据临床表现及辅助检查</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="93" Font="1" Size="4.23" Boundary="31.785 181.36 27.94 5.08"><ofd:TextCode X="0" Y="3.598333">术中诊断:子宫平滑肌瘤</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="94" Font="1" Size="4.23" Boundary="54.257 186.864 25.4 5.08"><ofd:TextCode X="0" Y="3.598333">右侧卵巢巧克力样囊肿</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="95" Font="1" Size="4.23" Boundary="54.257 192.367 12.7 5.08"><ofd:TextCode X="0" Y="3.598333">子宫腺肌瘤</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="96" Font="1" Size="4.23" Boundary="54.257 197.87 15.24 5.08"><ofd:TextCode X="0" Y="3.598333">异常子宫出血</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="97" Font="1" Size="4.23" Boundary="54.257 203.374 17.78 5.08"><ofd:TextCode X="0" Y="3.598333">宫腔镜检查术后</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="98" Font="2" Size="4.23" Boundary="31.785 208.877 17.78 5.08"><ofd:TextCode X="0" Y="3.598333">麻醉方式:全麻</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="99" Font="1" Size="4.23" Boundary="31.785 214.38 86.36 5.08"><ofd:TextCode X="0" Y="3.598333">手术方式:子宫肌瘤切除术(+子宫成形术)+卵巢病损切除术+卵巢成形术</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="100" Font="1" Size="4.23" Boundary="31.785 219.884 91.44 5.08"><ofd:TextCode X="0" Y="3.598333">手术简要经过:1、全麻成功后，病人取膀胱截石位，上至乳头连线，下至大腿上</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="101" Font="1" Size="4.23" Boundary="31.785 225.387 53.34 5.08"><ofd:TextCode X="0" Y="3.598333">1/3，两侧至腋中线，外阴消毒，铺无菌巾。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="102" Font="1" Size="4.23" Boundary="31.785 230.89 73.66 5.08"><ofd:TextCode X="0" Y="3.598333">2、耻骨上两横指下腹部一长约7cm的手术瘢痕逐层进入腹腔。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="103" Font="1" Size="4.23" Boundary="31.785 236.394 96.52 5.08"><ofd:TextCode X="0" Y="3.598333">3、探查见：子宫形态失常，子宫后壁可见一大小约6×6×7cm肌壁间子宫肌瘤，</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="104" Font="2" Size="4.23" Boundary="31.785 241.897 91.44 5.08"><ofd:TextCode X="0" Y="3.598333">边界清，质硬，子宫左侧壁突起病灶，与周围子宫肌层分界欠清，范围约2*1c</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="105" Font="1" Size="4.23" Boundary="31.785 247.4 101.6 5.08"><ofd:TextCode X="0" Y="3.598333">m，质脆，子宫表面可见多发0.2*0.2cm大小的的腺肌瘤，右侧卵巢可见一大小约</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="106" Font="1" Size="4.23" Boundary="31.785 252.904 99.06 5.08"><ofd:TextCode X="0" Y="3.598333">1.5×3.5cm的囊性包块，表面光滑，内见巧克力样囊液，右侧输卵管未见异常。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="107" Font="1" Size="4.23" Boundary="31.785 258.407 96.52 5.08"><ofd:TextCode X="0" Y="3.598333">4、排垫肠管，暴露子宫，子宫肌层注射垂体针1支。于子宫后壁肌瘤体处切开肌层，</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="108" Font="1" Size="4.23" Boundary="31.785 263.91 91.44 5.08"><ofd:TextCode X="0" Y="3.598333">瘤体边界清，锐性剥离瘤体。剥除子宫左侧壁突起病灶，子宫表面多发腺肌瘤依次</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

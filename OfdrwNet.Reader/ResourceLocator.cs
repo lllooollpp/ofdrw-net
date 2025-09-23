@@ -3,6 +3,9 @@ using OfdrwNet.Core;
 using OfdrwNet.Core.BasicType;
 using OfdrwNet.Packaging.Container;
 using System.Xml.Linq;
+using System.Collections.Concurrent;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace OfdrwNet.Reader;
 
@@ -32,6 +35,38 @@ public class ResourceLocator : IDisposable
     /// 当前工作目录路径
     /// </summary>
     private string _currentWorkingDirectory;
+
+    // ===== T029: 新增缓存管理和预加载功能字段 =====
+
+    /// <summary>
+    /// 资源缓存，键为资源路径，值为缓存的资源对象
+    /// </summary>
+    private readonly ConcurrentDictionary<string, ResourceCacheEntry> _resourceCache = new ConcurrentDictionary<string, ResourceCacheEntry>();
+
+    /// <summary>
+    /// 文件内容缓存，键为文件路径，值为文件内容
+    /// </summary>
+    private readonly ConcurrentDictionary<string, string> _fileContentCache = new ConcurrentDictionary<string, string>();
+
+    /// <summary>
+    /// XML文档缓存，键为文件路径，值为解析的XDocument
+    /// </summary>
+    private readonly ConcurrentDictionary<string, XDocument> _xmlDocumentCache = new ConcurrentDictionary<string, XDocument>();
+
+    /// <summary>
+    /// 缓存配置
+    /// </summary>
+    public ResourceCacheConfig CacheConfig { get; set; } = new ResourceCacheConfig();
+
+    /// <summary>
+    /// 缓存统计信息
+    /// </summary>
+    public ResourceCacheStatistics CacheStatistics { get; private set; } = new ResourceCacheStatistics();
+
+    /// <summary>
+    /// 预加载任务取消令牌源
+    /// </summary>
+    private CancellationTokenSource _preloadCancellationTokenSource = new CancellationTokenSource();
 
     /// <summary>
     /// 文档路径正则表达式
@@ -103,7 +138,7 @@ public class ResourceLocator : IDisposable
 
         string targetPath = ToAbsolutePath(path);
         var targetContainer = GetContainerByPath(targetPath);
-        
+
         if (targetContainer != null)
         {
             _currentContainer = targetContainer;
@@ -248,7 +283,7 @@ public class ResourceLocator : IDisposable
         string absolutePath = ToAbsolutePath(loc.ToString());
         var container = GetContainerByPath(Path.GetDirectoryName(absolutePath) ?? "/");
         string fileName = Path.GetFileName(absolutePath);
-        
+
         return container?.GetFile(fileName) ?? throw new FileNotFoundException($"文件不存在: {absolutePath}");
     }
 
@@ -279,7 +314,7 @@ public class ResourceLocator : IDisposable
 
         string absolutePath = ToAbsolutePath(loc.ToString());
         var element = _rootContainer.GetObj(new StLoc(absolutePath));
-        
+
         if (element == null)
         {
             throw new FileNotFoundException($"文件不存在: {absolutePath}");
@@ -369,9 +404,9 @@ public class ResourceLocator : IDisposable
 
         string normalizedPath = NormalizePath(path);
         string[] parts = normalizedPath.Split('/', StringSplitOptions.RemoveEmptyEntries);
-        
+
         VirtualContainer current = _rootContainer;
-        
+
         foreach (string part in parts)
         {
             try
@@ -387,11 +422,432 @@ public class ResourceLocator : IDisposable
         return current;
     }
 
+    // ===== T029: 新增缓存管理和预加载功能方法 =====
+
+    /// <summary>
+    /// 带缓存的获取文件内容
+    /// </summary>
+    /// <param name="fileName">文件名</param>
+    /// <returns>文件内容</returns>
+    public string GetFileWithCache(string fileName)
+    {
+        if (!CacheConfig.EnableCache)
+        {
+            return GetFile(fileName);
+        }
+
+        var absolutePath = ToAbsolutePath(fileName);
+        var startTime = DateTime.UtcNow;
+
+        if (_fileContentCache.TryGetValue(absolutePath, out var cachedContent))
+        {
+            CacheStatistics.RecordHit();
+            return cachedContent;
+        }
+
+        var content = GetFile(fileName);
+        var loadTime = (long)(DateTime.UtcNow - startTime).TotalMilliseconds;
+
+        CacheStatistics.RecordMiss(loadTime);
+
+        if (ShouldCache(content.Length))
+        {
+            _fileContentCache.TryAdd(absolutePath, content);
+        }
+
+        return content;
+    }
+
+    /// <summary>
+    /// 带缓存的获取XML文档
+    /// </summary>
+    /// <param name="fileName">文件名</param>
+    /// <returns>XML文档</returns>
+    public XDocument GetXmlDocumentWithCache(string fileName)
+    {
+        if (!CacheConfig.EnableCache)
+        {
+            var content = GetFile(fileName);
+            return XDocument.Parse(content);
+        }
+
+        var absolutePath = ToAbsolutePath(fileName);
+        var startTime = DateTime.UtcNow;
+
+        if (_xmlDocumentCache.TryGetValue(absolutePath, out var cachedDoc))
+        {
+            CacheStatistics.RecordHit();
+            return cachedDoc;
+        }
+
+        var fileContent = GetFile(fileName);
+        var xmlDoc = XDocument.Parse(fileContent);
+        var loadTime = (long)(DateTime.UtcNow - startTime).TotalMilliseconds;
+
+        CacheStatistics.RecordMiss(loadTime);
+
+        if (ShouldCache(EstimateXmlDocumentSize(xmlDoc)))
+        {
+            _xmlDocumentCache.TryAdd(absolutePath, xmlDoc);
+        }
+
+        return xmlDoc;
+    }
+
+    /// <summary>
+    /// 带缓存的获取对象
+    /// </summary>
+    /// <typeparam name="T">对象类型</typeparam>
+    /// <param name="fileName">文件名</param>
+    /// <param name="constructor">构造函数</param>
+    /// <returns>对象实例</returns>
+    public T GetWithCache<T>(string fileName, Func<XElement, T> constructor) where T : class
+    {
+        if (!CacheConfig.EnableCache)
+        {
+            return Get(fileName, constructor);
+        }
+
+        var absolutePath = ToAbsolutePath(fileName);
+        var cacheKey = $"{typeof(T).Name}_{absolutePath}";
+        var startTime = DateTime.UtcNow;
+
+        if (_resourceCache.TryGetValue(cacheKey, out var entry) && entry.Resource is T cachedResource)
+        {
+            entry.UpdateAccess();
+            CacheStatistics.RecordHit();
+            return cachedResource;
+        }
+
+        var resource = Get(fileName, constructor);
+        var loadTime = (long)(DateTime.UtcNow - startTime).TotalMilliseconds;
+
+        CacheStatistics.RecordMiss(loadTime);
+
+        if (ShouldCache(EstimateObjectSize(resource)))
+        {
+            var cacheEntry = new ResourceCacheEntry
+            {
+                Resource = resource,
+                Size = EstimateObjectSize(resource),
+                ResourceType = typeof(T).Name,
+                CreatedTime = DateTime.UtcNow,
+                LastAccessTime = DateTime.UtcNow,
+                AccessCount = 1
+            };
+
+            _resourceCache.TryAdd(cacheKey, cacheEntry);
+        }
+
+        return resource;
+    }
+
+    /// <summary>
+    /// 异步预加载资源
+    /// </summary>
+    /// <param name="resourcePaths">资源路径列表</param>
+    /// <returns>预加载任务</returns>
+    public async Task PreloadResourcesAsync(IEnumerable<string> resourcePaths)
+    {
+        if (!CacheConfig.EnablePreloading)
+        {
+            return;
+        }
+
+        var semaphore = new SemaphoreSlim(CacheConfig.PreloadConcurrency);
+        var tasks = resourcePaths.Select(async path =>
+        {
+            await semaphore.WaitAsync(_preloadCancellationTokenSource.Token);
+            try
+            {
+                if (_preloadCancellationTokenSource.Token.IsCancellationRequested)
+                    return;
+
+                await PreloadSingleResourceAsync(path);
+                CacheStatistics.RecordPreload();
+            }
+            catch (OperationCanceledException)
+            {
+                // 忽略取消异常
+            }
+            catch
+            {
+                // 忽略预加载错误，不影响正常功能
+            }
+            finally
+            {
+                semaphore.Release();
+            }
+        });
+
+        await Task.WhenAll(tasks);
+    }
+
+    /// <summary>
+    /// 预加载单个资源
+    /// </summary>
+    /// <param name="resourcePath">资源路径</param>
+    private async Task PreloadSingleResourceAsync(string resourcePath)
+    {
+        await Task.Run(() =>
+        {
+            try
+            {
+                // 尝试预加载文件内容
+                if (resourcePath.EndsWith(".xml", StringComparison.OrdinalIgnoreCase))
+                {
+                    GetXmlDocumentWithCache(resourcePath);
+                }
+                else
+                {
+                    GetFileWithCache(resourcePath);
+                }
+
+                // 标记为预加载资源
+                var absolutePath = ToAbsolutePath(resourcePath);
+                if (_fileContentCache.ContainsKey(absolutePath) || _xmlDocumentCache.ContainsKey(absolutePath))
+                {
+                    var preloadCacheKey = $"preload_{absolutePath}";
+                    _resourceCache.TryAdd(preloadCacheKey, new ResourceCacheEntry
+                    {
+                        Resource = null,
+                        IsPreloaded = true,
+                        ResourceType = "PreloadMarker"
+                    });
+                }
+            }
+            catch
+            {
+                // 忽略预加载错误
+            }
+        });
+    }
+
+    /// <summary>
+    /// 清理过期缓存
+    /// </summary>
+    public void CleanupExpiredCache()
+    {
+        CleanupExpiredFileCache();
+        CleanupExpiredXmlCache();
+        CleanupExpiredResourceCache();
+    }
+
+    /// <summary>
+    /// 清理所有缓存
+    /// </summary>
+    public void ClearAllCache()
+    {
+        _fileContentCache.Clear();
+        _xmlDocumentCache.Clear();
+        _resourceCache.Clear();
+        CacheStatistics.Reset();
+    }
+
+    /// <summary>
+    /// 获取缓存使用情况
+    /// </summary>
+    /// <returns>缓存使用报告</returns>
+    public ResourceCacheUsageReport GetCacheUsageReport()
+    {
+        long totalMemoryUsage = 0;
+
+        // 计算文件内容缓存内存使用
+        foreach (var content in _fileContentCache.Values)
+        {
+            totalMemoryUsage += content.Length * 2; // 字符串UTF-16编码
+        }
+
+        // 计算XML文档缓存内存使用
+        foreach (var doc in _xmlDocumentCache.Values)
+        {
+            totalMemoryUsage += EstimateXmlDocumentSize(doc);
+        }
+
+        // 计算资源缓存内存使用
+        foreach (var entry in _resourceCache.Values)
+        {
+            totalMemoryUsage += entry.Size;
+        }
+
+        return new ResourceCacheUsageReport
+        {
+            TotalMemoryUsage = totalMemoryUsage,
+            FileContentCacheCount = _fileContentCache.Count,
+            XmlDocumentCacheCount = _xmlDocumentCache.Count,
+            ResourceCacheCount = _resourceCache.Count,
+            Statistics = CacheStatistics,
+            GeneratedAt = DateTime.UtcNow
+        };
+    }
+
+    /// <summary>
+    /// 强制执行缓存清理策略
+    /// </summary>
+    public void EnforceCachePolicy()
+    {
+        var report = GetCacheUsageReport();
+
+        // 检查内存使用限制
+        if (report.TotalMemoryUsage > CacheConfig.MaxMemoryUsage)
+        {
+            EvictLeastRecentlyUsedResources();
+        }
+
+        // 检查条目数量限制
+        var totalEntries = report.FileContentCacheCount + report.XmlDocumentCacheCount + report.ResourceCacheCount;
+        if (totalEntries > CacheConfig.MaxCacheEntries)
+        {
+            EvictOldestEntries();
+        }
+
+        // 清理过期条目
+        CleanupExpiredCache();
+    }
+
+    /// <summary>
+    /// 取消预加载任务
+    /// </summary>
+    public void CancelPreloading()
+    {
+        _preloadCancellationTokenSource.Cancel();
+        _preloadCancellationTokenSource.Dispose();
+        _preloadCancellationTokenSource = new CancellationTokenSource();
+    }
+
+    // 私有辅助方法
+
+    /// <summary>
+    /// 判断是否应该缓存
+    /// </summary>
+    private bool ShouldCache(long size)
+    {
+        if (!CacheConfig.EnableCache)
+            return false;
+
+        var report = GetCacheUsageReport();
+        return report.TotalMemoryUsage + size <= CacheConfig.MaxMemoryUsage;
+    }
+
+    /// <summary>
+    /// 估算XML文档大小
+    /// </summary>
+    private long EstimateXmlDocumentSize(XDocument doc)
+    {
+        // 简化估算：XML文档的字符串长度 * 2（UTF-16）
+        return doc.ToString().Length * 2;
+    }
+
+    /// <summary>
+    /// 估算对象大小
+    /// </summary>
+    private long EstimateObjectSize(object obj)
+    {
+        // 简化估算，实际应该使用更精确的方法
+        return obj?.ToString()?.Length * 2 ?? 256;
+    }
+
+    /// <summary>
+    /// 清理过期文件缓存
+    /// </summary>
+    private void CleanupExpiredFileCache()
+    {
+        // 文件内容缓存没有时间戳，这里简化处理
+        if (_fileContentCache.Count > CacheConfig.MaxCacheEntries / 3)
+        {
+            var keysToRemove = _fileContentCache.Keys.Take(_fileContentCache.Count / 4).ToList();
+            foreach (var key in keysToRemove)
+            {
+                _fileContentCache.TryRemove(key, out _);
+                CacheStatistics.RecordEviction();
+            }
+        }
+    }
+
+    /// <summary>
+    /// 清理过期XML缓存
+    /// </summary>
+    private void CleanupExpiredXmlCache()
+    {
+        if (_xmlDocumentCache.Count > CacheConfig.MaxCacheEntries / 3)
+        {
+            var keysToRemove = _xmlDocumentCache.Keys.Take(_xmlDocumentCache.Count / 4).ToList();
+            foreach (var key in keysToRemove)
+            {
+                _xmlDocumentCache.TryRemove(key, out _);
+                CacheStatistics.RecordEviction();
+            }
+        }
+    }
+
+    /// <summary>
+    /// 清理过期资源缓存
+    /// </summary>
+    private void CleanupExpiredResourceCache()
+    {
+        var expiredKeys = _resourceCache
+            .Where(kvp => kvp.Value.IsExpired(CacheConfig.CacheExpiration))
+            .Select(kvp => kvp.Key)
+            .ToList();
+
+        foreach (var key in expiredKeys)
+        {
+            _resourceCache.TryRemove(key, out _);
+            CacheStatistics.RecordEviction();
+        }
+    }
+
+    /// <summary>
+    /// 清理最少使用的资源
+    /// </summary>
+    private void EvictLeastRecentlyUsedResources()
+    {
+        var entriesToEvict = _resourceCache.Values
+            .OrderBy(e => e.LastAccessTime)
+            .Take(_resourceCache.Count / 4)
+            .ToList();
+
+        foreach (var entry in entriesToEvict)
+        {
+            var keyToRemove = _resourceCache.FirstOrDefault(kvp => kvp.Value == entry).Key;
+            if (keyToRemove != null)
+            {
+                _resourceCache.TryRemove(keyToRemove, out _);
+                CacheStatistics.RecordEviction();
+            }
+        }
+    }
+
+    /// <summary>
+    /// 清理最旧的条目
+    /// </summary>
+    private void EvictOldestEntries()
+    {
+        var entriesToEvict = _resourceCache.Values
+            .OrderBy(e => e.CreatedTime)
+            .Take(_resourceCache.Count / 4)
+            .ToList();
+
+        foreach (var entry in entriesToEvict)
+        {
+            var keyToRemove = _resourceCache.FirstOrDefault(kvp => kvp.Value == entry).Key;
+            if (keyToRemove != null)
+            {
+                _resourceCache.TryRemove(keyToRemove, out _);
+                CacheStatistics.RecordEviction();
+            }
+        }
+    }
+
     /// <summary>
     /// 释放资源
     /// </summary>
     public void Dispose()
     {
+        // T029: 增强的资源清理
+        CancelPreloading();
+        ClearAllCache();
+
         _workingDirectoryStack.Clear();
         // 注意：不要释放容器，因为它们可能被其他地方使用
     }

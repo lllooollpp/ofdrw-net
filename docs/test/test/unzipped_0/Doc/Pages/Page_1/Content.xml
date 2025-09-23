@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 209.903 297.039</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="1"> 
+        <ofd:ImageObject ID="27" ResourceID="4" Boundary="81.365 24.13 34.205 4.445"/>
+        <ofd:ImageObject ID="28" ResourceID="5" Boundary="81.365 28.575 34.205 4.445"/>
+        <ofd:ImageObject ID="29" ResourceID="6" Boundary="70.062 15.282 5.757 16.764"/>
+        <ofd:ImageObject ID="30" ResourceID="7" Boundary="77.851 15.579 5.757 16.002"/>
+        <ofd:ImageObject ID="31" ResourceID="8" Boundary="85.725 15.282 5.757 17.018"/>
+        <ofd:ImageObject ID="32" ResourceID="9" Boundary="93.599 15.325 5.757 16.891"/>
+        <ofd:ImageObject ID="33" ResourceID="10" Boundary="101.854 15.282 4.741 17.018"/>
+        <ofd:ImageObject ID="34" ResourceID="11" Boundary="109.178 15.282 5.757 16.891"/>
+        <ofd:ImageObject ID="35" ResourceID="12" Boundary="117.221 15.452 5.419 16.129"/>
+        <ofd:ImageObject ID="36" ResourceID="13" Boundary="125.18 15.367 5.419 16.764"/>
+        <ofd:ImageObject ID="37" ResourceID="14" Boundary="7.07 55.287 2.032 12.065"/>
+        <ofd:ImageObject ID="38" ResourceID="15" Boundary="9.737 55.076 21.336 6.604"/>
+        <ofd:ImageObject ID="39" ResourceID="14" Boundary="7.07 78.655 2.032 12.065"/>
+        <ofd:ImageObject ID="40" ResourceID="16" Boundary="9.737 78.486 21.336 6.604"/>
+        <ofd:ImageObject ID="41" ResourceID="14" Boundary="6.816 116.501 2.032 12.065"/>
+        <ofd:ImageObject ID="42" ResourceID="17" Boundary="9.821 116.29 39.624 3.302"/>
+        <ofd:ImageObject ID="43" ResourceID="18" Boundary="9.821 119.592 39.624 3.302"/>
+        <ofd:ImageObject ID="44" ResourceID="14" Boundary="6.816 145.457 2.032 12.065"/>
+        <ofd:ImageObject ID="45" ResourceID="19" Boundary="9.525 145.246 30.48 4.445"/>
+        <ofd:ImageObject ID="46" ResourceID="14" Boundary="7.07 186.097 2.032 12.065"/>
+        <ofd:ImageObject ID="47" ResourceID="20" Boundary="10.16 185.928 20.659 6.604"/>
+        <ofd:ImageObject ID="48" ResourceID="14" Boundary="7.07 221.149 2.032 12.065"/>
+        <ofd:ImageObject ID="49" ResourceID="21" Boundary="10.16 220.98 20.659 6.604"/>
+        <ofd:ImageObject ID="50" ResourceID="14" Boundary="7.07 240.707 2.032 12.065"/>
+        <ofd:ImageObject ID="51" ResourceID="22" Boundary="10.16 240.58 20.659 6.477"/>
+        <ofd:TextObject ID="52" Font="1" Size="4.23" Boundary="13.42 34.041 88.9 4.233"><ofd:TextCode X="0" Y="3.725333">科别：妇科二病区 病区： 床号：29 住院病历号：0001485677</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="53" Font="1" Size="4.23" Boundary="13.166 40.899 66.04 4.233"><ofd:TextCode X="0" Y="3.725333">姓名：官茜 性别：女 年龄：31岁 科室：妇科二病区</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="54" Font="1" Size="4.24" Boundary="13.419 48.407 104.421 4.245"><ofd:TextCode X="0" Y="3.735401">入院时间： 2020-12-23 出院日期：2020-12-29 住院天数：6 天</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="55" Font="1" Size="4.23" Boundary="8.128 60.965 15.24 4.233"><ofd:TextCode X="0" Y="3.725333">子宫平滑肌瘤</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="56" Font="1" Size="4.23" Boundary="8.128 65.791 15.24 4.233"><ofd:TextCode X="0" Y="3.725333">异常子宫出血</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="57" Font="1" Size="4.23" Boundary="8.128 70.617 17.78 4.233"><ofd:TextCode X="0" Y="3.725333">宫腔镜检查术后</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="58" Font="1" Size="4.23" Boundary="6.816 84.333 137.16 4.233"><ofd:TextCode X="0" Y="3.725333">1.患者，官茜，31岁，女，未婚。2.主诉：宫腔镜术后9天。3.既往：2020-12-14行宫腔镜诊刮术，否</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="59" Font="1" Size="4.23" Boundary="6.816 89.413 114.3 4.233"><ofd:TextCode X="0" Y="3.725333">认结核、艾滋、梅毒病史，无高血压、心脏病，糖尿病等病史无外伤史，无输血史，黄连素、芒果过敏</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="60" Font="1" Size="4.23" Boundary="6.816 94.493 152.4 4.233"><ofd:TextCode X="0" Y="3.725333">。4.体检：T 36.5℃，P 78次/分，R 20次/分，BP 100/65mmHg ，神志清楚，查体合作，双肺呼吸音</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="61" Font="1" Size="4.23" Boundary="6.816 99.573 116.84 4.233"><ofd:TextCode X="0" Y="3.725333">清晰，未闻及干湿罗音，心率79次/分，律齐，心音正常，各瓣膜听诊区未闻及明显杂音，腹平软，无</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="62" Font="1" Size="4.23" Boundary="6.816 104.653 116.84 4.233"><ofd:TextCode X="0" Y="3.725333">压痛及反跳痛，双肾区无叩痛，肠鸣音正常，双下肢不肿。5.专科检查：外阴已婚型，阴道畅，少许淡</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="63" Font="1" Size="4.23" Boundary="6.816 109.733 109.22 4.233"><ofd:TextCode X="0" Y="3.725333">红色分泌物；宫颈光滑；子宫常大；双侧附件未见明显异常。6.辅助检查：我院出院小结一份.</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="64" Font="1" Size="4.23" Boundary="6.562 121.417 172.72 4.233"><ofd:TextCode X="0" Y="3.725333">入院查白带常规分析[2020-12-23 17:21:16]:清洁度:III度;血常规分析[2020-12-23 16:41:29]:血</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="65" Font="1" Size="4.23" Boundary="6.562 126.497 175.26 4.233"><ofd:TextCode X="0" Y="3.725333">红蛋白:106.0g/L↓;[2020-12-23 16:52:21]:D-二聚体:542ng/ml↑;血型+不规则抗体筛查[2020-1</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="66" Font="1" Size="4.23" Boundary="6.562 131.577 149.86 4.233"><ofd:TextCode X="0" Y="3.725333">2-24 15:06:12]:ABO血型(正反定型):O型;RhD血型:阳性;细菌培养、肝肾功能未见明显异常，MRI：</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="67" Font="1" Size="4.23" Boundary="6.562 136.657 124.46 4.233"><ofd:TextCode X="0" Y="3.725333">盆腔平扫+增强【2020-12-24 14:52:39】:子宫后壁肌瘤；宫颈小囊肿；盆腔少许积液。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="68" Font="1" Size="4.23" Boundary="6.816 150.373 129.54 4.233"><ofd:TextCode X="0" Y="3.725333">入院后完善相关检查，无手术禁忌症，于2020.12.25行全麻下经腹子宫肌瘤切除术(+子宫成形术)+子</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="69" Font="1" Size="4.23" Boundary="6.816 155.453 116.84 4.233"><ofd:TextCode X="0" Y="3.725333">宫腺肌瘤剔除术+右侧卵巢囊肿切除术+卵巢成形术，术后予以抗感染、促宫缩、止血、护胃、止吐及补</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="70" Font="1" Size="4.23" Boundary="6.816 160.533 154.94 4.233"><ofd:TextCode X="0" Y="3.725333">液治疗，术后复查血常规分析[2020-12-26 09:24:35]:血红蛋白:93.0g/L↓;中性粒细胞百分比:80.</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="71" Font="1" Size="4.23" Boundary="6.816 165.613 187.96 4.233"><ofd:TextCode X="0" Y="3.725333">4%↑;[2020-12-26 09:15:26]:D-二聚体:945ng/ml↑;CGYB肝肾糖电解质[2020-12-26 09:30:54]:</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="72" Font="1" Size="4.23" Boundary="6.816 170.693 144.78 4.233"><ofd:TextCode X="0" Y="3.725333">天冬氨酸氨基转移酶:12U/L↓;尿素(UREA):2.51mmol/L↓;现患者一般情况可，无腹痛、阴道出血等不</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="73" Font="1" Size="4.23" Boundary="6.816 175.773 149.86 4.233"><ofd:TextCode X="0" Y="3.725333">适，今日复查血常规分析[2020-12-29 08:42:00]:血红蛋白:95.0g/L↓;凝血及肝肾功能无明显异常</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="74" Font="1" Size="4.23" Boundary="6.816 180.853 60.96 4.233"><ofd:TextCode X="0" Y="3.725333">。现患者及家属要求出院，报告上级医师，予以办理。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="75" Font="1" Size="4.23" Boundary="8.89 191.775 15.24 4.233"><ofd:TextCode X="0" Y="3.725333">子宫平滑肌瘤</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="76" Font="1" Size="4.23" Boundary="8.89 196.601 12.7 4.233"><ofd:TextCode X="0" Y="3.725333">子宫腺肌瘤</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="77" Font="1" Size="4.23" Boundary="8.89 201.427 15.24 4.233"><ofd:TextCode X="0" Y="3.725333">异常子宫出血</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="78" Font="1" Size="4.23" Boundary="8.89 206.253 17.78 4.233"><ofd:TextCode X="0" Y="3.725333">宫腔镜检查术后</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="79" Font="1" Size="4.23" Boundary="8.89 211.079 10.16 4.233"><ofd:TextCode X="0" Y="3.725333">轻度贫血</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="80" Font="1" Size="4.23" Boundary="6.562 226.827 114.3 4.233"><ofd:TextCode X="0" Y="3.725333">患者一般情况可，未诉发热、下腹痛、阴道出血等不适，大小便正常。腹部伤口愈合好，敷料干燥。查</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="81" Font="1" Size="4.23" Boundary="6.562 231.907 35.56 4.233"><ofd:TextCode X="0" Y="3.725333">体：生命体征平稳，腹部平软。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="82" Font="1" Size="4.23" Boundary="6.562 245.115 53.34 4.233"><ofd:TextCode X="0" Y="3.725333">一、生活指导（饮食、活动与休息、功能锻炼）</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="83" Font="1" Size="4.23" Boundary="6.562 251.465 43.18 4.233"><ofd:TextCode X="0" Y="3.725333">1.注意休息，加强营养，全休1月。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="84" Font="1" Size="4.23" Boundary="6.562 256.545 45.72 4.233"><ofd:TextCode X="0" Y="3.725333">2.多食新鲜蔬菜水果，加强饮食营养。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="85" Font="1" Size="4.23" Boundary="6.562 265.181 15.24 4.233"><ofd:TextCode X="0" Y="3.725333">二、药物应用</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="86" Font="2" Size="3.17" Boundary="102.108 276.915 5.715 3.175"><ofd:TextCode X="0" Y="2.794">第1页</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ofd:Document xmlns:ofd="http://www.ofdspec.org/2016">
+	<ofd:CommonData>
+		<ofd:MaxUnitID>158</ofd:MaxUnitID>
+		<ofd:PageArea>
+			<PhysicalBox>0 0 215.90 279.40</PhysicalBox>
+		</ofd:PageArea>
+		<ofd:DocumentRes>DocumentRes.xml</ofd:DocumentRes>
+		<ofd:PublicRes>PublicRes.xml</ofd:PublicRes>
+	</ofd:CommonData>
+	<ofd:Pages>
+		<ofd:Page BaseLoc="Pages/Page_0/Content.xml" ID="1"/>
+		<ofd:Page BaseLoc="Pages/Page_1/Content.xml" ID="116"/>
+	</ofd:Pages>
+</ofd:Document>
+

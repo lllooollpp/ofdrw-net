@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+    <ofd:Area>
+        <ofd:PhysicalBox>0 0 209.903 297.039</ofd:PhysicalBox>
+    </ofd:Area>
+    <ofd:Content>
+        <ofd:Layer ID="1"> 
+        <ofd:ImageObject ID="219" ResourceID="5" Boundary="129.399 76.2 18.274 7.938" CTM="18.27388862 0 0 7.9375 0 0"/>
+        <ofd:PathObject ID="220" Boundary="0 0 595.4 842" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 0 0 L 595.4 0 L 595.4 842 L 0 842 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="221" Boundary="366.8 603.4 51.8 22.6" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 366.8 603.4 L 418.6 603.4 L 418.6 626 L 366.8 626 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="222" Boundary="0 0 595.4 842" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 0 0 L 595.4 0 L 595.4 842 L 0 842 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:PathObject ID="223" Boundary="90 751.9 415.3 0.8" CTM="1 0 0 1 0 0"><ofd:StrokeColor><ofd:Value>0 0 0</ofd:Value></ofd:StrokeColor><ofd:AbbreviatedData>M 90 751.9 L 505.3 751.9 L 505.3 752.7 L 90 752.7 Z</ofd:AbbreviatedData></ofd:PathObject>
+        <ofd:TextObject ID="224" Font="1" Size="4.23" Boundary="88.124 15.978 20.32 5.08"><ofd:TextCode X="0" Y="3.598333">武汉大学中南医院</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="225" Font="1" Size="4.23" Boundary="96.591 21.481 10.16 5.08"><ofd:TextCode X="0" Y="3.598333">病程记录</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="226" Font="1" Size="4.23" Boundary="31.785 26.985 53.34 5.08"><ofd:TextCode X="0" Y="3.598333">姓名: 官茜 住院号:0001485677</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="227" Font="1" Size="4.23" Boundary="31.785 32.77 121.92 5.08"><ofd:TextCode X="0" Y="3.598333">酸氨基转移酶:12U/L↓;尿素(UREA):2.51mmol/L↓;现患者一般情况可，无腹痛、</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="228" Font="1" Size="4.23" Boundary="31.785 38.274 124.46 5.08"><ofd:TextCode X="0" Y="3.598333">阴道出血等不适，今日复查血常规分析[2020-12-2908:42:00]:血红蛋白:95.0g/</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="229" Font="2" Size="4.23" Boundary="31.785 43.777 93.98 5.08"><ofd:TextCode X="0" Y="3.598333">L↓;凝血及肝肾功能无明显异常。现患者及家属要求出院，报告上级医师，予以办</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="230" Font="2" Size="4.23" Boundary="31.785 49.28 5.08 5.08"><ofd:TextCode X="0" Y="3.598333">理。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="231" Font="1" Size="4.23" Boundary="31.926 54.784 91.44 5.08"><ofd:TextCode X="0" Y="3.598333">出院诊断:子宫平滑肌瘤；子宫腺肌瘤；右侧卵巢巧克力样囊肿；异常子宫出血；</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="232" Font="1" Size="4.23" Boundary="31.785 60.287 30.48 5.08"><ofd:TextCode X="0" Y="3.598333">宫腔镜检查术后；轻度贫血</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="233" Font="1" Size="4.23" Boundary="32.068 65.79 86.36 5.08"><ofd:TextCode X="0" Y="3.598333">上级医师意见 患者现生命体征平稳，状态可，经上级医生同意，今日可以出</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="234" Font="1" Size="4.23" Boundary="31.785 71.294 5.08 5.08"><ofd:TextCode X="0" Y="3.598333">院。</ofd:TextCode></ofd:TextObject>
+        <ofd:TextObject ID="235" Font="1" Size="4.23" Boundary="103.893 79.549 10.16 5.08"><ofd:TextCode X="0" Y="3.598333">住院医师</ofd:TextCode></ofd:TextObject>
+        </ofd:Layer>
+    </ofd:Content>
+</ofd:Page>

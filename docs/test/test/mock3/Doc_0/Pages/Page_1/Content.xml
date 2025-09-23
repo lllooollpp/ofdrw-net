@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ofd:Page xmlns:ofd="http://www.ofdspec.org/2016">
+	<ofd:Area>
+		<ofd:PhysicalBox>0 0 209.8565 296.9734</ofd:PhysicalBox>
+	</ofd:Area>
+	<ofd:Content>
+		<ofd:Layer ID="117" Type="Body">
+			<ofd:TextObject ID="118" Boundary="6.7759 14.5765 61.4792 4.0462" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="15" CodeCount="15" CodePosition="0">
+					<ofd:Glyphs>3219 3891 2753 2859 289 4002 1201 2406 2859 275 4002 3487 3128 1201 100</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.612" Y="-830.9683" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472">生血宁片：一次两片，一天三次。</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="119" Boundary="6.7421 19.5496 50.7194 4.0716" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="12" CodeCount="12" CodePosition="0">
+					<ofd:Glyphs>3128 99 1351 2905 1551 1040 1285 3240 1975 1764 3771 2690</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.516" Y="-830.6684" DeltaX="12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.2472 12.3673 12.3673 12.3673 12.3673">三、定期复查的时间和项目</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="120" Boundary="6.9917 25.9151 105.5792 4.152" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="26" CodeCount="26" CodePosition="0">
+					<ofd:Glyphs>20 17 3106 4117 1439 3075 99 1556 3525 99 4060 1281 1147 3891 1073 1718 21 4411 1895 2408 1407 1289 994 3265 3387 4336</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-1.224" Y="-830.7163" DeltaX="6.4838 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472">1.如有发热、腹痛、阴道出血超过2周或量多等不适随诊</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="121" Boundary="6.8902 30.9771 49.3476 4.1689" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="13" CodeCount="13" CodePosition="0">
+					<ofd:Glyphs>21 17 20 4197 1802 4294 3620 4438 3081 2602 4336 1551 1040</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.936" Y="-830.6684" DeltaX="6.4838 6.4838 6.4838 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472">2.1月后张蔚主任门诊复查</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="122" Boundary="68.2643 41.3887 25.5149 4.0546" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="6" CodeCount="6" CodePosition="0">
+					<ofd:Glyphs>3487 1802 1351 2905 1551 1040</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.708" Y="-830.6683" DeltaX="12.3673 12.3673 12.3673 12.3673 12.3673">天后定期复查</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="123" Boundary="9.7006 42.6585 35.4756 4.0546" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="9" CodeCount="9" CodePosition="0">
+					<ofd:Glyphs>3353 99 1351 2905 1551 1040 3487 3316 289</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.984" Y="-830.6683" DeltaX="12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.2472 12.3673">四、定期复查天数：</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="124" Boundary="49.7179 42.468 3.529 2.9585" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="2" CodeCount="2" CodePosition="0">
+					<ofd:Glyphs>22 19</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-1.404" Y="-832.2883" DeltaX="6.1236">30</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="125" Boundary="6.6452 52.5792 93.5348 4.135" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="22" CodeCount="22" CodePosition="0">
+					<ofd:Glyphs>3668 99 4189 3571 4397 2415 271 903 4189 4453 1957 2602 4336 1285 3240 1975 1764 2387 3714 1320 1829 272</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.24" Y="-830.7164" DeltaX="12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.2472 12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.3673 12.3673">五、院外治疗（本院专家门诊的时间和联系电话）</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="126" Boundary="6.9413 58.9109 151.9722 4.1689" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="36" CodeCount="36" CodePosition="0">
+					<ofd:Glyphs>4294 3620 2602 4336 1551 4336 271 4294 3620 4438 3081 2602 4336 3240 1975 289 4411 4002 3176 3670 99 4411 1437 3176 3670 275 4411 3088 3176 3670 4453 1957 2602 4336 272 100</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-1.08" Y="-830.6683" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472 12.2472">张蔚门诊复诊（张蔚主任门诊时间：周一上午、周二上午，周日上午专家门诊）。</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="127" Boundary="6.6452 64.1591 48.3754 3.8515" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="17" CodeCount="17" CodePosition="0">
+					<ofd:Glyphs>2387 3714 1320 1829 289 19 21 26 16 25 26 27 20 22 20 23 21</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.24" Y="-831.1483" DeltaX="12.2472 12.2472 12.2472 12.2472 12.2472 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838 6.4838">联系电话：027-67813142</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:PathObject ID="128" Boundary="158.2283 74.9345 31.4467 31.4467" CTM="0.042324 0 0 -0.042324 -158.228287 222.038895" DashPattern="" Fill="true" Rule="Even-odd" Stroke="false">
+				<ofd:FillColor ColorSpace="RGB" Value="255 255 255" Alpha="255"/>
+				<ofd:AbbreviatedData>M 3738.50 4503.17 L 4481.50 4503.17 L 4481.50 5246.17 L 3738.50 5246.17 C </ofd:AbbreviatedData>
+			</ofd:PathObject>
+			<ofd:ImageObject ID="129" Boundary="158.2071 74.9133 31.4891 31.4891" CTM="31.489058 0 0 31.489058 0 0" ResourceID="130"/>
+			<ofd:ImageObject ID="131" Boundary="6.8142 72.7971 2.0316 12.0623" CTM="2.031552 0 0 -12.06234 0 12.062332" ResourceID="51"/>
+			<ofd:ImageObject ID="132" Boundary="9.5229 72.6278 20.9927 6.6025" CTM="20.992704 0 0 -6.602544 0 6.602524" ResourceID="133"/>
+			<ofd:TextObject ID="134" Boundary="6.5261 106.7031 23.8365 3.6145" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="7" CodeCount="7" CodePosition="0">
+					<ofd:Glyphs>20 99 3593 3176 4167 4191 289</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-1.224" Y="-831.5323" DeltaX="6.0035 12.0071 12.0071 12.0071 12.0071 12.0071">1、网上预约：</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="135" Boundary="6.1454 111.2402 88.4803 4.1012" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="21" CodeCount="21" CodePosition="0">
+					<ofd:Glyphs>3016 3137 2637 4119 1466 1437 3611 2546 1681 4447 1636 4409 1756 2089 3835 3593 3176 4167 4191 1675 1756</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.144" Y="-830.7163" DeltaX="12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071">请扫描右方二维码关注公众号进行网上预约挂号</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="136" Boundary="6.4246 121.1779 23.9381 3.6991" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="7" CodeCount="7" CodePosition="0">
+					<ofd:Glyphs>21 99 3747 1062 4167 4191 289</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.936" Y="-831.5323" DeltaX="6.0035 12.0071 12.0071 12.0071 12.0071 12.0071">2、现场预约：</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="137" Boundary="6.4077 125.6981 122.1757 4.1859" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="34" CodeCount="34" CodePosition="0">
+					<ofd:Glyphs>3667 1745 1238 3888 4399 2706 4004 4189 2602 4336 1437 2476 940 2646 1531 3680 4399 3823 271 4411 4002 4384 4411 3088 27 29 19 19 16 20 26 29 19 19</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.888" Y="-830.6683" DeltaX="12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 6.0035 6.0035 6.0035 6.0035 6.0035 6.0035 6.0035 6.0035 6.0035">武汉大学中南医院门诊二楼便民服务中心（周一至周日8:00-17:00</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="138" Boundary="7.2494 130.8278 0.9602 3.5679" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="1" CodeCount="1" CodePosition="0">
+					<ofd:Glyphs>272</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-3.276" Y="-831.5323">）</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="139" Boundary="6.2258 135.348 60.8893 4.1012" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="16" CodeCount="16" CodePosition="0">
+					<ofd:Glyphs>1305 4374 289 3667 1745 3271 3667 1060 3029 1354 1813 2494 20 25 28 1756</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.372" Y="-830.6683" DeltaX="12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 12.0071 6.0035 6.0035 6.0035">地址：武汉市武昌区东湖路169号</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:ImageObject ID="140" Boundary="7.0681 140.6002 2.0316 12.0623" CTM="2.031552 0 0 -12.06234 0 12.062347" ResourceID="51"/>
+			<ofd:ImageObject ID="141" Boundary="9.7345 140.3885 30.4733 4.444" CTM="30.47328 0 0 -4.44402 0 4.444031" ResourceID="142"/>
+			<ofd:TextObject ID="143" Boundary="152.6539 148.1087 16.6833 2.9585" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="8" CodeCount="8" CodePosition="0">
+					<ofd:Glyphs>21 19 16 22 19 25 21 25</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.936" Y="-832.2883" DeltaX="6.1236 6.2437 6.1236 6.2437 6.1236 6.2437 6.2437">20-30626</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="144" Boundary="134.607 147.7574 13.7549 3.8811" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="4" CodeCount="4" CodePosition="0">
+					<ofd:Glyphs>968 2360 1756 289</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.888" Y="-831.2923" DeltaX="12.3673 12.3673 12.3673">病理号：</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="145" Boundary="24.3955 147.8082 1.472 3.5679" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="1" CodeCount="1" CodePosition="0">
+					<ofd:Glyphs>18</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.888" Y="-831.4363">/</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="146" Boundary="8.249 147.6431 11.7021 3.9954" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="4" CodeCount="4" CodePosition="0">
+					<ofd:Glyphs>59 1691 1756 289</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.468" Y="-830.9683" DeltaX="6.1236 12.3673 12.3673">X光号：</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="147" Boundary="107.3929 148.1087 30.0744 2.9585" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="14" CodeCount="14" CodePosition="0">
+					<ofd:Glyphs>48 53 21 19 21 19 20 21 21 22 20 21 21 23</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.048" Y="-832.2883" DeltaX="6.1236 6.2437 6.1236 6.2437 6.1236 6.2437 6.2437 6.1236 6.2437 6.1236 6.2437 6.1236 6.2437">MR202012231224</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="148" Boundary="91.3945 147.7574 11.8502 3.8811" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="5" CodeCount="5" CodePosition="0">
+					<ofd:Glyphs>48 53 44 1756 289</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.048" Y="-831.2923" DeltaX="6.1236 6.2437 6.1236 12.3673">MRI号：</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="149" Boundary="64.2646 147.8082 1.472 3.5679" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="1" CodeCount="1" CodePosition="0">
+					<ofd:Glyphs>18</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.888" Y="-831.4363">/</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:TextObject ID="150" Boundary="50.1666 147.7574 9.5267 3.8811" Font="24" Size="12" CTM="0.352492 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="4" CodeCount="4" CodePosition="0">
+					<ofd:Glyphs>38 55 1756 289</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.516" Y="-831.2923" DeltaX="6.1236 6.2437 12.3673">CT号：</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:PathObject ID="151" Boundary="6.3486 153.382 191.7277 0.5079" CTM="0.042324 0 0 -0.042324 -6.3486 143.59137" DashPattern="" LineWidth="6" Stroke="true">
+				<ofd:StrokeColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:AbbreviatedData>M 156.00 3386.67 L 4674.00 3386.67 </ofd:AbbreviatedData>
+			</ofd:PathObject>
+			<ofd:TextObject ID="152" Boundary="132.1016 158.3764 13.2333 3.0949" Font="115" Size="9" CTM="0.352498 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="5" CodeCount="5" CodePosition="0">
+					<ofd:Glyphs>2707 1699 1307 1636 32</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.144" Y="-833.4403" DeltaX="9.0052 9.0052 9.0052 9.0052">记录医师:</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:ImageObject ID="153" Boundary="147.5415 153.8899 17.5221 10.9196" CTM="17.522137 0 0 10.919592 0 0" ResourceID="154"/>
+			<ofd:TextObject ID="155" Boundary="132.2222 169.75 13.1128 3.1489" Font="115" Size="9" CTM="0.352498 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="5" CodeCount="5" CodePosition="0">
+					<ofd:Glyphs>1561 2947 1307 1636 32</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.486" Y="-833.2874" DeltaX="9.0052 9.0052 9.0052 9.0052">审阅医师:</ofd:TextCode>
+			</ofd:TextObject>
+			<ofd:ImageObject ID="156" Boundary="147.5415 164.8095 17.5221 10.9196" CTM="17.522137 0 0 10.919592 0 0" ResourceID="157"/>
+			<ofd:TextObject ID="158" Boundary="102.1077 277.4507 8.0917 3.133" Font="115" Size="9" CTM="0.352498 0 0 0.3527 0 296.620697" Fill="true">
+				<ofd:FillColor ColorSpace="RGB" Value="0 0 0" Alpha="255"/>
+				<ofd:CGTransform GlyphCount="3" CodeCount="3" CodePosition="0">
+					<ofd:Glyphs>2438 24 3004</ofd:Glyphs>
+				</ofd:CGTransform>
+				<ofd:TextCode X="-0.063" Y="-833.3683" DeltaX="9.0052 5.283">第2页</ofd:TextCode>
+			</ofd:TextObject>
+		</ofd:Layer>
+	</ofd:Content>
+</ofd:Page>
+

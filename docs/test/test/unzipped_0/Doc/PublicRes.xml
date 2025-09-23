@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ofd:Res xmlns:ofd="http://www.ofdspec.org/2016" BaseLoc="Res">
+  <ofd:Fonts>
+    <ofd:Font ID="1" FamilyName="KaiTi" FontName="KaiTi" Serif="true">
+      <ofd:FontFile>pdf_sysfont_bea897f89ea54411962a8556b0efff12.ttf</ofd:FontFile>
+    </ofd:Font>
+    <ofd:Font ID="2" FamilyName="Microsoft YaHei" FontName="Microsoft YaHei" Serif="true">
+      <ofd:FontFile>pdf_sysfont_96331ecc031f4d83a6123c721175b504.ttc</ofd:FontFile>
+    </ofd:Font>
+    <ofd:Font ID="3" FamilyName="SimSun" FontName="SimSun" Serif="true">
+      <ofd:FontFile>pdf_sysfont_c52539f9eb344a4e9960b3b75c8a1ed0.ttc</ofd:FontFile>
+    </ofd:Font>
+  </ofd:Fonts>
+</ofd:Res>
