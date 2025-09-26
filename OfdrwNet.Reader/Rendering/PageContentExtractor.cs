@@ -16,6 +16,20 @@ namespace OfdrwNet.Reader.Rendering
     {
         // 简单诊断日志缓存（最多100条）
         private static readonly Queue<string> _diag = new Queue<string>();
+        private static bool IsUnified()
+        {
+            try
+            {
+                var t = Type.GetType("OfdrwNet.Reader.Rendering.RenderingConfig");
+                if (t != null)
+                {
+                    var p = t.GetProperty("UnifiedScalingMode");
+                    if (p != null) return (bool)p.GetValue(null)!;
+                }
+            }
+            catch { }
+            return false;
+        }
     /// <summary>
     /// 最近一次页面内容提取的诊断日志（最多100条）
     /// </summary>
@@ -127,30 +141,64 @@ namespace OfdrwNet.Reader.Rendering
                                 }
                             }
 
-                            // 将 mm 转为像素 (独立缩放)
-                            float Px(float mm, bool isY) => (float)(mm * (isY ? scaleY : scaleX));
-                            var pxX = Px(x, false);
-                            var pxYTop = Px(y, true);
-                            var pxWidth = Math.Max(1f, Px(w, false));
-                            var pxHeight = Math.Max(1f, Px(h, true));
-                            var pxFontSize = (float)(fontSize * (scaleY));
+                            bool unified = IsUnified();
 
-                            // 修复坐标计算：确保文本在可见区域内
-                            // 如果原始Y坐标为负，使用boundary的top作为基准
-                            // 重新计算基线与文本顶部：若 boundary 已是文本框顶部，则直接使用 y
-                            var baselinePixel = pxYTop + Px(Math.Max(0, baselineOffset), true);
-                            float textTopPixel;
-                            if (baselineOffset > 0 && baselineOffset < h * 2)
+                            // unified 模式：保留 mm；非 unified：转换为像素
+                            float Px(float mm, bool isY) => (float)(mm * (isY ? scaleY : scaleX));
+
+                            float finalX, finalYTop, finalWidth, finalHeight, finalFontSize, finalBaselineOffset;
+
+                            if (!unified)
                             {
-                                // baselineOffset 合理时：尝试向上回推 (估算基线到顶部距离 ~0.8*fontSize)
-                                textTopPixel = baselinePixel - pxFontSize * 0.8f;
+                                // 原像素路径（方案B沿用）
+                                var pxX = Px(x, false);
+                                var pxYTop = Px(y, true);
+                                var pxWidth = Math.Max(1f, Px(w, false));
+                                var rawFontPx = (float)(fontSize * scaleY);
+                                var boundaryHeightPx = Px(h, true);
+                                float pxFontSize;
+                                if (boundaryHeightPx > 0.1f && boundaryHeightPx < rawFontPx * 2)
+                                    pxFontSize = boundaryHeightPx * 0.85f;
+                                else
+                                    pxFontSize = Math.Min(rawFontPx, 180f);
+                                var pxHeight = Math.Max(pxFontSize * 1.15f, boundaryHeightPx);
+                                var baselineOffsetPx = Px(Math.Max(0, baselineOffset), true);
+                                float baselinePixel = (baselineOffsetPx > 0 && baselineOffsetPx < pxHeight * 3)
+                                    ? pxYTop + baselineOffsetPx
+                                    : pxYTop + pxFontSize * 0.8f;
+                                float textTopPixel = baselinePixel - pxFontSize * 0.82f;
+                                if (textTopPixel < 0) textTopPixel = 0;
+
+                                finalX = pxX;
+                                finalYTop = textTopPixel;
+                                finalWidth = pxWidth;
+                                finalHeight = Math.Max(pxHeight, 1f);
+                                finalFontSize = pxFontSize; // 像素字号
+                                finalBaselineOffset = baselinePixel - textTopPixel; // 像素
                             }
                             else
                             {
-                                textTopPixel = pxYTop; // 无有效基线信息直接用 boundary 顶部
+                                // unified：全部保留 mm，渲染阶段统一 * Ppm * ScaleFactor
+                                finalX = x;
+                                finalYTop = y; // 先用 boundary.Top，基线由 BaselineOffset 辅助
+                                finalWidth = Math.Max(0.1f, w);
+                                finalHeight = Math.Max(0.1f, h);
+
+                                // 估算字体大小：取 boundary 高度 *0.85 （mm） 或 使用 fontSize mm（OFD 字号单位也是 mm）
+                                // 若 boundary 高度异常，则 fallback 字号
+                                float fontSizeMm;
+                                if (h > 0.1f && h < fontSize * 2)
+                                    fontSizeMm = h * 0.85f;
+                                else
+                                    fontSizeMm = fontSize;
+                                // 限制过大字号（例如错误数据）
+                                fontSizeMm = Math.Min(fontSizeMm, 50f); // 50mm ~ 1968px @ 100ppm
+                                finalFontSize = fontSizeMm; // mm 单位，TextRenderer 中再转像素
+
+                                // 基线偏移 mm -> 暂用 baselineOffset；若无则用 ascent 近似（0.8*fontSizeMm）
+                                float baselineOffsetMm = baselineOffset > 0 ? baselineOffset : fontSizeMm * 0.8f;
+                                finalBaselineOffset = baselineOffsetMm; // 保持 mm
                             }
-                            if (textTopPixel < 0) textTopPixel = 0;
-                            if (textTopPixel > 50000) textTopPixel = pxYTop; // 异常回退
 
                             var id = to.Attribute("ID")?.Value ?? Guid.NewGuid().ToString("N");
 
@@ -158,16 +206,18 @@ namespace OfdrwNet.Reader.Rendering
                             {
                                 Id = id,
                                 Text = text,
-                                FontSize = pxFontSize,
-                                Font = new FontInfo { Name = fontName, Size = pxFontSize },
-                                Boundary = new RectangleF(pxX, textTopPixel, pxWidth, pxHeight),
+                                FontSize = finalFontSize,
+                                Font = new FontInfo { Name = fontName, Size = finalFontSize },
+                                Color = new ColorInfo { R = 0, G = 0, B = 0, A = 255 }, // 默认黑色
+                                Boundary = new RectangleF(finalX, finalYTop, finalWidth, finalHeight),
                                 Layout = new TextLayout
                                 {
-                                    X = pxX,
-                                    Y = textTopPixel,
-                                    Width = pxWidth,
-                                    Height = pxHeight,
-                                    LineHeight = 1.0f
+                                    X = finalX,
+                                    Y = finalYTop,
+                                    Width = finalWidth,
+                                    Height = finalHeight,
+                                    LineHeight = 1.0f,
+                                    BaselineOffset = finalBaselineOffset
                                 },
                                 ZIndex = z++,
                                 ZOrder = z,
@@ -230,22 +280,39 @@ namespace OfdrwNet.Reader.Rendering
                                 }
                             }
 
-                            float Px(float mm, bool isY) => (float)(mm * (isY ? scaleY : scaleX));
-                            var pxX = Px(x, false);
-                            var pxY = Px(y, true);
-                            var pxW = Math.Max(1f, Px(w, false));
-                            var pxH = Math.Max(1f, Px(h, true));
-
-                            var imgObj = new ImageObject
+                            bool unifiedImg = IsUnified();
+                            if (!unifiedImg)
                             {
-                                Id = io.Attribute("ID")?.Value ?? Guid.NewGuid().ToString("N"),
-                                ResourceId = resId,
-                                Boundary = new System.Drawing.RectangleF(pxX, pxY, pxW, pxH),
-                                ZIndex = z++,
-                                ZOrder = z,
-                                CTM = ctmMatrix
-                            };
-                            result.Add(imgObj);
+                                float Px(float mm, bool isY) => (float)(mm * (isY ? scaleY : scaleX));
+                                var pxX = Px(x, false);
+                                var pxY = Px(y, true);
+                                var pxW = Math.Max(1f, Px(w, false));
+                                var pxH = Math.Max(1f, Px(h, true));
+                                var imgObj = new ImageObject
+                                {
+                                    Id = io.Attribute("ID")?.Value ?? Guid.NewGuid().ToString("N"),
+                                    ResourceId = resId,
+                                    Boundary = new System.Drawing.RectangleF(pxX, pxY, pxW, pxH),
+                                    ZIndex = z++,
+                                    ZOrder = z,
+                                    CTM = ctmMatrix
+                                };
+                                result.Add(imgObj);
+                            }
+                            else
+                            {
+                                // 保留 mm
+                                var imgObj = new ImageObject
+                                {
+                                    Id = io.Attribute("ID")?.Value ?? Guid.NewGuid().ToString("N"),
+                                    ResourceId = resId,
+                                    Boundary = new System.Drawing.RectangleF(x, y, Math.Max(0.1f, w), Math.Max(0.1f, h)),
+                                    ZIndex = z++,
+                                    ZOrder = z,
+                                    CTM = ctmMatrix
+                                };
+                                result.Add(imgObj);
+                            }
                             imgCountLayer++;
                         }
                         catch
@@ -289,32 +356,124 @@ namespace OfdrwNet.Reader.Rendering
                                 // 查找 AbbreviatedData 属性或元素内容
                                 pathData = pathElement.Attribute("AbbreviatedData")?.Value ?? pathElement.Value ?? "";
                             }
+                            // 兼容直接 AbbreviatedData 元素（无 <Path> 包裹）
+                            if (string.IsNullOrWhiteSpace(pathData))
+                            {
+                                var abbrElem = po.Elements().FirstOrDefault(e => string.Equals(e.Name.LocalName, "AbbreviatedData", StringComparison.OrdinalIgnoreCase));
+                                if (abbrElem != null)
+                                {
+                                    pathData = abbrElem.Value ?? "";
+                                }
+                            }
 
                             // 如果没有Path数据，创建一个简单的矩形
                             if (string.IsNullOrWhiteSpace(pathData) && w > 0 && h > 0)
                             {
                                 pathData = $"M {x} {y} L {x + w} {y} L {x + w} {y + h} L {x} {y + h} Z";
                             }
+                            // 解析 PathObject 绘制属性
+                            bool strokeEnabled = true; // 默认描边
+                            bool fillEnabled = false;  // 默认不填充
+                            float lineWidthMm = 0.2f;  // 默认细线
+                            var strokeColor = ParseColor(po.Attribute("StrokeColor")?.Value) ?? ParseColor(po.Attribute("StrokeColour")?.Value);
+                            var fillColor = ParseColor(po.Attribute("FillColor")?.Value) ?? ParseColor(po.Attribute("FillColour")?.Value);
+                            var strokeAttr = po.Attribute("Stroke")?.Value;
+                            if (!string.IsNullOrWhiteSpace(strokeAttr))
+                            {
+                                if (bool.TryParse(strokeAttr, out var b)) strokeEnabled = b; else strokeEnabled = strokeAttr != "false" && strokeAttr != "0";
+                            }
+                            var fillAttr = po.Attribute("Fill")?.Value;
+                            if (!string.IsNullOrWhiteSpace(fillAttr))
+                            {
+                                if (bool.TryParse(fillAttr, out var b)) fillEnabled = b; else fillEnabled = fillAttr == "true" || fillAttr == "1";
+                            }
+                            if (TryParseFloat(po.Attribute("LineWidth")?.Value, out var lw) && lw > 0) lineWidthMm = lw;
 
-                            if (!string.IsNullOrWhiteSpace(pathData))
+                            bool unifiedVec = IsUnified();
+                            float lineWidthFinal = lineWidthMm;
+                            if (!unifiedVec)
+                            {
+                                lineWidthFinal = (float)(lineWidthMm * (scaleX + scaleY) / 2.0);
+                            }
+
+                            // 识别极细长矩形为线：增加纵横比约束，避免误把有大 StrokeWidth 的形状当作线
+                            bool thinAsLine = false;
+                            if (w > 0 && h > 0)
+                            {
+                                float minSide = Math.Min(w, h);      // mm
+                                float maxSide = Math.Max(w, h);      // mm
+                                float aspect = maxSide / Math.Max(minSide, 0.01f);
+                                // 条件：厚度 < 0.6mm 且 长度 > 1.2mm 且 长宽比 >= 8 视为线
+                                if (minSide < 0.6f && maxSide > 1.2f && aspect >= 8f)
+                                {
+                                    thinAsLine = true;
+                                }
+                            }
+
+                            if (!string.IsNullOrWhiteSpace(pathData) || thinAsLine)
                             {
                                 float Px(float mm, bool isY) => (float)(mm * (isY ? scaleY : scaleX));
-                                var pxX = Px(x, false);
-                                var pxY = Px(y, true);
-                                var pxW = Math.Max(1f, Px(w, false));
-                                var pxH = Math.Max(1f, Px(h, true));
-
+                                var bX = unifiedVec ? x : Px(x, false);
+                                var bY = unifiedVec ? y : Px(y, true);
+                                var bW = unifiedVec ? Math.Max(0.1f, w) : Math.Max(1f, Px(w, false));
+                                var bH = unifiedVec ? Math.Max(0.1f, h) : Math.Max(1f, Px(h, true));
+                                var id = po.Attribute("ID")?.Value ?? Guid.NewGuid().ToString("N");
                                 var vectorObj = new VectorObject
                                 {
-                                    Id = po.Attribute("ID")?.Value ?? Guid.NewGuid().ToString("N"),
-                                    PathData = pathData,
-                                    Boundary = new System.Drawing.RectangleF(pxX, pxY, pxW, pxH),
+                                    Id = id,
+                                    Boundary = new RectangleF(bX, bY, bW, bH),
                                     ZIndex = z++,
                                     ZOrder = z,
-                                    VectorType = VectorType.Path,
                                     Visible = true
                                 };
+                                if (thinAsLine)
+                                {
+                                    vectorObj.VectorType = VectorType.Line;
+                                    vectorObj.PathData = null;
+                                    if (bW >= bH)
+                                    {
+                                        vectorObj.Points = new List<PointF> { new PointF(bX, bY + bH / 2), new PointF(bX + bW, bY + bH / 2) };
+                                    }
+                                    else
+                                    {
+                                        vectorObj.Points = new List<PointF> { new PointF(bX + bW / 2, bY), new PointF(bX + bW / 2, bY + bH) };
+                                    }
+                                }
+                                else
+                                {
+                                    vectorObj.VectorType = VectorType.Path;
+                                    vectorObj.PathData = pathData;
+                                }
+                                if (strokeEnabled)
+                                {
+                                    // 如果这是识别出的“线”且声明的 LineWidth 远大于实际厚度，则按实际厚度重置
+                                    if (thinAsLine)
+                                    {
+                                        float thicknessPx = unifiedVec ? Math.Min(w, h) : Math.Min(vectorObj.Boundary.Width, vectorObj.Boundary.Height);
+                                        if (thicknessPx <= 0) thicknessPx = 0.5f;
+                                        // 若推导的描边宽度超过实际厚度 1.5 倍，说明原属性更可能用于其它形状情景，改用真实厚度
+                                        if (lineWidthFinal > thicknessPx * 1.5f)
+                                        {
+                                            float old = lineWidthFinal;
+                                            lineWidthFinal = thicknessPx;
+                                            Log($"Page {pageInfo.Index} line id={id} stroke adjusted {old:0.###}-> {lineWidthFinal:0.###} (thickness)");
+                                        }
+                                        // 极端异常：如果属性写了几十上百 mm（转换后巨大），做硬性上限
+                                        if (lineWidthFinal > 5f * thicknessPx && thicknessPx < 5f)
+                                        {
+                                            float old2 = lineWidthFinal;
+                                            lineWidthFinal = Math.Min(old2, thicknessPx * 2f);
+                                            Log($"Page {pageInfo.Index} line id={id} stroke clamped {old2:0.###}-> {lineWidthFinal:0.###} (hard clamp)");
+                                        }
+                                    }
+                                    vectorObj.StrokeStyle = new StrokeStyle { Width = lineWidthFinal, Color = strokeColor ?? new ColorInfo { R = 0, G = 0, B = 0, A = 255 } };
+                                }
+                                if (fillEnabled)
+                                {
+                                    vectorObj.FillStyle = new FillStyle { Color = fillColor ?? new ColorInfo { R = 0, G = 0, B = 0, A = 64 } };
+                                }
                                 result.Add(vectorObj);
+                                Log($"Page {pageInfo.Index} add Vector id={id} type={vectorObj.VectorType} stroke={(strokeEnabled ? lineWidthFinal.ToString("0.###") : "none")} pathLen={(vectorObj.PathData?.Length ?? 0)} boundary=({bX:0.##},{bY:0.##},{bW:0.##},{bH:0.##}) thin={thinAsLine}");
                                 pathCountLayer++;
                             }
                         }

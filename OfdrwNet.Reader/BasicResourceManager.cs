@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Threading.Tasks;
+using System.IO;
+using System.Linq;
 
 namespace OfdrwNet.Reader
 {
@@ -386,6 +388,79 @@ namespace OfdrwNet.Reader
                             {
                                 _resourceLocator.Restore();
                             }
+                        }
+                    }
+
+                    // NEW FALLBACK: 深度递归扫描（一次性），解决非标准命名或层级差异导致的缺图
+                    if (newImage == null)
+                    {
+                        try
+                        {
+                            _resourceLocator.Save();
+                            var container = _resourceLocator.GetContainer(".");
+                            var rootSys = container.GetSysAbsPath();
+                            string[] allowedExt = new[]{".png",".jpg",".jpeg",".bmp"};
+                            // 限制扫描目录：优先 Res / Doc*/Res，如果不存在再全局
+                            var candidateRoots = new List<string>();
+                            if (Directory.Exists(Path.Combine(rootSys, "Res"))) candidateRoots.Add(Path.Combine(rootSys, "Res"));
+                            try
+                            {
+                                foreach (var d in Directory.GetDirectories(rootSys, "Doc*", SearchOption.TopDirectoryOnly))
+                                {
+                                    var resDir = Path.Combine(d, "Res");
+                                    if (Directory.Exists(resDir)) candidateRoots.Add(resDir);
+                                }
+                            }
+                            catch { }
+                            if (candidateRoots.Count == 0) candidateRoots.Add(rootSys); // 兜底全扫描
+
+                            bool MatchFile(string file)
+                            {
+                                var ext = Path.GetExtension(file).ToLowerInvariant();
+                                if (!allowedExt.Contains(ext)) return false;
+                                var nameNoExt = Path.GetFileNameWithoutExtension(file);
+                                // 命中规则：完全等于 ID，或 等于 Image_ID，或 包含 _ID 片段
+                                if (nameNoExt.Equals(imageId, StringComparison.OrdinalIgnoreCase)) return true;
+                                if ($"Image_{imageId}".Equals(nameNoExt, StringComparison.OrdinalIgnoreCase)) return true;
+                                if (nameNoExt.EndsWith("_"+imageId, StringComparison.OrdinalIgnoreCase)) return true;
+                                if (nameNoExt.Contains("_"+imageId+"_", StringComparison.OrdinalIgnoreCase)) return true;
+                                return false;
+                            }
+
+                            string? foundFile = null;
+                            foreach (var root in candidateRoots)
+                            {
+                                try
+                                {
+                                    foreach (var f in Directory.EnumerateFiles(root, "*.*", SearchOption.AllDirectories))
+                                    {
+                                        if (MatchFile(f)) { foundFile = f; break; }
+                                    }
+                                }
+                                catch { }
+                                if (foundFile != null) break;
+                            }
+
+                            if (foundFile != null && File.Exists(foundFile))
+                            {
+                                var imageData = File.ReadAllBytes(foundFile);
+                                using var stream = new MemoryStream(imageData);
+                                newImage = Image.FromStream(stream);
+                                usedPath = foundFile.Substring(rootSys.Length).TrimStart(Path.DirectorySeparatorChar, '/', '\\');
+                                System.Diagnostics.Trace.WriteLine($"[ResourceManager] 深度扫描匹配 ID={imageId} => {foundFile}");
+                            }
+                            else
+                            {
+                                System.Diagnostics.Trace.WriteLine($"[ResourceManager] 深度扫描未命中 ID={imageId}");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            System.Diagnostics.Trace.WriteLine($"[ResourceManager] 深度扫描异常 ID={imageId} err={ex.Message}");
+                        }
+                        finally
+                        {
+                            _resourceLocator.Restore();
                         }
                     }
 

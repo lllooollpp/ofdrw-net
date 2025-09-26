@@ -17,6 +17,20 @@ namespace OfdrwNet.Reader.Rendering
         private readonly IResourceManager _resourceManager;
         private readonly PathCache _pathCache;
         private bool _disposed = false;
+        private static bool IsUnified()
+        {
+            try
+            {
+                var t = Type.GetType("OfdrwNet.Reader.Rendering.RenderingConfig");
+                if (t != null)
+                {
+                    var p = t.GetProperty("UnifiedScalingMode");
+                    if (p != null) return (bool)p.GetValue(null)!;
+                }
+            }
+            catch { }
+            return false;
+        }
 
         /// <summary>
         /// 构造函数
@@ -45,6 +59,7 @@ namespace OfdrwNet.Reader.Rendering
 
             try
             {
+                System.Diagnostics.Trace.WriteLine($"[VectorRenderer] Begin render Id={vectorObject.Id} Type={vectorObject.VectorType} Boundary=({vectorObject.Boundary.X},{vectorObject.Boundary.Y},{vectorObject.Boundary.Width},{vectorObject.Boundary.Height}) StrokeW={vectorObject.StrokeStyle?.Width} PathLen={(vectorObject.PathData?.Length ?? 0)} Points={(vectorObject.Points?.Count ?? 0)}");
                 // 保存图形状态
                 var state = graphics.Save();
 
@@ -70,11 +85,13 @@ namespace OfdrwNet.Reader.Rendering
 
                 // 恢复图形状态
                 graphics.Restore(state);
+                System.Diagnostics.Trace.WriteLine($"[VectorRenderer] End render Id={vectorObject.Id} Success={result}");
 
                 return result;
             }
             catch (Exception ex)
             {
+                System.Diagnostics.Trace.WriteLine($"[VectorRenderer] Exception Id={vectorObject?.Id} {ex.Message}");
                 throw new RenderException(vectorObject.Id.ToString(), $"矢量图形渲染失败: {ex.Message}", ex);
             }
         }
@@ -167,8 +184,11 @@ namespace OfdrwNet.Reader.Rendering
 
             try
             {
+                System.Diagnostics.Trace.WriteLine($"[VectorRenderer] RenderPath Id={vectorObject.Id} PathLen={vectorObject.PathData.Length} StrokeW={vectorObject.StrokeStyle?.Width} Fill={(vectorObject.FillStyle!=null)}");
                 // 使用简单路径解析器而不是复杂的PathData.Parse
                 using var path = ParseSimplePath(vectorObject.PathData);
+
+                // 基础功能阶段：统一缩放交由 RenderingEngine 全局处理，避免重复变换
 
                 if (path.PointCount == 0)
                 {
@@ -190,6 +210,7 @@ namespace OfdrwNet.Reader.Rendering
                     CreatePen(vectorObject.StrokeStyle) :
                     new Pen(Color.Black, 1.0f);
                 graphics.DrawPath(strokePen, path);
+                System.Diagnostics.Trace.WriteLine($"[VectorRenderer] DrawPath Id={vectorObject.Id} PenW={strokePen.Width} PointCount={path.PointCount}");
 
                 return Task.FromResult(true);
             }
@@ -216,6 +237,7 @@ namespace OfdrwNet.Reader.Rendering
                 var endPoint = vectorObject.Points[1];
 
                 graphics.DrawLine(pen, startPoint, endPoint);
+                System.Diagnostics.Trace.WriteLine($"[VectorRenderer] DrawLine Id={vectorObject.Id} PenW={pen.Width} Start=({startPoint.X},{startPoint.Y}) End=({endPoint.X},{endPoint.Y})");
                 pen.Dispose();
             });
 
@@ -228,6 +250,7 @@ namespace OfdrwNet.Reader.Rendering
         private async Task<bool> RenderRectangleAsync(VectorObject vectorObject, Graphics graphics, RenderContext renderContext)
         {
             var rect = vectorObject.Boundary;
+            // 取消对象级缩放（交由全局）
 
             await Task.Run(() =>
             {
@@ -257,6 +280,7 @@ namespace OfdrwNet.Reader.Rendering
         private async Task<bool> RenderCircleAsync(VectorObject vectorObject, Graphics graphics, RenderContext renderContext)
         {
             var rect = vectorObject.Boundary;
+            // 取消对象级缩放（交由全局）
 
             await Task.Run(() =>
             {
@@ -352,16 +376,15 @@ namespace OfdrwNet.Reader.Rendering
                 graphics.MultiplyTransform(renderContext.TransformMatrix);
             }
 
-            // 应用对象的CTM变换
-            if (vectorObject.CTM != null)
+            bool unified = IsUnified();
+            if (unified && vectorObject.CTM != null)
             {
                 graphics.MultiplyTransform(vectorObject.CTM);
             }
-
-            // 应用缩放
-            if (renderContext.ScaleFactor != 1.0)
+            else if (!unified && vectorObject.CTM != null)
             {
-                graphics.ScaleTransform((float)renderContext.ScaleFactor, (float)renderContext.ScaleFactor);
+                // 像素管线：Boundary / Points 已为最终像素坐标，跳过 CTM 防止双重缩放和翻转
+                System.Diagnostics.Trace.WriteLine("[VectorRenderer][DEBUG] Skip CTM in pixel mode");
             }
         }
 
@@ -460,7 +483,28 @@ namespace OfdrwNet.Reader.Rendering
         private Pen CreatePen(StrokeStyle strokeStyle)
         {
             var color = strokeStyle.Color?.ToSystemColor() ?? Color.Black;
-            var pen = new Pen(color, strokeStyle.Width);
+            bool unified = IsUnified();
+            float rawWidth = strokeStyle.Width;
+            float effectiveWidth = rawWidth;
+
+            // Hairline 规则调优：允许亚像素(0.3~0.5) 线宽，只有极端微小(<0.15) 才提升到 0.5px
+            // 之前直接提升到 1px 导致表格细线显得过粗
+            if (!unified)
+            {
+                const float minLiftThreshold = 0.15f;   // 小于该值视为接近 0
+                const float minEffective = 0.5f;        // 提升后的最小可见宽度
+                if (effectiveWidth <= minLiftThreshold)
+                {
+                    effectiveWidth = minEffective;
+                }
+                else if (effectiveWidth < 0.5f)
+                {
+                    // GDI+ 在抗锯齿时会使 0.2~0.4 的线视觉稍粗，微调系数降低一点
+                    effectiveWidth *= 0.85f; // 轻量收缩，避免过黑
+                }
+            }
+
+            var pen = new Pen(color, effectiveWidth);
 
             // 设置线条样式
             if (strokeStyle.DashArray != null && strokeStyle.DashArray.Count > 0)
@@ -468,13 +512,15 @@ namespace OfdrwNet.Reader.Rendering
                 pen.DashPattern = strokeStyle.DashArray.ToArray();
             }
 
-            // 设置线条端点样式
             pen.StartCap = ConvertLineCap(strokeStyle.StartCap);
             pen.EndCap = ConvertLineCap(strokeStyle.EndCap);
-
-            // 设置线条连接样式
             pen.LineJoin = ConvertLineJoin(strokeStyle.LineJoin);
 
+            // 调试日志
+            if (effectiveWidth != rawWidth)
+            {
+                System.Diagnostics.Trace.WriteLine($"[VectorRenderer] Hairline adjusted rawWidth={rawWidth} -> {effectiveWidth}");
+            }
             return pen;
         }
 

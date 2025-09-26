@@ -298,10 +298,25 @@ namespace OfdrwNet.Reader.Rendering
         /// </summary>
         private void ApplyViewportTransform(Graphics graphics, RenderContext renderContext)
         {
-            // 应用缩放
-            if (renderContext.ScaleFactor != 1.0)
+            bool unified = false;
+            try
             {
-                graphics.ScaleTransform((float)renderContext.ScaleFactor, (float)renderContext.ScaleFactor);
+                var t = Type.GetType("OfdrwNet.Reader.Rendering.RenderingConfig");
+                if (t != null)
+                {
+                    var p = t.GetProperty("UnifiedScalingMode");
+                    if (p != null) unified = (bool)p.GetValue(null)!;
+                }
+            }
+            catch { }
+
+            if (unified)
+            {
+                var factor = (float)(renderContext.Ppm * renderContext.ScaleFactor);
+                if (Math.Abs(factor - 1f) > 0.0001f)
+                {
+                    graphics.ScaleTransform(factor, factor);
+                }
             }
 
             // 应用变换矩阵

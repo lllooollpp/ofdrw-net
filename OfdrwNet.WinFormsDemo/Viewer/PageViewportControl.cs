@@ -123,6 +123,13 @@ namespace OfdrwNet.WinFormsDemo.Viewer
             var g = e.Graphics;
             g.Clear(Color.White);
 
+            // 诊断：输出当前绘制状态
+            try
+            {
+                System.Diagnostics.Trace.WriteLine($"[OnPaint] backBuffer={( _backBuffer==null?"null":$"{_backBuffer.Width}x{_backBuffer.Height}" )} objs={( _pageObjects==null?"null":_pageObjects.Count())} engineReady={_renderingEngine!=null} isRendering={_isRendering} lastError={_lastError}");
+            }
+            catch { }
+
             // 加载状态
             if (IsLoading)
             {
@@ -220,11 +227,43 @@ namespace OfdrwNet.WinFormsDemo.Viewer
                     objs = _pageObjects;
                     engine = _renderingEngine;
                     ctx = _renderContext.Clone();
-                    ctx.ScaleFactor *= _zoom;
+                    // 方案B：对象 Boundary 已包含最终缩放后的屏幕像素，不再在渲染阶段做任何 ScaleTransform。
+                    // 因此强制 RenderContext 的 ScaleFactor = 1，避免下游再次缩放。
+                    ctx.ScaleFactor = 1.0;
                     w = Width; h = Height;
                 }
 
-                System.Diagnostics.Trace.WriteLine($"[PageViewport] 准备渲染 - 对象数量={objs?.Count() ?? 0}, 尺寸={w}x{h}, 缩放={ctx.ScaleFactor}");
+                System.Diagnostics.Trace.WriteLine($"[PageViewport] 准备渲染 - 对象数量={objs?.Count() ?? 0}, 尺寸={w}x{h}, ctx.ScaleFactor={ctx.ScaleFactor}");
+                if (objs != null)
+                {
+                    try
+                    {
+                        int idx = 0;
+                        foreach (var o in objs.Take(5))
+                        {
+                            var b = o.Boundary;
+                            System.Diagnostics.Trace.WriteLine($"[PageViewport] SampleObj[{idx}] Id={o.Id} Type={o.GetType().Name} Bounds=({b.X},{b.Y},{b.Width},{b.Height}) Visible={o.Visible}");
+                            idx++;
+                        }
+                        // 计算整体边界
+                        try
+                        {
+                            var minX = objs.Min(o => o.Boundary.X);
+                            var minY = objs.Min(o => o.Boundary.Y);
+                            var maxX = objs.Max(o => o.Boundary.Right);
+                            var maxY = objs.Max(o => o.Boundary.Bottom);
+                            System.Diagnostics.Trace.WriteLine($"[PageViewport] AllObjectsBounds = ({minX},{minY}) - ({maxX},{maxY}) W={maxX - minX} H={maxY - minY}");
+                        }
+                        catch (Exception bbEx)
+                        {
+                            System.Diagnostics.Trace.WriteLine($"[PageViewport] 计算整体边界失败: {bbEx.Message}");
+                        }
+                    }
+                    catch (Exception sx)
+                    {
+                        System.Diagnostics.Trace.WriteLine($"[PageViewport] 采样对象失败: {sx.Message}");
+                    }
+                }
 
                 if (objs == null || engine == null || w <= 0 || h <= 0)
                 {
@@ -258,6 +297,58 @@ namespace OfdrwNet.WinFormsDemo.Viewer
                             System.Diagnostics.Trace.WriteLine($"[PageViewport] 渲染引擎报告问题，但继续显示: {renderResult.ErrorMessage}");
                             _lastError = renderResult.ErrorMessage;
                         }
+
+                        // 调试叠加：绘制对象边界，便于确认是否坐标在视口之外 / 是否被绘制
+                        try
+                        {
+                            const bool DEBUG_OVERLAY = true; // 可切换
+                            if (DEBUG_OVERLAY && objs != null)
+                            {
+                                using var penNormal = new Pen(Color.FromArgb(160, Color.Red), 1f);
+                                using var penBad = new Pen(Color.Magenta, 1f);
+                                int drawn = 0;
+                                double minX = double.MaxValue, minY = double.MaxValue, maxX = double.MinValue, maxY = double.MinValue;
+                                foreach (var o in objs)
+                                {
+                                    var b = o.Boundary;
+                                    if (double.IsNaN(b.X) || double.IsNaN(b.Y) || double.IsNaN(b.Width) || double.IsNaN(b.Height) ||
+                                        double.IsInfinity(b.X) || double.IsInfinity(b.Y) || double.IsInfinity(b.Width) || double.IsInfinity(b.Height) ||
+                                        b.Width <= 0 || b.Height <= 0)
+                                    {
+                                        System.Diagnostics.Trace.WriteLine($"[PageViewport][DEBUG] 异常边界对象 Id={o.Id} Type={o.GetType().Name} Bounds=({b.X},{b.Y},{b.Width},{b.Height}) Visible={o.Visible}");
+                                        if (drawn < 200)
+                                        {
+                                            // 画一个 10x10 小叉定位
+                                            g.DrawLine(penBad, 0, 0, 0, 0); // 占位防 GDI 优化
+                                        }
+                                        continue;
+                                    }
+                                    if (b.X < minX) minX = b.X; if (b.Y < minY) minY = b.Y;
+                                    if (b.Right > maxX) maxX = b.Right; if (b.Bottom > maxY) maxY = b.Bottom;
+                                    if (drawn < 200) // 避免过多 GDI 调用
+                                    {
+                                        // 只在可见区域附近才画，做一个范围限制（扩大 200 像素阈值）
+                                        if (b.Right >= -200 && b.Bottom >= -200 && b.X <= bmp.Width + 200 && b.Y <= bmp.Height + 200)
+                                        {
+                                            g.DrawRectangle(penNormal, (float)b.X, (float)b.Y, (float)b.Width, (float)b.Height);
+                                            drawn++;
+                                        }
+                                    }
+                                }
+                                if (minX <= maxX && minY <= maxY)
+                                {
+                                    System.Diagnostics.Trace.WriteLine($"[PageViewport][DEBUG] AllBounds(minX={minX},minY={minY},maxX={maxX},maxY={maxY},W={maxX-minX},H={maxY-minY}) canvas={bmp.Width}x{bmp.Height}");
+                                }
+                                else
+                                {
+                                    System.Diagnostics.Trace.WriteLine("[PageViewport][DEBUG] 未计算到有效边界");
+                                }
+                            }
+                        }
+                        catch (Exception ovEx)
+                        {
+                            System.Diagnostics.Trace.WriteLine($"[PageViewport][DEBUG] 边界叠加失败: {ovEx.Message}");
+                        }
                     }
 
                     System.Diagnostics.Trace.WriteLine($"[PageViewport] 检查取消状态 - token.IsCancellationRequested={token.IsCancellationRequested}, localCts.IsCancellationRequested={localCts?.IsCancellationRequested ?? false}");
@@ -289,7 +380,16 @@ namespace OfdrwNet.WinFormsDemo.Viewer
                         // 交换位图 - 渲染成功且没有被取代
                         var old = Interlocked.Exchange(ref _backBuffer, bmp);
                         old?.Dispose();
-                        System.Diagnostics.Trace.WriteLine($"[PageViewport] 渲染完成，更新显示");
+                        // 首像素调试（保留简化版本）
+                        if (_backBuffer != null)
+                        {
+                            try
+                            {
+                                var px = _backBuffer.GetPixel(0, 0);
+                                System.Diagnostics.Trace.WriteLine($"[PageViewport] 渲染完成，更新显示 backBuffer={_backBuffer.Width}x{_backBuffer.Height} firstPixel=ARGB({px.A},{px.R},{px.G},{px.B})");
+                            }
+                            catch { }
+                        }
                         if (!IsDisposed && !token.IsCancellationRequested)
                         {
                             try { BeginInvoke((Action)(Invalidate)); } catch { }

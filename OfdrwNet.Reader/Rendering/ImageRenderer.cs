@@ -16,6 +16,20 @@ namespace OfdrwNet.Reader.Rendering
         private readonly IResourceManager _resourceManager;
         private readonly ImageCache _imageCache;
         private bool _disposed = false;
+        private static bool IsUnified()
+        {
+            try
+            {
+                var t = Type.GetType("OfdrwNet.Reader.Rendering.RenderingConfig");
+                if (t != null)
+                {
+                    var p = t.GetProperty("UnifiedScalingMode");
+                    if (p != null) return (bool)p.GetValue(null)!;
+                }
+            }
+            catch { }
+            return false;
+        }
 
         /// <summary>
         /// 构造函数
@@ -191,16 +205,17 @@ namespace OfdrwNet.Reader.Rendering
                 graphics.MultiplyTransform(renderContext.TransformMatrix);
             }
 
-            // 应用对象的CTM变换
-            if (imageObject.CTM != null)
+            // 方案B（像素管线）下：Boundary 已经是最终像素坐标，CTM 中常含 mm->px 缩放 & Y 轴翻转；再次应用会把图像移出视口。
+            // 仅在统一缩放模式（保持 mm 坐标）时才应用 CTM。
+            bool unified = IsUnified();
+            if (unified && imageObject.CTM != null)
             {
                 graphics.MultiplyTransform(imageObject.CTM);
             }
-
-            // 应用缩放
-            if (renderContext.ScaleFactor != 1.0)
+            else if (!unified && imageObject.CTM != null)
             {
-                graphics.ScaleTransform((float)renderContext.ScaleFactor, (float)renderContext.ScaleFactor);
+                // 像素模式：完全跳过 CTM（防止双重缩放/翻转）。方向纠正在 RenderImageContentAsync 内按需处理。
+                System.Diagnostics.Trace.WriteLine("[ImageRenderer][DEBUG] Skip CTM entirely in pixel mode");
             }
         }
 
@@ -338,35 +353,112 @@ namespace OfdrwNet.Reader.Rendering
         /// <summary>
         /// 异步渲染图像内容
         /// </summary>
-        private async Task RenderImageContentAsync(ImageObject imageObject, Graphics graphics, Image image, RenderContext renderContext)
+    private Task RenderImageContentAsync(ImageObject imageObject, Graphics graphics, Image image, RenderContext renderContext)
         {
-            await Task.Run(() =>
+            // 像素管线：Boundary 已为最终像素坐标；此处仅做方向与透明度处理，不再做几何 Transform。
+            var x = imageObject.Boundary.X;
+            var y = imageObject.Boundary.Y;
+            var w = imageObject.Boundary.Width;
+            var h = imageObject.Boundary.Height;
+            bool unified = IsUnified();
+            var destRect = new Rectangle((int)x, (int)y, (int)w, (int)h);
+
+            // 基于 CTM 符号决定是否水平/垂直翻转（或 180°）——只在像素模式下，因为统一模式下 CTM 已由上层实际乘进 Graphics。
+            bool flipH = false, flipV = false, rotate180 = false;
+            Image drawImage = image;
+            if (!unified && imageObject.CTM != null)
             {
-                var destRect = new Rectangle(
-                    (int)imageObject.Boundary.X,
-                    (int)imageObject.Boundary.Y,
-                    (int)imageObject.Boundary.Width,
-                    (int)imageObject.Boundary.Height
-                );
-
-                // 应用透明度
-                if ((float)imageObject.Alpha < 1.0f)
+                try
                 {
-                    var colorMatrix = new ColorMatrix();
-                    colorMatrix.Matrix33 = (float)imageObject.Alpha; // 设置Alpha值
+                    var elems = imageObject.CTM.Elements; // m11,m12,m21,m22,dx,dy
+                    float sx = elems[0];
+                    float sy = elems[3];
+                    if (sx < 0) flipH = true;
+                    if (sy < 0) flipV = true;
+                    if (flipH && flipV)
+                    {
+                        // 同时为负，相当于旋转 180°；避免先后双 Flip 额外成本，直接使用 Rotate180。
+                        rotate180 = true;
+                        flipH = flipV = false; // 独立标记 rotate180
+                    }
 
-                    var imageAttributes = new ImageAttributes();
-                    imageAttributes.SetColorMatrix(colorMatrix);
-
-                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, imageAttributes);
-
-                    imageAttributes.Dispose();
+                    if (rotate180 || flipH || flipV)
+                    {
+                        // 克隆后旋转，保持缓存原始图不被污染（不同对象可有不同 CTM）。
+                        drawImage = (Image)image.Clone();
+                        RotateFlipType rft = RotateFlipType.RotateNoneFlipNone;
+                        if (rotate180)
+                        {
+                            rft = RotateFlipType.Rotate180FlipNone;
+                        }
+                        else if (flipH)
+                        {
+                            rft = RotateFlipType.RotateNoneFlipX;
+                        }
+                        else if (flipV)
+                        {
+                            rft = RotateFlipType.RotateNoneFlipY;
+                        }
+                        if (rft != RotateFlipType.RotateNoneFlipNone)
+                        {
+                            (drawImage as Bitmap)?.RotateFlip(rft);
+                        }
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    graphics.DrawImage(image, destRect);
+                    System.Diagnostics.Trace.WriteLine($"[ImageRenderer][DEBUG] Orientation analysis failed: {ex.Message}");
+                    // 失败则保持原图直接绘制
+                    if (drawImage != image)
+                    {
+                        drawImage.Dispose();
+                        drawImage = image;
+                        rotate180 = flipH = flipV = false;
+                    }
                 }
-            });
+            }
+
+            // 透明度
+            if ((float)imageObject.Alpha < 1.0f)
+            {
+                using var imageAttributes = new ImageAttributes();
+                var colorMatrix = new ColorMatrix();
+                colorMatrix.Matrix33 = (float)imageObject.Alpha;
+                imageAttributes.SetColorMatrix(colorMatrix);
+                graphics.DrawImage(drawImage, destRect, 0, 0, drawImage.Width, drawImage.Height, GraphicsUnit.Pixel, imageAttributes);
+            }
+            else
+            {
+                graphics.DrawImage(drawImage, destRect);
+            }
+
+            // 诊断信息
+            try
+            {
+                Color center = Color.Empty;
+                if (drawImage is Bitmap bmp && bmp.Width > 0 && bmp.Height > 0)
+                {
+                    center = bmp.GetPixel(drawImage.Width / 2, drawImage.Height / 2);
+                    var tl = bmp.GetPixel(0, 0);
+                    var tr = bmp.GetPixel(Math.Max(0, drawImage.Width - 1), 0);
+                    var bl = bmp.GetPixel(0, Math.Max(0, drawImage.Height - 1));
+                    var br = bmp.GetPixel(Math.Max(0, drawImage.Width - 1), Math.Max(0, drawImage.Height - 1));
+                    System.Diagnostics.Trace.WriteLine($"[ImageRenderer] IMG {imageObject.ResourceId} corners TL=#{tl.ToArgb():X8} TR=#{tr.ToArgb():X8} BL=#{bl.ToArgb():X8} BR=#{br.ToArgb():X8}");
+                }
+                bool placeholder = drawImage.Width == 100 && drawImage.Height == 60; // 与 CreatePlaceholderImage 一致
+                string ctmStr = imageObject.CTM != null ? string.Join(',', imageObject.CTM.Elements) : "<null>";
+                string transformStr = imageObject.Transform != null ? string.Join(',', imageObject.Transform.Elements) : "<null>";
+                System.Diagnostics.Trace.WriteLine($"[ImageRenderer] IMG {imageObject.ResourceId} dest=({destRect.X},{destRect.Y},{destRect.Width},{destRect.Height}) src=({drawImage.Width}x{drawImage.Height}) center=#{center.ToArgb():X8} placeholder={placeholder} unified={unified} alpha={imageObject.Alpha} rotate180={rotate180} flipH={flipH} flipV={flipV} CTM={ctmStr} Transform={transformStr}");
+            }
+            catch { }
+
+            if (drawImage != image)
+            {
+                // 释放克隆（GDI 对象及时释放）
+                drawImage.Dispose();
+            }
+
+            return Task.CompletedTask;
         }
 
         /// <summary>

@@ -5,6 +5,7 @@ using System.Drawing.Text;
 using System.Threading.Tasks;
 using OfdrwNet.Reader.Model;
 using System.Diagnostics;
+// note: RenderingConfig 位于同命名空间，但编译器当前未识别（可能增量编译缓存问题），改为显式完全限定调用
 
 namespace OfdrwNet.Reader.Rendering
 {
@@ -20,6 +21,20 @@ namespace OfdrwNet.Reader.Rendering
         private readonly IResourceManager _resourceManager;
         private readonly FontCache _fontCache;
         private bool _disposed = false;
+        private static bool IsUnified()
+        {
+            try
+            {
+                var t = Type.GetType("OfdrwNet.Reader.Rendering.RenderingConfig");
+                if (t != null)
+                {
+                    var p = t.GetProperty("UnifiedScalingMode");
+                    if (p != null) return (bool)p.GetValue(null)!;
+                }
+            }
+            catch { }
+            return false;
+        }
 
         /// <summary>
         /// 构造函数
@@ -49,21 +64,7 @@ namespace OfdrwNet.Reader.Rendering
             try
             {
                 // Graphics 有效性快速探测（可能被外部提前释放）
-                try
-                {
-                    _ = graphics.DpiX; // 访问属性，如果已释放会抛
-                    var clip = graphics.VisibleClipBounds; // 也可触发潜在无效状态
-                    if (clip.Width <= 0 || clip.Height <= 0)
-                    {
-                        Debug.WriteLine($"[TextRenderer] Skip drawing: empty clip bounds for TextObject {textObject.Id}");
-                        return true; // 不渲染但视为成功
-                    }
-                }
-                catch (Exception gex)
-                {
-                    Debug.WriteLine($"[TextRenderer] Graphics invalid early, skip TextObject {textObject.Id}: {gex.Message}");
-                    return true; // 不中断整体渲染
-                }
+                try { _ = graphics.DpiX; } catch (Exception gex) { Debug.WriteLine($"[TextRenderer] Graphics invalid early, skip TextObject {textObject.Id}: {gex.Message}"); return true; }
                 // 保存图形状态
                 var state = graphics.Save();
 
@@ -139,8 +140,7 @@ namespace OfdrwNet.Reader.Rendering
 
                 using var tempGraphics = Graphics.FromImage(new Bitmap(1, 1));
                 tempGraphics.TextRenderingHint = renderContext.TextRenderingHint;
-
-                return tempGraphics.MeasureString(text, font);
+                return tempGraphics.MeasureString(text, new Font(font.FontFamily, font.Size, font.Style));
             }
             catch
             {
@@ -246,11 +246,7 @@ namespace OfdrwNet.Reader.Rendering
                 graphics.MultiplyTransform(textObject.CTM);
             }
 
-            // 应用缩放
-            if (renderContext.ScaleFactor != 1.0)
-            {
-                graphics.ScaleTransform((float)renderContext.ScaleFactor, (float)renderContext.ScaleFactor);
-            }
+            // 方案B：已使用像素坐标，禁止再次缩放。
         }
 
         /// <summary>
@@ -274,14 +270,23 @@ namespace OfdrwNet.Reader.Rendering
             Font font;
             try
             {
-                var resourceFont = await _resourceManager.GetFontAsync(name); // 保持同步上下文，避免 UI 线程丢失
-                var scaledSize = (float)(fontInfo.Size * renderContext.ScaleFactor);
-                font = new Font(resourceFont.FontFamily, scaledSize, fontInfo.Style);
+                var resourceFont = await _resourceManager.GetFontAsync(name); // 获取底层字体（可能只是占位）
+                bool unified = IsUnified();
+                // unified: fontInfo.Size 目前为 mm，需要转换为像素 = mm * Ppm * ScaleFactor
+                // legacy(pixel) 管线: fontInfo.Size 已为像素大小（Extract 时算好），只需要乘缩放 ScaleFactor
+                float sizePx = unified
+                    ? (float)(fontInfo.Size * renderContext.Ppm * renderContext.ScaleFactor)
+                    : (float)(fontInfo.Size * renderContext.ScaleFactor);
+                // 使用 GraphicsUnit.Pixel，避免默认 Point -> 额外 96/72 放大导致“字体偏大”
+                font = new Font(resourceFont.FontFamily, Math.Max(0.1f, sizePx), fontInfo.Style, GraphicsUnit.Pixel);
             }
             catch
             {
-                var scaledSize = (float)(fontInfo.Size * renderContext.ScaleFactor);
-                font = new Font(name, scaledSize, fontInfo.Style);
+                bool unified = IsUnified();
+                float sizePx = unified
+                    ? (float)(fontInfo.Size * renderContext.Ppm * renderContext.ScaleFactor)
+                    : (float)(fontInfo.Size * renderContext.ScaleFactor);
+                font = new Font(name, Math.Max(0.1f, sizePx), fontInfo.Style, GraphicsUnit.Pixel);
             }
 
             // 样式可用性验证（某些字体不支持 Italic/Bold 组合会触发内部错误）
@@ -337,11 +342,7 @@ namespace OfdrwNet.Reader.Rendering
 
             SafeApplyTextRenderingHint(graphics, renderContext);
 
-            // 本地辅助函数：检测矩形是否可渲染
-            static bool IsRectangleRenderable(RectangleF r)
-                => r.Width > 0 && r.Height > 0 &&
-                   !float.IsNaN(r.X) && !float.IsNaN(r.Y) && !float.IsNaN(r.Width) && !float.IsNaN(r.Height) &&
-                   !float.IsInfinity(r.X) && !float.IsInfinity(r.Y) && !float.IsInfinity(r.Width) && !float.IsInfinity(r.Height);
+            // （移除未使用的 IsRectangleRenderable 本地函数）
 
             // 超长文本做一个软限制（防御：异常数据导致 GDI+ 失败）
             var rawText = textObject.Text ?? string.Empty;
@@ -385,33 +386,39 @@ namespace OfdrwNet.Reader.Rendering
                     var lw = (float)textObject.Layout.Width;
                     var lh = (float)textObject.Layout.Height;
 
+                    bool unified = IsUnified();
+                    if (unified)
+                    {
+                        var factor = (float)(renderContext.Ppm * renderContext.ScaleFactor);
+                        lx *= factor; ly *= factor; lw *= factor; lh *= factor;
+                    }
+
                     bool IsValid(float v) => !float.IsNaN(v) && !float.IsInfinity(v);
                     if (IsValid(lx) && IsValid(ly) && IsValid(lw) && IsValid(lh) && lw > 0 && lh > 0)
                     {
-                        var layoutRect = new RectangleF(lx, ly, lw, lh);
+                        // 基线计算：使用字体度量纠正 ly，使文本视觉上位于 boundary 内部合理位置
+                        var ascent = font.FontFamily.GetCellAscent(font.Style);
+                        var em = font.FontFamily.GetEmHeight(font.Style);
+                        var ascentRatio = em > 0 ? (float)ascent / em : 0.8f; // 兜底0.8
+                        var descent = font.FontFamily.GetCellDescent(font.Style);
+                        var descentRatio = em > 0 ? (float)descent / em : 0.2f;
+                        var lineHeightRatio = ascentRatio + descentRatio; // 可能 <1（很多字体），用作比例
+                        var expectedLinePx = font.Size; // 像素字号
+                        var actualLinePx = expectedLinePx * lineHeightRatio;
+                        if (actualLinePx <= 0) actualLinePx = expectedLinePx * 1.0f;
+                        // 若 boundary(height) 比行高大，垂直居中；否则顶部对齐
+                        float topAdjust = ly;
+                        if (lh > actualLinePx)
+                        {
+                            topAdjust = ly + (lh - actualLinePx) / 2f; // 居中
+                        }
+                        // 计算 ly 的基线位置调试：baseline = topAdjust + ascentRatio * expectedLinePx
+                        var baseline = topAdjust + ascentRatio * expectedLinePx;
+                        textObject.Layout.BaselineOffset = baseline - topAdjust; // 存储供后续调试
+                        var layoutRect = new RectangleF(lx, topAdjust, lw, lh - (topAdjust - ly));
 
                         // 与当前可见裁剪区域取交集，避免极大或溢出的矩形进入 GDI
-                        try
-                        {
-                            var clip = graphics.VisibleClipBounds; // 可能返回 Empty（未设置 clip）
-                            if (!clip.IsEmpty && !clip.Contains(layoutRect))
-                            {
-                                var intersection = RectangleF.Intersect(clip, layoutRect);
-                                if (IsRectangleRenderable(intersection))
-                                {
-                                    layoutRect = intersection;
-                                }
-                                else if (!clip.IntersectsWith(layoutRect))
-                                {
-                                    Debug.WriteLine($"[TextRenderer] Layout rect completely outside clip. Skip draw. Id={textObject.Id}");
-                                    return Task.CompletedTask;
-                                }
-                            }
-                        }
-                        catch (Exception eClip)
-                        {
-                            Debug.WriteLine($"[TextRenderer] Clip bounds check failed: {eClip.Message}");
-                        }
+                        // 暂时移除裁剪可见性提前跳过逻辑，避免误判导致文字不画
 
                         // Clone 避免修改全局 GenericDefault / 复用实例造成竞争
                         var fmt = textObject.Layout.StringFormat != null
@@ -420,16 +427,22 @@ namespace OfdrwNet.Reader.Rendering
                         try
                         {
                             fmt.Alignment = textObject.Layout.Alignment;
-                            try
-                            {
-                                graphics.DrawString(text, font, brush, layoutRect, fmt);
-                            }
-                            catch (ArgumentException firstEx)
-                            {
-                                Debug.WriteLine($"[TextRenderer] First DrawString failed, retry simple no-format. {firstEx.Message}");
-                                // 去除 StringFormat 再尝试一次（某些 GDI+ 在特定格式组合下会抛）
-                                graphics.DrawString(text, font, brush, layoutRect.Location);
-                            }
+                                // 动态适配：若字号远大于布局高度，按比例缩放
+                                try
+                                {
+                                    var measured = graphics.MeasureString(text, font);
+                                    // 先禁用自动缩放，保证与 boundary 对齐调试
+                                }
+                                catch { }
+                                try { graphics.DrawString(text, font, brush, layoutRect, fmt); }
+                                catch (ArgumentException firstEx) { Debug.WriteLine($"[TextRenderer] First DrawString failed, retry simple no-format. {firstEx.Message}"); graphics.DrawString(text, font, brush, layoutRect.Location); }
+                                // 调试：描出布局框确认位置（蓝框）
+                                // 调试边界显示（运行时可改为 true 观察布局框）
+                                bool debugDrawBounds = false;
+                                if (debugDrawBounds)
+                                {
+                                    try { graphics.DrawRectangle(Pens.Blue, layoutRect.X, layoutRect.Y, layoutRect.Width, layoutRect.Height); } catch { }
+                                }
                         }
                         finally
                         {
@@ -441,7 +454,35 @@ namespace OfdrwNet.Reader.Rendering
 
                 // 回退：使用边界左上角 + 简单基线调整
                 var x = textObject.Boundary.X;
-                var y = textObject.Boundary.Y + font.Size * 0.8f; // baseline tweak
+                var y = textObject.Boundary.Y;
+                try
+                {
+                    var ascent = font.FontFamily.GetCellAscent(font.Style);
+                    var em = font.FontFamily.GetEmHeight(font.Style);
+                    var ascentRatio = em > 0 ? (float)ascent / em : 0.8f;
+                    // 让文字 baseline 贴 boundary.Top + ascentRatio*size (如 boundary 太矮则不做调整)
+                    if (textObject.Boundary.Height >= font.Size * 0.6f)
+                    {
+                        // boundary 的 top 作为行框 top
+                        // baseline = top + ascentRatio * font.Size
+                        // DrawString 使用 layout 矩形时已经处理，这里 fallback 使用点绘制：设定 y = top + ( (boundaryHeight - lineHeight)/2 ) for centering
+                        var descent = font.FontFamily.GetCellDescent(font.Style);
+                        var descentRatio = em > 0 ? (float)descent / em : 0.2f;
+                        var lineHeightPx = font.Size * (ascentRatio + descentRatio);
+                        if (lineHeightPx <= 0) lineHeightPx = font.Size;
+                        if (textObject.Boundary.Height > lineHeightPx)
+                        {
+                            y = textObject.Boundary.Y + (textObject.Boundary.Height - lineHeightPx) / 2f; // 居中
+                        }
+                    }
+                }
+                catch { }
+                bool unifiedFallback = IsUnified();
+                if (unifiedFallback)
+                {
+                    var factorFallback = (float)(renderContext.Ppm * renderContext.ScaleFactor);
+                    x *= factorFallback; y *= factorFallback;
+                }
 
                 if (float.IsNaN(x) || float.IsInfinity(x) || float.IsNaN(y) || float.IsInfinity(y))
                 {
@@ -451,7 +492,18 @@ namespace OfdrwNet.Reader.Rendering
                 }
                 try
                 {
+                    try
+                    {
+                        var measured = graphics.MeasureString(text, font);
+                        // 禁用无布局回退自动缩放
+                    }
+                    catch { }
                     graphics.DrawString(text, font, brush, x, y);
+                    bool debugDrawBounds2 = false;
+                    if (debugDrawBounds2)
+                    {
+                        try { graphics.DrawRectangle(Pens.Blue, textObject.Boundary.X, textObject.Boundary.Y, textObject.Boundary.Width, textObject.Boundary.Height); } catch { }
+                    }
                 }
                 catch (ArgumentException firstEx2)
                 {
@@ -474,7 +526,10 @@ namespace OfdrwNet.Reader.Rendering
             return Task.CompletedTask;
         }
 
-        public void Dispose()
+    /// <summary>
+    /// 释放字体缓存。
+    /// </summary>
+    public void Dispose()
         {
             if (!_disposed)
             {

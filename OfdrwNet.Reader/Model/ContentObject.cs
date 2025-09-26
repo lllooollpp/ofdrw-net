@@ -93,5 +93,6 @@ namespace OfdrwNet.Reader.Model
         public float LetterSpacing { get; set; } = 0.0f;
         public float WordSpacing { get; set; } = 0.0f;
         public StringFormat? StringFormat { get; set; }
+        public float BaselineOffset { get; set; } = 0f;
     }
 }
