@@ -63,6 +63,28 @@ namespace OfdrwNet.Reader.Rendering
 
             try
             {
+                // 统一记录开始日志: ID / Boundary / CTM / 字体信息 (若已存在) / 文本长度
+                string ctmStr = "none";
+                try
+                {
+                    if (textObject.CTM != null)
+                    {
+                        var m = textObject.CTM.Elements; // [m11, m12, m21, m22, dx, dy]
+                        ctmStr = $"[{m[0]:0.###},{m[1]:0.###},{m[2]:0.###},{m[3]:0.###},{m[4]:0.###},{m[5]:0.###}]";
+                    }
+                }
+                catch { }
+                var fontInfo = textObject.Font;
+                string fontDesc = fontInfo == null ? "(no-font)" : $"{fontInfo.Name ?? "?"},{fontInfo.Size:0.###},{fontInfo.Style}";
+                // 文本预览（控制长度，转义换行/制表）
+                string? raw = textObject.Text;
+                string preview;
+                if (string.IsNullOrEmpty(raw)) preview = ""; else
+                {
+                    preview = raw.Replace("\r", "\\r").Replace("\n", "\\n").Replace("\t", "\\t");
+                    if (preview.Length > 80) preview = preview.Substring(0, 80) + "...";
+                }
+                Debug.WriteLine($"[TextRenderer] Begin Text Id={textObject.Id} Boundary=({textObject.Boundary.X:0.###},{textObject.Boundary.Y:0.###},{textObject.Boundary.Width:0.###},{textObject.Boundary.Height:0.###}) CTM={ctmStr} Font={fontDesc} Length={(textObject.Text?.Length ?? 0)} Text=\"{preview}\"");
                 // Graphics 有效性快速探测（可能被外部提前释放）
                 try { _ = graphics.DpiX; } catch (Exception gex) { Debug.WriteLine($"[TextRenderer] Graphics invalid early, skip TextObject {textObject.Id}: {gex.Message}"); return true; }
                 // 保存图形状态
@@ -87,11 +109,14 @@ namespace OfdrwNet.Reader.Rendering
                 // 恢复图形状态
                 graphics.Restore(state);
 
+                Debug.WriteLine($"[TextRenderer] End Text Id={textObject.Id} Success=True");
                 return true;
             }
             catch (Exception ex)
             {
-                throw new RenderException(textObject.Id.ToString(), $"文本渲染失败: {ex.Message}", ex);
+                Debug.WriteLine($"[TextRenderer] End Text Id={textObject?.Id} Success=False Error={ex.Message}");
+                var tid = textObject?.Id?.ToString() ?? string.Empty;
+                throw new RenderException(tid, $"文本渲染失败: {ex.Message}", ex);
             }
         }
 

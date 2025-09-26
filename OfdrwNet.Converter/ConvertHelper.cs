@@ -357,7 +357,7 @@ public static class ConvertHelper
         public bool ExtractImage { get; set; } = true;
         public bool ExtractAnnotations { get; set; } = true; // 提取注释/批注
         public bool ExtractForms { get; set; } = true; // 提取表单
-        public bool PerGlyphPositioning { get; set; } = false; // 预留第2阶段
+        public bool PerGlyphPositioning { get; set; } = true; // 预留第2阶段
         public IProgress<(int done, int total)>? Progress { get; set; }
         public CancellationToken CancellationToken { get; set; }
         public bool NormalizeSubsetFontName { get; set; } = true;
@@ -940,6 +940,7 @@ public static class ConvertHelper
         }
     }
 
+
     private static void ExtractAnnotations(iText.Kernel.Pdf.PdfDocument pdfDoc, IOfdDocWriter ofd, PdfToOfdOptions options, ILogger? logger)
     {
         int totalPages = pdfDoc.GetNumberOfPages();
@@ -1306,6 +1307,12 @@ public static class ConvertHelper
     #endregion
 }
 
+/// <summary>
+/// Listens for image rendering events and extracts image data from PDF pages for conversion to OFD format.
+/// </summary>
+/// <remarks>This class is intended for internal use during PDF to OFD conversion processes. It collects image
+/// objects encountered during rendering and makes them available for further processing or embedding in the output
+/// document. The class is not thread-safe.</remarks>
 internal class ImageRenderListener : IEventListener
 {
     private readonly int _pageNum;
@@ -1337,7 +1344,7 @@ internal class ImageRenderListener : IEventListener
 
             try
             {
-                byte[] imageBytes;
+                byte[]? imageBytes = null;
                 try
                 {
                     imageBytes = imageObject.GetImageBytes();
@@ -1348,40 +1355,246 @@ internal class ImageRenderListener : IEventListener
                     try
                     {
                         var pdfStream = imageObject.GetPdfObject();
-                        var rawBytes = pdfStream.GetBytes(true);
-                        if (rawBytes != null && rawBytes.Length > 0)
+                        // 记录 ColorSpace 与 Filter 信息，辅助后续完善解码策略
+                        try
                         {
-                            try
+                            var csObj = pdfStream.Get(iText.Kernel.Pdf.PdfName.ColorSpace);
+                            string csDesc = csObj switch
                             {
-                                // 方案2: 尝试使用 SixLabors.ImageSharp 解码
-                                using var image = SixLabors.ImageSharp.Image.Load(rawBytes);
-                                using var ms = new MemoryStream();
-                                image.Save(ms, new PngEncoder());
-                                imageBytes = ms.ToArray();
-                                _logger?.LogInformation("[PDF2OFD][Image] Page {Page} 使用 SixLabors.ImageSharp 解码成功", _pageNum);
+                                iText.Kernel.Pdf.PdfName n => n.ToString(),
+                                iText.Kernel.Pdf.PdfArray arr => string.Join(" ", arr)
+                                    ,
+                                iText.Kernel.Pdf.PdfString s => s.ToString(),
+                                _ => csObj?.GetType().Name ?? "<null>"
+                            };
+                            var filterObj = pdfStream.Get(iText.Kernel.Pdf.PdfName.Filter);
+                            string filterDesc = filterObj switch
+                            {
+                                iText.Kernel.Pdf.PdfName n => n.ToString(),
+                                iText.Kernel.Pdf.PdfArray arr => string.Join(",", arr),
+                                _ => filterObj?.ToString() ?? "<null>"
+                            };
+                            _logger?.LogDebug("[PDF2OFD][Image] Page {Page} Unsupported ColorSpace detail: CS={CS} Filter={Filter} BitsPerComponent={BPC} Width={W} Height={H}",
+                                _pageNum,
+                                csDesc,
+                                filterDesc,
+                                pdfStream.GetAsNumber(iText.Kernel.Pdf.PdfName.BitsPerComponent)?.IntValue() ?? -1,
+                                pdfStream.GetAsNumber(iText.Kernel.Pdf.PdfName.Width)?.IntValue() ?? -1,
+                                pdfStream.GetAsNumber(iText.Kernel.Pdf.PdfName.Height)?.IntValue() ?? -1
+                            );
+                        }
+                        catch { /* 忽略日志异常 */ }
+
+                        var rawBytes = pdfStream.GetBytes(true); // 解压后的原始像素或压缩后数据 (若 filter 保留)
+
+                        // 先检测是否为常见可直接嵌入的压缩格式 (DCT=JPEG, JPX=JPEG2000)
+                        var filterNames = new List<string>();
+                        try
+                        {
+                            var filterObj = pdfStream.Get(iText.Kernel.Pdf.PdfName.Filter);
+                            if (filterObj is iText.Kernel.Pdf.PdfName fn)
+                                filterNames.Add(fn.GetValue());
+                            else if (filterObj is iText.Kernel.Pdf.PdfArray farr)
+                                foreach (var f in farr) if (f is iText.Kernel.Pdf.PdfName fn2) filterNames.Add(fn2.GetValue());
+                        }
+                        catch { }
+
+                        bool handledRawCompressed = false;
+                        if (filterNames.Count > 0)
+                        {
+                            // 若包含 DCTDecode，直接视为 JPEG 数据（无需再转 PNG）
+                            if (filterNames.Contains("DCTDecode"))
+                            {
+                                imageBytes = pdfStream.GetBytes(false); // 获取未解压（原始 JPEG）
+                                _logger?.LogInformation("[PDF2OFD][Image] Page {Page} 直接复用 DCTDecode (JPEG) 原始流 ({Len} bytes)", _pageNum, imageBytes.Length);
+                                handledRawCompressed = true;
                             }
-                            catch (Exception exSharp)
+                            else if (filterNames.Contains("JPXDecode"))
                             {
-                                _logger?.LogWarning(exSharp, "[PDF2OFD][Image] Page {Page} SixLabors.ImageSharp 解码失败，尝试 SkiaSharp", _pageNum);
-                                // 方案3: 尝试使用 SkiaSharp 解码
-                                using var skBitmap = SKBitmap.Decode(rawBytes);
-                                if (skBitmap != null)
+                                // JPXDecode (JPEG2000)；Skia 可能支持，尝试直接解码；若失败保留原始数据再让 OFD Viewer 自行处理(若支持)
+                                var original = pdfStream.GetBytes(false);
+                                try
                                 {
-                                    using var image = SKImage.FromBitmap(skBitmap);
-                                    using var pngData = image.Encode(SKEncodedImageFormat.Png, 100);
-                                    imageBytes = pngData.ToArray();
+                                    using var skBmp = SKBitmap.Decode(original);
+                                    if (skBmp != null)
+                                    {
+                                        using var img = SKImage.FromBitmap(skBmp);
+                                        using var dataPng = img.Encode(SKEncodedImageFormat.Png, 100);
+                                        imageBytes = dataPng.ToArray();
+                                        _logger?.LogInformation("[PDF2OFD][Image] Page {Page} JPXDecode -> 转码 PNG 成功 ({Len} bytes)", _pageNum, imageBytes.Length);
+                                    }
+                                    else
+                                    {
+                                        imageBytes = original; // 回退保留原始 JP2 数据
+                                        _logger?.LogWarning("[PDF2OFD][Image] Page {Page} JPXDecode Skia 解码失败，保留原始 JPX 数据", _pageNum);
+                                    }
                                 }
-                                else
+                                catch (Exception jp2Ex)
                                 {
-                                    // 解码失败，尝试强制解码
-                                    imageBytes = imageObject.GetImageBytes(true);
+                                    _logger?.LogWarning(jp2Ex, "[PDF2OFD][Image] Page {Page} JPXDecode 转码异常，保留原始数据", _pageNum);
+                                    imageBytes = original;
                                 }
+                                handledRawCompressed = true;
                             }
                         }
-                        else
+
+                        if (!handledRawCompressed)
                         {
-                            // 原始数据为空，则尝试强制解码
-                            imageBytes = imageObject.GetImageBytes(true);
+                            if (rawBytes != null && rawBytes.Length > 0)
+                            {
+                                try
+                                {
+                                    // 方案2: 尝试使用 SixLabors.ImageSharp 解码 (假设已经是某种位图/带调色板数据)
+                                    using var image = SixLabors.ImageSharp.Image.Load(rawBytes);
+                                    using var ms = new MemoryStream();
+                                    image.Save(ms, new PngEncoder());
+                                    imageBytes = ms.ToArray();
+                                    _logger?.LogInformation("[PDF2OFD][Image] Page {Page} 使用 SixLabors.ImageSharp 解码成功", _pageNum);
+                                }
+                                catch (Exception exSharp)
+                                {
+                                    _logger?.LogWarning(exSharp, "[PDF2OFD][Image] Page {Page} SixLabors.ImageSharp 解码失败，尝试 SkiaSharp", _pageNum);
+                                    // 方案3: 尝试使用 SkiaSharp 解码
+                                    using var skBitmap = SKBitmap.Decode(rawBytes);
+                                    if (skBitmap != null)
+                                    {
+                                        using var image = SKImage.FromBitmap(skBitmap);
+                                        using var pngData = image.Encode(SKEncodedImageFormat.Png, 100);
+                                        imageBytes = pngData.ToArray();
+                                        _logger?.LogInformation("[PDF2OFD][Image] Page {Page} SkiaSharp 转 PNG 成功", _pageNum);
+                                    }
+                                    else
+                                    {
+                                        // 方案4: 启发式原始像素重建（典型: FlateDecode + 未知 ColorSpace）
+                                        // 已知: BitsPerComponent=8, 宽高=W*H
+                                        int w = pdfStream.GetAsNumber(iText.Kernel.Pdf.PdfName.Width)?.IntValue() ?? 0;
+                                        int h = pdfStream.GetAsNumber(iText.Kernel.Pdf.PdfName.Height)?.IntValue() ?? 0;
+                                        int bpc = pdfStream.GetAsNumber(iText.Kernel.Pdf.PdfName.BitsPerComponent)?.IntValue() ?? 8;
+                                        if (bpc == 8 && w > 0 && h > 0)
+                                        {
+                                            try
+                                            {
+                                                int pixelCount = w * h;
+                                                if (rawBytes.Length == pixelCount) // Gray
+                                                {
+                                                    var img = new SixLabors.ImageSharp.Image<SixLabors.ImageSharp.PixelFormats.Rgba32>(w, h);
+                                                    for (int yRow = 0; yRow < h; yRow++)
+                                                    {
+                                                        for (int xCol = 0; xCol < w; xCol++)
+                                                        {
+                                                            byte g = rawBytes[yRow * w + xCol];
+                                                            img[xCol, yRow] = new SixLabors.ImageSharp.PixelFormats.Rgba32(g, g, g, 255);
+                                                        }
+                                                    }
+                                                    using var ms2 = new MemoryStream();
+                                                    img.Save(ms2, new PngEncoder());
+                                                    imageBytes = ms2.ToArray();
+                                                    _logger?.LogInformation("[PDF2OFD][Image] Page {Page} 启发式 Gray 重建成功", _pageNum);
+                                                }
+                                                else if (rawBytes.Length == pixelCount * 3) // RGB
+                                                {
+                                                    var img = new SixLabors.ImageSharp.Image<SixLabors.ImageSharp.PixelFormats.Rgba32>(w, h);
+                                                    int idx = 0;
+                                                    for (int yRow = 0; yRow < h; yRow++)
+                                                    {
+                                                        for (int xCol = 0; xCol < w; xCol++)
+                                                        {
+                                                            byte r = rawBytes[idx++];
+                                                            byte g = rawBytes[idx++];
+                                                            byte b = rawBytes[idx++];
+                                                            img[xCol, yRow] = new SixLabors.ImageSharp.PixelFormats.Rgba32(r, g, b, 255);
+                                                        }
+                                                    }
+                                                    using var ms2 = new MemoryStream();
+                                                    img.Save(ms2, new PngEncoder());
+                                                    imageBytes = ms2.ToArray();
+                                                    _logger?.LogInformation("[PDF2OFD][Image] Page {Page} 启发式 RGB 重建成功", _pageNum);
+                                                }
+                                                else if (rawBytes.Length == pixelCount * 4) // 可能是 CMYK 或 RGBA
+                                                {
+                                                    bool treated = false;
+                                                    // 简单启发：检测是否存在 alpha=0/255 规律（判断 RGBA），否则视为 CMYK -> 转 RGB
+                                                    int sample = Math.Min(50, pixelCount);
+                                                    int alphaLike255 = 0;
+                                                    for (int s = 0; s < sample; s++)
+                                                    {
+                                                        byte a = rawBytes[s * 4 + 3];
+                                                        if (a == 0 || a == 255) alphaLike255++;
+                                                    }
+                                                    if (alphaLike255 > sample * 0.9) // 当作 RGBA
+                                                    {
+                                                        var img = new SixLabors.ImageSharp.Image<SixLabors.ImageSharp.PixelFormats.Rgba32>(w, h);
+                                                        int idx = 0;
+                                                        for (int yRow = 0; yRow < h; yRow++)
+                                                        {
+                                                            for (int xCol = 0; xCol < w; xCol++)
+                                                            {
+                                                                byte r = rawBytes[idx++];
+                                                                byte g = rawBytes[idx++];
+                                                                byte b = rawBytes[idx++];
+                                                                byte a = rawBytes[idx++];
+                                                                img[xCol, yRow] = new SixLabors.ImageSharp.PixelFormats.Rgba32(r, g, b, a);
+                                                            }
+                                                        }
+                                                        using var ms2 = new MemoryStream();
+                                                        img.Save(ms2, new PngEncoder());
+                                                        imageBytes = ms2.ToArray();
+                                                        treated = true;
+                                                        _logger?.LogInformation("[PDF2OFD][Image] Page {Page} 启发式 RGBA 重建成功", _pageNum);
+                                                    }
+                                                    if (!treated)
+                                                    {
+                                                        // 当作 CMYK 转 RGB：R=255-(C+K-CK/255) ... 简化公式 (常规转换: r=255*(1-c)*(1-k) 等)
+                                                        var img = new SixLabors.ImageSharp.Image<SixLabors.ImageSharp.PixelFormats.Rgba32>(w, h);
+                                                        int idx = 0;
+                                                        for (int yRow = 0; yRow < h; yRow++)
+                                                        {
+                                                            for (int xCol = 0; xCol < w; xCol++)
+                                                            {
+                                                                byte c = rawBytes[idx++];
+                                                                byte m = rawBytes[idx++];
+                                                                byte yC = rawBytes[idx++];
+                                                                byte k = rawBytes[idx++];
+                                                                // 转换 (0-255) -> (0-1) 再回 0-255
+                                                                double C = c / 255.0;
+                                                                double M = m / 255.0;
+                                                                double Y = yC / 255.0;
+                                                                double K = k / 255.0;
+                                                                byte r = (byte)Math.Clamp(255 * (1 - C) * (1 - K), 0, 255);
+                                                                byte g2 = (byte)Math.Clamp(255 * (1 - M) * (1 - K), 0, 255);
+                                                                byte b2 = (byte)Math.Clamp(255 * (1 - Y) * (1 - K), 0, 255);
+                                                                img[xCol, yRow] = new SixLabors.ImageSharp.PixelFormats.Rgba32(r, g2, b2, 255);
+                                                            }
+                                                        }
+                                                        using var ms2 = new MemoryStream();
+                                                        img.Save(ms2, new PngEncoder());
+                                                        imageBytes = ms2.ToArray();
+                                                        _logger?.LogInformation("[PDF2OFD][Image] Page {Page} 启发式 CMYK->RGB 重建成功", _pageNum);
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    _logger?.LogDebug("[PDF2OFD][Image] Page {Page} 原始长度 {Len} 与常见 Gray/RGB/CMYK 不匹配，放弃启发式", _pageNum, rawBytes.Length);
+                                                }
+                                            }
+                                            catch (Exception hex)
+                                            {
+                                                _logger?.LogDebug(hex, "[PDF2OFD][Image] Page {Page} 启发式重建异常", _pageNum);
+                                            }
+                                        }
+                                        if (imageBytes == null)
+                                        {
+                                            // 解码失败，尝试强制解码
+                                            imageBytes = imageObject.GetImageBytes(true);
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                // 原始数据为空，则尝试强制解码
+                                imageBytes = imageObject.GetImageBytes(true);
+                            }
                         }
                     }
                     catch (Exception ex2)
@@ -1402,6 +1615,18 @@ internal class ImageRenderListener : IEventListener
                     _logger?.LogWarning(ex, "[PDF2OFD][Image] Page {Page} 初次解码失败，尝试强制解码", _pageNum);
                     try { imageBytes = imageObject.GetImageBytes(true); }
                     catch (Exception ex2) { _logger?.LogError(ex2, "[PDF2OFD][Image] Page {Page} 强制解码失败，跳过图片", _pageNum); return; }
+                }
+
+                if (imageBytes == null)
+                {
+                    // 兜底：若仍未成功赋值（极少数路径），放置透明占位符
+                    imageBytes = new byte[] {
+                        0x89,0x50,0x4E,0x47,0x0D,0x0A,0x1A,0x0A,0x00,0x00,0x00,0x0D,0x49,0x48,0x44,0x52,
+                        0x00,0x00,0x00,0x01,0x00,0x00,0x00,0x01,0x08,0x06,0x00,0x00,0x00,0x1F,0x15,0xC4,
+                        0x89,0x00,0x00,0x00,0x0A,0x49,0x44,0x41,0x54,0x78,0x9C,0x63,0x00,0x01,0x00,0x00,
+                        0x05,0x00,0x01,0x0D,0x0A,0x2D,0xB4,0x00,0x00,0x00,0x00,0x49,0x45,0x4E,0x44,0xAE,
+                        0x42,0x60,0x82
+                    };
                 }
 
                 var matrix = renderInfo.GetImageCtm();

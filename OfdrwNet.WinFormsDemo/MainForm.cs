@@ -524,7 +524,7 @@ public partial class MainForm : Form
                 var pdfOptions = new ConvertHelper.PdfToOfdOptions
                 {
                     ExtractAndEmbedFonts = true,
-                    PerGlyphPositioning = false, // 改为false，使用更稳定的文本块定位，避免文字堆叠
+                    PerGlyphPositioning = true, // 改为false，使用更稳定的文本块定位，避免文字堆叠
                     CancellationToken = _cancellationTokenSource.Token,
                     Logger = _logger, // 使用已有 Microsoft.Extensions.Logging logger
                     RealImageEmbedding = true, // 改为true，尝试直接嵌入原始图片，解决图片丢失问题
