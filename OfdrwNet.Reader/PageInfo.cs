@@ -21,6 +21,30 @@ public class PageInfo
     public StBox Size { get; set; }
 
     /// <summary>
+    /// 页面宽度（毫米）
+    /// </summary>
+    public double Width
+    {
+        get => Size.Width;
+        set
+        {
+            Size = new StBox(Size.X, Size.Y, value, Size.Height);
+        }
+    }
+
+    /// <summary>
+    /// 页面高度（毫米）
+    /// </summary>
+    public double Height
+    {
+        get => Size.Height;
+        set
+        {
+            Size = new StBox(Size.X, Size.Y, Size.Width, value);
+        }
+    }
+
+    /// <summary>
     /// 页面底层对象
     /// </summary>
     public XElement Obj { get; set; }
@@ -226,20 +250,46 @@ public class PageInfo
     public List<XElement> GetAllLayers()
     {
         var layerList = new List<XElement>();
-
-        // 获取排好序的页面列表（包含页面模板和页面本身）
-        foreach (var page in GetOrderRelatedPageList())
+        try
         {
-            // 查找Content元素
-            var contentElement = page.Element("Content");
-            if (contentElement != null)
+            foreach (var page in GetOrderRelatedPageList())
             {
-                // 获取所有Layer元素
-                var layers = contentElement.Elements("Layer");
+                if (page == null) continue;
+
+                // 优先使用同命名空间名称匹配
+                var ns = page.Name.Namespace;
+                XElement? contentElement = null;
+
+                // 1) 精确命名空间匹配
+                if (ns != null && !string.IsNullOrEmpty(ns.NamespaceName))
+                {
+                    contentElement = page.Element(ns + "Content");
+                }
+                // 2) 无命名空间降级
+                contentElement ??= page.Elements().FirstOrDefault(e => e.Name.LocalName == "Content");
+
+                if (contentElement == null)
+                    continue;
+
+                // 获取 Layer 列表
+                IEnumerable<XElement> layers = Enumerable.Empty<XElement>();
+                if (ns != null && !string.IsNullOrEmpty(ns.NamespaceName))
+                {
+                    layers = contentElement.Elements(ns + "Layer");
+                }
+                if (!layers.Any())
+                {
+                    // 再做一次 LocalName 匹配
+                    layers = contentElement.Elements().Where(e => e.Name.LocalName == "Layer");
+                }
+
                 layerList.AddRange(layers);
             }
         }
-
+        catch
+        {
+            // 忽略异常，返回已找到的部分
+        }
         return layerList;
     }
 
@@ -448,10 +498,10 @@ public class PageInfo
     {
         return obj switch
         {
-            TextObject => 1024,      // 文本对象约1KB
-            ImageObject => 10240,    // 图像对象约10KB
-            VectorObject => 2048,    // 矢量对象约2KB
-            _ => 512                 // 其他对象约512B
+            TextObject => 1024,           // 文本对象约1KB
+            ImageObject => 10240,         // 图像对象约10KB
+            ContentVectorObject => 2048,  // 矢量对象约2KB
+            _ => 512                      // 其他对象约512B
         };
     }
 

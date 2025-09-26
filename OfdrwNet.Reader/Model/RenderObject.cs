@@ -1,5 +1,6 @@
 using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 
 namespace OfdrwNet.Reader.Model
 {
@@ -32,6 +33,11 @@ namespace OfdrwNet.Reader.Model
         /// 层级顺序
         /// </summary>
         public int ZOrder { get; set; } = 0;
+
+        /// <summary>
+        /// Z轴索引（绘制深度）
+        /// </summary>
+        public int ZIndex { get; set; } = 0;
 
         /// <summary>
         /// 变换矩阵

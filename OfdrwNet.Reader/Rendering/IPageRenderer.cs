@@ -20,7 +20,7 @@ namespace OfdrwNet.Reader.Rendering
         /// <returns>渲染结果</returns>
         Task<RenderResult> RenderPageAsync(
             PageInfo pageInfo,
-            Graphics graphics,
+            System.Drawing.Graphics graphics,
             RenderContext renderContext);
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace OfdrwNet.Reader.Rendering
         /// <param name="height">输出位图高度</param>
         /// <param name="renderContext">渲染上下文</param>
         /// <returns>渲染后的位图</returns>
-        Task<Bitmap> RenderToBitmapAsync(
+        Task<System.Drawing.Bitmap> RenderToBitmapAsync(
             PageInfo pageInfo,
             int width,
             int height,
@@ -43,7 +43,7 @@ namespace OfdrwNet.Reader.Rendering
         /// <param name="pageInfo">页面信息</param>
         /// <param name="thumbnailSize">缩略图尺寸</param>
         /// <returns>缩略图位图</returns>
-        Task<Bitmap> GenerateThumbnailAsync(
+        Task<System.Drawing.Bitmap> GenerateThumbnailAsync(
             PageInfo pageInfo,
             Size thumbnailSize);
 
@@ -86,9 +86,55 @@ namespace OfdrwNet.Reader.Rendering
         public List<RenderError> Errors { get; set; } = new List<RenderError>();
 
         /// <summary>
+        /// 渲染警告列表
+        /// </summary>
+        public List<string> Warnings { get; set; } = new List<string>();
+
+        /// <summary>
         /// 渲染性能指标
         /// </summary>
         public RenderMetrics? Metrics { get; set; }
+
+        /// <summary>
+        /// 渲染统计信息
+        /// </summary>
+        public RenderStatistics Statistics { get; set; } = new RenderStatistics();
+
+        /// <summary>
+        /// 错误消息（主要错误信息）
+        /// </summary>
+        public string? ErrorMessage { get; set; }
+
+        /// <summary>
+        /// 添加警告信息
+        /// </summary>
+        /// <param name="message">警告消息</param>
+        public void AddWarning(string message)
+        {
+            Warnings.Add(message);
+        }
+
+        /// <summary>
+        /// 添加错误信息
+        /// </summary>
+        /// <param name="message">错误消息</param>
+        public void AddError(string message)
+        {
+            Errors.Add(new RenderError { Message = message, Type = RenderErrorType.RenderingFailed });
+            ErrorMessage = message;
+            Success = false;
+        }
+
+        /// <summary>
+        /// 添加错误信息
+        /// </summary>
+        /// <param name="error">渲染错误对象</param>
+        public void AddError(RenderError error)
+        {
+            Errors.Add(error);
+            ErrorMessage = error.Message;
+            Success = false;
+        }
     }
 
     /// <summary>
@@ -146,5 +192,36 @@ namespace OfdrwNet.Reader.Rendering
         /// 内存不足
         /// </summary>
         OutOfMemory
+    }
+
+    /// <summary>
+    /// 渲染统计信息
+    /// </summary>
+    public class RenderStatistics
+    {
+        /// <summary>
+        /// 对象总数
+        /// </summary>
+        public int ObjectCount { get; set; }
+
+        /// <summary>
+        /// 成功渲染的对象数
+        /// </summary>
+        public int SuccessfulObjects { get; set; }
+
+        /// <summary>
+        /// 失败的对象数
+        /// </summary>
+        public int FailedObjects { get; set; }
+
+        /// <summary>
+        /// 总渲染时间
+        /// </summary>
+        public TimeSpan TotalRenderTime { get; set; }
+
+        /// <summary>
+        /// 页面总渲染时间
+        /// </summary>
+        public TimeSpan TotalPageRenderTime { get; set; }
     }
 }

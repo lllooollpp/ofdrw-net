@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AssemblyName>ofdrw</AssemblyName>
@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\OfdrwNet.Converter\OfdrwNet.Converter.csproj" />
     <ProjectReference Include="..\OfdrwNet.Tools\OfdrwNet.Tools.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Reader\OfdrwNet.Reader.csproj" />
   </ItemGroup>
 
   <ItemGroup>

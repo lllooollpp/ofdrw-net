@@ -11,6 +11,11 @@ namespace OfdrwNet.Reader.Model
     public class VectorObject : RenderObject
     {
         /// <summary>
+        /// 当前变换矩阵 (Current Transformation Matrix)
+        /// </summary>
+        public Matrix? CTM { get; set; }
+
+        /// <summary>
         /// 矢量类型
         /// </summary>
         public VectorType VectorType { get; set; }

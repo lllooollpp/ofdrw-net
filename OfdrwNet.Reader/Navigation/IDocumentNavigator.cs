@@ -111,7 +111,7 @@ namespace OfdrwNet.Reader.Navigation
         /// <summary>
         /// 缩略图位图
         /// </summary>
-        public Bitmap? Thumbnail { get; set; }
+        public System.Drawing.Bitmap? Thumbnail { get; set; }
 
         /// <summary>
         /// 原始尺寸

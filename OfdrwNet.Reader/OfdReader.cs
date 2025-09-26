@@ -101,10 +101,14 @@ public class OfdReader : IDisposable
         {
             _resourceLocator.Save();
             var document = NavigateToDefaultDoc();
-            var pagesElement = document.Element("Pages");
+
+            // 获取文档的命名空间
+            var ofdNamespace = document.Name.Namespace;
+            var pagesElement = document.Element(ofdNamespace + "Pages");
+
             if (pagesElement != null)
             {
-                var pageElements = pagesElement.Elements("Page");
+                var pageElements = pagesElement.Elements(ofdNamespace + "Page");
                 return pageElements.Count();
             }
             return 0;
@@ -131,13 +135,17 @@ public class OfdReader : IDisposable
             int index = pageNum - 1;
 
             var document = NavigateToDefaultDoc();
-            var pagesElement = document.Element("Pages");
+
+            // 获取文档的命名空间
+            var ofdNamespace = document.Name.Namespace;
+            var pagesElement = document.Element(ofdNamespace + "Pages");
+
             if (pagesElement == null)
             {
                 throw new InvalidOperationException("文档中没有Pages元素");
             }
 
-            var pageElements = pagesElement.Elements("Page").ToList();
+            var pageElements = pagesElement.Elements(ofdNamespace + "Page").ToList();
             if (index >= pageElements.Count)
             {
                 throw new ArgumentOutOfRangeException(nameof(pageNum), $"页码{pageNum}超过最大页码{pageElements.Count}");
@@ -151,19 +159,31 @@ public class OfdReader : IDisposable
             }
 
             var pageLoc = new StLoc(baseLocAttr.Value);
-            var pageObj = _resourceLocator.Get(pageLoc.ToString(), element => element);
-            var pageAbsLoc = _resourceLocator.GetAbsTo(pageLoc);
-            var pageSize = GetPageSize(pageObj);
-            var pageId = StId.Parse(pageElement.Attribute("ID")?.Value ?? "0");
-            var templatePages = LoadTemplatePages(pageObj);
 
-            return new PageInfo()
-                .SetIndex(pageNum)
-                .SetId(pageId)
-                .SetObj(pageObj)
-                .SetSize(pageSize)
-                .SetPageAbsLoc(pageAbsLoc)
-                .SetTemplates(templatePages);
+            // 添加调试信息，帮助诊断页面访问问题
+            try
+            {
+                var pageObj = _resourceLocator.Get(pageLoc.ToString(), element => element);
+                var pageAbsLoc = _resourceLocator.GetAbsTo(pageLoc);
+                var pageSize = GetPageSize(pageObj);
+                var pageId = StId.Parse(pageElement.Attribute("ID")?.Value ?? "0");
+                var templatePages = LoadTemplatePages(pageObj);
+
+                return new PageInfo()
+                    .SetIndex(pageNum)
+                    .SetId(pageId)
+                    .SetObj(pageObj)
+                    .SetSize(pageSize)
+                    .SetPageAbsLoc(pageAbsLoc)
+                    .SetTemplates(templatePages);
+            }
+            catch (Exception ex)
+            {
+                // 记录页面访问失败的详细信息，帮助调试
+                throw new InvalidOperationException(
+                    $"访问页面{pageNum}失败: BaseLoc='{baseLocAttr.Value}', " +
+                    $"StLoc='{pageLoc}', 错误: {ex.Message}", ex);
+            }
         }
         finally
         {
@@ -282,7 +302,45 @@ public class OfdReader : IDisposable
             throw new InvalidOperationException("DocRoot元素值为空");
         }
 
-        return _resourceLocator.Get(docRoot, element => element);
+        // 导航到文档目录，这样相对路径可以正确工作
+        var docRootPath = Path.GetDirectoryName(docRoot)?.Replace('\\', '/');
+        XElement? documentElement = null;
+        string? docFileOnly = null;
+        if (!string.IsNullOrEmpty(docRootPath))
+        {
+            _resourceLocator.Cd(docRootPath);
+            // 只取文件名部分（Document.xml）
+            docFileOnly = Path.GetFileName(docRoot);
+            try
+            {
+                documentElement = _resourceLocator.Get(docFileOnly, e => e);
+            }
+            catch (Exception primaryEx)
+            {
+                // 回退：尝试使用原始路径（防止某些自定义打包结构）
+                try
+                {
+                    documentElement = _resourceLocator.Get(docRoot, e => e);
+                }
+                catch (Exception fallbackEx)
+                {
+                    throw new InvalidOperationException(
+                        $"无法加载文档根文件。尝试文件名 '{docFileOnly}' 失败: {primaryEx.Message}; 回退使用路径 '{docRoot}' 仍失败: {fallbackEx.Message}");
+                }
+            }
+        }
+        else
+        {
+            // DocRoot 直接是文件名（无目录）
+            documentElement = _resourceLocator.Get(docRoot, e => e);
+        }
+
+        if (documentElement == null)
+        {
+            throw new InvalidOperationException($"未能获取文档根元素: {docRoot}");
+        }
+
+        return documentElement;
     }
 
     /// <summary>
@@ -290,7 +348,10 @@ public class OfdReader : IDisposable
     /// </summary>
     private StBox GetPageSize(XElement pageObj)
     {
-        var areaElement = pageObj.Element("Area");
+        // 获取页面的命名空间
+        var ofdNamespace = pageObj.Name.Namespace;
+        var areaElement = pageObj.Element(ofdNamespace + "Area");
+
         if (areaElement != null)
         {
             var physicalBoxAttr = areaElement.Attribute("PhysicalBox");
@@ -298,6 +359,31 @@ public class OfdReader : IDisposable
             {
                 return StBox.Parse(physicalBoxAttr.Value);
             }
+        }
+
+        // 如果没有找到Area元素，尝试从文档的CommonData中获取页面尺寸
+        try
+        {
+            var document = NavigateToDefaultDoc();
+            var docNamespace = document.Name.Namespace;
+            var commonDataElement = document.Element(docNamespace + "CommonData");
+
+            if (commonDataElement != null)
+            {
+                var pageAreaElement = commonDataElement.Element(docNamespace + "PageArea");
+                if (pageAreaElement != null)
+                {
+                    var physicalBoxElement = pageAreaElement.Element(docNamespace + "PhysicalBox");
+                    if (physicalBoxElement != null)
+                    {
+                        return StBox.Parse(physicalBoxElement.Value);
+                    }
+                }
+            }
+        }
+        catch
+        {
+            // 忽略错误，使用默认尺寸
         }
 
         return new StBox(0, 0, 210, 297); // A4默认大小
@@ -524,25 +610,47 @@ public class OfdReader : IDisposable
                 structure.OfdXml = XDocument.Load(ofdXmlPath);
             }
 
-            // 加载Document.xml
-            var docXmlPath = Path.Combine(_workDir, "Doc_0", "Document.xml");
-            if (File.Exists(docXmlPath))
+            // 加载Document.xml - 尝试多种路径格式
+            var docPaths = new[] {
+                Path.Combine(_workDir, "Doc_0", "Document.xml"),  // 标准格式
+                Path.Combine(_workDir, "Doc", "Document.xml")     // 替代格式
+            };
+
+            string? actualDocPath = null;
+            foreach (var docPath in docPaths)
             {
-                structure.DocumentXml = XDocument.Load(docXmlPath);
+                if (File.Exists(docPath))
+                {
+                    structure.DocumentXml = XDocument.Load(docPath);
+                    actualDocPath = Path.GetDirectoryName(docPath);
+                    Console.WriteLine($"[LoadDocumentStructure] 找到Document.xml路径: {docPath}");
+                    break;
+                }
             }
 
-            // 加载页面XML
-            var pagesDir = Path.Combine(_workDir, "Doc_0", "Pages");
-            if (Directory.Exists(pagesDir))
+            // 加载DocumentRes.xml并构建资源映射
+            if (actualDocPath != null)
             {
-                var pageDirectories = Directory.GetDirectories(pagesDir, "Page_*");
-                foreach (var pageDir in pageDirectories)
+                var docResPath = Path.Combine(actualDocPath, "DocumentRes.xml");
+                if (File.Exists(docResPath))
                 {
-                    var pageXmlPath = Path.Combine(pageDir, "Content.xml");
-                    if (File.Exists(pageXmlPath))
+                    var docResXml = XDocument.Load(docResPath);
+                    LoadResourceMappingsFromDocumentRes(structure, docResXml, actualDocPath);
+                }
+
+                // 加载页面XML
+                var pagesDir = Path.Combine(actualDocPath, "Pages");
+                if (Directory.Exists(pagesDir))
+                {
+                    var pageDirectories = Directory.GetDirectories(pagesDir, "Page_*");
+                    foreach (var pageDir in pageDirectories)
                     {
-                        var pageNumber = ExtractPageNumber(pageDir);
-                        structure.AddPageXml(pageNumber, XDocument.Load(pageXmlPath));
+                        var pageXmlPath = Path.Combine(pageDir, "Content.xml");
+                        if (File.Exists(pageXmlPath))
+                        {
+                            var pageNumber = ExtractPageNumber(pageDir);
+                            structure.AddPageXml(pageNumber, XDocument.Load(pageXmlPath));
+                        }
                     }
                 }
             }
@@ -563,6 +671,63 @@ public class OfdReader : IDisposable
     }
 
     /// <summary>
+    /// 从DocumentRes.xml加载资源映射
+    /// </summary>
+    private void LoadResourceMappingsFromDocumentRes(DocumentStructure structure, XDocument docResXml, string? docBasePath = null)
+    {
+        try
+        {
+            Console.WriteLine("[OfdReader] 开始加载DocumentRes.xml资源映射");
+
+            var ns = XNamespace.Get("http://www.ofdspec.org/2016");
+            var multiMedias = docResXml.Root?.Elements(ns + "MultiMedias")?.Elements(ns + "MultiMedia");
+
+            if (multiMedias == null)
+            {
+                Console.WriteLine("[OfdReader] 未找到MultiMedias节点");
+                return;
+            }
+
+            int mappingCount = 0;
+            foreach (var multiMedia in multiMedias)
+            {
+                var id = multiMedia.Attribute("ID")?.Value;
+                var type = multiMedia.Attribute("Type")?.Value;
+                var mediaFile = multiMedia.Element(ns + "MediaFile");
+
+                if (id != null && mediaFile != null)
+                {
+                    var resourcePath = mediaFile.Value?.Trim();
+                    if (!string.IsNullOrEmpty(resourcePath))
+                    {
+                        // 使用实际的文档基路径构建完整路径
+                        string fullResourcePath;
+                        if (!string.IsNullOrEmpty(docBasePath))
+                        {
+                            var docDirName = Path.GetFileName(docBasePath); // "Doc" or "Doc_0"
+                            fullResourcePath = $"{docDirName}/{resourcePath}";
+                        }
+                        else
+                        {
+                            // 默认使用Doc_0，但也支持Doc
+                            fullResourcePath = resourcePath.StartsWith("Doc") ? resourcePath : $"Doc_0/{resourcePath}";
+                        }
+
+                        structure.AddResourceMapping(id, fullResourcePath);
+                        mappingCount++;
+                        Console.WriteLine($"[OfdReader] 添加资源映射 ID={id}, Type={type}, Path={fullResourcePath}");
+                    }
+                }
+            }
+
+            Console.WriteLine($"[OfdReader] 完成资源映射加载，共加载 {mappingCount} 个资源");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[OfdReader] 加载资源映射失败: {ex.Message}");
+            Console.WriteLine($"[OfdReader] 堆栈跟踪: {ex.StackTrace}");
+        }
+    }    /// <summary>
     /// 加载文档元数据
     /// </summary>
     private DocumentMetadata LoadDocumentMetadata()
@@ -571,24 +736,68 @@ public class OfdReader : IDisposable
 
         try
         {
+            // 从 OFD.xml 中获取基本元数据
+            var ofdXmlPath = Path.Combine(_workDir, "OFD.xml");
+            if (File.Exists(ofdXmlPath))
+            {
+                var ofdXml = XDocument.Load(ofdXmlPath);
+                var ofdNamespace = ofdXml.Root?.Name.Namespace ?? XNamespace.None;
+
+                var docBody = ofdXml.Root?.Element(ofdNamespace + "DocBody");
+                if (docBody != null)
+                {
+                    var docInfo = docBody.Element(ofdNamespace + "DocInfo");
+                    if (docInfo != null)
+                    {
+                        metadata.Title = docInfo.Element(ofdNamespace + "Title")?.Value ?? "";
+                        metadata.Author = docInfo.Element(ofdNamespace + "Author")?.Value ?? "";
+                        metadata.Subject = docInfo.Element(ofdNamespace + "Subject")?.Value ?? "";
+                        metadata.Creator = docInfo.Element(ofdNamespace + "Creator")?.Value ?? "";
+
+                        // 解析创建日期 (OFD格式: D:20201229180641+08'00')
+                        var creationDateStr = docInfo.Element(ofdNamespace + "CreationDate")?.Value;
+                        if (!string.IsNullOrEmpty(creationDateStr))
+                        {
+                            var parsedDate = ParseOfdDate(creationDateStr);
+                            if (parsedDate.HasValue)
+                            {
+                                metadata.CreationDate = parsedDate.Value;
+                            }
+                        }
+
+                        // 解析修改日期
+                        var modDateStr = docInfo.Element(ofdNamespace + "ModDate")?.Value;
+                        if (!string.IsNullOrEmpty(modDateStr))
+                        {
+                            var parsedDate = ParseOfdDate(modDateStr);
+                            if (parsedDate.HasValue)
+                            {
+                                metadata.ModificationDate = parsedDate.Value;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // 从 Document.xml 中获取额外信息
             var docXmlPath = Path.Combine(_workDir, "Doc_0", "Document.xml");
             if (File.Exists(docXmlPath))
             {
                 var docXml = XDocument.Load(docXmlPath);
-                var commonData = docXml.Root?.Element("CommonData");
+                var docNamespace = docXml.Root?.Name.Namespace ?? XNamespace.None;
+                var commonData = docXml.Root?.Element(docNamespace + "CommonData");
 
                 if (commonData != null)
                 {
-                    metadata.Title = commonData.Element("Title")?.Value ?? "";
-                    metadata.Author = commonData.Element("Author")?.Value ?? "";
-                    metadata.Subject = commonData.Element("Subject")?.Value ?? "";
-                    metadata.Creator = commonData.Element("Creator")?.Value ?? "";
-
-                    if (DateTime.TryParse(commonData.Element("CreationDate")?.Value, out var creationDate))
-                        metadata.CreationDate = creationDate;
-
-                    if (DateTime.TryParse(commonData.Element("ModDate")?.Value, out var modDate))
-                        metadata.ModificationDate = modDate;
+                    // 获取额外信息，如果 OFD.xml 中没有的话
+                    if (string.IsNullOrEmpty(metadata.Title))
+                    {
+                        metadata.Title = commonData.Element(docNamespace + "Title")?.Value ?? "";
+                    }
+                    if (string.IsNullOrEmpty(metadata.Author))
+                    {
+                        metadata.Author = commonData.Element(docNamespace + "Author")?.Value ?? "";
+                    }
                 }
             }
 
@@ -607,13 +816,66 @@ public class OfdReader : IDisposable
     }
 
     /// <summary>
+    /// 解析OFD日期格式 (D:20201229180641+08'00')
+    /// </summary>
+    private DateTime? ParseOfdDate(string ofdDateStr)
+    {
+        try
+        {
+            // OFD日期格式: D:YYYYMMDDHHMMSS+TZ'ZZ'
+            if (ofdDateStr.StartsWith("D:"))
+            {
+                // 移除 "D:" 前缀
+                var dateStr = ofdDateStr.Substring(2);
+
+                // 找到时区部分
+                var tzIndex = dateStr.IndexOfAny(new[] { '+', '-' });
+                if (tzIndex > 0)
+                {
+                    var dateOnly = dateStr.Substring(0, tzIndex);
+
+                    // 解析基本日期部分 YYYYMMDDHHMMSS
+                    if (dateOnly.Length >= 14)
+                    {
+                        var year = int.Parse(dateOnly.Substring(0, 4));
+                        var month = int.Parse(dateOnly.Substring(4, 2));
+                        var day = int.Parse(dateOnly.Substring(6, 2));
+                        var hour = int.Parse(dateOnly.Substring(8, 2));
+                        var minute = int.Parse(dateOnly.Substring(10, 2));
+                        var second = int.Parse(dateOnly.Substring(12, 2));
+
+                        return new DateTime(year, month, day, hour, minute, second);
+                    }
+                }
+            }
+
+            // 如果上面的解析失败，尝试直接解析
+            return DateTime.TryParse(ofdDateStr, out var result) ? result : null;
+        }
+        catch
+        {
+            return null;
+        }
+    }
+
+    /// <summary>
     /// 创建资源管理器
     /// </summary>
     private IResourceManager CreateResourceManager()
     {
         // TODO: 在T038中实现完整的资源管理器
         // 这里返回一个基于现有ResourceLocator的简单实现
-        return new BasicResourceManager(_resourceLocator);
+        try
+        {
+            // 尝试加载DocumentStructure以获取资源映射
+            var documentStructure = LoadDocumentStructure();
+            return new BasicResourceManager(_resourceLocator, documentStructure);
+        }
+        catch
+        {
+            // 如果无法加载DocumentStructure，则使用没有映射的BasicResourceManager
+            return new BasicResourceManager(_resourceLocator);
+        }
     }
 
     /// <summary>

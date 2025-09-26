@@ -48,6 +48,24 @@ namespace OfdrwNet.Reader
         public Stream Stream { get; set; }
         public string Directory { get; set; }
 
+        /// <summary>
+        /// 源类型 (与Type兼容)
+        /// </summary>
+        public DocumentSourceType SourceType
+        {
+            get => Type;
+            set => Type = value;
+        }
+
+        /// <summary>
+        /// 目录路径 (与Directory兼容)
+        /// </summary>
+        public string DirectoryPath
+        {
+            get => Directory;
+            set => Directory = value;
+        }
+
         public static DocumentSource FromFile(string filePath)
         {
             return new DocumentSource
@@ -82,6 +100,7 @@ namespace OfdrwNet.Reader
     public enum DocumentSourceType
     {
         File,
+        FilePath,
         Stream,
         Directory
     }
@@ -96,6 +115,26 @@ namespace OfdrwNet.Reader
         public bool ValidateOnLoad { get; set; } = true;
         public bool PreloadFirstPage { get; set; } = true;
         public TimeSpan LoadTimeout { get; set; } = TimeSpan.FromSeconds(30);
+
+        /// <summary>
+        /// 是否验证文档结构
+        /// </summary>
+        public bool ValidateStructure { get; set; } = true;
+
+        /// <summary>
+        /// 是否加载图像资源
+        /// </summary>
+        public bool LoadImages { get; set; } = true;
+
+        /// <summary>
+        /// 是否预加载页面
+        /// </summary>
+        public bool PreloadPages { get; set; } = false;
+
+        /// <summary>
+        /// 预加载页面数量
+        /// </summary>
+        public int PreloadPageCount { get; set; } = 0;
     }
 
     /// <summary>

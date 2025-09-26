@@ -13,6 +13,7 @@ namespace OfdrwNet.Reader
     {
         private readonly ResourceLocator _resourceLocator;
         private readonly Dictionary<string, object> _cache = new Dictionary<string, object>();
+        private readonly DocumentStructure? _documentStructure;
 
         /// <summary>
         /// 资源加载完成事件
@@ -23,9 +24,11 @@ namespace OfdrwNet.Reader
         /// 构造函数
         /// </summary>
         /// <param name="resourceLocator">资源定位器</param>
-        public BasicResourceManager(ResourceLocator resourceLocator)
+        /// <param name="documentStructure">文档结构（可选，用于资源映射）</param>
+        public BasicResourceManager(ResourceLocator resourceLocator, DocumentStructure? documentStructure = null)
         {
             _resourceLocator = resourceLocator ?? throw new ArgumentNullException(nameof(resourceLocator));
+            _documentStructure = documentStructure;
         }
 
         /// <summary>
@@ -60,8 +63,39 @@ namespace OfdrwNet.Reader
         }
 
         /// <summary>
-        /// 获取图像资源
+        /// 尝试从字体ID解析字体信息
         /// </summary>
+        private bool TryParseFontFromId(string fontId, out string fontName, out float fontSize, out FontStyle fontStyle)
+        {
+            fontName = "SimSun";
+            fontSize = 12f;
+            fontStyle = FontStyle.Regular;
+
+            if (string.IsNullOrEmpty(fontId))
+                return false;
+
+            try
+            {
+                // 尝试从常见的OFD字体映射
+                fontName = fontId.ToLower() switch
+                {
+                    var id when id.Contains("simsun") || id.Contains("宋体") => "SimSun",
+                    var id when id.Contains("simhei") || id.Contains("黑体") => "SimHei",
+                    var id when id.Contains("kaiti") || id.Contains("楷体") => "KaiTi",
+                    var id when id.Contains("fangsong") || id.Contains("仿宋") => "FangSong",
+                    var id when id.Contains("arial") => "Arial",
+                    var id when id.Contains("times") => "Times New Roman",
+                    var id when id.Contains("courier") => "Courier New",
+                    _ => "SimSun" // 默认中文字体
+                };
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
         /// <param name="imageId">图像ID</param>
         /// <returns>图像对象</returns>
         public async Task<Image> GetImageAsync(string imageId)
@@ -73,20 +107,321 @@ namespace OfdrwNet.Reader
                     return image;
                 }
 
-                // TODO: 实际从资源定位器加载图像
-                var newImage = new Bitmap(100, 100);
-                _cache[$"image:{imageId}"] = newImage;
-
-                ResourceLoaded?.Invoke(this, new ResourceLoadedEventArgs
+                try
                 {
-                    ResourceId = imageId,
-                    ResourceType = ResourceType.Image,
-                    Size = 10240, // 估算大小
-                    LoadDuration = TimeSpan.FromMilliseconds(50),
-                    FromCache = false
-                });
+                    // 首先尝试通过DocumentStructure的ResourceMappings查找
+                    if (_documentStructure != null)
+                    {
+                        var resourcePath = _documentStructure.GetResourcePath(imageId);
+                        if (!string.IsNullOrEmpty(resourcePath))
+                        {
+                            try
+                            {
+                                // 保存当前状态，然后尝试访问资源
+                                _resourceLocator.Save();
 
-                return newImage;
+                                System.Diagnostics.Trace.WriteLine($"[ResourceManager] 开始加载图像资源 ID={imageId}，映射路径={resourcePath}");
+                                System.Diagnostics.Trace.WriteLine($"[ResourceManager] ResourceLocator当前工作目录={_resourceLocator.Pwd()}");
+
+                                // ========== 路径策略重写 ==========
+                                // resourcePath 可能是："Doc/Image_4.png" 或 直接 "Image_4.png" 或 生成端记录的其他形式。
+                                // 实际解压根目录：Temp/<guid>/ ，真实文件多位于 Doc/Res/ 或 Doc_x/Res/
+                                // 目标：根据当前根目录扫描可用 Doc/ / Doc_x/ 及 Res 目录，构建最可能命中的候选顺序。
+
+                                var containerRoot = _resourceLocator.GetContainer(".");
+                                var rootSysPath = containerRoot.GetSysAbsPath(); // C:\Users\...\Temp\<guid>
+                                var fileNameOnly = Path.GetFileName(resourcePath).Replace("\\", "");
+                                var lowerFile = fileNameOnly.ToLowerInvariant();
+
+                                System.Diagnostics.Trace.WriteLine($"[ResourceManager] 根目录: {rootSysPath}");
+                                System.Diagnostics.Trace.WriteLine($"[ResourceManager] 目标文件名: {fileNameOnly}");
+
+                                // 统一扩展尝试（优先保持原扩展）
+                                string[] extPriority;
+                                var ext = Path.GetExtension(fileNameOnly);
+                                if (!string.IsNullOrEmpty(ext))
+                                {
+                                    extPriority = new[] { ext.ToLowerInvariant(), ".png", ".jpg", ".jpeg" };
+                                }
+                                else
+                                {
+                                    extPriority = new[] { ".png", ".jpg", ".jpeg" };
+                                }
+
+                                // 构建文档目录集合: Doc/, Doc_x/ (扫描), 以及根（无前缀）
+                                var docDirs = new List<string>();
+                                if (Directory.Exists(Path.Combine(rootSysPath, "Doc"))) docDirs.Add("Doc");
+                                try
+                                {
+                                    foreach (var d in Directory.GetDirectories(rootSysPath, "Doc_*", SearchOption.TopDirectoryOnly))
+                                    {
+                                        var name = Path.GetFileName(d);
+                                        if (!string.IsNullOrEmpty(name) && !docDirs.Contains(name)) docDirs.Add(name);
+                                    }
+                                }
+                                catch { /* ignore scan errors */ }
+                                // 若没有任何 Doc 目录，仍保留一个空前缀用于直接 root 查找
+                                if (docDirs.Count == 0) docDirs.Add(string.Empty);
+
+                                // 判断 resourcePath 是否已经包含 Res/ 或 Doc_/Res/ 结构
+                                bool pathSeemsInRes = resourcePath.Contains("/Res/") || resourcePath.Contains("\\Res\\", StringComparison.OrdinalIgnoreCase);
+                                var baseNameNoExt = Path.GetFileNameWithoutExtension(fileNameOnly);
+
+                                var candidateOrder = new List<string>();
+                                var candidateSeen = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+                                void AddCandidate(string rel)
+                                {
+                                    if (string.IsNullOrWhiteSpace(rel)) return;
+                                    rel = rel.Replace('\\', '/');
+                                    if (candidateSeen.Add(rel)) candidateOrder.Add(rel);
+                                }
+
+                                // 1. 原始 resourcePath（若不是绝对路径，将作为相对尝试）
+                                if (!Path.IsPathRooted(resourcePath)) AddCandidate(resourcePath);
+                                else
+                                {
+                                    // 若是绝对路径且位于 root 下，转换为相对
+                                    if (resourcePath.StartsWith(rootSysPath, StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        var rel = resourcePath.Substring(rootSysPath.Length).TrimStart(Path.DirectorySeparatorChar, '/');
+                                        AddCandidate(rel);
+                                    }
+                                }
+
+                                // 2. 针对每个 Doc 目录构建 Res 与直接层级
+                                foreach (var doc in docDirs)
+                                {
+                                    var prefix = string.IsNullOrEmpty(doc) ? string.Empty : doc + "/";
+                                    foreach (var eExt in extPriority)
+                                    {
+                                        // Doc/Res/Image_4.png
+                                        AddCandidate(prefix + "Res/" + baseNameNoExt + eExt);
+                                        // Doc/Image_4.png   (有些写入器可能直接放 Doc/ 下)
+                                        AddCandidate(prefix + fileNameOnly);
+                                    }
+                                }
+
+                                // 3. 根级 Res/ 或直接根
+                                foreach (var eExt in extPriority)
+                                {
+                                    AddCandidate("Res/" + baseNameNoExt + eExt);
+                                    AddCandidate(baseNameNoExt + eExt);
+                                }
+
+                                // 4. 如果 resourcePath 中本身含 Doc_0/Image_X.png 形式，直接映射到 Doc/Res 同名
+                                if (resourcePath.StartsWith("Doc_", StringComparison.OrdinalIgnoreCase) && !pathSeemsInRes)
+                                {
+                                    foreach (var eExt in extPriority)
+                                    {
+                                        AddCandidate("Doc/Res/" + baseNameNoExt + eExt);
+                                    }
+                                }
+
+                                var pathsToTry = candidateOrder.ToArray();
+                                System.Diagnostics.Trace.WriteLine($"[ResourceManager] 生成候选路径 {pathsToTry.Length} 个，示例前3：{string.Join(',', pathsToTry.Take(3))} ...");
+                                // ========== 路径策略结束 ==========
+
+                                string? actualFilePath = null;
+
+                                foreach (var pathToTry in pathsToTry)
+                                {
+                                    try
+                                    {
+                                        System.Diagnostics.Trace.WriteLine($"[ResourceManager] 尝试路径：{pathToTry}");
+                                        actualFilePath = _resourceLocator.GetFile(pathToTry);
+                                        if (actualFilePath != null)
+                                        {
+                                            System.Diagnostics.Trace.WriteLine($"[ResourceManager] 找到文件：{actualFilePath}");
+                                            break;
+                                        }
+                                    }
+                                    catch (FileNotFoundException)
+                                    {
+                                        System.Diagnostics.Trace.WriteLine($"[ResourceManager] 路径不存在：{pathToTry}");
+                                        // 继续尝试下一个路径
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        System.Diagnostics.Trace.WriteLine($"[ResourceManager] 路径查找异常 {pathToTry}: {ex.Message}");
+                                    }
+                                }
+
+                                if (!string.IsNullOrEmpty(actualFilePath) && File.Exists(actualFilePath))
+                                {
+                                    var imageData = File.ReadAllBytes(actualFilePath);
+                                    using var stream = new System.IO.MemoryStream(imageData);
+                                    var resourceImage = Image.FromStream(stream);
+
+                                    _cache[$"image:{imageId}"] = resourceImage;
+                                    System.Diagnostics.Trace.WriteLine($"[ResourceManager] 成功加载图像资源 ID={imageId}，实际路径={actualFilePath}，尺寸={resourceImage.Width}x{resourceImage.Height}");
+
+                                    ResourceLoaded?.Invoke(this, new ResourceLoadedEventArgs
+                                    {
+                                        ResourceId = imageId,
+                                        ResourceType = ResourceType.Image,
+                                        Size = imageData.Length,
+                                        LoadDuration = TimeSpan.FromMilliseconds(10),
+                                        FromCache = false
+                                    });
+
+                                    return resourceImage;
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                System.Diagnostics.Trace.WriteLine($"[ResourceManager] 通过ResourceMappings加载图像失败 ID={imageId}，路径={resourcePath}，错误：{ex.Message}");
+                                System.Diagnostics.Trace.WriteLine($"[ResourceManager] 异常详情: {ex}");
+                            }
+                            finally
+                            {
+                                _resourceLocator.Restore();
+                            }
+                        }
+                        else
+                        {
+                            System.Diagnostics.Trace.WriteLine($"[ResourceManager] 未ResourceMappings中找到图像资源 ID={imageId}");
+                        }
+                    }
+
+                    // 回退到原有的文件系统路径查找逻辑
+                    _resourceLocator.Save();
+
+                    // 尝试多种可能的路径
+                    // 追加 Doc_? 目录支持（常见结构 Doc_0/Res/Image_xxx.PNG）
+                    var docPrefixes = new List<string>{""};
+                    try
+                    {
+                        // 粗略扫描根目录下 Doc_* 目录名（不触发异常就好），失败忽略
+                        var rootContainer = _resourceLocator.GetContainer(".");
+                        var rootSys = rootContainer.GetSysAbsPath();
+                        foreach (var dir in System.IO.Directory.GetDirectories(rootSys, "Doc_*", System.IO.SearchOption.TopDirectoryOnly))
+                        {
+                            var name = System.IO.Path.GetFileName(dir);
+                            if (!string.IsNullOrEmpty(name) && !docPrefixes.Contains(name+"/")) docPrefixes.Add(name+"/");
+                        }
+                    }
+                    catch { /* 忽略扫描失败 */ }
+
+                    var possiblePathsList = new List<string>();
+                    foreach (var prefix in docPrefixes)
+                    {
+                        // prefix could be "" or "Doc_0/"
+                        possiblePathsList.Add(prefix + $"Res/Image_{imageId}.png");
+                        possiblePathsList.Add(prefix + $"Res/Image_{imageId}.jpg");
+                        possiblePathsList.Add(prefix + $"Res/Image_{imageId}.jpeg");
+                        possiblePathsList.Add(prefix + $"Image_{imageId}.png");
+                        possiblePathsList.Add(prefix + $"Image_{imageId}.jpg");
+                        possiblePathsList.Add(prefix + $"Resources/Image_{imageId}.png");
+                        possiblePathsList.Add(prefix + $"Resources/Image_{imageId}.jpg");
+                    }
+                    var possiblePaths = possiblePathsList.ToArray();
+
+                    Image? newImage = null;
+                    string? usedPath = null;
+
+                    foreach (var path in possiblePaths)
+                    {
+                        try
+                        {
+                            // 简化：直接构建路径访问
+                            var container = _resourceLocator.GetContainer(".");
+                            var fullPath = Path.Combine(container.GetSysAbsPath(), path);
+
+                            if (File.Exists(fullPath))
+                            {
+                                var imageData = File.ReadAllBytes(fullPath);
+                                using var stream = new System.IO.MemoryStream(imageData);
+                                newImage = Image.FromStream(stream);
+                                usedPath = path;
+                                System.Diagnostics.Trace.WriteLine($"[ResourceManager] ID={imageId} 在路径 {path} 找到文件，尺寸={newImage.Width}x{newImage.Height}");
+                                break;
+                            }
+                            else
+                            {
+                                System.Diagnostics.Trace.WriteLine($"[ResourceManager] 路径不存在: {path}");
+                            }
+                        }
+                        catch { /* 继续尝试下一个路径 */ }
+                    }
+
+                    if (newImage == null)
+                    {
+                        // 追加策略：利用 VirtualContainer 深度搜索能力，通过 ResourceLocator.GetFile("Image_{id}.ext")
+                        // 这将触发我们在 VirtualContainer 中添加的 [Packaging-Fallback-Deep] 逻辑，从而获得真实路径 Doc_0/Res/Image_xx.PNG
+                        var fallbackFileNames = new string[]
+                        {
+                            $"Image_{imageId}.png",
+                            $"Image_{imageId}.jpg",
+                            $"Image_{imageId}.jpeg",
+                            $"Image_{imageId}.PNG",
+                            $"Image_{imageId}.JPG",
+                            $"Image_{imageId}.JPEG"
+                        };
+                        foreach (var fn in fallbackFileNames)
+                        {
+                            try
+                            {
+                                _resourceLocator.Save();
+                                string located = _resourceLocator.GetFile(fn); // 若成功将自动返回绝对路径
+                                if (System.IO.File.Exists(located))
+                                {
+                                    var imageData = System.IO.File.ReadAllBytes(located);
+                                    using var stream = new System.IO.MemoryStream(imageData);
+                                    newImage = Image.FromStream(stream);
+                                    usedPath = fn;
+                                    System.Diagnostics.Trace.WriteLine($"[ResourceManager] ID={imageId} 通过文件名搜索找到 => {located}");
+                                    break;
+                                }
+                            }
+                            catch (System.IO.FileNotFoundException)
+                            {
+                                // 继续尝试下一个
+                            }
+                            catch (Exception ex)
+                            {
+                                System.Diagnostics.Trace.WriteLine($"[ResourceManager] 解析失败 ID={imageId} fn={fn} err={ex.Message}");
+                            }
+                            finally
+                            {
+                                _resourceLocator.Restore();
+                            }
+                        }
+                    }
+
+                    if (newImage == null)
+                    {
+                        // 创建一个占位图像，避免返回null导致崩溃
+                        newImage = new Bitmap(50, 20);
+                        using (var g = Graphics.FromImage(newImage))
+                        {
+                            g.Clear(Color.LightGray);
+                            g.DrawString($"IMG{imageId}", new Font("Arial", 8), Brushes.Red, 2, 2);
+                        }
+                        System.Diagnostics.Trace.WriteLine($"[ResourceManager] 未找到图像资源 ID={imageId}，使用占位图");
+                    }
+                    else
+                    {
+                        System.Diagnostics.Trace.WriteLine($"[ResourceManager] 成功加载图像: ID={imageId}, Path={usedPath}, Size={newImage.Width}x{newImage.Height}");
+                    }
+
+                    _cache[$"image:{imageId}"] = newImage;
+
+                    ResourceLoaded?.Invoke(this, new ResourceLoadedEventArgs
+                    {
+                        ResourceId = imageId,
+                        ResourceType = ResourceType.Image,
+                        Size = newImage.Width * newImage.Height * 4, // 估算大小
+                        LoadDuration = TimeSpan.FromMilliseconds(50),
+                        FromCache = false
+                    });
+
+                    return newImage;
+                }
+                finally
+                {
+                    _resourceLocator.Restore();
+                }
             });
         }
 

@@ -9,10 +9,10 @@ using System.Text.Json.Serialization;
 namespace OfdrwNet.Reader.Rendering
 {
     /// <summary>
-    /// 渲染配置管理器
+    /// 渲染配置管理�?
     /// 管理渲染参数、质量设置和性能选项
     /// </summary>
-    public class RenderConfigurationManager
+    public class RenderingConfigurationManager
     {
         private readonly Dictionary<string, RenderProfile> _profiles;
         private RenderProfile _currentProfile;
@@ -20,7 +20,7 @@ namespace OfdrwNet.Reader.Rendering
         /// <summary>
         /// 当前渲染配置
         /// </summary>
-        public RenderConfiguration CurrentConfiguration => _currentProfile.Configuration;
+        public RenderingConfiguration CurrentConfiguration => _currentProfile.Configuration;
 
         /// <summary>
         /// 当前配置文件名称
@@ -33,9 +33,9 @@ namespace OfdrwNet.Reader.Rendering
         public IEnumerable<string> AvailableProfiles => _profiles.Keys;
 
         /// <summary>
-        /// 构造函数
+        /// 构造函�?
         /// </summary>
-        public RenderConfigurationManager()
+        public RenderingConfigurationManager()
         {
             _profiles = new Dictionary<string, RenderProfile>();
             InitializeDefaultProfiles();
@@ -58,12 +58,12 @@ namespace OfdrwNet.Reader.Rendering
         }
 
         /// <summary>
-        /// 添加自定义配置文件
+        /// 添加自定义配置文�?
         /// </summary>
         /// <param name="name">配置文件名称</param>
         /// <param name="configuration">渲染配置</param>
         /// <param name="description">描述</param>
-        public void AddProfile(string name, RenderConfiguration configuration, string description = "")
+        public void AddProfile(string name, RenderingConfiguration configuration, string description = "")
         {
             _profiles[name] = new RenderProfile
             {
@@ -102,16 +102,16 @@ namespace OfdrwNet.Reader.Rendering
         /// 克隆当前配置
         /// </summary>
         /// <returns>配置副本</returns>
-        public RenderConfiguration CloneCurrentConfiguration()
+        public RenderingConfiguration CloneCurrentConfiguration()
         {
             return _currentProfile.Configuration.Clone();
         }
 
         /// <summary>
-        /// 更新当前配置的特定属性
+        /// 更新当前配置的特定属�?
         /// </summary>
         /// <param name="updater">配置更新委托</param>
-        public void UpdateCurrentConfiguration(Action<RenderConfiguration> updater)
+        public void UpdateCurrentConfiguration(Action<RenderingConfiguration> updater)
         {
             updater?.Invoke(_currentProfile.Configuration);
         }
@@ -120,11 +120,11 @@ namespace OfdrwNet.Reader.Rendering
         /// 保存配置文件到JSON
         /// </summary>
         /// <param name="profileName">配置文件名称</param>
-        /// <returns>JSON字符串</returns>
+        /// <returns>JSON字符�?/returns>
         public string SaveProfileToJson(string profileName)
         {
             if (!_profiles.TryGetValue(profileName, out var profile))
-                throw new ArgumentException($"配置文件不存在: {profileName}");
+                throw new ArgumentException($"配置文件不存�? {profileName}");
 
             var options = new JsonSerializerOptions
             {
@@ -138,7 +138,7 @@ namespace OfdrwNet.Reader.Rendering
         /// <summary>
         /// 从JSON加载配置文件
         /// </summary>
-        /// <param name="json">JSON字符串</param>
+        /// <param name="json">JSON字符�?/param>
         /// <param name="profileName">配置文件名称</param>
         /// <returns>是否加载成功</returns>
         public bool LoadProfileFromJson(string json, string profileName)
@@ -167,7 +167,7 @@ namespace OfdrwNet.Reader.Rendering
         }
 
         /// <summary>
-        /// 重置为默认配置
+        /// 重置为默认配�?
         /// </summary>
         public void ResetToDefault()
         {
@@ -177,7 +177,7 @@ namespace OfdrwNet.Reader.Rendering
         // 私有方法
 
         /// <summary>
-        /// 初始化默认配置文件
+        /// 初始化默认配置文�?
         /// </summary>
         private void InitializeDefaultProfiles()
         {
@@ -186,9 +186,9 @@ namespace OfdrwNet.Reader.Rendering
             {
                 Name = "Default",
                 Description = "平衡的质量和性能设置",
-                Configuration = new RenderConfiguration
+                Configuration = new RenderingConfiguration
                 {
-                    Quality = RenderQuality.Medium,
+                    Quality = RenderQualityLevel.Medium,
                     SmoothingMode = SmoothingMode.HighQuality,
                     TextRenderingHint = TextRenderingHint.AntiAlias,
                     InterpolationMode = InterpolationMode.HighQualityBilinear,
@@ -203,14 +203,14 @@ namespace OfdrwNet.Reader.Rendering
                 }
             };
 
-            // 高质量配置
+            // 高质量配�?
             _profiles["HighQuality"] = new RenderProfile
             {
                 Name = "HighQuality",
                 Description = "最高质量渲染设置",
-                Configuration = new RenderConfiguration
+                Configuration = new RenderingConfiguration
                 {
-                    Quality = RenderQuality.High,
+                    Quality = RenderQualityLevel.High,
                     SmoothingMode = SmoothingMode.HighQuality,
                     TextRenderingHint = TextRenderingHint.ClearTypeGridFit,
                     InterpolationMode = InterpolationMode.HighQualityBicubic,
@@ -225,14 +225,14 @@ namespace OfdrwNet.Reader.Rendering
                 }
             };
 
-            // 快速配置
+            // 快速配�?
             _profiles["Fast"] = new RenderProfile
             {
                 Name = "Fast",
                 Description = "快速渲染设置，优先考虑性能",
-                Configuration = new RenderConfiguration
+                Configuration = new RenderingConfiguration
                 {
-                    Quality = RenderQuality.Low,
+                    Quality = RenderQualityLevel.Low,
                     SmoothingMode = SmoothingMode.HighSpeed,
                     TextRenderingHint = TextRenderingHint.SingleBitPerPixel,
                     InterpolationMode = InterpolationMode.Low,
@@ -252,9 +252,9 @@ namespace OfdrwNet.Reader.Rendering
             {
                 Name = "Print",
                 Description = "打印优化配置",
-                Configuration = new RenderConfiguration
+                Configuration = new RenderingConfiguration
                 {
-                    Quality = RenderQuality.High,
+                    Quality = RenderQualityLevel.High,
                     SmoothingMode = SmoothingMode.HighQuality,
                     TextRenderingHint = TextRenderingHint.ClearTypeGridFit,
                     InterpolationMode = InterpolationMode.HighQualityBicubic,
@@ -283,22 +283,22 @@ namespace OfdrwNet.Reader.Rendering
         public string Description { get; set; } = "";
 
         /// <summary>渲染配置</summary>
-        public RenderConfiguration Configuration { get; set; } = new RenderConfiguration();
+        public RenderingConfiguration Configuration { get; set; } = new RenderingConfiguration();
 
         /// <summary>创建时间</summary>
         public DateTime CreatedAt { get; set; } = DateTime.Now;
 
-        /// <summary>最后修改时间</summary>
+        /// <summary>最后修改时�?/summary>
         public DateTime ModifiedAt { get; set; } = DateTime.Now;
     }
 
     /// <summary>
     /// 渲染配置
     /// </summary>
-    public class RenderConfiguration
+    public class RenderingConfiguration
     {
         /// <summary>整体渲染质量</summary>
-        public RenderQuality Quality { get; set; } = RenderQuality.Medium;
+        public RenderQualityLevel Quality { get; set; } = RenderQualityLevel.Medium;
 
         /// <summary>平滑模式</summary>
         [JsonConverter(typeof(JsonStringEnumConverter))]
@@ -308,7 +308,7 @@ namespace OfdrwNet.Reader.Rendering
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public TextRenderingHint TextRenderingHint { get; set; } = TextRenderingHint.AntiAlias;
 
-        /// <summary>插值模式</summary>
+        /// <summary>插值模�?/summary>
         [JsonConverter(typeof(JsonStringEnumConverter))]
         public InterpolationMode InterpolationMode { get; set; } = InterpolationMode.HighQualityBilinear;
 
@@ -322,7 +322,7 @@ namespace OfdrwNet.Reader.Rendering
         /// <summary>是否启用缓存</summary>
         public bool EnableCaching { get; set; } = true;
 
-        /// <summary>缓存大小（MB）</summary>
+        /// <summary>缓存大小（MB�?/summary>
         public int CacheSize { get; set; } = 100;
 
         /// <summary>是否启用并行渲染</summary>
@@ -337,16 +337,16 @@ namespace OfdrwNet.Reader.Rendering
         /// <summary>内存优化级别</summary>
         public MemoryOptimizationLevel MemoryOptimization { get; set; } = MemoryOptimizationLevel.Balanced;
 
-        /// <summary>自定义属性</summary>
+        /// <summary>自定义属�?/summary>
         public Dictionary<string, object> CustomProperties { get; set; } = new Dictionary<string, object>();
 
         /// <summary>
         /// 克隆配置
         /// </summary>
         /// <returns>配置副本</returns>
-        public RenderConfiguration Clone()
+        public RenderingConfiguration Clone()
         {
-            return new RenderConfiguration
+            return new RenderingConfiguration
             {
                 Quality = Quality,
                 SmoothingMode = SmoothingMode,
@@ -367,7 +367,7 @@ namespace OfdrwNet.Reader.Rendering
         /// <summary>
         /// 应用到渲染上下文
         /// </summary>
-        /// <param name="context">渲染上下文</param>
+        /// <param name="context">渲染上下�?/param>
         public void ApplyTo(Model.RenderContext context)
         {
             context.SmoothingMode = SmoothingMode;
@@ -377,7 +377,7 @@ namespace OfdrwNet.Reader.Rendering
             context.CompositingQuality = CompositingQuality;
             context.ImageQuality = ImageQuality;
 
-            // 设置自定义属性
+            // 设置自定义属�?
             foreach (var property in CustomProperties)
             {
                 context.Properties[property.Key] = property.Value;
@@ -388,17 +388,17 @@ namespace OfdrwNet.Reader.Rendering
     /// <summary>
     /// 整体渲染质量枚举
     /// </summary>
-    public enum RenderQuality
+    public enum RenderQualityLevel
     {
         /// <summary>草图质量</summary>
         Draft,
-        /// <summary>低质量</summary>
+        /// <summary>低质�?/summary>
         Low,
         /// <summary>中等质量</summary>
         Medium,
-        /// <summary>高质量</summary>
+        /// <summary>高质�?/summary>
         High,
-        /// <summary>最高质量</summary>
+        /// <summary>最高质�?/summary>
         Highest
     }
 
@@ -409,7 +409,7 @@ namespace OfdrwNet.Reader.Rendering
     {
         /// <summary>优先内存使用</summary>
         Memory,
-        /// <summary>平衡内存和质量</summary>
+        /// <summary>平衡内存和质�?/summary>
         Balanced,
         /// <summary>优先质量</summary>
         Quality

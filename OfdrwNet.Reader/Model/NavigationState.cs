@@ -20,6 +20,15 @@ namespace OfdrwNet.Reader.Model
         public int CurrentPageIndex { get; set; }
 
         /// <summary>
+        /// 当前页面号（从1开始，与CurrentPageIndex兼容）
+        /// </summary>
+        public int CurrentPage
+        {
+            get => CurrentPageIndex + 1;
+            set => CurrentPageIndex = Math.Max(0, value - 1);
+        }
+
+        /// <summary>
         /// 总页数
         /// </summary>
         public int TotalPages { get; set; }
@@ -229,6 +238,34 @@ namespace OfdrwNet.Reader.Model
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             };
             return JsonSerializer.Serialize(this, options);
+        }
+
+        /// <summary>
+        /// 序列化状态（与ToJson相同，提供兼容性）
+        /// </summary>
+        /// <returns>序列化的状态字符串</returns>
+        public string SerializeState()
+        {
+            return ToJson();
+        }
+
+        /// <summary>
+        /// 恢复状态（与FromJson相同，提供兼容性）
+        /// </summary>
+        /// <param name="stateData">状态数据</param>
+        public void RestoreState(string stateData)
+        {
+            var restoredState = FromJson(stateData);
+            if (restoredState != null)
+            {
+                CurrentPageIndex = restoredState.CurrentPageIndex;
+                TotalPages = restoredState.TotalPages;
+                ZoomLevel = restoredState.ZoomLevel;
+                ViewportPosition = restoredState.ViewportPosition;
+                History = restoredState.History;
+                Bookmarks = restoredState.Bookmarks;
+                LastModified = DateTime.UtcNow;
+            }
         }
 
         /// <summary>

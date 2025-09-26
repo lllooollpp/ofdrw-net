@@ -1,6 +1,8 @@
 using System.CommandLine;
 using Microsoft.Extensions.Logging;
 using OfdrwNet.Converter;
+using OfdrwNet.Reader;
+using System.IO.Compression;
 
 namespace OfdrwNet.Cli;
 
@@ -82,6 +84,10 @@ class Program
 
         // 将convert命令添加到根命令
         rootCommand.AddCommand(convertCommand);
+
+        // 创建debug子命令
+        var debugCommand = CreateDebugCommand();
+        rootCommand.AddCommand(debugCommand);
 
         // 解析并执行命令
         return await rootCommand.InvokeAsync(args);
@@ -193,5 +199,275 @@ class Program
         }
 
         return $"{number:n1} {suffixes[counter]}";
+    }
+
+    /// <summary>
+    /// 创建debug命令
+    /// </summary>
+    private static Command CreateDebugCommand()
+    {
+        var debugCommand = new Command("debug", "调试OFD文件加载和渲染问题");
+
+        var inputFileOption = new Option<FileInfo>(
+            new[] { "--file", "-f" },
+            "要调试的OFD文件路径")
+        {
+            IsRequired = true
+        };
+
+        var verboseOption = new Option<bool>(
+            new[] { "--verbose", "-v" },
+            "启用详细日志输出");
+
+        debugCommand.AddOption(inputFileOption);
+        debugCommand.AddOption(verboseOption);
+
+        debugCommand.SetHandler(async (inputFile, verbose) =>
+        {
+            await DebugOfdFile(inputFile, verbose);
+        }, inputFileOption, verboseOption);
+
+        return debugCommand;
+    }
+
+    /// <summary>
+    /// 调试OFD文件
+    /// </summary>
+    private static async Task DebugOfdFile(FileInfo inputFile, bool verbose)
+    {
+        // 设置日志级别
+        var loggerFactory = LoggerFactory.Create(builder =>
+        {
+            builder.AddConsole();
+            builder.SetMinimumLevel(verbose ? Microsoft.Extensions.Logging.LogLevel.Debug : Microsoft.Extensions.Logging.LogLevel.Information);
+        });
+
+        var logger = loggerFactory.CreateLogger("OFDDebug");
+
+        try
+        {
+            Console.WriteLine($"=== 调试OFD文件: {inputFile.Name} ===");
+            Console.WriteLine();
+
+            // 检查文件是否存在
+            if (!inputFile.Exists)
+            {
+                Console.WriteLine($"❌ 文件不存在: {inputFile.FullName}");
+                return;
+            }
+
+            Console.WriteLine($"✅ 文件存在，大小: {FormatFileSize(inputFile.Length)}");
+
+            // 检查文件是否为有效的ZIP文件
+            try
+            {
+                using (var zipArchive = ZipFile.OpenRead(inputFile.FullName))
+                {
+                    Console.WriteLine($"✅ OFD文件结构有效，包含 {zipArchive.Entries.Count} 个条目");
+
+                    // 显示文件结构
+                    Console.WriteLine();
+                    Console.WriteLine("📁 文件结构:");
+                    foreach (var entry in zipArchive.Entries.OrderBy(e => e.FullName))
+                    {
+                        Console.WriteLine($"   {entry.FullName} ({FormatFileSize(entry.Length)})");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"❌ OFD文件结构无效: {ex.Message}");
+                return;
+            }
+
+            Console.WriteLine();
+
+            // 尝试使用OfdReader读取文件
+            Console.WriteLine("📖 使用OfdReader加载文档...");
+            try
+            {
+                using (var reader = new OfdReader(inputFile.FullName))
+                {
+                    Console.WriteLine("✅ OfdReader创建成功");
+
+                    // 获取文档信息
+                    var docInfo = await reader.GetDocumentInfoAsync();
+                    Console.WriteLine($"✅ 文档元数据加载成功");
+                    Console.WriteLine($"   标题: {docInfo.Title ?? "无"}");
+                    Console.WriteLine($"   作者: {docInfo.Author ?? "无"}");
+                    Console.WriteLine($"   页数: {docInfo.PageCount}");
+
+                    // 获取页面列表
+                    var pageList = reader.GetPageList();
+                    Console.WriteLine($"✅ 页面列表获取成功，共 {pageList.Count} 页");
+
+                    // 获取资源管理器
+                    var resourceManager = reader.GetResourceManager();
+                    Console.WriteLine("✅ 资源管理器创建成功");
+
+                    // 尝试加载第一页内容
+                    if (pageList.Count > 0)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("🔍 分析第一页内容...");
+
+                        var firstPage = pageList[0];
+                        Console.WriteLine($"   页面ID: {firstPage.Id}");
+                        Console.WriteLine($"   页面尺寸: {firstPage.Width:F1}mm x {firstPage.Height:F1}mm");
+                        Console.WriteLine($"   页面索引: {firstPage.Index}");
+                        Console.WriteLine($"   页面序号: {firstPage.PageN}");
+
+                        if (firstPage.Obj != null)
+                        {
+                            Console.WriteLine("✅ 页面内容XML加载成功");
+
+                            // 分析页面内容
+                            AnalyzePageContent(firstPage.Obj);
+
+                            // 测试实际的图像资源加载
+                            await TestImageResourceLoading(resourceManager, firstPage.Obj);
+                        }
+                        else
+                        {
+                            Console.WriteLine("❌ 页面内容XML为空");
+                        }
+                    }                    // 验证文档
+                    var validation = await reader.ValidateDocumentAsync();
+                    Console.WriteLine();
+                    Console.WriteLine($"📋 文档验证结果: {(validation.IsValid ? "✅ 有效" : "❌ 无效")}");
+
+                    if (validation.Errors.Any())
+                    {
+                        Console.WriteLine("❌ 验证错误:");
+                        foreach (var error in validation.Errors)
+                        {
+                            Console.WriteLine($"   {error.Code}: {error.Message}");
+                        }
+                    }
+
+                    if (validation.Warnings.Any())
+                    {
+                        Console.WriteLine("⚠️ 验证警告:");
+                        foreach (var warning in validation.Warnings)
+                        {
+                            Console.WriteLine($"   {warning.Code}: {warning.Message}");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"❌ OfdReader加载失败: {ex.Message}");
+                if (verbose)
+                {
+                    Console.WriteLine($"详细错误: {ex}");
+                }
+            }
+        }
+        finally
+        {
+            loggerFactory.Dispose();
+        }
+    }
+
+    /// <summary>
+    /// 分析页面内容
+    /// </summary>
+    private static void AnalyzePageContent(System.Xml.Linq.XElement pageContent)
+    {
+        try
+        {
+            var ns = System.Xml.Linq.XNamespace.Get("http://www.ofdspec.org/2016");
+
+            // 统计文本对象
+            var textObjects = pageContent.Descendants(ns + "TextObject");
+            Console.WriteLine($"   📝 文本对象: {textObjects.Count()} 个");
+
+            // 统计图像对象
+            var imageObjects = pageContent.Descendants(ns + "ImageObject");
+            Console.WriteLine($"   🖼️ 图像对象: {imageObjects.Count()} 个");
+
+            if (imageObjects.Any())
+            {
+                Console.WriteLine("   图像资源ID:");
+                foreach (var img in imageObjects)
+                {
+                    var resourceId = img.Attribute("ResourceID")?.Value;
+                    var boundary = img.Attribute("Boundary")?.Value;
+                    Console.WriteLine($"     - ID={resourceId}, Boundary={boundary}");
+                }
+            }
+
+            // 统计路径对象
+            var pathObjects = pageContent.Descendants(ns + "PathObject");
+            Console.WriteLine($"   📐 路径对象: {pathObjects.Count()} 个");
+
+            Console.WriteLine($"   📊 总对象数: {textObjects.Count() + imageObjects.Count() + pathObjects.Count()}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"   ❌ 页面内容分析失败: {ex.Message}");
+        }
+    }
+
+    /// <summary>
+    /// 测试图像资源加载
+    /// </summary>
+    private static async Task TestImageResourceLoading(IResourceManager resourceManager, System.Xml.Linq.XElement pageContent)
+    {
+        try
+        {
+            Console.WriteLine();
+            Console.WriteLine("🔍 测试图像资源加载...");
+
+            var ns = System.Xml.Linq.XNamespace.Get("http://www.ofdspec.org/2016");
+            var imageObjects = pageContent.Descendants(ns + "ImageObject");
+
+            if (!imageObjects.Any())
+            {
+                Console.WriteLine("   没有找到图像对象");
+                return;
+            }
+
+            // 获取前3个图像对象进行测试
+            var testImages = imageObjects.Take(3).ToList();
+
+            Console.WriteLine($"   正在测试 {testImages.Count} 个图像资源...");
+
+            foreach (var img in testImages)
+            {
+                var resourceId = img.Attribute("ResourceID")?.Value;
+                var boundary = img.Attribute("Boundary")?.Value;
+
+                if (!string.IsNullOrEmpty(resourceId))
+                {
+                    try
+                    {
+                        Console.WriteLine($"   📷 测试图像 ID={resourceId}, Boundary={boundary}");
+
+                        // 尝试加载图像资源
+                        var image = await resourceManager.GetImageAsync(resourceId);
+
+                        if (image != null)
+                        {
+                            Console.WriteLine($"      ✅ 成功加载图像: {image.Width}x{image.Height} 像素");
+                            image.Dispose(); // 释放资源
+                        }
+                        else
+                        {
+                            Console.WriteLine($"      ❌ 图像加载返回null");
+                        }
+                    }
+                    catch (Exception imgEx)
+                    {
+                        Console.WriteLine($"      ❌ 图像加载失败: {imgEx.Message}");
+                    }
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"   ❌ 图像资源加载测试失败: {ex.Message}");
+        }
     }
 }

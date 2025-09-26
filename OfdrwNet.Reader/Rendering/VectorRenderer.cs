@@ -2,6 +2,8 @@ using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Threading.Tasks;
+using System.Globalization;
+using System.Text;
 using OfdrwNet.Reader.Model;
 
 namespace OfdrwNet.Reader.Rendering
@@ -134,7 +136,7 @@ namespace OfdrwNet.Reader.Rendering
         {
             if (vectorObject?.Boundary != null)
             {
-                var bounds = vectorObject.Boundary;
+                Rectangle bounds = Rectangle.Round(vectorObject.Boundary);
 
                 // 应用缩放变换
                 if (renderContext.ScaleFactor != 1.0)
@@ -158,31 +160,45 @@ namespace OfdrwNet.Reader.Rendering
         /// <summary>
         /// 渲染路径
         /// </summary>
-        private async Task<bool> RenderPathAsync(VectorObject vectorObject, Graphics graphics, RenderContext renderContext)
+        private Task<bool> RenderPathAsync(VectorObject vectorObject, Graphics graphics, RenderContext renderContext)
         {
             if (string.IsNullOrEmpty(vectorObject.PathData))
-                return false;
+                return Task.FromResult(false);
 
-            var pathData = Model.PathData.Parse(vectorObject.PathData);
-            var path = await GetGraphicsPathAsync(pathData);
-
-            // 填充
-            if (vectorObject.FillStyle != null)
+            try
             {
-                var fillBrush = CreateBrush(vectorObject.FillStyle);
-                graphics.FillPath(fillBrush, path);
-                fillBrush.Dispose();
-            }
+                // 使用简单路径解析器而不是复杂的PathData.Parse
+                using var path = ParseSimplePath(vectorObject.PathData);
 
-            // 描边
-            if (vectorObject.StrokeStyle != null)
-            {
-                var strokePen = CreatePen(vectorObject.StrokeStyle);
+                if (path.PointCount == 0)
+                {
+                    // 如果路径为空，绘制边界框
+                    graphics.DrawRectangle(Pens.Gray, Rectangle.Round(vectorObject.Boundary));
+                    return Task.FromResult(true);
+                }
+
+                // 填充
+                if (vectorObject.FillStyle != null)
+                {
+                    var fillBrush = CreateBrush(vectorObject.FillStyle);
+                    graphics.FillPath(fillBrush, path);
+                    fillBrush.Dispose();
+                }
+
+                // 描边 (默认黑色)
+                using var strokePen = vectorObject.StrokeStyle != null ?
+                    CreatePen(vectorObject.StrokeStyle) :
+                    new Pen(Color.Black, 1.0f);
                 graphics.DrawPath(strokePen, path);
-                strokePen.Dispose();
-            }
 
-            return true;
+                return Task.FromResult(true);
+            }
+            catch
+            {
+                // 解析失败，绘制边界框
+                graphics.DrawRectangle(Pens.DarkGray, Rectangle.Round(vectorObject.Boundary));
+                return Task.FromResult(false);
+            }
         }
 
         /// <summary>
@@ -486,6 +502,196 @@ namespace OfdrwNet.Reader.Rendering
                 LineJoinType.Bevel => LineJoin.Bevel,
                 _ => LineJoin.Miter
             };
+        }
+
+        /// <summary>
+        /// 尝试解析浮点数
+        /// </summary>
+        private bool TryParseFloat(string value, out float result)
+        {
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                result = 0f;
+                return false;
+            }
+
+            return float.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out result);
+        }
+
+        /// <summary>
+        /// 简单解析路径数据（支持 M L Z Q C A 命令）
+        /// </summary>
+        private GraphicsPath ParseSimplePath(string pathData)
+        {
+            var path = new GraphicsPath();
+
+            try
+            {
+                // 预处理：将命令和数字分离
+                var normalizedData = NormalizePathData(pathData);
+                var tokens = normalizedData.Split(new char[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+                var currentPoint = PointF.Empty;
+                var startPoint = PointF.Empty;
+
+                for (int i = 0; i < tokens.Length; i++)
+                {
+                    var token = tokens[i].Trim();
+                    if (string.IsNullOrEmpty(token)) continue;
+
+                    switch (token.ToUpper())
+                    {
+                        case "M": // MoveTo
+                            if (i + 2 < tokens.Length &&
+                                TryParseFloat(tokens[i + 1], out var mx) &&
+                                TryParseFloat(tokens[i + 2], out var my))
+                            {
+                                currentPoint = new PointF(mx, my);
+                                startPoint = currentPoint;
+                                i += 2;
+                            }
+                            break;
+
+                        case "L": // LineTo
+                            if (i + 2 < tokens.Length &&
+                                TryParseFloat(tokens[i + 1], out var lx) &&
+                                TryParseFloat(tokens[i + 2], out var ly))
+                            {
+                                var endPoint = new PointF(lx, ly);
+                                path.AddLine(currentPoint, endPoint);
+                                currentPoint = endPoint;
+                                i += 2;
+                            }
+                            break;
+
+                        case "Q": // QuadraticBezierTo
+                            if (i + 4 < tokens.Length &&
+                                TryParseFloat(tokens[i + 1], out var qx1) &&
+                                TryParseFloat(tokens[i + 2], out var qy1) &&
+                                TryParseFloat(tokens[i + 3], out var qx2) &&
+                                TryParseFloat(tokens[i + 4], out var qy2))
+                            {
+                                var control = new PointF(qx1, qy1);
+                                var endPoint = new PointF(qx2, qy2);
+
+                                // 转换二次贝塞尔为三次贝塞尔
+                                var ctrl1 = new PointF(
+                                    currentPoint.X + (control.X - currentPoint.X) * 2 / 3,
+                                    currentPoint.Y + (control.Y - currentPoint.Y) * 2 / 3
+                                );
+                                var ctrl2 = new PointF(
+                                    endPoint.X + (control.X - endPoint.X) * 2 / 3,
+                                    endPoint.Y + (control.Y - endPoint.Y) * 2 / 3
+                                );
+
+                                path.AddBezier(currentPoint, ctrl1, ctrl2, endPoint);
+                                currentPoint = endPoint;
+                                i += 4;
+                            }
+                            break;
+
+                        case "C": // CubicBezierTo
+                            if (i + 6 < tokens.Length &&
+                                TryParseFloat(tokens[i + 1], out var cx1) &&
+                                TryParseFloat(tokens[i + 2], out var cy1) &&
+                                TryParseFloat(tokens[i + 3], out var cx2) &&
+                                TryParseFloat(tokens[i + 4], out var cy2) &&
+                                TryParseFloat(tokens[i + 5], out var cx3) &&
+                                TryParseFloat(tokens[i + 6], out var cy3))
+                            {
+                                var ctrl1 = new PointF(cx1, cy1);
+                                var ctrl2 = new PointF(cx2, cy2);
+                                var endPoint = new PointF(cx3, cy3);
+
+                                path.AddBezier(currentPoint, ctrl1, ctrl2, endPoint);
+                                currentPoint = endPoint;
+                                i += 6;
+                            }
+                            break;
+
+                        case "A": // Arc (简化版本，转换为椭圆弧)
+                            if (i + 7 < tokens.Length &&
+                                TryParseFloat(tokens[i + 1], out var rx) &&
+                                TryParseFloat(tokens[i + 2], out var ry) &&
+                                TryParseFloat(tokens[i + 3], out var angle) &&
+                                TryParseFloat(tokens[i + 4], out var largeArc) &&
+                                TryParseFloat(tokens[i + 5], out var sweep) &&
+                                TryParseFloat(tokens[i + 6], out var ax) &&
+                                TryParseFloat(tokens[i + 7], out var ay))
+                            {
+                                var endPoint = new PointF(ax, ay);
+
+                                // 简单的弧线近似，使用直线代替
+                                path.AddLine(currentPoint, endPoint);
+                                currentPoint = endPoint;
+                                i += 7;
+                            }
+                            break;
+
+                        case "Z": // ClosePath
+                            if (startPoint != PointF.Empty)
+                            {
+                                path.AddLine(currentPoint, startPoint);
+                                currentPoint = startPoint;
+                            }
+                            break;
+                    }
+                }
+
+                if (path.PointCount == 0)
+                {
+                    // 如果没有成功解析任何路径，创建一个简单的矩形
+                    path.AddRectangle(new RectangleF(0, 0, 10, 10));
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"路径解析错误: {ex.Message}");
+                path.Dispose();
+                path = new GraphicsPath();
+                // 创建默认形状
+                path.AddRectangle(new RectangleF(0, 0, 10, 10));
+            }
+
+            return path;
+        }
+
+        /// <summary>
+        /// 规范化路径数据，确保命令和坐标正确分离
+        /// </summary>
+        private string NormalizePathData(string pathData)
+        {
+            if (string.IsNullOrEmpty(pathData))
+                return "";
+
+            var result = new StringBuilder();
+            var chars = pathData.ToCharArray();
+
+            for (int i = 0; i < chars.Length; i++)
+            {
+                char c = chars[i];
+
+                // 检查是否是命令字母
+                if ("MLZQCAmzlqca".Contains(c))
+                {
+                    // 在命令前后添加空格
+                    if (result.Length > 0 && result[result.Length - 1] != ' ')
+                        result.Append(' ');
+                    result.Append(c);
+                    result.Append(' ');
+                }
+                else if (c == ',' || char.IsWhiteSpace(c))
+                {
+                    // 替换逗号和多个空格为单个空格
+                    if (result.Length > 0 && result[result.Length - 1] != ' ')
+                        result.Append(' ');
+                }
+                else
+                {
+                    result.Append(c);
+                }
+            }
+
+            return result.ToString().Trim();
         }
 
         /// <summary>

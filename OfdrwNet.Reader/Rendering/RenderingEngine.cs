@@ -39,10 +39,16 @@ namespace OfdrwNet.Reader.Rendering
         /// <returns>渲染结果</returns>
         public async Task<RenderResult> RenderPageAsync(IEnumerable<RenderObject> pageObjects, Graphics graphics, RenderContext renderContext)
         {
+            System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 开始页面渲染");
+
             if (pageObjects == null || graphics == null || renderContext == null)
             {
+                System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 参数验证失败");
                 return new RenderResult { Success = false, ErrorMessage = "参数不能为空" };
             }
+
+            var pageObjectsList = pageObjects.ToList();
+            System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 页面对象数量: {pageObjectsList.Count}");
 
             var startTime = DateTime.Now;
             var result = new RenderResult();
@@ -52,21 +58,26 @@ namespace OfdrwNet.Reader.Rendering
             {
                 // 保存原始图形状态
                 var originalState = graphics.Save();
+                System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 保存图形状态");
 
                 // 设置全局渲染质量
                 ConfigureGraphicsQuality(graphics, renderContext);
+                System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 配置图形质量");
 
                 // 应用视口变换
                 ApplyViewportTransform(graphics, renderContext);
+                System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 应用视口变换，缩放: {renderContext.ScaleFactor}");
 
                 // 按层级排序对象
-                var sortedObjects = SortObjectsByZIndex(pageObjects);
+                var sortedObjects = SortObjectsByZIndex(pageObjectsList);
+                System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 对象排序完成");
 
                 // 逐个渲染对象
                 foreach (var obj in sortedObjects)
                 {
                     try
                     {
+                        System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 开始渲染对象: {obj.Id} (类型: {obj.GetType().Name})");
                         var objectStartTime = DateTime.Now;
                         var success = await RenderObjectAsync(obj, graphics, renderContext);
                         var objectEndTime = DateTime.Now;
@@ -78,22 +89,29 @@ namespace OfdrwNet.Reader.Rendering
                         if (success)
                         {
                             renderStats.SuccessfulObjects++;
+                            System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 对象渲染成功: {obj.Id}");
                         }
                         else
                         {
                             renderStats.FailedObjects++;
-                            result.AddWarning($"对象渲染失败: {obj.Id}");
+                            var warning = $"对象渲染失败: {obj.Id} (Type: {obj.GetType().Name})";
+                            result.AddWarning(warning);
+                            System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 对象渲染失败: {obj.Id} (类型: {obj.GetType().Name})");
                         }
                     }
                     catch (Exception ex)
                     {
                         renderStats.FailedObjects++;
-                        result.AddError($"对象渲染异常: {obj.Id} - {ex.Message}");
+                        var error = $"对象渲染异常: {obj.Id} - {ex.Message}";
+                        result.AddError(error);
+                        System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 对象渲染异常: {obj.Id} - {ex.Message}");
+                        System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 异常详情: {ex}");
                     }
                 }
 
                 // 恢复原始图形状态
                 graphics.Restore(originalState);
+                System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 恢复图形状态");
 
                 var endTime = DateTime.Now;
                 renderStats.TotalPageRenderTime = endTime - startTime;
@@ -101,10 +119,14 @@ namespace OfdrwNet.Reader.Rendering
                 result.Success = renderStats.FailedObjects == 0;
                 result.Statistics = renderStats;
 
+                System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 页面渲染完成 - 总时间: {renderStats.TotalPageRenderTime.TotalMilliseconds}ms, 成功: {result.Success}");
+
                 return result;
             }
             catch (Exception ex)
             {
+                System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 页面渲染严重异常: {ex.Message}");
+                System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 异常详情: {ex}");
                 return new RenderResult
                 {
                     Success = false,
@@ -124,15 +146,41 @@ namespace OfdrwNet.Reader.Rendering
         public async Task<bool> RenderObjectAsync(RenderObject renderObject, Graphics graphics, RenderContext renderContext)
         {
             if (renderObject == null || !renderObject.Visible)
-                return true;
-
-            return renderObject switch
             {
-                TextObject textObj => await _textRenderer.RenderAsync(textObj, graphics, renderContext),
-                ImageObject imageObj => await _imageRenderer.RenderAsync(imageObj, graphics, renderContext),
-                VectorObject vectorObj => await _vectorRenderer.RenderAsync(vectorObj, graphics, renderContext),
-                _ => false
-            };
+                System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 对象为空或不可见，跳过");
+                return true;
+            }
+
+            System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 渲染对象类型: {renderObject.GetType().FullName}");
+
+            try
+            {
+                bool success = renderObject switch
+                {
+                    TextObject textObj => await _textRenderer.RenderAsync(textObj, graphics, renderContext),
+                    ImageObject imageObj => await _imageRenderer.RenderAsync(imageObj, graphics, renderContext),
+                    VectorObject vectorObj => await _vectorRenderer.RenderAsync(vectorObj, graphics, renderContext),
+                    _ => HandleUnknownObjectType(renderObject)
+                };
+
+                System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 对象 {renderObject.Id} 渲染结果: {success}");
+                return success;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 对象 {renderObject.Id} 渲染异常: {ex.Message}");
+                System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 异常详情: {ex}");
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// 处理未知对象类型
+        /// </summary>
+        private bool HandleUnknownObjectType(RenderObject renderObject)
+        {
+            System.Diagnostics.Trace.WriteLine($"[RenderingEngine] 未知对象类型，无法渲染: {renderObject.GetType().FullName}");
+            return false;
         }
 
         /// <summary>
@@ -201,7 +249,7 @@ namespace OfdrwNet.Reader.Rendering
                 TextObject textObj => await _textRenderer.GetBoundsAsync(textObj, renderContext),
                 ImageObject imageObj => await _imageRenderer.GetBoundsAsync(imageObj, renderContext),
                 VectorObject vectorObj => await _vectorRenderer.GetBoundsAsync(vectorObj, renderContext),
-                _ => renderObject.Boundary
+                _ => Rectangle.Round(renderObject.Boundary)
             };
         }
 
@@ -301,41 +349,5 @@ namespace OfdrwNet.Reader.Rendering
                 _disposed = true;
             }
         }
-    }
-
-    /// <summary>
-    /// 渲染结果
-    /// </summary>
-    public class RenderResult
-    {
-        /// <summary>渲染是否成功</summary>
-        public bool Success { get; set; }
-
-        /// <summary>错误消息</summary>
-        public string? ErrorMessage { get; set; }
-
-        /// <summary>警告消息列表</summary>
-        public List<string> Warnings { get; set; } = new List<string>();
-
-        /// <summary>错误消息列表</summary>
-        public List<string> Errors { get; set; } = new List<string>();
-
-        /// <summary>渲染统计信息</summary>
-        public RenderStatistics? Statistics { get; set; }
-
-        /// <summary>添加警告</summary>
-        public void AddWarning(string warning)
-        {
-            Warnings.Add(warning);
-        }
-
-        /// <summary>添加错误</summary>
-        public void AddError(string error)
-        {
-            Errors.Add(error);
-        }
-
-        /// <summary>是否有警告或错误</summary>
-        public bool HasIssues => Warnings.Count > 0 || Errors.Count > 0;
     }
 }

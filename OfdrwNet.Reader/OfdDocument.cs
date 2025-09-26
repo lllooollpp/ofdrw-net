@@ -21,6 +21,11 @@ namespace OfdrwNet.Reader
         public DocumentMetadata? Metadata { get; set; }
 
         /// <summary>
+        /// 文档信息 (兼容测试代码)
+        /// </summary>
+        public DocumentInfo? DocumentInfo { get; set; }
+
+        /// <summary>
         /// 页面信息列表
         /// </summary>
         public List<PageInfo> Pages { get; set; } = new List<PageInfo>();

@@ -27,7 +27,7 @@ public partial class MainForm : Form
     public MainForm(ILoggerFactory? loggerFactory = null)
     {
         InitializeComponent();
-        
+
         // 使用传入的日志工厂或创建默认的
         if (loggerFactory != null)
         {
@@ -38,7 +38,7 @@ public partial class MainForm : Form
             using var defaultLoggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
             _logger = defaultLoggerFactory.CreateLogger<MainForm>();
         }
-        
+
         InitializeConverters(loggerFactory);
         InitializeUI();
     }
@@ -59,9 +59,9 @@ public partial class MainForm : Form
             {
                 factory = LoggerFactory.Create(builder => builder.AddConsole());
             }
-            
+
             _logger.LogInformation("开始初始化转换器...");
-            
+
             _wordConverter = new Word2OfdConverter(factory.CreateLogger<Word2OfdConverter>());
             _wordConverter.ProgressChanged += OnConverterProgressChanged;
             _wordConverter.ConversionCompleted += OnConverterCompleted;
@@ -74,13 +74,13 @@ public partial class MainForm : Form
 
             // PDF->OFD 新实现：直接使用 ConvertHelper，不需要单独实例化转换器。
             _logger.LogInformation("PDF->OFD 新实现已启用（基础字体抽取+可选逐字定位骨架）");
-            
+
             _logger.LogInformation("转换器初始化完成");
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "初始化转换器时发生错误");
-            MessageBox.Show($"初始化转换器时发生错误: {ex.Message}", "错误", 
+            MessageBox.Show($"初始化转换器时发生错误: {ex.Message}", "错误",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
@@ -91,21 +91,21 @@ public partial class MainForm : Form
     private void InitializeUI()
     {
         _logger.LogInformation("开始初始化UI组件...");
-        
+
         // 设置文件对话框过滤器
         openFileDialog.Filter = FileTypeDetector.GetFileDialogFilter();
         openFileDialog.Multiselect = false;
         _logger.LogDebug("文件对话框过滤器设置完成: {Filter}", openFileDialog.Filter);
-        
+
         // 设置保存对话框
         saveFileDialog.Filter = "OFD文件 (*.ofd)|*.ofd|所有文件 (*.*)|*.*";
         saveFileDialog.DefaultExt = "ofd";
         _logger.LogDebug("保存文件对话框设置完成");
-        
+
         // 更新状态
         UpdateStatus("准备就绪");
         UpdateFileInfo("请选择要转换的文件...");
-        
+
         _logger.LogInformation("UI组件初始化完成");
     }
 
@@ -117,17 +117,17 @@ public partial class MainForm : Form
         try
         {
             _logger.LogInformation("OFDRW.NET文档转换工具启动");
-            
+
             // 设置窗体属性
             this.Text = $"OFDRW.NET 文档转换工具 v1.0 - .NET {Environment.Version}";
-            
+
             // 检查运行环境
             CheckRuntimeEnvironment();
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "窗体加载时发生错误");
-            MessageBox.Show($"应用程序启动时发生错误: {ex.Message}", "错误", 
+            MessageBox.Show($"应用程序启动时发生错误: {ex.Message}", "错误",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
@@ -140,7 +140,7 @@ public partial class MainForm : Form
         var runtimeInfo = $".NET版本: {Environment.Version}\n" +
                          $"操作系统: {Environment.OSVersion}\n" +
                          $"处理器架构: {Environment.ProcessorCount} cores";
-        
+
         _logger.LogInformation("运行环境信息: {RuntimeInfo}", runtimeInfo);
     }
 
@@ -155,23 +155,23 @@ public partial class MainForm : Form
             {
                 var selectedFile = openFileDialog.FileName;
                 txtInputFile.Text = selectedFile;
-                
+
                 // 自动检测转换类型
                 AutoDetectConversionType(selectedFile);
-                
+
                 // 自动生成输出文件名
                 AutoGenerateOutputFileName(selectedFile);
-                
+
                 // 显示文件信息
                 DisplayFileInfo(selectedFile);
-                
+
                 _logger.LogInformation("选择输入文件: {FileName}", selectedFile);
             }
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "浏览输入文件时发生错误");
-            MessageBox.Show($"选择文件时发生错误: {ex.Message}", "错误", 
+            MessageBox.Show($"选择文件时发生错误: {ex.Message}", "错误",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
@@ -188,7 +188,7 @@ public partial class MainForm : Form
                 var inputFileName = Path.GetFileNameWithoutExtension(txtInputFile.Text);
                 saveFileDialog.FileName = $"{inputFileName}.ofd";
             }
-            
+
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 txtOutputFile.Text = saveFileDialog.FileName;
@@ -198,7 +198,7 @@ public partial class MainForm : Form
         catch (Exception ex)
         {
             _logger.LogError(ex, "浏览输出文件时发生错误");
-            MessageBox.Show($"选择输出文件时发生错误: {ex.Message}", "错误", 
+            MessageBox.Show($"选择输出文件时发生错误: {ex.Message}", "错误",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
@@ -223,7 +223,7 @@ public partial class MainForm : Form
         catch (Exception ex)
         {
             _logger.LogError(ex, "转换过程中发生错误");
-            MessageBox.Show($"转换失败: {ex.Message}", "错误", 
+            MessageBox.Show($"转换失败: {ex.Message}", "错误",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             ResetConversionUI();
         }
@@ -255,7 +255,7 @@ public partial class MainForm : Form
         {
             if (_isConverting)
             {
-                MessageBox.Show("转换正在进行中，无法清空", "提示", 
+                MessageBox.Show("转换正在进行中，无法清空", "提示",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
@@ -278,19 +278,19 @@ public partial class MainForm : Form
         {
             // 检查是否有可用的OFD文件
             string? ofdFilePath = null;
-            
+
             // 优先使用输出文件路径（如果存在）
             if (!string.IsNullOrEmpty(txtOutputFile.Text) && File.Exists(txtOutputFile.Text))            {
                 ofdFilePath = txtOutputFile.Text;
             }
             // 其次检查输入文件是否为OFD格式
-            else if (!string.IsNullOrEmpty(txtInputFile.Text) && 
-                     Path.GetExtension(txtInputFile.Text).ToLowerInvariant() == ".ofd" && 
+            else if (!string.IsNullOrEmpty(txtInputFile.Text) &&
+                     Path.GetExtension(txtInputFile.Text).ToLowerInvariant() == ".ofd" &&
                      File.Exists(txtInputFile.Text))
             {
                 ofdFilePath = txtInputFile.Text;
             }
-            
+
             if (!string.IsNullOrEmpty(ofdFilePath))
             {
                 // 直接打开指定的OFD文件
@@ -305,7 +305,7 @@ public partial class MainForm : Form
                     Filter = "OFD文件 (*.ofd)|*.ofd|所有文件 (*.*)|*.*",
                     DefaultExt = "ofd"
                 };
-                
+
                 if (ofdDialog.ShowDialog() == DialogResult.OK)
                 {
                     OpenOfdViewer(ofdDialog.FileName);
@@ -315,7 +315,7 @@ public partial class MainForm : Form
         catch (Exception ex)
         {
             _logger.LogError(ex, "打开OFD查看器时发生错误");
-            MessageBox.Show($"打开OFD查看器失败: {ex.Message}", "错误", 
+            MessageBox.Show($"打开OFD查看器失败: {ex.Message}", "错误",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
@@ -326,9 +326,9 @@ public partial class MainForm : Form
     private void AutoDetectConversionType(string filePath)
     {
         _logger.LogDebug("自动检测文件转换类型: {FilePath}", filePath);
-        
+
         var conversionType = FileTypeDetector.GetConversionType(filePath);
-        
+
         switch (conversionType)
         {
             case ConversionType.WordToOfd:
@@ -345,7 +345,7 @@ public partial class MainForm : Form
                 break;
             default:
                 _logger.LogWarning("不支持的文件格式: {FilePath}", filePath);
-                MessageBox.Show("不支持的文件格式", "警告", 
+                MessageBox.Show("不支持的文件格式", "警告",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 break;
         }
@@ -359,7 +359,7 @@ public partial class MainForm : Form
         var directory = Path.GetDirectoryName(inputFilePath);
         var fileNameWithoutExtension = Path.GetFileNameWithoutExtension(inputFilePath);
         var outputFileName = Path.Combine(directory!, $"{fileNameWithoutExtension}.ofd");
-        
+
         txtOutputFile.Text = outputFileName;
     }
 
@@ -369,14 +369,14 @@ public partial class MainForm : Form
     private void DisplayFileInfo(string filePath)
     {
         _logger.LogDebug("显示文件信息: {FilePath}", filePath);
-        
+
         try
         {
             var fileInfo = new FileInfo(filePath);
             var extension = Path.GetExtension(filePath).ToLowerInvariant();
-            
+
             _logger.LogDebug("文件信息 - 大小: {Size} bytes, 扩展名: {Extension}", fileInfo.Length, extension);
-            
+
             var info = $"文件名: {fileInfo.Name}\n" +
                       $"文件大小: {FormatFileSize(fileInfo.Length)}\n" +
                       $"文件类型: {extension}\n" +
@@ -420,11 +420,11 @@ public partial class MainForm : Form
     private bool ValidateInput()
     {
         _logger.LogDebug("开始验证用户输入");
-        
+
         if (string.IsNullOrWhiteSpace(txtInputFile.Text))
         {
             _logger.LogWarning("用户未选择输入文件");
-            MessageBox.Show("请选择输入文件", "提示", 
+            MessageBox.Show("请选择输入文件", "提示",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             return false;
         }
@@ -432,7 +432,7 @@ public partial class MainForm : Form
         if (!File.Exists(txtInputFile.Text))
         {
             _logger.LogError("输入文件不存在: {FilePath}", txtInputFile.Text);
-            MessageBox.Show("输入文件不存在", "错误", 
+            MessageBox.Show("输入文件不存在", "错误",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
@@ -440,7 +440,7 @@ public partial class MainForm : Form
         if (string.IsNullOrWhiteSpace(txtOutputFile.Text))
         {
             _logger.LogWarning("用户未指定输出文件路径");
-            MessageBox.Show("请指定输出文件路径", "提示", 
+            MessageBox.Show("请指定输出文件路径", "提示",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             return false;
         }
@@ -457,13 +457,13 @@ public partial class MainForm : Form
             catch (Exception ex)
             {
                 _logger.LogError(ex, "无法创建输出目录: {Directory}", outputDir);
-                MessageBox.Show($"无法创建输出目录: {ex.Message}", "错误", 
+                MessageBox.Show($"无法创建输出目录: {ex.Message}", "错误",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
 
-        _logger.LogInformation("输入验证通过 - 输入文件: {InputFile}, 输出文件: {OutputFile}", 
+        _logger.LogInformation("输入验证通过 - 输入文件: {InputFile}, 输出文件: {OutputFile}",
             txtInputFile.Text, txtOutputFile.Text);
         return true;
     }
@@ -474,18 +474,18 @@ public partial class MainForm : Form
     private async Task StartConversion()
     {
         _logger.LogInformation("开始文档转换流程");
-        
+
         _isConverting = true;
         _cancellationTokenSource = new CancellationTokenSource();
-        
+
         // 更新UI状态
         SetConversionUI(true);
-        
+
         var inputFile = txtInputFile.Text;
         var outputFile = txtOutputFile.Text;
-        
+
         _logger.LogInformation("转换参数 - 输入文件: {InputFile}, 输出文件: {OutputFile}", inputFile, outputFile);
-        
+
         // 如果目标文件已存在则尝试删除（不中断流程）
         if (!string.IsNullOrWhiteSpace(outputFile) && File.Exists(outputFile))
         {
@@ -499,12 +499,12 @@ public partial class MainForm : Form
                 _logger.LogWarning(ex, "删除已存在输出文件失败，后续将尝试覆盖: {OutputFile}", outputFile);
             }
         }
-        
+
         UpdateStatus("开始转换...");
-        
+
         ConversionResult? result = null;
         var startTime = DateTime.Now;
-        
+
         try
         {
             // 根据选择的转换类型执行转换
@@ -559,16 +559,16 @@ public partial class MainForm : Form
                     PageCount = pageCount
                 };
             }
-            
+
             var duration = DateTime.Now - startTime;
             _logger.LogInformation("转换流程完成，总耗时: {Duration:F2}秒", duration.TotalSeconds);
-            
+
             if (result != null)
             {
                 result.Duration = duration;
                 result.StartTime = startTime;
                 result.EndTime = DateTime.Now;
-                
+
                 ShowConversionResult(result);
             }
         }
@@ -600,23 +600,23 @@ public partial class MainForm : Form
                          $"输入文件大小: {FormatFileSize(result.InputFileSize)}\n" +
                          $"输出文件大小: {FormatFileSize(result.OutputFileSize)}\n" +
                          $"转换耗时: {result.Duration?.TotalSeconds:F2} 秒";
-            
+
             if (result.PageCount.HasValue)
             {
                 message += $"\n页面数量: {result.PageCount.Value}";
             }
-            
-            MessageBox.Show(message, "转换成功", 
+
+            MessageBox.Show(message, "转换成功",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+
             UpdateStatus("转换完成");
             _logger.LogInformation("转换成功: {OutputFile}", result.OutputPath);
         }
         else
         {
-            MessageBox.Show($"转换失败: {result.ErrorMessage}", "转换失败", 
+            MessageBox.Show($"转换失败: {result.ErrorMessage}", "转换失败",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
-            
+
             UpdateStatus("转换失败");
             _logger.LogError("转换失败: {Error}", result.ErrorMessage);
         }
@@ -632,11 +632,11 @@ public partial class MainForm : Form
             Invoke(new Action(() => OnConverterProgressChanged(sender, e)));
             return;
         }
-        
+
         progressBar.Value = Math.Min(Math.Max(e.Percentage, 0), 100);
         lblProgressMessage.Text = e.Message;
         UpdateStatus(e.Message);
-        
+
         toolStripProgressBar.Value = progressBar.Value;
     }
 
@@ -650,7 +650,7 @@ public partial class MainForm : Form
             Invoke(new Action(() => OnConverterCompleted(sender, e)));
             return;
         }
-        
+
         // 事件处理在StartConversion方法中统一处理
     }
 
@@ -664,10 +664,10 @@ public partial class MainForm : Form
         btnBrowseInput.Enabled = !isConverting;
         btnBrowseOutput.Enabled = !isConverting;
         grpConversionType.Enabled = !isConverting;
-        
+
         progressBar.Visible = isConverting;
         toolStripProgressBar.Visible = isConverting;
-        
+
         if (isConverting)
         {
             progressBar.Value = 0;
@@ -682,11 +682,11 @@ public partial class MainForm : Form
     {
         _isConverting = false;
         SetConversionUI(false);
-        
+
         progressBar.Value = 0;
         lblProgressMessage.Text = "准备就绪";
         toolStripProgressBar.Value = 0;
-        
+
         _cancellationTokenSource?.Dispose();
         _cancellationTokenSource = null;
     }
@@ -699,10 +699,10 @@ public partial class MainForm : Form
         txtInputFile.Clear();
         txtOutputFile.Clear();
         rbWordToOfd.Checked = true;
-        
+
         progressBar.Value = 0;
         lblProgressMessage.Text = "准备就绪";
-        
+
         UpdateFileInfo("请选择要转换的文件...");
         UpdateStatus("准备就绪");
     }
@@ -731,13 +731,13 @@ public partial class MainForm : Form
         string[] suffixes = { "B", "KB", "MB", "GB", "TB" };
         int counter = 0;
         decimal number = bytes;
-        
+
         while (Math.Round(number / 1024) >= 1)
         {
             number /= 1024;
             counter++;
         }
-        
+
         return $"{number:n1} {suffixes[counter]}";
     }
 
@@ -750,57 +750,57 @@ public partial class MainForm : Form
         try
         {
             _logger.LogInformation("打开OFD查看器: {FilePath}", ofdFilePath);
-            
+
             // 检查文件是否存在
             if (!File.Exists(ofdFilePath))
             {
-                MessageBox.Show("指定的OFD文件不存在", "错误", 
+                MessageBox.Show("指定的OFD文件不存在", "错误",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+
             // 检查文件扩展名
             var extension = Path.GetExtension(ofdFilePath).ToLowerInvariant();
             if (extension != ".ofd")
             {
                 var result = MessageBox.Show(
-                    $"选择的文件不是OFD格式（{extension}）。\n是否要尝试打开？", 
-                    "文件格式警告", 
-                    MessageBoxButtons.YesNo, 
+                    $"选择的文件不是OFD格式（{extension}）。\n是否要尝试打开？",
+                    "文件格式警告",
+                    MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning);
-                    
+
                 if (result == DialogResult.No)
                 {
                     return;
                 }
             }
-            
+
             // 验证OFD文件是否有效
             var validationResult = ValidateOfdFile(ofdFilePath);
             if (!validationResult.IsValid)
             {
                 var result = MessageBox.Show(
-                    $"OFD文件验证失败：\n{validationResult.ErrorMessage}\n\n是否要强制尝试打开？", 
-                    "文件验证失败", 
-                    MessageBoxButtons.YesNo, 
+                    $"OFD文件验证失败：\n{validationResult.ErrorMessage}\n\n是否要强制尝试打开？",
+                    "文件验证失败",
+                    MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning);
-                    
+
                 if (result == DialogResult.No)
                 {
                     return;
                 }
             }
-            
+
             // 创建并显示OFD查看器窗体
-            //var viewerForm = new OfdViewerForm(ofdFilePath);
-            //viewerForm.Show();
-            
+            var viewerForm = new OfdViewerForm(ofdFilePath);
+            viewerForm.Show();
+
             UpdateStatus($"已打开OFD查看器 - {Path.GetFileName(ofdFilePath)}");
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "打开OFD查看器失败: {FilePath}", ofdFilePath);
-            MessageBox.Show($"打开OFD查看器失败: {ex.Message}", "错误", 
+            MessageBox.Show($"打开OFD查看器失败: {ex.Message}", "错误",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
@@ -820,50 +820,50 @@ public partial class MainForm : Form
             {
                 return (false, "文件大小为0字节，可能是空文件");
             }
-            
+
             if (fileInfo.Length < 22) // ZIP文件最小大小
             {
                 return (false, "文件太小，不是有效的OFD文件");
             }
-            
+
             // 尝试作为ZIP文件打开
             using (var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
             {
                 // 检查ZIP文件头
                 var buffer = new byte[4];
                 fileStream.Read(buffer, 0, 4);
-                
+
                 // ZIP文件的魔数：0x504B0304 (PK..)
                 if (buffer[0] != 0x50 || buffer[1] != 0x4B)
                 {
                     return (false, "文件不是有效的ZIP格式，OFD文件必须是ZIP压缩包");
                 }
-                
+
                 // 尝试使用System.IO.Compression验证ZIP结构
                 fileStream.Position = 0;
                 using (var archive = new System.IO.Compression.ZipArchive(fileStream, System.IO.Compression.ZipArchiveMode.Read))
                 {
                     // 检查是否包含OFD.xml文件
-                    var ofdXmlEntry = archive.Entries.FirstOrDefault(e => 
+                    var ofdXmlEntry = archive.Entries.FirstOrDefault(e =>
                         e.FullName.Equals("OFD.xml", StringComparison.OrdinalIgnoreCase));
-                    
+
                     if (ofdXmlEntry == null)
                     {
                         return (false, "文件中缺少OFD.xml根文件，不是有效的OFD文档");
                     }
-                    
+
                     // 检查Doc目录
-                    var hasDocDir = archive.Entries.Any(e => 
+                    var hasDocDir = archive.Entries.Any(e =>
                         e.FullName.StartsWith("Doc_", StringComparison.OrdinalIgnoreCase) ||
                         e.FullName.StartsWith("Doc/", StringComparison.OrdinalIgnoreCase));
-                    
+
                     if (!hasDocDir)
                     {
                         return (false, "文件中缺少Doc目录，OFD文档结构不完整");
                     }
                 }
             }
-            
+
             return (true, string.Empty);
         }
         catch (InvalidDataException ex)
@@ -889,32 +889,32 @@ public partial class MainForm : Form
         {
             if (_isConverting)
             {
-                var result = MessageBox.Show("转换正在进行中，确定要退出吗？", "确认", 
+                var result = MessageBox.Show("转换正在进行中，确定要退出吗？", "确认",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                
+
                 if (result == DialogResult.No)
                 {
                     e.Cancel = true;
                     return;
                 }
-                
+
                 _cancellationTokenSource?.Cancel();
             }
-            
+
             // 释放转换器资源
             _wordConverter?.Dispose();
             _htmlConverter?.Dispose();
             // _pdfConverter?.Dispose(); // 已弃用
-            
+
             _cancellationTokenSource?.Dispose();
-            
+
             _logger.LogInformation("应用程序正常退出");
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "窗体关闭时发生错误");
         }
-        
+
         base.OnFormClosing(e);
     }
 }

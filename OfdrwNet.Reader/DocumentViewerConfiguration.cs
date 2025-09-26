@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text.Json;
+using System.Threading.Tasks;
 using OfdrwNet.Reader.Model;
 using OfdrwNet.Reader.Rendering;
 
@@ -23,6 +24,63 @@ namespace OfdrwNet.Reader
             _settings = new Dictionary<string, object>();
             _observers = new List<IConfigurationObserver>();
             InitializeDefaultSettings();
+        }
+
+        /// <summary>
+        /// 渲染配置
+        /// </summary>
+        public RenderingConfiguration Rendering { get; set; } = new RenderingConfiguration();
+
+        /// <summary>
+        /// 缓存配置
+        /// </summary>
+        public CacheConfiguration Cache { get; set; } = new CacheConfiguration();
+
+        /// <summary>
+        /// 导航配置
+        /// </summary>
+        public NavigationConfiguration Navigation { get; set; } = new NavigationConfiguration();
+
+        /// <summary>
+        /// 性能配置
+        /// </summary>
+        public PerformanceConfiguration Performance { get; set; } = new PerformanceConfiguration();
+
+        /// <summary>
+        /// 从配置文件加载
+        /// </summary>
+        /// <param name="configPath">配置文件路径</param>
+        public async Task LoadFromFileAsync(string configPath)
+        {
+            try
+            {
+                if (System.IO.File.Exists(configPath))
+                {
+                    var json = await System.IO.File.ReadAllTextAsync(configPath);
+                    ImportFromJson(json);
+                }
+            }
+            catch (Exception)
+            {
+                // 加载失败时使用默认配置
+            }
+        }
+
+        /// <summary>
+        /// 保存到配置文件
+        /// </summary>
+        /// <param name="configPath">配置文件路径</param>
+        public async Task SaveToFileAsync(string configPath)
+        {
+            try
+            {
+                var json = ExportToJson();
+                await System.IO.File.WriteAllTextAsync(configPath, json);
+            }
+            catch (Exception)
+            {
+                // 忽略保存错误
+            }
         }
 
         /// <summary>
@@ -200,15 +258,12 @@ namespace OfdrwNet.Reader
             if (renderConfig == null)
                 return;
 
-            // 更新渲染相关设置
-            RenderQuality = renderConfig.Quality;
-            EnableCaching = renderConfig.EnableCaching;
-            CacheSizeLimit = renderConfig.CacheSize;
-            MaxConcurrentTasks = renderConfig.MaxParallelTasks;
-            EnablePerformanceMonitoring = renderConfig.EnableProgressReporting;
-
-            // 应用到默认渲染上下文
-            renderConfig.ApplyTo(DefaultRenderContext);
+            // 更新渲染相关设置 - 使用实际存在的属性
+            ZoomFactor = renderConfig.DefaultZoomLevel;
+            DefaultRenderContext.DpiX = renderConfig.DefaultDpi;
+            DefaultRenderContext.DpiY = renderConfig.DefaultDpi;
+            DefaultRenderContext.SmoothingMode = renderConfig.SmoothingMode;
+            DefaultRenderContext.InterpolationMode = renderConfig.InterpolationMode;
 
             NotifyConfigurationApplied(renderConfig);
         }
@@ -335,8 +390,10 @@ namespace OfdrwNet.Reader
         {
             var args = new ConfigurationAppliedEventArgs
             {
-                AppliedConfiguration = renderConfig,
-                Timestamp = DateTime.Now
+                Configuration = this,
+                AppliedAt = DateTime.Now,
+                ConfigurationName = "RenderConfiguration",
+                Success = true
             };
 
             foreach (var observer in _observers)
@@ -392,15 +449,5 @@ namespace OfdrwNet.Reader
         void OnConfigurationReset();
     }
 
-    /// <summary>
-    /// 配置应用事件参数
-    /// </summary>
-    public class ConfigurationAppliedEventArgs : EventArgs
-    {
-        /// <summary>应用的配置</summary>
-        public RenderConfiguration? AppliedConfiguration { get; set; }
 
-        /// <summary>应用时间</summary>
-        public DateTime Timestamp { get; set; }
-    }
 }

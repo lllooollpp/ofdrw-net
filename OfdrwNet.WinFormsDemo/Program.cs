@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.InteropServices;
 using Serilog;
 using Serilog.Events;
 
@@ -11,24 +12,50 @@ namespace OfdrwNet.WinFormsDemo;
 /// </summary>
 internal static class Program
 {
+    // 控制台相关的 Win32 API
+    [DllImport("kernel32.dll")]
+    public static extern bool AllocConsole();
+
+    [DllImport("kernel32.dll")]
+    public static extern bool AttachConsole(int dwProcessId);
+
+    [DllImport("kernel32.dll")]
+    public static extern bool FreeConsole();
+
     /// <summary>
     /// 应用程序的主入口点
     /// </summary>
     [STAThread]
     static void Main()
     {
+        // 分配控制台窗口用于显示日志输出
+        AllocConsole();
+
+        // 设置控制台编码为UTF-8以避免中文乱码
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+        Console.InputEncoding = System.Text.Encoding.UTF8;
+
+        // 重定向控制台输出（使用UTF-8编码）
+        var stdOut = new StreamWriter(Console.OpenStandardOutput(), System.Text.Encoding.UTF8) { AutoFlush = true };
+        var stdErr = new StreamWriter(Console.OpenStandardError(), System.Text.Encoding.UTF8) { AutoFlush = true };
+        Console.SetOut(stdOut);
+        Console.SetError(stdErr);
+
+        Console.WriteLine("OFDRW.NET WinForms Demo 控制台已启用");
+        Console.WriteLine("======================================");
+
         // 启用应用程序的可视样式
         Application.EnableVisualStyles();
         Application.SetCompatibleTextRenderingDefault(false);
-        
+
         // 设置高DPI支持
         Application.SetHighDpiMode(HighDpiMode.SystemAware);
-        
+
         // 设置全局异常处理
         Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
         Application.ThreadException += Application_ThreadException;
         AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
-        
+
         try
         {
             // 创建日志目录（尝试查找解决方案根目录，否则使用可执行目录）
@@ -50,8 +77,15 @@ internal static class Program
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Debug()
                 .Enrich.FromLogContext()
-                .WriteTo.Console()
-                .WriteTo.File(Path.Combine(logDir, "ofdrw_.log"), rollingInterval: RollingInterval.Day, retainedFileCountLimit: 31, shared: true)
+                .WriteTo.Console(
+                    outputTemplate: "[{Timestamp:HH:mm:ss} {Level:u3}] {SourceContext}: {Message:lj}{NewLine}{Exception}",
+                    standardErrorFromLevel: LogEventLevel.Warning)
+                .WriteTo.File(Path.Combine(logDir, "ofdrw_.log"),
+                    rollingInterval: RollingInterval.Day,
+                    retainedFileCountLimit: 31,
+                    shared: true,
+                    encoding: System.Text.Encoding.UTF8,
+                    outputTemplate: "[{Timestamp:yyyy-MM-dd HH:mm:ss.fff} {Level:u3}] {SourceContext}: {Message:lj}{NewLine}{Exception}")
                 .CreateLogger();
 
             // 注册 Trace -> Serilog 转发监听器（避免库中 Debug/Trace.WriteLine 丢失）
@@ -73,22 +107,25 @@ internal static class Program
 
             // 运行主窗体，传入 loggerFactory 以确保所有日志写入 Serilog
             Application.Run(new MainForm(loggerFactory));
-            
+
             logger.LogInformation("OFDRW.NET WinForms Demo 应用程序退出");
         }
         catch (Exception ex)
         {
             // Serilog 可能尚未初始化，因此使用消息框保证用户可见
-            MessageBox.Show($"应用程序启动失败: {ex.Message}", "严重错误", 
+            MessageBox.Show($"应用程序启动失败: {ex.Message}", "严重错误",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         finally
         {
             // 确保 Serilog 刷新并关闭
             try { Log.CloseAndFlush(); } catch { }
+
+            // 释放控制台
+            try { FreeConsole(); } catch { }
         }
     }
-    
+
     /// <summary>
     /// 获取解决方案根目录（尝试根据当前目录向上查找 .sln 文件）
     /// 如果找不到，则返回 null
@@ -111,26 +148,26 @@ internal static class Program
         }
         return null;
     }
-    
+
     /// <summary>
     /// 处理应用程序线程异常
     /// </summary>
     private static void Application_ThreadException(object sender, ThreadExceptionEventArgs e)
     {
         LogException("应用程序线程异常", e.Exception);
-        
+
         var result = MessageBox.Show(
-            $"应用程序发生异常:\n{e.Exception.Message}\n\n是否继续运行？", 
-            "应用程序错误", 
-            MessageBoxButtons.YesNo, 
+            $"应用程序发生异常:\n{e.Exception.Message}\n\n是否继续运行？",
+            "应用程序错误",
+            MessageBoxButtons.YesNo,
             MessageBoxIcon.Error);
-        
+
         if (result == DialogResult.No)
         {
             Application.Exit();
         }
     }
-    
+
     /// <summary>
     /// 处理应用程序域未处理异常
     /// </summary>
@@ -139,17 +176,17 @@ internal static class Program
         if (e.ExceptionObject is Exception ex)
         {
             LogException("应用程序域未处理异常", ex);
-            
+
             MessageBox.Show(
-                $"应用程序发生严重错误:\n{ex.Message}\n\n应用程序将退出。", 
-                "严重错误", 
-                MessageBoxButtons.OK, 
+                $"应用程序发生严重错误:\n{ex.Message}\n\n应用程序将退出。",
+                "严重错误",
+                MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
         }
-        
+
         Environment.Exit(1);
     }
-    
+
     /// <summary>
     /// 记录异常信息
     /// </summary>

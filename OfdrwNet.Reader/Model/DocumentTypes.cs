@@ -80,40 +80,45 @@ namespace OfdrwNet.Reader.Model
     /// </summary>
     public enum NavigationType
     {
-        /// <summary>
-        /// 跳转到指定页面
-        /// </summary>
-        GoToPage,
+    /// <summary>
+    /// 单页模式
+    /// </summary>
+    SinglePage,
 
-        /// <summary>
-        /// 下一页
-        /// </summary>
-        NextPage,
+    /// <summary>
+    /// 跳转到指定页面
+    /// </summary>
+    GoToPage,
 
-        /// <summary>
-        /// 上一页
-        /// </summary>
-        PreviousPage,
+    /// <summary>
+    /// 下一页
+    /// </summary>
+    NextPage,
 
-        /// <summary>
-        /// 首页
-        /// </summary>
-        FirstPage,
+    /// <summary>
+    /// 上一页
+    /// </summary>
+    PreviousPage,
 
-        /// <summary>
-        /// 末页
-        /// </summary>
-        LastPage,
+    /// <summary>
+    /// 首页
+    /// </summary>
+    FirstPage,
 
-        /// <summary>
-        /// 缩放
-        /// </summary>
-        Zoom,
+    /// <summary>
+    /// 末页
+    /// </summary>
+    LastPage,
 
-        /// <summary>
-        /// 平移
-        /// </summary>
-        Pan
+    /// <summary>
+    /// 缩放
+    /// </summary>
+    Zoom,
+
+    /// <summary>
+    /// 平移
+    /// </summary>
+    Pan
     }
 
     /// <summary>
@@ -121,30 +126,35 @@ namespace OfdrwNet.Reader.Model
     /// </summary>
     public enum ResourceType
     {
-        /// <summary>
-        /// 字体资源
-        /// </summary>
-        Font,
+    /// <summary>
+    /// 字体资源
+    /// </summary>
+    Font,
 
-        /// <summary>
-        /// 图像资源
-        /// </summary>
-        Image,
+    /// <summary>
+    /// 图像资源
+    /// </summary>
+    Image,
 
-        /// <summary>
-        /// 颜色空间资源
-        /// </summary>
-        ColorSpace,
+    /// <summary>
+    /// 模板资源
+    /// </summary>
+    Template,
 
-        /// <summary>
-        /// 矢量图形资源
-        /// </summary>
-        Vector,
+    /// <summary>
+    /// 颜色空间资源
+    /// </summary>
+    ColorSpace,
 
-        /// <summary>
-        /// 其他类型资源
-        /// </summary>
-        Other
+    /// <summary>
+    /// 矢量图形资源
+    /// </summary>
+    Vector,
+
+    /// <summary>
+    /// 其他类型资源
+    /// </summary>
+    Other
     }
 
     /// <summary>

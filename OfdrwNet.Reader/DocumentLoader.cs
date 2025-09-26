@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using OfdrwNet.Reader.Model;
 
@@ -30,44 +31,34 @@ namespace OfdrwNet.Reader
         /// </summary>
         /// <param name="source">文档源</param>
         /// <param name="options">加载选项</param>
-        /// <returns>加载结果</returns>
-        public async Task<DocumentLoadResult> LoadDocumentAsync(DocumentSource source, LoadOptions? options = null)
+        /// <param name="cancellationToken">取消令牌</param>
+        /// <returns>OFD文档对象</returns>
+        public async Task<OfdDocument> LoadDocumentAsync(DocumentSource source, LoadOptions options = null, CancellationToken cancellationToken = default)
         {
             if (source == null)
             {
-                return new DocumentLoadResult
-                {
-                    Success = false,
-                    ErrorMessage = "文档源不能为空"
-                };
+                throw new ArgumentNullException(nameof(source), "文档源不能为空");
             }
 
             options ??= new LoadOptions();
-            var startTime = DateTime.Now;
 
             try
             {
+                cancellationToken.ThrowIfCancellationRequested();
+
                 // 验证文档源
-                var validationResult = await ValidateDocumentSourceAsync(source);
+                var validationResult = await ValidateDocumentAsync(source);
                 if (!validationResult.IsValid)
                 {
-                    return new DocumentLoadResult
-                    {
-                        Success = false,
-                        ErrorMessage = validationResult.ErrorMessage,
-                        ValidationResult = validationResult
-                    };
+                    var firstError = validationResult.Errors?.Count > 0 ? validationResult.Errors[0].Message : "文档验证失败";
+                    throw new InvalidOperationException(firstError);
                 }
 
                 // 加载文档
                 var document = await LoadDocumentFromSourceAsync(source, options);
                 if (document == null)
                 {
-                    return new DocumentLoadResult
-                    {
-                        Success = false,
-                        ErrorMessage = "文档加载失败"
-                    };
+                    throw new InvalidOperationException("文档加载失败");
                 }
 
                 // 预加载资源（如果启用）
@@ -76,174 +67,192 @@ namespace OfdrwNet.Reader
                     await PreloadDocumentResourcesAsync(document);
                 }
 
-                var endTime = DateTime.Now;
-                var loadDuration = endTime - startTime;
-
-                return new DocumentLoadResult
-                {
-                    Success = true,
-                    Document = document,
-                    LoadDuration = loadDuration,
-                    ValidationResult = validationResult,
-                    ResourceCount = CountDocumentResources(document)
-                };
+                return document;
+            }
+            catch (OperationCanceledException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
-                return new DocumentLoadResult
-                {
-                    Success = false,
-                    ErrorMessage = $"文档加载异常: {ex.Message}",
-                    Exception = ex
-                };
+                throw new InvalidOperationException($"文档加载异常: {ex.Message}", ex);
             }
         }
 
         /// <summary>
-        /// 异步验证文档
+        /// 验证OFD文档结构和格式
         /// </summary>
         /// <param name="source">文档源</param>
-        /// <param name="options">验证选项</param>
         /// <returns>验证结果</returns>
-        public async Task<ValidationResult> ValidateDocumentAsync(DocumentSource source, ValidationOptions? options = null)
+        public async Task<ValidationResult> ValidateDocumentAsync(DocumentSource source)
         {
             if (source == null)
             {
                 return new ValidationResult
                 {
                     IsValid = false,
-                    ErrorMessage = "文档源不能为空"
+                    Errors = new System.Collections.Generic.List<ValidationError>
+                    {
+                        new ValidationError { Message = "文档源不能为空", Code = "INVALID_SOURCE" }
+                    }
                 };
             }
 
-            options ??= new ValidationOptions();
-
             try
             {
-                // 基础验证
-                var basicValidation = await ValidateDocumentSourceAsync(source);
-                if (!basicValidation.IsValid)
-                    return basicValidation;
-
-                // 深度验证（如果启用）
-                if (options.EnableDeepValidation)
-                {
-                    return await PerformDeepValidationAsync(source, options);
-                }
-
-                return basicValidation;
+                return await ValidateDocumentSourceAsync(source);
             }
             catch (Exception ex)
             {
                 return new ValidationResult
                 {
                     IsValid = false,
-                    ErrorMessage = $"文档验证异常: {ex.Message}",
-                    Exception = ex
+                    Errors = new System.Collections.Generic.List<ValidationError>
+                    {
+                        new ValidationError { Message = $"文档验证异常: {ex.Message}", Code = "VALIDATION_ERROR" }
+                    }
                 };
             }
         }
 
         /// <summary>
-        /// 异步获取文档信息
+        /// 获取文档基本信息而不完全加载
         /// </summary>
         /// <param name="source">文档源</param>
-        /// <returns>文档信息</returns>
-        public async Task<DocumentInfo> GetDocumentInfoAsync(DocumentSource source)
+        /// <returns>文档元数据</returns>
+        public async Task<DocumentMetadata> GetDocumentInfoAsync(DocumentSource source)
         {
-            var info = new DocumentInfo
+            if (source == null)
             {
-                Source = source,
-                InspectionTime = DateTime.Now
-            };
+                throw new ArgumentNullException(nameof(source), "文档源不能为空");
+            }
 
             try
             {
-                // 基础信息检查
-                await PopulateBasicInfoAsync(info, source);
-
-                // 详细信息检查
-                if (source.SourceType == DocumentSourceType.File)
-                {
-                    await PopulateFileInfoAsync(info, source.FilePath!);
-                }
-                else if (source.SourceType == DocumentSourceType.Stream)
-                {
-                    await PopulateStreamInfoAsync(info, source.Stream!);
-                }
-                else if (source.SourceType == DocumentSourceType.Directory)
-                {
-                    await PopulateDirectoryInfoAsync(info, source.DirectoryPath!);
-                }
-
-                info.IsAvailable = true;
+                return await ExtractDocumentMetadataAsync(source);
             }
             catch (Exception ex)
             {
-                info.ErrorMessage = ex.Message;
-                info.IsAvailable = false;
+                throw new InvalidOperationException($"获取文档信息失败: {ex.Message}", ex);
             }
-
-            return info;
         }
 
         // 私有辅助方法
 
         /// <summary>
+        /// 提取文档元数据
+        /// </summary>
+        private async Task<DocumentMetadata> ExtractDocumentMetadataAsync(DocumentSource source)
+        {
+            var metadata = new DocumentMetadata();
+
+            // 创建基础文档信息
+            var info = new DocumentInfo();
+            await PopulateBasicInfoAsync(info, source);
+
+            // 根据源类型填充不同信息
+            switch (source.Type)
+            {
+                case DocumentSourceType.File:
+                    await PopulateFileInfoAsync(info, source.FilePath!);
+                    break;
+                case DocumentSourceType.Stream:
+                    await PopulateStreamInfoAsync(info, source.Stream!);
+                    break;
+                case DocumentSourceType.Directory:
+                    await PopulateDirectoryInfoAsync(info, source.Directory!);
+                    break;
+            }
+
+            // 尝试从文档中提取更详细的元数据
+            try
+            {
+                var document = await LoadDocumentFromSourceAsync(source, new LoadOptions());
+                if (document != null)
+                {
+                    // TODO: 根据实际 OfdDocument 结构提取信息
+                    metadata.Title = "文档";
+                    metadata.Author = "未知";
+                    metadata.Subject = "";
+                    metadata.Creator = "";
+                    metadata.CreationDate = DateTime.Now;
+                    metadata.ModificationDate = DateTime.Now;
+                    metadata.PageCount = document.Pages?.Count ?? 0;
+                }
+            }
+            catch
+            {
+                // 如果提取详细信息失败，使用默认值
+                metadata.Title = "文档";
+                metadata.Author = "未知";
+                metadata.PageCount = 0;
+            }
+
+            return metadata;
+        }
+
+        /// <summary>
         /// 验证文档源
         /// </summary>
-        private async Task<ValidationResult> ValidateDocumentSourceAsync(DocumentSource source)
+        private Task<ValidationResult> ValidateDocumentSourceAsync(DocumentSource source)
         {
             var result = new ValidationResult();
 
-            switch (source.SourceType)
+            switch (source.Type)
             {
                 case DocumentSourceType.File:
                     if (string.IsNullOrEmpty(source.FilePath))
                     {
-                        result.ErrorMessage = "文件路径不能为空";
-                        return result;
+                        result.IsValid = false;
+                        result.Errors.Add(new ValidationError { Message = "文件路径不能为空", Code = "EMPTY_FILE_PATH" });
+                        return Task.FromResult(result);
                     }
                     if (!File.Exists(source.FilePath))
                     {
-                        result.ErrorMessage = $"文件不存在: {source.FilePath}";
-                        return result;
+                        result.IsValid = false;
+                        result.Errors.Add(new ValidationError { Message = $"文件不存在: {source.FilePath}", Code = "FILE_NOT_FOUND" });
+                        return Task.FromResult(result);
                     }
                     break;
 
                 case DocumentSourceType.Stream:
                     if (source.Stream == null)
                     {
-                        result.ErrorMessage = "数据流不能为空";
-                        return result;
+                        result.IsValid = false;
+                        result.Errors.Add(new ValidationError { Message = "数据流不能为空", Code = "NULL_STREAM" });
+                        return Task.FromResult(result);
                     }
                     if (!source.Stream.CanRead)
                     {
-                        result.ErrorMessage = "数据流不可读";
-                        return result;
+                        result.IsValid = false;
+                        result.Errors.Add(new ValidationError { Message = "数据流不可读", Code = "UNREADABLE_STREAM" });
+                        return Task.FromResult(result);
                     }
                     break;
 
                 case DocumentSourceType.Directory:
-                    if (string.IsNullOrEmpty(source.DirectoryPath))
+                    if (string.IsNullOrEmpty(source.Directory))
                     {
-                        result.ErrorMessage = "目录路径不能为空";
-                        return result;
+                        result.IsValid = false;
+                        result.Errors.Add(new ValidationError { Message = "目录路径不能为空", Code = "EMPTY_DIRECTORY_PATH" });
+                        return Task.FromResult(result);
                     }
-                    if (!Directory.Exists(source.DirectoryPath))
+                    if (!Directory.Exists(source.Directory))
                     {
-                        result.ErrorMessage = $"目录不存在: {source.DirectoryPath}";
-                        return result;
+                        result.IsValid = false;
+                        result.Errors.Add(new ValidationError { Message = $"目录不存在: {source.Directory}", Code = "DIRECTORY_NOT_FOUND" });
+                        return Task.FromResult(result);
                     }
                     break;
 
                 default:
-                    result.ErrorMessage = "不支持的文档源类型";
-                    return result;
+                    result.IsValid = false;
+                    result.Errors.Add(new ValidationError { Message = "不支持的文档源类型", Code = "UNSUPPORTED_SOURCE_TYPE" });
+                    return Task.FromResult(result);
             }
 
             result.IsValid = true;
-            return result;
+            return Task.FromResult(result);
         }
 
         /// <summary>
@@ -267,10 +276,10 @@ namespace OfdrwNet.Reader
         /// <summary>
         /// 预加载文档资源
         /// </summary>
-        private async Task PreloadDocumentResourcesAsync(OfdDocument document)
+        private Task PreloadDocumentResourcesAsync(OfdDocument document)
         {
             if (document?.Pages == null)
-                return;
+                return Task.CompletedTask;
 
             var preloadCount = Math.Min(_configuration.PreloadPageCount, document.Pages.Count);
 
@@ -286,6 +295,8 @@ namespace OfdrwNet.Reader
                     // 忽略预加载错误
                 }
             }
+
+            return Task.CompletedTask;
         }
 
         /// <summary>
@@ -309,43 +320,47 @@ namespace OfdrwNet.Reader
         /// <summary>
         /// 填充基础信息
         /// </summary>
-        private async Task PopulateBasicInfoAsync(DocumentInfo info, DocumentSource source)
+        private Task PopulateBasicInfoAsync(DocumentInfo info, DocumentSource source)
         {
-            info.SourceType = source.SourceType;
+            info.SourceType = source.Type;
             // TODO: 填充其他基础信息
+            return Task.CompletedTask;
         }
 
         /// <summary>
         /// 填充文件信息
         /// </summary>
-        private async Task PopulateFileInfoAsync(DocumentInfo info, string filePath)
+        private Task PopulateFileInfoAsync(DocumentInfo info, string filePath)
         {
             var fileInfo = new FileInfo(filePath);
             info.FileSize = fileInfo.Length;
             info.LastModified = fileInfo.LastWriteTime;
             // TODO: 填充更多文件相关信息
+            return Task.CompletedTask;
         }
 
         /// <summary>
         /// 填充流信息
         /// </summary>
-        private async Task PopulateStreamInfoAsync(DocumentInfo info, Stream stream)
+        private Task PopulateStreamInfoAsync(DocumentInfo info, Stream stream)
         {
             if (stream.CanSeek)
             {
                 info.FileSize = stream.Length;
             }
             // TODO: 填充更多流相关信息
+            return Task.CompletedTask;
         }
 
         /// <summary>
         /// 填充目录信息
         /// </summary>
-        private async Task PopulateDirectoryInfoAsync(DocumentInfo info, string directoryPath)
+        private Task PopulateDirectoryInfoAsync(DocumentInfo info, string directoryPath)
         {
             var dirInfo = new DirectoryInfo(directoryPath);
             info.LastModified = dirInfo.LastWriteTime;
             // TODO: 填充更多目录相关信息
+            return Task.CompletedTask;
         }
     }
 
@@ -413,6 +428,13 @@ namespace OfdrwNet.Reader
 
         /// <summary>创建时间</summary>
         public DateTime? CreatedTime { get; set; }
+
+        /// <summary>创建日期 (与CreatedTime兼容)</summary>
+        public DateTime? CreationDate
+        {
+            get => CreatedTime;
+            set => CreatedTime = value;
+        }
 
         /// <summary>OFD版本</summary>
         public string? OfdVersion { get; set; }

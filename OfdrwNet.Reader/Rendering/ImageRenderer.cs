@@ -112,7 +112,7 @@ namespace OfdrwNet.Reader.Rendering
         {
             if (imageObject?.Boundary != null)
             {
-                var bounds = imageObject.Boundary;
+                var bounds = Rectangle.Round(imageObject.Boundary);
 
                 // 应用缩放变换
                 if (renderContext.ScaleFactor != 1.0)
@@ -226,9 +226,21 @@ namespace OfdrwNet.Reader.Rendering
                 // 从资源管理器获取图像
                 var imageData = await _resourceManager.GetImageAsync(imageObject.ResourceId);
                 if (imageData == null)
-                    return null;
+                {
+                    System.Diagnostics.Trace.WriteLine($"[ImageRenderer] 图像资源为空: {imageObject.ResourceId}");
+                    return CreatePlaceholderImage(imageObject.ResourceId);
+                }
 
-                var image = Image.FromStream(imageData);
+                System.Drawing.Image image;
+                if (imageData is System.Drawing.Image img)
+                {
+                    image = img;
+                }
+                else
+                {
+                    System.Diagnostics.Trace.WriteLine($"[ImageRenderer] 图像资源类型不正确: {imageObject.ResourceId}");
+                    return CreatePlaceholderImage(imageObject.ResourceId);
+                }
 
                 // 根据渲染上下文调整图像
                 if (renderContext != null)
@@ -241,8 +253,36 @@ namespace OfdrwNet.Reader.Rendering
             }
             catch (Exception ex)
             {
-                throw new InvalidOperationException($"加载图像失败: {imageObject.ResourceId}", ex);
+                System.Diagnostics.Trace.WriteLine($"[ImageRenderer] 加载图像失败: {imageObject.ResourceId} - {ex.Message}");
+                System.Diagnostics.Trace.WriteLine($"[ImageRenderer] 异常详情: {ex}");
+
+                // 返回占位图像而不是抛出异常，保证渲染能继续进行
+                return CreatePlaceholderImage(imageObject.ResourceId);
             }
+        }
+
+        /// <summary>
+        /// 创建占位图像
+        /// </summary>
+        private Image CreatePlaceholderImage(string resourceId)
+        {
+            var placeholder = new Bitmap(100, 60);
+            using (var g = Graphics.FromImage(placeholder))
+            {
+                g.Clear(Color.LightGray);
+                using (var brush = new SolidBrush(Color.Red))
+                using (var font = new Font("Arial", 8))
+                {
+                    g.DrawString($"IMG:{resourceId}", font, brush, 2, 2);
+                    g.DrawString("加载失败", font, brush, 2, 20);
+                }
+                // 绘制边框
+                using (var pen = new Pen(Color.Red, 1))
+                {
+                    g.DrawRectangle(pen, 0, 0, placeholder.Width - 1, placeholder.Height - 1);
+                }
+            }
+            return placeholder;
         }
 
         /// <summary>
@@ -303,17 +343,17 @@ namespace OfdrwNet.Reader.Rendering
             await Task.Run(() =>
             {
                 var destRect = new Rectangle(
-                    imageObject.Boundary.X,
-                    imageObject.Boundary.Y,
-                    imageObject.Boundary.Width,
-                    imageObject.Boundary.Height
+                    (int)imageObject.Boundary.X,
+                    (int)imageObject.Boundary.Y,
+                    (int)imageObject.Boundary.Width,
+                    (int)imageObject.Boundary.Height
                 );
 
                 // 应用透明度
-                if (imageObject.Alpha < 1.0f)
+                if ((float)imageObject.Alpha < 1.0f)
                 {
                     var colorMatrix = new ColorMatrix();
-                    colorMatrix.Matrix33 = imageObject.Alpha; // 设置Alpha值
+                    colorMatrix.Matrix33 = (float)imageObject.Alpha; // 设置Alpha值
 
                     var imageAttributes = new ImageAttributes();
                     imageAttributes.SetColorMatrix(colorMatrix);

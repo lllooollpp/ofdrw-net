@@ -4,6 +4,7 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Threading.Tasks;
 using OfdrwNet.Reader.Model;
+using System.Diagnostics;
 
 namespace OfdrwNet.Reader.Rendering
 {
@@ -47,23 +48,40 @@ namespace OfdrwNet.Reader.Rendering
 
             try
             {
+                // Graphics 有效性快速探测（可能被外部提前释放）
+                try
+                {
+                    _ = graphics.DpiX; // 访问属性，如果已释放会抛
+                    var clip = graphics.VisibleClipBounds; // 也可触发潜在无效状态
+                    if (clip.Width <= 0 || clip.Height <= 0)
+                    {
+                        Debug.WriteLine($"[TextRenderer] Skip drawing: empty clip bounds for TextObject {textObject.Id}");
+                        return true; // 不渲染但视为成功
+                    }
+                }
+                catch (Exception gex)
+                {
+                    Debug.WriteLine($"[TextRenderer] Graphics invalid early, skip TextObject {textObject.Id}: {gex.Message}");
+                    return true; // 不中断整体渲染
+                }
                 // 保存图形状态
                 var state = graphics.Save();
 
                 // 应用变换矩阵
                 ApplyTransform(graphics, textObject, renderContext);
 
-                // 设置文本渲染质量
-                graphics.TextRenderingHint = renderContext.TextRenderingHint;
+                // 安全设置文本渲染质量
+                SafeApplyTextRenderingHint(graphics, renderContext);
 
                 // 获取字体
                 var font = await GetFontAsync(textObject.Font, renderContext);
 
-                // 获取画刷
-                var brush = CreateBrush(textObject.Color);
-
-                // 渲染文本
-                await RenderTextContentAsync(textObject, graphics, font, brush, renderContext);
+                // 获取画刷并确保释放
+                using (var brush = CreateBrush(textObject.Color))
+                {
+                    // 渲染文本
+                    await RenderTextContentAsync(textObject, graphics, font, brush, renderContext);
+                }
 
                 // 恢复图形状态
                 graphics.Restore(state);
@@ -73,6 +91,33 @@ namespace OfdrwNet.Reader.Rendering
             catch (Exception ex)
             {
                 throw new RenderException(textObject.Id.ToString(), $"文本渲染失败: {ex.Message}", ex);
+            }
+        }
+
+        private static void SafeApplyTextRenderingHint(Graphics graphics, RenderContext ctx)
+        {
+            if (graphics == null) return;
+            try
+            {
+                // 防御：某些 GDI+ 上下文（例如打印/已释放）可能抛出 ArgumentException
+                if (ctx != null)
+                {
+                    var hint = ctx.TextRenderingHint;
+                    // 枚举值范围验证（System.Drawing.Text.TextRenderingHint 0..5，含 ClearTypeGridFit=5）
+                    if ((int)hint < 0 || (int)hint > (int)System.Drawing.Text.TextRenderingHint.ClearTypeGridFit)
+                    {
+                        hint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+                    }
+                    graphics.TextRenderingHint = hint;
+                }
+            }
+            catch (ArgumentException)
+            {
+                // 回退：忽略并使用系统默认，减少噪音
+            }
+            catch (Exception)
+            {
+                // 其它异常亦忽略（保持渲染不中断）
             }
         }
 
@@ -172,14 +217,14 @@ namespace OfdrwNet.Reader.Rendering
             {
                 var size = await MeasureTextAsync(textObject.Text, textObject.Font, renderContext);
                 return new Rectangle(
-                    textObject.Boundary.X,
-                    textObject.Boundary.Y,
+                    (int)textObject.Boundary.X,
+                    (int)textObject.Boundary.Y,
                     (int)size.Width,
                     (int)size.Height
                 );
             }
 
-            return textObject?.Boundary ?? Rectangle.Empty;
+            return textObject != null ? Rectangle.Round(textObject.Boundary) : Rectangle.Empty;
         }
 
         // 私有方法
@@ -218,26 +263,49 @@ namespace OfdrwNet.Reader.Rendering
                 return _fontCache.GetDefaultFont();
             }
 
-            var cacheKey = $"{fontInfo.Name}_{fontInfo.Size}_{fontInfo.Style}_{renderContext.ScaleFactor}";
+            var name = string.IsNullOrWhiteSpace(fontInfo.Name) ? _fontCache.GetDefaultFont().Name : fontInfo.Name!;
+            var cacheKey = $"{name}_{fontInfo.Size}_{fontInfo.Style}_{renderContext.ScaleFactor}";
 
             if (_fontCache.TryGetFont(cacheKey, out var cachedFont) && cachedFont != null)
             {
                 return cachedFont;
             }
 
-            // 尝试从资源管理器获取字体
             Font font;
             try
             {
-                var resourceFont = await _resourceManager.GetFontAsync(fontInfo.Name);
+                var resourceFont = await _resourceManager.GetFontAsync(name); // 保持同步上下文，避免 UI 线程丢失
                 var scaledSize = (float)(fontInfo.Size * renderContext.ScaleFactor);
                 font = new Font(resourceFont.FontFamily, scaledSize, fontInfo.Style);
             }
             catch
             {
-                // 回退到系统字体
                 var scaledSize = (float)(fontInfo.Size * renderContext.ScaleFactor);
-                font = new Font(fontInfo.Name, scaledSize, fontInfo.Style);
+                font = new Font(name, scaledSize, fontInfo.Style);
+            }
+
+            // 样式可用性验证（某些字体不支持 Italic/Bold 组合会触发内部错误）
+            try
+            {
+                if (!font.FontFamily.IsStyleAvailable(font.Style))
+                {
+                    var fallbackStyle = FontStyle.Regular;
+                    if (!font.FontFamily.IsStyleAvailable(fallbackStyle))
+                    {
+                        fallbackStyle = FontStyle.Regular; // 仍不可用则保持
+                    }
+                    if (fallbackStyle != font.Style)
+                    {
+                        var replaced = new Font(font.FontFamily, font.Size, fallbackStyle);
+                        font.Dispose();
+                        font = replaced;
+                        Debug.WriteLine($"[TextRenderer] Fallback font style -> {fallbackStyle} for '{name}'");
+                    }
+                }
+            }
+            catch (Exception fex)
+            {
+                Debug.WriteLine($"[TextRenderer] Font style availability check failed: {fex.Message}");
             }
 
             _fontCache.AddFont(cacheKey, font);
@@ -256,37 +324,156 @@ namespace OfdrwNet.Reader.Rendering
             return new SolidBrush(Color.Black);
         }
 
-        /// <summary>
-        /// 异步渲染文本内容
-        /// </summary>
-        private async Task RenderTextContentAsync(TextObject textObject, Graphics graphics, Font font, Brush brush, RenderContext renderContext)
+        private Task RenderTextContentAsync(TextObject textObject, Graphics graphics, Font font, Brush brush, RenderContext renderContext)
         {
-            await Task.Run(() =>
-            {
-                if (textObject.Layout != null)
-                {
-                    // 使用布局信息渲染
-                    var layoutRect = new RectangleF(
-                        (float)textObject.Layout.X,
-                        (float)textObject.Layout.Y,
-                        (float)textObject.Layout.Width,
-                        (float)textObject.Layout.Height
-                    );
+            // 重要：GDI+ 对象 (Graphics) 不是线程安全的，不能在 Task.Run 的线程池里使用。
+            // 之前的实现把 DrawString 放进 Task.Run，可能导致跨线程访问产生 System.ArgumentException("Parameter is not valid.")。
+            // 这里改为同步执行并返回已完成的 Task。
 
-                    var stringFormat = textObject.Layout.StringFormat ?? StringFormat.GenericDefault;
-                    graphics.DrawString(textObject.Text, font, brush, layoutRect, stringFormat);
-                }
-                else
+            if (graphics == null || textObject == null || font == null || brush == null)
+            {
+                return Task.CompletedTask; // 防御式退出
+            }
+
+            SafeApplyTextRenderingHint(graphics, renderContext);
+
+            // 本地辅助函数：检测矩形是否可渲染
+            static bool IsRectangleRenderable(RectangleF r)
+                => r.Width > 0 && r.Height > 0 &&
+                   !float.IsNaN(r.X) && !float.IsNaN(r.Y) && !float.IsNaN(r.Width) && !float.IsNaN(r.Height) &&
+                   !float.IsInfinity(r.X) && !float.IsInfinity(r.Y) && !float.IsInfinity(r.Width) && !float.IsInfinity(r.Height);
+
+            // 超长文本做一个软限制（防御：异常数据导致 GDI+ 失败）
+            var rawText = textObject.Text ?? string.Empty;
+            // 过滤控制字符（除 \r \n \t），防止奇异 glyph 引发 GDI 异常
+            Span<char> buffer = rawText.ToCharArray();
+            for (int i = 0; i < buffer.Length; i++)
+            {
+                var c = buffer[i];
+                if (c < 0x20 && c != '\r' && c != '\n' && c != '\t') buffer[i] = ' ';
+            }
+            var text = new string(buffer);
+            if (text.Length == 0 || string.IsNullOrWhiteSpace(text))
+            {
+                return Task.CompletedTask; // 空白文本直接跳过
+            }
+            if (text.Length > 20000)
+            {
+                Debug.WriteLine($"[TextRenderer] Skip or truncate very long text length={text.Length} Id={textObject.Id}");
+                text = text.Substring(0, 20000);
+            }
+
+            try
+            {
+                // 线程诊断
+                Debug.WriteLine($"[TextRenderer] Thread={Environment.CurrentManagedThreadId} IsThreadPool={(System.Threading.Thread.CurrentThread.IsThreadPoolThread)} Font='{font.Name}' RectLayout?={(textObject.Layout!=null)}");
+                try
                 {
-                    // 简单文本渲染
-                    graphics.DrawString(textObject.Text, font, brush, textObject.Boundary.Location);
+                    _ = graphics.DpiX; // 访问一个属性确保 graphics 尚未被释放
                 }
-            });
+                catch (Exception dpiEx)
+                {
+                    Debug.WriteLine($"[TextRenderer] Graphics DPI access failed: {dpiEx.Message}");
+                }
+                // 优先使用布局矩形
+                if (textObject.Layout != null &&
+                    textObject.Layout.Width > 0 &&
+                    textObject.Layout.Height > 0)
+                {
+                    var lx = (float)textObject.Layout.X;
+                    var ly = (float)textObject.Layout.Y;
+                    var lw = (float)textObject.Layout.Width;
+                    var lh = (float)textObject.Layout.Height;
+
+                    bool IsValid(float v) => !float.IsNaN(v) && !float.IsInfinity(v);
+                    if (IsValid(lx) && IsValid(ly) && IsValid(lw) && IsValid(lh) && lw > 0 && lh > 0)
+                    {
+                        var layoutRect = new RectangleF(lx, ly, lw, lh);
+
+                        // 与当前可见裁剪区域取交集，避免极大或溢出的矩形进入 GDI
+                        try
+                        {
+                            var clip = graphics.VisibleClipBounds; // 可能返回 Empty（未设置 clip）
+                            if (!clip.IsEmpty && !clip.Contains(layoutRect))
+                            {
+                                var intersection = RectangleF.Intersect(clip, layoutRect);
+                                if (IsRectangleRenderable(intersection))
+                                {
+                                    layoutRect = intersection;
+                                }
+                                else if (!clip.IntersectsWith(layoutRect))
+                                {
+                                    Debug.WriteLine($"[TextRenderer] Layout rect completely outside clip. Skip draw. Id={textObject.Id}");
+                                    return Task.CompletedTask;
+                                }
+                            }
+                        }
+                        catch (Exception eClip)
+                        {
+                            Debug.WriteLine($"[TextRenderer] Clip bounds check failed: {eClip.Message}");
+                        }
+
+                        // Clone 避免修改全局 GenericDefault / 复用实例造成竞争
+                        var fmt = textObject.Layout.StringFormat != null
+                            ? (StringFormat)textObject.Layout.StringFormat.Clone()
+                            : (StringFormat)StringFormat.GenericDefault.Clone();
+                        try
+                        {
+                            fmt.Alignment = textObject.Layout.Alignment;
+                            try
+                            {
+                                graphics.DrawString(text, font, brush, layoutRect, fmt);
+                            }
+                            catch (ArgumentException firstEx)
+                            {
+                                Debug.WriteLine($"[TextRenderer] First DrawString failed, retry simple no-format. {firstEx.Message}");
+                                // 去除 StringFormat 再尝试一次（某些 GDI+ 在特定格式组合下会抛）
+                                graphics.DrawString(text, font, brush, layoutRect.Location);
+                            }
+                        }
+                        finally
+                        {
+                            fmt.Dispose();
+                        }
+                        return Task.CompletedTask;
+                    }
+                }
+
+                // 回退：使用边界左上角 + 简单基线调整
+                var x = textObject.Boundary.X;
+                var y = textObject.Boundary.Y + font.Size * 0.8f; // baseline tweak
+
+                if (float.IsNaN(x) || float.IsInfinity(x) || float.IsNaN(y) || float.IsInfinity(y))
+                {
+                    // 再次防御，避免无效坐标
+                    x = 0;
+                    y = 0;
+                }
+                try
+                {
+                    graphics.DrawString(text, font, brush, x, y);
+                }
+                catch (ArgumentException firstEx2)
+                {
+                    Debug.WriteLine($"[TextRenderer] Fallback DrawString failed once, retry with point (0,0). {firstEx2.Message}");
+                    graphics.DrawString(text, font, brush, 0f, 0f);
+                }
+            }
+            catch (ArgumentException argEx)
+            {
+                // 捕获典型的 "Parameter is not valid."，附加上下文信息帮助调试
+                var detail = $"DrawString 参数异常: len={text?.Length}, font='{font?.Name}', layout=({textObject.Layout?.X},{textObject.Layout?.Y},{textObject.Layout?.Width},{textObject.Layout?.Height}), boundary=({textObject.Boundary.X},{textObject.Boundary.Y},{textObject.Boundary.Width},{textObject.Boundary.Height})";
+                Debug.WriteLine($"[TextRenderer][ArgumentException] {detail}\nStack: {argEx.StackTrace}");
+                throw new RenderException(textObject.Id.ToString(), detail, argEx);
+            }
+            catch (Exception ex)
+            {
+                throw new RenderException(textObject.Id.ToString(), "绘制文本时发生未预期异常", ex);
+            }
+
+            return Task.CompletedTask;
         }
 
-        /// <summary>
-        /// 释放资源
-        /// </summary>
         public void Dispose()
         {
             if (!_disposed)
@@ -297,46 +484,19 @@ namespace OfdrwNet.Reader.Rendering
         }
     }
 
-    /// <summary>
-    /// 字体缓存管理器
-    /// </summary>
     internal class FontCache : IDisposable
     {
-        private readonly Dictionary<string, Font> _fontCache = new Dictionary<string, Font>();
-        private readonly Font _defaultFont;
+        private readonly Dictionary<string, Font> _cache = new();
+        private readonly Font _default = new("Arial", 12f);
 
-        public FontCache()
-        {
-            _defaultFont = new Font("Arial", 12);
-        }
-
-        public bool TryGetFont(string key, out Font? font)
-        {
-            font = null;
-            return _fontCache.TryGetValue(key, out font) && font != null;
-        }
-
-        public void AddFont(string key, Font font)
-        {
-            if (!_fontCache.ContainsKey(key))
-            {
-                _fontCache[key] = font;
-            }
-        }
-
-        public Font GetDefaultFont()
-        {
-            return _defaultFont;
-        }
-
+        public bool TryGetFont(string key, out Font? font) => _cache.TryGetValue(key, out font);
+        public void AddFont(string key, Font font) { if (!_cache.ContainsKey(key)) _cache[key] = font; }
+        public Font GetDefaultFont() => _default;
         public void Dispose()
         {
-            foreach (var font in _fontCache.Values)
-            {
-                font.Dispose();
-            }
-            _fontCache.Clear();
-            _defaultFont?.Dispose();
+            foreach (var f in _cache.Values) f.Dispose();
+            _default.Dispose();
+            _cache.Clear();
         }
     }
 }
