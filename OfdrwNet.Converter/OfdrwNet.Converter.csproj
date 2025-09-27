@@ -10,17 +10,18 @@
     <ProjectReference Include="..\OfdrwNet.Abstractions\OfdrwNet.Abstractions.csproj" />
     <ProjectReference Include="..\OfdrwNet\OfdrwNet.csproj" />
     <ProjectReference Include="..\OfdrwNet.Core\OfdrwNet.Core.csproj" />
-    <ProjectReference Include="..\OfdrwNet.Reader\OfdrwNet.Reader.csproj" />    
+    <ProjectReference Include="..\OfdrwNet.Reader\OfdrwNet.Reader.csproj" />
     <ProjectReference Include="..\OfdrwNet.Graphics\OfdrwNet.Graphics.csproj" />
     <ProjectReference Include="..\OfdrwNet.Layout\OfdrwNet.Layout.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.4" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.11" />
     <PackageReference Include="SkiaSharp" Version="2.88.6" />
-    <PackageReference Include="itext7" Version="8.0.4" />
+    <PackageReference Include="itext7" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="8.0.0" />
     <PackageReference Include="Microsoft.Playwright" Version="1.44.0" />
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
   </ItemGroup>
 
 </Project>

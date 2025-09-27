@@ -67,10 +67,11 @@ namespace OfdrwNet.Reader.Rendering
                 string ctmStr = "none";
                 try
                 {
-                    if (textObject.CTM != null)
+                    var mat = textObject.CTM ?? textObject.OriginalCTM;
+                    if (mat != null)
                     {
-                        var m = textObject.CTM.Elements; // [m11, m12, m21, m22, dx, dy]
-                        ctmStr = $"[{m[0]:0.###},{m[1]:0.###},{m[2]:0.###},{m[3]:0.###},{m[4]:0.###},{m[5]:0.###}]";
+                        var m = mat.Elements; // [m11, m12, m21, m22, dx, dy]
+                        ctmStr = $"[{m[0]:0.###},{m[1]:0.###},{m[2]:0.###},{m[3]:0.###},{m[4]:0.###},{m[5]:0.###}]{(textObject.CtmIsInternalGlyph && textObject.CTM == null ? "(internal-folded)" : string.Empty)}";
                     }
                 }
                 catch { }
@@ -266,7 +267,7 @@ namespace OfdrwNet.Reader.Rendering
             }
 
             // 应用对象的CTM变换
-            if (textObject.CTM != null)
+            if (textObject.CTM != null && !textObject.CtmIsInternalGlyph)
             {
                 graphics.MultiplyTransform(textObject.CTM);
             }

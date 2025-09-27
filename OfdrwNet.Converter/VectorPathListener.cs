@@ -19,9 +19,9 @@ public class VectorPathListener : IEventListener
     private readonly List<OfdPath> _paths = new();
     private readonly double _pageHeight; // 用于坐标系转换
 
-    // 当前图形状态
-    private Color? _currentStrokeColor;
-    private Color? _currentFillColor;
+    // 当前图形状态（初始化为黑色描边、透明填充，避免未赋值警告；真实值待 UpdateGraphicsState 后续完善）
+    private Color? _currentStrokeColor = ColorConstants.BLACK; // 默认描边色
+    private Color? _currentFillColor = new DeviceRgb(0, 0, 0) { }; // 先占位，Fill=false 时不会输出
     private float _currentLineWidth = 1.0f;
     private bool _currentFill = false;
     private bool _currentStroke = true;

@@ -55,4 +55,19 @@ public class OfdText
     /// 如果不为空且长度为6，将在 TextObject 上输出 CTM 属性。
     /// </summary>
     public double[]? CTM { get; set; }
+
+    /// <summary>
+    /// 平均字符进宽（mm），用于后续聚合 gap 判定（可选）。
+    /// </summary>
+    public double? AvgAdvance { get; set; }
+
+    /// <summary>
+    /// 空格字符参考宽度（mm）（dynamic space width），用于合成空格与分词（可选）。
+    /// </summary>
+    public double? SpaceAdvance { get; set; }
+
+    /// <summary>
+    /// DeltaX 的语义模式：Step=相邻差；Cumulative=相对于首字符累计。保留 null 表示未知，默认为 Step。
+    /// </summary>
+    public string? DeltaXMode { get; set; }
 }

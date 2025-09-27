@@ -4,11 +4,10 @@ using SkiaSharp;
 namespace OfdrwNet.Converter.Export;
 
 /// <summary>
-/// 图片导出器
-/// 对应 Java 版本的 org.ofdrw.converter.export.ImageExporter
-/// 将OFD页面转换为图像文件（PNG、JPEG、BMP、WEBP等）
+/// 图片导出器 (OFD -> Raster Image)
+/// 重命名: 原 ImageExporter => OfdImageExporter，更明确方向；保留旧类（过时）兼容。
 /// </summary>
-public class ImageExporter : OFDExporterBase
+public class OfdImageExporter : OFDExporterBase
 {
     private readonly SKEncodedImageFormat _imageFormat;
     private readonly int _quality;
@@ -20,7 +19,7 @@ public class ImageExporter : OFDExporterBase
     /// <param name="ofdPath">OFD文件路径</param>
     /// <param name="outputDir">输出目录</param>
     /// <param name="dpi">分辨率，默认150 DPI</param>
-    public ImageExporter(string ofdPath, string outputDir, float dpi = 150f) 
+    public OfdImageExporter(string ofdPath, string outputDir, float dpi = 150f)
         : this(ofdPath, outputDir, SKEncodedImageFormat.Png, 100, dpi)
     {
     }
@@ -33,7 +32,7 @@ public class ImageExporter : OFDExporterBase
     /// <param name="imageFormat">图像格式</param>
     /// <param name="quality">图像质量（0-100），仅对JPEG有效</param>
     /// <param name="dpi">分辨率</param>
-    public ImageExporter(string ofdPath, string outputDir, SKEncodedImageFormat imageFormat, int quality = 100, float dpi = 150f) 
+    public OfdImageExporter(string ofdPath, string outputDir, SKEncodedImageFormat imageFormat, int quality = 100, float dpi = 150f)
         : base(ofdPath, outputDir)
     {
         _imageFormat = imageFormat;
@@ -50,7 +49,7 @@ public class ImageExporter : OFDExporterBase
     {
         var pageInfo = GetPageInfo(pageNum);
         var pageSize = pageInfo.Size;
-        
+
         // 计算图像尺寸
         var scale = _dpi / 72f; // 72 DPI为基础
         var width = (int)(pageSize.Width * scale * GraphicsConstants.MmToPoint);
@@ -73,14 +72,14 @@ public class ImageExporter : OFDExporterBase
         // 保存图像
         var extension = GetFileExtension(_imageFormat);
         var outputPath = GenerateOutputFileName(pageNum, extension);
-        
+
         using var image = surface.Snapshot();
         using var data = image.Encode(_imageFormat, _quality);
-        
+
         await File.WriteAllBytesAsync(outputPath, data.ToArray(), cancellationToken);
-        
+
         _outputPaths.Add(outputPath);
-        
+
         System.Diagnostics.Debug.WriteLine($"页面 {pageNum + 1} 已导出到: {outputPath}");
     }
 
@@ -94,7 +93,7 @@ public class ImageExporter : OFDExporterBase
     {
         // 获取页面的所有图层
         var layers = pageInfo.GetAllLayers();
-        
+
         foreach (var layer in layers)
         {
             cancellationToken.ThrowIfCancellationRequested();
@@ -112,7 +111,7 @@ public class ImageExporter : OFDExporterBase
         // 这里需要根据OFD的图层结构来渲染
         // 由于这是一个复杂的渲染过程，这里提供基础框架
         // 实际实现需要解析OFD的各种图形对象（文本、图像、路径等）
-        
+
         // 获取图层中的所有对象
         var textObjects = layer.Elements("TextObject");
         var imageObjects = layer.Elements("ImageObject");
@@ -145,7 +144,7 @@ public class ImageExporter : OFDExporterBase
         // 解析文本属性
         var boundary = ParseBoundary(textObject.Attribute("Boundary")?.Value);
         var fontSize = float.Parse(textObject.Attribute("Size")?.Value ?? "12");
-        
+
         // 获取文本内容
         var textCodeElements = textObject.Elements("TextCode");
         foreach (var textCode in textCodeElements)
@@ -167,7 +166,7 @@ public class ImageExporter : OFDExporterBase
                 canvas.DrawText(text, x, y, paint);
             }
         }
-        
+
         await Task.CompletedTask;
     }
 
@@ -201,7 +200,7 @@ public class ImageExporter : OFDExporterBase
 
             canvas.DrawPath(path, paint);
         }
-        
+
         await Task.CompletedTask;
     }
 
@@ -242,4 +241,14 @@ public class ImageExporter : OFDExporterBase
             _ => ".png"
         };
     }
+}
+
+/// <summary>
+/// 兼容旧名称，后续版本将移除。
+/// </summary>
+[System.Obsolete("Use OfdImageExporter instead. This shim will be removed in a future release.")]
+public class ImageExporter : OfdImageExporter
+{
+    public ImageExporter(string ofdPath, string outputDir, float dpi = 150f) : base(ofdPath, outputDir, dpi) { }
+    public ImageExporter(string ofdPath, string outputDir, SKEncodedImageFormat fmt, int quality = 100, float dpi = 150f) : base(ofdPath, outputDir, fmt, quality, dpi) { }
 }

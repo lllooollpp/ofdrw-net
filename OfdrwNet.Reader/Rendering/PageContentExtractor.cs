@@ -202,6 +202,25 @@ namespace OfdrwNet.Reader.Rendering
 
                             var id = to.Attribute("ID")?.Value ?? Guid.NewGuid().ToString("N");
 
+                            // 解析 CTM（如果存在）
+                            System.Drawing.Drawing2D.Matrix? ctmMatrix = null;
+                            var ctmAttr = to.Attribute("CTM")?.Value;
+                            if (!string.IsNullOrWhiteSpace(ctmAttr))
+                            {
+                                var nums = ctmAttr.Replace(',', ' ').Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                                if (nums.Length == 6 &&
+                                    TryParseFloat(nums[0], out var a) &&
+                                    TryParseFloat(nums[1], out var b) &&
+                                    TryParseFloat(nums[2], out var c) &&
+                                    TryParseFloat(nums[3], out var d) &&
+                                    TryParseFloat(nums[4], out var e) &&
+                                    TryParseFloat(nums[5], out var f))
+                                {
+                                    // OFD CTM 映射到 GDI Matrix(a,b,c,d,e,f)
+                                    ctmMatrix = new System.Drawing.Drawing2D.Matrix(a, b, c, d, e * (float)scaleX, f * (float)scaleY);
+                                }
+                            }
+
                             var txtObj = new TextObject
                             {
                                 Id = id,
@@ -221,8 +240,20 @@ namespace OfdrwNet.Reader.Rendering
                                 },
                                 ZIndex = z++,
                                 ZOrder = z,
-                                Visible = true
+                                Visible = true,
+                                OriginalCTM = ctmMatrix?.Clone(),
+                                CTM = ctmMatrix // 先赋值，后面再基于策略调整
                             };
+
+                            // 策略：如果处于 legacy(非 unified) 模式，并且我们已经把 boundary / fontSize 转成像素，
+                            // 还继续应用 CTM 会造成重复缩放。此类场景将 CTM 标记为内部坐标已融合并清空用于渲染的 CTM。
+                            if (!unified && txtObj.CTM != null)
+                            {
+                                txtObj.CtmIsInternalGlyph = true;
+                                txtObj.CTM?.Dispose();
+                                txtObj.CTM = null; // 避免再次 MultiplyTransform
+                            }
+                            // Unified 模式下：保留 CTM 让渲染阶段叠乘
 
                             result.Add(txtObj);
                             textCountLayer++;
