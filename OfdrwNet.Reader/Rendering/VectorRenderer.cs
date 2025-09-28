@@ -1,9 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Threading.Tasks;
-using System.Globalization;
-using System.Text;
 using OfdrwNet.Reader.Model;
 
 namespace OfdrwNet.Reader.Rendering
@@ -17,6 +16,7 @@ namespace OfdrwNet.Reader.Rendering
         private readonly IResourceManager _resourceManager;
         private readonly PathCache _pathCache;
         private bool _disposed = false;
+
         private static bool IsUnified()
         {
             try
@@ -25,10 +25,16 @@ namespace OfdrwNet.Reader.Rendering
                 if (t != null)
                 {
                     var p = t.GetProperty("UnifiedScalingMode");
-                    if (p != null) return (bool)p.GetValue(null)!;
+                    if (p != null)
+                    {
+                        return (bool)p.GetValue(null)!;
+                    }
                 }
             }
-            catch { }
+            catch
+            {
+            }
+
             return false;
         }
 
@@ -52,25 +58,25 @@ namespace OfdrwNet.Reader.Rendering
         public async Task<bool> RenderAsync(VectorObject vectorObject, Graphics graphics, RenderContext renderContext)
         {
             if (vectorObject == null || graphics == null || renderContext == null)
+            {
                 return false;
+            }
 
             if (!vectorObject.Visible)
+            {
                 return true;
+            }
 
             try
             {
                 System.Diagnostics.Trace.WriteLine($"[VectorRenderer] Begin render Id={vectorObject.Id} Type={vectorObject.VectorType} Boundary=({vectorObject.Boundary.X},{vectorObject.Boundary.Y},{vectorObject.Boundary.Width},{vectorObject.Boundary.Height}) StrokeW={vectorObject.StrokeStyle?.Width} PathLen={(vectorObject.PathData?.Length ?? 0)} Points={(vectorObject.Points?.Count ?? 0)}");
-                // 保存图形状态
-                var state = graphics.Save();
 
-                // 设置矢量渲染质量
+                var state = graphics.Save();
                 graphics.SmoothingMode = renderContext.SmoothingMode;
                 graphics.CompositingQuality = renderContext.CompositingQuality;
 
-                // 应用变换矩阵
                 ApplyTransform(graphics, vectorObject, renderContext);
 
-                // 根据矢量类型进行渲染
                 var result = vectorObject.VectorType switch
                 {
                     VectorType.Path => await RenderPathAsync(vectorObject, graphics, renderContext),
@@ -83,7 +89,6 @@ namespace OfdrwNet.Reader.Rendering
                     _ => false
                 };
 
-                // 恢复图形状态
                 graphics.Restore(state);
                 System.Diagnostics.Trace.WriteLine($"[VectorRenderer] End render Id={vectorObject.Id} Success={result}");
 
@@ -92,25 +97,22 @@ namespace OfdrwNet.Reader.Rendering
             catch (Exception ex)
             {
                 System.Diagnostics.Trace.WriteLine($"[VectorRenderer] Exception Id={vectorObject?.Id} {ex.Message}");
-                throw new RenderException(vectorObject.Id.ToString(), $"矢量图形渲染失败: {ex.Message}", ex);
+                throw new RenderException(vectorObject?.Id.ToString() ?? string.Empty, $"矢量图形渲染失败: {ex.Message}", ex);
             }
         }
 
         /// <summary>
         /// 检查矢量对象是否在指定点
         /// </summary>
-        /// <param name="vectorObject">矢量对象</param>
-        /// <param name="point">测试点</param>
-        /// <param name="renderContext">渲染上下文</param>
-        /// <returns>是否命中</returns>
         public async Task<bool> HitTestAsync(VectorObject vectorObject, Point point, RenderContext renderContext)
         {
             if (vectorObject?.Boundary == null)
+            {
                 return false;
+            }
 
             var bounds = vectorObject.Boundary;
 
-            // 应用缩放变换
             if (renderContext.ScaleFactor != 1.0)
             {
                 bounds = new Rectangle(
@@ -121,17 +123,16 @@ namespace OfdrwNet.Reader.Rendering
                 );
             }
 
-            // 基本边界框测试
             if (!bounds.Contains(point))
+            {
                 return false;
+            }
 
-            // 对于路径，进行精确命中测试
             if (vectorObject.VectorType == VectorType.Path && !string.IsNullOrEmpty(vectorObject.PathData))
             {
                 try
                 {
-                    var pathData = Model.PathData.Parse(vectorObject.PathData);
-                    var path = await GetGraphicsPathAsync(pathData);
+                    using var path = await GetGraphicsPathAsync(vectorObject.PathData);
                     return path.IsVisible(point);
                 }
                 catch
@@ -146,16 +147,12 @@ namespace OfdrwNet.Reader.Rendering
         /// <summary>
         /// 获取矢量对象的边界框
         /// </summary>
-        /// <param name="vectorObject">矢量对象</param>
-        /// <param name="renderContext">渲染上下文</param>
-        /// <returns>边界框</returns>
-        public async Task<Rectangle> GetBoundsAsync(VectorObject vectorObject, RenderContext renderContext)
+        public Task<Rectangle> GetBoundsAsync(VectorObject vectorObject, RenderContext renderContext)
         {
             if (vectorObject?.Boundary != null)
             {
-                Rectangle bounds = Rectangle.Round(vectorObject.Boundary);
+                var bounds = Rectangle.Round(vectorObject.Boundary);
 
-                // 应用缩放变换
                 if (renderContext.ScaleFactor != 1.0)
                 {
                     bounds = new Rectangle(
@@ -166,38 +163,34 @@ namespace OfdrwNet.Reader.Rendering
                     );
                 }
 
-                return bounds;
+                return Task.FromResult(bounds);
             }
 
-            return Rectangle.Empty;
+            return Task.FromResult(Rectangle.Empty);
         }
-
-        // 私有渲染方法
 
         /// <summary>
         /// 渲染路径
         /// </summary>
-        private Task<bool> RenderPathAsync(VectorObject vectorObject, Graphics graphics, RenderContext renderContext)
+        private async Task<bool> RenderPathAsync(VectorObject vectorObject, Graphics graphics, RenderContext renderContext)
         {
             if (string.IsNullOrEmpty(vectorObject.PathData))
-                return Task.FromResult(false);
+            {
+                return false;
+            }
 
             try
             {
-                System.Diagnostics.Trace.WriteLine($"[VectorRenderer] RenderPath Id={vectorObject.Id} PathLen={vectorObject.PathData.Length} StrokeW={vectorObject.StrokeStyle?.Width} Fill={(vectorObject.FillStyle!=null)}");
-                // 使用简单路径解析器而不是复杂的PathData.Parse
-                using var path = ParseSimplePath(vectorObject.PathData);
+                System.Diagnostics.Trace.WriteLine($"[VectorRenderer] RenderPath Id={vectorObject.Id} PathLen={vectorObject.PathData.Length} StrokeW={vectorObject.StrokeStyle?.Width} Fill={(vectorObject.FillStyle != null)}");
 
-                // 基础功能阶段：统一缩放交由 RenderingEngine 全局处理，避免重复变换
+                using var path = await GetGraphicsPathAsync(vectorObject.PathData);
 
                 if (path.PointCount == 0)
                 {
-                    // 如果路径为空，绘制边界框
                     graphics.DrawRectangle(Pens.Gray, Rectangle.Round(vectorObject.Boundary));
-                    return Task.FromResult(true);
+                    return true;
                 }
 
-                // 填充
                 if (vectorObject.FillStyle != null)
                 {
                     var fillBrush = CreateBrush(vectorObject.FillStyle);
@@ -205,20 +198,18 @@ namespace OfdrwNet.Reader.Rendering
                     fillBrush.Dispose();
                 }
 
-                // 描边 (默认黑色)
-                using var strokePen = vectorObject.StrokeStyle != null ?
-                    CreatePen(vectorObject.StrokeStyle) :
-                    new Pen(Color.Black, 1.0f);
+                using var strokePen = vectorObject.StrokeStyle != null
+                    ? CreatePen(vectorObject.StrokeStyle)
+                    : new Pen(Color.Black, 1.0f);
                 graphics.DrawPath(strokePen, path);
                 System.Diagnostics.Trace.WriteLine($"[VectorRenderer] DrawPath Id={vectorObject.Id} PenW={strokePen.Width} PointCount={path.PointCount}");
 
-                return Task.FromResult(true);
+                return true;
             }
             catch
             {
-                // 解析失败，绘制边界框
                 graphics.DrawRectangle(Pens.DarkGray, Rectangle.Round(vectorObject.Boundary));
-                return Task.FromResult(false);
+                return false;
             }
         }
 
@@ -228,7 +219,9 @@ namespace OfdrwNet.Reader.Rendering
         private async Task<bool> RenderLineAsync(VectorObject vectorObject, Graphics graphics, RenderContext renderContext)
         {
             if (vectorObject.StrokeStyle == null || vectorObject.Points == null || vectorObject.Points.Count < 2)
+            {
                 return false;
+            }
 
             await Task.Run(() =>
             {
@@ -250,11 +243,9 @@ namespace OfdrwNet.Reader.Rendering
         private async Task<bool> RenderRectangleAsync(VectorObject vectorObject, Graphics graphics, RenderContext renderContext)
         {
             var rect = vectorObject.Boundary;
-            // 取消对象级缩放（交由全局）
 
             await Task.Run(() =>
             {
-                // 填充
                 if (vectorObject.FillStyle != null)
                 {
                     var fillBrush = CreateBrush(vectorObject.FillStyle);
@@ -262,7 +253,6 @@ namespace OfdrwNet.Reader.Rendering
                     fillBrush.Dispose();
                 }
 
-                // 描边
                 if (vectorObject.StrokeStyle != null)
                 {
                     var strokePen = CreatePen(vectorObject.StrokeStyle);
@@ -280,11 +270,9 @@ namespace OfdrwNet.Reader.Rendering
         private async Task<bool> RenderCircleAsync(VectorObject vectorObject, Graphics graphics, RenderContext renderContext)
         {
             var rect = vectorObject.Boundary;
-            // 取消对象级缩放（交由全局）
 
             await Task.Run(() =>
             {
-                // 填充
                 if (vectorObject.FillStyle != null)
                 {
                     var fillBrush = CreateBrush(vectorObject.FillStyle);
@@ -292,7 +280,6 @@ namespace OfdrwNet.Reader.Rendering
                     fillBrush.Dispose();
                 }
 
-                // 描边
                 if (vectorObject.StrokeStyle != null)
                 {
                     var strokePen = CreatePen(vectorObject.StrokeStyle);
@@ -307,9 +294,9 @@ namespace OfdrwNet.Reader.Rendering
         /// <summary>
         /// 渲染椭圆
         /// </summary>
-        private async Task<bool> RenderEllipseAsync(VectorObject vectorObject, Graphics graphics, RenderContext renderContext)
+        private Task<bool> RenderEllipseAsync(VectorObject vectorObject, Graphics graphics, RenderContext renderContext)
         {
-            return await RenderCircleAsync(vectorObject, graphics, renderContext);
+            return RenderCircleAsync(vectorObject, graphics, renderContext);
         }
 
         /// <summary>
@@ -318,13 +305,14 @@ namespace OfdrwNet.Reader.Rendering
         private async Task<bool> RenderPolygonAsync(VectorObject vectorObject, Graphics graphics, RenderContext renderContext)
         {
             if (vectorObject.Points == null || vectorObject.Points.Count < 3)
+            {
                 return false;
+            }
 
             await Task.Run(() =>
             {
                 var points = vectorObject.Points.ToArray();
 
-                // 填充
                 if (vectorObject.FillStyle != null)
                 {
                     var fillBrush = CreateBrush(vectorObject.FillStyle);
@@ -332,7 +320,6 @@ namespace OfdrwNet.Reader.Rendering
                     fillBrush.Dispose();
                 }
 
-                // 描边
                 if (vectorObject.StrokeStyle != null)
                 {
                     var strokePen = CreatePen(vectorObject.StrokeStyle);
@@ -350,7 +337,9 @@ namespace OfdrwNet.Reader.Rendering
         private async Task<bool> RenderPolylineAsync(VectorObject vectorObject, Graphics graphics, RenderContext renderContext)
         {
             if (vectorObject.StrokeStyle == null || vectorObject.Points == null || vectorObject.Points.Count < 2)
+            {
                 return false;
+            }
 
             await Task.Run(() =>
             {
@@ -363,14 +352,11 @@ namespace OfdrwNet.Reader.Rendering
             return true;
         }
 
-        // 辅助方法
-
         /// <summary>
         /// 应用变换矩阵
         /// </summary>
         private void ApplyTransform(Graphics graphics, VectorObject vectorObject, RenderContext renderContext)
         {
-            // 应用渲染上下文的变换
             if (renderContext.TransformMatrix != null)
             {
                 graphics.MultiplyTransform(renderContext.TransformMatrix);
@@ -383,7 +369,6 @@ namespace OfdrwNet.Reader.Rendering
             }
             else if (!unified && vectorObject.CTM != null)
             {
-                // 像素管线：Boundary / Points 已为最终像素坐标，跳过 CTM 防止双重缩放和翻转
                 System.Diagnostics.Trace.WriteLine("[VectorRenderer][DEBUG] Skip CTM in pixel mode");
             }
         }
@@ -391,76 +376,25 @@ namespace OfdrwNet.Reader.Rendering
         /// <summary>
         /// 获取图形路径
         /// </summary>
-        private async Task<GraphicsPath> GetGraphicsPathAsync(Model.PathData pathData)
+        private Task<GraphicsPath> GetGraphicsPathAsync(string pathData)
         {
-            var cacheKey = pathData.GetHashCode().ToString();
+            if (string.IsNullOrWhiteSpace(pathData))
+            {
+                return Task.FromResult(new GraphicsPath());
+            }
+
+            var cacheKey = pathData;
 
             if (_pathCache.TryGetPath(cacheKey, out var cachedPath) && cachedPath != null)
             {
-                return (GraphicsPath)cachedPath.Clone();
+                return Task.FromResult((GraphicsPath)cachedPath.Clone());
             }
 
-            var path = new GraphicsPath();
-
-            await Task.Run(() =>
-            {
-                // 解析路径数据并构建GraphicsPath
-                ParsePathData(pathData, path);
-            });
+            var segments = PathGeometryUtil.Parse(pathData);
+            var path = PathGeometryUtil.ToGraphicsPath(segments);
 
             _pathCache.AddPath(cacheKey, path);
-            return (GraphicsPath)path.Clone();
-        }
-
-        /// <summary>
-        /// 解析路径数据
-        /// </summary>
-        private void ParsePathData(Model.PathData pathData, GraphicsPath path)
-        {
-            if (pathData.Commands == null)
-                return;
-
-            var currentPoint = PointF.Empty;
-
-            foreach (var command in pathData.Commands)
-            {
-                switch (command.Type)
-                {
-                    case PathCommandType.MoveTo:
-                        if (command.Points?.Count > 0)
-                        {
-                            currentPoint = command.Points[0];
-                            path.StartFigure();
-                        }
-                        break;
-
-                    case PathCommandType.LineTo:
-                        if (command.Points?.Count > 0)
-                        {
-                            foreach (var point in command.Points)
-                            {
-                                path.AddLine(currentPoint, point);
-                                currentPoint = point;
-                            }
-                        }
-                        break;
-
-                    case PathCommandType.CurveTo:
-                        if (command.Points?.Count >= 3)
-                        {
-                            for (int i = 0; i <= command.Points.Count - 3; i += 3)
-                            {
-                                path.AddBezier(currentPoint, command.Points[i], command.Points[i + 1], command.Points[i + 2]);
-                                currentPoint = command.Points[i + 2];
-                            }
-                        }
-                        break;
-
-                    case PathCommandType.ClosePath:
-                        path.CloseFigure();
-                        break;
-                }
-            }
+            return Task.FromResult((GraphicsPath)path.Clone());
         }
 
         /// <summary>
@@ -473,7 +407,6 @@ namespace OfdrwNet.Reader.Rendering
                 return new SolidBrush(fillStyle.Color.ToSystemColor());
             }
 
-            // 默认画刷
             return new SolidBrush(Color.Black);
         }
 
@@ -487,26 +420,22 @@ namespace OfdrwNet.Reader.Rendering
             float rawWidth = strokeStyle.Width;
             float effectiveWidth = rawWidth;
 
-            // Hairline 规则调优：允许亚像素(0.3~0.5) 线宽，只有极端微小(<0.15) 才提升到 0.5px
-            // 之前直接提升到 1px 导致表格细线显得过粗
             if (!unified)
             {
-                const float minLiftThreshold = 0.15f;   // 小于该值视为接近 0
-                const float minEffective = 0.5f;        // 提升后的最小可见宽度
+                const float minLiftThreshold = 0.15f;
+                const float minEffective = 0.5f;
                 if (effectiveWidth <= minLiftThreshold)
                 {
                     effectiveWidth = minEffective;
                 }
                 else if (effectiveWidth < 0.5f)
                 {
-                    // GDI+ 在抗锯齿时会使 0.2~0.4 的线视觉稍粗，微调系数降低一点
-                    effectiveWidth *= 0.85f; // 轻量收缩，避免过黑
+                    effectiveWidth *= 0.85f;
                 }
             }
 
             var pen = new Pen(color, effectiveWidth);
 
-            // 设置线条样式
             if (strokeStyle.DashArray != null && strokeStyle.DashArray.Count > 0)
             {
                 pen.DashPattern = strokeStyle.DashArray.ToArray();
@@ -516,11 +445,11 @@ namespace OfdrwNet.Reader.Rendering
             pen.EndCap = ConvertLineCap(strokeStyle.EndCap);
             pen.LineJoin = ConvertLineJoin(strokeStyle.LineJoin);
 
-            // 调试日志
             if (effectiveWidth != rawWidth)
             {
                 System.Diagnostics.Trace.WriteLine($"[VectorRenderer] Hairline adjusted rawWidth={rawWidth} -> {effectiveWidth}");
             }
+
             return pen;
         }
 
@@ -551,203 +480,13 @@ namespace OfdrwNet.Reader.Rendering
         }
 
         /// <summary>
-        /// 尝试解析浮点数
-        /// </summary>
-        private bool TryParseFloat(string value, out float result)
-        {
-            if (string.IsNullOrWhiteSpace(value))
-            {
-                result = 0f;
-                return false;
-            }
-
-            return float.TryParse(value, NumberStyles.Float, CultureInfo.InvariantCulture, out result);
-        }
-
-        /// <summary>
-        /// 简单解析路径数据（支持 M L Z Q C A 命令）
-        /// </summary>
-        private GraphicsPath ParseSimplePath(string pathData)
-        {
-            var path = new GraphicsPath();
-
-            try
-            {
-                // 预处理：将命令和数字分离
-                var normalizedData = NormalizePathData(pathData);
-                var tokens = normalizedData.Split(new char[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
-                var currentPoint = PointF.Empty;
-                var startPoint = PointF.Empty;
-
-                for (int i = 0; i < tokens.Length; i++)
-                {
-                    var token = tokens[i].Trim();
-                    if (string.IsNullOrEmpty(token)) continue;
-
-                    switch (token.ToUpper())
-                    {
-                        case "M": // MoveTo
-                            if (i + 2 < tokens.Length &&
-                                TryParseFloat(tokens[i + 1], out var mx) &&
-                                TryParseFloat(tokens[i + 2], out var my))
-                            {
-                                currentPoint = new PointF(mx, my);
-                                startPoint = currentPoint;
-                                i += 2;
-                            }
-                            break;
-
-                        case "L": // LineTo
-                            if (i + 2 < tokens.Length &&
-                                TryParseFloat(tokens[i + 1], out var lx) &&
-                                TryParseFloat(tokens[i + 2], out var ly))
-                            {
-                                var endPoint = new PointF(lx, ly);
-                                path.AddLine(currentPoint, endPoint);
-                                currentPoint = endPoint;
-                                i += 2;
-                            }
-                            break;
-
-                        case "Q": // QuadraticBezierTo
-                            if (i + 4 < tokens.Length &&
-                                TryParseFloat(tokens[i + 1], out var qx1) &&
-                                TryParseFloat(tokens[i + 2], out var qy1) &&
-                                TryParseFloat(tokens[i + 3], out var qx2) &&
-                                TryParseFloat(tokens[i + 4], out var qy2))
-                            {
-                                var control = new PointF(qx1, qy1);
-                                var endPoint = new PointF(qx2, qy2);
-
-                                // 转换二次贝塞尔为三次贝塞尔
-                                var ctrl1 = new PointF(
-                                    currentPoint.X + (control.X - currentPoint.X) * 2 / 3,
-                                    currentPoint.Y + (control.Y - currentPoint.Y) * 2 / 3
-                                );
-                                var ctrl2 = new PointF(
-                                    endPoint.X + (control.X - endPoint.X) * 2 / 3,
-                                    endPoint.Y + (control.Y - endPoint.Y) * 2 / 3
-                                );
-
-                                path.AddBezier(currentPoint, ctrl1, ctrl2, endPoint);
-                                currentPoint = endPoint;
-                                i += 4;
-                            }
-                            break;
-
-                        case "C": // CubicBezierTo
-                            if (i + 6 < tokens.Length &&
-                                TryParseFloat(tokens[i + 1], out var cx1) &&
-                                TryParseFloat(tokens[i + 2], out var cy1) &&
-                                TryParseFloat(tokens[i + 3], out var cx2) &&
-                                TryParseFloat(tokens[i + 4], out var cy2) &&
-                                TryParseFloat(tokens[i + 5], out var cx3) &&
-                                TryParseFloat(tokens[i + 6], out var cy3))
-                            {
-                                var ctrl1 = new PointF(cx1, cy1);
-                                var ctrl2 = new PointF(cx2, cy2);
-                                var endPoint = new PointF(cx3, cy3);
-
-                                path.AddBezier(currentPoint, ctrl1, ctrl2, endPoint);
-                                currentPoint = endPoint;
-                                i += 6;
-                            }
-                            break;
-
-                        case "A": // Arc (简化版本，转换为椭圆弧)
-                            if (i + 7 < tokens.Length &&
-                                TryParseFloat(tokens[i + 1], out var rx) &&
-                                TryParseFloat(tokens[i + 2], out var ry) &&
-                                TryParseFloat(tokens[i + 3], out var angle) &&
-                                TryParseFloat(tokens[i + 4], out var largeArc) &&
-                                TryParseFloat(tokens[i + 5], out var sweep) &&
-                                TryParseFloat(tokens[i + 6], out var ax) &&
-                                TryParseFloat(tokens[i + 7], out var ay))
-                            {
-                                var endPoint = new PointF(ax, ay);
-
-                                // 简单的弧线近似，使用直线代替
-                                path.AddLine(currentPoint, endPoint);
-                                currentPoint = endPoint;
-                                i += 7;
-                            }
-                            break;
-
-                        case "Z": // ClosePath
-                            if (startPoint != PointF.Empty)
-                            {
-                                path.AddLine(currentPoint, startPoint);
-                                currentPoint = startPoint;
-                            }
-                            break;
-                    }
-                }
-
-                if (path.PointCount == 0)
-                {
-                    // 如果没有成功解析任何路径，创建一个简单的矩形
-                    path.AddRectangle(new RectangleF(0, 0, 10, 10));
-                }
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine($"路径解析错误: {ex.Message}");
-                path.Dispose();
-                path = new GraphicsPath();
-                // 创建默认形状
-                path.AddRectangle(new RectangleF(0, 0, 10, 10));
-            }
-
-            return path;
-        }
-
-        /// <summary>
-        /// 规范化路径数据，确保命令和坐标正确分离
-        /// </summary>
-        private string NormalizePathData(string pathData)
-        {
-            if (string.IsNullOrEmpty(pathData))
-                return "";
-
-            var result = new StringBuilder();
-            var chars = pathData.ToCharArray();
-
-            for (int i = 0; i < chars.Length; i++)
-            {
-                char c = chars[i];
-
-                // 检查是否是命令字母
-                if ("MLZQCAmzlqca".Contains(c))
-                {
-                    // 在命令前后添加空格
-                    if (result.Length > 0 && result[result.Length - 1] != ' ')
-                        result.Append(' ');
-                    result.Append(c);
-                    result.Append(' ');
-                }
-                else if (c == ',' || char.IsWhiteSpace(c))
-                {
-                    // 替换逗号和多个空格为单个空格
-                    if (result.Length > 0 && result[result.Length - 1] != ' ')
-                        result.Append(' ');
-                }
-                else
-                {
-                    result.Append(c);
-                }
-            }
-
-            return result.ToString().Trim();
-        }
-
-        /// <summary>
         /// 释放资源
         /// </summary>
         public void Dispose()
         {
             if (!_disposed)
             {
-                _pathCache?.Dispose();
+                _pathCache.Dispose();
                 _disposed = true;
             }
         }

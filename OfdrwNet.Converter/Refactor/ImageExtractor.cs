@@ -82,36 +82,15 @@ namespace OfdrwNet.Converter.Refactor
                     catch { try { imageBytes = imageObject.GetImageBytes(true); } catch { return; } }
                     if (imageBytes == null) return;
 
-                    // 读取 PDF 图像对象字典信息
-                    var imgDict = imageObject.GetPdfObject();
-                    string? filter = null; string? cs = null; int? bpc = null; int? widthMeta = null; int? heightMeta = null;
-                    try
-                    {
-                        filter = imgDict.GetAsName(iText.Kernel.Pdf.PdfName.Filter)?.GetValue();
-                        cs = imgDict.GetAsName(iText.Kernel.Pdf.PdfName.ColorSpace)?.GetValue();
-                        bpc = imgDict.GetAsNumber(iText.Kernel.Pdf.PdfName.BitsPerComponent)?.IntValue();
-                        widthMeta = imgDict.GetAsNumber(iText.Kernel.Pdf.PdfName.Width)?.IntValue();
-                        heightMeta = imgDict.GetAsNumber(iText.Kernel.Pdf.PdfName.Height)?.IntValue();
-                    }
-                    catch { }
-
-                    // 魔数探测（前8字节）
-                    string magicHex = imageBytes.Length >= 8 ? BitConverter.ToString(imageBytes, 0, 8) : BitConverter.ToString(imageBytes);
-                    string detectedByMagic = DetectFormatByMagic(imageBytes);
-
-                    var itextExt = imageObject.IdentifyImageFileExtension();
-                    bool isTiffByIText = itextExt != null && itextExt.ToLowerInvariant().Contains("tif");
-                    bool isTiffByMagic = detectedByMagic == "TIFF";
-                    bool isTiff = isTiffByIText || isTiffByMagic;
-
-                    _logger?.LogDebug("[PDF2OFD][Image][Detect] Page={Page} Filter={Filter} CS={CS} BPC={BPC} DictWH={W}x{H} iTextExt={IExt} Magic={Magic} MagicFmt={MagicFmt} IsTiff={IsTiff}",
-                        _pageNum, filter, cs, bpc, widthMeta, heightMeta, itextExt, magicHex, detectedByMagic, isTiff);
-
                     bool alphaChanged = false; string? newFormat = null;
                     if (_options.MakeWhiteBackgroundTransparent)
                     {
                         try
                         {
+                            // 检测是否为 TIFF 格式
+                            var imageExt = imageObject.IdentifyImageFileExtension();
+                            bool isTiff = imageExt?.ToLowerInvariant().Contains("tif") == true;
+
                             var processed = SimpleWhiteToTransparent(imageBytes, _options.WhiteThreshold, isTiff, out bool changed);
                             if (changed)
                             {
@@ -135,14 +114,10 @@ namespace OfdrwNet.Converter.Refactor
                     try
                     { var a = matrix.Get(Matrix.I11); var b = matrix.Get(Matrix.I12); var c = matrix.Get(Matrix.I21); var d = matrix.Get(Matrix.I22); ctm = new double[] { a * ConvertHelper.Pt2Mm, b * ConvertHelper.Pt2Mm, c * ConvertHelper.Pt2Mm, d * ConvertHelper.Pt2Mm, x, y }; }
                     catch { }
-                    var originalExt = itextExt;
-                    // 如果 iText 没识别但魔数识别为 TIFF，则纠正
-                    if (string.IsNullOrEmpty(originalExt) && isTiffByMagic) originalExt = "tiff";
+                    var originalExt = imageObject.IdentifyImageFileExtension();
                     var finalFormat = alphaChanged ? (newFormat ?? "PNG") : originalExt;
                     if (!string.IsNullOrEmpty(finalFormat)) finalFormat = finalFormat.TrimStart('.');
-                    finalFormat ??= "PNG"; // 回退
-                    Images.Add(new OfdImage { Page = _pageNum, X = x, Y = y, Width = w, Height = h, ImageData = imageBytes, Format = finalFormat!, CTM = ctm });
-                    _logger?.LogInformation("[PDF2OFD][Image][Add] Page={Page} Added Format={Fmt} W={W} H={H} Bytes={Bytes} AlphaChanged={Alpha} DeclaredTiff={Tiff}", _pageNum, finalFormat, w.ToString("0.##"), h.ToString("0.##"), imageBytes.Length, alphaChanged, isTiff);
+                    Images.Add(new OfdImage { Page = _pageNum, X = x, Y = y, Width = w, Height = h, ImageData = imageBytes, Format = finalFormat, CTM = ctm });
                 }
                 catch (Exception ex) { _logger?.LogWarning(ex, "[PDF2OFD][Image] Page {Page} 异常", _pageNum); }
             }
@@ -197,25 +172,6 @@ namespace OfdrwNet.Converter.Refactor
                 using var outputMs = new MemoryStream();
                 bitmap.Save(outputMs, ImageFormat.Png);
                 return outputMs.ToArray();
-            }
-
-            private static string DetectFormatByMagic(byte[] data)
-            {
-                if (data.Length >= 4)
-                {
-                    // TIFF little-endian: 49 49 2A 00 ; big-endian: 4D 4D 00 2A
-                    if (data[0] == 0x49 && data[1] == 0x49 && data[2] == 0x2A && data[3] == 0x00) return "TIFF";
-                    if (data[0] == 0x4D && data[1] == 0x4D && data[2] == 0x00 && data[3] == 0x2A) return "TIFF";
-                    // PNG: 89 50 4E 47
-                    if (data[0] == 0x89 && data[1] == 0x50 && data[2] == 0x4E && data[3] == 0x47) return "PNG";
-                    // JPEG: FF D8 FF (E0-EF)
-                    if (data[0] == 0xFF && data[1] == 0xD8 && data[2] == 0xFF) return "JPEG";
-                    // GIF: 47 49 46 38
-                    if (data[0] == 0x47 && data[1] == 0x49 && data[2] == 0x46 && data[3] == 0x38) return "GIF";
-                    // BMP: 42 4D
-                    if (data[0] == 0x42 && data[1] == 0x4D) return "BMP";
-                }
-                return "Unknown";
             }
         }
     }

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ofd:Res xmlns:ofd="http://www.ofdspec.org/2016" BaseLoc="Res">
+  <ofd:MultiMedias>
+    <ofd:MultiMedia ID="4" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_4.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="5" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_5.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="6" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_6.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="7" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_7.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="8" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_8.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="9" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_9.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="10" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_10.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="11" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_11.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="12" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_12.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="13" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_13.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="14" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_14.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="15" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_15.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="16" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_16.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="17" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_17.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="18" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_18.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="19" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_19.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="20" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_20.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="21" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_21.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="22" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_22.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="23" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_23.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="24" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_24.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+    <ofd:MultiMedia ID="25" Type="Image" Format="PNG">
+      <ofd:MediaFile>Image_25.PNG</ofd:MediaFile>
+    </ofd:MultiMedia>
+  </ofd:MultiMedias>
+</ofd:Res>

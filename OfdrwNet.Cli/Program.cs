@@ -82,6 +82,46 @@ class Program
             new[] { "--force-alpha-white" },
             description: "忽略是否已有 Alpha，强制执行白底转透明（优先级高于 --only-if-opaque）");
 
+        var docIdOption = new Option<string>(
+            new[] { "--doc-id" },
+            description: "覆盖 DocInfo.DocID，传入 32 位 UUID 字符串");
+
+        var noDocIdOption = new Option<bool>(
+            new[] { "--no-doc-id" },
+            description: "生成的 OFD 中移除 DocID，并禁用自动生成" );
+
+        var docTitleOption = new Option<string>(
+            new[] { "--doc-title" },
+            description: "覆盖 DocInfo 标题" );
+
+        var docAuthorOption = new Option<string>(
+            new[] { "--doc-author" },
+            description: "覆盖 DocInfo 作者" );
+
+        var docCreatorOption = new Option<string>(
+            new[] { "--doc-creator" },
+            description: "覆盖 DocInfo Creator" );
+
+        var docCreatorVersionOption = new Option<string>(
+            new[] { "--doc-creator-version" },
+            description: "覆盖 DocInfo CreatorVersion" );
+
+        var docSubjectOption = new Option<string>(
+            new[] { "--doc-subject" },
+            description: "覆盖 DocInfo Subject" );
+
+        var docKeywordsOption = new Option<string>(
+            new[] { "--doc-keywords" },
+            description: "覆盖 DocInfo Keywords 原始文本" );
+
+        var docCreationDateOption = new Option<string>(
+            new[] { "--doc-creation-date" },
+            description: "覆盖 DocInfo CreationDate（原始字符串，如 D:20201223235959+08'00'）" );
+
+        var docModDateOption = new Option<string>(
+            new[] { "--doc-mod-date" },
+            description: "覆盖 DocInfo ModDate（原始字符串）" );
+
         // 将选项添加到convert命令
         convertCommand.AddOption(inputFileOption);
         convertCommand.AddOption(outputFileOption);
@@ -95,10 +135,21 @@ class Program
         convertCommand.AddOption(whiteThresholdOption);
         convertCommand.AddOption(onlyIfOpaqueOption);
         convertCommand.AddOption(forceAlphaWhiteOption);
+        convertCommand.AddOption(docIdOption);
+        convertCommand.AddOption(noDocIdOption);
+        convertCommand.AddOption(docTitleOption);
+        convertCommand.AddOption(docAuthorOption);
+        convertCommand.AddOption(docCreatorOption);
+        convertCommand.AddOption(docCreatorVersionOption);
+        convertCommand.AddOption(docSubjectOption);
+        convertCommand.AddOption(docKeywordsOption);
+        convertCommand.AddOption(docCreationDateOption);
+        convertCommand.AddOption(docModDateOption);
 
         // 设置convert命令的处理逻辑
         convertCommand.SetHandler(async (inputFile, outputFile, password, parallel, verbose,
-            extractFonts, realImageEmbedding, perGlyphPositioning, alphaWhiteNullable, whiteThr, onlyIfOpaque, forceAlphaWhite) =>
+            extractFonts, realImageEmbedding, perGlyphPositioning, alphaWhiteNullable, whiteThr, onlyIfOpaque, forceAlphaWhite,
+            docId, noDocId, docTitle, docAuthor, docCreator, docCreatorVersion, docSubject, docKeywords, docCreationDate, docModDate) =>
         {
             // 处理三态逻辑：未提供 -> null -> 使用内部默认 (true)
             bool makeWhiteTransparent = alphaWhiteNullable ?? true; // 内部默认 true
@@ -106,9 +157,11 @@ class Program
             if (forceAlphaWhite) effectiveOnlyIfOpaque = false;
 
             await ConvertPdfToOfd(inputFile, outputFile, password, parallel, verbose,
-                extractFonts, realImageEmbedding, perGlyphPositioning, makeWhiteTransparent, whiteThr, effectiveOnlyIfOpaque, forceAlphaWhite, alphaWhiteNullable.HasValue);
+                extractFonts, realImageEmbedding, perGlyphPositioning, makeWhiteTransparent, whiteThr, effectiveOnlyIfOpaque, forceAlphaWhite,
+                alphaWhiteNullable.HasValue, docId, noDocId, docTitle, docAuthor, docCreator, docCreatorVersion, docSubject, docKeywords, docCreationDate, docModDate);
         }, inputFileOption, outputFileOption, passwordOption, parallelOption, verboseOption,
-           extractFontsOption, realImageEmbeddingOption, perGlyphPositioningOption, alphaWhiteToTransparentOption, whiteThresholdOption, onlyIfOpaqueOption, forceAlphaWhiteOption);
+           extractFontsOption, realImageEmbeddingOption, perGlyphPositioningOption, alphaWhiteToTransparentOption, whiteThresholdOption, onlyIfOpaqueOption, forceAlphaWhiteOption,
+           docIdOption, noDocIdOption, docTitleOption, docAuthorOption, docCreatorOption, docCreatorVersionOption, docSubjectOption, docKeywordsOption, docCreationDateOption, docModDateOption);
 
         // 将convert命令添加到根命令
         rootCommand.AddCommand(convertCommand);
@@ -166,7 +219,9 @@ class Program
     /// </summary>
     private static async Task ConvertPdfToOfd(FileInfo inputFile, FileInfo outputFile, string? password,
         int parallel, bool verbose, bool extractFonts, bool realImageEmbedding, bool perGlyphPositioning,
-        bool makeWhiteTransparent, byte whiteThr, bool onlyIfOpaque, bool forceAlphaWhite, bool alphaWhiteExplicit)
+        bool makeWhiteTransparent, byte whiteThr, bool onlyIfOpaque, bool forceAlphaWhite, bool alphaWhiteExplicit,
+        string? docId, bool noDocId, string? docTitle, string? docAuthor, string? docCreator, string? docCreatorVersion,
+        string? docSubject, string? docKeywords, string? docCreationDate, string? docModDate)
     {
         // 设置日志级别
         var loggerFactory = LoggerFactory.Create(builder =>
@@ -214,6 +269,44 @@ class Program
                     logger.LogInformation("转换进度: {Done}/{Total} ({Percent}%)", progress.done, progress.total, percentage);
                 })
             };
+
+            bool hasDocOverrides = !string.IsNullOrWhiteSpace(docId) || noDocId
+                || !string.IsNullOrWhiteSpace(docTitle) || !string.IsNullOrWhiteSpace(docAuthor)
+                || !string.IsNullOrWhiteSpace(docCreator) || !string.IsNullOrWhiteSpace(docCreatorVersion)
+                || !string.IsNullOrWhiteSpace(docSubject) || !string.IsNullOrWhiteSpace(docKeywords)
+                || !string.IsNullOrWhiteSpace(docCreationDate) || !string.IsNullOrWhiteSpace(docModDate);
+
+            if (hasDocOverrides)
+            {
+                options.OverrideDocId = string.IsNullOrWhiteSpace(docId) ? null : docId.Trim();
+                options.AutoGenerateDocId = string.IsNullOrWhiteSpace(docId) && !noDocId;
+                options.RemoveDocId = noDocId && string.IsNullOrWhiteSpace(docId);
+                options.DocTitle = string.IsNullOrWhiteSpace(docTitle) ? null : docTitle;
+                options.DocAuthor = string.IsNullOrWhiteSpace(docAuthor) ? null : docAuthor;
+                options.DocCreator = string.IsNullOrWhiteSpace(docCreator) ? null : docCreator;
+                options.DocCreatorVersion = string.IsNullOrWhiteSpace(docCreatorVersion) ? null : docCreatorVersion;
+                options.DocSubject = string.IsNullOrWhiteSpace(docSubject) ? null : docSubject;
+                options.DocKeywords = string.IsNullOrWhiteSpace(docKeywords) ? null : docKeywords;
+                options.DocCreationDateRaw = string.IsNullOrWhiteSpace(docCreationDate) ? null : docCreationDate;
+                options.DocModDateRaw = string.IsNullOrWhiteSpace(docModDate) ? null : docModDate;
+                if (!string.IsNullOrWhiteSpace(docId))
+                {
+                    logger.LogInformation("DocID 将被覆盖为 {DocId}", docId);
+                }
+                else if (noDocId)
+                {
+                    logger.LogInformation("已禁用 DocID 自动生成并移除 DocID 元素");
+                }
+            }
+            else
+            {
+                options.AutoGenerateDocId = true;
+                options.RemoveDocId = false;
+            }
+
+            if (!string.IsNullOrWhiteSpace(docTitle)) logger.LogInformation("DocInfo.Title -> {Value}", docTitle);
+            if (!string.IsNullOrWhiteSpace(docAuthor)) logger.LogInformation("DocInfo.Author -> {Value}", docAuthor);
+            if (!string.IsNullOrWhiteSpace(docCreator)) logger.LogInformation("DocInfo.Creator -> {Value}", docCreator);
 
             logger.LogInformation("白底转透明: {Enabled} (来源: {Source}) 阈值: {Thr} OnlyIfOpaque={OnlyIfOpaque} Force={Force}",
                 makeWhiteTransparent, alphaWhiteExplicit ? "用户显式" : "内部默认", whiteThr, onlyIfOpaque, forceAlphaWhite);

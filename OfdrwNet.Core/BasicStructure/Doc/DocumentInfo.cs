@@ -5,10 +5,10 @@ namespace OfdrwNet.Core.BasicStructure.Doc;
 
 /// <summary>
 /// 文档信息元数据描述
-/// 
+///
 /// 这是一个增强的文档信息类，提供更丰富的文档元数据管理功能。
 /// 与DocInfo类相比，这个类提供了更多的高级功能和便捷方法。
-/// 
+///
 /// 对应OFD规范中的文档信息管理需求
 /// </summary>
 public class DocumentInfo : OfdElement
@@ -191,7 +191,7 @@ public class DocumentInfo : OfdElement
         var dateStr = GetOfdElementText("CreationDate");
         if (string.IsNullOrEmpty(dateStr))
             return null;
-            
+
         return DateTime.TryParse(dateStr, out var date) ? date : null;
     }
 
@@ -215,7 +215,7 @@ public class DocumentInfo : OfdElement
         var dateStr = GetOfdElementText("ModificationDate");
         if (string.IsNullOrEmpty(dateStr))
             return null;
-            
+
         return DateTime.TryParse(dateStr, out var date) ? date : null;
     }
 
@@ -323,10 +323,10 @@ public class DocumentInfo : OfdElement
 
 /// <summary>
 /// 文档根路径引用
-/// 
+///
 /// 用于指向文档的根结构文件，通常指向Document.xml。
 /// 这是OFD文档结构中的重要组成部分。
-/// 
+///
 /// 对应OFD标准中的DocRoot定义
 /// </summary>
 public class DocRoot : OfdElement
@@ -381,7 +381,7 @@ public class DocRoot : OfdElement
     /// <returns>根文档路径</returns>
     public string GetPath()
     {
-        return Element.Value ?? "Doc/Document.xml"; // 默认路径
+    return Element.Value ?? "Doc_0/Document.xml"; // 默认路径
     }
 
     /// <summary>
@@ -402,8 +402,8 @@ public class DocRoot : OfdElement
     public StLoc GetLocation()
     {
         var path = Element.Value;
-        return string.IsNullOrEmpty(path) 
-            ? new StLoc("Doc/Document.xml") 
+        return string.IsNullOrEmpty(path)
+            ? new StLoc("Doc_0/Document.xml")
             : new StLoc(path);
     }
 
@@ -414,7 +414,7 @@ public class DocRoot : OfdElement
     public bool IsValidPath()
     {
         var path = GetPath();
-        return !string.IsNullOrWhiteSpace(path) && 
+        return !string.IsNullOrWhiteSpace(path) &&
                (path.EndsWith(".xml", StringComparison.OrdinalIgnoreCase) ||
                 path.EndsWith(".ofd", StringComparison.OrdinalIgnoreCase));
     }

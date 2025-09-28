@@ -377,17 +377,14 @@ namespace OfdrwNet.Reader.Rendering
                                 }
                             }
 
-                            // 查找 Path 子元素
                             var pathElement = po.Descendants()
                                 .FirstOrDefault(e => string.Equals(e.Name.LocalName, "Path", StringComparison.OrdinalIgnoreCase));
 
                             string pathData = "";
                             if (pathElement != null)
                             {
-                                // 查找 AbbreviatedData 属性或元素内容
                                 pathData = pathElement.Attribute("AbbreviatedData")?.Value ?? pathElement.Value ?? "";
                             }
-                            // 兼容直接 AbbreviatedData 元素（无 <Path> 包裹）
                             if (string.IsNullOrWhiteSpace(pathData))
                             {
                                 var abbrElem = po.Elements().FirstOrDefault(e => string.Equals(e.Name.LocalName, "AbbreviatedData", StringComparison.OrdinalIgnoreCase));
@@ -397,17 +394,22 @@ namespace OfdrwNet.Reader.Rendering
                                 }
                             }
 
-                            // 如果没有Path数据，创建一个简单的矩形
                             if (string.IsNullOrWhiteSpace(pathData) && w > 0 && h > 0)
                             {
                                 pathData = $"M {x} {y} L {x + w} {y} L {x + w} {y + h} L {x} {y + h} Z";
                             }
-                            // 解析 PathObject 绘制属性
-                            bool strokeEnabled = true; // 默认描边
-                            bool fillEnabled = false;  // 默认不填充
-                            float lineWidthMm = 0.2f;  // 默认细线
-                            var strokeColor = ParseColor(po.Attribute("StrokeColor")?.Value) ?? ParseColor(po.Attribute("StrokeColour")?.Value);
-                            var fillColor = ParseColor(po.Attribute("FillColor")?.Value) ?? ParseColor(po.Attribute("FillColour")?.Value);
+
+                            bool strokeEnabled = true;
+                            bool fillEnabled = false;
+                            float lineWidthMm = 0.2f;
+
+                            var strokeColor = ParseColor(po.Attribute("StrokeColor")?.Value) ??
+                                              ParseColor(po.Attribute("StrokeColour")?.Value) ??
+                                              ParseColorElement(po, "StrokeColor");
+                            var fillColor = ParseColor(po.Attribute("FillColor")?.Value) ??
+                                            ParseColor(po.Attribute("FillColour")?.Value) ??
+                                            ParseColorElement(po, "FillColor");
+
                             var strokeAttr = po.Attribute("Stroke")?.Value;
                             if (!string.IsNullOrWhiteSpace(strokeAttr))
                             {
@@ -420,93 +422,120 @@ namespace OfdrwNet.Reader.Rendering
                             }
                             if (TryParseFloat(po.Attribute("LineWidth")?.Value, out var lw) && lw > 0) lineWidthMm = lw;
 
+                            var ctmMatrix = ParseMatrix(po.Attribute("CTM")?.Value);
                             bool unifiedVec = IsUnified();
-                            float lineWidthFinal = lineWidthMm;
-                            if (!unifiedVec)
-                            {
-                                lineWidthFinal = (float)(lineWidthMm * (scaleX + scaleY) / 2.0);
-                            }
+                            bool toPixels = !unifiedVec;
+                            float lineWidthFinal = unifiedVec ? lineWidthMm : (float)(lineWidthMm * (scaleX + scaleY) / 2.0);
 
-                            // 识别极细长矩形为线：增加纵横比约束，避免误把有大 StrokeWidth 的形状当作线
                             bool thinAsLine = false;
                             if (w > 0 && h > 0)
                             {
-                                float minSide = Math.Min(w, h);      // mm
-                                float maxSide = Math.Max(w, h);      // mm
+                                float minSide = Math.Min(w, h);
+                                float maxSide = Math.Max(w, h);
                                 float aspect = maxSide / Math.Max(minSide, 0.01f);
-                                // 条件：厚度 < 0.6mm 且 长度 > 1.2mm 且 长宽比 >= 8 视为线
                                 if (minSide < 0.6f && maxSide > 1.2f && aspect >= 8f)
                                 {
                                     thinAsLine = true;
                                 }
                             }
 
-                            if (!string.IsNullOrWhiteSpace(pathData) || thinAsLine)
+                            var segments = PathGeometryUtil.Parse(pathData);
+                            if (segments.Count == 0 && !thinAsLine)
                             {
-                                float Px(float mm, bool isY) => (float)(mm * (isY ? scaleY : scaleX));
-                                var bX = unifiedVec ? x : Px(x, false);
-                                var bY = unifiedVec ? y : Px(y, true);
-                                var bW = unifiedVec ? Math.Max(0.1f, w) : Math.Max(1f, Px(w, false));
-                                var bH = unifiedVec ? Math.Max(0.1f, h) : Math.Max(1f, Px(h, true));
-                                var id = po.Attribute("ID")?.Value ?? Guid.NewGuid().ToString("N");
-                                var vectorObj = new VectorObject
+                                ctmMatrix?.Dispose();
+                                continue;
+                            }
+
+                            PathGeometryUtil.ApplyTransform(segments, ctmMatrix, scaleX, scaleY, toPixels);
+                            ctmMatrix?.Dispose();
+
+                            var id = po.Attribute("ID")?.Value ?? Guid.NewGuid().ToString("N");
+                            var vectorObj = new VectorObject
+                            {
+                                Id = id,
+                                ZIndex = z++,
+                                ZOrder = z,
+                                Visible = true
+                            };
+
+                            RectangleF bounds = PathGeometryUtil.ComputeBounds(segments);
+                            if (bounds.IsEmpty)
+                            {
+                                bounds = toPixels
+                                    ? new RectangleF((float)(x * scaleX), (float)(y * scaleY), Math.Max(1f, (float)(w * scaleX)), Math.Max(1f, (float)(h * scaleY)))
+                                    : new RectangleF(x, y, Math.Max(0.1f, w), Math.Max(0.1f, h));
+                            }
+                            bounds = NormalizeRectangle(bounds);
+
+                            bool isSimpleLine = TryExtractSimpleLine(segments, out var simpleStart, out var simpleEnd);
+                            if (isSimpleLine || thinAsLine)
+                            {
+                                var startPoint = simpleStart;
+                                var endPoint = simpleEnd;
+
+                                if (!isSimpleLine)
                                 {
-                                    Id = id,
-                                    Boundary = new RectangleF(bX, bY, bW, bH),
-                                    ZIndex = z++,
-                                    ZOrder = z,
-                                    Visible = true
-                                };
-                                if (thinAsLine)
-                                {
-                                    vectorObj.VectorType = VectorType.Line;
-                                    vectorObj.PathData = null;
-                                    if (bW >= bH)
+                                    // fallback：根据边界中心构造水平/垂直线
+                                    if (bounds.Width >= bounds.Height)
                                     {
-                                        vectorObj.Points = new List<PointF> { new PointF(bX, bY + bH / 2), new PointF(bX + bW, bY + bH / 2) };
+                                        startPoint = new PointF(bounds.Left, bounds.Top + bounds.Height / 2f);
+                                        endPoint = new PointF(bounds.Right, bounds.Top + bounds.Height / 2f);
                                     }
                                     else
                                     {
-                                        vectorObj.Points = new List<PointF> { new PointF(bX + bW / 2, bY), new PointF(bX + bW / 2, bY + bH) };
+                                        startPoint = new PointF(bounds.Left + bounds.Width / 2f, bounds.Top);
+                                        endPoint = new PointF(bounds.Left + bounds.Width / 2f, bounds.Bottom);
                                     }
                                 }
-                                else
-                                {
-                                    vectorObj.VectorType = VectorType.Path;
-                                    vectorObj.PathData = pathData;
-                                }
+
+                                var lineBoundary = CreateLineBoundary(startPoint, endPoint, lineWidthFinal, toPixels);
+                                vectorObj.VectorType = VectorType.Line;
+                                vectorObj.Points = new List<PointF> { startPoint, endPoint };
+                                vectorObj.PathData = null;
+                                vectorObj.Boundary = lineBoundary;
+
                                 if (strokeEnabled)
                                 {
-                                    // 如果这是识别出的“线”且声明的 LineWidth 远大于实际厚度，则按实际厚度重置
-                                    if (thinAsLine)
+                                    float thickness = Math.Min(lineBoundary.Height, lineBoundary.Width);
+                                    if (thickness <= 0.0001f)
                                     {
-                                        float thicknessPx = unifiedVec ? Math.Min(w, h) : Math.Min(vectorObj.Boundary.Width, vectorObj.Boundary.Height);
-                                        if (thicknessPx <= 0) thicknessPx = 0.5f;
-                                        // 若推导的描边宽度超过实际厚度 1.5 倍，说明原属性更可能用于其它形状情景，改用真实厚度
-                                        if (lineWidthFinal > thicknessPx * 1.5f)
-                                        {
-                                            float old = lineWidthFinal;
-                                            lineWidthFinal = thicknessPx;
-                                            Log($"Page {pageInfo.Index} line id={id} stroke adjusted {old:0.###}-> {lineWidthFinal:0.###} (thickness)");
-                                        }
-                                        // 极端异常：如果属性写了几十上百 mm（转换后巨大），做硬性上限
-                                        if (lineWidthFinal > 5f * thicknessPx && thicknessPx < 5f)
-                                        {
-                                            float old2 = lineWidthFinal;
-                                            lineWidthFinal = Math.Min(old2, thicknessPx * 2f);
-                                            Log($"Page {pageInfo.Index} line id={id} stroke clamped {old2:0.###}-> {lineWidthFinal:0.###} (hard clamp)");
-                                        }
+                                        thickness = toPixels ? 0.5f : 0.05f;
                                     }
-                                    vectorObj.StrokeStyle = new StrokeStyle { Width = lineWidthFinal, Color = strokeColor ?? new ColorInfo { R = 0, G = 0, B = 0, A = 255 } };
+                                    if (lineWidthFinal > thickness * 1.5f)
+                                    {
+                                        float old = lineWidthFinal;
+                                        lineWidthFinal = thickness;
+                                        Log($"Page {pageInfo.Index} line id={id} stroke adjusted {old:0.###}-> {lineWidthFinal:0.###} (line boundary)");
+                                    }
                                 }
-                                if (fillEnabled)
-                                {
-                                    vectorObj.FillStyle = new FillStyle { Color = fillColor ?? new ColorInfo { R = 0, G = 0, B = 0, A = 64 } };
-                                }
-                                result.Add(vectorObj);
-                                Log($"Page {pageInfo.Index} add Vector id={id} type={vectorObj.VectorType} stroke={(strokeEnabled ? lineWidthFinal.ToString("0.###") : "none")} pathLen={(vectorObj.PathData?.Length ?? 0)} boundary=({bX:0.##},{bY:0.##},{bW:0.##},{bH:0.##}) thin={thinAsLine}");
-                                pathCountLayer++;
                             }
+                            else
+                            {
+                                vectorObj.VectorType = VectorType.Path;
+                                vectorObj.PathData = PathGeometryUtil.ToPathData(segments);
+                                vectorObj.Boundary = ExpandDegenerate(bounds, toPixels ? 0.5f : 0.05f);
+                            }
+
+                            if (strokeEnabled)
+                            {
+                                vectorObj.StrokeStyle = new StrokeStyle
+                                {
+                                    Width = lineWidthFinal,
+                                    Color = strokeColor ?? new ColorInfo { R = 0, G = 0, B = 0, A = 255 }
+                                };
+                            }
+
+                            if (fillEnabled)
+                            {
+                                vectorObj.FillStyle = new FillStyle
+                                {
+                                    Color = fillColor ?? new ColorInfo { R = 0, G = 0, B = 0, A = 64 }
+                                };
+                            }
+
+                            result.Add(vectorObj);
+                            Log($"Page {pageInfo.Index} add Vector id={id} type={vectorObj.VectorType} stroke={(strokeEnabled ? lineWidthFinal.ToString("0.###") : "none")} bound=({vectorObj.Boundary.X:0.##},{vectorObj.Boundary.Y:0.##},{vectorObj.Boundary.Width:0.##},{vectorObj.Boundary.Height:0.##})");
+                            pathCountLayer++;
                         }
                         catch
                         {
@@ -529,6 +558,140 @@ namespace OfdrwNet.Reader.Rendering
         {
             return float.TryParse(s, NumberStyles.Float, CultureInfo.InvariantCulture, out value) ||
                    float.TryParse(s, NumberStyles.Float, CultureInfo.CurrentCulture, out value);
+        }
+
+        private static System.Drawing.Drawing2D.Matrix? ParseMatrix(string? ctmAttr)
+        {
+            if (string.IsNullOrWhiteSpace(ctmAttr))
+                return null;
+
+            var nums = ctmAttr.Replace(',', ' ').Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            if (nums.Length == 6 &&
+                TryParseFloat(nums[0], out var a) &&
+                TryParseFloat(nums[1], out var b) &&
+                TryParseFloat(nums[2], out var c) &&
+                TryParseFloat(nums[3], out var d) &&
+                TryParseFloat(nums[4], out var e) &&
+                TryParseFloat(nums[5], out var f))
+            {
+                return new System.Drawing.Drawing2D.Matrix(a, b, c, d, e, f);
+            }
+
+            return null;
+        }
+
+        private static ColorInfo? ParseColorElement(XElement parent, string localName)
+        {
+            var elem = parent.Elements().FirstOrDefault(e => string.Equals(e.Name.LocalName, localName, StringComparison.OrdinalIgnoreCase));
+            if (elem == null) return null;
+
+            var value = elem.Attribute("Value")?.Value;
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                value = elem.Elements().FirstOrDefault(e => string.Equals(e.Name.LocalName, "Value", StringComparison.OrdinalIgnoreCase))?.Value;
+            }
+
+            return ParseColor(value);
+        }
+
+        private static RectangleF NormalizeRectangle(RectangleF rect)
+        {
+            if (rect.Width < 0)
+            {
+                rect.X += rect.Width;
+                rect.Width = -rect.Width;
+            }
+            if (rect.Height < 0)
+            {
+                rect.Y += rect.Height;
+                rect.Height = -rect.Height;
+            }
+            return rect;
+        }
+
+        private static bool TryExtractSimpleLine(List<PathSegment> segments, out PointF start, out PointF end)
+        {
+            start = PointF.Empty;
+            end = PointF.Empty;
+            if (segments == null || segments.Count == 0)
+                return false;
+
+            PointF current = PointF.Empty;
+            bool hasMove = false;
+            bool hasLine = false;
+
+            foreach (var segment in segments)
+            {
+                switch (segment.Command)
+                {
+                    case 'M':
+                        if (segment.Points.Count == 0) return false;
+                        current = segment.Points[0];
+                        hasMove = true;
+                        break;
+                    case 'L':
+                        if (!hasMove || segment.Points.Count == 0) return false;
+                        if (hasLine) return false; // multiple line segments
+                        start = current;
+                        end = segment.Points[0];
+                        current = end;
+                        hasLine = true;
+                        break;
+                    case 'Z':
+                        // ignore close for simple line detection
+                        break;
+                    default:
+                        return false;
+                }
+            }
+
+            return hasLine;
+        }
+
+        private static RectangleF CreateLineBoundary(PointF start, PointF end, float lineWidth, bool toPixels)
+        {
+            float thickness = lineWidth;
+            if (thickness <= 0)
+            {
+                thickness = toPixels ? 0.5f : 0.05f;
+            }
+
+            float minX = Math.Min(start.X, end.X);
+            float minY = Math.Min(start.Y, end.Y);
+            float maxX = Math.Max(start.X, end.X);
+            float maxY = Math.Max(start.Y, end.Y);
+
+            if (Math.Abs(maxX - minX) < 0.0001f)
+            {
+                minX -= thickness / 2f;
+                maxX += thickness / 2f;
+            }
+            if (Math.Abs(maxY - minY) < 0.0001f)
+            {
+                minY -= thickness / 2f;
+                maxY += thickness / 2f;
+            }
+
+            return RectangleF.FromLTRB(minX, minY, maxX, maxY);
+        }
+
+        private static RectangleF ExpandDegenerate(RectangleF rect, float minSize)
+        {
+            float width = rect.Width;
+            float height = rect.Height;
+            if (width < minSize)
+            {
+                float delta = (minSize - width) / 2f;
+                rect.X -= delta;
+                rect.Width = minSize;
+            }
+            if (height < minSize)
+            {
+                float delta = (minSize - height) / 2f;
+                rect.Y -= delta;
+                rect.Height = minSize;
+            }
+            return rect;
         }
 
         /// <summary>

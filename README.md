@@ -73,6 +73,12 @@ ofdrw alpha-scan -d .\out-ofd-dir\Doc_0\Res --sample-step 60
 - `--parallel/--threads` 并行度
 - `--real-image-embedding` 直接嵌入原始图片
 - `--per-glyph-positioning` 逐字定位（性能低）
+- `--doc-id` 覆盖生成的 DocInfo.DocID（32 位 UUID 字符串）
+- `--no-doc-id` 禁用自动生成并移除 DocID 元素
+- `--doc-title/--doc-author/--doc-creator` 覆盖 DocInfo 标题、作者、创建应用
+- `--doc-creator-version` 覆盖 DocInfo.CreatorVersion
+- `--doc-subject/--doc-keywords` 覆盖文档主题与关键字
+- `--doc-creation-date/--doc-mod-date` 直接写入 DocInfo 日期字段（保持 D: 格式）
 
 ### 3. OFD → PDF
 
