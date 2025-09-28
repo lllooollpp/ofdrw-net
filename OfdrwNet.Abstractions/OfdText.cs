@@ -70,4 +70,9 @@ public class OfdText
     /// DeltaX 的语义模式：Step=相邻差；Cumulative=相对于首字符累计。保留 null 表示未知，默认为 Step。
     /// </summary>
     public string? DeltaXMode { get; set; }
+
+    /// <summary>
+    /// 字形编码列表（用于 CGTransform/Glyphs），可选。
+    /// </summary>
+    public int[]? Glyphs { get; set; }
 }

@@ -44,7 +44,17 @@ internal static class FontMetricsHelper
             var glyph = fp?.GetGlyph(ch);
             if (glyph != null && glyph.GetWidth() > 0)
             {
-                advPt = glyph.GetWidth() / 1000d * fontSizePt * hScale; // glyph advance
+                var gwUnits = glyph.GetWidth();
+                advPt = gwUnits / 1000d * fontSizePt * hScale; // glyph advance 基础计算
+                // 为 CJK 做宽度保护：很多嵌入字体压缩了 width（~500units），导致显示过窄
+                if (isCjk)
+                {
+                    // 若字形设计宽度低于阈值，强制使用等宽 fontSize
+                    if (gwUnits < 950) // 950 为经验阈值（常规等宽 CJK 设计宽度 1000）
+                    {
+                        advPt = fontSizePt * hScale;
+                    }
+                }
             }
             else if (ch == ' ')
             {

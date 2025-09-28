@@ -14,18 +14,21 @@ public interface IOfdDocWriter : IDisposable
     IOfdDocWriter AddExternalEmbeddedFont(string fontName, string fontFilePath);
     /// <summary>
     /// 添加一段原始文字运行（GlyphRun）。
-    /// 新增 ctm 参数用于精确控制坐标变换（六参数矩阵 a b c d e f）。
+    /// 新增 width、height、glyphs 参数和 ctm 参数用于精确控制坐标变换（六参数矩阵 a b c d e f）。
     /// </summary>
     /// <param name="fontName">字体名</param>
     /// <param name="fontSizeMm">字体大小（毫米）</param>
     /// <param name="originX">基线原点 X（毫米）</param>
     /// <param name="originY">基线原点 Y（毫米）</param>
+    /// <param name="width">文本总宽度（毫米）</param>
+    /// <param name="height">文本总高度（毫米）</param>
     /// <param name="text">文本内容</param>
     /// <param name="deltaX">字形 X 方向增量数组</param>
     /// <param name="deltaY">字形 Y 方向增量数组（暂未使用）</param>
+    /// <param name="glyphs">字形代码数组</param>
     /// <param name="page">页码，从 1 开始</param>
     /// <param name="ctm">可选 6 参数 CTM 变换矩阵 (a b c d e f)</param>
-    IOfdDocWriter AddRawTextGlyphRun(string fontName, double fontSizeMm, double originX, double originY, string text, double[]? deltaX = null, double[]? deltaY = null, int page = 1, double[]? ctm = null);
+    IOfdDocWriter AddRawTextGlyphRun(string fontName, double fontSizeMm, double originX, double originY, double width, double height, string text, double[]? deltaX = null, double[]? deltaY = null, int[]? glyphs = null, int page = 1, double[]? ctm = null);
     /// <summary>
     /// 添加注释资源引用。
     /// </summary>

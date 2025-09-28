@@ -380,25 +380,25 @@ public static class ConvertHelper
         /// 如果检测到行内包含 CJK (\u4E00-\u9FFF) 则回退为整行聚合。
         /// 默认 true 以避免中文被错误拆分。
         /// </summary>
-    public bool OnlySplitLatinWords { get; set; } = true;
+        public bool OnlySplitLatinWords { get; set; } = true;
 
         /// <summary>
         /// 触发将 gap 视为“至少一个空格”的水平距离阈值比例（相对于参考字体大小）。
         /// 默认 0.55 (与原启发式保持一致)。
         /// </summary>
-    public double GapSpaceTriggerRatio { get; set; } = 0.55d;
+        public double GapSpaceTriggerRatio { get; set; } = 0.55d;
 
         /// <summary>
         /// 单个 gap 允许合成的最大空格数量上限，避免超大 gap 生成过多占位。
         /// 默认 4。
         /// </summary>
-    public int MaxSyntheticSpacesPerGap { get; set; } = 4;
+        public int MaxSyntheticSpacesPerGap { get; set; } = 4;
 
         /// <summary>
         /// 启用后输出词级调试：包含字符起点/宽度、gap 判定与最终词矩形。
         /// 默认 false。
         /// </summary>
-    public bool EnableDebugWordLayout { get; set; } = false;
+        public bool EnableDebugWordLayout { get; set; } = false;
 
         /// <summary>
         /// 对主要为 CJK 的文本，将宽度强制扩展到 字数 * 字号（避免 PDF 原 descent 线估算偏小导致截断）。默认 true。
@@ -410,6 +410,52 @@ public static class ConvertHelper
         /// 例如 8 个字，字号 16pt，则附加 = 16pt * 0.12。
         /// </summary>
         public double CjkExtraAdvanceRatio { get; set; } = 0.12d;
+
+        /// <summary>
+        /// CJK 主体行（检测到大量中文且 ASCII 字母比例低）用于合成半角空格的 gap 触发比例（相对参考空格宽 baseRef）。
+        /// 设为 0.45 表示 gap > baseRef * 0.45 即认为需要插入一个空格。默认 0.45。
+        /// 该值用于修正中文等宽字体的 AvgAdvance 较大导致原通用阈值过高、空隙未被判定为空格的问题。
+        /// </summary>
+        public double CjkGapTriggerRatio { get; set; } = 0.45d;
+
+        /// <summary>
+        /// 图片叠放顺序策略（默认 Sequence：后添加覆盖前添加）。
+        /// 可选：Sequence / YAscending / YDescending。
+        /// </summary>
+        public string ImageOrdering { get; set; } = "Sequence"; // 与 OfdWriter 中策略匹配
+
+        /// <summary>
+        /// 将接近白色(#FFFFFF)背景像素转换为透明。默认 false 不处理。
+        /// </summary>
+        public bool MakeWhiteBackgroundTransparent { get; set; } = true;
+
+        /// <summary>
+        /// 认为是“白色”的阈值(0-255)。像素 R/G/B 全部 >= 此值则视为白。默认 250。
+        /// </summary>
+        public byte WhiteThreshold { get; set; } = 250;
+
+        /// <summary>
+        /// 透明化后若整体透明像素比例 >= 此值(0-1) 且原图无 Alpha，则自动保留一层最外框 1px 边界不透明（防止全透明消失）。默认 0.98。
+        /// </summary>
+        public double PreserveBorderIfAlmostAllTransparentRatio { get; set; } = 0.98;
+
+        /// <summary>
+        /// 仅当图片本身无 Alpha 通道时才尝试转换；否则如果已有 Alpha 则不再二次抹白。默认 true。
+        /// </summary>
+        public bool OnlyIfOpaque { get; set; } = true;
+
+        /// <summary>
+        /// 若图像像素格式包含 Alpha 通道，但所有像素 A 均为 255（即“形式上有 Alpha，实际上完全不透明”），
+        /// 且设置了 OnlyIfOpaque=true，则可将其视为“无 Alpha”继续做白底转透明。
+        /// 默认 true 以处理常见库（例如某些解码自动给 RGBA）的情况。
+        /// </summary>
+        public bool TreatFullAlphaAsOpaque { get; set; } = true;
+
+        /// <summary>
+        /// 调试：在资源写出后重新读取图片并统计透明像素比例，输出日志。[默认 false]
+        /// 仅用于定位透明丢失问题，会增加 I/O 开销。
+        /// </summary>
+        public bool DebugVerifyOutputImageAlpha { get; set; } = false;
 
         // 新增：为兼容性添加的属性
         public bool EnableImageExtraction { get { return ExtractImage; } set { ExtractImage = value; } }

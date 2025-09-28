@@ -63,6 +63,25 @@ class Program
             description: "逐字定位（可能影响性能，默认：false）",
             getDefaultValue: () => false);
 
+        // 三态：未提供 -> 使用内部默认(true)；提供 true/false -> 强制覆盖
+        var alphaWhiteToTransparentOption = new Option<bool?>(
+            new[] { "--alpha-white", "--alpha-white-to-transparent" },
+            description: "启用/关闭白底转透明 (未提供则用内部默认: true)。示例: --alpha-white true 或 --alpha-white false");
+
+        var whiteThresholdOption = new Option<byte>(
+            new[] { "--white-threshold" },
+            description: "白色判定阈值(0-255, 默认 250)",
+            getDefaultValue: () => (byte)250);
+
+        var onlyIfOpaqueOption = new Option<bool>(
+            new[] { "--only-if-opaque" },
+            description: "仅当图片原本没有 Alpha 通道时才执行白底转透明（默认:true）",
+            getDefaultValue: () => true);
+
+        var forceAlphaWhiteOption = new Option<bool>(
+            new[] { "--force-alpha-white" },
+            description: "忽略是否已有 Alpha，强制执行白底转透明（优先级高于 --only-if-opaque）");
+
         // 将选项添加到convert命令
         convertCommand.AddOption(inputFileOption);
         convertCommand.AddOption(outputFileOption);
@@ -72,15 +91,24 @@ class Program
         convertCommand.AddOption(extractFontsOption);
         convertCommand.AddOption(realImageEmbeddingOption);
         convertCommand.AddOption(perGlyphPositioningOption);
+        convertCommand.AddOption(alphaWhiteToTransparentOption);
+        convertCommand.AddOption(whiteThresholdOption);
+        convertCommand.AddOption(onlyIfOpaqueOption);
+        convertCommand.AddOption(forceAlphaWhiteOption);
 
         // 设置convert命令的处理逻辑
         convertCommand.SetHandler(async (inputFile, outputFile, password, parallel, verbose,
-            extractFonts, realImageEmbedding, perGlyphPositioning) =>
+            extractFonts, realImageEmbedding, perGlyphPositioning, alphaWhiteNullable, whiteThr, onlyIfOpaque, forceAlphaWhite) =>
         {
+            // 处理三态逻辑：未提供 -> null -> 使用内部默认 (true)
+            bool makeWhiteTransparent = alphaWhiteNullable ?? true; // 内部默认 true
+            bool effectiveOnlyIfOpaque = onlyIfOpaque;
+            if (forceAlphaWhite) effectiveOnlyIfOpaque = false;
+
             await ConvertPdfToOfd(inputFile, outputFile, password, parallel, verbose,
-                extractFonts, realImageEmbedding, perGlyphPositioning);
+                extractFonts, realImageEmbedding, perGlyphPositioning, makeWhiteTransparent, whiteThr, effectiveOnlyIfOpaque, forceAlphaWhite, alphaWhiteNullable.HasValue);
         }, inputFileOption, outputFileOption, passwordOption, parallelOption, verboseOption,
-           extractFontsOption, realImageEmbeddingOption, perGlyphPositioningOption);
+           extractFontsOption, realImageEmbeddingOption, perGlyphPositioningOption, alphaWhiteToTransparentOption, whiteThresholdOption, onlyIfOpaqueOption, forceAlphaWhiteOption);
 
         // 将convert命令添加到根命令
         rootCommand.AddCommand(convertCommand);
@@ -88,6 +116,46 @@ class Program
         // 创建debug子命令
         var debugCommand = CreateDebugCommand();
         rootCommand.AddCommand(debugCommand);
+
+        // 创建 alpha-scan 子命令（检测 PNG 是否含透明像素）
+        var alphaScanCommand = new Command("alpha-scan", "扫描目录下的 Image_*.png 是否含透明像素并输出统计")
+        {
+            new Option<DirectoryInfo>(new[]{"--dir","-d"}, "要扫描的目录") { IsRequired = true },
+            new Option<int>(new[]{"--sample-step"}, ()=>40, "抽样步长 (越小越精确, 默认40 像素步长)"),
+            new Option<bool>(new[]{"--full"}, "是否逐像素遍历 (可能较慢)" )
+        };
+        alphaScanCommand.SetHandler((DirectoryInfo dir, int step, bool full) =>
+        {
+            if(!dir.Exists){ Console.WriteLine($"目录不存在: {dir.FullName}"); return; }
+            var files = dir.GetFiles("Image_*.png");
+            if(files.Length==0){ Console.WriteLine("无匹配文件 Image_*.png"); return; }
+            Console.WriteLine($"扫描目录: {dir.FullName} 文件数={files.Length}");
+            foreach(var f in files){
+                try{
+                    using var img = SixLabors.ImageSharp.Image.Load<SixLabors.ImageSharp.PixelFormats.Rgba32>(f.FullName);
+                    bool hasAlphaChannel = true; // Rgba32 已包含 Alpha 通道
+                    long w = img.Width; long h = img.Height;
+                    long total=0; long trans=0;
+                    int sx = full?1: Math.Max(1, (int)w/(step==0?40:step));
+                    int sy = full?1: Math.Max(1, (int)h/(step==0?40:step));
+                    img.ProcessPixelRows(accessor=>{
+                        for(int y=0;y<h;y+=sy){
+                            var row = accessor.GetRowSpan(y);
+                            for(int x=0;x<w;x+=sx){
+                                var px = row[x];
+                                if(px.A < 255) trans++;
+                                total++;
+                            }
+                        }
+                    });
+                    double ratio = total==0?0: (double)trans/total;
+                    Console.WriteLine($"{f.Name}\tSize={w}x{h}\tAlphaSamples={total}\tTransSamples={trans}\tTransRatio={(ratio*100):0.##}%");
+                }catch(Exception ex){
+                    Console.WriteLine($"{f.Name}\tERROR {ex.Message}");
+                }
+            }
+        }, alphaScanCommand.Options[0], alphaScanCommand.Options[1], alphaScanCommand.Options[2]);
+        rootCommand.AddCommand(alphaScanCommand);
 
         // 解析并执行命令
         return await rootCommand.InvokeAsync(args);
@@ -97,7 +165,8 @@ class Program
     /// 执行PDF到OFD转换
     /// </summary>
     private static async Task ConvertPdfToOfd(FileInfo inputFile, FileInfo outputFile, string? password,
-        int parallel, bool verbose, bool extractFonts, bool realImageEmbedding, bool perGlyphPositioning)
+        int parallel, bool verbose, bool extractFonts, bool realImageEmbedding, bool perGlyphPositioning,
+        bool makeWhiteTransparent, byte whiteThr, bool onlyIfOpaque, bool forceAlphaWhite, bool alphaWhiteExplicit)
     {
         // 设置日志级别
         var loggerFactory = LoggerFactory.Create(builder =>
@@ -136,12 +205,18 @@ class Program
                 PerGlyphPositioning = perGlyphPositioning,
                 MaxDegreeOfParallelism = parallel,
                 Logger = logger,
+                MakeWhiteBackgroundTransparent = makeWhiteTransparent,
+                WhiteThreshold = whiteThr,
+                OnlyIfOpaque = onlyIfOpaque,
                 Progress = new Progress<(int done, int total)>(progress =>
                 {
                     var percentage = progress.total > 0 ? (progress.done * 100 / progress.total) : 0;
                     logger.LogInformation("转换进度: {Done}/{Total} ({Percent}%)", progress.done, progress.total, percentage);
                 })
             };
+
+            logger.LogInformation("白底转透明: {Enabled} (来源: {Source}) 阈值: {Thr} OnlyIfOpaque={OnlyIfOpaque} Force={Force}",
+                makeWhiteTransparent, alphaWhiteExplicit ? "用户显式" : "内部默认", whiteThr, onlyIfOpaque, forceAlphaWhite);
 
             // 记录开始时间
             var startTime = DateTime.Now;

@@ -199,21 +199,50 @@ internal class TextExtractor : IPdfContentExtractor
             double[]? ctmArray = null; float[]? deltaXArray = null;
             try
             {
-                var tm = renderInfo.GetTextMatrix();
-                var a = tm.Get(Matrix.I11); var b = tm.Get(Matrix.I12); var c = tm.Get(Matrix.I21); var d = tm.Get(Matrix.I22);
-                ctmArray = new double[] { a * ConvertHelper.Pt2Mm, b * ConvertHelper.Pt2Mm, c * ConvertHelper.Pt2Mm, d * ConvertHelper.Pt2Mm, xMm, yMm };
-                if (_options.EnableDeltaX && metrics.CharAdvancesPt.Length == text.Length && text.Length>0)
+                // 去掉 CTM 避免双重缩放（坐标已转换为mm）
+                // var tm = renderInfo.GetTextMatrix();
+                // var a = tm.Get(Matrix.I11); var b = tm.Get(Matrix.I12); var c = tm.Get(Matrix.I21); var d = tm.Get(Matrix.I22);
+                // ctmArray = new double[] { a * ConvertHelper.Pt2Mm, b * ConvertHelper.Pt2Mm, c * ConvertHelper.Pt2Mm, d * ConvertHelper.Pt2Mm, xMm, yMm };
+                ctmArray = null; // 暂时移除CTM避免重复缩放
+                if (_options.EnableDeltaX && metrics.CharAdvancesPt.Length == text.Length && text.Length>1)
                 {
-                    deltaXArray = new float[text.Length];
-                    for (int i=0;i<text.Length;i++)
+                    // DeltaX 长度 = n-1 (字符数-1)
+                    deltaXArray = new float[text.Length - 1];
+                    for (int i=0;i<text.Length-1;i++)
                     {
-                        double advPt = i==0?0:metrics.CharAdvancesPt[i-1];
+                        double advPt = metrics.CharAdvancesPt[i];
                         deltaXArray[i] = (float)(advPt * ConvertHelper.Pt2Mm);
                     }
                 }
             }
             catch (Exception ex)
             { _logger?.LogDebug(ex, "[PDF2OFD][Text] Page {Page} 捕获 CTM/DeltaX 失败", _pageNum); }
+
+            // 尝试获取字形编码
+            int[]? glyphCodes = null;
+            try
+            {
+                var fp = renderInfo.GetFont().GetFontProgram();
+                if (fp != null)
+                {
+                    var codes = new List<int>();
+                    for (int i = 0; i < text.Length; i++)
+                    {
+                        var glyph = fp.GetGlyph(text[i]);
+                        if (glyph != null)
+                        {
+                            codes.Add(glyph.GetCode());
+                        }
+                        else
+                        {
+                            // 无法获取字形时使用 Unicode 值
+                            codes.Add((int)text[i]);
+                        }
+                    }
+                    glyphCodes = codes.ToArray();
+                }
+            }
+            catch { /* 忽略字形获取失败 */ }
 
             // 将转换后的文本块加入集合
             var fontProgram = renderInfo.GetFont().GetFontProgram();
@@ -232,7 +261,8 @@ internal class TextExtractor : IPdfContentExtractor
                 DeltaX = deltaXArray,
                 AvgAdvance = metrics.AvgAdvancePt * ConvertHelper.Pt2Mm,
                 SpaceAdvance = metrics.SpaceWidthPt * ConvertHelper.Pt2Mm,
-                DeltaXMode = _options.EnableDeltaX ? "Step" : null
+                DeltaXMode = _options.EnableDeltaX ? "Step" : null,
+                Glyphs = glyphCodes
             });
             return;
         }
@@ -301,8 +331,17 @@ internal class TextExtractor : IPdfContentExtractor
                     if (first.SpaceAdvance.HasValue && first.SpaceAdvance.Value > 0) spaceRef = first.SpaceAdvance.Value;
                     else if (first.AvgAdvance.HasValue) spaceRef = first.AvgAdvance.Value;
                     else spaceRef = (first.FontSize > 0 ? first.FontSize : avgSize) * 0.55; // pt->mm 已在 earlier? 注意：这里变量单位都是 mm （字体 size 是 mm）
-                    // gap 判定：gap > spaceRef * 0.85 认为需要插入空格
-                    if (gap > spaceRef * 0.85d) sb.Append(' ');
+                    bool lineMostlyCjk = segs.Count(s => s.Text.Any(ch => ch >= '\u4E00' && ch <= '\u9FFF')) >= segs.Count * 0.5;
+                    double triggerRatio = 0.85d;
+                    if (lineMostlyCjk)
+                    {
+                        // 中文等宽时 spaceRef 较大，使用更低触发阈值；参考选项 CjkGapTriggerRatio（若可获取）
+                        // 这里无法直接访问 options，只能基于经验值 0.45。
+                        triggerRatio = 0.45d; // 与 PdfToOfdOptions.CjkGapTriggerRatio 默认保持一致
+                        // 进一步压缩参考宽度，防止阈值过大
+                        spaceRef = Math.Min(spaceRef, (first.FontSize > 0 ? first.FontSize : avgSize) * 0.7);
+                    }
+                    if (gap > spaceRef * triggerRatio) sb.Append(' ');
                     sb.Append(cur.Text);
                     cursorRight = Math.Max(cursorRight, cur.X + curEstW);
                     if (cur.Height > 0) maxH = Math.Max(maxH, cur.Height);
@@ -455,7 +494,15 @@ internal class TextExtractor : IPdfContentExtractor
                     double segW = EstimateWidth(seg);
                     double gap = seg.X - cursorRight;
                     double spaceRef = seg.SpaceAdvance ?? seg.AvgAdvance ?? ((seg.FontSize > 0 ? seg.FontSize : avgSize) * 0.55);
-                    if (gap > spaceRef * opt.GapSpaceTriggerRatio)
+                    bool lineMostlyCjk = segs.Count(s => s.Text.Any(ch => ch >= '\u4E00' && ch <= '\u9FFF')) >= segs.Count * 0.5;
+                    double triggerRatio = opt.GapSpaceTriggerRatio;
+                    if (lineMostlyCjk)
+                    {
+                        triggerRatio = opt.CjkGapTriggerRatio;
+                        // 中文行把参考 spaceRef 压缩，避免字宽导致阈值偏大
+                        spaceRef = Math.Min(spaceRef, (seg.FontSize > 0 ? seg.FontSize : avgSize) * 0.7);
+                    }
+                    if (gap > spaceRef * triggerRatio)
                     {
                         double baseSpace = seg.SpaceAdvance ?? (seg.AvgAdvance ?? spaceRef);
                         if (baseSpace <= 0) baseSpace = spaceRef;
@@ -515,7 +562,7 @@ internal class TextExtractor : IPdfContentExtractor
                     float[]? wordDelta = null;
                     if (opt.EnableDeltaX)
                     {
-                        // 构造近似 DeltaX：按字符顺序差分（不含最后字符advance）
+                        // 构造 DeltaX：长度 = 字符数，首项0，元素含义=当前字符起点 - 前一个字符起点（典型 Step 模式）
                         var wordChars = c.Skip(start).Take(end - start + 1).Where(cc => !cc.isGap).ToList();
                         if (wordChars.Count > 0)
                         {
