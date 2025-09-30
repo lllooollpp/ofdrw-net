@@ -1,6 +1,7 @@
 using System.Xml.Linq;
 using OfdrwNet.Core.BasicType;
 using OfdrwNet.Core.BasicStructure.PageTree;
+using PageTreePages = OfdrwNet.Core.BasicStructure.PageTree.Pages;
 using OutlinesType = OfdrwNet.Core.BasicStructure.Outlines.Outlines;
 
 namespace OfdrwNet.Core.BasicStructure.Doc;
@@ -8,9 +9,9 @@ namespace OfdrwNet.Core.BasicStructure.Doc;
 /// <summary>
 /// 文档根节点
 /// Document.xml
-/// 
+///
 /// ————《GB/T 33190-2016》 图 5
-/// 
+///
 /// 对应 Java 版本的 org.ofdrw.core.basicStructure.doc.Document
 /// </summary>
 public class Document : OfdElement
@@ -62,7 +63,7 @@ public class Document : OfdElement
     /// </summary>
     /// <param name="pages">页树</param>
     /// <returns>this</returns>
-    public Document SetPages(Pages pages)
+    public Document SetPages(PageTreePages pages)
     {
         Set(pages);
         return this;
@@ -74,10 +75,10 @@ public class Document : OfdElement
     /// 有关页树的描述见 7.6
     /// </summary>
     /// <returns>页树</returns>
-    public Pages? GetPages()
+    public PageTreePages? GetPages()
     {
         var element = GetOfdElement("Pages");
-        return element == null ? null : new Pages(element);
+    return element == null ? null : new PageTreePages(element);
     }
 
     /// <summary>
