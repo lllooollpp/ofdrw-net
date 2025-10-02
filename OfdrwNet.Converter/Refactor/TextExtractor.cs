@@ -2,19 +2,22 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas.Parser;
 using iText.Kernel.Pdf.Canvas.Parser.Data;
 using iText.Kernel.Pdf.Canvas.Parser.Listener;
+
 using Microsoft.Extensions.Logging;
+
 using OfdrwNet.Abstractions;
 using OfdrwNet.Converter.Refactor.Utils;
 
 namespace OfdrwNet.Converter.Refactor
 {
     /// <summary>
-    /// 精简实现：按基线与水平间距分组文字片段并调用 IOfdDocWriter.AddRawTextGlyphRun
+    /// 按基线与水平间距分组文字片段并调用 IOfdDocWriter.AddRawTextGlyphRun
     /// 目标：替换复杂冗余实现，使用明确的单位转换和最小断行规则。
     /// </summary>
     internal class TextExtractor : IPdfContentExtractor
@@ -31,7 +34,8 @@ namespace OfdrwNet.Converter.Refactor
             for (int p = 1; p <= pages; p++)
             {
                 token.ThrowIfCancellationRequested();
-                if (options.PageFilter != null && !options.PageFilter(p)) continue;
+                if (options.PageFilter != null && !options.PageFilter(p))
+                    continue;
 
                 var page = pdfDoc.GetPage(p);
                 var pageHeightPt = page.GetPageSize().GetHeight();  // 获取页面高度用于坐标转换
@@ -43,7 +47,8 @@ namespace OfdrwNet.Converter.Refactor
                 var writer = ofd;
                 foreach (var group in strat.Groups)
                 {
-                    if (group.RenderInfos.Count == 0) continue;
+                    if (group.RenderInfos.Count == 0)
+                        continue;
                     var first = group.RenderInfos[0];
                     var pdfCtm = first.GetGraphicsState().GetCtm();
                     double[] ctm = GeometryUtils.BuildOfdCtmFromPdf(pdfCtm);
@@ -66,7 +71,12 @@ namespace OfdrwNet.Converter.Refactor
                             }
                         }
                     }
-                    catch { /* 忽略异常，保持原 CTM */ }
+                    catch
+                    {
+
+                        logger?.LogWarning("[PDF2OFD][Text] 获取 CTM 失败，保持原 CTM");
+
+                    }
 
                     // 检查 CTM 中的缩放因子（a=水平缩放, d=垂直缩放）
                     double ctmScaleX = Math.Abs(pdfCtm.Get(iText.Kernel.Geom.Matrix.I11));
@@ -144,7 +154,8 @@ namespace OfdrwNet.Converter.Refactor
                                 if (fontName.Contains("+"))
                                 {
                                     var parts = fontName.Split('+');
-                                    if (parts.Length > 1) fontName = parts[1];
+                                    if (parts.Length > 1)
+                                        fontName = parts[1];
                                 }
                             }
                         }
@@ -176,13 +187,17 @@ namespace OfdrwNet.Converter.Refactor
             private readonly List<TextRenderInfo> _current = new();
             private readonly List<float> _deltas = new();
 
-            public SimpleGroupingStrategy(Rectangle pageSize) { _pageSize = pageSize; }
+            public SimpleGroupingStrategy(Rectangle pageSize)
+            {
+                _pageSize = pageSize;
+            }
 
             public IReadOnlyList<Group> Groups => _groups;
 
             public void EventOccurred(IEventData data, EventType type)
             {
-                if (type != EventType.RENDER_TEXT) return;
+                if (type != EventType.RENDER_TEXT)
+                    return;
                 var ri = (TextRenderInfo)data;
                 try
                 {
@@ -191,7 +206,8 @@ namespace OfdrwNet.Converter.Refactor
                 }
                 catch { }
                 string t = ri.GetText();
-                if (string.IsNullOrEmpty(t)) return;
+                if (string.IsNullOrEmpty(t))
+                    return;
 
                 if (_current.Count > 0)
                 {
@@ -222,15 +238,20 @@ namespace OfdrwNet.Converter.Refactor
 
             private void FlushCurrent()
             {
-                if (_current.Count == 0) return;
+                if (_current.Count == 0)
+                    return;
                 _groups.Add(new Group { RenderInfos = _current.ToList(), DeltaXs = _deltas.Count > 0 ? _deltas.ToList() : null });
-                _current.Clear(); _deltas.Clear();
+                _current.Clear();
+                _deltas.Clear();
             }
 
             internal class Group
             {
                 public List<TextRenderInfo> RenderInfos { get; set; } = new();
-                public List<float>? DeltaXs { get; set; }
+                public List<float>? DeltaXs
+                {
+                    get; set;
+                }
             }
         }
     }

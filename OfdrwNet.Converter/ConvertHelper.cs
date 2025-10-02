@@ -47,21 +47,45 @@ public static class ConvertHelper
         /// <summary>DPI（>=72）。默认 150。</summary>
         public float Dpi { get; set; } = 150f;
         /// <summary>起始页(1-based，可空)。</summary>
-        public int? StartPage { get; set; }
+        public int? StartPage
+        {
+            get; set;
+        }
         /// <summary>结束页(1-based，可空)。</summary>
-        public int? EndPage { get; set; }
+        public int? EndPage
+        {
+            get; set;
+        }
         /// <summary>进度回调（已转换页数, 总页数）。</summary>
-        public IProgress<(int done, int total)>? Progress { get; set; }
+        public IProgress<(int done, int total)>? Progress
+        {
+            get; set;
+        }
         /// <summary>是否保留版式（绝对定位）。</summary>
-        public bool PreserveLayout { get; set; }
+        public bool PreserveLayout
+        {
+            get; set;
+        }
         /// <summary>统计信息输出 JSON 文件路径（可空：不输出）。</summary>
-        public string? StatsJsonPath { get; set; }
+        public string? StatsJsonPath
+        {
+            get; set;
+        }
         /// <summary>字体名称映射回调：参数为 OFD 中字体名，返回 PDF 可用字体名（null 则使用默认）。</summary>
-        public Func<string, string?>? FontMapper { get; set; }
+        public Func<string, string?>? FontMapper
+        {
+            get; set;
+        }
         /// <summary>是否尝试嵌入映射字体（占位，当前未实现实际嵌入）。</summary>
-        public bool EmbedFonts { get; set; }
+        public bool EmbedFonts
+        {
+            get; set;
+        }
         /// <summary>页面过滤器（1-based 页码）。返回 true 表示需要导出。</summary>
-        public Func<int, bool>? PageFilter { get; set; }
+        public Func<int, bool>? PageFilter
+        {
+            get; set;
+        }
         /// <summary>
         /// 是否提取真实图片
         /// </summary>
@@ -70,7 +94,10 @@ public static class ConvertHelper
         /// <summary>
         /// 日志记录器
         /// </summary>
-        public ILogger? Logger { get; set; }
+        public ILogger? Logger
+        {
+            get; set;
+        }
     }
 
     /// <summary>
@@ -129,7 +156,8 @@ public static class ConvertHelper
             }
 
             SafeDelete(tempInputFile);
-            if (outputIsStream) SafeDelete(targetPdfPath);
+            if (outputIsStream)
+                SafeDelete(targetPdfPath);
         }
         catch (GeneralConvertException)
         {
@@ -186,7 +214,11 @@ public static class ConvertHelper
             SafeDelete(ofdPath);
             if (deleteOnClose)
             {
-                try { Directory.Delete(unzippedPathRoot, true); } catch { /* ignore */ }
+                try
+                {
+                    Directory.Delete(unzippedPathRoot, true);
+                }
+                catch { /* ignore */ }
             }
         }
     }
@@ -233,7 +265,8 @@ public static class ConvertHelper
                 }
 
                 SafeDelete(tempInputFile);
-                if (outputIsStream) SafeDelete(targetPdfPath);
+                if (outputIsStream)
+                    SafeDelete(targetPdfPath);
             }
             catch (GeneralConvertException)
             {
@@ -265,13 +298,16 @@ public static class ConvertHelper
             int total = tmpReader.GetNumberOfPages();
             int s = Math.Clamp(start ?? 1, 1, total);
             int e = Math.Clamp(end ?? total, 1, total);
-            if (s > e) (s, e) = (e, s);
+            if (s > e)
+                (s, e) = (e, s);
             pages = new List<int>();
             for (int i = s; i <= e; i++)
             {
-                if (options?.PageFilter == null || options.PageFilter(i)) pages.Add(i);
+                if (options?.PageFilter == null || options.PageFilter(i))
+                    pages.Add(i);
             }
-            if (pages.Count == 0) throw new ArgumentException("页面过滤后无可导出页面");
+            if (pages.Count == 0)
+                throw new ArgumentException("页面过滤后无可导出页面");
         }
 
         int totalExport = pages.Count;
@@ -316,14 +352,21 @@ public static class ConvertHelper
 
     private static string? NormalizeOutputPath(object output)
     {
-        if (output is string s) return s;
+        if (output is string s)
+            return s;
         return null; // Stream 情况由调用处处理
     }
 
     private static void SafeDelete(string? path)
     {
-        if (string.IsNullOrEmpty(path)) return;
-        try { if (File.Exists(path)) File.Delete(path); } catch { /* ignore */ }
+        if (string.IsNullOrEmpty(path))
+            return;
+        try
+        {
+            if (File.Exists(path))
+                File.Delete(path);
+        }
+        catch { /* ignore */ }
     }
 
     #endregion
@@ -365,14 +408,29 @@ public static class ConvertHelper
         public bool ExtractAnnotations { get; set; } = true; // 提取注释/批注
         public bool ExtractForms { get; set; } = true; // 提取表单
         public bool PerGlyphPositioning { get; set; } = true; // 预留第2阶段
-        public IProgress<(int done, int total)>? Progress { get; set; }
-        public CancellationToken CancellationToken { get; set; }
+        public IProgress<(int done, int total)>? Progress
+        {
+            get; set;
+        }
+        public CancellationToken CancellationToken
+        {
+            get; set;
+        }
         public bool NormalizeSubsetFontName { get; set; } = true;
         public bool EnableDeltaX { get; set; } = true;
-        public ILogger? Logger { get; set; }
+        public ILogger? Logger
+        {
+            get; set;
+        }
         public bool RealImageEmbedding { get; set; } = true; // 是否输出真实图片资源
-        public Func<int, bool>? PageFilter { get; set; }
-        public string? Password { get; set; } // 密码参数支持
+        public Func<int, bool>? PageFilter
+        {
+            get; set;
+        }
+        public string? Password
+        {
+            get; set;
+        } // 密码参数支持
         public int MaxDegreeOfParallelism { get; set; } = 1; // 并行度，1表示顺序处理，>1表示并行处理
         public bool IgnoreCMapErrors { get; set; } = true; // 忽略中文字体 CMap 错误，默认启用
 
@@ -401,28 +459,28 @@ public static class ConvertHelper
         /// </summary>
         public int MaxSyntheticSpacesPerGap { get; set; } = 4;
 
-    /// <summary>
-    /// 合成空格时必须达到的最小间隙（mm）。用于避免数字等窄字符被错误拆分。
-    /// 默认 0.45mm。
-    /// </summary>
-    public double MinGapForSyntheticSpaceMm { get; set; } = 0.45d;
+        /// <summary>
+        /// 合成空格时必须达到的最小间隙（mm）。用于避免数字等窄字符被错误拆分。
+        /// 默认 0.45mm。
+        /// </summary>
+        public double MinGapForSyntheticSpaceMm { get; set; } = 0.45d;
 
-    /// <summary>
-    /// 允许吸收的最大负间距（mm）。用于忽略 PDF 中的轻微负 kerning，避免错误地回填空格。
-    /// 默认 0.25mm。
-    /// </summary>
-    public double MaxNegativeKerningAbsorbMm { get; set; } = 0.25d;
+        /// <summary>
+        /// 允许吸收的最大负间距（mm）。用于忽略 PDF 中的轻微负 kerning，避免错误地回填空格。
+        /// 默认 0.25mm。
+        /// </summary>
+        public double MaxNegativeKerningAbsorbMm { get; set; } = 0.25d;
 
-    /// <summary>
-    /// 当 gap 发生在主要由数字、连字符等组成的片段之间时，额外放大的触发系数。
-    /// 数值越大，越不容易在数字间合成空格。默认 1.3。
-    /// </summary>
-    public double NumericGapMultiplier { get; set; } = 1.3d;
+        /// <summary>
+        /// 当 gap 发生在主要由数字、连字符等组成的片段之间时，额外放大的触发系数。
+        /// 数值越大，越不容易在数字间合成空格。默认 1.3。
+        /// </summary>
+        public double NumericGapMultiplier { get; set; } = 1.3d;
 
-    /// <summary>
-    /// 数字段之间触发合成空格所需的最小实际间距（mm）。默认 1.0mm。
-    /// </summary>
-    public double NumericMinGapMm { get; set; } = 1.0d;
+        /// <summary>
+        /// 数字段之间触发合成空格所需的最小实际间距（mm）。默认 1.0mm。
+        /// </summary>
+        public double NumericMinGapMm { get; set; } = 1.0d;
 
         /// <summary>
         /// 启用后输出词级调试：包含字符起点/宽度、gap 判定与最终词矩形。
@@ -488,19 +546,55 @@ public static class ConvertHelper
         public bool DebugVerifyOutputImageAlpha { get; set; } = false;
 
         // 新增：为兼容性添加的属性
-        public bool EnableImageExtraction { get { return ExtractImage; } set { ExtractImage = value; } }
-        public bool EnableAnnotationExtraction { get { return ExtractAnnotations; } set { ExtractAnnotations = value; } }
-        public bool EnableFormExtraction { get { return ExtractForms; } set { ExtractForms = value; } }
+        public bool EnableImageExtraction
+        {
+            get
+            {
+                return ExtractImage;
+            }
+            set
+            {
+                ExtractImage = value;
+            }
+        }
+        public bool EnableAnnotationExtraction
+        {
+            get
+            {
+                return ExtractAnnotations;
+            }
+            set
+            {
+                ExtractAnnotations = value;
+            }
+        }
+        public bool EnableFormExtraction
+        {
+            get
+            {
+                return ExtractForms;
+            }
+            set
+            {
+                ExtractForms = value;
+            }
+        }
 
         /// <summary>
         /// 输出 OFD 文档的版本号（默认 null 使用系统默认值）。
         /// </summary>
-        public string? TargetOfdVersion { get; set; }
+        public string? TargetOfdVersion
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 允许调用方注入 DocInfo 配置。
         /// </summary>
-        public Action<CtDocInfo>? ConfigureDocInfo { get; set; }
+        public Action<CtDocInfo>? ConfigureDocInfo
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 是否自动生成 DocID（默认 true）。
@@ -510,52 +604,82 @@ public static class ConvertHelper
         /// <summary>
         /// 显式覆盖 DocID（为空时不覆盖）。
         /// </summary>
-        public string? OverrideDocId { get; set; }
+        public string? OverrideDocId
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 当为 true 时，在写入 DocInfo 前移除现有 DocID（与 AutoGenerateDocId=false 配合使用）。
         /// </summary>
-        public bool RemoveDocId { get; set; }
+        public bool RemoveDocId
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 覆盖文档标题（DocInfo/Title）。
         /// </summary>
-        public string? DocTitle { get; set; }
+        public string? DocTitle
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 覆盖作者（DocInfo/Author）。
         /// </summary>
-        public string? DocAuthor { get; set; }
+        public string? DocAuthor
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 覆盖主题（DocInfo/Subject）。
         /// </summary>
-        public string? DocSubject { get; set; }
+        public string? DocSubject
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 覆盖关键词（DocInfo/Keywords 原始文本）。
         /// </summary>
-        public string? DocKeywords { get; set; }
+        public string? DocKeywords
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 覆盖创建应用程序（DocInfo/Creator）。
         /// </summary>
-        public string? DocCreator { get; set; }
+        public string? DocCreator
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 覆盖创建应用程序版本（DocInfo/CreatorVersion）。
         /// </summary>
-        public string? DocCreatorVersion { get; set; }
+        public string? DocCreatorVersion
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 直接设置 DocInfo/CreationDate 的原始字符串（例如 PDF 的 D: 格式）。
         /// </summary>
-        public string? DocCreationDateRaw { get; set; }
+        public string? DocCreationDateRaw
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 直接设置 DocInfo/ModDate 的原始字符串。
         /// </summary>
-        public string? DocModDateRaw { get; set; }
+        public string? DocModDateRaw
+        {
+            get; set;
+        }
 
         // ============================================
         // 高级转换特性选项 (Phase 3.4 Integration - T073)
@@ -594,12 +718,18 @@ public static class ConvertHelper
         /// <summary>
         /// 兼容性配置文件名称（可选，例如 "Suwell 9.x"）。
         /// </summary>
-        public string? CompatibilityProfile { get; set; }
+        public string? CompatibilityProfile
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 输出转换报告路径（可选，JSON格式）。
         /// </summary>
-        public string? ReportPath { get; set; }
+        public string? ReportPath
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 启用版本控制（默认 false）。
@@ -621,66 +751,102 @@ public static class ConvertHelper
         /// <summary>
         /// 颜色空间转换器 (可选)。用于RGB/CMYK → sRGB转换并验证色差(ΔE)
         /// </summary>
-        public ColorManagement.ColorSpaceConverter? ColorConverter { get; set; }
+        public ColorManagement.ColorSpaceConverter? ColorConverter
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 表格识别器 (可选)。用于从文本中识别表格结构
         /// </summary>
-        public Recognition.RuleBasedTableRecognizer? TableRecognizer { get; set; }
+        public Recognition.RuleBasedTableRecognizer? TableRecognizer
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 公式识别器 (可选)。用于识别数学公式
         /// </summary>
-        public Recognition.BasicFormulaRecognizer? FormulaRecognizer { get; set; }
+        public Recognition.BasicFormulaRecognizer? FormulaRecognizer
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 内存监控器 (可选)。用于在转换过程中监控内存使用
         /// </summary>
-        public Batch.MemoryGuard? MemoryGuard { get; set; }
+        public Batch.MemoryGuard? MemoryGuard
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 验证引擎 (可选)。用于对生成的OFD进行验证
         /// </summary>
-        public Validation.CompositeValidationEngine? Validator { get; set; }
+        public Validation.CompositeValidationEngine? Validator
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 错误报告构建器 (可选)。用于生成验证报告
         /// </summary>
-        public Reporting.ErrorReportBuilder? ReportBuilder { get; set; }
+        public Reporting.ErrorReportBuilder? ReportBuilder
+        {
+            get; set;
+        }
 
         // ==== T075: 表单服务注入 ====
 
         /// <summary>
         /// 表单字段映射器 (可选)。用于PDF表单字段到OFD的映射
         /// </summary>
-        public IFormFieldMapper? FormMapper { get; set; }
+        public IFormFieldMapper? FormMapper
+        {
+            get; set;
+        }
 
         /// <summary>
         /// XFA检测器 (可选)。用于检测和处理XFA表单
         /// </summary>
-        public XfaDetector? XfaDetector { get; set; }
+        public XfaDetector? XfaDetector
+        {
+            get; set;
+        }
 
         /// <summary>
         /// XFA提示写入器 (可选)。用于写入XFA降级提示
         /// </summary>
-        public XfaHintWriter? XfaHintWriter { get; set; }
+        public XfaHintWriter? XfaHintWriter
+        {
+            get; set;
+        }
 
         /// <summary>
         /// JavaScript扫描器 (可选)。用于扫描表单中的JavaScript
         /// </summary>
-        public JavaScriptScanner? JavaScriptScanner { get; set; }
+        public JavaScriptScanner? JavaScriptScanner
+        {
+            get; set;
+        }
 
         // ==== T076: 注释/交互服务注入 ====
 
         /// <summary>
         /// 书签转换器 (可选)。用于PDF书签转OFD书签
         /// </summary>
-        public BookmarkConverter? BookmarkConverter { get; set; }
+        public BookmarkConverter? BookmarkConverter
+        {
+            get; set;
+        }
 
         /// <summary>
         /// 动作映射器 (可选)。用于PDF动作到OFD动作的映射
         /// </summary>
-        public ActionMapper? ActionMapper { get; set; }
+        public ActionMapper? ActionMapper
+        {
+            get; set;
+        }
     }
 
     // 字体归一逻辑已迁移到 Refactor.Utils.FontUtils（保留向后兼容的内部代理，后续可删除）
@@ -1033,7 +1199,7 @@ public static class ConvertHelper
         }
 
         // 标准化前缀为大写 D:
-    return trimmed.Length > 2 ? "D:" + trimmed.Substring(2) : "D:";
+        return trimmed.Length > 2 ? "D:" + trimmed.Substring(2) : "D:";
     }
 
     private static DateTime? TryParsePdfDate(string? raw)

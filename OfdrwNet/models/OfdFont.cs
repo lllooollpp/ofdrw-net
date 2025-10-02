@@ -5,11 +5,22 @@ namespace OfdrwNet.Models;
 /// </summary>
 public class OfdFont
 {
-    public int ID { get; }
-    public string FontName { get; }
-    public string FamilyName { get; }
+    public int ID
+    {
+        get;
+    }
+    public string FontName
+    {
+        get;
+    }
+    public string FamilyName
+    {
+        get;
+    }
     public OfdFont(int id, string fontName, string familyName)
     {
-        ID = id; FontName = fontName; FamilyName = familyName;
+        ID = id;
+        FontName = fontName;
+        FamilyName = familyName;
     }
 }
