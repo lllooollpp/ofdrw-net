@@ -52,6 +52,11 @@ public class OfdPath
     public string? FillColor { get; set; }
 
     /// <summary>
+    /// 虚线模式（单位：mm）。数组元素依次为实线段长度、间隔长度等。
+    /// </summary>
+    public double[]? DashPattern { get; set; }
+
+    /// <summary>
     /// 线宽（mm）
     /// </summary>
     public double? LineWidth { get; set; }

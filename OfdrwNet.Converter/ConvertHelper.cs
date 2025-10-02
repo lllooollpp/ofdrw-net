@@ -361,6 +361,7 @@ public static class ConvertHelper
         public bool ExtractAndEmbedFonts { get; set; } = true; // 第1阶段目标
         public bool ExtractText { get; set; } = true;
         public bool ExtractImage { get; set; } = true;
+        public bool ExtractVector { get; set; } = true; // 提取矢量路径（线条、形状等）
         public bool ExtractAnnotations { get; set; } = true; // 提取注释/批注
         public bool ExtractForms { get; set; } = true; // 提取表单
         public bool PerGlyphPositioning { get; set; } = true; // 预留第2阶段

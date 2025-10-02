@@ -11,6 +11,7 @@ using OfdrwNet.Core.BasicStructure.PageObj.Layer;
 using OfdrwNet.Core.BasicStructure.PageObj.Layer.Block;
 using OfdrwNet.Core.BasicType;
 using OfdrwNet.Core.Graph.PathObj;
+using OfdrwNet.Core.Graph;
 using OfdrwNet.Core.Image;
 using OfdrwNet.Core.PageDescription.Color;
 using OfdrwNet.Core.Text;
@@ -108,8 +109,38 @@ internal sealed class PageContentWriter
 
     private PathObject CreatePathObject(RawPath pathItem, Func<int> nextId)
     {
+        var lineWidthValue = pathItem.LineWidth ?? 0.0;
+        if (lineWidthValue > 0 && lineWidthValue < 0.1)
+        {
+            lineWidthValue = 0.1;
+        }
+
+        double x = pathItem.X;
+        double y = pathItem.Y;
+        double width = pathItem.Width;
+        double height = pathItem.Height;
+
+        if (lineWidthValue > 0)
+        {
+            var minExtent = Math.Max(lineWidthValue, 0.1) * 1.2;
+
+            if (height < minExtent)
+            {
+                var delta = minExtent - height;
+                y -= delta / 2.0;
+                height = minExtent;
+            }
+
+            if (width < minExtent && width < height)
+            {
+                var delta = minExtent - width;
+                x -= delta / 2.0;
+                width = minExtent;
+            }
+        }
+
         var pathObject = new PathObject(new StRefId(nextId()))
-            .SetBoundary(pathItem.X, pathItem.Y, pathItem.Width, pathItem.Height);
+            .SetBoundary(x, y, Math.Max(width, 0.1), Math.Max(height, 0.1));
 
         if (pathItem.Stroke.HasValue)
         {
@@ -121,18 +152,36 @@ internal sealed class PageContentWriter
             pathObject.SetFill(pathItem.Fill);
         }
 
-        if (pathItem.LineWidth.HasValue)
+        if (lineWidthValue > 0)
         {
-            pathObject.SetLineWidth(pathItem.LineWidth.Value);
+            pathObject.SetLineWidth(lineWidthValue);
         }
 
-        var strokeColor = TryParseColor(pathItem.StrokeColor) ?? CreateBlackColor();
+        var strokeColor = TryParseColor(pathItem.StrokeColor, true) ?? CreateBlackStrokeColor();
         pathObject.SetStrokeColor(strokeColor);
 
-        var fillColor = TryParseColor(pathItem.FillColor);
+        var fillColor = TryParseColor(pathItem.FillColor, false);
         if (fillColor != null)
         {
             pathObject.SetFillColor(fillColor);
+        }
+
+        if (pathItem.DashPattern is { Length: > 0 })
+        {
+            var anyPositive = false;
+            foreach (var segment in pathItem.DashPattern)
+            {
+                if (segment > 0.001)
+                {
+                    anyPositive = true;
+                    break;
+                }
+            }
+
+            if (anyPositive)
+            {
+                pathObject.SetLineDash(pathItem.DashPattern);
+            }
         }
 
         var ctm = CreateCtm(pathItem.CTM);
@@ -208,7 +257,7 @@ internal sealed class PageContentWriter
         textObject.SetBoundary(run.X, boundaryTop, width, boundaryHeight);
         textObject.SetStroke(false);
         textObject.SetFill(true);
-        textObject.SetFillColor(CreateBlackColor());
+    textObject.SetFillColor(CreateBlackFillColor());
 
         var ctm = CreateCtm(run.CTM);
         if (ctm != null)
@@ -216,15 +265,10 @@ internal sealed class PageContentWriter
             textObject.SetCtm(ctm);
         }
 
-        var textCodeX = run.TextCodeX ?? 0d;
-        if (Math.Abs(textCodeX) < 1e-6)
-        {
-            textCodeX = 0d;
-        }
-        var textCodeY = run.TextCodeY ?? baselineOffset;
-
+        // 计算 TextCode 的 X：如果有 CharStarts，用第一个字形的 X 相对对象原点的偏移
+        var textCodeX = (run.CharStarts is { Length: > 0 }) ? run.CharStarts[0] - run.X : 0.0;
         var textCode = new TextCode()
-            .SetCoordinate(textCodeX, textCodeY)
+            .SetCoordinate(textCodeX, baselineOffset)
             .SetContent(run.Text);
 
         if (run.DeltaX is { Length: > 0 })
@@ -259,12 +303,20 @@ internal sealed class PageContentWriter
         return normalized != null ? new StArray(normalized) : null;
     }
 
-    private static CtColor CreateBlackColor()
+    private static CtColor CreateBlackStrokeColor() => CreateRgbColor(0, 0, 0, isStroke: true);
+
+    private static CtColor CreateBlackFillColor() => CreateRgbColor(0, 0, 0, isStroke: false);
+
+    private static CtColor CreateRgbColor(int r, int g, int b, bool isStroke)
     {
-        return CtColor.Rgb(0, 0, 0);
+        CtColor color = isStroke ? new StrokeColor() : new FillColor();
+        color.SetValue(new StArray(r, g, b));
+        color.SetAlpha(255);
+        color.AddAttribute("ColorSpace", "RGB");
+        return color;
     }
 
-    private static CtColor? TryParseColor(string? value)
+    private static CtColor? TryParseColor(string? value, bool isStroke)
     {
         if (string.IsNullOrWhiteSpace(value))
         {
@@ -277,16 +329,17 @@ internal sealed class PageContentWriter
             return null;
         }
 
-        if (int.TryParse(parts[0], NumberStyles.Integer, CultureInfo.InvariantCulture, out var r) &&
-            int.TryParse(parts[1], NumberStyles.Integer, CultureInfo.InvariantCulture, out var g) &&
-            int.TryParse(parts[2], NumberStyles.Integer, CultureInfo.InvariantCulture, out var b))
+        if (!int.TryParse(parts[0], NumberStyles.Integer, CultureInfo.InvariantCulture, out var r) ||
+            !int.TryParse(parts[1], NumberStyles.Integer, CultureInfo.InvariantCulture, out var g) ||
+            !int.TryParse(parts[2], NumberStyles.Integer, CultureInfo.InvariantCulture, out var b))
         {
-            r = Math.Clamp(r, 0, 255);
-            g = Math.Clamp(g, 0, 255);
-            b = Math.Clamp(b, 0, 255);
-            return CtColor.Rgb(r, g, b);
+            return null;
         }
 
-        return null;
+        r = Math.Clamp(r, 0, 255);
+        g = Math.Clamp(g, 0, 255);
+        b = Math.Clamp(b, 0, 255);
+
+        return CreateRgbColor(r, g, b, isStroke);
     }
 }

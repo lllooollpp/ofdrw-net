@@ -80,6 +80,9 @@ internal class VectorExtractor : IPdfContentExtractor
         var listener = new VectorPathListener(logger, pageHeightPt);
         new PdfCanvasProcessor(listener).ProcessPageContent(page);
         var paths = listener.GetPaths();
+
+        logger?.LogInformation("[PDF2OFD][Vector] Page {Page} 提取到 {Count} 条路径", pageNum, paths.Count);
+
         if (paths.Count == 0) return;
 
         // T074: 矢量路径颜色转换 (如果启用)
@@ -88,6 +91,10 @@ internal class VectorExtractor : IPdfContentExtractor
         foreach (var p in paths)
         {
             p.Page = pageNum;
+
+            logger?.LogInformation("[PDF2OFD][Vector] Page {Page} 路径详情: X={X}, Y={Y}, W={W}, H={H}, Stroke={Stroke}, Fill={Fill}, LineWidth={LW}, StrokeColor={SC}, FillColor={FC}, PathData前30字符={PathData}",
+                pageNum, p.X, p.Y, p.Width, p.Height, p.Stroke, p.Fill, p.LineWidth, p.StrokeColor, p.FillColor,
+                p.PathData != null && p.PathData.Length > 30 ? p.PathData.Substring(0, 30) : p.PathData);
 
             // T074: 颜色转换集成占位
             if (hasColorConverter)

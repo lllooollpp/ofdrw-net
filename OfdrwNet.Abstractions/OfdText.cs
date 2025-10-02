@@ -100,13 +100,4 @@ public class OfdText
     /// 字形编码列表（用于 CGTransform/Glyphs），可选。
     /// </summary>
     public int[]? Glyphs { get; set; }
-    /// <summary>
-    /// 可选：TextCode 在边界内的 X 偏移（毫米），用于精确放置 TextCode 坐标
-    /// </summary>
-    public double? TextCodeX { get; set; }
-
-    /// <summary>
-    /// 可选：TextCode 在边界内的 Y 偏移（毫米），用于精确放置 TextCode 坐标
-    /// </summary>
-    public double? TextCodeY { get; set; }
 }

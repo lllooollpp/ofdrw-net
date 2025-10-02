@@ -14,6 +14,7 @@ internal class RawPath
     public double[]? CTM { get; set; }
     public string? StrokeColor { get; set; }
     public string? FillColor { get; set; }
+    public double[]? DashPattern { get; set; }
     public double? LineWidth { get; set; }
     public bool? Stroke { get; set; }
     public bool? Fill { get; set; }

@@ -58,6 +58,7 @@ internal class PdfToOfdOrchestrator
             {
                 case TextExtractor when !options.ExtractText: continue;
                 case PdfImageExtractor when !options.ExtractImage: continue;
+                case VectorExtractor when !options.ExtractVector: continue;
                 case AnnotationExtractor when !options.ExtractAnnotations: continue;
                 case FormExtractor when !options.ExtractForms: continue;
             }
