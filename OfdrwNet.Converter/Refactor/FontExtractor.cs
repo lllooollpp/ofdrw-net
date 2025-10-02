@@ -146,7 +146,9 @@ internal class FontExtractor : IPdfContentExtractor
         ["SimSun"] = new[]{"simsun.ttc","SimSun.ttc"},
         ["Microsoft YaHei"] = new[]{"msyh.ttc","msyh.ttf"},
         ["SimHei"] = new[]{"simhei.ttf"},
-        ["KaiTi"] = new[]{"simkai.ttf","kaiti.ttf"}
+        ["KaiTi"] = new[]{"simkai.ttf","kaiti.ttf"},
+        ["FangSong"] = new[]{"simfang.ttf","FangSong.ttf"},
+        ["仿宋"] = new[]{"simfang.ttf","FangSong.ttf"}
     };
 
     private static string? FindSystemFontPath(string logical, ILogger? logger)

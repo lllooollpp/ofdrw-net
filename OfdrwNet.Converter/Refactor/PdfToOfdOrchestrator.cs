@@ -10,20 +10,31 @@ namespace OfdrwNet.Converter.Refactor;
 /// <summary>
 /// 统一调度 PDF -> OFD 内容提取的 Orchestrator。
 /// 负责根据选项顺序调用各提取器，后续可扩展为可配置执行顺序 / 依赖管理。
+/// T073: 集成服务依赖
 /// </summary>
 internal class PdfToOfdOrchestrator
 {
     private readonly List<IPdfContentExtractor> _extractors = new();
 
-    public PdfToOfdOrchestrator(Addon? addon = null)
+    public PdfToOfdOrchestrator(ConvertHelper.PdfToOfdOptions? options = null, Addon? addon = null)
     {
         // 默认顺序：Text -> Image -> Vector -> Annotation -> Form （字体在外部单独先行处理）
-        // 允许通过 addon 注入 / 替换（预留扩展）
+        // T073: 传递服务依赖到各提取器
         _extractors.Add(new TextExtractor());
-    _extractors.Add(new PdfImageExtractor());
+        _extractors.Add(new PdfImageExtractor());
         _extractors.Add(new VectorExtractor());
-        _extractors.Add(new AnnotationExtractor());
-        _extractors.Add(new FormExtractor());
+
+        // T076: AnnotationExtractor 集成 BookmarkConverter 和 ActionMapper
+        _extractors.Add(new AnnotationExtractor(
+            options?.BookmarkConverter,
+            options?.ActionMapper));
+
+        // T075: FormExtractor 集成表单服务
+        _extractors.Add(new FormExtractor(
+            options?.FormMapper,
+            options?.XfaDetector,
+            options?.XfaHintWriter,
+            options?.JavaScriptScanner));
 
         addon?.Configure(_extractors);
     }

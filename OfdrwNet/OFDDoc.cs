@@ -255,9 +255,9 @@ namespace OfdrwNet
         }
         IOfdDocWriter IOfdDocWriter.AddExternalEmbeddedFont(string fontName, string fontFilePath) => AddExternalEmbeddedFont(fontName, fontFilePath);
 
-        public OfdWriter AddRawTextGlyphRun(string fontName, double fontSizeMm, double originX, double originY, double width, double height, string text, double[]? deltaX = null, double[]? deltaY = null, int[]? glyphs = null, int page = 1, double[]? ctm = null)
+        public OfdWriter AddRawTextGlyphRun(string fontName, double fontSizeMm, double originX, double originY, double width, double height, string text, double[]? deltaX = null, double[]? deltaY = null, int[]? glyphs = null, int page = 1, double[]? ctm = null, double? baselineY = null, double[]? charStarts = null, double[]? charAdvances = null)
         {
-            _streamQueue.Add(new RawGlyphRun
+            var run = new RawGlyphRun
             {
                 FontName = string.IsNullOrWhiteSpace(fontName) ? "SimSun" : fontName,
                 FontSizeMm = fontSizeMm,
@@ -270,11 +270,16 @@ namespace OfdrwNet
                 DeltaY = deltaY,
                 Glyphs = glyphs,
                 Page = page < 1 ? 1 : page,
-                CTM = NormalizeCtm(ctm)
-            });
+                CTM = NormalizeCtm(ctm),
+                BaselineY = baselineY,
+                CharStarts = charStarts,
+                CharAdvances = charAdvances
+            };
+            _streamQueue.Add(run);
             return this;
         }
-        IOfdDocWriter IOfdDocWriter.AddRawTextGlyphRun(string fontName, double fontSizeMm, double originX, double originY, double width, double height, string text, double[]? deltaX, double[]? deltaY, int[]? glyphs, int page, double[]? ctm) => AddRawTextGlyphRun(fontName, fontSizeMm, originX, originY, width, height, text, deltaX, deltaY, glyphs, page, ctm);
+        IOfdDocWriter IOfdDocWriter.AddRawTextGlyphRun(string fontName, double fontSizeMm, double originX, double originY, double width, double height, string text, double[]? deltaX, double[]? deltaY, int[]? glyphs, int page, double[]? ctm, double? baselineY, double[]? charStarts, double[]? charAdvances)
+            => AddRawTextGlyphRun(fontName, fontSizeMm, originX, originY, width, height, text, deltaX, deltaY, glyphs, page, ctm, baselineY, charStarts, charAdvances);
 
         public OfdWriter AddRawImage(string format, double x, double y, double width, double height, byte[] data, int page = 1, double[]? ctm = null)
         {
@@ -352,7 +357,7 @@ namespace OfdrwNet
         public OfdWriter AddText(OfdText text)
         {
             if (text == null || string.IsNullOrEmpty(text.Text)) return this;
-            return AddRawTextGlyphRun(text.FontFamily, text.FontSize, text.X, text.Y, text.Width, text.Height, text.Text, text.DeltaX?.Select(d => (double)d).ToArray(), null, text.Glyphs, text.Page, text.CTM);
+            return AddRawTextGlyphRun(text.FontFamily, text.FontSize, text.X, text.Y, text.Width, text.Height, text.Text, text.DeltaX?.Select(d => (double)d).ToArray(), null, text.Glyphs, text.Page, text.CTM, text.BaselineY, text.CharStarts, text.CharAdvances);
         }
 
         /// <summary>

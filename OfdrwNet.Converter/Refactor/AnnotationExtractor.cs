@@ -12,11 +12,24 @@ namespace OfdrwNet.Converter.Refactor;
 /// <summary>
 /// 注释提取器：从 PDF 中提取注释并转换为 OFD 注释对象集合。
 /// 迁移自 ConvertHelper 内部 ExtractAnnotations / ConvertPdfAnnotationToOfd 系列方法。
+/// T076: 集成 BookmarkConverter 和 ActionMapper
 /// </summary>
 internal class AnnotationExtractor : IPdfContentExtractor
 {
     private static int _nextAnnotationId = 1;
     private static int GetNextAnnotationId() => System.Threading.Interlocked.Increment(ref _nextAnnotationId);
+
+    // T076: 服务依赖
+    private readonly Interaction.BookmarkConverter? _bookmarkConverter;
+    private readonly Interaction.ActionMapper? _actionMapper;
+
+    public AnnotationExtractor(
+        Interaction.BookmarkConverter? bookmarkConverter = null,
+        Interaction.ActionMapper? actionMapper = null)
+    {
+        _bookmarkConverter = bookmarkConverter;
+        _actionMapper = actionMapper;
+    }
 
     public Task ExtractAsync(PdfDocument pdfDoc, IOfdDocWriter ofd, ConvertHelper.PdfToOfdOptions options, ILogger? logger, CancellationToken token)
     {
@@ -57,10 +70,30 @@ internal class AnnotationExtractor : IPdfContentExtractor
                 }
             }
         }
+
+        // T076: 提取并转换书签
+        if (_bookmarkConverter != null)
+        {
+            try
+            {
+                var bookmarks = _bookmarkConverter.ConvertBookmarks(pdfDoc);
+                if (bookmarks != null && bookmarks.Count > 0)
+                {
+                    logger?.LogInformation("[PDF2OFD][Annotation] 提取到 {Count} 个顶级书签", bookmarks.Count);
+                    // TODO: 将书签添加到 OFD 文档
+                    // (ofd as OfdWriter)?.AddBookmarks(bookmarks);
+                }
+            }
+            catch (Exception ex)
+            {
+                logger?.LogWarning(ex, "[PDF2OFD][Annotation] 书签转换失败");
+            }
+        }
+
         return Task.CompletedTask;
     }
 
-    private static object? ConvertPdfAnnotationToOfd(iText.Kernel.Pdf.Annot.PdfAnnotation pdfAnnotation, int pageIndex, ILogger? logger)
+    private object? ConvertPdfAnnotationToOfd(iText.Kernel.Pdf.Annot.PdfAnnotation pdfAnnotation, int pageIndex, ILogger? logger)
     {
         if (pdfAnnotation == null) return null;
         try
@@ -176,15 +209,41 @@ internal class AnnotationExtractor : IPdfContentExtractor
     private static object? ConvertTextAnnotation(iText.Kernel.Pdf.Annot.PdfAnnotation pdfAnnotation, StId annotationId, StId pageId, StBox boundary, ILogger? logger)
         => ConvertHighlightAnnotation(pdfAnnotation, annotationId, pageId, boundary, logger);
 
-    private static object? ConvertLinkAnnotation(iText.Kernel.Pdf.Annot.PdfAnnotation pdfAnnotation, StId annotationId, StId pageId, StBox boundary, ILogger? logger)
+    private object? ConvertLinkAnnotation(iText.Kernel.Pdf.Annot.PdfAnnotation pdfAnnotation, StId annotationId, StId pageId, StBox boundary, ILogger? logger)
     {
         try
         {
             var linkType = LinkType.Url;
             var target = "#";
+
+            // T076: 使用 ActionMapper 转换动作
             var action = pdfAnnotation.GetPdfObject().GetAsDictionary(iText.Kernel.Pdf.PdfName.A);
-            if (action != null)
+            if (action != null && _actionMapper != null)
             {
+                var actionInfo = _actionMapper.MapAction(action);
+                if (actionInfo != null)
+                {
+                    switch (actionInfo.Type)
+                    {
+                        case Interaction.ActionType.GoTo:
+                            linkType = LinkType.Page;
+                            target = actionInfo.Destination ?? "#";
+                            break;
+                        case Interaction.ActionType.Uri:
+                            linkType = LinkType.Url;
+                            target = actionInfo.Uri ?? "#";
+                            break;
+                        default:
+                            linkType = LinkType.Url;
+                            target = "#";
+                            logger?.LogDebug("[PDF2OFD][Annotation] 不支持的动作类型: {Type}", actionInfo.Type);
+                            break;
+                    }
+                }
+            }
+            else if (action != null)
+            {
+                // 回退到原有逻辑
                 var actionType = action.GetAsName(iText.Kernel.Pdf.PdfName.S);
                 if (actionType != null)
                 {

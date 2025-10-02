@@ -170,19 +170,42 @@ internal sealed class PageContentWriter
         }
 
         var textLen = run.Text.Length;
-        var width = run.Width > 0
-            ? run.Width
-            : (run.DeltaX?.Sum() ?? (textLen * run.FontSizeMm * 0.6));
 
-        const double fontAscentRatio = 0.85;
-        const double lineHeightFactor = 1.2;
+        var width = run.Width;
+        if (width <= 0 && run.CharStarts is { Length: > 0 } && run.CharAdvances is { Length: > 0 })
+        {
+            var left = run.CharStarts[0];
+            var right = run.CharStarts[^1] + run.CharAdvances[^1];
+            width = Math.Max(width, right - left);
+        }
+        if (width <= 0 && run.DeltaX is { Length: > 0 })
+        {
+            width = run.DeltaX.Sum();
+        }
+        if (width <= 0)
+        {
+            width = textLen * run.FontSizeMm * 0.6;
+        }
+
+        const double fontAscentRatio = 0.80;
+        const double lineHeightFactor = 1.15;
         var ascentHeight = run.FontSizeMm * fontAscentRatio;
         var totalTextHeight = run.Height > 0 ? run.Height : run.FontSizeMm * lineHeightFactor;
+        var baselineY = run.BaselineY ?? (run.Y + ascentHeight);
+        var nominalTop = baselineY - ascentHeight;
+        var boundaryTop = Math.Min(run.Y, nominalTop);
+        var baselineOffset = baselineY - boundaryTop;
+        var descent = totalTextHeight - ascentHeight;
+        if (descent < 0)
+        {
+            descent = run.FontSizeMm * 0.2;
+        }
+        var boundaryHeight = baselineOffset + descent;
 
         var textObject = new TextObject(new StRefId(nextId()));
         textObject.SetFont(new StRefId(font.ID));
         textObject.SetSize(run.FontSizeMm);
-        textObject.SetBoundary(run.X, run.Y, width, totalTextHeight);
+        textObject.SetBoundary(run.X, boundaryTop, width, boundaryHeight);
         textObject.SetStroke(false);
         textObject.SetFill(true);
         textObject.SetFillColor(CreateBlackColor());
@@ -193,8 +216,15 @@ internal sealed class PageContentWriter
             textObject.SetCtm(ctm);
         }
 
+        var textCodeX = run.TextCodeX ?? 0d;
+        if (Math.Abs(textCodeX) < 1e-6)
+        {
+            textCodeX = 0d;
+        }
+        var textCodeY = run.TextCodeY ?? baselineOffset;
+
         var textCode = new TextCode()
-            .SetCoordinate(0, ascentHeight)
+            .SetCoordinate(textCodeX, textCodeY)
             .SetContent(run.Text);
 
         if (run.DeltaX is { Length: > 0 })

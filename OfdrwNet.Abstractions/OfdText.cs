@@ -46,6 +46,31 @@ public class OfdText
     public double FontSize { get; set; }
 
     /// <summary>
+    /// 文本框顶部 Y（mm），优先使用 PDF 提取的实际位置。
+    /// </summary>
+    public double? TopY { get; set; }
+
+    /// <summary>
+    /// 文本框底部 Y（mm），优先使用 PDF 提取的实际位置。
+    /// </summary>
+    public double? BottomY { get; set; }
+
+    /// <summary>
+    /// 字符起始 X 坐标（mm），与 Text 中字符一一对应（可选）。
+    /// </summary>
+    public double[]? CharStarts { get; set; }
+
+    /// <summary>
+    /// 字符宽度/进宽（mm），与 Text 中字符一一对应（可选）。
+    /// </summary>
+    public double[]? CharAdvances { get; set; }
+
+    /// <summary>
+    /// 字符基线 Y 坐标（mm），用于精确行对齐（可选）。
+    /// </summary>
+    public double? BaselineY { get; set; }
+
+    /// <summary>
     /// 字形偏移量（mm）
     /// </summary>
     public float[]? DeltaX { get; set; }
@@ -75,4 +100,13 @@ public class OfdText
     /// 字形编码列表（用于 CGTransform/Glyphs），可选。
     /// </summary>
     public int[]? Glyphs { get; set; }
+    /// <summary>
+    /// 可选：TextCode 在边界内的 X 偏移（毫米），用于精确放置 TextCode 坐标
+    /// </summary>
+    public double? TextCodeX { get; set; }
+
+    /// <summary>
+    /// 可选：TextCode 在边界内的 Y 偏移（毫米），用于精确放置 TextCode 坐标
+    /// </summary>
+    public double? TextCodeY { get; set; }
 }

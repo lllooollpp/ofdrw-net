@@ -20,6 +20,11 @@ using OfdrwNet.Layout; // 新增: 设置页面尺寸
 using iText.Kernel.Geom; // 用于Matrix等几何类型
 using iTextRectangle = iText.Kernel.Geom.Rectangle; // 起别名避免冲突
 using OfdrwNet.Core.BasicStructure.Ofd.DocInfo;
+// T075/T076: 服务命名空间
+using OfdrwNet.Abstractions.Forms;
+using OfdrwNet.Converter.Forms;
+using OfdrwNet.Converter.Scripting;
+using OfdrwNet.Converter.Interaction;
 
 namespace OfdrwNet.Converter;
 
@@ -395,6 +400,29 @@ public static class ConvertHelper
         /// </summary>
         public int MaxSyntheticSpacesPerGap { get; set; } = 4;
 
+    /// <summary>
+    /// 合成空格时必须达到的最小间隙（mm）。用于避免数字等窄字符被错误拆分。
+    /// 默认 0.45mm。
+    /// </summary>
+    public double MinGapForSyntheticSpaceMm { get; set; } = 0.45d;
+
+    /// <summary>
+    /// 允许吸收的最大负间距（mm）。用于忽略 PDF 中的轻微负 kerning，避免错误地回填空格。
+    /// 默认 0.25mm。
+    /// </summary>
+    public double MaxNegativeKerningAbsorbMm { get; set; } = 0.25d;
+
+    /// <summary>
+    /// 当 gap 发生在主要由数字、连字符等组成的片段之间时，额外放大的触发系数。
+    /// 数值越大，越不容易在数字间合成空格。默认 1.3。
+    /// </summary>
+    public double NumericGapMultiplier { get; set; } = 1.3d;
+
+    /// <summary>
+    /// 数字段之间触发合成空格所需的最小实际间距（mm）。默认 1.0mm。
+    /// </summary>
+    public double NumericMinGapMm { get; set; } = 1.0d;
+
         /// <summary>
         /// 启用后输出词级调试：包含字符起点/宽度、gap 判定与最终词矩形。
         /// 默认 false。
@@ -527,6 +555,131 @@ public static class ConvertHelper
         /// 直接设置 DocInfo/ModDate 的原始字符串。
         /// </summary>
         public string? DocModDateRaw { get; set; }
+
+        // ============================================
+        // 高级转换特性选项 (Phase 3.4 Integration - T073)
+        // ============================================
+
+        /// <summary>
+        /// 启用表格识别（默认 false）。
+        /// </summary>
+        public bool EnableTableRecognition { get; set; } = false;
+
+        /// <summary>
+        /// 启用公式识别（默认 false）。
+        /// </summary>
+        public bool EnableFormulaRecognition { get; set; } = false;
+
+        /// <summary>
+        /// 启用颜色精度验证（ΔE检查，默认 false）。
+        /// </summary>
+        public bool EnableColorValidation { get; set; } = false;
+
+        /// <summary>
+        /// 转换后验证OFD结构（默认 false）。
+        /// </summary>
+        public bool EnableValidation { get; set; } = false;
+
+        /// <summary>
+        /// RGB颜色精度阈值（ΔE，默认 2.0）。
+        /// </summary>
+        public double DeltaEThreshold { get; set; } = 2.0;
+
+        /// <summary>
+        /// CMYK颜色精度阈值（ΔE，默认 5.0）。
+        /// </summary>
+        public double CmykDeltaEThreshold { get; set; } = 5.0;
+
+        /// <summary>
+        /// 兼容性配置文件名称（可选，例如 "Suwell 9.x"）。
+        /// </summary>
+        public string? CompatibilityProfile { get; set; }
+
+        /// <summary>
+        /// 输出转换报告路径（可选，JSON格式）。
+        /// </summary>
+        public string? ReportPath { get; set; }
+
+        /// <summary>
+        /// 启用版本控制（默认 false）。
+        /// </summary>
+        public bool EnableVersioning { get; set; } = false;
+
+        /// <summary>
+        /// 内存警告阈值（MB，默认 2000）。
+        /// </summary>
+        public double MemoryWarningThresholdMB { get; set; } = 2000;
+
+        /// <summary>
+        /// 内存严重阈值（MB，默认 3000）。
+        /// </summary>
+        public double MemoryCriticalThresholdMB { get; set; } = 3000;
+
+        // ==== 服务注入 (T073集成) ====
+
+        /// <summary>
+        /// 颜色空间转换器 (可选)。用于RGB/CMYK → sRGB转换并验证色差(ΔE)
+        /// </summary>
+        public ColorManagement.ColorSpaceConverter? ColorConverter { get; set; }
+
+        /// <summary>
+        /// 表格识别器 (可选)。用于从文本中识别表格结构
+        /// </summary>
+        public Recognition.RuleBasedTableRecognizer? TableRecognizer { get; set; }
+
+        /// <summary>
+        /// 公式识别器 (可选)。用于识别数学公式
+        /// </summary>
+        public Recognition.BasicFormulaRecognizer? FormulaRecognizer { get; set; }
+
+        /// <summary>
+        /// 内存监控器 (可选)。用于在转换过程中监控内存使用
+        /// </summary>
+        public Batch.MemoryGuard? MemoryGuard { get; set; }
+
+        /// <summary>
+        /// 验证引擎 (可选)。用于对生成的OFD进行验证
+        /// </summary>
+        public Validation.CompositeValidationEngine? Validator { get; set; }
+
+        /// <summary>
+        /// 错误报告构建器 (可选)。用于生成验证报告
+        /// </summary>
+        public Reporting.ErrorReportBuilder? ReportBuilder { get; set; }
+
+        // ==== T075: 表单服务注入 ====
+
+        /// <summary>
+        /// 表单字段映射器 (可选)。用于PDF表单字段到OFD的映射
+        /// </summary>
+        public IFormFieldMapper? FormMapper { get; set; }
+
+        /// <summary>
+        /// XFA检测器 (可选)。用于检测和处理XFA表单
+        /// </summary>
+        public XfaDetector? XfaDetector { get; set; }
+
+        /// <summary>
+        /// XFA提示写入器 (可选)。用于写入XFA降级提示
+        /// </summary>
+        public XfaHintWriter? XfaHintWriter { get; set; }
+
+        /// <summary>
+        /// JavaScript扫描器 (可选)。用于扫描表单中的JavaScript
+        /// </summary>
+        public JavaScriptScanner? JavaScriptScanner { get; set; }
+
+        // ==== T076: 注释/交互服务注入 ====
+
+        /// <summary>
+        /// 书签转换器 (可选)。用于PDF书签转OFD书签
+        /// </summary>
+        public BookmarkConverter? BookmarkConverter { get; set; }
+
+        /// <summary>
+        /// 动作映射器 (可选)。用于PDF动作到OFD动作的映射
+        /// </summary>
+        public ActionMapper? ActionMapper { get; set; }
     }
 
     // 字体归一逻辑已迁移到 Refactor.Utils.FontUtils（保留向后兼容的内部代理，后续可删除）
@@ -546,17 +699,31 @@ public static class ConvertHelper
         ILogger? logger = options.Logger;
         if (logger == null)
         {
-            // 如果未提供日志记录器，创建一个临时的
+            // 如果未提供日志记录器,创建一个临时的
             var lf = LoggerFactory.Create(b =>
             {
                 b.AddConsole();
                 b.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Debug);
             });
             logger = lf.CreateLogger("PDF2OFD");
-            logger.LogInformation("[PDF2OFD] 未提供外部Logger，已启用内部临时Logger");
+            logger.LogInformation("[PDF2OFD] 未提供外部Logger,已启用内部临时Logger");
         }
 
         logger.LogInformation("[PDF2OFD] 开始转换 PDF -> OFD 输入={Pdf} 输出={Ofd}", pdfPath, ofdOutputDir);
+
+        // T073: 内存检查初始化 (如果启用)
+        var memoryGuard = options.MemoryGuard;
+        if (memoryGuard != null)
+        {
+            logger.LogInformation("[PDF2OFD] 内存监控已启用 警告阈值={Warning}MB 关键阈值={Critical}MB",
+                options.MemoryWarningThresholdMB, options.MemoryCriticalThresholdMB);
+            var snapshot = memoryGuard.CheckMemory();
+            if (snapshot.Action == Domain.MemoryAction.Abort)
+            {
+                logger.LogError("[PDF2OFD] 内存不足,转换中止 当前使用={Current}MB", snapshot.AllocatedMB);
+                throw new OutOfMemoryException("转换前内存检查失败");
+            }
+        }
 
         if (!File.Exists(pdfPath))
         {
@@ -635,11 +802,42 @@ public static class ConvertHelper
             // 字体注册已经在 FontExtractor 中完成
 
             // 3. Orchestrator 统一调度剩余内容提取（字体已在前）
-            var orchestrator = new Refactor.PdfToOfdOrchestrator();
+            // T073: 传递 options 以支持服务依赖注入
+            var orchestrator = new Refactor.PdfToOfdOrchestrator(options);
             await orchestrator.ExecuteAsync(pdfDoc, ofd, options, logger, options.CancellationToken);
 
             await ofd.CloseAsync().ConfigureAwait(false);
             logger.LogInformation("[PDF2OFD] OFD文档异步关闭完成");
+
+            // T073: 转换后验证和报告生成 (如果启用)
+            if (options.EnableValidation && options.Validator != null)
+            {
+                logger.LogInformation("[PDF2OFD] 开始验证生成的OFD文件");
+                var validationResult = options.Validator.Validate(ofdOutputDir);
+
+                var allErrors = validationResult.SchemaErrors.Concat(validationResult.SemanticErrors).ToList();
+
+                if (allErrors.Count > 0)
+                {
+                    logger.LogWarning("[PDF2OFD] 发现 {Count} 个验证问题", allErrors.Count);
+
+                    // 如果配置了报告生成器,生成报告
+                    if (options.ReportBuilder != null && !string.IsNullOrWhiteSpace(options.ReportPath))
+                    {
+                        options.ReportBuilder
+                            .WithJob(System.Guid.NewGuid().ToString(), pdfPath, ofdOutputDir)
+                            .WithStartTime(DateTime.UtcNow)
+                            .AddErrors(allErrors)
+                            .BuildToFile(options.ReportPath, indented: true);
+
+                        logger.LogInformation("[PDF2OFD] 验证报告已保存到: {Path}", options.ReportPath);
+                    }
+                }
+                else
+                {
+                    logger.LogInformation("[PDF2OFD] OFD验证通过,无问题发现");
+                }
+            }
         }
         finally
         {

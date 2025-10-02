@@ -82,6 +82,27 @@ namespace OfdrwNet.Converter.Refactor
                     catch { try { imageBytes = imageObject.GetImageBytes(true); } catch { return; } }
                     if (imageBytes == null) return;
 
+                    // T074: 颜色空间转换 (如果启用ColorConverter)
+                    if (_options.ColorConverter != null && _options.EnableColorValidation)
+                    {
+                        try
+                        {
+                            // 注意: 这里是示意集成点,实际颜色转换需要分析PDF图像的ColorSpace
+                            // 当前iText API限制,暂时记录日志作为集成占位
+                            _logger?.LogDebug("[PDF2OFD][Image][ColorConversion] Page {Page} ColorConverter可用,待实现CMYK→sRGB转换", _pageNum);
+
+                            // TODO: 实际实现需要:
+                            // 1. 从imageObject获取ColorSpace信息
+                            // 2. 如果是CMYK,调用ColorConverter.ConvertAsync
+                            // 3. 验证ΔE是否超过阈值
+                            // 4. 替换imageBytes
+                        }
+                        catch (Exception exColor)
+                        {
+                            _logger?.LogWarning(exColor, "[PDF2OFD][Image][ColorConversion] Page {Page} 颜色转换失败,使用原图", _pageNum);
+                        }
+                    }
+
                     bool alphaChanged = false; string? newFormat = null;
                     if (_options.MakeWhiteBackgroundTransparent)
                     {
@@ -106,18 +127,74 @@ namespace OfdrwNet.Converter.Refactor
                     }
 
                     var matrix = renderInfo.GetImageCtm();
-                    float w = matrix.Get(Matrix.I11); float h = matrix.Get(Matrix.I22); float x = matrix.Get(Matrix.I31); float y = matrix.Get(Matrix.I32);
-                    if (w < 0) { x += w; w = -w; } if (h < 0) { y += h; h = -h; }
-                    y = _pageSize.GetHeight() - (y + h);
-                    x = (float)(x * ConvertHelper.Pt2Mm); y = (float)(y * ConvertHelper.Pt2Mm); w = (float)(w * ConvertHelper.Pt2Mm); h = (float)(h * ConvertHelper.Pt2Mm);
+                    var mmScale = ConvertHelper.Pt2Mm;
+
+                    double rawW = matrix.Get(Matrix.I11);
+                    double rawH = matrix.Get(Matrix.I22);
+                    double rawX = matrix.Get(Matrix.I31);
+                    double rawY = matrix.Get(Matrix.I32);
+
+                    if (rawW < 0) { rawX += rawW; rawW = -rawW; }
+                    if (rawH < 0) { rawY += rawH; rawH = -rawH; }
+
+                    double pageHeightPt = _pageSize.GetHeight();
+                    double topLeftYPt = pageHeightPt - (rawY + rawH);
+
+                    var boundaryX = (float)(rawX * mmScale);
+                    var boundaryY = (float)(topLeftYPt * mmScale);
+                    var widthMm = (float)(rawW * mmScale);
+                    var heightMm = (float)(rawH * mmScale);
+
                     double[]? ctm = null;
                     try
-                    { var a = matrix.Get(Matrix.I11); var b = matrix.Get(Matrix.I12); var c = matrix.Get(Matrix.I21); var d = matrix.Get(Matrix.I22); ctm = new double[] { a * ConvertHelper.Pt2Mm, b * ConvertHelper.Pt2Mm, c * ConvertHelper.Pt2Mm, d * ConvertHelper.Pt2Mm, x, y }; }
+                    {
+                        var a = matrix.Get(Matrix.I11) * mmScale;
+                        var b = matrix.Get(Matrix.I12) * mmScale;
+                        var c = matrix.Get(Matrix.I21) * mmScale;
+                        var d = matrix.Get(Matrix.I22) * mmScale;
+
+                        var hasRotation = Math.Abs(b) > 1e-6 || Math.Abs(c) > 1e-6;
+                        double translateX;
+                        double translateY;
+
+                        if (!hasRotation)
+                        {
+                            translateX = 0d;
+                            translateY = d < 0 ? -d : 0d;
+                        }
+                        else
+                        {
+                            var rawTranslateX = matrix.Get(Matrix.I31) * mmScale;
+                            var rawTranslateY = matrix.Get(Matrix.I32) * mmScale;
+                            var pageHeightMm = pageHeightPt * mmScale;
+                            var topLeftY = pageHeightMm - (rawTranslateY + d);
+                            translateX = rawTranslateX - boundaryX;
+                            translateY = topLeftY - boundaryY;
+                        }
+
+                        ctm = new double[] { a, b, c, d, translateX, translateY };
+                    }
                     catch { }
+
+                    double posX = boundaryX;
+                    double posY = boundaryY;
+                    var width = widthMm;
+                    var height = heightMm;
+
                     var originalExt = imageObject.IdentifyImageFileExtension();
                     var finalFormat = alphaChanged ? (newFormat ?? "PNG") : originalExt;
                     if (!string.IsNullOrEmpty(finalFormat)) finalFormat = finalFormat.TrimStart('.');
-                    Images.Add(new OfdImage { Page = _pageNum, X = x, Y = y, Width = w, Height = h, ImageData = imageBytes, Format = finalFormat, CTM = ctm });
+                    Images.Add(new OfdImage
+                    {
+                        Page = _pageNum,
+                        X = (float)posX,
+                        Y = (float)posY,
+                        Width = width,
+                        Height = height,
+                        ImageData = imageBytes,
+                        Format = finalFormat,
+                        CTM = ctm
+                    });
                 }
                 catch (Exception ex) { _logger?.LogWarning(ex, "[PDF2OFD][Image] Page {Page} 异常", _pageNum); }
             }

@@ -19,6 +19,27 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
     <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    <PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
+    <PackageReference Include="System.Composition" Version="6.0.0" />
+    <PackageReference Include="System.Composition.AttributedModel" Version="6.0.0" />
+    <PackageReference Include="System.Composition.Hosting" Version="6.0.0" />
+    <PackageReference Include="System.Composition.Runtime" Version="6.0.0" />
+    <PackageReference Include="System.Composition.TypedParts" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <_Parameter1>PluginContract</_Parameter1>
+      <_Parameter2>OfdrwNet.Sign.ISignatureProvider</_Parameter2>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <_Parameter1>PluginCategory</_Parameter1>
+      <_Parameter2>SignatureProvider</_Parameter2>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <_Parameter1>PluginDiscovery</_Parameter1>
+      <_Parameter2>MEF</_Parameter2>
+    </AssemblyAttribute>
   </ItemGroup>
 
 </Project>

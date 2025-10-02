@@ -28,7 +28,7 @@ public interface IOfdDocWriter : IDisposable
     /// <param name="glyphs">字形代码数组</param>
     /// <param name="page">页码，从 1 开始</param>
     /// <param name="ctm">可选 6 参数 CTM 变换矩阵 (a b c d e f)</param>
-    IOfdDocWriter AddRawTextGlyphRun(string fontName, double fontSizeMm, double originX, double originY, double width, double height, string text, double[]? deltaX = null, double[]? deltaY = null, int[]? glyphs = null, int page = 1, double[]? ctm = null);
+    IOfdDocWriter AddRawTextGlyphRun(string fontName, double fontSizeMm, double originX, double originY, double width, double height, string text, double[]? deltaX = null, double[]? deltaY = null, int[]? glyphs = null, int page = 1, double[]? ctm = null, double? baselineY = null, double[]? charStarts = null, double[]? charAdvances = null);
     /// <summary>
     /// 添加注释资源引用。
     /// </summary>

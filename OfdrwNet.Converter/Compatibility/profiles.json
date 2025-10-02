@@ -1,0 +1,333 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OFD Reader Compatibility Profiles",
+  "description": "Compatibility profiles for different OFD reader implementations (FR-37)",
+  "version": "1.0.0",
+  "profiles": [
+    {
+      "id": "suwell-9.x",
+      "name": "Suwell Reader 9.x",
+      "vendor": "Suwell",
+      "version": "9.x",
+      "description": "数科 OFD 阅读器 9.x 系列兼容性配置",
+      "supportedFeatures": [
+        "basic",
+        "text",
+        "image",
+        "vector",
+        "annotation",
+        "form",
+        "signature",
+        "bookmark",
+        "layer",
+        "transparency",
+        "colorspace-rgb",
+        "colorspace-cmyk",
+        "colorspace-gray",
+        "font-embed",
+        "font-standard",
+        "encryption-sm4",
+        "encryption-aes",
+        "permission-print",
+        "permission-modify",
+        "permission-annotate"
+      ],
+      "unsupportedFeatures": [
+        "video",
+        "audio",
+        "javascript",
+        "3d",
+        "attachment",
+        "xfa-form"
+      ],
+      "limitations": {
+        "maxPageSize": {
+          "width": 10000,
+          "height": 10000,
+          "unit": "mm"
+        },
+        "maxFileSize": 209715200,
+        "maxPages": 10000,
+        "maxAnnotations": 1000,
+        "maxLayers": 32
+      },
+      "defaultDowngrades": {
+        "video": {
+          "method": "ReplaceWithPlaceholder",
+          "alternative": "Static image with play icon overlay"
+        },
+        "audio": {
+          "method": "ReplaceWithPlaceholder",
+          "alternative": "Static image with speaker icon"
+        },
+        "javascript": {
+          "method": "Remove",
+          "alternative": "Script removed, see conversion report"
+        },
+        "3d": {
+          "method": "ConvertTo2D",
+          "alternative": "2D screenshot or wireframe view"
+        },
+        "attachment": {
+          "method": "ExtractExternal",
+          "alternative": "Extracted to external directory"
+        }
+      }
+    },
+    {
+      "id": "foxit-11.x",
+      "name": "Foxit OFD Reader 11.x",
+      "vendor": "Foxit",
+      "version": "11.x",
+      "description": "福昕 OFD 阅读器 11.x 系列兼容性配置",
+      "supportedFeatures": [
+        "basic",
+        "text",
+        "image",
+        "vector",
+        "annotation",
+        "form",
+        "signature",
+        "bookmark",
+        "outline",
+        "layer",
+        "transparency",
+        "colorspace-rgb",
+        "colorspace-cmyk",
+        "colorspace-gray",
+        "colorspace-icc",
+        "font-embed",
+        "font-standard",
+        "font-truetype",
+        "encryption-sm4",
+        "encryption-aes",
+        "permission-print",
+        "permission-printhq",
+        "permission-modify",
+        "permission-annotate",
+        "permission-export"
+      ],
+      "unsupportedFeatures": [
+        "video",
+        "audio",
+        "javascript",
+        "3d",
+        "xfa-form"
+      ],
+      "limitations": {
+        "maxPageSize": {
+          "width": 15000,
+          "height": 15000,
+          "unit": "mm"
+        },
+        "maxFileSize": 524288000,
+        "maxPages": 50000,
+        "maxAnnotations": 5000,
+        "maxLayers": 64,
+        "maxAttachments": 100
+      },
+      "defaultDowngrades": {
+        "video": {
+          "method": "ReplaceWithPlaceholder",
+          "alternative": "Poster frame with media info"
+        },
+        "audio": {
+          "method": "ReplaceWithPlaceholder",
+          "alternative": "Audio waveform thumbnail"
+        },
+        "javascript": {
+          "method": "Remove",
+          "alternative": "Script disabled for security"
+        },
+        "3d": {
+          "method": "ConvertTo2D",
+          "alternative": "Orthographic projection view"
+        }
+      }
+    },
+    {
+      "id": "baseline-1.0",
+      "name": "OFD Baseline 1.0",
+      "vendor": "GB/T 33190-2016",
+      "version": "1.0",
+      "description": "GB/T 33190-2016 标准基线功能集",
+      "supportedFeatures": [
+        "basic",
+        "text",
+        "image",
+        "vector",
+        "colorspace-rgb",
+        "colorspace-gray",
+        "font-embed"
+      ],
+      "unsupportedFeatures": [
+        "video",
+        "audio",
+        "javascript",
+        "3d",
+        "attachment",
+        "xfa-form",
+        "layer",
+        "transparency",
+        "annotation",
+        "form",
+        "signature",
+        "bookmark",
+        "encryption",
+        "permission"
+      ],
+      "limitations": {
+        "maxPageSize": {
+          "width": 5000,
+          "height": 5000,
+          "unit": "mm"
+        },
+        "maxFileSize": 104857600,
+        "maxPages": 1000
+      },
+      "defaultDowngrades": {
+        "annotation": {
+          "method": "FlattenToContent",
+          "alternative": "Annotations merged into page content"
+        },
+        "form": {
+          "method": "FlattenToText",
+          "alternative": "Form fields converted to static text"
+        },
+        "video": {
+          "method": "Remove",
+          "alternative": "Media content removed"
+        },
+        "audio": {
+          "method": "Remove",
+          "alternative": "Media content removed"
+        },
+        "javascript": {
+          "method": "Remove",
+          "alternative": "Script not supported"
+        },
+        "3d": {
+          "method": "Remove",
+          "alternative": "3D content not supported"
+        },
+        "attachment": {
+          "method": "Remove",
+          "alternative": "Attachments not supported"
+        },
+        "layer": {
+          "method": "FlattenToContent",
+          "alternative": "Layers merged into single view"
+        },
+        "transparency": {
+          "method": "FlattenToOpaque",
+          "alternative": "Transparency baked into RGB"
+        }
+      }
+    },
+    {
+      "id": "wps-ofd-2023",
+      "name": "WPS OFD Viewer 2023",
+      "vendor": "Kingsoft",
+      "version": "2023",
+      "description": "金山 WPS OFD 查看器 2023 版本兼容性配置",
+      "supportedFeatures": [
+        "basic",
+        "text",
+        "image",
+        "vector",
+        "annotation",
+        "form",
+        "signature",
+        "bookmark",
+        "layer",
+        "transparency",
+        "colorspace-rgb",
+        "colorspace-cmyk",
+        "colorspace-gray",
+        "font-embed",
+        "font-standard",
+        "encryption-sm4",
+        "permission-print",
+        "permission-modify"
+      ],
+      "unsupportedFeatures": [
+        "video",
+        "audio",
+        "javascript",
+        "3d",
+        "xfa-form"
+      ],
+      "limitations": {
+        "maxPageSize": {
+          "width": 8000,
+          "height": 8000,
+          "unit": "mm"
+        },
+        "maxFileSize": 314572800,
+        "maxPages": 20000,
+        "maxAnnotations": 2000,
+        "maxLayers": 48
+      },
+      "defaultDowngrades": {
+        "video": {
+          "method": "ReplaceWithPlaceholder",
+          "alternative": "Video thumbnail with filename"
+        },
+        "audio": {
+          "method": "ReplaceWithPlaceholder",
+          "alternative": "Audio icon with filename"
+        },
+        "javascript": {
+          "method": "Remove",
+          "alternative": "Script execution not supported"
+        },
+        "3d": {
+          "method": "ConvertTo2D",
+          "alternative": "Isometric view rendering"
+        }
+      }
+    }
+  ],
+  "featureRegistry": {
+    "basic": "Basic document structure and page layout",
+    "text": "Text content and fonts",
+    "image": "Raster images (JPEG, PNG, TIFF)",
+    "vector": "Vector graphics (paths, shapes)",
+    "annotation": "Annotations and markup",
+    "form": "Interactive form fields",
+    "signature": "Digital signatures",
+    "bookmark": "Document bookmarks/outline",
+    "outline": "Document outline/navigation",
+    "layer": "Optional content groups (layers)",
+    "transparency": "Alpha channel and blending modes",
+    "video": "Video streams",
+    "audio": "Audio streams",
+    "javascript": "JavaScript actions",
+    "3d": "3D models and annotations",
+    "attachment": "File attachments",
+    "xfa-form": "XFA (XML Forms Architecture)",
+    "colorspace-rgb": "RGB color space",
+    "colorspace-cmyk": "CMYK color space",
+    "colorspace-gray": "Grayscale color space",
+    "colorspace-icc": "ICC profile color management",
+    "font-embed": "Embedded fonts",
+    "font-standard": "Standard fonts (14 base fonts)",
+    "font-truetype": "TrueType font support",
+    "encryption-sm4": "SM4 encryption",
+    "encryption-aes": "AES encryption",
+    "permission-print": "Print permission",
+    "permission-printhq": "High-quality print permission",
+    "permission-modify": "Modify content permission",
+    "permission-annotate": "Add/modify annotations permission",
+    "permission-export": "Copy/export content permission"
+  },
+  "downgradeMethods": {
+    "ReplaceWithPlaceholder": "Replace unsupported content with placeholder image/text",
+    "Remove": "Remove unsupported content entirely",
+    "ConvertTo2D": "Convert 3D content to 2D representation",
+    "ExtractExternal": "Extract content to external files",
+    "FlattenToContent": "Merge interactive content into static content",
+    "FlattenToText": "Convert to plain text representation",
+    "FlattenToOpaque": "Remove transparency and blend to opaque RGB"
+  }
+}

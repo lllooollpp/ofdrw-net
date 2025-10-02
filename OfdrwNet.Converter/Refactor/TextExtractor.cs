@@ -2,12 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text;
+
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas.Parser;
 using iText.Kernel.Pdf.Canvas.Parser.Data;
 using iText.Kernel.Pdf.Canvas.Parser.Listener;
+
 using Microsoft.Extensions.Logging;
+
 using OfdrwNet.Abstractions;
 
 namespace OfdrwNet.Converter.Refactor;
@@ -39,7 +43,11 @@ internal class TextExtractor : IPdfContentExtractor
             for (int i = 1; i <= totalPages; i++)
             {
                 token.ThrowIfCancellationRequested();
-                if (options.PageFilter != null && !options.PageFilter(i)) { logger?.LogDebug("[PDF2OFD][Text] Page {P} 被过滤", i); continue; }
+                if (options.PageFilter != null && !options.PageFilter(i))
+                {
+                    logger?.LogDebug("[PDF2OFD][Text] Page {P} 被过滤", i);
+                    continue;
+                }
                 ProcessSinglePage(pdfDoc, ofd, options, logger, i);
             }
         }
@@ -57,6 +65,7 @@ internal class TextExtractor : IPdfContentExtractor
                     var page = pdfDoc.GetPage(i);
                     var strategy = new TextRenderListener(i, page.GetPageSize(), options, logger);
                     new PdfCanvasProcessor(strategy).ProcessPageContent(page);
+                    strategy.FlushPendingWord();
                     List<OfdText> blocks;
                     if (options.PerGlyphPositioning)
                     {
@@ -68,7 +77,7 @@ internal class TextExtractor : IPdfContentExtractor
                     }
                     else
                     {
-                        blocks = TextAggregationHelper.Aggregate(strategy.TextBlocks, logger, i);
+                        blocks = TextAggregationHelper.Aggregate(strategy.TextBlocks, logger, i, options);
                     }
                     textBlocksPerPage[i] = blocks;
                 }
@@ -109,12 +118,15 @@ internal class TextExtractor : IPdfContentExtractor
             var page = pdfDoc.GetPage(pageIndex);
             var strategy = new TextRenderListener(pageIndex, page.GetPageSize(), options, logger);
             new PdfCanvasProcessor(strategy).ProcessPageContent(page);
+            strategy.FlushPendingWord();
             List<OfdText> blocks = options.PerGlyphPositioning
                 ? strategy.TextBlocks
                 : (options.SplitTextBySpace
                     ? TextAggregationHelper.AggregateWords(strategy.TextBlocks, logger, pageIndex, options)
-                    : TextAggregationHelper.Aggregate(strategy.TextBlocks, logger, pageIndex));
-            if (blocks.Count > 0) foreach (var blk in blocks) (ofd as OfdWriter)?.AddText(blk);
+                    : TextAggregationHelper.Aggregate(strategy.TextBlocks, logger, pageIndex, options));
+            if (blocks.Count > 0)
+                foreach (var blk in blocks)
+                    (ofd as OfdWriter)?.AddText(blk);
         }
         catch (iText.IO.Exceptions.IOException ex) when ((ex.Message.Contains("CMap") || ex.Message.Contains("UniGB")) && options.IgnoreCMapErrors)
         {
@@ -140,134 +152,508 @@ internal class TextExtractor : IPdfContentExtractor
         private readonly ConvertHelper.PdfToOfdOptions _options;
         private readonly ILogger? _logger;
 
+        private readonly List<TextRenderInfo> _pendingInfos = new();
+        private readonly StringBuilder _pendingBuffer = new();
+
+        private static readonly HashSet<char> _sentenceSeparators = new()
+        {
+            '。','，','；','：','！','？','（','）','、','：','；','。','“','”','《','》','『','』'
+        };
+
+        private const float _baselineTolerancePt = 20f;
+
         // 收集的原始文本块（每个 renderInfo 对应一条）
         public List<OfdText> TextBlocks { get; } = new();
 
         public TextRenderListener(int pageNum, Rectangle pageSize, ConvertHelper.PdfToOfdOptions options, ILogger? logger)
-        { _pageNum = pageNum; _pageSize = pageSize; _options = options; _logger = logger; }
+        {
+            _pageNum = pageNum;
+            _pageSize = pageSize;
+            _options = options;
+            _logger = logger;
+        }
 
         /// <summary>
-        /// 事件处理：只处理 RENDER_TEXT 类型的事件
-        /// 将 iText 的坐标系与字体信息转换为 OFD 所需的 OfdText
+        /// 事件处理：收集 RENDER_TEXT 事件并按基线/顺序聚合
         /// </summary>
         public void EventOccurred(IEventData data, EventType type)
         {
-            if (type != EventType.RENDER_TEXT) return;
-            var renderInfo = (TextRenderInfo)data;
-            var text = renderInfo.GetText();
-            if (string.IsNullOrWhiteSpace(text)) return;
+            if (type != EventType.RENDER_TEXT)
+                return;
 
-            // 原始几何数据（与旧逻辑保持一致用于基线/定位）
-            var ascent = renderInfo.GetAscentLine();
-            var descent = renderInfo.GetDescentLine();
-            var x = descent.GetStartPoint().Get(0);
-            var yBase = descent.GetStartPoint().Get(1);
-            var rawWidth = descent.GetEndPoint().Get(0) - x; // 仅作回退参考
-            var heightRaw = ascent.GetStartPoint().Get(1) - yBase;
-            if (heightRaw < 0) heightRaw = Math.Abs(heightRaw);
-            var pageHeight = _pageSize.GetHeight();
-            var y = pageHeight - yBase - heightRaw;
-            double fontSizePt = renderInfo.GetFontSize();
+            if (data is not TextRenderInfo renderInfo)
+                return;
 
-            double xMm = x * ConvertHelper.Pt2Mm;
-            double yMm = y * ConvertHelper.Pt2Mm;
-            Refactor.Utils.FontMetricsHelper.RunMetrics metrics;
+            renderInfo.PreserveGraphicsState();
+            var normalized = NormalizeRenderableText(renderInfo.GetText());
+            if (string.IsNullOrEmpty(normalized))
+                return;
+
+            if (_pendingInfos.Count > 0 && RequiresBreak(renderInfo))
+            {
+                EmitPendingWord();
+            }
+
+            _pendingInfos.Add(renderInfo);
+            _pendingBuffer.Append(normalized);
+
+            if (ShouldFlush(normalized))
+            {
+                EmitPendingWord();
+            }
+        }
+
+        public void FlushPendingWord() => EmitPendingWord();
+
+        private bool ShouldFlush(string text)
+        {
+            foreach (var ch in text)
+            {
+                if (char.IsWhiteSpace(ch) || _sentenceSeparators.Contains(ch))
+                    return true;
+            }
+            return false;
+        }
+
+        private bool RequiresBreak(TextRenderInfo nextInfo)
+        {
+            var lastInfo = _pendingInfos[^1];
+            var lastBaseline = lastInfo.GetBaseline().GetStartPoint();
+            var nextBaseline = nextInfo.GetBaseline().GetStartPoint();
+
+            if (Math.Abs(nextBaseline.Get(1) - lastBaseline.Get(1)) > _baselineTolerancePt)
+                return true;
+
+            if (nextBaseline.Get(0) < lastBaseline.Get(0) - _baselineTolerancePt)
+                return true;
+
+            return false;
+        }
+
+        private void EmitPendingWord()
+        {
+            if (_pendingInfos.Count == 0)
+            {
+                _pendingBuffer.Clear();
+                return;
+            }
+
+            var glyphs = CollectGlyphs(_pendingInfos);
+            if (glyphs.Count == 0)
+            {
+                _pendingInfos.Clear();
+                _pendingBuffer.Clear();
+                return;
+            }
+
+            var trimmed = TrimGlyphs(glyphs);
+            if (trimmed.Count == 0)
+            {
+                _pendingInfos.Clear();
+                _pendingBuffer.Clear();
+                return;
+            }
+
+            var ofdText = BuildOfdText(trimmed, _pendingInfos);
+            if (ofdText != null)
+            {
+                TextBlocks.Add(ofdText);
+                if (_options.EnableDebugWordLayout && _logger != null)
+                {
+                    _logger.LogDebug("[PDF2OFD][Text][Word] Page {Page} Text='{Text}' X={X:F2} Y={Y:F2} W={W:F2}",
+                        _pageNum, ofdText.Text, ofdText.X, ofdText.Y, ofdText.Width);
+                }
+            }
+
+            _pendingInfos.Clear();
+            _pendingBuffer.Clear();
+        }
+
+        private List<GlyphMetrics> CollectGlyphs(List<TextRenderInfo> infos)
+        {
+            var glyphs = new List<GlyphMetrics>();
+            foreach (var info in infos)
+            {
+                CollectGlyphsFromRenderInfo(info, glyphs);
+            }
+            return glyphs;
+        }
+
+        private void CollectGlyphsFromRenderInfo(TextRenderInfo renderInfo, List<GlyphMetrics> glyphs)
+        {
+            var text = NormalizeRenderableText(renderInfo.GetText());
+            if (string.IsNullOrEmpty(text))
+                return;
+
+            var charInfos = renderInfo.GetCharacterRenderInfos();
+            if (charInfos != null && charInfos.Count > 0)
+            {
+                foreach (var charInfo in charInfos)
+                {
+                    var charText = NormalizeRenderableText(charInfo.GetText());
+                    if (string.IsNullOrEmpty(charText))
+                        continue;
+
+                    foreach (var ch in charText)
+                    {
+                        glyphs.Add(CreateGlyphMetrics(charInfo, ch));
+                    }
+                }
+            }
+            else
+            {
+                AppendFallbackGlyphs(renderInfo, text, glyphs);
+            }
+        }
+
+        private GlyphMetrics CreateGlyphMetrics(TextRenderInfo info, char ch)
+        {
+            var baseline = info.GetBaseline();
+            var startPt = baseline.GetStartPoint();
+            var endPt = baseline.GetEndPoint();
+            double startXmm = startPt.Get(0) * ConvertHelper.Pt2Mm;
+            double endXmm = endPt.Get(0) * ConvertHelper.Pt2Mm;
+            double widthMm = Math.Abs(endXmm - startXmm);
+            if (widthMm <= 1e-6)
+            {
+                widthMm = info.GetFontSize() * ConvertHelper.Pt2Mm * 0.55d;
+            }
+
+            double baselineMm = ToOfdY(baseline.GetStartPoint().Get(1));
+            var ascent = info.GetAscentLine();
+            var descent = info.GetDescentLine();
+            double topMm = Math.Min(ToOfdY(ascent.GetStartPoint().Get(1)), ToOfdY(ascent.GetEndPoint().Get(1)));
+            double bottomMm = Math.Max(ToOfdY(descent.GetStartPoint().Get(1)), ToOfdY(descent.GetEndPoint().Get(1)));
+
+            return new GlyphMetrics(ch, startXmm, Math.Max(0.01d, widthMm), topMm, bottomMm, baselineMm);
+        }
+
+        private void AppendFallbackGlyphs(TextRenderInfo info, string text, List<GlyphMetrics> glyphs)
+        {
+            if (string.IsNullOrEmpty(text))
+                return;
+
+            var baseline = info.GetBaseline();
+            var startPt = baseline.GetStartPoint();
+            var endPt = baseline.GetEndPoint();
+            double startXmm = startPt.Get(0) * ConvertHelper.Pt2Mm;
+            double endXmm = endPt.Get(0) * ConvertHelper.Pt2Mm;
+            double totalWidthMm = Math.Abs(endXmm - startXmm);
+            double direction = Math.Sign(endXmm - startXmm);
+            if (direction == 0)
+                direction = 1;
+
+            double perWidthMm = totalWidthMm > 1e-6 ? totalWidthMm / text.Length : info.GetFontSize() * ConvertHelper.Pt2Mm * 0.55d;
+            double topMm = ComputeRunTop(info);
+            double bottomMm = ComputeRunBottom(info);
+            double baselineMm = ToOfdY(baseline.GetStartPoint().Get(1));
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                double charStart = startXmm + direction * perWidthMm * i;
+                glyphs.Add(new GlyphMetrics(text[i], charStart, Math.Max(0.01d, Math.Abs(perWidthMm)), topMm, bottomMm, baselineMm));
+            }
+        }
+
+        private static List<GlyphMetrics> TrimGlyphs(List<GlyphMetrics> glyphs)
+        {
+            int start = 0;
+            while (start < glyphs.Count && char.IsWhiteSpace(glyphs[start].Character))
+                start++;
+
+            int end = glyphs.Count - 1;
+            while (end >= start && char.IsWhiteSpace(glyphs[end].Character))
+                end--;
+
+            if (start > end)
+                return new List<GlyphMetrics>();
+
+            return glyphs.GetRange(start, end - start + 1);
+        }
+
+        private OfdText? BuildOfdText(List<GlyphMetrics> glyphs, List<TextRenderInfo> infos)
+        {
+            if (glyphs.Count == 0)
+                return null;
+
+            double pt2mm = ConvertHelper.Pt2Mm;
+
+            double minXGlyph = glyphs.Min(g => g.StartX);
+            double maxXGlyph = glyphs.Max(g => g.EndX);
+            double minYGlyph = glyphs.Min(g => g.TopY);
+            double maxYGlyph = glyphs.Max(g => g.BottomY);
+
+            double minBBoxXPt = double.PositiveInfinity;
+            double maxBBoxXPt = double.NegativeInfinity;
+            double minBBoxYPt = double.PositiveInfinity;
+            double maxBBoxYPt = double.NegativeInfinity;
+
+            foreach (var info in infos)
+            {
+                var ascentRect = info.GetAscentLine().GetBoundingRectangle();
+                minBBoxXPt = Math.Min(minBBoxXPt, ascentRect.GetLeft());
+                maxBBoxXPt = Math.Max(maxBBoxXPt, ascentRect.GetRight());
+                minBBoxYPt = Math.Min(minBBoxYPt, ascentRect.GetBottom());
+                maxBBoxYPt = Math.Max(maxBBoxYPt, ascentRect.GetTop());
+
+                var descentRect = info.GetDescentLine().GetBoundingRectangle();
+                minBBoxXPt = Math.Min(minBBoxXPt, descentRect.GetLeft());
+                maxBBoxXPt = Math.Max(maxBBoxXPt, descentRect.GetRight());
+                minBBoxYPt = Math.Min(minBBoxYPt, descentRect.GetBottom());
+                maxBBoxYPt = Math.Max(maxBBoxYPt, descentRect.GetTop());
+            }
+
+            if (!double.IsFinite(minBBoxXPt) || !double.IsFinite(maxBBoxXPt))
+            {
+                minBBoxXPt = minXGlyph / pt2mm;
+                maxBBoxXPt = maxXGlyph / pt2mm;
+            }
+
+            if (!double.IsFinite(minBBoxYPt) || !double.IsFinite(maxBBoxYPt))
+            {
+                minBBoxYPt = (_pageSize.GetHeight() - maxYGlyph / pt2mm);
+                maxBBoxYPt = (_pageSize.GetHeight() - minYGlyph / pt2mm);
+            }
+
+            double boundaryX = minBBoxXPt * pt2mm;
+            double boundaryWidth = Math.Max(0.1d, (maxBBoxXPt - minBBoxXPt) * pt2mm);
+            double boundaryTop = (_pageSize.GetHeight() - maxBBoxYPt) * pt2mm;
+            double boundaryHeight = Math.Max(0.1d, (maxBBoxYPt - minBBoxYPt) * pt2mm);
+            double boundaryBottom = boundaryTop + boundaryHeight;
+
+            var textChars = glyphs.Select(g => g.Character).ToArray();
+            string text = new string(textChars);
+            if (string.IsNullOrWhiteSpace(text))
+                return null;
+
+            var starts = glyphs.Select(g => g.StartX).ToArray();
+            var advances = glyphs.Select(g => g.Width).ToArray();
+            double avgAdvance = advances.Average();
+            double? spaceAdvance = null;
+            foreach (var glyph in glyphs)
+            {
+                if (glyph.Character == ' ')
+                {
+                    spaceAdvance = glyph.Width;
+                    break;
+                }
+            }
+
+            float[]? deltas = null;
+            if (_options.EnableDeltaX && glyphs.Count > 1)
+            {
+                deltas = new float[glyphs.Count];
+                deltas[0] = 0f;
+                for (int i = 1; i < glyphs.Count; i++)
+                {
+                    double diff = glyphs[i].StartX - glyphs[i - 1].StartX;
+                    if (diff < 0 && Math.Abs(diff) <= _options.MaxNegativeKerningAbsorbMm)
+                        diff = 0;
+                    deltas[i] = (float)Math.Max(0d, diff);
+                }
+            }
+
+            var firstInfo = infos[0];
+            double baseline = ToOfdY(firstInfo.GetBaseline().GetStartPoint().Get(1));
+            double fallbackBaseline = ComputeBaseline(glyphs);
+            if (double.IsNaN(baseline) && !double.IsNaN(fallbackBaseline))
+            {
+                baseline = fallbackBaseline;
+            }
+
+            double textCodeX = glyphs.Count > 0 ? glyphs[0].StartX - boundaryX : 0d;
+            if (Math.Abs(textCodeX) < 1e-6)
+            {
+                textCodeX = 0d;
+            }
+            double? textCodeY = double.IsNaN(baseline) ? null : baseline - boundaryTop;
+
+            double fontSizeMm = firstInfo.GetFontSize() * ConvertHelper.Pt2Mm;
+            string fontFamily = ExtractFontFamily(firstInfo);
+            int[]? glyphCodes = ExtractGlyphCodes(firstInfo, text);
+
+            double[]? ctmArray = null;
             try
             {
-                metrics = Refactor.Utils.FontMetricsHelper.ComputeRunMetrics(renderInfo, renderInfo.GetFont());
+                var ctm = firstInfo.GetGraphicsState()?.GetCtm();
+                if (ctm != null)
+                {
+                    ctmArray = new double[6];
+                    for (int i = 0; i < 6; i++)
+                    {
+                        ctmArray[i] = ctm.Get(i) * pt2mm;
+                    }
+                }
             }
             catch
             {
-                // 回退：保持最初逻辑
-                double fallbackWidthPt = rawWidth > 0 ? rawWidth : fontSizePt * Math.Max(1, text.Length * 0.6);
-                metrics = new Refactor.Utils.FontMetricsHelper.RunMetrics(
-                    fallbackWidthPt,
-                    new double[text.Length],
-                    fontSizePt * 0.6,
-                    fontSizePt * 0.5,
-                    text.Any(c=>c>='\u4E00'&&c<='\u9FFF'),
-                    fontSizePt*1.2,
-                    0);
+                ctmArray = null;
             }
-            // Sanitize 宽度
-            double finalWidthPt = Refactor.Utils.FontMetricsHelper.SanitizeWidthPt(metrics.RunAdvancePt, text.Length, metrics.IsCjk, fontSizePt, 1.0, metrics.AvgAdvancePt);
-            double wMm = finalWidthPt * ConvertHelper.Pt2Mm;
-            double hMm = metrics.LineHeightPt * ConvertHelper.Pt2Mm;
-            double fontSizeMm = fontSizePt * ConvertHelper.Pt2Mm;
 
-            // DeltaX：Step 模式（相邻字符 advance）
-            double[]? ctmArray = null; float[]? deltaXArray = null;
-            try
+            if (starts.Length > 0)
             {
-                // 去掉 CTM 避免双重缩放（坐标已转换为mm）
-                // var tm = renderInfo.GetTextMatrix();
-                // var a = tm.Get(Matrix.I11); var b = tm.Get(Matrix.I12); var c = tm.Get(Matrix.I21); var d = tm.Get(Matrix.I22);
-                // ctmArray = new double[] { a * ConvertHelper.Pt2Mm, b * ConvertHelper.Pt2Mm, c * ConvertHelper.Pt2Mm, d * ConvertHelper.Pt2Mm, xMm, yMm };
-                ctmArray = null; // 暂时移除CTM避免重复缩放
-                if (_options.EnableDeltaX && metrics.CharAdvancesPt.Length == text.Length && text.Length>1)
+                double offset = boundaryX - starts[0];
+                if (Math.Abs(offset) > 1e-6)
                 {
-                    // DeltaX 长度 = n-1 (字符数-1)
-                    deltaXArray = new float[text.Length - 1];
-                    for (int i=0;i<text.Length-1;i++)
+                    for (int i = 0; i < starts.Length; i++)
                     {
-                        double advPt = metrics.CharAdvancesPt[i];
-                        deltaXArray[i] = (float)(advPt * ConvertHelper.Pt2Mm);
+                        starts[i] += offset;
                     }
                 }
             }
-            catch (Exception ex)
-            { _logger?.LogDebug(ex, "[PDF2OFD][Text] Page {Page} 捕获 CTM/DeltaX 失败", _pageNum); }
 
-            // 尝试获取字形编码
-            int[]? glyphCodes = null;
-            try
+            return new OfdText
             {
-                var fp = renderInfo.GetFont().GetFontProgram();
-                if (fp != null)
-                {
-                    var codes = new List<int>();
-                    for (int i = 0; i < text.Length; i++)
-                    {
-                        var glyph = fp.GetGlyph(text[i]);
-                        if (glyph != null)
-                        {
-                            codes.Add(glyph.GetCode());
-                        }
-                        else
-                        {
-                            // 无法获取字形时使用 Unicode 值
-                            codes.Add((int)text[i]);
-                        }
-                    }
-                    glyphCodes = codes.ToArray();
-                }
-            }
-            catch { /* 忽略字形获取失败 */ }
-
-            // 将转换后的文本块加入集合
-            var fontProgram = renderInfo.GetFont().GetFontProgram();
-            var fontNames = fontProgram.GetFontNames();
-            var fontFamily = ConvertHelper.NormalizeLogicalFontName(fontNames.GetFontName() ?? fontNames.GetFamilyName()?.ToString() ?? "DefaultFont");
-            TextBlocks.Add(new OfdText {
                 Page = _pageNum,
                 Text = text,
-                X = (float)xMm,
-                Y = (float)yMm,
-                Width = (float)wMm,
-                Height = (float)hMm,
+                X = boundaryX,
+                Y = boundaryTop,
+                Width = boundaryWidth,
+                Height = boundaryHeight,
                 FontFamily = fontFamily,
-                FontSize = (float)fontSizeMm,
+                FontSize = fontSizeMm,
+                TopY = boundaryTop,
+                BottomY = boundaryBottom,
+                CharStarts = starts,
+                CharAdvances = advances,
+                BaselineY = baseline,
+                DeltaX = deltas,
+                AvgAdvance = avgAdvance,
+                SpaceAdvance = spaceAdvance,
+                Glyphs = glyphCodes,
                 CTM = ctmArray,
-                DeltaX = deltaXArray,
-                AvgAdvance = metrics.AvgAdvancePt * ConvertHelper.Pt2Mm,
-                SpaceAdvance = metrics.SpaceWidthPt * ConvertHelper.Pt2Mm,
-                DeltaXMode = _options.EnableDeltaX ? "Step" : null,
-                Glyphs = glyphCodes
-            });
-            return;
+                TextCodeX = textCodeX,
+                TextCodeY = textCodeY
+            };
+        }
+
+        private double ComputeRunTop(TextRenderInfo info)
+        {
+            var ascent = info.GetAscentLine();
+            return Math.Min(ToOfdY(ascent.GetStartPoint().Get(1)), ToOfdY(ascent.GetEndPoint().Get(1)));
+        }
+
+        private double ComputeRunBottom(TextRenderInfo info)
+        {
+            var descent = info.GetDescentLine();
+            return Math.Max(ToOfdY(descent.GetStartPoint().Get(1)), ToOfdY(descent.GetEndPoint().Get(1)));
+        }
+
+        private double ToOfdY(double valuePt)
+        {
+            return (_pageSize.GetHeight() - valuePt) * ConvertHelper.Pt2Mm;
+        }
+
+        private static double ComputeBaseline(List<GlyphMetrics> glyphs)
+        {
+            var ordered = glyphs.Select(g => g.BaselineY).Where(double.IsFinite).OrderBy(v => v).ToArray();
+            if (ordered.Length == 0)
+                return double.NaN;
+            int mid = ordered.Length / 2;
+            return (ordered.Length % 2 == 1) ? ordered[mid] : (ordered[mid - 1] + ordered[mid]) / 2d;
+        }
+
+        private string ExtractFontFamily(TextRenderInfo info)
+        {
+            try
+            {
+                var fontProgram = info.GetFont().GetFontProgram();
+                if (fontProgram != null)
+                {
+                    var names = fontProgram.GetFontNames();
+                    var family = names?.GetFontName() ?? names?.GetFamilyName()?.ToString();
+                    if (!string.IsNullOrEmpty(family))
+                        return ConvertHelper.NormalizeLogicalFontName(family);
+                }
+            }
+            catch
+            {
+                // 忽略字体名称获取失败
+            }
+
+            var fallback = info.GetFont()?.GetFontProgram()?.GetFontNames()?.GetFontName();
+            if (!string.IsNullOrEmpty(fallback))
+                return ConvertHelper.NormalizeLogicalFontName(fallback);
+
+            return "DefaultFont";
+        }
+
+        private static int[]? ExtractGlyphCodes(TextRenderInfo info, string text)
+        {
+            try
+            {
+                var fontProgram = info.GetFont().GetFontProgram();
+                if (fontProgram == null)
+                    return null;
+
+                var codes = new int[text.Length];
+                for (int i = 0; i < text.Length; i++)
+                {
+                    var glyph = fontProgram.GetGlyph(text[i]);
+                    codes[i] = glyph?.GetCode() ?? text[i];
+                }
+                return codes;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        private readonly struct GlyphMetrics
+        {
+            public GlyphMetrics(char character, double startX, double width, double topY, double bottomY, double baselineY)
+            {
+                Character = character;
+                StartX = startX;
+                Width = width;
+                TopY = topY;
+                BottomY = bottomY;
+                BaselineY = baselineY;
+            }
+
+            public char Character { get; }
+            public double StartX { get; }
+            public double Width { get; }
+            public double TopY { get; }
+            public double BottomY { get; }
+            public double BaselineY { get; }
+            public double EndX => StartX + Width;
         }
 
         public ICollection<EventType> GetSupportedEvents() => new[] { EventType.RENDER_TEXT };
+
+        private static string NormalizeRenderableText(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return string.Empty;
+
+            bool needsNormalization = false;
+            for (int i = 0; i < text.Length; i++)
+            {
+                char ch = text[i];
+                if (ch is '\r' or '\n' or '\t' or '\f' or '\v' or '\0')
+                {
+                    needsNormalization = true;
+                    break;
+                }
+            }
+
+            if (!needsNormalization)
+                return text;
+
+            var buffer = text.ToCharArray();
+            for (int i = 0; i < buffer.Length; i++)
+            {
+                buffer[i] = buffer[i] switch
+                {
+                    '\r' or '\n' or '\t' or '\f' or '\v' or '\0' => ' ',
+                    _ => buffer[i]
+                };
+            }
+
+            return new string(buffer);
+        }
     }
 
     /// <summary>
@@ -276,338 +662,624 @@ internal class TextExtractor : IPdfContentExtractor
     /// </summary>
     private static class TextAggregationHelper
     {
-        public static List<OfdText> Aggregate(List<OfdText> raw, ILogger? logger, int page)
+        public static List<OfdText> Aggregate(List<OfdText> raw, ILogger? logger, int page, ConvertHelper.PdfToOfdOptions opt)
         {
-            if (raw.Count == 0) return raw;
+            return AggregateInternal(raw, logger, page, opt, splitIntoWords: false);
+        }
 
-            // 先按 Y 排序，方便行分组（注意：Y 值越小通常在页面越靠上，视具体坐标系而定）
-            var orderedAll = raw.OrderBy(t => t.Y).ToList();
+        public static List<OfdText> AggregateWords(List<OfdText> raw, ILogger? logger, int page, ConvertHelper.PdfToOfdOptions opt)
+        {
+            return AggregateInternal(raw, logger, page, opt, splitIntoWords: true);
+        }
 
-            // 行桶：将 Y 值接近的文本块分为同一行
-            var lineBuckets = new List<List<OfdText>>();
-            foreach (var blk in orderedAll)
+        private static List<OfdText> AggregateInternal(List<OfdText> raw, ILogger? logger, int page, ConvertHelper.PdfToOfdOptions opt, bool splitIntoWords)
+        {
+            if (raw == null || raw.Count == 0)
+                return raw ?? new List<OfdText>();
+
+            var lineBuckets = BuildLineBuckets(raw);
+            var result = new List<OfdText>();
+
+            foreach (var bucket in lineBuckets)
             {
-                bool placed = false;
-                foreach (var line in lineBuckets)
+                var segs = bucket.OrderBy(s => s.X).ToList();
+                if (segs.Count == 0)
+                    continue;
+
+                double avgFontSize = segs.Average(s => s.FontSize > 0 ? s.FontSize : 12d);
+                double lineTop = segs.Min(GetTop);
+                double lineBottom = segs.Max(GetBottom);
+                double lineHeight = Math.Max(0.1d, lineBottom - lineTop);
+                double baselineY = ComputeLineBaseline(segs, lineTop, lineBottom);
+                if (double.IsNaN(baselineY))
                 {
-                    double refFont = line[0].FontSize <= 0 ? 12d : line[0].FontSize;
-                    double tolerance = Math.Max(1.5d, refFont * 0.8d); // 垂直容差，根据字体大小调整
-                    if (Math.Abs(line[0].Y - blk.Y) < tolerance) { line.Add(blk); placed = true; break; }
-                }
-                if (!placed) lineBuckets.Add(new List<OfdText> { blk });
-            }
-
-            var result = new List<OfdText>(lineBuckets.Count);
-
-            // 对每一行内部按 X 排序并合并成字符串，估计间距决定是否插入空格
-            foreach (var line in lineBuckets)
-            {
-                var segs = line.OrderBy(s => s.X).ToList(); if (segs.Count == 0) continue;
-                var fontGroup = segs.GroupBy(s => s.FontFamily).OrderByDescending(g => g.Count()).First();
-                string lineFont = fontGroup.Key; double avgSize = segs.Average(s => (double)s.FontSize);
-                double minX = segs.Min(s => (double)s.X);
-
-                double EstimateWidth(OfdText t)
-                {
-                    if (t.Width > 0) return t.Width;
-                    // 回退：使用 AvgAdvance * 字符数
-                    if (t.AvgAdvance.HasValue) return t.AvgAdvance.Value * Math.Max(1, t.Text.Length);
-                    // 最后兜底使用字体大小 * 0.55
-                    return (t.FontSize > 0 ? t.FontSize : avgSize) * 0.55 * Math.Max(1, t.Text.Length);
+                    baselineY = lineBottom - (lineHeight * 0.2d);
                 }
 
-                var sb = new System.Text.StringBuilder();
-                var first = segs[0];
-                sb.Append(first.Text);
-                double cursorRight = first.X + EstimateWidth(first);
-                double maxH = first.Height > 0 ? first.Height : (first.FontSize > 0 ? first.FontSize * 1.2d : avgSize * 1.2d);
+                bool lineMostlyCjk = IsLineMostlyCjk(segs);
+                var chars = BuildCharacterStream(segs, opt, avgFontSize, lineMostlyCjk, logger, page);
+                if (chars.Count == 0)
+                    continue;
 
-                for (int i = 1; i < segs.Count; i++)
+                bool splitThisLine = splitIntoWords;
+                if (splitIntoWords && opt.OnlySplitLatinWords)
                 {
-                    var cur = segs[i];
-                    double curEstW = EstimateWidth(cur);
-                    double gap = cur.X - cursorRight;
-                    double spaceRef = 0d;
-                    if (first.SpaceAdvance.HasValue && first.SpaceAdvance.Value > 0) spaceRef = first.SpaceAdvance.Value;
-                    else if (first.AvgAdvance.HasValue) spaceRef = first.AvgAdvance.Value;
-                    else spaceRef = (first.FontSize > 0 ? first.FontSize : avgSize) * 0.55; // pt->mm 已在 earlier? 注意：这里变量单位都是 mm （字体 size 是 mm）
-                    bool lineMostlyCjk = segs.Count(s => s.Text.Any(ch => ch >= '\u4E00' && ch <= '\u9FFF')) >= segs.Count * 0.5;
-                    double triggerRatio = 0.85d;
-                    if (lineMostlyCjk)
+                    bool hasCjk = segs.Any(s => s.Text.Any(IsCjk));
+                    bool hasLatinOrDigit = segs.Any(s => s.Text.Any(ch => (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') || char.IsDigit(ch)));
+                    bool hasAsciiSpace = segs.Any(s => s.Text.Contains(' '));
+                    if (hasCjk && !hasLatinOrDigit && !hasAsciiSpace)
                     {
-                        // 中文等宽时 spaceRef 较大，使用更低触发阈值；参考选项 CjkGapTriggerRatio（若可获取）
-                        // 这里无法直接访问 options，只能基于经验值 0.45。
-                        triggerRatio = 0.45d; // 与 PdfToOfdOptions.CjkGapTriggerRatio 默认保持一致
-                        // 进一步压缩参考宽度，防止阈值过大
-                        spaceRef = Math.Min(spaceRef, (first.FontSize > 0 ? first.FontSize : avgSize) * 0.7);
+                        splitThisLine = false;
                     }
-                    if (gap > spaceRef * triggerRatio) sb.Append(' ');
-                    sb.Append(cur.Text);
-                    cursorRight = Math.Max(cursorRight, cur.X + curEstW);
-                    if (cur.Height > 0) maxH = Math.Max(maxH, cur.Height);
                 }
 
-                string merged = sb.ToString(); if (string.IsNullOrWhiteSpace(merged)) continue;
-
-                // 构建合并后的 OfdText，并加入结果
-                result.Add(new OfdText { Page = segs[0].Page, Text = merged, X = (float)minX, Y = segs.Min(s => s.Y), Width = (float)(cursorRight - minX), Height = (float)(maxH <= 0 ? avgSize * 1.2d : maxH), FontFamily = lineFont, FontSize = (float)avgSize });
+                if (splitThisLine)
+                {
+                    EmitWords(result, segs, chars, avgFontSize, lineHeight, baselineY, logger, page, opt);
+                }
+                else
+                {
+                    EmitRun(result, segs, chars, 0, chars.Count - 1, avgFontSize, lineHeight, baselineY, logger, page, opt);
+                }
             }
 
-            // 日志：显示原始片段数、行数与聚合后块数，便于调试
-            logger?.LogDebug("[PDF2OFD][Text][Aggregate] Page {Page} 原始={Raw} 行数={Lines} 聚合后块={Agg}", page, raw.Count, lineBuckets.Count, result.Count);
+            logger?.LogDebug("[PDF2OFD][Text][Aggregate:{Mode}] Page {Page} Raw={Raw} Lines={Lines} Output={Out}",
+                splitIntoWords ? "Words" : "Lines", page, raw.Count, lineBuckets.Count, result.Count);
             return result;
         }
 
-        /// <summary>
-        /// <summary>
-        /// 直接从原始片段进行“行 + 词”两级聚合，按空格 & 水平间隙划分词。
-        /// 与 Aggregate 不同：不会先构造整行再二次均分，避免词宽不准确。
-        /// 逻辑：
-        /// 1. 先行分组（同 Aggregate）。
-        /// 2. 行内按 X 排序，基于 EstimateWidth 计算片段右边界。
-        /// 3. 构造一个字符流：片段文本直接串接；遇到需要补空格的 gap 插入一个占位空格（只用于分词，不入输出）。
-        /// 4. 遍历字符流，记录每个字符的起始 X 与宽度（对补空格使用 gap 宽度，对真实字符按 (segmentWidth/segmentTextLength) 均分）。
-        /// 5. 以空格分隔成词，词的 X/Width = 覆盖字符的最小X和最大( X+Width )。
-        /// 这样对多段组合成一行中被补的空格能体现真实 gap 宽度。
-        /// </summary>
-        public static List<OfdText> AggregateWords(List<OfdText> raw, ILogger? logger, int page, ConvertHelper.PdfToOfdOptions opt)
+        private static List<List<OfdText>> BuildLineBuckets(List<OfdText> raw)
         {
-            if (raw.Count == 0) return raw;
-            // 复用行分组逻辑
-            var orderedAll = raw.OrderBy(t => t.Y).ToList();
-            var lineBuckets = new List<List<OfdText>>();
-            foreach (var blk in orderedAll)
+            var ordered = raw.OrderBy(t => GetTop(t)).ThenBy(t => t.X).ToList();
+            var buckets = new List<List<OfdText>>();
+
+            foreach (var blk in ordered)
             {
+                double blkTop = GetTop(blk);
+                double blkBottom = GetBottom(blk);
+                double blkHeight = Math.Max(0.1d, blkBottom - blkTop);
+                double blkBaseline = EstimateBaseline(blk);
+
                 bool placed = false;
-                foreach (var line in lineBuckets)
+                foreach (var line in buckets)
                 {
-                    double refFont = line[0].FontSize <= 0 ? 12d : line[0].FontSize;
-                    double tolerance = Math.Max(1.5d, refFont * 0.8d);
-                    if (Math.Abs(line[0].Y - blk.Y) < tolerance) { line.Add(blk); placed = true; break; }
+                    double lineTop = line.Min(GetTop);
+                    double lineBottom = line.Max(GetBottom);
+                    double lineHeight = Math.Max(0.1d, lineBottom - lineTop);
+                    double lineBaseline = ComputeLineBaseline(line, lineTop, lineBottom);
+
+                    double overlap = Math.Min(lineBottom, blkBottom) - Math.Max(lineTop, blkTop);
+                    double minHeight = Math.Min(lineHeight, blkHeight);
+                    double allowedGap = Math.Max(0.2d, minHeight * 0.25d);
+                    double baselineGap = Math.Max(0.2d, minHeight * 0.35d);
+
+                    if (overlap >= -allowedGap && Math.Abs(lineBaseline - blkBaseline) <= baselineGap)
+                    {
+                        line.Add(blk);
+                        placed = true;
+                        break;
+                    }
                 }
-                if (!placed) lineBuckets.Add(new List<OfdText> { blk });
+
+                if (!placed)
+                {
+                    buckets.Add(new List<OfdText> { blk });
+                }
             }
 
-            var result = new List<OfdText>();
-            foreach (var line in lineBuckets)
+            return buckets;
+        }
+
+        private static double GetTop(OfdText text)
+        {
+            if (text.TopY.HasValue)
+                return text.TopY.Value;
+
+            if (text.BaselineY.HasValue && text.Height > 0)
+                return text.BaselineY.Value - text.Height;
+
+            if (text.BaselineY.HasValue && text.FontSize > 0)
+                return text.BaselineY.Value - (text.FontSize * 1.15d);
+
+            if (text.Height > 0)
+                return text.Y;
+
+            if (text.FontSize > 0)
+                return text.Y;
+
+            return text.Y;
+        }
+
+        private static double GetBottom(OfdText text)
+        {
+            if (text.BottomY.HasValue)
+                return text.BottomY.Value;
+
+            if (text.BaselineY.HasValue)
+                return text.BaselineY.Value;
+
+            double top = GetTop(text);
+            double height = text.Height > 0 ? text.Height : (text.FontSize > 0 ? text.FontSize * 1.2d : 0d);
+            if (height <= 0)
+                height = 2d;
+            return top + height;
+        }
+
+        private static double EstimateBaseline(OfdText text)
+        {
+            if (text.BaselineY.HasValue)
+                return text.BaselineY.Value;
+
+            if (text.BottomY.HasValue)
+                return text.BottomY.Value;
+
+            double top = GetTop(text);
+            double height = text.Height > 0 ? text.Height : (text.FontSize > 0 ? text.FontSize * 1.2d : 0d);
+            if (height <= 0)
+                height = 2d;
+            return top + height;
+        }
+
+        private static double ComputeLineBaseline(IReadOnlyList<OfdText> segments, double lineTop, double lineBottom)
+        {
+            var baselines = new List<double>();
+            foreach (var seg in segments)
             {
-                var segs = line.OrderBy(s => s.X).ToList(); if (segs.Count == 0) continue;
-                var fontGroup = segs.GroupBy(s => s.FontFamily).OrderByDescending(g => g.Count()).First();
-                string lineFont = fontGroup.Key; double avgSize = segs.Average(s => (double)s.FontSize);
-                double maxH = segs.Max(s => (double)(s.Height > 0 ? s.Height : (s.FontSize > 0 ? s.FontSize * 1.2d : avgSize * 1.2d)));
+                if (seg.BaselineY.HasValue)
+                    baselines.Add(seg.BaselineY.Value);
+                else if (seg.BottomY.HasValue)
+                    baselines.Add(seg.BottomY.Value);
+            }
 
-                // 仅拉丁行分词：如启用 OnlySplitLatinWords 且检测到 CJK 则直接行级合并
-                if (opt.OnlySplitLatinWords)
+            if (baselines.Count > 0)
+            {
+                baselines.Sort();
+                int mid = baselines.Count / 2;
+                if ((baselines.Count & 1) == 1)
+                    return baselines[mid];
+                return (baselines[mid - 1] + baselines[mid]) / 2d;
+            }
+
+            double lineHeight = Math.Max(0.1d, lineBottom - lineTop);
+            return lineBottom - Math.Max(0.1d, lineHeight * 0.2d);
+        }
+
+        private static bool IsLineMostlyCjk(IEnumerable<OfdText> segments)
+        {
+            int cjk = 0;
+            int ascii = 0;
+
+            foreach (var seg in segments)
+            {
+                foreach (var ch in seg.Text)
                 {
-                    bool hasCjk = segs.Any(s => s.Text.Any(ch => ch >= '\u4E00' && ch <= '\u9FFF'));
-                    bool hasAsciiLetterOrDigit = segs.Any(s => s.Text.Any(ch => (ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') || char.IsDigit(ch)));
-                    bool hasAsciiSpace = segs.Any(s => s.Text.Contains(' '));
-                    // 只有纯 CJK 且没有 ASCII 空格/字母/数字才回退
-                    if (hasCjk && !hasAsciiLetterOrDigit && !hasAsciiSpace)
+                    if (IsCjk(ch))
+                        cjk++;
+                    else if (!char.IsControl(ch))
+                        ascii++;
+                }
+            }
+
+            return cjk > 0 && cjk >= ascii;
+        }
+
+        private static bool IsCjk(char ch) => ch >= '\u4E00' && ch <= '\u9FFF';
+
+        private static List<LineChar> BuildCharacterStream(List<OfdText> segs, ConvertHelper.PdfToOfdOptions opt, double avgFontSize, bool lineMostlyCjk, ILogger? logger, int page)
+        {
+            var chars = new List<LineChar>();
+            double cursorRight = double.NaN;
+            OfdText? prevSeg = null;
+
+            foreach (var seg in segs)
+            {
+                var segChars = ExtractSegmentChars(seg, avgFontSize);
+                if (segChars.Count == 0)
+                {
+                    prevSeg = seg;
+                    continue;
+                }
+
+                double segFirstStart = segChars[0].Start;
+                if (!double.IsNaN(cursorRight))
+                {
+                    double gap = segFirstStart - cursorRight;
+                    double baseAdvance = DetermineBaseAdvance(prevSeg, seg, avgFontSize);
+                    bool treatAsCjk = lineMostlyCjk || seg.Text.Any(IsCjk);
+
+                    if (gap < 0 && Math.Abs(gap) <= opt.MaxNegativeKerningAbsorbMm)
                     {
-                        var mergedLine = Aggregate(segs, logger, page);
-                        result.AddRange(mergedLine);
-                        continue;
+                        gap = 0;
                     }
-                }
 
-                double EstimateWidth(OfdText t)
-                {
-                    if (t.Width > 0) return t.Width;
-                    if (t.AvgAdvance.HasValue) return t.AvgAdvance.Value * Math.Max(1, t.Text.Length);
-                    return (t.FontSize > 0 ? t.FontSize : avgSize) * 0.55 * Math.Max(1, t.Text.Length);
-                }
-
-                // 构建字符级列表
-                var chars = new List<(char ch, double x, double w, bool isGap, string src)>();
-                double cursorRight = segs[0].X + EstimateWidth(segs[0]);
-
-                void AppendSegmentChars(OfdText seg)
-                {
-                    // 利用 DeltaX（字符间横向 advance），约定：DeltaX[0]=0，DeltaX[i]= 前后字符起点差。
-                    if (seg.DeltaX != null && seg.DeltaX.Length == seg.Text.Length)
+                    if (ShouldInsertSyntheticSpace(gap, prevSeg, seg, baseAdvance, treatAsCjk, opt))
                     {
-                        double segStart = seg.X;
-                        double segEstimatedRight = seg.X + EstimateWidth(seg);
-                        // 构造字符起点数组
-                        double running = 0d;
-                        var starts = new double[seg.Text.Length];
-                        for (int ci = 0; ci < seg.Text.Length; ci++)
+                        double baseSpace = seg.SpaceAdvance ?? (seg.AvgAdvance ?? baseAdvance);
+                        if (baseSpace <= 0)
+                            baseSpace = baseAdvance;
+                        int spaceCount = (int)Math.Max(1d, Math.Min(opt.MaxSyntheticSpacesPerGap, Math.Round(gap / baseSpace)));
+                        double spaceWidth = gap / spaceCount;
+                        double spaceX = cursorRight;
+                        for (int i = 0; i < spaceCount; i++)
                         {
-                            if (ci == 0) running = 0d; else running += seg.DeltaX[ci];
-                            starts[ci] = segStart + running;
-                        }
-                        for (int ci = 0; ci < seg.Text.Length; ci++)
-                        {
-                            double charX = starts[ci];
-                            double charW;
-                            if (ci < seg.Text.Length - 1)
-                            {
-                                charW = Math.Max(0.1, starts[ci + 1] - starts[ci]);
-                            }
-                            else
-                            {
-                                // 最后一个字符宽度 = 段估算右边界 - 最后起点；如异常则回退平均宽度
-                                charW = Math.Max(0.1, segEstimatedRight - charX);
-                                if (charW > (segEstimatedRight - segStart) * 2)
-                                {
-                                    double avg = (segEstimatedRight - segStart) / Math.Max(1, seg.Text.Length);
-                                    charW = avg;
-                                }
-                            }
-                            chars.Add((seg.Text[ci], charX, charW, false, "delta"));
+                            var synthetic = new LineChar(' ', spaceX, spaceWidth, true);
+                            chars.Add(synthetic);
                             if (opt.EnableDebugWordLayout && logger != null)
                             {
-                                logger.LogDebug("[PDF2OFD][Text][DeltaChar] Page {Page} Ch='{Ch}' X={X:F2} W={W:F2}", page, seg.Text[ci], charX, charW);
+                                logger.LogDebug("[PDF2OFD][Text][SynthSpace] Page {Page} X={X:F2} W={W:F2}", page, synthetic.Start, synthetic.Width);
                             }
+                            spaceX += spaceWidth;
+                        }
+                        cursorRight += gap;
+                    }
+                    else if (gap < 0)
+                    {
+                        double shift = cursorRight - segFirstStart;
+                        if (shift > 0)
+                        {
+                            segChars = ShiftCharacters(segChars, shift);
                         }
                     }
-                    else if (seg.DeltaX != null && seg.DeltaX.Length > 0)
+                }
+
+                foreach (var ch in segChars)
+                {
+                    chars.Add(ch);
+                    cursorRight = double.IsNaN(cursorRight) ? ch.End : Math.Max(cursorRight, ch.End);
+                    if (opt.EnableDebugWordLayout && logger != null)
                     {
-                        // 长度不匹配，降级平均
-                        double segW = EstimateWidth(seg);
-                        double perChar = segW / Math.Max(1, seg.Text.Length);
-                        for (int ci = 0; ci < seg.Text.Length; ci++)
-                        {
-                            double cx = seg.X + perChar * ci;
-                            chars.Add((seg.Text[ci], cx, perChar, false, "avg-fallback"));
-                        }
+                        logger.LogDebug("[PDF2OFD][Text][Char] Page {Page} Ch='{Ch}' X={X:F2} W={W:F2} Synthetic={Synth}",
+                            page, ch.Char, ch.Start, ch.Width, ch.Synthetic);
+                    }
+                }
+
+                prevSeg = seg;
+            }
+
+            return chars;
+        }
+
+        private static double DetermineBaseAdvance(OfdText? prev, OfdText cur, double avgFontSize)
+        {
+            if (cur.SpaceAdvance.HasValue && cur.SpaceAdvance.Value > 0)
+                return cur.SpaceAdvance.Value;
+            if (prev?.SpaceAdvance.HasValue == true && prev.SpaceAdvance.Value > 0)
+                return prev.SpaceAdvance.Value;
+            if (cur.AvgAdvance.HasValue && cur.AvgAdvance.Value > 0)
+                return cur.AvgAdvance.Value;
+            if (prev?.AvgAdvance.HasValue == true && prev.AvgAdvance.Value > 0)
+                return prev.AvgAdvance.Value;
+            double size = cur.FontSize > 0 ? cur.FontSize : avgFontSize;
+            return size * 0.55d;
+        }
+
+        private static double ComputeGapThreshold(double baseAdvance, bool treatAsCjk, ConvertHelper.PdfToOfdOptions opt)
+        {
+            double ratio = treatAsCjk ? Math.Min(opt.CjkGapTriggerRatio, 0.3d) : opt.GapSpaceTriggerRatio;
+            return Math.Max(opt.MinGapForSyntheticSpaceMm, baseAdvance * ratio);
+        }
+
+        private static bool ShouldInsertSyntheticSpace(double gap, OfdText? prevSeg, OfdText curSeg, double baseAdvance, bool treatAsCjk, ConvertHelper.PdfToOfdOptions opt)
+        {
+            if (gap <= 0)
+                return false;
+
+            double threshold = ComputeGapThreshold(baseAdvance, treatAsCjk, opt);
+
+            double prevAdvance = GetTailAdvance(prevSeg, baseAdvance);
+            double curAdvance = GetHeadAdvance(curSeg, baseAdvance);
+            double localAdvance = Math.Max(prevAdvance, curAdvance);
+            if (localAdvance > 0)
+            {
+                double guard = Math.Max(opt.MinGapForSyntheticSpaceMm, localAdvance * 0.6d);
+                if (gap <= guard)
+                    return false;
+                threshold = Math.Max(threshold, guard);
+            }
+
+            if (prevSeg != null && IsNumericFragment(prevSeg.Text) && IsNumericFragment(curSeg.Text))
+            {
+                double numericAdvance = Math.Max(localAdvance, baseAdvance);
+                double numericThreshold = Math.Max(opt.NumericMinGapMm, numericAdvance * opt.NumericGapMultiplier);
+                if (gap <= numericThreshold)
+                    return false;
+                threshold = Math.Max(threshold, numericThreshold);
+            }
+
+            return gap > threshold;
+        }
+
+        private static double GetHeadAdvance(OfdText seg, double fallback)
+        {
+            if (seg.CharAdvances != null && seg.CharAdvances.Length > 0)
+            {
+                var head = seg.CharAdvances[0];
+                if (double.IsFinite(head) && head > 0)
+                    return head;
+            }
+
+            if (seg.AvgAdvance.HasValue && seg.AvgAdvance.Value > 0)
+                return seg.AvgAdvance.Value;
+
+            return fallback;
+        }
+
+        private static double GetTailAdvance(OfdText? seg, double fallback)
+        {
+            if (seg == null)
+                return fallback;
+
+            if (seg.CharAdvances != null && seg.CharAdvances.Length > 0)
+            {
+                var tail = seg.CharAdvances[seg.CharAdvances.Length - 1];
+                if (double.IsFinite(tail) && tail > 0)
+                    return tail;
+            }
+
+            if (seg.AvgAdvance.HasValue && seg.AvgAdvance.Value > 0)
+                return seg.AvgAdvance.Value;
+
+            return fallback;
+        }
+
+        private static List<LineChar> ExtractSegmentChars(OfdText seg, double avgFontSize)
+        {
+            var list = new List<LineChar>(seg.Text.Length);
+            if (seg.Text.Length == 0)
+                return list;
+
+            if (seg.CharStarts != null && seg.CharAdvances != null &&
+                seg.CharStarts.Length == seg.Text.Length && seg.CharAdvances.Length == seg.Text.Length)
+            {
+                for (int i = 0; i < seg.Text.Length; i++)
+                {
+                    double width = seg.CharAdvances[i];
+                    if (!double.IsFinite(width) || width <= 0)
+                    {
+                        width = seg.AvgAdvance ?? (avgFontSize * 0.55d);
+                    }
+                    list.Add(new LineChar(seg.Text[i], seg.CharStarts[i], Math.Max(0.01d, width), false));
+                }
+                return list;
+            }
+
+            if (seg.DeltaX != null && seg.DeltaX.Length == seg.Text.Length)
+            {
+                double start = seg.X;
+                var starts = new double[seg.Text.Length];
+                double current = start;
+                for (int i = 0; i < seg.Text.Length; i++)
+                {
+                    if (i == 0)
+                    {
+                        starts[i] = current;
                     }
                     else
                     {
-                        double segW = EstimateWidth(seg);
-                        double perChar = segW / Math.Max(1, seg.Text.Length);
-                        for (int ci = 0; ci < seg.Text.Length; ci++)
-                        {
-                            double cx = seg.X + perChar * ci;
-                            chars.Add((seg.Text[ci], cx, perChar, false, "avg"));
-                        }
+                        current += seg.DeltaX[i];
+                        starts[i] = current;
                     }
                 }
 
-                // 第一个段
-                AppendSegmentChars(segs[0]);
-
-                for (int si = 1; si < segs.Count; si++)
+                double segWidth = seg.Width > 0 ? seg.Width : (seg.AvgAdvance ?? (avgFontSize * 0.55d)) * seg.Text.Length;
+                for (int i = 0; i < seg.Text.Length; i++)
                 {
-                    var seg = segs[si];
-                    double segW = EstimateWidth(seg);
-                    double gap = seg.X - cursorRight;
-                    double spaceRef = seg.SpaceAdvance ?? seg.AvgAdvance ?? ((seg.FontSize > 0 ? seg.FontSize : avgSize) * 0.55);
-                    bool lineMostlyCjk = segs.Count(s => s.Text.Any(ch => ch >= '\u4E00' && ch <= '\u9FFF')) >= segs.Count * 0.5;
-                    double triggerRatio = opt.GapSpaceTriggerRatio;
-                    if (lineMostlyCjk)
+                    double width;
+                    if (i < seg.Text.Length - 1)
                     {
-                        triggerRatio = opt.CjkGapTriggerRatio;
-                        // 中文行把参考 spaceRef 压缩，避免字宽导致阈值偏大
-                        spaceRef = Math.Min(spaceRef, (seg.FontSize > 0 ? seg.FontSize : avgSize) * 0.7);
+                        width = starts[i + 1] - starts[i];
                     }
-                    if (gap > spaceRef * triggerRatio)
+                    else
                     {
-                        double baseSpace = seg.SpaceAdvance ?? (seg.AvgAdvance ?? spaceRef);
-                        if (baseSpace <= 0) baseSpace = spaceRef;
-                        int spaceCount = (int)Math.Max(1, Math.Min(opt.MaxSyntheticSpacesPerGap, Math.Round(gap / baseSpace)));
-                        double spaceWidth = gap / spaceCount;
-                        double spaceX = cursorRight;
-                        for (int sp = 0; sp < spaceCount; sp++)
-                        {
-                            chars.Add((' ', spaceX, spaceWidth, true, "gap"));
-                            spaceX += spaceWidth;
-                        }
+                        width = segWidth - (starts[i] - start);
                     }
-                    AppendSegmentChars(seg);
-                    cursorRight = Math.Max(cursorRight, seg.X + segW);
+
+                    if (!double.IsFinite(width) || width <= 0)
+                    {
+                        width = seg.AvgAdvance ?? (avgFontSize * 0.55d);
+                    }
+
+                    list.Add(new LineChar(seg.Text[i], starts[i], Math.Max(0.01d, width), false));
                 }
+                return list;
+            }
 
-                // 基于空格拆词
-                int wordStart = -1;
-                for (int i = 0; i < chars.Count; i++)
+            double fallbackWidth = seg.Width > 0 ? seg.Width : (seg.AvgAdvance ?? (avgFontSize * 0.55d)) * Math.Max(1, seg.Text.Length);
+            double perChar = fallbackWidth / Math.Max(1, seg.Text.Length);
+            for (int i = 0; i < seg.Text.Length; i++)
+            {
+                double start = seg.X + perChar * i;
+                list.Add(new LineChar(seg.Text[i], start, Math.Max(0.01d, perChar), false));
+            }
+            return list;
+        }
+
+        private static List<LineChar> ShiftCharacters(List<LineChar> source, double shift)
+        {
+            if (Math.Abs(shift) <= 1e-6d)
+                return source;
+            var shifted = new List<LineChar>(source.Count);
+            foreach (var ch in source)
+            {
+                shifted.Add(new LineChar(ch.Char, ch.Start + shift, ch.Width, ch.Synthetic));
+            }
+            return shifted;
+        }
+
+        private static bool IsNumericFragment(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+                return false;
+            for (int i = 0; i < text.Length; i++)
+            {
+                char ch = text[i];
+                if (char.IsDigit(ch))
+                    continue;
+                if (ch is '-' or '/' or ':' or '年' or '月' or '日' or '.')
+                    continue; // allow common date separators
+                if (char.IsWhiteSpace(ch))
+                    continue;
+                return false;
+            }
+            return true;
+        }
+
+        private static void EmitWords(List<OfdText> result, List<OfdText> segs, List<LineChar> chars, double avgFontSize, double lineHeight, double baselineY, ILogger? logger, int page, ConvertHelper.PdfToOfdOptions opt)
+        {
+            int index = 0;
+            while (index < chars.Count)
+            {
+                while (index < chars.Count && chars[index].Char == ' ')
+                    index++;
+                if (index >= chars.Count)
+                    break;
+
+                int end = index;
+                while (end + 1 < chars.Count && chars[end + 1].Char != ' ')
+                    end++;
+
+                EmitRun(result, segs, chars, index, end, avgFontSize, lineHeight, baselineY, logger, page, opt);
+                index = end + 1;
+            }
+        }
+
+        private static void EmitRun(List<OfdText> result, List<OfdText> segs, List<LineChar> chars, int startIndex, int endIndex, double avgFontSize, double lineHeight, double baselineY, ILogger? logger, int page, ConvertHelper.PdfToOfdOptions opt)
+        {
+            if (endIndex < startIndex)
+                return;
+
+            int length = endIndex - startIndex + 1;
+            var textBuffer = new char[length];
+            var starts = new double[length];
+            var advances = new double[length];
+            var deltas = new float[length];
+
+            double prevStart = 0d;
+            for (int i = 0; i < length; i++)
+            {
+                var glyph = chars[startIndex + i];
+                textBuffer[i] = glyph.Char;
+                starts[i] = glyph.Start;
+                advances[i] = glyph.Width;
+                if (i == 0)
                 {
-                    var ch = chars[i];
-                    bool isSpace = ch.ch == ' ';
-                    if (isSpace)
-                    {
-                        if (wordStart >= 0)
-                        {
-                            EmitWord(chars, wordStart, i - 1);
-                            wordStart = -1;
-                        }
-                        continue;
-                    }
-                    if (wordStart < 0) wordStart = i;
+                    deltas[i] = 0f;
+                    prevStart = glyph.Start;
                 }
-                if (wordStart >= 0)
+                else
                 {
-                    EmitWord(chars, wordStart, chars.Count - 1);
-                }
-
-                void EmitWord(List<(char ch, double x, double w, bool isGap, string src)> c, int start, int end)
-                {
-                    if (end < start) return;
-                    // 过滤掉全 gap 的情况（理论不会发生）
-                    if (c.Skip(start).Take(end - start + 1).All(t => t.isGap)) return;
-                    double minX = c[start].x;
-                    double maxR = c[start].x + c[start].w;
-                    var sb = new System.Text.StringBuilder();
-                    for (int j = start; j <= end; j++)
+                    double diff = glyph.Start - prevStart;
+                    if (diff < 0 && Math.Abs(diff) <= opt.MaxNegativeKerningAbsorbMm)
                     {
-                        var cc = c[j];
-                        if (!cc.isGap) sb.Append(cc.ch);
-                        maxR = Math.Max(maxR, cc.x + cc.w);
+                        diff = 0;
                     }
-                    string word = sb.ToString();
-                    if (string.IsNullOrWhiteSpace(word)) return;
-                    // 继承首段 CTM（如果各段CTM不同，后续可考虑做平均或放弃）
-                    double[]? ctm = segs[0].CTM;
-                    float[]? wordDelta = null;
-                    if (opt.EnableDeltaX)
-                    {
-                        // 构造 DeltaX：长度 = 字符数，首项0，元素含义=当前字符起点 - 前一个字符起点（典型 Step 模式）
-                        var wordChars = c.Skip(start).Take(end - start + 1).Where(cc => !cc.isGap).ToList();
-                        if (wordChars.Count > 0)
-                        {
-                            var deltas = new List<float>(wordChars.Count);
-                            double prev = wordChars[0].x;
-                            deltas.Add(0f);
-                            for (int k = 1; k < wordChars.Count; k++)
-                            {
-                                double adv = wordChars[k].x - prev;
-                                if (adv < 0) adv = 0; // 防御性
-                                deltas.Add((float)adv);
-                                prev = wordChars[k].x;
-                            }
-                            wordDelta = deltas.ToArray();
-                        }
-                    }
-
-                    result.Add(new OfdText
-                    {
-                        Page = segs[0].Page,
-                        Text = word,
-                        X = (float)minX,
-                        Y = segs.Min(s => s.Y),
-                        Width = (float)(maxR - minX),
-                        Height = (float)maxH,
-                        FontFamily = lineFont,
-                        FontSize = (float)avgSize,
-                        CTM = ctm,
-                        DeltaX = wordDelta
-                    });
-
-                    if (opt.EnableDebugWordLayout && logger != null)
-                    {
-                        logger.LogDebug("[PDF2OFD][Text][WordDbg] Page {Page} Word='{Word}' X={X:F2} W={W:F2} Chars={Chars} Src=[{Src}]", page, word, minX, (maxR - minX), end - start + 1,
-                            string.Join(',', c.Skip(start).Take(end - start + 1).Select(t => t.src).Distinct()));
-                    }
-                }
-
-                if (opt.EnableDebugWordLayout && logger != null)
-                {
-                    logger.LogDebug("[PDF2OFD][Text][WordDbg] Page {Page} 行完成 字符总数={Cnt} 词数={Words}", page, chars.Count, result.Count);
+                    deltas[i] = (float)Math.Max(0d, diff);
+                    prevStart = glyph.Start;
                 }
             }
-            logger?.LogDebug("[PDF2OFD][Text][AggregateWords] Page {Page} 原始片段={Raw} 行数={Lines} 词级块={Words}", page, raw.Count, lineBuckets.Count, result.Count);
-            return result;
+
+            string text = new string(textBuffer);
+            if (string.IsNullOrWhiteSpace(text))
+                return;
+
+            double minX = starts[0];
+            double maxR = starts[length - 1] + advances[length - 1];
+            double avgAdvance = advances.Average();
+            double? spaceAdvance = null;
+            for (int i = 0; i < length; i++)
+            {
+                if (textBuffer[i] == ' ')
+                {
+                    spaceAdvance = advances[i];
+                    break;
+                }
+            }
+
+            double topY = segs.Min(s => s.Y);
+            double textCodeX = starts.Length > 0 ? starts[0] - minX : 0d;
+            if (Math.Abs(textCodeX) < 1e-6)
+            {
+                textCodeX = 0d;
+            }
+            double? textCodeY = double.IsNaN(baselineY) ? null : baselineY - topY;
+
+            var ofdText = new OfdText
+            {
+                Page = segs[0].Page,
+                Text = text,
+                X = minX,
+                Y = topY,
+                Width = Math.Max(0.1d, maxR - minX),
+                Height = lineHeight <= 0 ? avgFontSize * 1.2d : lineHeight,
+                FontFamily = SelectDominantFont(segs),
+                FontSize = avgFontSize,
+                CTM = PickCtm(segs),
+                DeltaX = (opt.EnableDeltaX && length > 1) ? deltas : null,
+                AvgAdvance = avgAdvance,
+                SpaceAdvance = spaceAdvance,
+                CharStarts = starts,
+                CharAdvances = advances,
+                BaselineY = baselineY,
+                TextCodeX = textCodeX,
+                TextCodeY = textCodeY
+            };
+
+            result.Add(ofdText);
+
+            if (opt.EnableDebugWordLayout && logger != null)
+            {
+                logger.LogDebug("[PDF2OFD][Text][Emit] Page {Page} Text='{Text}' X={X:F2} W={W:F2} Len={Len}",
+                    page, text, ofdText.X, ofdText.Width, text.Length);
+            }
+        }
+
+        private static string SelectDominantFont(List<OfdText> segs)
+        {
+            var group = segs
+                .GroupBy(s => s.FontFamily)
+                .OrderByDescending(g => g.Count())
+                .ThenByDescending(g => g.Sum(x => x.Text.Length))
+                .FirstOrDefault();
+            return group?.Key ?? segs[0].FontFamily;
+        }
+
+        private static double[]? PickCtm(List<OfdText> segs)
+        {
+            foreach (var seg in segs)
+            {
+                if (seg.CTM != null && seg.CTM.Length == 6)
+                    return seg.CTM;
+            }
+            return null;
+        }
+
+        private readonly struct LineChar
+        {
+            public LineChar(char ch, double start, double width, bool synthetic)
+            {
+                Char = ch;
+                Start = start;
+                Width = width;
+                Synthetic = synthetic;
+            }
+
+            public char Char
+            {
+                get;
+            }
+            public double Start
+            {
+                get;
+            }
+            public double Width
+            {
+                get;
+            }
+            public bool Synthetic
+            {
+                get;
+            }
+            public double End => Start + Width;
         }
     }
 }

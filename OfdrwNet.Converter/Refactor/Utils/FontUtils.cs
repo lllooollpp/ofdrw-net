@@ -10,7 +10,7 @@ namespace OfdrwNet.Converter.Refactor.Utils;
 /// </summary>
 internal static class FontUtils
 {
-    private static readonly Dictionary<string, string> FontNameFallbackMap = new(StringComparer.OrdinalIgnoreCase)
+    private static readonly Dictionary<string, string> _fontNameFallbackMap = new(StringComparer.OrdinalIgnoreCase)
     {
         ["ËÎÌå"] = "SimSun",          // 宋体 (乱码形式)
         ["Î¢ÈíÑÅºÚ"] = "Microsoft YaHei", // 微软雅黑 (乱码形式)
@@ -19,15 +19,17 @@ internal static class FontUtils
         ["KaiTi_GB2312"] = "KaiTi",   // 另一种写法
     };
 
-    private static readonly Dictionary<string, string[]> SystemFontCandidates = new(StringComparer.OrdinalIgnoreCase)
+    private static readonly Dictionary<string, string[]> _systemFontCandidates = new(StringComparer.OrdinalIgnoreCase)
     {
         ["SimSun"] = new[]{"simsun.ttc","SimSun.ttc"},
         ["Microsoft YaHei"] = new[]{"msyh.ttc","msyh.ttf"},
         ["SimHei"] = new[]{"simhei.ttf"},
-        ["KaiTi"] = new[]{"simkai.ttf","kaiti.ttf"}
+        ["KaiTi"] = new[]{"simkai.ttf","kaiti.ttf"},
+        ["FangSong"] = new[]{"simfang.ttf","FangSong.ttf"},
+        ["仿宋"] = new[]{"simfang.ttf","FangSong.ttf"}
     };
 
-    private static readonly System.Text.RegularExpressions.Regex subsetPrefixRegex = new(@"^[A-Z]{6}\+");
+    private static readonly System.Text.RegularExpressions.Regex _subsetPrefixRegex = new(@"^[A-Z]{6}\+");
 
     /// <summary>
     /// 规范化 PDF 中可能带子集前缀/乱码的逻辑字体名。
@@ -36,7 +38,7 @@ internal static class FontUtils
     {
         if (string.IsNullOrWhiteSpace(baseName)) return baseName ?? string.Empty;
         var cleaned = baseName.Trim();
-        if (stripSubsetPrefix && subsetPrefixRegex.IsMatch(cleaned))
+        if (stripSubsetPrefix && _subsetPrefixRegex.IsMatch(cleaned))
         {
             cleaned = cleaned[(cleaned.IndexOf('+') + 1)..];
         }
@@ -44,7 +46,13 @@ internal static class FontUtils
         if (idx > 0) cleaned = cleaned[..idx];
         idx = cleaned.IndexOf("_GB2312", StringComparison.OrdinalIgnoreCase);
         if (idx > 0) cleaned = cleaned[..idx];
-        foreach (var kv in FontNameFallbackMap)
+        idx = cleaned.IndexOf("-GB2312", StringComparison.OrdinalIgnoreCase);
+        if (idx > 0) cleaned = cleaned[..idx];
+        if (cleaned.EndsWith("GB2312", StringComparison.OrdinalIgnoreCase))
+        {
+            cleaned = cleaned[..^"GB2312".Length];
+        }
+        foreach (var kv in _fontNameFallbackMap)
         {
             if (cleaned.Contains(kv.Key, StringComparison.OrdinalIgnoreCase)) return kv.Value;
         }
@@ -56,7 +64,7 @@ internal static class FontUtils
     /// </summary>
     public static string? FindSystemFontPath(string logicalName, ILogger? logger = null)
     {
-        if (!SystemFontCandidates.TryGetValue(logicalName, out var candidates)) return null;
+    if (!_systemFontCandidates.TryGetValue(logicalName, out var candidates)) return null;
         string fontDir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Windows), "Fonts");
         foreach (var c in candidates)
         {

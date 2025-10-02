@@ -1,0 +1,8 @@
+<Project>
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'OfdrwNet.Converter' Or '$(MSBuildProjectName)' == 'OfdrwNet.Sign'">
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>SYSLIB0027;CS8604;CS8625;CS8602;CS1591</WarningsNotAsErrors>
+  </PropertyGroup>
+</Project>

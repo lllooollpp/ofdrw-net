@@ -6,6 +6,9 @@ using OfdrwNet.Abstractions;
 using iText.Kernel.Geom;
 using iText.Kernel.Colors;
 using iText.Kernel.Pdf.Canvas;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace OfdrwNet.Converter;
@@ -17,7 +20,7 @@ public class VectorPathListener : IEventListener
 {
     private readonly ILogger? _logger;
     private readonly List<OfdPath> _paths = new();
-    private readonly double _pageHeight; // 用于坐标系转换
+    private readonly double _pageHeightPt; // 用于坐标系转换（PDF坐标系，单位：pt）
 
     // 当前图形状态（初始化为黑色描边、透明填充，避免未赋值警告；真实值待 UpdateGraphicsState 后续完善）
     private Color? _currentStrokeColor = ColorConstants.BLACK; // 默认描边色
@@ -26,10 +29,10 @@ public class VectorPathListener : IEventListener
     private bool _currentFill = false;
     private bool _currentStroke = true;
 
-    public VectorPathListener(ILogger? logger = null, double pageHeight = 297.0) // A4默认高度
+    public VectorPathListener(ILogger? logger = null, double pageHeightPt = 842.0) // 默认 A4 高度 (297mm -> 842pt)
     {
         _logger = logger;
-        _pageHeight = pageHeight;
+        _pageHeightPt = pageHeightPt;
     }
 
     public void EventOccurred(IEventData data, EventType type)
@@ -58,6 +61,7 @@ public class VectorPathListener : IEventListener
 
         try
         {
+            UpdateGraphicsState(pathRenderInfo.GetGraphicsState());
             // 获取渲染模式
             var operation = pathRenderInfo.GetOperation();
 
@@ -92,10 +96,9 @@ public class VectorPathListener : IEventListener
 
         try
         {
-            // 这些API可能不可用，先注释掉
-            // _currentStrokeColor = gs.GetStrokeColor();
-            // _currentFillColor = gs.GetFillColor();
-            // _currentLineWidth = gs.GetLineWidth();
+            _currentStrokeColor = gs.GetStrokeColor();
+            _currentFillColor = gs.GetFillColor();
+            _currentLineWidth = (float)(gs.GetLineWidth() * ConvertHelper.Pt2Mm);
         }
         catch (Exception ex)
         {
@@ -103,14 +106,21 @@ public class VectorPathListener : IEventListener
         }
     }
 
-    private string? ColorToString(Color? color)
+    private static string? ColorToString(Color? color)
     {
         if (color == null) return null;
 
         try
         {
-            // 简单的颜色转换，可以根据需要扩展
-            return color.ToString();
+            var components = color.GetColorValue();
+            if (components == null || components.Length < 3)
+            {
+                return color.ToString();
+            }
+            int r = (int)Math.Round(Math.Clamp(components[0], 0, 1) * 255.0);
+            int g = (int)Math.Round(Math.Clamp(components[1], 0, 1) * 255.0);
+            int b = (int)Math.Round(Math.Clamp(components[2], 0, 1) * 255.0);
+            return FormattableString.Invariant($"{r} {g} {b}");
         }
         catch
         {
@@ -126,9 +136,21 @@ public class VectorPathListener : IEventListener
         var subpaths = path.GetSubpaths();
         if (subpaths.Count == 0) return null;
 
-        var pathData = new System.Text.StringBuilder();
+        var pathData = new StringBuilder();
         double minX = double.MaxValue, minY = double.MaxValue;
         double maxX = double.MinValue, maxY = double.MinValue;
+
+        var ctm = pathRenderInfo.GetCtm();
+        double a = 1, b = 0, c = 0, d = 1, e = 0, f = 0;
+        if (ctm != null)
+        {
+            a = ctm.Get(Matrix.I11);
+            b = ctm.Get(Matrix.I12);
+            c = ctm.Get(Matrix.I21);
+            d = ctm.Get(Matrix.I22);
+            e = ctm.Get(Matrix.I31);
+            f = ctm.Get(Matrix.I32);
+        }
 
         foreach (var subpath in subpaths)
         {
@@ -140,44 +162,50 @@ public class VectorPathListener : IEventListener
                 var points = segment.GetBasePoints();
                 if (points.Count == 0) continue;
 
-                // 更新边界
+                var converted = new List<(double X, double Y)>(points.Count);
                 foreach (var point in points)
                 {
-                    minX = Math.Min(minX, point.x);
-                    minY = Math.Min(minY, point.y);
-                    maxX = Math.Max(maxX, point.x);
-                    maxY = Math.Max(maxY, point.y);
+                    // 应用 CTM 转换后再换算到 OFD 坐标系（mm，左上原点）
+                    double tx = a * point.x + c * point.y + e;
+                    double ty = b * point.x + d * point.y + f;
+                    double xMm = tx * ConvertHelper.Pt2Mm;
+                    double yMm = (_pageHeightPt - ty) * ConvertHelper.Pt2Mm;
+                    converted.Add((xMm, yMm));
+
+                    minX = Math.Min(minX, xMm);
+                    minY = Math.Min(minY, yMm);
+                    maxX = Math.Max(maxX, xMm);
+                    maxY = Math.Max(maxY, yMm);
                 }
 
-                // 改进的路径处理：区分不同类型的段
                 if (firstSegment)
                 {
-                    pathData.Append($"M {points[0].x:0.###} {points[0].y:0.###} ");
+                    pathData.Append($"M {FormatDouble(converted[0].X)} {FormatDouble(converted[0].Y)} ");
                     firstSegment = false;
                 }
 
                 // 根据点数量判断段类型
-                if (points.Count == 2)
+                if (converted.Count == 2)
                 {
                     // 直线段
-                    pathData.Append($"L {points[1].x:0.###} {points[1].y:0.###} ");
+                    pathData.Append($"L {FormatDouble(converted[1].X)} {FormatDouble(converted[1].Y)} ");
                 }
-                else if (points.Count == 3)
+                else if (converted.Count == 3)
                 {
                     // 二次贝塞尔曲线
-                    pathData.Append($"Q {points[1].x:0.###} {points[1].y:0.###} {points[2].x:0.###} {points[2].y:0.###} ");
+                    pathData.Append($"Q {FormatDouble(converted[1].X)} {FormatDouble(converted[1].Y)} {FormatDouble(converted[2].X)} {FormatDouble(converted[2].Y)} ");
                 }
-                else if (points.Count == 4)
+                else if (converted.Count == 4)
                 {
                     // 三次贝塞尔曲线
-                    pathData.Append($"C {points[1].x:0.###} {points[1].y:0.###} {points[2].x:0.###} {points[2].y:0.###} {points[3].x:0.###} {points[3].y:0.###} ");
+                    pathData.Append($"C {FormatDouble(converted[1].X)} {FormatDouble(converted[1].Y)} {FormatDouble(converted[2].X)} {FormatDouble(converted[2].Y)} {FormatDouble(converted[3].X)} {FormatDouble(converted[3].Y)} ");
                 }
-                else if (points.Count > 4)
+                else if (converted.Count > 4)
                 {
                     // 复杂路径，连接所有点
-                    for (int i = 1; i < points.Count; i++)
+                    for (int i = 1; i < converted.Count; i++)
                     {
-                        pathData.Append($"L {points[i].x:0.###} {points[i].y:0.###} ");
+                        pathData.Append($"L {FormatDouble(converted[i].X)} {FormatDouble(converted[i].Y)} ");
                     }
                 }
             }
@@ -191,22 +219,9 @@ public class VectorPathListener : IEventListener
 
         if (pathData.Length == 0) return null;
 
-        // 修正 CTM 变换矩阵提取
-        var ctm = pathRenderInfo.GetCtm();
-        double[]? ctmArray = null;
-        if (ctm != null)
+        if (double.IsInfinity(minX) || double.IsInfinity(minY) || double.IsInfinity(maxX) || double.IsInfinity(maxY))
         {
-            ctmArray = new double[6];
-            // iText Matrix 是 3x3 矩阵，标准 2D 变换矩阵索引：
-            // | a  b  e |   | Get(0) Get(3) Get(6) |
-            // | c  d  f | = | Get(1) Get(4) Get(7) |
-            // | 0  0  1 |   | Get(2) Get(5) Get(8) |
-            ctmArray[0] = ctm.Get(Matrix.I11); // a - x缩放
-            ctmArray[1] = ctm.Get(Matrix.I12); // b - xy倾斜
-            ctmArray[2] = ctm.Get(Matrix.I21); // c - yx倾斜
-            ctmArray[3] = ctm.Get(Matrix.I22); // d - y缩放
-            ctmArray[4] = ctm.Get(Matrix.I31); // e - x平移
-            ctmArray[5] = ctm.Get(Matrix.I32); // f - y平移
+            return null;
         }
 
         return new OfdPath
@@ -217,7 +232,7 @@ public class VectorPathListener : IEventListener
             Width = Math.Max(maxX - minX, 0.1), // 确保最小宽度
             Height = Math.Max(maxY - minY, 0.1), // 确保最小高度
             PathData = pathData.ToString().Trim(),
-            CTM = ctmArray,
+            CTM = null,
             // 设置样式属性
             Stroke = _currentStroke,
             Fill = _currentFill,
@@ -236,4 +251,6 @@ public class VectorPathListener : IEventListener
     {
         return _paths;
     }
+
+    private static string FormatDouble(double value) => value.ToString("0.###", CultureInfo.InvariantCulture);
 }
