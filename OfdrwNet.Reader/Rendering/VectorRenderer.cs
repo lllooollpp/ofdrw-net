@@ -69,34 +69,74 @@ namespace OfdrwNet.Reader.Rendering
 
             try
             {
-                System.Diagnostics.Trace.WriteLine($"[VectorRenderer] Begin render Id={vectorObject.Id} Type={vectorObject.VectorType} Boundary=({vectorObject.Boundary.X},{vectorObject.Boundary.Y},{vectorObject.Boundary.Width},{vectorObject.Boundary.Height}) StrokeW={vectorObject.StrokeStyle?.Width} PathLen={(vectorObject.PathData?.Length ?? 0)} Points={(vectorObject.Points?.Count ?? 0)}");
-
-                var state = graphics.Save();
-                graphics.SmoothingMode = renderContext.SmoothingMode;
-                graphics.CompositingQuality = renderContext.CompositingQuality;
-
-                ApplyTransform(graphics, vectorObject, renderContext);
-
-                var result = vectorObject.VectorType switch
+                // Validate Graphics state before attempting to save
+                try
                 {
-                    VectorType.Path => await RenderPathAsync(vectorObject, graphics, renderContext),
-                    VectorType.Line => await RenderLineAsync(vectorObject, graphics, renderContext),
-                    VectorType.Rectangle => await RenderRectangleAsync(vectorObject, graphics, renderContext),
-                    VectorType.Circle => await RenderCircleAsync(vectorObject, graphics, renderContext),
-                    VectorType.Ellipse => await RenderEllipseAsync(vectorObject, graphics, renderContext),
-                    VectorType.Polygon => await RenderPolygonAsync(vectorObject, graphics, renderContext),
-                    VectorType.Polyline => await RenderPolylineAsync(vectorObject, graphics, renderContext),
-                    _ => false
-                };
+                    // Test access to Graphics properties to ensure it's valid
+                    _ = graphics.IsClipEmpty;
+                    _ = graphics.DpiX;
+                }
+                catch (Exception gex)
+                {
+                    // Graphics object is in invalid state, skip rendering
+                    System.Diagnostics.Trace.WriteLine($"[VectorRenderer] Graphics invalid for object {vectorObject.Id}: {gex.Message}");
+                    return false;
+                }
 
-                graphics.Restore(state);
-                System.Diagnostics.Trace.WriteLine($"[VectorRenderer] End render Id={vectorObject.Id} Success={result}");
+                GraphicsState? state = null;
+                bool stateSaved = false;
+                try
+                {
+                    state = graphics.Save();
+                    stateSaved = true;
+                }
+                catch (ArgumentException)
+                {
+                    // Graphics.Save() can fail with "Parameter is not valid" in certain threading scenarios
+                    // Fall back to rendering without save/restore
+                    System.Diagnostics.Trace.WriteLine($"[VectorRenderer] Graphics.Save() failed for object {vectorObject.Id}, rendering without state save");
+                }
 
-                return result;
+                try
+                {
+                    graphics.SmoothingMode = renderContext.SmoothingMode;
+                    graphics.CompositingQuality = renderContext.CompositingQuality;
+
+                    ApplyTransform(graphics, vectorObject, renderContext);
+
+                    var result = vectorObject.VectorType switch
+                    {
+                        VectorType.Path => await RenderPathAsync(vectorObject, graphics, renderContext),
+                        VectorType.Line => await RenderLineAsync(vectorObject, graphics, renderContext),
+                        VectorType.Rectangle => await RenderRectangleAsync(vectorObject, graphics, renderContext),
+                        VectorType.Circle => await RenderCircleAsync(vectorObject, graphics, renderContext),
+                        VectorType.Ellipse => await RenderEllipseAsync(vectorObject, graphics, renderContext),
+                        VectorType.Polygon => await RenderPolygonAsync(vectorObject, graphics, renderContext),
+                        VectorType.Polyline => await RenderPolylineAsync(vectorObject, graphics, renderContext),
+                        _ => false
+                    };
+
+                    return result;
+                }
+                finally
+                {
+                    if (stateSaved && state != null)
+                    {
+                        try
+                        {
+                            graphics.Restore(state);
+                        }
+                        catch (ArgumentException)
+                        {
+                            // Ignore restore failures - graphics might have been invalidated
+                            System.Diagnostics.Trace.WriteLine($"[VectorRenderer] Graphics.Restore() failed for object {vectorObject.Id}");
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Trace.WriteLine($"[VectorRenderer] Exception Id={vectorObject?.Id} {ex.Message}");
+                System.Diagnostics.Trace.WriteLine($"[VectorRenderer] Exception rendering object {vectorObject.Id}: {ex.Message}");
                 throw new RenderException(vectorObject?.Id.ToString() ?? string.Empty, $"矢量图形渲染失败: {ex.Message}", ex);
             }
         }
@@ -181,8 +221,6 @@ namespace OfdrwNet.Reader.Rendering
 
             try
             {
-                System.Diagnostics.Trace.WriteLine($"[VectorRenderer] RenderPath Id={vectorObject.Id} PathLen={vectorObject.PathData.Length} StrokeW={vectorObject.StrokeStyle?.Width} Fill={(vectorObject.FillStyle != null)}");
-
                 using var path = await GetGraphicsPathAsync(vectorObject.PathData);
 
                 if (path.PointCount == 0)
@@ -191,6 +229,70 @@ namespace OfdrwNet.Reader.Rendering
                     return true;
                 }
 
+                // If rendering pipeline skipped applying CTM to Graphics (non-unified mode), apply CTM directly to path
+                try
+                {
+                    bool unified = IsUnified();
+                    if (!unified)
+                    {
+                        // Build combined transform: translate by boundary then apply CTM if any (match OfdPageDrawer.CreateTransform)
+                        var transform = new Matrix();
+                        transform.Translate((float)vectorObject.Boundary.X, (float)vectorObject.Boundary.Y);
+                        if (vectorObject.CTM != null)
+                        {
+                            try { transform.Multiply(vectorObject.CTM); } catch { }
+                        }
+
+                        // Clone to avoid mutating cached path
+                        var tempPath = (GraphicsPath)path.Clone();
+                        try
+                        {
+                            tempPath.Transform(transform);
+
+                            // Then scale to pixels using renderContext.Ppm and ScaleFactor
+                            var scale = (float)(renderContext.Ppm * renderContext.ScaleFactor);
+                            if (Math.Abs(scale - 1f) > 1e-6)
+                            {
+                                using var scaleMatrix = new Matrix();
+                                scaleMatrix.Scale(scale, scale);
+                                tempPath.Transform(scaleMatrix);
+                            }
+
+                            // honor fill rule if provided
+                            if (vectorObject.FillStyle != null && vectorObject.FillStyle.FillRule == FillRule.EvenOdd)
+                                tempPath.FillMode = FillMode.Alternate; // Even-odd -> Alternate
+
+                            var fillBrush = vectorObject.FillStyle != null ? CreateBrush(vectorObject.FillStyle) : null;
+                            if (fillBrush != null)
+                            {
+                                graphics.FillPath(fillBrush, tempPath);
+                                fillBrush.Dispose();
+                            }
+
+                            using var strokePen = vectorObject.StrokeStyle != null
+                                ? CreatePen(vectorObject.StrokeStyle)
+                                : new Pen(Color.Black, 1.0f);
+
+                            graphics.DrawPath(strokePen, tempPath);
+                        }
+                        finally
+                        {
+                            tempPath.Dispose();
+                            transform.Dispose();
+                        }
+
+                        return true;
+                    }
+                }
+                catch (Exception)
+                {
+                    // fall through to normal drawing with original path
+                }
+
+                // honor fill rule if provided
+                if (vectorObject.FillStyle != null && vectorObject.FillStyle.FillRule == FillRule.EvenOdd)
+                    path.FillMode = FillMode.Alternate; // Even-odd -> Alternate
+
                 if (vectorObject.FillStyle != null)
                 {
                     var fillBrush = CreateBrush(vectorObject.FillStyle);
@@ -198,11 +300,10 @@ namespace OfdrwNet.Reader.Rendering
                     fillBrush.Dispose();
                 }
 
-                using var strokePen = vectorObject.StrokeStyle != null
+                using var strokePen2 = vectorObject.StrokeStyle != null
                     ? CreatePen(vectorObject.StrokeStyle)
                     : new Pen(Color.Black, 1.0f);
-                graphics.DrawPath(strokePen, path);
-                System.Diagnostics.Trace.WriteLine($"[VectorRenderer] DrawPath Id={vectorObject.Id} PenW={strokePen.Width} PointCount={path.PointCount}");
+                graphics.DrawPath(strokePen2, path);
 
                 return true;
             }
@@ -226,12 +327,41 @@ namespace OfdrwNet.Reader.Rendering
             await Task.Run(() =>
             {
                 var pen = CreatePen(vectorObject.StrokeStyle);
-                var startPoint = vectorObject.Points[0];
-                var endPoint = vectorObject.Points[1];
+                try
+                {
+                    var startPoint = vectorObject.Points[0];
+                    var endPoint = vectorObject.Points[1];
 
-                graphics.DrawLine(pen, startPoint, endPoint);
-                System.Diagnostics.Trace.WriteLine($"[VectorRenderer] DrawLine Id={vectorObject.Id} PenW={pen.Width} Start=({startPoint.X},{startPoint.Y}) End=({endPoint.X},{endPoint.Y})");
-                pen.Dispose();
+                    // If not unified mode, apply object's CTM and boundary translation directly to points (in document units), then scale to pixels
+                    bool unified = IsUnified();
+                    if (!unified)
+                    {
+                        var pts = new PointF[] { startPoint, endPoint };
+                        var m = new Matrix();
+                        m.Translate((float)vectorObject.Boundary.X, (float)vectorObject.Boundary.Y);
+                        if (vectorObject.CTM != null)
+                        {
+                            try { m.Multiply(vectorObject.CTM); } catch { }
+                        }
+                        try { m.TransformPoints(pts); } catch { }
+                        // Scale to pixels
+                        var scale = (float)(renderContext.Ppm * renderContext.ScaleFactor);
+                        if (Math.Abs(scale - 1f) > 1e-6)
+                        {
+                            pts[0].X *= scale; pts[0].Y *= scale;
+                            pts[1].X *= scale; pts[1].Y *= scale;
+                        }
+                        startPoint = pts[0];
+                        endPoint = pts[1];
+                        m.Dispose();
+                    }
+
+                    graphics.DrawLine(pen, startPoint, endPoint);
+                }
+                finally
+                {
+                    pen.Dispose();
+                }
             });
 
             return true;
@@ -246,6 +376,43 @@ namespace OfdrwNet.Reader.Rendering
 
             await Task.Run(() =>
             {
+                // If non-unified, handled above
+                bool unified = IsUnified();
+                if (!unified && vectorObject.CTM != null)
+                {
+                    using var path = new GraphicsPath();
+                    path.AddRectangle(rect);
+                    var transform = new Matrix();
+                    transform.Translate((float)vectorObject.Boundary.X, (float)vectorObject.Boundary.Y);
+                    if (vectorObject.CTM != null)
+                    {
+                        try { transform.Multiply(vectorObject.CTM); } catch { }
+                    }
+                    try { path.Transform(transform); } catch { }
+                    // scale to pixels
+                    var scale = (float)(renderContext.Ppm * renderContext.ScaleFactor);
+                    if (Math.Abs(scale - 1f) > 1e-6)
+                    {
+                        using var s = new Matrix(); s.Scale(scale, scale); path.Transform(s);
+                    }
+
+                    if (vectorObject.FillStyle != null)
+                    {
+                        var fillBrush = CreateBrush(vectorObject.FillStyle);
+                        graphics.FillPath(fillBrush, path);
+                        fillBrush.Dispose();
+                    }
+
+                    if (vectorObject.StrokeStyle != null)
+                    {
+                        using var strokePen = CreatePen(vectorObject.StrokeStyle);
+                        graphics.DrawPath(strokePen, path);
+                    }
+
+                    transform.Dispose();
+                    return;
+                }
+
                 if (vectorObject.FillStyle != null)
                 {
                     var fillBrush = CreateBrush(vectorObject.FillStyle);
@@ -273,6 +440,42 @@ namespace OfdrwNet.Reader.Rendering
 
             await Task.Run(() =>
             {
+                bool unified = IsUnified();
+                if (!unified && vectorObject.CTM != null)
+                {
+                    using var path = new GraphicsPath();
+                    path.AddEllipse(rect);
+                    var transform = new Matrix();
+                    transform.Translate((float)vectorObject.Boundary.X, (float)vectorObject.Boundary.Y);
+                    if (vectorObject.CTM != null)
+                    {
+                        try { transform.Multiply(vectorObject.CTM); } catch { }
+                    }
+                    try { path.Transform(transform); } catch { }
+                    // scale to pixels
+                    var scale = (float)(renderContext.Ppm * renderContext.ScaleFactor);
+                    if (Math.Abs(scale - 1f) > 1e-6)
+                    {
+                        using var s = new Matrix(); s.Scale(scale, scale); path.Transform(s);
+                    }
+
+                    if (vectorObject.FillStyle != null)
+                    {
+                        var fillBrush = CreateBrush(vectorObject.FillStyle);
+                        graphics.FillPath(fillBrush, path);
+                        fillBrush.Dispose();
+                    }
+
+                    if (vectorObject.StrokeStyle != null)
+                    {
+                        using var strokePen = CreatePen(vectorObject.StrokeStyle);
+                        graphics.DrawPath(strokePen, path);
+                    }
+
+                    transform.Dispose();
+                    return;
+                }
+
                 if (vectorObject.FillStyle != null)
                 {
                     var fillBrush = CreateBrush(vectorObject.FillStyle);
@@ -292,7 +495,7 @@ namespace OfdrwNet.Reader.Rendering
         }
 
         /// <summary>
-        /// 渲染椭圆
+        /// 渲染椭圆（别名，转发到圆形渲染实现）
         /// </summary>
         private Task<bool> RenderEllipseAsync(VectorObject vectorObject, Graphics graphics, RenderContext renderContext)
         {
@@ -312,6 +515,27 @@ namespace OfdrwNet.Reader.Rendering
             await Task.Run(() =>
             {
                 var points = vectorObject.Points.ToArray();
+
+                bool unified = IsUnified();
+                if (!unified)
+                {
+                    var m = new Matrix();
+                    m.Translate((float)vectorObject.Boundary.X, (float)vectorObject.Boundary.Y);
+                    if (vectorObject.CTM != null)
+                    {
+                        try { m.Multiply(vectorObject.CTM); } catch { }
+                    }
+                    try { m.TransformPoints(points); } catch { }
+                    var scale = (float)(renderContext.Ppm * renderContext.ScaleFactor);
+                    if (Math.Abs(scale - 1f) > 1e-6)
+                    {
+                        for (int i = 0; i < points.Length; i++)
+                        {
+                            points[i].X *= scale; points[i].Y *= scale;
+                        }
+                    }
+                    m.Dispose();
+                }
 
                 if (vectorObject.FillStyle != null)
                 {
@@ -344,9 +568,36 @@ namespace OfdrwNet.Reader.Rendering
             await Task.Run(() =>
             {
                 var pen = CreatePen(vectorObject.StrokeStyle);
-                var points = vectorObject.Points.ToArray();
-                graphics.DrawLines(pen, points);
-                pen.Dispose();
+                try
+                {
+                    var points = vectorObject.Points.ToArray();
+                    bool unified = IsUnified();
+                    if (!unified)
+                    {
+                        var m = new Matrix();
+                        m.Translate((float)vectorObject.Boundary.X, (float)vectorObject.Boundary.Y);
+                        if (vectorObject.CTM != null)
+                        {
+                            try { m.Multiply(vectorObject.CTM); } catch { }
+                        }
+                        try { m.TransformPoints(points); } catch { }
+                        var scale = (float)(renderContext.Ppm * renderContext.ScaleFactor);
+                        if (Math.Abs(scale - 1f) > 1e-6)
+                        {
+                            for (int i = 0; i < points.Length; i++)
+                            {
+                                points[i].X *= scale; points[i].Y *= scale;
+                            }
+                        }
+                        m.Dispose();
+                    }
+
+                    graphics.DrawLines(pen, points);
+                }
+                finally
+                {
+                    pen.Dispose();
+                }
             });
 
             return true;
@@ -357,19 +608,36 @@ namespace OfdrwNet.Reader.Rendering
         /// </summary>
         private void ApplyTransform(Graphics graphics, VectorObject vectorObject, RenderContext renderContext)
         {
-            if (renderContext.TransformMatrix != null)
-            {
-                graphics.MultiplyTransform(renderContext.TransformMatrix);
-            }
-
             bool unified = IsUnified();
-            if (unified && vectorObject.CTM != null)
+
+            // In unified mode we apply the object's boundary translation first so local coordinates map to page
+            if (unified)
             {
-                graphics.MultiplyTransform(vectorObject.CTM);
+                // translate by object's boundary (paths are defined in local coordinates)
+                if (vectorObject?.Boundary != null)
+                {
+                    graphics.TranslateTransform((float)vectorObject.Boundary.X, (float)vectorObject.Boundary.Y);
+                }
+
+                // Note: renderContext.TransformMatrix (viewport/global transforms) is applied once by the caller (RenderingEngine)
+                // Avoid reapplying it here to prevent double transform.
+                if (vectorObject.CTM != null)
+                {
+                    graphics.MultiplyTransform(vectorObject.CTM);
+                }
             }
-            else if (!unified && vectorObject.CTM != null)
+            else
             {
-                System.Diagnostics.Trace.WriteLine("[VectorRenderer][DEBUG] Skip CTM in pixel mode");
+                // Non-unified (pixel mode): render methods apply boundary+CTM per-primitive to avoid altering Graphics state globally
+                if (renderContext.TransformMatrix != null)
+                {
+                    graphics.MultiplyTransform(renderContext.TransformMatrix);
+                }
+
+                if (vectorObject.CTM != null)
+                {
+                    System.Diagnostics.Trace.WriteLine("[VectorRenderer][DEBUG] Skip CTM in pixel mode (handled per-primitive)");
+                }
             }
         }
 

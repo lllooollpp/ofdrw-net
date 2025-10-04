@@ -58,32 +58,75 @@ namespace OfdrwNet.Reader.Rendering
 
             try
             {
-                // 保存图形状态
-                var state = graphics.Save();
-
-                // 设置图像渲染质量
-                graphics.InterpolationMode = renderContext.ImageInterpolationMode;
-                graphics.CompositingQuality = renderContext.CompositingQuality;
-                graphics.SmoothingMode = renderContext.SmoothingMode;
-
-                // 应用变换矩阵
-                ApplyTransform(graphics, imageObject, renderContext);
-
-                // 获取图像
-                var image = await GetImageAsync(imageObject, renderContext);
-                if (image == null)
+                // Validate Graphics state before attempting to save
+                try
+                {
+                    // Test access to Graphics properties to ensure it's valid
+                    _ = graphics.IsClipEmpty;
+                    _ = graphics.DpiX;
+                }
+                catch (Exception gex)
+                {
+                    // Graphics object is in invalid state, skip rendering
+                    System.Diagnostics.Trace.WriteLine($"[ImageRenderer] Graphics invalid for object {imageObject.Id}: {gex.Message}");
                     return false;
+                }
 
-                // 渲染图像
-                await RenderImageContentAsync(imageObject, graphics, image, renderContext);
+                GraphicsState? state = null;
+                bool stateSaved = false;
+                try
+                {
+                    // 保存图形状态
+                    state = graphics.Save();
+                    stateSaved = true;
+                }
+                catch (ArgumentException)
+                {
+                    // Graphics.Save() can fail with "Parameter is not valid" in certain threading scenarios
+                    // Fall back to rendering without save/restore
+                    System.Diagnostics.Trace.WriteLine($"[ImageRenderer] Graphics.Save() failed for object {imageObject.Id}, rendering without state save");
+                }
 
-                // 恢复图形状态
-                graphics.Restore(state);
+                try
+                {
+                    // 设置图像渲染质量
+                    graphics.InterpolationMode = renderContext.ImageInterpolationMode;
+                    graphics.CompositingQuality = renderContext.CompositingQuality;
+                    graphics.SmoothingMode = renderContext.SmoothingMode;
 
-                return true;
+                    // 应用变换矩阵
+                    ApplyTransform(graphics, imageObject, renderContext);
+
+                    // 获取图像
+                    var image = await GetImageAsync(imageObject, renderContext);
+                    if (image == null)
+                        return false;
+
+                    // 渲染图像
+                    await RenderImageContentAsync(imageObject, graphics, image, renderContext);
+
+                    return true;
+                }
+                finally
+                {
+                    if (stateSaved && state != null)
+                    {
+                        try
+                        {
+                            // 恢复图形状态
+                            graphics.Restore(state);
+                        }
+                        catch (ArgumentException)
+                        {
+                            // Ignore restore failures - graphics might have been invalidated
+                            System.Diagnostics.Trace.WriteLine($"[ImageRenderer] Graphics.Restore() failed for object {imageObject.Id}");
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
+                System.Diagnostics.Trace.WriteLine($"[ImageRenderer] Exception rendering object {imageObject.Id}: {ex.Message}");
                 throw new RenderException(imageObject.Id.ToString(), $"图像渲染失败: {ex.Message}", ex);
             }
         }

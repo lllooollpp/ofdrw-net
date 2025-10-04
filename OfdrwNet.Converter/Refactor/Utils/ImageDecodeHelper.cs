@@ -32,7 +32,7 @@ internal static class ImageDecodeHelper
     }
 
     public static bool TryImageSharp(byte[] raw, out byte[] png)
-    { try { using var img = Image.Load(raw); using var ms = new MemoryStream(); img.Save(ms, new PngEncoder()); png = ms.ToArray(); return true; } catch { png = Array.Empty<byte>(); return false; } }
+    { try { using var img = SixLabors.ImageSharp.Image.Load(raw); using var ms = new MemoryStream(); img.Save(ms, new PngEncoder()); png = ms.ToArray(); return true; } catch { png = Array.Empty<byte>(); return false; } }
     public static bool TrySkia(byte[] raw, out byte[] png)
     { try { using var sk = SKBitmap.Decode(raw); if (sk == null) { png = Array.Empty<byte>(); return false; } using var img = SKImage.FromBitmap(sk); using var data = img.Encode(SKEncodedImageFormat.Png, 100); png = data.ToArray(); return true; } catch { png = Array.Empty<byte>(); return false; } }
 

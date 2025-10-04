@@ -5,13 +5,14 @@ using System.Threading.Tasks;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas.Parser;
 using Microsoft.Extensions.Logging;
+using OfdrwNet.Converter.Options;
 using OfdrwNet.Abstractions;
 
 namespace OfdrwNet.Converter.Refactor;
 
 internal class VectorExtractor : IPdfContentExtractor
 {
-    public Task ExtractAsync(PdfDocument pdfDoc, IOfdDocWriter ofd, ConvertHelper.PdfToOfdOptions options, ILogger? logger, System.Threading.CancellationToken token)
+    public Task ExtractAsync(PdfDocument pdfDoc, IOfdDocWriter ofd, PdfToOfdOptions options, ILogger? logger, System.Threading.CancellationToken token)
     {
         logger?.LogDebug("[PDF2OFD][Vector] PDF总页数: {Total}", pdfDoc.GetNumberOfPages());
 
@@ -73,7 +74,7 @@ internal class VectorExtractor : IPdfContentExtractor
         return Task.CompletedTask;
     }
 
-    private static void ProcessPage(PdfDocument pdfDoc, IOfdDocWriter ofd, ILogger? logger, int pageNum, ConvertHelper.PdfToOfdOptions options)
+    private static void ProcessPage(PdfDocument pdfDoc, IOfdDocWriter ofd, ILogger? logger, int pageNum, PdfToOfdOptions options)
     {
         var page = pdfDoc.GetPage(pageNum);
         var pageHeightPt = page.GetPageSize().GetHeight();

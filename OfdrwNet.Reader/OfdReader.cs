@@ -7,6 +7,7 @@ using System.IO.Compression;
 using System.Xml.Linq;
 using System.Threading.Tasks;
 using System.Threading;
+using OfdrwNet.Reader.Diagnostics;
 
 namespace OfdrwNet.Reader;
 
@@ -623,7 +624,7 @@ public class OfdReader : IDisposable
                 {
                     structure.DocumentXml = XDocument.Load(docPath);
                     actualDocPath = Path.GetDirectoryName(docPath);
-                    Console.WriteLine($"[LoadDocumentStructure] 找到Document.xml路径: {docPath}");
+                    ReaderLogger.InfoCore($"Found Document.xml: {docPath}");
                     break;
                 }
             }
@@ -677,14 +678,14 @@ public class OfdReader : IDisposable
     {
         try
         {
-            Console.WriteLine("[OfdReader] 开始加载DocumentRes.xml资源映射");
+            ReaderLogger.InfoCore("Loading DocumentRes resource mappings");
 
             var ns = XNamespace.Get("http://www.ofdspec.org/2016");
             var multiMedias = docResXml.Root?.Elements(ns + "MultiMedias")?.Elements(ns + "MultiMedia");
 
             if (multiMedias == null)
             {
-                Console.WriteLine("[OfdReader] 未找到MultiMedias节点");
+                ReaderLogger.InfoCore("No MultiMedias node found in DocumentRes.xml");
                 return;
             }
 
@@ -715,17 +716,16 @@ public class OfdReader : IDisposable
 
                         structure.AddResourceMapping(id, fullResourcePath);
                         mappingCount++;
-                        Console.WriteLine($"[OfdReader] 添加资源映射 ID={id}, Type={type}, Path={fullResourcePath}");
+                        ReaderLogger.InfoVerbose($"Added resource mapping ID={id}, Type={type}, Path={fullResourcePath}");
                     }
                 }
             }
 
-            Console.WriteLine($"[OfdReader] 完成资源映射加载，共加载 {mappingCount} 个资源");
+            ReaderLogger.InfoCore($"Completed loading DocumentRes mappings: {mappingCount} entries");
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"[OfdReader] 加载资源映射失败: {ex.Message}");
-            Console.WriteLine($"[OfdReader] 堆栈跟踪: {ex.StackTrace}");
+            ReaderLogger.Error($"Failed to load DocumentRes mappings: {ex.Message}", ex);
         }
     }    /// <summary>
     /// 加载文档元数据

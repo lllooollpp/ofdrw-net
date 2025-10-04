@@ -237,6 +237,7 @@ namespace OfdrwNet.WinFormsDemo
             if (_pageList == null || _ofdReader == null || _currentPageIndex < 0) return;
             EnsureViewport();
             if (_viewport == null) return;
+            
             try
             {
                 var rdPage = _pageList[_currentPageIndex];
@@ -249,7 +250,6 @@ namespace OfdrwNet.WinFormsDemo
                 int h = (int)(baseH * _zoomFactor);
                 _viewport.Zoom = _zoomFactor;
                 _viewport.IsLoading = true;
-                _viewport.Invalidate();
 
                 if (_renderingEngine != null)
                 {
@@ -265,21 +265,14 @@ namespace OfdrwNet.WinFormsDemo
                             currentVectors = new List<VectorObject>();
                             _pageVectors[pageKey] = currentVectors;
                         }
-                        System.Diagnostics.Trace.WriteLine($"[OfdViewerForm] 页面内容对象数量: {rdPage.ContentObjects.Count}, 本页矢量: {currentVectors.Count}, 缓存页数: {_pageVectors.Count}");
+                        
                         bool needExtract = rdPage.ContentObjects.Count == 0 || _forceVectorExtract;
                         if (needExtract)
                         {
-                            if (rdPage.ContentObjects.Count == 0)
-                                System.Diagnostics.Trace.WriteLine("[OfdViewerForm] 页面内容为空，执行初始提取");
-                            else
-                                System.Diagnostics.Trace.WriteLine($"[OfdViewerForm] 强制矢量提取: 现有 {rdPage.ContentObjects.Count} 个对象，尝试追加 VectorObject");
-
                             double sx = w / (rdPage.Width <= 0 ? 1 : rdPage.Width);
                             double sy = h / (rdPage.Height <= 0 ? 1 : rdPage.Height);
-                            System.Diagnostics.Trace.WriteLine($"[OfdViewerForm] 页面缩放比例: sx={sx:F4}, sy={sy:F4}");
 
                             var ros = PageContentExtractor.ExtractRenderObjects(rdPage, sx, sy);
-                            System.Diagnostics.Trace.WriteLine($"[OfdViewerForm] 提取到 {ros?.Count ?? 0} 个对象");
                             if (ros != null)
                             {
                                 int addContent = 0, addVector = 0; int replaced = 0;
@@ -293,7 +286,6 @@ namespace OfdrwNet.WinFormsDemo
                                 }
                                 if (_forceVectorExtract && currentVectors.Count > 0)
                                 {
-                                    // 强制模式下重新提取：替换本页缓存
                                     replaced = currentVectors.Count;
                                     currentVectors.Clear();
                                 }
@@ -302,20 +294,11 @@ namespace OfdrwNet.WinFormsDemo
                                 {
                                     if (!existing.Contains(vobj.Id)) { currentVectors.Add(vobj); addVector++; }
                                 }
-                                System.Diagnostics.Trace.WriteLine($"[OfdViewerForm] 初始/追加 Content={addContent} 新增Vector={addVector} 替换旧矢量={replaced} (本页Vector={currentVectors.Count})");
                             }
-                            System.Diagnostics.Trace.WriteLine($"[OfdViewerForm] 最终页面内容对象数量: {rdPage.ContentObjects.Count}");
-                        }
-                        else
-                        {
-                            System.Diagnostics.Trace.WriteLine("[OfdViewerForm] 已有内容且未启用强制提取，跳过提取阶段");
                         }
 
                         _viewport.SetRenderContext(rc);
                         var renderObjects = rdPage.ContentObjects.Cast<RenderObject>().Concat(_pageVectors[pageKey]).ToList();
-                        System.Diagnostics.Trace.WriteLine($"[OfdViewerForm] 设置页面内容，渲染对象数量: {renderObjects.Count}");
-                        foreach (var obj in renderObjects.Take(5))
-                            System.Diagnostics.Trace.WriteLine($"[OfdViewerForm] 渲染对象: {obj.GetType().Name} (ID: {obj.Id}, 可见: {obj.Visible})");
                         _viewport.SetPageContent(renderObjects, _renderingEngine);
                     }
                     catch (Exception rex)
@@ -331,7 +314,6 @@ namespace OfdrwNet.WinFormsDemo
 
                 _viewport.IsLoading = false;
                 _viewport.Size = new Size(w, h);
-                _viewport.Invalidate();
                 CenterViewport();
             }
             catch (Exception ex)

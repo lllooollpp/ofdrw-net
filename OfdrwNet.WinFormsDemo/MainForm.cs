@@ -3,7 +3,8 @@ using OfdrwNet.WinFormsDemo.Converters;
 using System.IO.Compression;
 using System.Windows.Forms;
 using OfdrwNet.Converter; // 新增：使用 ConvertHelper
-using iText.Kernel.Pdf; // 新增：获取 PDF 页数
+using iText.Kernel.Pdf;
+using OfdrwNet.Converter.Options; // 新增：获取 PDF 页数
 
 namespace OfdrwNet.WinFormsDemo;
 
@@ -521,7 +522,8 @@ public partial class MainForm : Form
             else if (rbPdfToOfd.Checked)
             {
                 _logger.LogInformation("执行PDF到OFD转换");
-                var pdfOptions = new ConvertHelper.PdfToOfdOptions
+
+                var pdfOptions = new PdfToOfdOptions
                 {
                     ExtractAndEmbedFonts = true,
                     PerGlyphPositioning = false, // 改为false，使用更稳定的文本块定位，避免文字堆叠

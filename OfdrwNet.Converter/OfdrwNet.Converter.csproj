@@ -15,15 +15,20 @@
     <ProjectReference Include="..\OfdrwNet.Reader\OfdrwNet.Reader.csproj" />
     <ProjectReference Include="..\OfdrwNet.Graphics\OfdrwNet.Graphics.csproj" />
     <ProjectReference Include="..\OfdrwNet.Layout\OfdrwNet.Layout.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Text\OfdrwNet.Text.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Image\OfdrwNet.Image.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Font\OfdrwNet.Font.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="itext7.font-asian" Version="8.0.0" />
     <PackageReference Include="SixLabors.ImageSharp" Version="3.1.11" />
     <PackageReference Include="SkiaSharp" Version="2.88.6" />
     <PackageReference Include="itext7" Version="8.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.8" />
     <PackageReference Include="Microsoft.Playwright" Version="1.44.0" />
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    <PackageReference Include="System.Text.Json" Version="9.0.8" />
+    <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="14.8.2" />
   <PackageReference Include="lcmsNET" Version="1.1.0" />
   <PackageReference Include="QuickJS.NET" Version="0.0.3" />
     <PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />

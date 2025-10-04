@@ -16,7 +16,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    <PackageReference Include="itext7" Version="8.0.0" />
+    <PackageReference Include="itext7.font-asian" Version="8.0.0" />
+    <PackageReference Include="System.Text.Json" Version="9.0.8" />
+    <PackageReference Include="SkiaSharp" Version="2.88.6" />
   </ItemGroup>
 
 </Project>

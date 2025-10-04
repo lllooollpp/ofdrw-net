@@ -1,22 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0-windows</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AssemblyName>OfdrwNet.Text</AssemblyName>
+    <RootNamespace>OfdrwNet.Text</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="itext7" Version="8.0.0" />
     <PackageReference Include="itext7.font-asian" Version="8.0.0" />
-    <PackageReference Include="System.Drawing.Common" Version="8.0.0" />
-    <PackageReference Include="System.Text.Json" Version="9.0.8" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\OfdrwNet.Core\OfdrwNet.Core.csproj" />
-    <ProjectReference Include="..\OfdrwNet.Abstractions\OfdrwNet.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

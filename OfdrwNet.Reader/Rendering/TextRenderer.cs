@@ -86,32 +86,73 @@ namespace OfdrwNet.Reader.Rendering
                     if (preview.Length > 80) preview = preview.Substring(0, 80) + "...";
                 }
                 Debug.WriteLine($"[TextRenderer] Begin Text Id={textObject.Id} Boundary=({textObject.Boundary.X:0.###},{textObject.Boundary.Y:0.###},{textObject.Boundary.Width:0.###},{textObject.Boundary.Height:0.###}) CTM={ctmStr} Font={fontDesc} Length={(textObject.Text?.Length ?? 0)} Text=\"{preview}\"");
-                // Graphics 有效性快速探测（可能被外部提前释放）
-                try { _ = graphics.DpiX; } catch (Exception gex) { Debug.WriteLine($"[TextRenderer] Graphics invalid early, skip TextObject {textObject.Id}: {gex.Message}"); return true; }
-                // 保存图形状态
-                var state = graphics.Save();
-
-                // 应用变换矩阵
-                ApplyTransform(graphics, textObject, renderContext);
-
-                // 安全设置文本渲染质量
-                SafeApplyTextRenderingHint(graphics, renderContext);
-
-                // 获取字体
-                var font = await GetFontAsync(textObject.Font, renderContext);
-
-                // 获取画刷并确保释放
-                using (var brush = CreateBrush(textObject.Color))
+                
+                // Validate Graphics state before attempting to save
+                try
                 {
-                    // 渲染文本
-                    await RenderTextContentAsync(textObject, graphics, font, brush, renderContext);
+                    // Test access to Graphics properties to ensure it's valid
+                    _ = graphics.IsClipEmpty;
+                    _ = graphics.DpiX;
+                }
+                catch (Exception gex)
+                {
+                    // Graphics object is in invalid state, skip rendering
+                    Debug.WriteLine($"[TextRenderer] Graphics invalid for object {textObject.Id}: {gex.Message}");
+                    return false;
                 }
 
-                // 恢复图形状态
-                graphics.Restore(state);
+                GraphicsState? state = null;
+                bool stateSaved = false;
+                try
+                {
+                    // 保存图形状态
+                    state = graphics.Save();
+                    stateSaved = true;
+                }
+                catch (ArgumentException)
+                {
+                    // Graphics.Save() can fail with "Parameter is not valid" in certain threading scenarios
+                    // Fall back to rendering without save/restore
+                    Debug.WriteLine($"[TextRenderer] Graphics.Save() failed for object {textObject.Id}, rendering without state save");
+                }
 
-                Debug.WriteLine($"[TextRenderer] End Text Id={textObject.Id} Success=True");
-                return true;
+                try
+                {
+                    // 应用变换矩阵
+                    ApplyTransform(graphics, textObject, renderContext);
+
+                    // 安全设置文本渲染质量
+                    SafeApplyTextRenderingHint(graphics, renderContext);
+
+                    // 获取字体
+                    var font = await GetFontAsync(textObject.Font, renderContext);
+
+                    // 获取画刷并确保释放
+                    using (var brush = CreateBrush(textObject.Color))
+                    {
+                        // 渲染文本
+                        await RenderTextContentAsync(textObject, graphics, font, brush, renderContext);
+                    }
+
+                    Debug.WriteLine($"[TextRenderer] End Text Id={textObject.Id} Success=True");
+                    return true;
+                }
+                finally
+                {
+                    if (stateSaved && state != null)
+                    {
+                        try
+                        {
+                            // 恢复图形状态
+                            graphics.Restore(state);
+                        }
+                        catch (ArgumentException)
+                        {
+                            // Ignore restore failures - graphics might have been invalidated
+                            Debug.WriteLine($"[TextRenderer] Graphics.Restore() failed for object {textObject.Id}");
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {

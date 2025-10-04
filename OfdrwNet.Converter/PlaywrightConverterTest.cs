@@ -1,4 +1,5 @@
 using OfdrwNet.Converter;
+using OfdrwNet.Converter.Options;
 using Microsoft.Extensions.Logging;
 
 namespace OfdrwNet.Converter.Tests;
@@ -80,13 +81,13 @@ public class PlaywrightConverterTest
 
             // 1. 传统方法
             logger.LogInformation("使用传统方法转换...");
-            var traditionalOptions = new ConvertHelper.PdfToOfdOptions
+            var traditionalOptions = new PdfToOfdOptions
             {
                 ExtractText = true,
                 ExtractImage = true,
                 Logger = logger
             };
-            
+
             await ConvertHelper.PdfToOfdAsync(testPdfPath, Path.GetDirectoryName(traditionalOutput) ?? "", traditionalOptions);
 
             // 2. Playwright 方法
@@ -102,7 +103,7 @@ public class PlaywrightConverterTest
 
             // 3. 比较结果
             logger.LogInformation("转换完成，比较结果:");
-            
+
             if (File.Exists(traditionalOutput))
             {
                 var traditionalSize = new FileInfo(traditionalOutput).Length;

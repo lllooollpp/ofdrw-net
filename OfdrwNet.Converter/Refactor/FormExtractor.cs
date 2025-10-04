@@ -2,6 +2,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using iText.Kernel.Pdf;
 using Microsoft.Extensions.Logging;
+using OfdrwNet.Converter.Options;
 using OfdrwNet.Abstractions;
 
 namespace OfdrwNet.Converter.Refactor;
@@ -32,7 +33,7 @@ internal class FormExtractor : IPdfContentExtractor
         _jsScanner = jsScanner;
     }
 
-    public Task ExtractAsync(PdfDocument pdfDoc, IOfdDocWriter ofd, ConvertHelper.PdfToOfdOptions options, ILogger? logger, CancellationToken token)
+    public Task ExtractAsync(PdfDocument pdfDoc, IOfdDocWriter ofd, PdfToOfdOptions options, ILogger? logger, CancellationToken token)
     {
         logger?.LogDebug("[PDF2OFD][Form] 开始表单字段提取");
 

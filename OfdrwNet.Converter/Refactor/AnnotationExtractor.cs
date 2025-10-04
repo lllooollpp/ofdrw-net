@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using iText.Kernel.Pdf;
 using Microsoft.Extensions.Logging;
 using OfdrwNet.Abstractions;
+using OfdrwNet.Converter.Options;
 using OfdrwNet.Core.BasicType;
 using OfdrwNet.Core.Annotation;
 
@@ -31,7 +32,7 @@ internal class AnnotationExtractor : IPdfContentExtractor
         _actionMapper = actionMapper;
     }
 
-    public Task ExtractAsync(PdfDocument pdfDoc, IOfdDocWriter ofd, ConvertHelper.PdfToOfdOptions options, ILogger? logger, CancellationToken token)
+    public Task ExtractAsync(PdfDocument pdfDoc, IOfdDocWriter ofd, PdfToOfdOptions options, ILogger? logger, CancellationToken token)
     {
         int totalPages = pdfDoc.GetNumberOfPages();
         logger?.LogDebug("[PDF2OFD][Annotation] PDF总页数: {TotalPages}", totalPages);

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using OfdrwNet.Reader.Model;
 using OfdrwNet.Reader.Rendering;
+using System.Threading;
 
 namespace OfdrwNet.WinFormsDemo.Viewer
 {
@@ -19,14 +20,25 @@ namespace OfdrwNet.WinFormsDemo.Viewer
         private RenderContext _renderContext = RenderContext.CreateDefault();
         private bool _isLoading;
         private string? _lastError;
-        private float _zoom = 1.0f; // 逻辑缩放（额外于 RenderContext.ScaleFactor）
-        // 离屏渲染支持
+        private float _zoom = 1.0f;
+        
+        // Performance optimization: reduce rendering
         private Bitmap? _backBuffer;
         private bool _renderDirty;
         private bool _isRendering;
         private CancellationTokenSource? _renderCts;
         private readonly object _renderLock = new();
         private RenderRequestReason _pendingReason = RenderRequestReason.None;
+        
+        // Cache key to avoid unnecessary re-renders
+        private string? _lastRenderCacheKey;
+        private int _lastRenderWidth;
+        private int _lastRenderHeight;
+        private DateTime _lastRenderTime = DateTime.MinValue;
+        
+        // Debug control - reduce log spam
+        private static bool _enableDebugLogs = false;
+        private int _debugCounter = 0;
 
         private enum RenderRequestReason
         {
@@ -46,6 +58,7 @@ namespace OfdrwNet.WinFormsDemo.Viewer
             get => _zoom;
             set
             {
+                if (Math.Abs(value - _zoom) < 0.001f) return; // Skip minimal changes
                 if (value <= 0) return;
                 _zoom = value;
                 RequestRender(RenderRequestReason.ZoomChanged);
@@ -58,7 +71,12 @@ namespace OfdrwNet.WinFormsDemo.Viewer
         public bool IsLoading
         {
             get => _isLoading;
-            set { _isLoading = value; Invalidate(); }
+            set { 
+                if (_isLoading != value) {
+                    _isLoading = value; 
+                    Invalidate(); 
+                }
+            }
         }
 
         /// <summary>
@@ -66,7 +84,10 @@ namespace OfdrwNet.WinFormsDemo.Viewer
         /// </summary>
         public void SetRenderContext(RenderContext ctx)
         {
-            _renderContext = ctx ?? RenderContext.CreateDefault();
+            var newCtx = ctx ?? RenderContext.CreateDefault();
+            if (IsSameRenderContext(newCtx)) return; // Skip if same
+            
+            _renderContext = newCtx;
             RequestRender(RenderRequestReason.ContextChanged);
         }
 
@@ -75,9 +96,13 @@ namespace OfdrwNet.WinFormsDemo.Viewer
         /// </summary>
         public void SetPageContent(IEnumerable<RenderObject>? objects, RenderingEngine? engine)
         {
+            bool contentChanged = !ReferenceEquals(_pageObjects, objects) || !ReferenceEquals(_renderingEngine, engine);
+            if (!contentChanged) return; // Skip if same references
+            
             _pageObjects = objects;
             _renderingEngine = engine;
             _lastError = null;
+            _lastRenderCacheKey = null; // Invalidate cache
             RequestRender(RenderRequestReason.ContentChanged);
         }
 
@@ -87,8 +112,10 @@ namespace OfdrwNet.WinFormsDemo.Viewer
         public void NotifyDataChanged()
         {
             _lastError = null;
+            _lastRenderCacheKey = null; // Invalidate cache
             RequestRender(RenderRequestReason.ContentChanged);
         }
+
         /// <summary>
         /// 初始化PageViewportControl的新实例
         /// </summary>
@@ -99,36 +126,26 @@ namespace OfdrwNet.WinFormsDemo.Viewer
             // 启用双缓冲以减少闪烁
             SetStyle(ControlStyles.AllPaintingInWmPaint |
                      ControlStyles.UserPaint |
-                     ControlStyles.DoubleBuffer, true);
+                     ControlStyles.DoubleBuffer |
+                     ControlStyles.ResizeRedraw, true);
         }
 
         private void InitializeComponent()
         {
             SuspendLayout();
-
-            // 基础控件设置
             BackColor = Color.White;
             Name = "PageViewportControl";
-
             ResumeLayout(false);
         }
 
         /// <summary>
         /// 重写OnPaint方法以自定义绘制页面内容
         /// </summary>
-        /// <param name="e">绘制事件参数</param>
-        protected override void OnPaint(System.Windows.Forms.PaintEventArgs e)
+        protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
             var g = e.Graphics;
             g.Clear(Color.White);
-
-            // 诊断：输出当前绘制状态
-            try
-            {
-                System.Diagnostics.Trace.WriteLine($"[OnPaint] backBuffer={( _backBuffer==null?"null":$"{_backBuffer.Width}x{_backBuffer.Height}" )} objs={( _pageObjects==null?"null":_pageObjects.Count())} engineReady={_renderingEngine!=null} isRendering={_isRendering} lastError={_lastError}");
-            }
-            catch { }
 
             // 加载状态
             if (IsLoading)
@@ -149,7 +166,7 @@ namespace OfdrwNet.WinFormsDemo.Viewer
                 return;
             }
 
-            // 离屏缓存路径：仅绘制已完成的位图；未完成显示提示，错误显示叠加
+            // 离屏缓存路径：仅绘制已完成的位图
             if (_backBuffer != null)
             {
                 g.DrawImageUnscaled(_backBuffer, 0, 0);
@@ -175,37 +192,50 @@ namespace OfdrwNet.WinFormsDemo.Viewer
         /// </summary>
         private void RequestRender(RenderRequestReason reason)
         {
-            if (!IsHandleCreated || Width <= 0 || Height <= 0) { Invalidate(); return; }
+            if (!IsHandleCreated || Width <= 0 || Height <= 0) { 
+                Invalidate(); 
+                return; 
+            }
 
-            var stackTrace = new System.Diagnostics.StackTrace(1, true);
-            var frame = stackTrace.GetFrame(0);
-            var callerInfo = frame != null ? $"{frame.GetMethod()?.Name}:{frame.GetFileLineNumber()}" : "Unknown";
+            // Check cache validity - avoid render if content hasn't changed
+            var cacheKey = GenerateRenderCacheKey();
+            if (cacheKey == _lastRenderCacheKey && 
+                Width == _lastRenderWidth && 
+                Height == _lastRenderHeight &&
+                _backBuffer != null &&
+                reason != RenderRequestReason.External)
+            {
+                if (_enableDebugLogs) {
+                    System.Diagnostics.Trace.WriteLine($"[PageViewport] Skipping render - cache valid for {reason}");
+                }
+                return; // Use cached result
+            }
 
             lock (_renderLock)
             {
                 _renderDirty = true;
-                bool hadCts = _renderCts != null;
                 bool wasRendering = _isRendering;
 
                 if (wasRendering)
                 {
-                    if (reason > _pendingReason) _pendingReason = reason; // 记录最高优先级
-                    System.Diagnostics.Trace.WriteLine($"[PageViewport] RequestRender(累计) - 原因: {reason}, 正在渲染中, pending={_pendingReason}");
+                    if (reason > _pendingReason) _pendingReason = reason;
+                    if (_enableDebugLogs) {
+                        System.Diagnostics.Trace.WriteLine($"[PageViewport] RequestRender(queued) - {reason}, pending={_pendingReason}");
+                    }
                     return;
                 }
 
                 _pendingReason = RenderRequestReason.None;
                 _renderCts?.Cancel();
-                System.Diagnostics.Trace.WriteLine($"[PageViewport] RequestRender(启动) - 原因: {reason}, 来源: {callerInfo}, hadCts={hadCts}");
                 _renderCts = new CancellationTokenSource();
-                _ = StartRenderLoopAsync(_renderCts.Token);
+                
+                // Use ConfigureAwait(false) to avoid deadlocks
+                _ = Task.Run(() => StartRenderLoopAsync(_renderCts.Token));
             }
         }
 
         private async Task StartRenderLoopAsync(CancellationToken token)
         {
-            System.Diagnostics.Trace.WriteLine($"[PageViewport] 开始渲染循环");
-
             while (true)
             {
                 CancellationTokenSource? localCts;
@@ -213,226 +243,181 @@ namespace OfdrwNet.WinFormsDemo.Viewer
                 RenderingEngine? engine;
                 RenderContext ctx;
                 int w, h;
+                
                 lock (_renderLock)
                 {
                     if (!_renderDirty || token.IsCancellationRequested)
                     {
                         _isRendering = false;
-                        System.Diagnostics.Trace.WriteLine($"[PageViewport] 渲染循环结束 - dirty={_renderDirty}, cancelled={token.IsCancellationRequested}");
                         return;
                     }
                     _isRendering = true;
-                    _renderDirty = false; // 消费一次
-                    localCts = _renderCts; // 用于取消检测
+                    _renderDirty = false;
+                    localCts = _renderCts;
                     objs = _pageObjects;
                     engine = _renderingEngine;
                     ctx = _renderContext.Clone();
-                    // 方案B：对象 Boundary 已包含最终缩放后的屏幕像素，不再在渲染阶段做任何 ScaleTransform。
-                    // 因此强制 RenderContext 的 ScaleFactor = 1，避免下游再次缩放。
-                    ctx.ScaleFactor = 1.0;
+                    ctx.ScaleFactor = 1.0; // Force no additional scaling
                     w = Width; h = Height;
-                }
-
-                System.Diagnostics.Trace.WriteLine($"[PageViewport] 准备渲染 - 对象数量={objs?.Count() ?? 0}, 尺寸={w}x{h}, ctx.ScaleFactor={ctx.ScaleFactor}");
-                if (objs != null)
-                {
-                    try
-                    {
-                        int idx = 0;
-                        foreach (var o in objs.Take(5))
-                        {
-                            var b = o.Boundary;
-                            System.Diagnostics.Trace.WriteLine($"[PageViewport] SampleObj[{idx}] Id={o.Id} Type={o.GetType().Name} Bounds=({b.X},{b.Y},{b.Width},{b.Height}) Visible={o.Visible}");
-                            idx++;
-                        }
-                        // 计算整体边界
-                        try
-                        {
-                            var minX = objs.Min(o => o.Boundary.X);
-                            var minY = objs.Min(o => o.Boundary.Y);
-                            var maxX = objs.Max(o => o.Boundary.Right);
-                            var maxY = objs.Max(o => o.Boundary.Bottom);
-                            System.Diagnostics.Trace.WriteLine($"[PageViewport] AllObjectsBounds = ({minX},{minY}) - ({maxX},{maxY}) W={maxX - minX} H={maxY - minY}");
-                        }
-                        catch (Exception bbEx)
-                        {
-                            System.Diagnostics.Trace.WriteLine($"[PageViewport] 计算整体边界失败: {bbEx.Message}");
-                        }
-                    }
-                    catch (Exception sx)
-                    {
-                        System.Diagnostics.Trace.WriteLine($"[PageViewport] 采样对象失败: {sx.Message}");
-                    }
                 }
 
                 if (objs == null || engine == null || w <= 0 || h <= 0)
                 {
                     lock (_renderLock) { _isRendering = false; }
-                    System.Diagnostics.Trace.WriteLine($"[PageViewport] 渲染跳过 - 对象或引擎为空，或尺寸无效");
                     return;
                 }
 
+                Bitmap? bmp = null;
                 try
                 {
-                    System.Diagnostics.Trace.WriteLine($"[PageViewport] 开始后台渲染...");
-                    var bmp = new Bitmap(w, h);
+                    var startTime = DateTime.UtcNow;
+                    
+                    // Pre-allocate bitmap with better performance settings
+                    bmp = new Bitmap(w, h, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+                    
                     using (var g = System.Drawing.Graphics.FromImage(bmp))
                     {
-                        g.Clear(Color.White);
-                        System.Diagnostics.Trace.WriteLine($"[PageViewport] 调用渲染引擎，对象数量: {objs.Count()}");
-
-                        // 真正渲染（同步等待确保 g 生命周期内完成）
-                        var renderResult = await engine.RenderPageAsync(objs, g, ctx);
-
-                        System.Diagnostics.Trace.WriteLine($"[PageViewport] 渲染引擎返回结果 - 成功: {renderResult.Success}, 错误: {renderResult.ErrorMessage}");
-
-                        if (renderResult.Statistics != null)
-                        {
-                            System.Diagnostics.Trace.WriteLine($"[PageViewport] 渲染统计 - 总对象: {renderResult.Statistics.ObjectCount}, 成功: {renderResult.Statistics.SuccessfulObjects}, 失败: {renderResult.Statistics.FailedObjects}");
-                        }
-
-                        // 即使渲染引擎返回错误，我们也应该显示已渲染的内容
-                        if (!renderResult.Success && !string.IsNullOrEmpty(renderResult.ErrorMessage))
-                        {
-                            System.Diagnostics.Trace.WriteLine($"[PageViewport] 渲染引擎报告问题，但继续显示: {renderResult.ErrorMessage}");
-                            _lastError = renderResult.ErrorMessage;
-                        }
-
-                        // 调试叠加：绘制对象边界，便于确认是否坐标在视口之外 / 是否被绘制
+                        // Validate Graphics before setting properties
                         try
                         {
-                            const bool DEBUG_OVERLAY = true; // 可切换
-                            if (DEBUG_OVERLAY && objs != null)
-                            {
-                                using var penNormal = new Pen(Color.FromArgb(160, Color.Red), 1f);
-                                using var penBad = new Pen(Color.Magenta, 1f);
-                                int drawn = 0;
-                                double minX = double.MaxValue, minY = double.MaxValue, maxX = double.MinValue, maxY = double.MinValue;
-                                foreach (var o in objs)
-                                {
-                                    var b = o.Boundary;
-                                    if (double.IsNaN(b.X) || double.IsNaN(b.Y) || double.IsNaN(b.Width) || double.IsNaN(b.Height) ||
-                                        double.IsInfinity(b.X) || double.IsInfinity(b.Y) || double.IsInfinity(b.Width) || double.IsInfinity(b.Height) ||
-                                        b.Width <= 0 || b.Height <= 0)
-                                    {
-                                        System.Diagnostics.Trace.WriteLine($"[PageViewport][DEBUG] 异常边界对象 Id={o.Id} Type={o.GetType().Name} Bounds=({b.X},{b.Y},{b.Width},{b.Height}) Visible={o.Visible}");
-                                        if (drawn < 200)
-                                        {
-                                            // 画一个 10x10 小叉定位
-                                            g.DrawLine(penBad, 0, 0, 0, 0); // 占位防 GDI 优化
-                                        }
-                                        continue;
-                                    }
-                                    if (b.X < minX) minX = b.X; if (b.Y < minY) minY = b.Y;
-                                    if (b.Right > maxX) maxX = b.Right; if (b.Bottom > maxY) maxY = b.Bottom;
-                                    if (drawn < 200) // 避免过多 GDI 调用
-                                    {
-                                        // 只在可见区域附近才画，做一个范围限制（扩大 200 像素阈值）
-                                        if (b.Right >= -200 && b.Bottom >= -200 && b.X <= bmp.Width + 200 && b.Y <= bmp.Height + 200)
-                                        {
-                                            g.DrawRectangle(penNormal, (float)b.X, (float)b.Y, (float)b.Width, (float)b.Height);
-                                            drawn++;
-                                        }
-                                    }
-                                }
-                                if (minX <= maxX && minY <= maxY)
-                                {
-                                    System.Diagnostics.Trace.WriteLine($"[PageViewport][DEBUG] AllBounds(minX={minX},minY={minY},maxX={maxX},maxY={maxY},W={maxX-minX},H={maxY-minY}) canvas={bmp.Width}x{bmp.Height}");
-                                }
-                                else
-                                {
-                                    System.Diagnostics.Trace.WriteLine("[PageViewport][DEBUG] 未计算到有效边界");
-                                }
-                            }
+                            _ = g.IsClipEmpty; // Test Graphics validity
                         }
-                        catch (Exception ovEx)
+                        catch (Exception gex)
                         {
-                            System.Diagnostics.Trace.WriteLine($"[PageViewport][DEBUG] 边界叠加失败: {ovEx.Message}");
+                            throw new InvalidOperationException($"Graphics from bitmap is invalid: {gex.Message}");
+                        }
+
+                        // Optimize graphics settings for performance
+                        g.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceOver;
+                        g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighSpeed;
+                        g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Low;
+                        g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed;
+                        g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighSpeed;
+                        g.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
+                        
+                        g.Clear(Color.White);
+
+                        // Render with timeout protection
+                        var renderTask = engine.RenderPageAsync(objs, g, ctx);
+                        var timeoutTask = Task.Delay(5000, token); // 5 second timeout
+                        
+                        var completedTask = await Task.WhenAny(renderTask, timeoutTask);
+                        
+                        RenderResult renderResult;
+                        if (completedTask == timeoutTask)
+                        {
+                            throw new TimeoutException("Rendering timeout after 5 seconds");
+                        }
+                        else
+                        {
+                            renderResult = await renderTask;
+                        }
+
+                        var renderTime = DateTime.UtcNow - startTime;
+                        
+                        // Log only significant events or errors
+                        if (!renderResult.Success || renderTime.TotalMilliseconds > 1000)
+                        {
+                            System.Diagnostics.Trace.WriteLine($"[PageViewport] Render completed - Success: {renderResult.Success}, Time: {renderTime.TotalMilliseconds:F0}ms, Objects: {objs.Count()}");
+                        }
+
+                        if (!renderResult.Success && !string.IsNullOrEmpty(renderResult.ErrorMessage))
+                        {
+                            _lastError = renderResult.ErrorMessage;
+                        }
+                        else
+                        {
+                            _lastError = null;
                         }
                     }
 
-                    System.Diagnostics.Trace.WriteLine($"[PageViewport] 检查取消状态 - token.IsCancellationRequested={token.IsCancellationRequested}, localCts.IsCancellationRequested={localCts?.IsCancellationRequested ?? false}");
-
-                    // 检查是否在渲染过程中有新的渲染请求（通过比较 CTS 实例）
+                    // Check if superseded
                     bool wasSuperseded;
                     lock (_renderLock)
                     {
                         wasSuperseded = _renderCts != localCts;
                     }
 
-                    System.Diagnostics.Trace.WriteLine($"[PageViewport] 渲染完成状态检查 - wasSuperseded={wasSuperseded}");
-
-                    if (wasSuperseded)
+                    if (!wasSuperseded)
                     {
-                        System.Diagnostics.Trace.WriteLine($"[PageViewport] 有新的渲染请求，但先显示当前结果");
-                        // 即使有新请求，也先显示当前成功的渲染结果
+                        // Update cache info
+                        _lastRenderCacheKey = GenerateRenderCacheKey();
+                        _lastRenderWidth = w;
+                        _lastRenderHeight = h;
+                        _lastRenderTime = DateTime.UtcNow;
+                        
+                        // Swap buffers
                         var old = Interlocked.Exchange(ref _backBuffer, bmp);
                         old?.Dispose();
-                        System.Diagnostics.Trace.WriteLine($"[PageViewport] 当前结果已显示，继续处理新请求");
+                        bmp = null; // Prevent disposal in finally block
+                        
                         if (!IsDisposed && !token.IsCancellationRequested)
                         {
-                            try { BeginInvoke((Action)(Invalidate)); } catch { }
+                            try { 
+                                if (InvokeRequired) {
+                                    BeginInvoke((Action)Invalidate);
+                                } else {
+                                    Invalidate();
+                                }
+                            } catch { }
                         }
-                        // 继续循环，处理新的渲染请求
                     }
                     else
                     {
-                        // 交换位图 - 渲染成功且没有被取代
-                        var old = Interlocked.Exchange(ref _backBuffer, bmp);
-                        old?.Dispose();
-                        // 首像素调试（保留简化版本）
-                        if (_backBuffer != null)
-                        {
-                            try
-                            {
-                                var px = _backBuffer.GetPixel(0, 0);
-                                System.Diagnostics.Trace.WriteLine($"[PageViewport] 渲染完成，更新显示 backBuffer={_backBuffer.Width}x{_backBuffer.Height} firstPixel=ARGB({px.A},{px.R},{px.G},{px.B})");
-                            }
-                            catch { }
-                        }
                         if (!IsDisposed && !token.IsCancellationRequested)
                         {
-                            try { BeginInvoke((Action)(Invalidate)); } catch { }
+                            try { 
+                                if (InvokeRequired) {
+                                    BeginInvoke((Action)Invalidate);
+                                } else {
+                                    Invalidate();
+                                }
+                            } catch { }
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    System.Diagnostics.Trace.WriteLine($"[PageViewport] 渲染异常: {ex.Message}");
-                    System.Diagnostics.Trace.WriteLine($"[PageViewport] 异常详情: {ex}");
                     _lastError = ex.Message;
-                    try { if (!IsDisposed) BeginInvoke((Action)(Invalidate)); } catch { }
+                    try { 
+                        if (!IsDisposed) {
+                            if (InvokeRequired) {
+                                BeginInvoke((Action)Invalidate);
+                            } else {
+                                Invalidate();
+                            }
+                        }
+                    } catch { }
+                }
+                finally
+                {
+                    // Clean up bitmap if it wasn't transferred to _backBuffer
+                    bmp?.Dispose();
                 }
 
-                // 循环检查是否在渲染期间又被标记为脏；否则退出
+                // Check for pending work
                 lock (_renderLock)
                 {
                     if (!_renderDirty)
                     {
                         if (_pendingReason != RenderRequestReason.None)
                         {
-                            var pend = _pendingReason;
                             _pendingReason = RenderRequestReason.None;
-                            System.Diagnostics.Trace.WriteLine($"[PageViewport] 渲染结束检测到待处理请求 -> 重新渲染 (原因: {pend})");
-                            _renderDirty = true; // 触发再次循环
+                            _renderDirty = true;
                         }
                         else
                         {
                             _isRendering = false;
-                            System.Diagnostics.Trace.WriteLine($"[PageViewport] 渲染循环正常结束");
                             return;
                         }
                     }
                 }
-                System.Diagnostics.Trace.WriteLine($"[PageViewport] 继续下一轮渲染...");
-                // 继续下一轮（立即，不延时）
             }
         }
 
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
-            System.Diagnostics.Trace.WriteLine($"[PageViewport] OnResize 触发 - 新尺寸: {Width}x{Height}, 正在渲染: {_isRendering}");
             if (Width > 0 && Height > 0)
             {
                 RequestRender(RenderRequestReason.Resize);
@@ -477,6 +462,23 @@ namespace OfdrwNet.WinFormsDemo.Viewer
             var size = g.MeasureString(info, font);
             g.FillRectangle(back, new RectangleF(4, Height - size.Height - 8, size.Width + 8, size.Height + 4));
             g.DrawString(info, font, fore, 8, Height - size.Height - 6);
+        }
+
+        private string GenerateRenderCacheKey()
+        {
+            var objsCount = _pageObjects?.Count() ?? 0;
+            var engineHash = _renderingEngine?.GetHashCode() ?? 0;
+            var ctxHash = _renderContext?.GetHashCode() ?? 0;
+            return $"{objsCount}_{engineHash}_{ctxHash}_{_zoom:F3}";
+        }
+
+        private bool IsSameRenderContext(RenderContext newCtx)
+        {
+            if (_renderContext == null) return false;
+            return Math.Abs(_renderContext.ScaleFactor - newCtx.ScaleFactor) < 0.001 &&
+                   _renderContext.DpiX == newCtx.DpiX &&
+                   _renderContext.DpiY == newCtx.DpiY &&
+                   _renderContext.ViewPort.Equals(newCtx.ViewPort);
         }
     }
 }
