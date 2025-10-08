@@ -9,6 +9,7 @@ using OfdrwNet.Core;
 using OfdrwNet.Core.BasicStructure.PageObj;
 using OfdrwNet.Core.BasicStructure.PageObj.Layer;
 using OfdrwNet.Core.BasicStructure.PageObj.Layer.Block;
+using OfdrwNet.Text;
 using OfdrwNet.Core.BasicType;
 using OfdrwNet.Core.Graph.PathObj;
 using OfdrwNet.Core.Graph;
@@ -17,17 +18,23 @@ using OfdrwNet.Core.PageDescription.Color;
 using OfdrwNet.Core.Text;
 using OfdrwNet.Models;
 using OfdrwNet.Utils;
+using OfdrwNet.Font;
+using RawImage = OfdrwNet.Image.RawImage;
+using OfdrwNet.Image;
 
 namespace OfdrwNet.Services;
 
 internal sealed class PageContentWriter
 {
     private readonly ILogger? _logger;
-    private readonly ImageProcessor _imageProcessor;
+    private readonly OfdImageProcessor _imageProcessor;
+    private readonly OfdTextObjectBuilder _textObjectBuilder;
+
     public PageContentWriter(ILogger? logger)
     {
         _logger = logger;
-        _imageProcessor = new ImageProcessor(logger);
+        _imageProcessor = new OfdImageProcessor(logger);
+        _textObjectBuilder = new OfdTextObjectBuilder();
     }
 
     public async Task WritePageAsync(
@@ -43,7 +50,27 @@ internal sealed class PageContentWriter
         double pageWidth,
         double pageHeight)
     {
-        var imagesOnPageList = _imageProcessor.OrderImages(allImages, pageNumber, imageOrderingStrategy);
+        // 转换为 OfdRawImage 集合，通过属性复制
+        var ofdImages = allImages.Select(img => new OfdRawImage
+        {
+            Format = img.Format,
+            X = img.X,
+            Y = img.Y,
+            Width = img.Width,
+            Height = img.Height,
+            Data = img.Data,
+            Page = img.Page,
+            ResourceID = img.ResourceID,
+            Hash = img.Hash,
+            IsFirstResource = img.IsFirstResource,
+            CTM = img.CTM,
+            Sequence = img.Sequence,
+            Z = img.Z,
+            Alpha = img.Alpha,
+            AltText = img.AltText
+        });
+
+        var imagesOnPageList = _imageProcessor.OrderImages(ofdImages, pageNumber, imageOrderingStrategy);
         if (imagesOnPageList.Count > 0)
         {
             _logger?.LogDebug("[PageContentWriter] Page={Page} ImageCount={Count} RIDs={RIDs}", pageNumber, imagesOnPageList.Count, string.Join(',', imagesOnPageList.Select(i => i.ResourceID)));
@@ -61,6 +88,7 @@ internal sealed class PageContentWriter
             _logger?.LogDebug("[PageContentWriter] Page={Page} PathCount={Cnt}", pageNumber, pathItems.Count);
         }
 
+        // 处理字形运行（文本）
         var textRuns = items.OfType<RawGlyphRun>()
             .Where(r => r.Page == pageNumber && !string.IsNullOrWhiteSpace(r.Text))
             .ToList();
@@ -84,12 +112,33 @@ internal sealed class PageContentWriter
             layer.AddPageObject(pathObject);
         }
 
+        // 使用统一的文本对象构建器
         foreach (var run in textRuns)
         {
-            var textObject = CreateTextObject(run, fontMap, nextId);
-            if (textObject != null)
+            try
             {
-                layer.AddPageObject(textObject);
+                // 转换为 OfdRawGlyphRun
+                var ofdGlyphRun = OfdRawGlyphRun.FromRawGlyphRun(run);
+
+                // 转换字体映射格式
+                var fontMapForBuilder = fontMap.ToDictionary(kv => kv.Key, kv => (object)kv.Value);
+
+                // 使用统一的文本对象构建器
+                var textObjectElement = _textObjectBuilder.CreateTextObject(ofdGlyphRun, fontMapForBuilder, nextId);
+
+                if (textObjectElement != null)
+                {
+                    // 将 XElement 转换为 TextObject
+                    var textObject = ConvertXElementToTextObject(textObjectElement, nextId);
+                    if (textObject != null)
+                    {
+                        layer.AddPageObject(textObject);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger?.LogWarning(ex, "[PageContentWriter] 创建文本对象失败: {Text}", run.Text);
             }
         }
 
@@ -200,101 +249,130 @@ internal sealed class PageContentWriter
         return pathObject;
     }
 
-    private TextObject? CreateTextObject(RawGlyphRun run, IDictionary<string, OfdFont> fontMap, Func<int> nextId)
+    /// <summary>
+    /// 将 XElement 转换为 TextObject
+    /// </summary>
+    /// <param name="textElement">文本对象的 XElement</param>
+    /// <param name="nextId">ID 生成器</param>
+    /// <returns>TextObject 实例</returns>
+    private TextObject? ConvertXElementToTextObject(System.Xml.Linq.XElement textElement, Func<int> nextId)
     {
-        if (string.IsNullOrEmpty(run.Text))
+        try
         {
+            // 解析基本属性
+            var id = textElement.Attribute("ID")?.Value;
+            var fontRef = textElement.Attribute("Font")?.Value;
+            var size = float.TryParse(textElement.Attribute("Size")?.Value, out var sizeVal) ? sizeVal : 12f;
+            var boundary = textElement.Attribute("Boundary")?.Value;
+            var stroke = bool.TryParse(textElement.Attribute("Stroke")?.Value, out var strokeVal) && strokeVal;
+            var fill = !bool.TryParse(textElement.Attribute("Fill")?.Value, out var fillVal) || fillVal;
+
+            if (string.IsNullOrEmpty(fontRef) || string.IsNullOrEmpty(boundary))
+                return null;
+
+            // 解析边界框
+            var boundaryParts = boundary.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            if (boundaryParts.Length < 4)
+                return null;
+
+            var x = double.TryParse(boundaryParts[0], out var xVal) ? xVal : 0;
+            var y = double.TryParse(boundaryParts[1], out var yVal) ? yVal : 0;
+            var width = double.TryParse(boundaryParts[2], out var widthVal) ? widthVal : 0;
+            var height = double.TryParse(boundaryParts[3], out var heightVal) ? heightVal : 0;
+
+            // 创建 TextObject
+            var textObject = new TextObject(new StRefId(int.TryParse(id, out var idVal) ? idVal : nextId()));
+            textObject.SetFont(new StRefId(int.TryParse(fontRef, out var fontRefVal) ? fontRefVal : 1));
+            textObject.SetSize(size);
+            textObject.SetBoundary(x, y, width, height);
+            textObject.SetStroke(stroke);
+            textObject.SetFill(fill);
+
+            // 设置填充颜色
+            if (fill)
+            {
+                textObject.SetFillColor(CreateBlackFillColor());
+            }
+
+            // 解析 CTM（如果有）
+            var ctmAttr = textElement.Attribute("CTM")?.Value;
+            if (!string.IsNullOrEmpty(ctmAttr))
+            {
+                var ctmParts = ctmAttr.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                if (ctmParts.Length >= 6)
+                {
+                    var ctmValues = new double[6];
+                    for (int i = 0; i < 6; i++)
+                    {
+                        ctmValues[i] = double.TryParse(ctmParts[i], out var val) ? val : 0;
+                    }
+                    var ctm = CreateCtm(ctmValues);
+                    if (ctm != null)
+                    {
+                        textObject.SetCtm(ctm);
+                    }
+                }
+            }
+
+            // 解析 TextCode 元素
+            var textCodeElements = textElement.Elements("TextCode");
+            foreach (var tcElement in textCodeElements)
+            {
+                var tcX = double.TryParse(tcElement.Attribute("X")?.Value, out var tcXVal) ? tcXVal : 0;
+                var tcY = double.TryParse(tcElement.Attribute("Y")?.Value, out var tcYVal) ? tcYVal : 0;
+                var tcText = tcElement.Value ?? string.Empty;
+
+                if (!string.IsNullOrEmpty(tcText))
+                {
+                    var textCode = new TextCode()
+                        .SetCoordinate(tcX, tcY)
+                        .SetContent(tcText);
+
+                    // 解析 DeltaX（如果有）
+                    var deltaXAttr = tcElement.Attribute("DeltaX")?.Value;
+                    if (!string.IsNullOrEmpty(deltaXAttr))
+                    {
+                        var deltaXParts = deltaXAttr.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                        var deltaXValues = new List<double>();
+                        foreach (var part in deltaXParts)
+                        {
+                            if (double.TryParse(part, out var val))
+                                deltaXValues.Add(val);
+                        }
+                        if (deltaXValues.Count > 0)
+                        {
+                            textCode.SetDeltaX(new StArray(deltaXValues.ToArray()));
+                        }
+                    }
+
+                    // 解析 DeltaY（如果有）
+                    var deltaYAttr = tcElement.Attribute("DeltaY")?.Value;
+                    if (!string.IsNullOrEmpty(deltaYAttr))
+                    {
+                        var deltaYParts = deltaYAttr.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                        var deltaYValues = new List<double>();
+                        foreach (var part in deltaYParts)
+                        {
+                            if (double.TryParse(part, out var val))
+                                deltaYValues.Add(val);
+                        }
+                        if (deltaYValues.Count > 0)
+                        {
+                            textCode.SetDeltaY(new StArray(deltaYValues.ToArray()));
+                        }
+                    }
+
+                    textObject.AddTextCode(textCode);
+                }
+            }
+
+            return textObject;
+        }
+        catch (Exception ex)
+        {
+            _logger?.LogWarning(ex, "[PageContentWriter] 转换文本对象失败");
             return null;
         }
-
-        if (!fontMap.TryGetValue(run.FontName, out var font))
-        {
-            font = fontMap.Values.FirstOrDefault();
-        }
-
-        if (font == null)
-        {
-            _logger?.LogWarning("[PageContentWriter] 无可用字体，跳过文本：{FontName}", run.FontName);
-            return null;
-        }
-
-        var textLen = run.Text.Length;
-
-        var width = run.Width;
-        if (width <= 0 && run.CharStarts is { Length: > 0 } && run.CharAdvances is { Length: > 0 })
-        {
-            var left = run.CharStarts[0];
-            var right = run.CharStarts[^1] + run.CharAdvances[^1];
-            width = Math.Max(width, right - left);
-        }
-        if (width <= 0 && run.DeltaX is { Length: > 0 })
-        {
-            width = run.DeltaX.Sum();
-        }
-        if (width <= 0)
-        {
-            width = textLen * run.FontSizeMm * 0.6;
-        }
-
-        const double fontAscentRatio = 0.80;
-        const double lineHeightFactor = 1.15;
-        var ascentHeight = run.FontSizeMm * fontAscentRatio;
-        var totalTextHeight = run.Height > 0 ? run.Height : run.FontSizeMm * lineHeightFactor;
-        var baselineY = run.BaselineY ?? (run.Y + ascentHeight);
-        var nominalTop = baselineY - ascentHeight;
-        var boundaryTop = Math.Min(run.Y, nominalTop);
-        var baselineOffset = baselineY - boundaryTop;
-        var descent = totalTextHeight - ascentHeight;
-        if (descent < 0)
-        {
-            descent = run.FontSizeMm * 0.2;
-        }
-        var boundaryHeight = baselineOffset + descent;
-
-        var textObject = new TextObject(new StRefId(nextId()));
-        textObject.SetFont(new StRefId(font.ID));
-        textObject.SetSize(run.FontSizeMm);
-        textObject.SetBoundary(run.X, boundaryTop, width, boundaryHeight);
-        textObject.SetStroke(false);
-        textObject.SetFill(true);
-    textObject.SetFillColor(CreateBlackFillColor());
-
-        var ctm = CreateCtm(run.CTM);
-        if (ctm != null)
-        {
-            textObject.SetCtm(ctm);
-        }
-
-        // 计算 TextCode 的 X：如果有 CharStarts，用第一个字形的 X 相对对象原点的偏移
-        var textCodeX = (run.CharStarts is { Length: > 0 }) ? run.CharStarts[0] - run.X : 0.0;
-        var textCode = new TextCode()
-            .SetCoordinate(textCodeX, baselineOffset)
-            .SetContent(run.Text);
-
-        if (run.DeltaX is { Length: > 0 })
-        {
-            textCode.SetDeltaX(new StArray(run.DeltaX));
-        }
-
-        if (run.DeltaY is { Length: > 0 })
-        {
-            textCode.SetDeltaY(new StArray(run.DeltaY));
-        }
-
-        textObject.AddTextCode(textCode);
-
-        if (run.Glyphs is { Length: > 0 })
-        {
-            var glyphArray = new StArray(run.Glyphs);
-            var cgTransform = new CtCgTransform()
-                .SetCodePosition(0)
-                .SetCodeCount(run.Glyphs.Length)
-                .SetGlyphCount(run.Glyphs.Length)
-                .SetGlyphs(glyphArray);
-            textObject.AddCgTransform(cgTransform);
-        }
-
-        return textObject;
     }
 
     private static StArray? CreateCtm(double[]? ctm)

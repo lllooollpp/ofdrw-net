@@ -6,11 +6,11 @@ namespace OfdrwNet.Core.Text;
 
 /// <summary>
 /// 文字定位
-/// 
+///
 /// 文字对象使用严格的文字定位信息进行定位
-/// 
+///
 /// 11.3 文字定位 图 61 表 46
-/// 
+///
 /// 对应 Java 版本的 org.ofdrw.core.text.TextCode
 /// </summary>
 public class TextCode : OfdElement, IClipAble
@@ -37,7 +37,7 @@ public class TextCode : OfdElement, IClipAble
     /// <returns>this</returns>
     public TextCode SetContent(string content)
     {
-        Element.Value = content;
+        SetText(content);
         return this;
     }
 

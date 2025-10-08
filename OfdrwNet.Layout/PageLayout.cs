@@ -12,12 +12,18 @@ public class PageLayout
     /// <summary>
     /// 页面宽度 (毫米)
     /// </summary>
-    public double Width { get; set; }
+    public double Width
+    {
+        get; set;
+    }
 
     /// <summary>
     /// 页面高度 (毫米)
     /// </summary>
-    public double Height { get; set; }
+    public double Height
+    {
+        get; set;
+    }
 
     /// <summary>
     /// 外边距
@@ -199,7 +205,7 @@ public class PageLayout
     {
         if (obj is PageLayout other)
         {
-            return Math.Abs(Width - other.Width) < 0.001 && 
+            return Math.Abs(Width - other.Width) < 0.001 &&
                    Math.Abs(Height - other.Height) < 0.001 &&
                    _margin.SequenceEqual(other._margin);
         }
@@ -251,10 +257,22 @@ public class PageLayout
 /// </summary>
 public class Rectangle
 {
-    public double X { get; set; }
-    public double Y { get; set; }
-    public double Width { get; set; }
-    public double Height { get; set; }
+    public double X
+    {
+        get; set;
+    }
+    public double Y
+    {
+        get; set;
+    }
+    public double Width
+    {
+        get; set;
+    }
+    public double Height
+    {
+        get; set;
+    }
 
     public Rectangle(double x, double y, double width, double height)
     {

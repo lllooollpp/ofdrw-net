@@ -20,7 +20,7 @@ namespace OfdrwNet.Converter.Core;
 public class PdfToOfdConverter
 {
     public const double Pt2Mm = 25.4 / 72.0; // 点到毫米转换常数
-    private static readonly System.Text.RegularExpressions.Regex subsetPrefixRegex = new System.Text.RegularExpressions.Regex(@"^[A-Z]{6}\+");
+    private static readonly System.Text.RegularExpressions.Regex _subsetPrefixRegex = new System.Text.RegularExpressions.Regex(@"^[A-Z]{6}\+");
 
     #region 同步转换方法
 
@@ -32,13 +32,7 @@ public class PdfToOfdConverter
         ConvertToOfdAsync(pdfPath, ofdOutputDir, options).GetAwaiter().GetResult();
     }
 
-    /// <summary>
-    /// 使用 Playwright + PDF.js 将 PDF 转换为 OFD（同步版本）
-    /// </summary>
-    public void ConvertByPlaywright(string pdfPath, string ofdOutputPath, PlaywrightConvertOptions? options = null)
-    {
-        ConvertByPlaywrightAsync(pdfPath, ofdOutputPath, options).GetAwaiter().GetResult();
-    }
+
 
     #endregion
 
@@ -108,16 +102,6 @@ public class PdfToOfdConverter
         }
     }
 
-    /// <summary>
-    /// 使用 Playwright + PDF.js 将 PDF 转换为 OFD（推荐方法）
-    /// 这种方法使用浏览器技术栈，在复杂 PDF 处理上更稳定
-    /// </summary>
-    public async Task ConvertByPlaywrightAsync(string pdfPath, string ofdOutputPath, PlaywrightConvertOptions? options = null)
-    {
-        using var converter = new PlaywrightPdfConverter();
-        await converter.InitializeAsync();
-        await converter.ConvertPdfToOfdAsync(pdfPath, ofdOutputPath, options);
-    }
 
     /// <summary>
     /// 新增：别名方法以兼容测试程序
@@ -232,162 +216,6 @@ public class PdfToOfdConverter
                 writer.ConfigureDocInfo(options.ConfigureDocInfo!);
             }
         }
-    }
-
-    /// <summary>
-    /// 应用 PDF 元数据到 OFD
-    /// </summary>
-    private static void ApplyPdfMetadataToOfd(PdfDocument pdfDoc, OfdWriter writer, PdfToOfdOptions options, ILogger? logger)
-    {
-        _ = logger;
-        var pdfInfo = pdfDoc.GetDocumentInfo();
-        if (pdfInfo == null)
-        {
-            return;
-        }
-
-        writer.ConfigureDocInfo(docInfo =>
-        {
-            var title = pdfInfo.GetTitle();
-            if (!string.IsNullOrWhiteSpace(title))
-            {
-                docInfo.SetTitle(title);
-            }
-
-            var author = pdfInfo.GetAuthor();
-            if (!string.IsNullOrWhiteSpace(author))
-            {
-                docInfo.SetAuthor(author);
-            }
-
-            var subject = pdfInfo.GetSubject();
-            if (!string.IsNullOrWhiteSpace(subject))
-            {
-                docInfo.SetSubject(subject);
-            }
-
-            var creator = pdfInfo.GetCreator();
-            if (!string.IsNullOrWhiteSpace(creator))
-            {
-                docInfo.SetCreator(creator);
-            }
-
-            var producer = pdfInfo.GetProducer();
-            if (!string.IsNullOrWhiteSpace(producer))
-            {
-                docInfo.SetCreatorVersion(producer);
-            }
-
-            var keywords = pdfInfo.GetKeywords();
-            if (!string.IsNullOrWhiteSpace(keywords))
-            {
-                docInfo.SetOfdEntity("Keywords", keywords);
-            }
-
-            var creationRaw = GetPdfInfoValue(pdfInfo, "CreationDate");
-            var normalizedCreation = NormalizePdfDateString(creationRaw);
-            if (!string.IsNullOrEmpty(normalizedCreation))
-            {
-                docInfo.SetOfdEntity("CreationDate", normalizedCreation);
-            }
-            else
-            {
-                var creationDate = TryParsePdfDate(creationRaw);
-                if (creationDate.HasValue)
-                {
-                    docInfo.SetCreationDate(creationDate.Value);
-                }
-            }
-
-            var modRaw = GetPdfInfoValue(pdfInfo, "ModDate");
-            var normalizedMod = NormalizePdfDateString(modRaw);
-            if (!string.IsNullOrEmpty(normalizedMod))
-            {
-                docInfo.SetOfdEntity("ModDate", normalizedMod);
-            }
-            else
-            {
-                var modDate = TryParsePdfDate(modRaw);
-                if (modDate.HasValue)
-                {
-                    docInfo.SetModDate(modDate.Value);
-                }
-            }
-        });
-    }
-
-    /// <summary>
-    /// 应用文档信息覆盖设置
-    /// </summary>
-    private static void ApplyDocInfoOverrides(OfdWriter writer, PdfToOfdOptions options)
-    {
-        if (writer == null || options == null)
-        {
-            return;
-        }
-
-        bool hasOverrides = options.RemoveDocId
-            || !string.IsNullOrWhiteSpace(options.DocTitle)
-            || !string.IsNullOrWhiteSpace(options.DocAuthor)
-            || !string.IsNullOrWhiteSpace(options.DocSubject)
-            || !string.IsNullOrWhiteSpace(options.DocKeywords)
-            || !string.IsNullOrWhiteSpace(options.DocCreator)
-            || !string.IsNullOrWhiteSpace(options.DocCreatorVersion)
-            || !string.IsNullOrWhiteSpace(options.DocCreationDateRaw)
-            || !string.IsNullOrWhiteSpace(options.DocModDateRaw);
-
-        if (!hasOverrides)
-        {
-            return;
-        }
-
-        writer.ConfigureDocInfo(docInfo =>
-        {
-            if (options.RemoveDocId)
-            {
-                docInfo.RemoveOfdElementsByNames("DocID");
-            }
-
-            if (!string.IsNullOrWhiteSpace(options.DocTitle))
-            {
-                docInfo.SetTitle(options.DocTitle);
-            }
-
-            if (!string.IsNullOrWhiteSpace(options.DocAuthor))
-            {
-                docInfo.SetAuthor(options.DocAuthor);
-            }
-
-            if (!string.IsNullOrWhiteSpace(options.DocSubject))
-            {
-                docInfo.SetSubject(options.DocSubject);
-            }
-
-            if (!string.IsNullOrWhiteSpace(options.DocKeywords))
-            {
-                docInfo.SetOfdEntity("Keywords", options.DocKeywords);
-            }
-
-            if (!string.IsNullOrWhiteSpace(options.DocCreator))
-            {
-                docInfo.SetCreator(options.DocCreator);
-            }
-
-            if (!string.IsNullOrWhiteSpace(options.DocCreatorVersion))
-            {
-                docInfo.SetCreatorVersion(options.DocCreatorVersion);
-            }
-
-            if (!string.IsNullOrWhiteSpace(options.DocCreationDateRaw))
-            {
-                docInfo.SetOfdEntity("CreationDate", options.DocCreationDateRaw);
-            }
-
-            if (!string.IsNullOrWhiteSpace(options.DocModDateRaw))
-            {
-                docInfo.SetOfdEntity("ModDate", options.DocModDateRaw);
-            }
-        });
     }
 
     /// <summary>

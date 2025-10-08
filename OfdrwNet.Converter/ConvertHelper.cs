@@ -194,23 +194,8 @@ public static class ConvertHelper
         return _pdfToOfdConverter.ConvertToOfdAsync(pdfPath, ofdOutputDir, options);
     }
 
-    /// <summary>
-    /// 使用 Playwright + PDF.js 将 PDF 转换为 OFD（同步版本）
-    /// 这种方法使用浏览器技术栈，在复杂 PDF 处理上更稳定
-    /// </summary>
-    public static void PdfToOfdByPlaywright(string pdfPath, string ofdOutputPath, PlaywrightConvertOptions? options = null)
-    {
-        _pdfToOfdConverter.ConvertByPlaywright(pdfPath, ofdOutputPath, options);
-    }
 
-    /// <summary>
-    /// 使用 Playwright + PDF.js 将 PDF 转换为 OFD（异步版本）
-    /// 这种方法使用浏览器技术栈，在复杂 PDF 处理上更稳定
-    /// </summary>
-    public static Task PdfToOfdByPlaywrightAsync(string pdfPath, string ofdOutputPath, PlaywrightConvertOptions? options = null)
-    {
-        return _pdfToOfdConverter.ConvertByPlaywrightAsync(pdfPath, ofdOutputPath, options);
-    }
+
 
     /// <summary>
     /// 兼容性方法：新增别名方法以兼容测试程序

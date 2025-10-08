@@ -1,5 +1,7 @@
 using Microsoft.Extensions.Logging;
 using OfdrwNet.Models;
+using OfdrwNet.Text;
+using OfdrwNet.Image;
 
 namespace OfdrwNet.Services;
 
@@ -14,7 +16,7 @@ internal sealed class PageGroupBuilder
     public List<(int PageNumber, List<object> Items)> Build(
         IList<object> streamQueue,
         IList<VirtualPage> virtualPages,
-        IList<RawImage> images,
+        IList<OfdrwNet.Image.RawImage> images,
         IList<RawPath> paths)
     {
         var runs = streamQueue.OfType<RawGlyphRun>().ToList();

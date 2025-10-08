@@ -1,2 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ofd:Signature xmlns:ofd="http://www.ofdspec.org/2016"><ofd:SignedInfo><ofd:Provider ProviderName="gomain_eseal" Version="2.0" Company="BW"/><ofd:SignatureMethod>1.2.156.10197.1.501</ofd:SignatureMethod><ofd:SignatureDateTime>20201010151120</ofd:SignatureDateTime><ofd:References CheckMethod="1.2.156.10197.1.401"><ofd:Reference FileRef="/Doc_0/Attachs/Attachments.xml"><ofd:CheckValue>xrTLMRwHhKaEXIYvj+tcGGsRTkLj2O4xFtxNg7N7tZg=</ofd:CheckValue></ofd:Reference><ofd:Reference FileRef="/OFD.xml"><ofd:CheckValue>RTXrKdNJFPMx7EkkYziOxG7bDpChC1RIkhacgIABd00=</ofd:CheckValue></ofd:Reference><ofd:Reference FileRef="/Doc_0/Attachs/original_invoice.xml"><ofd:CheckValue>8xgE4x2yXxfaRtt1PhvglC0NnCBcIFIuPN0n3eB3gwA=</ofd:CheckValue></ofd:Reference><ofd:Reference FileRef="/Doc_0/Tags/CustomTags.xml"><ofd:CheckValue>1vYtPehyZjzgwseoO/7FO6ZJ5NM6TCvEXi/24TzyUZg=</ofd:CheckValue></ofd:Reference><ofd:Reference FileRef="/Doc_0/Tags/Tag_Invoice.xml"><ofd:CheckValue>oqLk6jiEpPQCM8JAMH2VePQMtjxd934OvIK/AMuB4KY=</ofd:CheckValue></ofd:Reference><ofd:Reference FileRef="/Doc_0/DocumentRes.xml"><ofd:CheckValue>5URMEiRjvXp6qi0OtuDO9Isrpv5+KSL7+YHeuoTtrxg=</ofd:CheckValue></ofd:Reference><ofd:Reference FileRef="/Doc_0/PublicRes.xml"><ofd:CheckValue>AOg4xMQYkPuUNX7WEvnZzRvyMj4B7EIe3+Anp64o7Po=</ofd:CheckValue></ofd:Reference><ofd:Reference FileRef="/Doc_0/Annots/Annotations.xml"><ofd:CheckValue>pjzFciWjflHdjD9Iw1u4rLgft1jkujcaNDnKL7gQj/Q=</ofd:CheckValue></ofd:Reference><ofd:Reference FileRef="/Doc_0/Annots/Page_0/Annotation.xml"><ofd:CheckValue>uLXrsUPMPh9hLaqk8WWwry9Hf0zspj5f1fJ7y2m8yfw=</ofd:CheckValue></ofd:Reference><ofd:Reference FileRef="/Doc_0/Tpls/Tpl_0/Content.xml"><ofd:CheckValue>qZvuecDK357JaJAGNoj7TbjY8Z73ZH6a7pRV2Taog0Y=</ofd:CheckValue></ofd:Reference><ofd:Reference FileRef="/Doc_0/Pages/Page_0/Content.xml"><ofd:CheckValue>9WnMFuuQpI9non4whC2F2qGGp/H7QBiOlk3KtSoFznE=</ofd:CheckValue></ofd:Reference><ofd:Reference FileRef="/Doc_0/Res/qr.png"><ofd:CheckValue>CfQL2nf2lLaP1PFTgHqGHg9SHtNnXXShv5vwqa5HQ9E=</ofd:CheckValue></ofd:Reference><ofd:Reference FileRef="/Doc_0/Document.xml"><ofd:CheckValue>irDUTKhO4arvN+6OVL2oJiRAQs+UTDrvc+kQh6P+PYY=</ofd:CheckValue></ofd:Reference></ofd:References><ofd:StampAnnot ID="1" PageRef="1" Boundary="90.00 8.00 30.00 20.00"/></ofd:SignedInfo><ofd:SignedValue>/Doc_0/Signs/Sign_0/SignedValue.dat</ofd:SignedValue></ofd:Signature>
+<ofd:Signature xmlns:ofd="http://www.ofdspec.org/2016">
+  <ofd:SignedInfo>
+    <ofd:Provider ProviderName="gomain_eseal" Version="2.0" Company="BW"/>
+    <ofd:SignatureMethod>1.2.156.10197.1.501</ofd:SignatureMethod>
+    <ofd:SignatureDateTime>20201010151120</ofd:SignatureDateTime>
+    <ofd:References CheckMethod="1.2.156.10197.1.401">
+      <ofd:Reference FileRef="/Doc_0/Attachs/Attachments.xml">
+        <ofd:CheckValue>xrTLMRwHhKaEXIYvj+tcGGsRTkLj2O4xFtxNg7N7tZg=</ofd:CheckValue>
+      </ofd:Reference>
+      <ofd:Reference FileRef="/OFD.xml">
+        <ofd:CheckValue>RTXrKdNJFPMx7EkkYziOxG7bDpChC1RIkhacgIABd00=</ofd:CheckValue>
+      </ofd:Reference>
+      <ofd:Reference FileRef="/Doc_0/Attachs/original_invoice.xml">
+        <ofd:CheckValue>8xgE4x2yXxfaRtt1PhvglC0NnCBcIFIuPN0n3eB3gwA=</ofd:CheckValue>
+      </ofd:Reference>
+      <ofd:Reference FileRef="/Doc_0/Tags/CustomTags.xml">
+        <ofd:CheckValue>1vYtPehyZjzgwseoO/7FO6ZJ5NM6TCvEXi/24TzyUZg=</ofd:CheckValue>
+      </ofd:Reference>
+      <ofd:Reference FileRef="/Doc_0/Tags/Tag_Invoice.xml">
+        <ofd:CheckValue>oqLk6jiEpPQCM8JAMH2VePQMtjxd934OvIK/AMuB4KY=</ofd:CheckValue>
+      </ofd:Reference>
+      <ofd:Reference FileRef="/Doc_0/DocumentRes.xml">
+        <ofd:CheckValue>5URMEiRjvXp6qi0OtuDO9Isrpv5+KSL7+YHeuoTtrxg=</ofd:CheckValue>
+      </ofd:Reference>
+      <ofd:Reference FileRef="/Doc_0/PublicRes.xml">
+        <ofd:CheckValue>AOg4xMQYkPuUNX7WEvnZzRvyMj4B7EIe3+Anp64o7Po=</ofd:CheckValue>
+      </ofd:Reference>
+      <ofd:Reference FileRef="/Doc_0/Annots/Annotations.xml">
+        <ofd:CheckValue>pjzFciWjflHdjD9Iw1u4rLgft1jkujcaNDnKL7gQj/Q=</ofd:CheckValue>
+      </ofd:Reference>
+      <ofd:Reference FileRef="/Doc_0/Annots/Page_0/Annotation.xml">
+        <ofd:CheckValue>uLXrsUPMPh9hLaqk8WWwry9Hf0zspj5f1fJ7y2m8yfw=</ofd:CheckValue>
+      </ofd:Reference>
+      <ofd:Reference FileRef="/Doc_0/Tpls/Tpl_0/Content.xml">
+        <ofd:CheckValue>qZvuecDK357JaJAGNoj7TbjY8Z73ZH6a7pRV2Taog0Y=</ofd:CheckValue>
+      </ofd:Reference>
+      <ofd:Reference FileRef="/Doc_0/Pages/Page_0/Content.xml">
+        <ofd:CheckValue>9WnMFuuQpI9non4whC2F2qGGp/H7QBiOlk3KtSoFznE=</ofd:CheckValue>
+      </ofd:Reference>
+      <ofd:Reference FileRef="/Doc_0/Res/qr.png">
+        <ofd:CheckValue>CfQL2nf2lLaP1PFTgHqGHg9SHtNnXXShv5vwqa5HQ9E=</ofd:CheckValue>
+      </ofd:Reference>
+      <ofd:Reference FileRef="/Doc_0/Document.xml">
+        <ofd:CheckValue>irDUTKhO4arvN+6OVL2oJiRAQs+UTDrvc+kQh6P+PYY=</ofd:CheckValue>
+      </ofd:Reference>
+    </ofd:References>
+    <ofd:StampAnnot ID="1" PageRef="1" Boundary="90.00 8.00 30.00 20.00"/>
+  </ofd:SignedInfo>
+  <ofd:SignedValue>/Doc_0/Signs/Sign_0/SignedValue.dat</ofd:SignedValue>
+</ofd:Signature>

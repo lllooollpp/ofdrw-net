@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OfdrwNet.Core\OfdrwNet.Core.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Text\OfdrwNet.Text.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,7 +19,8 @@
     <PackageReference Include="Magick.NET-Q16-AnyCPU" Version="14.8.2" />
     <PackageReference Include="itext7" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
-    <PackageReference Include="System.Drawing.Common" Version="8.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.10" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.11" />
   </ItemGroup>
 
 </Project>

@@ -55,12 +55,12 @@ public sealed class ConverterOptionsBuilder
     private bool? _appendVersion;
 
     // Default values (used when no other source provides a value)
-    private const float DefaultTableThreshold = 0.8f;
-    private const float DefaultFormulaThreshold = 0.8f;
-    private const string DefaultRenderIntent = "perceptual";
-    private const CompatLevel DefaultCompatLevel = CompatLevel.Std2020;
-    private const int DefaultMaxMemMB = 512;
-    private const int DefaultPagesPerSegment = 100;
+    private const float _defaultTableThreshold = 0.8f;
+    private const float _defaultFormulaThreshold = 0.8f;
+    private const string _defaultRenderIntent = "perceptual";
+    private const CompatLevel _defaultCompatLevel = CompatLevel.Std2020;
+    private const int _defaultMaxMemMB = 512;
+    private const int _defaultPagesPerSegment = 100;
 
     /// <summary>
     /// Creates a new builder instance with default values.
@@ -370,13 +370,13 @@ public sealed class ConverterOptionsBuilder
     {
         var options = new ConverterOptions
         {
-            TableThreshold = _tableThreshold ?? DefaultTableThreshold,
-            FormulaThreshold = _formulaThreshold ?? DefaultFormulaThreshold,
-            RenderIntent = _renderIntent ?? DefaultRenderIntent,
-            CompatLevel = _compatLevel ?? DefaultCompatLevel,
+            TableThreshold = _tableThreshold ?? _defaultTableThreshold,
+            FormulaThreshold = _formulaThreshold ?? _defaultFormulaThreshold,
+            RenderIntent = _renderIntent ?? _defaultRenderIntent,
+            CompatLevel = _compatLevel ?? _defaultCompatLevel,
             TargetReader = _targetReader,
-            MaxMemMB = _maxMemMB ?? DefaultMaxMemMB,
-            PagesPerSegment = _pagesPerSegment ?? DefaultPagesPerSegment,
+            MaxMemMB = _maxMemMB ?? _defaultMaxMemMB,
+            PagesPerSegment = _pagesPerSegment ?? _defaultPagesPerSegment,
             Permissions = _permissions,
             VersionPolicy = _versionPolicy,
             RunJsSnapshot = _runJsSnapshot ?? false,

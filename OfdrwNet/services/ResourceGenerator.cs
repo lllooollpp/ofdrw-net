@@ -2,7 +2,9 @@ using System.Xml.Linq;
 using Microsoft.Extensions.Logging;
 using OfdrwNet.Models;
 using OfdrwNet.Utils;
-using OfdrwNet.Services; // ImagePreprocessor
+using OfdrwNet.Font;
+using RawImage = OfdrwNet.Image.RawImage;
+using OfdrwNet.Image;
 
 namespace OfdrwNet.Services;
 
@@ -14,12 +16,12 @@ internal sealed class ResourceGenerator
     private readonly ILogger? _logger;
     private readonly XNamespace _ofdNs = "http://www.ofdspec.org/2016";
 
-    private readonly ImagePreprocessor _preprocessor;
+    private readonly OfdImagePreprocessor _preprocessor;
 
-    public ResourceGenerator(ILogger? logger, ImagePreprocessor? preprocessor = null)
+    public ResourceGenerator(ILogger? logger, OfdImagePreprocessor? preprocessor = null)
     {
         _logger = logger;
-        _preprocessor = preprocessor ?? new ImagePreprocessor();
+        _preprocessor = preprocessor ?? new OfdImagePreprocessor();
     }
 
     public async Task<ResourceGenerationResult> GenerateAsync(

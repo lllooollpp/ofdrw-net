@@ -26,6 +26,8 @@
     <ProjectReference Include="..\OfdrwNet.Graphics\OfdrwNet.Graphics.csproj" />
     <ProjectReference Include="..\OfdrwNet.Tools\OfdrwNet.Tools.csproj" />
     <ProjectReference Include="..\OfdrwNet.Sign\OfdrwNet.Sign.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Image\OfdrwNet.Image.csproj" />
+    <ProjectReference Include="..\OfdrwNet.Text\OfdrwNet.Text.csproj" />
   </ItemGroup>
 
   <ItemGroup>

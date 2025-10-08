@@ -122,13 +122,3 @@ public class OfdImageExporter : OFDExporterBase
         return _reader?.GetNumberOfPages() ?? 0;
     }
 }
-
-/// <summary>
-/// 兼容旧名称，后续版本将移除。
-/// </summary>
-[System.Obsolete("Use OfdImageExporter instead. This shim will be removed in a future release.")]
-public class ImageExporter : OfdImageExporter
-{
-    public ImageExporter(string ofdPath, string outputDir, float dpi = 150f) : base(ofdPath, outputDir, dpi) { }
-    public ImageExporter(string ofdPath, string outputDir, SKEncodedImageFormat fmt, int quality = 100, float dpi = 150f) : base(ofdPath, outputDir, fmt, quality, dpi) { }
-}

@@ -1,3 +1,5 @@
+using System.Text;
+using System.Xml;
 using System.Xml.Linq;
 using OfdrwNet.Core.BasicType;
 
@@ -16,12 +18,12 @@ public class OfdElement
     /// false - 只要元素名称相同则认为是OFD元素（默认值）
     /// </summary>
     public static bool NSStrictMode = false;
-    
+
     /// <summary>
     /// 底层 XML 元素
     /// </summary>
     public XElement Element { get; set; }
-    
+
     /// <summary>
     /// 从现有元素构造
     /// </summary>
@@ -30,7 +32,7 @@ public class OfdElement
     {
         Element = element ?? throw new ArgumentNullException(nameof(element));
     }
-    
+
     /// <summary>
     /// 构造新元素
     /// </summary>
@@ -40,7 +42,7 @@ public class OfdElement
         // 使用带前缀的元素名
         Element = new XElement(Const.OfdNamespace + name);
     }
-    
+
     /// <summary>
     /// 创建OFD类型元素实例
     /// </summary>
@@ -50,7 +52,7 @@ public class OfdElement
     {
         return new OfdElement(name);
     }
-    
+
     /// <summary>
     /// 从XML字符串创建OFD元素实例
     /// </summary>
@@ -61,7 +63,7 @@ public class OfdElement
         var xElement = XElement.Parse(xml);
         return new OfdElement(xElement);
     }
-    
+
     /// <summary>
     /// 向元素中增加OFD子元素
     /// </summary>
@@ -70,11 +72,12 @@ public class OfdElement
     /// <returns>this</returns>
     public OfdElement AddOfdEntity(string name, object value)
     {
-        var childElement = new XElement(Const.OfdNamespace + name, value?.ToString());
+    var sanitizedValue = SanitizeXmlValue(value?.ToString());
+    var childElement = new XElement(Const.OfdNamespace + name, sanitizedValue);
         Element.Add(childElement);
         return this;
     }
-    
+
     /// <summary>
     /// 设置OFD参数
     /// 如果参数已经存在则修改参数
@@ -91,11 +94,12 @@ public class OfdElement
         }
         else
         {
-            existingElement.Value = value?.ToString() ?? "";
+            var sanitizedValue = SanitizeXmlValue(value?.ToString());
+            existingElement.Value = sanitizedValue ?? string.Empty;
             return this;
         }
     }
-    
+
     /// <summary>
     /// 设置元素名称
     /// </summary>
@@ -106,7 +110,7 @@ public class OfdElement
         Element.Name = Const.OfdNamespace + name;
         return this;
     }
-    
+
     /// <summary>
     /// 获取OFD的子元素
     /// </summary>
@@ -121,11 +125,11 @@ public class OfdElement
         else
         {
             // 兼容模式：先尝试带命名空间的，再尝试不带命名空间的
-            return Element.Element(Const.OfdNamespace + name) ?? 
+            return Element.Element(Const.OfdNamespace + name) ??
                    Element.Element(name);
         }
     }
-    
+
     /// <summary>
     /// 获取OFD元素中的文本
     /// </summary>
@@ -136,7 +140,7 @@ public class OfdElement
         var element = GetOfdElement(name);
         return element?.Value;
     }
-    
+
     /// <summary>
     /// 获取指定名称OFD元素集合
     /// </summary>
@@ -156,7 +160,7 @@ public class OfdElement
             return withNamespace.Concat(withoutNamespace);
         }
     }
-    
+
     /// <summary>
     /// 获取指定名称OFD元素集合并转换为指定类型
     /// </summary>
@@ -168,7 +172,7 @@ public class OfdElement
     {
         return GetOfdElements(name).Select(converter).ToList();
     }
-    
+
     /// <summary>
     /// 添加属性
     /// </summary>
@@ -177,10 +181,11 @@ public class OfdElement
     /// <returns>this</returns>
     public OfdElement AddAttribute(string name, object value)
     {
-        Element.SetAttributeValue(name, value?.ToString());
+    var sanitizedValue = SanitizeXmlValue(value?.ToString());
+    Element.SetAttributeValue(name, sanitizedValue);
         return this;
     }
-    
+
     /// <summary>
     /// 设置属性值（如果存在则替换）
     /// </summary>
@@ -189,10 +194,11 @@ public class OfdElement
     /// <returns>this</returns>
     public OfdElement SetAttribute(string name, object value)
     {
-        Element.SetAttributeValue(name, value?.ToString());
+    var sanitizedValue = SanitizeXmlValue(value?.ToString());
+    Element.SetAttributeValue(name, sanitizedValue);
         return this;
     }
-    
+
     /// <summary>
     /// 获取属性值
     /// </summary>
@@ -202,7 +208,7 @@ public class OfdElement
     {
         return Element.Attribute(name)?.Value;
     }
-    
+
     /// <summary>
     /// 删除属性
     /// </summary>
@@ -218,7 +224,7 @@ public class OfdElement
         }
         return false;
     }
-    
+
     /// <summary>
     /// 删除指定名称的OFD元素
     /// </summary>
@@ -236,7 +242,7 @@ public class OfdElement
         }
         return this;
     }
-    
+
     /// <summary>
     /// 添加子元素
     /// </summary>
@@ -247,7 +253,7 @@ public class OfdElement
         Element.Add(child);
         return this;
     }
-    
+
     /// <summary>
     /// 添加子元素
     /// </summary>
@@ -258,7 +264,7 @@ public class OfdElement
         Element.Add(child.Element);
         return this;
     }
-    
+
     /// <summary>
     /// 设置子元素（如果存在则替换）
     /// </summary>
@@ -270,7 +276,7 @@ public class OfdElement
         RemoveOfdElementsByNames(elementName);
         return Add(child);
     }
-    
+
     /// <summary>
     /// 从父元素中移除指定的子 OfdElement 实例
     /// </summary>
@@ -287,7 +293,7 @@ public class OfdElement
         }
         return false;
     }
-    
+
     /// <summary>
     /// 克隆元素
     /// </summary>
@@ -296,7 +302,7 @@ public class OfdElement
     {
         return new OfdElement(new XElement(Element));
     }
-    
+
     /// <summary>
     /// 转换为XElement
     /// </summary>
@@ -305,7 +311,7 @@ public class OfdElement
     {
         return new XElement(Element);
     }
-    
+
     /// <summary>
     /// 转换为XML字符串
     /// </summary>
@@ -321,7 +327,7 @@ public class OfdElement
         }
         return elementCopy.ToString();
     }
-    
+
     /// <summary>
     /// 获取元素的文本内容
     /// </summary>
@@ -377,7 +383,7 @@ public class OfdElement
         AddAttribute(Const.ObjId, objRefId.ToString());
         return this;
     }
-    
+
     /// <summary>
     /// 获取对象标识
     /// </summary>
@@ -387,7 +393,7 @@ public class OfdElement
         var idValue = GetAttributeValue(Const.ObjId);
         return string.IsNullOrEmpty(idValue) ? null : StId.Parse(idValue);
     }
-    
+
     /// <summary>
     /// 设置元素的文本内容
     /// </summary>
@@ -395,7 +401,44 @@ public class OfdElement
     /// <returns>this</returns>
     public OfdElement SetText(string text)
     {
-        Element.Value = text;
+        var sanitizedValue = SanitizeXmlValue(text);
+        Element.Value = sanitizedValue ?? string.Empty;
         return this;
+    }
+
+    private static string? SanitizeXmlValue(string? value)
+    {
+        if (string.IsNullOrEmpty(value))
+            return value;
+
+        StringBuilder? builder = null;
+        int segmentStart = 0;
+
+        for (int i = 0; i < value.Length; i++)
+        {
+            char ch = value[i];
+            if (!XmlConvert.IsXmlChar(ch))
+            {
+                builder ??= new StringBuilder(value.Length);
+                if (i > segmentStart)
+                {
+                    builder.Append(value, segmentStart, i - segmentStart);
+                }
+
+                segmentStart = i + 1;
+            }
+        }
+
+        if (builder == null)
+        {
+            return value;
+        }
+
+        if (segmentStart < value.Length)
+        {
+            builder.Append(value, segmentStart, value.Length - segmentStart);
+        }
+
+        return builder.ToString();
     }
 }

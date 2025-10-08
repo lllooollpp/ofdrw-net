@@ -131,34 +131,6 @@ public static class OfdrwHelper
 
     #endregion
 
-    #region HelloWorld示例
-
-    /// <summary>
-    /// 创建一个简单的HelloWorld OFD文档
-    /// </summary>
-    /// <param name="outputPath">输出文件路径</param>
-    /// <param name="message">要显示的消息</param>
-    /// <returns>创建任务</returns>
-    public static async Task CreateHelloWorldAsync(string outputPath, string message = "Hello, OFDRW.NET!")
-    {
-        using var doc = CreateDocument(outputPath);
-        
-        // 创建一个简单的文本段落
-        var paragraph = new Paragraph();
-        paragraph.SetDefaultFontSize(4.23); // 12pt 转毫米
-        paragraph.Add(message);
-        
-        // 设置位置
-        paragraph.SetPosition(20, 20);
-
-        // 添加到文档
-        doc.Add(paragraph);
-        
-        // 保存文档
-        await doc.CloseAsync();
-    }
-
-    #endregion
 }
 
 /// <summary>

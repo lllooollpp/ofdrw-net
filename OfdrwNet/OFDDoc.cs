@@ -18,6 +18,10 @@ using System.IO.Compression;
 using OfdrwNet.Pkg.Container;
 using OfdrwNet.Models;
 using OfdrwNet.Utils;
+using OfdrwNet.Text;
+using OfdrwNet.Font;
+using RawImage = OfdrwNet.Image.RawImage;
+using RawGlyphRun = OfdrwNet.Text.RawGlyphRun;
 using System.Reflection;
 using OfdrwNet.Core.BasicStructure.Ofd;
 using OfdrwNet.Core.BasicStructure.Ofd.DocInfo;
@@ -64,10 +68,6 @@ namespace OfdrwNet
         // RawGlyphRun / RawImage / RawPath / RawAnnotation 已移至 Models 目录
         #endregion
 
-        #region Helper IO
-        // 文件写入工具已提取到 FileUtil
-        #endregion
-
         #region 构造
         /// <param name="outPath">OFD输出路径，可以是目录或zip文件</param>
         /// <param name="logger">日志记录器</param>
@@ -94,16 +94,6 @@ namespace OfdrwNet
             InitializeContainer();
         }
 
-        /// <summary>
-        /// 设置图片叠放顺序策略：Sequence / YAscending / YDescending
-        /// Sequence: 按添加顺序；YAscending: Y小(上)先画(被覆盖)；YDescending: Y大(下)先画。
-        /// </summary>
-        public OfdWriter SetImageOrdering(string strategy)
-        {
-            if (!string.IsNullOrWhiteSpace(strategy))
-                _imageOrderingStrategy = strategy;
-            return this;
-        }
 
         /// <summary>
         /// 设置生成的 OFD 根节点版本号。
@@ -126,17 +116,6 @@ namespace OfdrwNet
             return this;
         }
 
-        /// <summary>
-        /// 直接设置 DocInfo 下的原始元素值。
-        /// </summary>
-        public OfdWriter SetDocInfoValue(string elementName, string? value)
-        {
-            if (!string.IsNullOrWhiteSpace(elementName))
-            {
-                _docInfo.SetOfdEntity(elementName, value ?? string.Empty);
-            }
-            return this;
-        }
 
         /// <summary>
         /// 控制是否自动生成 DocID。
@@ -258,12 +237,6 @@ namespace OfdrwNet
             return this;
         }
 
-        public OfdWriter AddVirtualPage(OfdrwNet.Models.VirtualPage virtualPage)
-        {
-            _virtualPageList.Add(virtualPage);
-            return this;
-        }
-
         public OfdWriter AddExternalEmbeddedFont(string fontName, string fontFilePath)
         {
             if (string.IsNullOrWhiteSpace(fontName))
@@ -346,53 +319,6 @@ namespace OfdrwNet
             return this;
         }
 
-        /// <summary>
-        /// 带 Z 轴的图片添加（Z 越大越在上，绘制顺序按 Z 升序然后策略排序）。
-        /// </summary>
-        public OfdWriter AddRawImage(string format, double x, double y, double width, double height, byte[] data, int page, double[]? ctm, int z)
-        {
-            if (data == null || data.Length == 0)
-            {
-                _logger?.LogDebug("[OFDDoc][Image] Skip empty image data Page={Page}", page);
-                return this;
-            }
-            string hash;
-            try
-            {
-                using var sha = SHA256.Create();
-                hash = Convert.ToHexString(sha.ComputeHash(data));
-            }
-            catch { hash = Guid.NewGuid().ToString("N"); }
-            bool first = !_imageHashFirst.ContainsKey(hash);
-            if (!first)
-                _dedupImageCount++;
-            var img = new RawImage
-            {
-                Format = string.IsNullOrWhiteSpace(format) ? "PNG" : format.ToUpperInvariant(),
-                X = x,
-                Y = y < 0 ? 0 : y,
-                Width = width <= 0 ? 1 : width,
-                Height = height <= 0 ? 1 : height,
-                Data = first ? data : Array.Empty<byte>(),
-                Page = page < 1 ? 1 : page,
-                Hash = hash,
-                IsFirstResource = first,
-                CTM = NormalizeCtm(ctm),
-                Sequence = System.Threading.Interlocked.Increment(ref _imageSequence),
-                Z = z
-            };
-            _rawImages.Add(img);
-            if (first)
-            {
-                _imageHashFirst[hash] = img;
-                _logger?.LogDebug("[OFDDoc][Image] Page={Page} NewImage Hash={Hash} {W}x{H}mm Format={Fmt} Z={Z}", img.Page, hash[..Math.Min(12, hash.Length)], img.Width.ToString("0.##"), img.Height.ToString("0.##"), img.Format, img.Z);
-            }
-            else
-            {
-                _logger?.LogDebug("[OFDDoc][Image] Page={Page} DupImage Hash={Hash} Z={Z}", img.Page, hash[..Math.Min(12, hash.Length)], img.Z);
-            }
-            return this;
-        }
 
         public OfdWriter AddImage(OfdImage image)
         {
@@ -401,12 +327,6 @@ namespace OfdrwNet
             return AddRawImage(image.Format, image.X, image.Y, image.Width, image.Height, image.ImageData, image.Page, image.CTM);
         }
 
-        public OfdWriter AddImage(OfdImage image, int z)
-        {
-            if (image == null)
-                return this;
-            return AddRawImage(image.Format, image.X, image.Y, image.Width, image.Height, image.ImageData, image.Page, image.CTM, z);
-        }
 
         public OfdWriter AddText(OfdText text)
         {
@@ -478,7 +398,6 @@ namespace OfdrwNet
 
         #region 辅助 - CTM
         private static double[]? NormalizeCtm(double[]? ctm) => CtmUtil.Normalize(ctm);
-        private static string FormatCtm(double[] ctm) => CtmUtil.Format(ctm);
         #endregion
 
         #region ID
@@ -641,7 +560,6 @@ namespace OfdrwNet
             _logger?.LogInformation("[OFDDoc][CreateOfdStructureAsync] PostGenerationFixAsync调用完成");
         }
 
-        private static readonly XNamespace OfdNs = "http://www.ofdspec.org/2016"; // 新增：统一命名空间
         private async Task<string> GenerateDocumentXmlAsync()
         {
             if (_pageGroups == null)
@@ -696,7 +614,7 @@ namespace OfdrwNet
         {
             if (_fontMap.Count == 0)
             {
-                var fontRegistry = new OfdrwNet.Services.FontRegistry(_logger);
+                var fontRegistry = new OfdrwNet.Font.OfdFontRegistry(_logger);
                 foreach (var kv in fontRegistry.Build(_externalFontFiles, _streamQueue))
                     _fontMap[kv.Key] = kv.Value;
             }
@@ -732,39 +650,6 @@ namespace OfdrwNet
                 _fontMap["SimSun"] = new OfdFont(1, "SimSun", "宋体");
         }
 
-        private void ComputePageGroups()
-        {
-            if (_pageGroups != null)
-                return;
-            var runs = _streamQueue.OfType<RawGlyphRun>().ToList();
-            int maxPage = 0;
-            if (_virtualPageList?.Count > 0)
-                maxPage = Math.Max(maxPage, _virtualPageList.Count);
-            if (runs.Any())
-                maxPage = Math.Max(maxPage, runs.Max(r => r.Page));
-            if (_rawImages != null && _rawImages.Any())
-                maxPage = Math.Max(maxPage, _rawImages.Max(i => i.Page));
-            if (_rawPaths != null && _rawPaths.Any())
-                maxPage = Math.Max(maxPage, _rawPaths.Max(p => p.Page));
-            if (maxPage == 0)
-                maxPage = 1;
-            var pages = new List<(int PageNumber, List<object> Items)>();
-            for (int p = 1; p <= maxPage; p++)
-            {
-                var items = new List<object>();
-                items.AddRange(runs.Where(r => r.Page == p));
-                if (_rawPaths != null)
-                    items.AddRange(_rawPaths.Where(pth => pth.Page == p));
-                if (p == 1)
-                {
-                    items.AddRange(_streamQueue.Where(s => !(s is RawGlyphRun)));
-                }
-                pages.Add((p, items));
-            }
-            _pageGroups = pages;
-            _logger?.LogDebug("[OFDDoc][ComputePageGroups] Pages={Count} Runs={Runs} Images={Images} Paths={Paths} VirtualPages={VP}", _pageGroups!.Count, runs.Count, _rawImages?.Count ?? 0, _rawPaths?.Count ?? 0, _virtualPageList?.Count ?? 0);
-        }
-
         private async Task GenerateResourcesAsync(string docDir)
         {
             BuildFontMap();
@@ -791,9 +676,6 @@ namespace OfdrwNet
             }
         }
 
-        // OfdFont / VirtualPage 已移至 Models 目录
-
-        // 兼容类型别名（已移至命名空间级别）
     }
 
     #endregion

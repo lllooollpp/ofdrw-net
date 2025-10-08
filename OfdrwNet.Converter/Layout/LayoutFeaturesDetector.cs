@@ -29,7 +29,7 @@ public sealed class LayoutFeaturesDetector
     private readonly ILogger<LayoutFeaturesDetector> _logger;
 
     // 常见竖排标点符号（需要旋转方向）
-    private static readonly HashSet<char> VerticalPunctuation = new()
+    private static readonly HashSet<char> _verticalPunctuation = new()
     {
         '「', '」', '『', '』',  // 日文引号
         '（', '）', '【', '】',  // 全角括号
@@ -39,12 +39,12 @@ public sealed class LayoutFeaturesDetector
     };
 
     // Ruby注音常见模式（拼音或假名在汉字上方）
-    private static readonly Regex RubyPattern = new(
+    private static readonly Regex _rubyPattern = new(
         @"[\p{IsHiragana}\p{IsKatakana}ぁ-んァ-ヶー]+",
         RegexOptions.Compiled);
 
     // 汉字字符范围
-    private static readonly Regex HanziPattern = new(
+    private static readonly Regex _hanziPattern = new(
         @"[\u4E00-\u9FFF]+",
         RegexOptions.Compiled);
 
@@ -170,8 +170,8 @@ public sealed class LayoutFeaturesDetector
         }
 
         // 检测是否同时包含汉字和假名
-        var hasHanzi = HanziPattern.IsMatch(allText);
-        var hasKana = RubyPattern.IsMatch(allText);
+        var hasHanzi = _hanziPattern.IsMatch(allText);
+        var hasKana = _rubyPattern.IsMatch(allText);
 
         if (hasHanzi && hasKana)
         {
@@ -208,7 +208,7 @@ public sealed class LayoutFeaturesDetector
             return false;
         }
 
-        return text.Any(c => VerticalPunctuation.Contains(c));
+        return text.Any(c => _verticalPunctuation.Contains(c));
     }
 
     /// <summary>

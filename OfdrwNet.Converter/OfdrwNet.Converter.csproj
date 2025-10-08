@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OfdrwNet.Abstractions\OfdrwNet.Abstractions.csproj" />
-    <ProjectReference Include="..\OfdrwNet\OfdrwNet.csproj" />
     <ProjectReference Include="..\OfdrwNet.Core\OfdrwNet.Core.csproj" />
     <ProjectReference Include="..\OfdrwNet.Reader\OfdrwNet.Reader.csproj" />
     <ProjectReference Include="..\OfdrwNet.Graphics\OfdrwNet.Graphics.csproj" />
@@ -18,6 +17,7 @@
     <ProjectReference Include="..\OfdrwNet.Text\OfdrwNet.Text.csproj" />
     <ProjectReference Include="..\OfdrwNet.Image\OfdrwNet.Image.csproj" />
     <ProjectReference Include="..\OfdrwNet.Font\OfdrwNet.Font.csproj" />
+    <ProjectReference Include="..\OfdrwNet\OfdrwNet.csproj" />
   </ItemGroup>
 
   <ItemGroup>

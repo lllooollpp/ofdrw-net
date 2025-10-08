@@ -21,8 +21,8 @@ internal class PdfToOfdOrchestrator
     {
         // 默认顺序：Text -> Image -> Vector -> Annotation -> Form （字体在外部单独先行处理）
         // T073: 传递服务依赖到各提取器
-        _extractors.Add(new TextExtractor());
-        _extractors.Add(new PdfImageExtractor());
+    _extractors.Add(new PdfTextContentExtractor());
+    _extractors.Add(new PdfImageContentExtractor());
         _extractors.Add(new VectorExtractor());
 
         // T076: AnnotationExtractor 集成 BookmarkConverter 和 ActionMapper
@@ -83,10 +83,10 @@ internal class PdfToOfdOrchestrator
         if (opts.ExportPageImagesOnly || localForceImageOnly)
         {
             runExtractors = new List<IPdfContentExtractor>();
-            // 找到第一个 PdfImageExtractor 并仅运行它
+            // 找到第一个 PdfImageContentExtractor 并仅运行它
             foreach (var ex in _extractors)
             {
-                if (ex is PdfImageExtractor)
+                if (ex is PdfImageContentExtractor)
                 {
                     runExtractors.Add(ex);
                     break;
@@ -102,8 +102,8 @@ internal class PdfToOfdOrchestrator
             {
                 switch (extractor)
                 {
-                    case TextExtractor when !opts.ExtractText: continue;
-                    case PdfImageExtractor when !opts.ExtractImage: continue;
+                    case PdfTextContentExtractor when !opts.ExtractText: continue;
+                    case PdfImageContentExtractor when !opts.ExtractImage: continue;
                     case VectorExtractor when !opts.ExtractVector: continue;
                     case AnnotationExtractor when !opts.ExtractAnnotations: continue;
                     case FormExtractor when !opts.ExtractForms: continue;

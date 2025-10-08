@@ -4,6 +4,8 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Threading;
+using System.Runtime.Versioning;
 using ImageMagick;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas.Parser;
@@ -82,24 +84,31 @@ public sealed class ImageRenderEventListener : IEventListener
             {
                 if (!hasAlpha)
                 {
-                    try
+                    if (OperatingSystem.IsWindows())
                     {
-                        var processed = SimpleWhiteToTransparent(imageBytes, _options.WhiteThreshold, isTiff, out bool changed);
-                        if (changed)
+                        try
                         {
-                            imageBytes = processed;
-                            whiteTransparencyApplied = true;
-                            hasAlpha = true;
-                            _logger?.LogDebug("[PDF2OFD][Image][Alpha] Page {Page} 白底->透明成功{TiffNote}", _pageNum, isTiff ? " (TIFF 反相)" : string.Empty);
+                            var processed = SimpleWhiteToTransparent(imageBytes, _options.WhiteThreshold, isTiff, out bool changed);
+                            if (changed)
+                            {
+                                imageBytes = processed;
+                                whiteTransparencyApplied = true;
+                                hasAlpha = true;
+                                _logger?.LogDebug("[PDF2OFD][Image][Alpha] Page {Page} 白底->透明成功{TiffNote}", _pageNum, isTiff ? " (TIFF 反相)" : string.Empty);
+                            }
+                            else
+                            {
+                                _logger?.LogDebug("[PDF2OFD][Image][Alpha] Page {Page} 白底处理无变化", _pageNum);
+                            }
                         }
-                        else
+                        catch (Exception exAlpha)
                         {
-                            _logger?.LogDebug("[PDF2OFD][Image][Alpha] Page {Page} 白底处理无变化", _pageNum);
+                            _logger?.LogWarning(exAlpha, "[PDF2OFD][Image][Alpha] Page {Page} 白底处理失败，忽略", _pageNum);
                         }
                     }
-                    catch (Exception exAlpha)
+                    else
                     {
-                        _logger?.LogWarning(exAlpha, "[PDF2OFD][Image][Alpha] Page {Page} 白底处理失败，忽略", _pageNum);
+                        _logger?.LogDebug("[PDF2OFD][Image][Alpha] Page {Page} 跳过白底->透明：当前平台不支持 System.Drawing", _pageNum);
                     }
                 }
                 else
@@ -285,6 +294,7 @@ public sealed class ImageRenderEventListener : IEventListener
         return string.IsNullOrWhiteSpace(normalized) ? "PNG" : normalized;
     }
 
+    [SupportedOSPlatform("windows")]
     private static byte[] SimpleWhiteToTransparent(byte[] bytes, byte threshold, bool isTiff, out bool changed)
     {
         changed = false;
@@ -419,6 +429,56 @@ public class OfdImageData
 /// </summary>
 public static class PdfImageExtractor
 {
+    /// <summary>
+    /// 提取 PDF 文档中的图像数据。
+    /// </summary>
+    /// <param name="pdfDoc">源 PDF 文档。</param>
+    /// <param name="processingOptions">图像处理选项。</param>
+    /// <param name="pageFilter">可选页面过滤器，返回 false 时跳过该页。</param>
+    /// <param name="ordering">排序策略。</param>
+    /// <param name="logger">日志记录器。</param>
+    /// <param name="cancellationToken">取消标记。</param>
+    /// <exception cref="ArgumentNullException">pdfDoc 为空。</exception>
+    public static IReadOnlyList<OfdImageData> ExtractDocumentImages(
+        PdfDocument pdfDoc,
+        ImageProcessingOptions? processingOptions,
+        Func<int, bool>? pageFilter,
+        string? ordering,
+        ILogger? logger,
+        CancellationToken cancellationToken)
+    {
+        if (pdfDoc == null) throw new ArgumentNullException(nameof(pdfDoc));
+
+        processingOptions ??= new ImageProcessingOptions();
+        var results = new List<OfdImageData>();
+
+        int totalPages = pdfDoc.GetNumberOfPages();
+        for (int pageNumber = 1; pageNumber <= totalPages; pageNumber++)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            if (pageFilter != null && !pageFilter(pageNumber))
+            {
+                logger?.LogDebug("[PDF2OFD][Image] Page {Page} 被过滤", pageNumber);
+                continue;
+            }
+
+            var page = pdfDoc.GetPage(pageNumber);
+            var listener = new ImageRenderEventListener(pageNumber, page.GetPageSize(), processingOptions, logger);
+            new PdfCanvasProcessor(listener).ProcessPageContent(page);
+
+            var orderedImages = OrderImages(listener.Images, ordering);
+            if (orderedImages.Count > 0)
+            {
+                results.AddRange(orderedImages);
+            }
+
+            logger?.LogInformation("[PDF2OFD][Image] Page {Page} 捕获 {Count} 张图片", pageNumber, listener.Images.Count);
+        }
+
+        return results;
+    }
+
     /// <summary>
     /// 排序图像
     /// </summary>

@@ -11,9 +11,12 @@
   <ItemGroup>
     <PackageReference Include="itext7" Version="8.0.0" />
     <PackageReference Include="itext7.font-asian" Version="8.0.0" />
+    <PackageReference Include="SkiaSharp" Version="2.88.6" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.10" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OfdrwNet.Abstractions\OfdrwNet.Abstractions.csproj" />
     <ProjectReference Include="..\OfdrwNet.Core\OfdrwNet.Core.csproj" />
   </ItemGroup>
 

@@ -5,7 +5,7 @@ using System.Reflection;
 using Microsoft.Extensions.Logging.Abstractions;
 using OfdrwNet.Abstractions;
 using OfdrwNet.Converter;
-using OfdrwNet.Converter.Refactor;
+using OfdrwNet.Text.Pdf;
 using Xunit;
 
 namespace OfdrwNet.Converter.Tests;
@@ -106,19 +106,38 @@ public class TextAggregationTests
         ConvertHelper.PdfToOfdOptions options)
     {
         var extractorType = Type.GetType(
-            "OfdrwNet.Converter.Refactor.TextExtractor, OfdrwNet.Converter",
+            "OfdrwNet.Text.Pdf.PdfTextExtractor, OfdrwNet.Text",
             throwOnError: true)!;
 
         var helperType = extractorType.GetNestedType(
             "TextAggregationHelper",
-            BindingFlags.NonPublic) ?? throw new InvalidOperationException("TextAggregationHelper not found");
+            BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static)
+            ?? throw new InvalidOperationException("TextAggregationHelper not found");
 
         var method = helperType.GetMethod(
             "AggregateWords",
             BindingFlags.Public | BindingFlags.Static);
 
+        var textOptions = new PdfTextExtractionOptions
+        {
+            SplitTextBySpace = options.SplitTextBySpace,
+            OnlySplitLatinWords = options.OnlySplitLatinWords,
+            PerGlyphPositioning = options.PerGlyphPositioning,
+            MaxSyntheticSpacesPerGap = options.MaxSyntheticSpacesPerGap,
+            MinGapForSyntheticSpaceMm = options.MinGapForSyntheticSpaceMm,
+            NumericGapMultiplier = options.NumericGapMultiplier,
+            NumericMinGapMm = options.NumericMinGapMm,
+            GapSpaceTriggerRatio = options.GapSpaceTriggerRatio,
+            CjkGapTriggerRatio = options.CjkGapTriggerRatio,
+            EnableDeltaX = options.EnableDeltaX,
+            ExpandCjkWidth = options.ExpandCjkWidth,
+            CjkExtraAdvanceRatio = options.CjkExtraAdvanceRatio,
+            EnableDebugWordLayout = options.EnableDebugWordLayout,
+            MaxNegativeKerningAbsorbMm = options.MaxNegativeKerningAbsorbMm
+        };
+
         return (List<OfdText>)method!.Invoke(
             null,
-            new object[] { raw, NullLogger.Instance, 1, options })!;
+            new object[] { raw, NullLogger.Instance, 1, textOptions })!;
     }
 }
